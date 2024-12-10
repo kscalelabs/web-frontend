@@ -74,7 +74,10 @@
         }
     }
 }
-
+*::selection {
+    background: var(--foreground);
+    color: var(--background);
+}
 
 body {
     color: var(--foreground);
@@ -85,6 +88,8 @@ body {
     font-size: 24px;
     line-height: 28px;
     letter-spacing: -0.01em;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 h1 {
@@ -141,6 +146,7 @@ code, pre {
     line-height: 18px;
     letter-spacing: 0.02em;
 }
+
 
 @media (max-width: 1024px) {
     body {
