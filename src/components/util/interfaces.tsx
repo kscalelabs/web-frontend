@@ -15,11 +15,13 @@ export interface TextColourProps {
     color: string
 }
 
-export interface LinkProps {
-    linkURL: string
+export interface FooterSectionListProps {
+    title: string,
+    itemTitles: string[],
+    itemUrls: string[]
 }
 
-export interface FooterProps {
+export interface SocialMediaItemProps {
     linkURL: string,
     iconSvg: JSX.Element;
 }
