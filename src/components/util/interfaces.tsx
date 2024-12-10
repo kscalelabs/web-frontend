@@ -1,4 +1,4 @@
-import {Dispatch, JSX, SetStateAction} from "react";
+import { Dispatch, JSX, SetStateAction } from "react";
 export interface TextProps {
   text: string;
 }
@@ -14,17 +14,16 @@ export interface TextColourProps {
 }
 
 export interface FooterSectionListProps {
-    title: string,
-    itemTitles: string[],
-    itemUrls: string[],
-    extraStyling: string
+  title: string;
+  itemTitles: string[];
+  itemUrls: string[];
+  extraStyling: string;
 }
 
 export interface SocialMediaItemProps {
-    linkURL: string,
-    iconSvg: JSX.Element;
+  linkURL: string;
+  iconSvg: JSX.Element;
 }
-
 
 export interface SizeColourProps {
   styling: string;
