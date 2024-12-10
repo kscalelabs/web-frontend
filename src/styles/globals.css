@@ -19,29 +19,19 @@
 
   @font-face {
     font-family: "GT Planar";
-    src: url("./fonts/trial/GT-Planar-Bold-Trial.woff2") format("woff2");
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "GT Planar";
-    src: url("./fonts/trial/GT-Planar-Regular-Trial.woff2") format("woff2");
+    src:
+      url("./fonts/GT-Planar-Regular.woff") format("woff"),
+      url("./fonts/GT-Planar-Regular.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
   }
 
   @font-face {
     font-family: "CoFo Sans Mono", monospace, monospace;
-    src: url("./fonts/trial/CoFoSansMono-Regular-Trial.otf") format("opentype");
+    src:
+      url("./fonts/CoFoSansMono-Regular.woff") format("woff"),
+      url("./fonts/CoFoSansMono-Regular.woff2") format("woff2");
     font-weight: normal;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "CoFo Sans Mono", monospace, monospace;
-    src: url("./fonts/trial/CoFoSansMono-Medium-Trial.otf") format("opentype");
-    font-weight: 500;
     font-style: normal;
   }
 
@@ -84,18 +74,30 @@ body {
   background: var(--background);
 }
 
+footer {
+  bottom: 0;
+  left: 0;
+  padding: 13% 2.5% 5% 2.5%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5%;
+}
+
 main {
   display: grid;
+  margin-left: 5%;
+  margin-right: 5%;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5%;
+}
+
+main {
   @apply font-planar;
   @apply font-normal;
   font-style: normal;
   font-size: 17px;
   line-height: 20px;
   letter-spacing: -0.01em;
-  margin-left: 5%;
-  margin-right: 5%;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 5%;
 }
 
 h1 {
@@ -158,23 +160,32 @@ pre {
 }
 
 @media (min-width: 640px) {
-  main {
+  main,
+  footer {
+    padding: 8% 2.5%;
     grid-template-columns: repeat(6, 1fr);
     gap: 2.5%;
   }
 }
 
 @media (min-width: 1024px) {
-  main {
+  main,
+  footer {
+    padding: 4% 5%;
     grid-template-columns: repeat(9, 1fr);
     gap: 2.5%;
   }
 }
 
 @media (min-width: 1440px) {
-  main {
+  main,
+  footer {
+    padding: 3% 5% 10% 5%;
     grid-template-columns: repeat(12, 1fr);
     gap: 1.25%;
+  }
+
+  main {
     font-size: 24px;
     line-height: 28px;
     letter-spacing: -0.01em;

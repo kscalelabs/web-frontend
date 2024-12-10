@@ -7,7 +7,7 @@ const Logotype = () => {
     <button>
       <Link
         className={
-          "font-apparat font-bold text-3xl select-none z-50 " +
+          "font-apparat font-bold text-3xl select-none z-50 whitespace-nowrap " +
           textBlackDarkWhite +
           " hover:text-accent-blood-orange " +
           transitionEaseLinearDuration300

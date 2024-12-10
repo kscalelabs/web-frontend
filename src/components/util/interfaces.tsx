@@ -1,5 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
-
+import { Dispatch, JSX, SetStateAction } from "react";
 export interface TextProps {
   text: string;
 }
@@ -14,8 +13,16 @@ export interface TextColourProps {
   color: string;
 }
 
-export interface LinkProps {
+export interface FooterSectionListProps {
+  title: string;
+  itemTitles: string[];
+  itemUrls: string[];
+  extraStyling: string;
+}
+
+export interface SocialMediaItemProps {
   linkURL: string;
+  iconSvg: JSX.Element;
 }
 
 export interface SizeColourProps {
@@ -25,4 +32,8 @@ export interface SizeColourProps {
 export interface BurgerOpenButtonProps {
   isOpen: boolean;
   onClick: Dispatch<SetStateAction<boolean>>;
+}
+
+export interface SvgKeyProp {
+  key: string;
 }

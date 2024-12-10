@@ -10,6 +10,11 @@ export default {
   darkMode: "media",
   theme: {
     extend: {
+      screens: {
+        w1440: "1440px",
+        w1024: "1024px",
+        w640: "640px",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

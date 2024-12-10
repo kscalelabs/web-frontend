@@ -32,7 +32,7 @@ const navItemVariants = {
   },
 };
 
-const desktopNavStyling = "flex flex-row gap-8 justify-between py-7 px-6 fixed w-full";
+const desktopNavStyling = "flex flex-row gap-8 justify-between py-7 px-[5%] fixed w-full";
 const mobileNavStyling = "w-[100%] z-50 top-0 left-0 fixed ";
 
 export default function NavBar() {
@@ -67,9 +67,7 @@ export default function NavBar() {
       <menu
         className={
           "overflow-hidden w-[100%] p-4 top-0 left-0 gap-2.5 " +
-          (mobileShouldOpenBurger
-            ? "h-[100dvh] bg-off-white dark:bg-off-black"
-            : "bg-gradient-to-b from-90% from-off-white dark:from-off-black h-fit")
+          (mobileShouldOpenBurger ? "h-[100dvh] bg-off-white dark:bg-off-black" : "  h-fit")
         }
       >
         <div className={" flex flex-row grow justify-between"}>
