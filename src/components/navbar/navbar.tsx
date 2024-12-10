@@ -67,9 +67,7 @@ export default function NavBar() {
       <menu
         className={
           "overflow-hidden w-[100%] p-4 top-0 left-0 gap-2.5 " +
-          (mobileShouldOpenBurger
-            ? "h-[100dvh] bg-off-white dark:bg-off-black"
-            : "  h-fit")
+          (mobileShouldOpenBurger ? "h-[100dvh] bg-off-white dark:bg-off-black" : "  h-fit")
         }
       >
         <div className={" flex flex-row grow justify-between"}>
