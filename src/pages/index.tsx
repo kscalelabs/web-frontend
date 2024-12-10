@@ -9,9 +9,6 @@ export default function Home() {
                 <h1>Bob was here</h1>
                 <h1>Bob was here</h1>
                 <h1>Bob was here</h1>
-                <h1>Bob was here</h1>
-                <h1>Bob was here</h1>
-                <h1>Bob was here</h1>
             </main>
             <Footer/>
         </>

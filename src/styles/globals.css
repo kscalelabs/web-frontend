@@ -85,7 +85,7 @@ body {
     background: var(--background);
 }
 
-main, footer {
+main {
     display: grid;
     margin-left: 5%;
     margin-right: 5%;
@@ -157,21 +157,21 @@ code, pre {
 }
 
 @media (min-width: 640px) {
-    main, nav, footer {
+    main {
         grid-template-columns: repeat(6, 1fr);
         gap: 2.5%;
     }
 }
 
 @media (min-width: 1024px) {
-    main, footer {
+    main {
         grid-template-columns: repeat(9, 1fr);
         gap: 2.5%;
     }
 }
 
 @media (min-width: 1440px) {
-    main, footer {
+    main {
         grid-template-columns: repeat(12, 1fr);
         gap: 1.25%;
     }
