@@ -4,7 +4,7 @@ import FooterLogotype from "@/components/logos/footerLogotype";
 import { Discord, LinkedIn, Twitter, Facebook, Github } from "@/components/footer/socialMediaSvgs";
 import FooterSectionList from "@/components/footer/FooterSectionList";
 import { useWindowSize } from "@/components/util/functions";
-
+/* eslint-disable no-use-before-define */
 const socialMediaSvgs: JSX.Element[] = [
   <Discord />,
   <LinkedIn />,
@@ -250,3 +250,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+/* eslint-enable no-use-before-define */
