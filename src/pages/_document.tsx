@@ -24,7 +24,7 @@ export default function Document() {
 
         <link rel="mask-icon" href="/favicons/favicon_svg.svg" color="#EA530E" />
 
-        <link rel="icon" sizes="32x32 48x48" type="image/x-icon" href="/favicons/favicon.ico" />
+        <link rel="icon" sizes="32x32 48x48" type="image/x-icon" href="/favicons/favicon_ico.ico" />
 
         <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico" />
       </Head>
