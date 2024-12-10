@@ -1,10 +1,11 @@
 import React from "react";
-import {motion} from "motion/react";
+import { motion } from "motion/react";
 import {
-    bgBlackDarkWhite,
-    textWhiteDarkBlack,
-    navMotionTransition,
-    transitionEaseLinearDuration300, scaleMotionNumber
+  bgBlackDarkWhite,
+  textWhiteDarkBlack,
+  navMotionTransition,
+  transitionEaseLinearDuration300,
+  scaleMotionNumber,
 } from "@/components/util/constants";
 import Link from "next/link";
 

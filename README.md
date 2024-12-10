@@ -3,18 +3,22 @@
 ---
 
 # staging branch needs to stay default for PRs to not merge into production
+
 thanks :))))))))))))
 
 ## Do Not Change
+
 - `_app.tsx`, `_document.ts`, `index.tsx` has to stay within the `/pages` folder or else Next.js won't build correctly.
 
 ## Tech Stack
+
 - React
 - Tailwind.css
 - Next.js
 - Deploy with original stack (AWS Amplify)
 
 ## Contributors
+
 - [Deborah Wang](https://github.com/mrpthemrp)
 - KScale team
 
@@ -55,4 +59,3 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
         
         Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 </details>
-
