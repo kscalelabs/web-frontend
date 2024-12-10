@@ -11,12 +11,10 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
-    "@jridgewell/gen-mapping": "^0.3.3",
-    "depcheck": "^1.4.7",
     "motion": "12.0.0-alpha.2",
     "next": "15.0.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "^20",
