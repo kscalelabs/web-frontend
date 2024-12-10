@@ -8,7 +8,7 @@ import BurgerMenu from "@/components/navbar/burgerMenu";
 import BurgerOpenButton from "@/components/navbar/burgerOpenButton";
 
 const navItems: string[] = ["research", "docs", "login"];
-const navItemLinks: string[] = ["https://kscale.dev/research", "https://docs.kscale.dev/", "https://kscale.dev/"];
+const navItemLinks: string[] = ["https://dashboard.kscale.dev/research/", "https://docs.kscale.dev/", "https://dashboard.kscale.dev/login/"];
 
 const navVariants = {
     visible: {
