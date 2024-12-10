@@ -5,7 +5,7 @@ const BurgerMenu = (isOpen: boolean, buttonText: string[], buttonLinks: string[]
         isOpen ? <div className={"flex flex-col items-start w-[100%] gap-10 py-12"}>
                 {buttonText.map((text, index) => {
                     return (
-                        <BurgerButton text={text} text2={buttonLinks[index]}/>
+                        <BurgerButton text={text} text2={buttonLinks[index]} key={index}/>
                     )
                 })}
             </div> :
