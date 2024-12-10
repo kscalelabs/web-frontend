@@ -4,7 +4,7 @@ import FooterLogotype from "@/components/logos/footerLogotype";
 import { Discord, LinkedIn, Twitter, Facebook, Github } from "@/components/footer/socialMediaSvgs";
 import FooterSectionList from "@/components/footer/FooterSectionList";
 import { useWindowSize } from "@/components/util/functions";
-/* eslint-disable no-use-before-define */
+
 const socialMediaSvgs: JSX.Element[] = [
   <Discord />,
   <LinkedIn />,
@@ -22,6 +22,7 @@ const socialMediaLinks: string[] = [
 ];
 
 export default function Footer() {
+  const width = useWindowSize().width;
   const CopyRight = () => {
     return (
       <p
@@ -36,7 +37,6 @@ export default function Footer() {
   };
 
   const footerBasedOnBreakpoints = () => {
-    const width = useWindowSize().width;
     if (width >= 1440) {
       return <FooterWidth1440 />;
     } else if (width >= 1024) {
@@ -250,5 +250,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-/* eslint-enable no-use-before-define */
