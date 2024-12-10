@@ -9,6 +9,7 @@ export interface Text2Props {
     text2: string
 }
 
+
 export interface TextColourProps {
     text: string,
     color: string

@@ -2,6 +2,9 @@
 
 ---
 
+# staging branch needs to stay default for PRs to not merge into production
+thanks :))))))))))))
+
 ## Do Not Change
 - `_app.tsx`, `_document.ts`, `index.tsx` has to stay within the `/pages` folder or else Next.js won't build correctly.
 

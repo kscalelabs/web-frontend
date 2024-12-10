@@ -9,7 +9,7 @@ const Logotype = () => {
     return (
         <button>
             <Link className={"font-apparat font-bold text-3xl select-none z-50 " +
-                textBlackDarkWhite + " hover:text-kscale-orange " +
+                textBlackDarkWhite + " hover:text-accent-blood-orange " +
                 transitionEaseLinearDuration300} href={"/"}>
                 k-scale labs
             </Link>
