@@ -5,7 +5,6 @@ export default function Home() {
     <>
       <NavBar />
       <main></main>
-      <footer> bob was here</footer>
     </>
   );
 }
