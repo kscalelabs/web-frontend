@@ -83,6 +83,33 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+h1 {
+    @apply font-apparat;
+    @apply font-medium;
+    font-style: normal;
+    font-size: 96px;
+    line-height: 84px;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    @apply font-apparat;
+    @apply font-medium;
+    font-style: normal;
+    font-size: 57.5px;
+    line-height: 56px;
+    letter-spacing: -0.015em;
+}
+
+h3 {
+    @apply font-planar;
+    @apply font-normal;
+    font-style: normal;
+    font-size: 39.5px;
+    line-height: 42px;
+    letter-spacing: -0.01em;
+}
+
 .scroll-lock {
     overflow: hidden;
     height: 100vh; /* Prevents resizing quirks */
