@@ -9,11 +9,6 @@ export interface Text2Props {
     text2: string
 }
 
-export interface Text2KeyProps {
-    text: string,
-    text2: string,
-    key: number
-}
 
 export interface TextColourProps {
     text: string,
