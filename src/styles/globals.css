@@ -85,18 +85,21 @@ body {
     background: var(--background);
 }
 
-main {
+main, footer {
     display: grid;
+    margin-left: 5%;
+    margin-right: 5%;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5%;
+}
+
+main {
     @apply font-planar;
     @apply font-normal;
     font-style: normal;
     font-size: 17px;
     line-height: 20px;
     letter-spacing: -0.01em;
-    margin-left: 5%;
-    margin-right: 5%;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5%;
 }
 
 h1 {
@@ -154,23 +157,26 @@ code, pre {
 }
 
 @media (min-width: 640px) {
-    main {
+    main, nav, footer {
         grid-template-columns: repeat(6, 1fr);
         gap: 2.5%;
     }
 }
 
 @media (min-width: 1024px) {
-    main {
+    main, footer {
         grid-template-columns: repeat(9, 1fr);
         gap: 2.5%;
     }
 }
 
 @media (min-width: 1440px) {
-    main {
+    main, footer {
         grid-template-columns: repeat(12, 1fr);
         gap: 1.25%;
+    }
+
+    main {
         font-size: 24px;
         line-height: 28px;
         letter-spacing: -0.01em;

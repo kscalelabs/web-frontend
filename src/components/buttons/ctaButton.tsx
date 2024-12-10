@@ -6,12 +6,13 @@ import {
     navMotionTransition,
     transitionEaseLinearDuration300, scaleMotionNumber
 } from "@/components/util/constants";
+import {TextProps} from "@/components/util/interfaces";
 
 const CTAButton = () => {
     return (
         <motion.button
             className={"font-planar font-normal text-2xl px-4 py-2 select-none z-50 " +
-                bgBlackDarkWhite + " hover:bg-accent-blood-orange " +
+                bgBlackDarkWhite + " hover:bg-accent-blood-orange whitespace-nowrap " +
                 transitionEaseLinearDuration300 + textWhiteDarkBlack}
             transition={navMotionTransition}
             initial={{

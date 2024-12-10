@@ -1,4 +1,4 @@
-import {Dispatch, SetStateAction} from "react";
+import {Dispatch, JSX, SetStateAction} from "react";
 
 export interface TextProps {
     text: string
@@ -18,6 +18,12 @@ export interface TextColourProps {
 export interface LinkProps {
     linkURL: string
 }
+
+export interface FooterProps {
+    linkURL: string,
+    iconSvg: JSX.Element;
+}
+
 
 export interface SizeColourProps {
     styling: string

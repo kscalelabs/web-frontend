@@ -28,7 +28,7 @@ const navItemVariants = {
     },
 };
 
-const desktopNavStyling = "flex flex-row gap-8 justify-between py-7 px-6 fixed w-full";
+const desktopNavStyling = "flex flex-row gap-8 justify-between py-7 px-[5%] fixed w-full";
 const mobileNavStyling = "w-[100%] z-50 top-0 left-0 fixed ";
 
 export default function NavBar() {
