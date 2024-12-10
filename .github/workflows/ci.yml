@@ -33,18 +33,10 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Restore cache
-        id: restore-cache
-        uses: actions/cache/restore@v3
-        with:
-          path: |
-            node_modules/
-          key: deps-${{ github.event.pull_request.base.sha || github.sha }}
-          restore-keys: |
-            deps-
-
-      - name: Install dependencies
-        run: npm install
+      - name: Clean install dependencies
+        run: |
+          rm -rf node_modules
+          npm ci
 
       - name: Check formatting
         run: npm run format:check
@@ -54,14 +46,6 @@ jobs:
 
       - name: Build frontend
         run: npm run build
-
-      - name: Save cache
-        uses: actions/cache/save@v3
-        if: github.ref == 'refs/heads/master'
-        with:
-          path: |
-            node_modules/
-          key: deps-${{ steps.restore-cache.outputs.cache-primary-key }}
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
