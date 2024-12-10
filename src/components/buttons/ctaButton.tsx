@@ -5,7 +5,6 @@ import {
   textWhiteDarkBlack,
   navMotionTransition,
   transitionEaseLinearDuration300,
-  scaleMotionNumber,
 } from "@/components/util/constants";
 //Order GPR 1.0
 const CTAButton = () => {

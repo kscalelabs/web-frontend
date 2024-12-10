@@ -1,16 +1,15 @@
 import { motion } from "motion/react";
-import Link from "next/link";
 import { navMotionTransition, scaleMotionNumber } from "@/components/util/constants";
 
 export default function Home() {
   return (
     <div
-      className={`grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 
+      className={`grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20
       gap-16 sm:p-20 `}
     >
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <h1 className="text-xl font-planar font-normal text-foreground ">
-          We're cooking something 👀
+          &quot;We&apos;re cooking something 👀&quot;
         </h1>
         <div className={"flex flex-row items-baseline gap-2 "}>
           <p className="text-md font-planar font-normal text-foreground">Join </p>
