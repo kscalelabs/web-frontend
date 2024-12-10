@@ -18,7 +18,8 @@ export interface TextColourProps {
 export interface FooterSectionListProps {
     title: string,
     itemTitles: string[],
-    itemUrls: string[]
+    itemUrls: string[],
+    extraStyling: string
 }
 
 export interface SocialMediaItemProps {

@@ -5,10 +5,23 @@ export default function Home() {
     return (
         <>
             <NavBar/>
-            <main className={"pt-60 h-[50dvh]"}>
-                <h1>Bob was here</h1>
-                <h1>Bob was here</h1>
-                <h1>Bob was here</h1>
+            <main className={"pt-60"}>
+                <div className={"col-span-6"}>
+                    <h1>Bob was here</h1>
+                    <h1>Bob was here</h1>
+                    <h1>Bob was here</h1>
+                    <h1>Bob was here</h1>
+                    <h1>Bob was here</h1>
+                    <h1>Bob was here</h1>
+                    <h1>Bob was here</h1>
+                    <h1>Bob was here</h1>
+                    <h1>Bob was here</h1>
+                    <h1>Bob was here</h1>
+                    <h1>Bob was here</h1>
+                    <h1>Bob was here</h1>
+                    <h1>Bob was here</h1>
+                    <h1>Bob was here</h1>
+                </div>
             </main>
             <Footer/>
         </>
