@@ -7,7 +7,7 @@ on:
       - staging
   pull_request:
     branches:
-      - master # PRs targeting master
+      - master
       - staging
     types:
       - opened
@@ -57,8 +57,25 @@ jobs:
 
       - name: Save cache
         uses: actions/cache/save@v3
-        if: github.ref == 'refs/heads/master' # Only save cache on master
+        if: github.ref == 'refs/heads/master'
         with:
           path: |
             node_modules/
           key: deps-${{ steps.restore-cache.outputs.cache-primary-key }}
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Trigger Amplify Deploy
+        run: |
+          BRANCH_NAME="${{ github.ref_name }}"
+          if [[ "$BRANCH_NAME" == "master" || "$BRANCH_NAME" == "staging" ]]; then
+            aws amplify start-job \
+              --app-id ${{ secrets.AMPLIFY_APP_ID }} \
+              --branch-name $BRANCH_NAME \
+              --job-type RELEASE
+          fi
