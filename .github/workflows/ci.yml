@@ -1,0 +1,62 @@
+name: CI Checks (Linting and Formatting)
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master # PRs targeting master
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+
+concurrency:
+  group: ci-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  lint-and-format:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: Restore cache
+        id: restore-cache
+        uses: actions/cache/restore@v3
+        with:
+          path: |
+            node_modules/
+          key: deps-${{ github.event.pull_request.base.sha || github.sha }}
+          restore-keys: |
+            deps-
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check formatting
+        run: npm run format:check
+
+      - name: Run linting
+        run: npm run lint
+
+      - name: Build frontend
+        run: npm run build
+
+      - name: Save cache
+        uses: actions/cache/save@v3
+        if: github.ref == 'refs/heads/master' # Only save cache on master
+        with:
+          path: |
+            node_modules/
+          key: deps-${{ steps.restore-cache.outputs.cache-primary-key }}

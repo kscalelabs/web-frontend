@@ -3,223 +3,229 @@
 @tailwind utilities;
 
 @layer base {
-    @font-face {
-        font-family: "KMR Apparat";
-        src: url("./fonts/trial/KMR-Apparat-Bold.woff") format("woff");
-        font-weight: bold;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: "KMR Apparat";
+    src: url("./fonts/trial/KMR-Apparat-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+  }
 
-    @font-face {
-        font-family: "KMR Apparat";
-        src: url("./fonts/trial/KMR-Apparat-Medium.woff") format("woff");
-        font-weight: 500;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: "KMR Apparat";
+    src: url("./fonts/trial/KMR-Apparat-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+  }
 
-    @font-face {
-        font-family: "GT Planar";
-        src: url("./fonts/trial/GT-Planar-Bold-Trial.woff2") format("woff2");
-        font-weight: bold;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: "GT Planar";
+    src: url("./fonts/trial/GT-Planar-Bold-Trial.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+  }
 
-    @font-face {
-        font-family: "GT Planar";
-        src: url("./fonts/trial/GT-Planar-Regular-Trial.woff2") format("woff2");
-        font-weight: normal;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: "GT Planar";
+    src: url("./fonts/trial/GT-Planar-Regular-Trial.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
 
-    @font-face {
-        font-family: "CoFo Sans Mono", monospace, monospace;
-        src: url("./fonts/trial/CoFoSansMono-Regular-Trial.otf") format("opentype");
-        font-weight: normal;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: "CoFo Sans Mono", monospace, monospace;
+    src: url("./fonts/trial/CoFoSansMono-Regular-Trial.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }
 
-    @font-face {
-        font-family: "CoFo Sans Mono", monospace, monospace;
-        src: url("./fonts/trial/CoFoSansMono-Medium-Trial.otf") format("opentype");
-        font-weight: 500;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: "CoFo Sans Mono", monospace, monospace;
+    src: url("./fonts/trial/CoFoSansMono-Medium-Trial.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+  }
 
+  :root {
+    --background: #f8f4f2;
+    --foreground: #120e15;
+    --off-white: #f8f4f2;
+    --off-black: #120e15;
+    --accent-aubergine: #7d0d8c;
+    --accent-dragonfruit: #b90674;
+    --accent-apple: #c90e33;
+    --accent-blood-orange: #fa4300;
+    --accent-tangerine: #ff9000;
+    --accent-butter: #f2f091;
+  }
 
+  @media (prefers-color-scheme: dark) {
     :root {
-        --background: #F8F4F2;
-        --foreground: #120E15;
-        --off-white: #F8F4F2;
-        --off-black: #120E15;
-        --accent-aubergine: #7D0D8C;
-        --accent-dragonfruit: #B90674;
-        --accent-apple: #C90E33;
-        --accent-blood-orange: #FA4300;
-        --accent-tangerine: #FF9000;
-        --accent-butter: #F2F091;
+      --background: #0f0f10;
+      --foreground: #ede6e1;
+      --off-black: #0f0f10;
+      --off-white: #ede6e1;
+      --accent-aubergine: #771584;
+      --accent-dragonfruit: #a81770;
+      --accent-apple: #98253c;
+      --accent-blood-orange: #de4208;
+      --accent-tangerine: #f18a03;
+      --accent-butter: #eae9bc;
     }
-
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --background: #0F0F10;
-            --foreground: #EDE6E1;
-            --off-black: #0F0F10;
-            --off-white: #EDE6E1;
-            --accent-aubergine: #771584;
-            --accent-dragonfruit: #A81770;
-            --accent-apple: #98253C;
-            --accent-blood-orange: #DE4208;
-            --accent-tangerine: #F18A03;
-            --accent-butter: #EAE9BC;
-        }
-    }
+  }
 }
 
 *::selection {
-    background: var(--foreground);
-    color: var(--background);
+  background: var(--foreground);
+  color: var(--background);
 }
 
 body {
-    color: var(--foreground);
-    background: var(--background);
+  color: var(--foreground);
+  background: var(--background);
 }
 
 main {
-    display: grid;
-    @apply font-planar;
-    @apply font-normal;
-    font-style: normal;
-    font-size: 17px;
-    line-height: 20px;
-    letter-spacing: -0.01em;
-    margin-left: 5%;
-    margin-right: 5%;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5%;
+  display: grid;
+  @apply font-planar;
+  @apply font-normal;
+  font-style: normal;
+  font-size: 17px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  margin-left: 5%;
+  margin-right: 5%;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5%;
 }
 
 h1 {
-    @apply font-apparat;
-    @apply font-medium;
-    font-style: normal;
-    font-size: 62px;
-    line-height: 60px;
-    letter-spacing: -0.02em;
+  @apply font-apparat;
+  @apply font-medium;
+  font-style: normal;
+  font-size: 62px;
+  line-height: 60px;
+  letter-spacing: -0.02em;
 }
 
 h2 {
-    @apply font-apparat;
-    @apply font-medium;
-    font-style: normal;
-    font-size: 38.5px;
-    line-height: 40px;
-    letter-spacing: -0.015em;
+  @apply font-apparat;
+  @apply font-medium;
+  font-style: normal;
+  font-size: 38.5px;
+  line-height: 40px;
+  letter-spacing: -0.015em;
 }
 
 h3 {
-    @apply font-planar;
-    @apply font-normal;
-    font-style: normal;
-    font-size: 25px;
-    line-height: 25px;
-    letter-spacing: -0.01em;
+  @apply font-planar;
+  @apply font-normal;
+  font-style: normal;
+  font-size: 25px;
+  line-height: 25px;
+  letter-spacing: -0.01em;
 }
 
-caption, figcaption {
-    @apply font-planar;
-    @apply font-normal;
-    font-style: normal;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.02em;
+caption,
+figcaption {
+  @apply font-planar;
+  @apply font-normal;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
 }
 
-caption .code, caption .pre, figcaption .code, figcaption .pre {
-    @apply font-mono;
-    @apply font-normal;
-    font-style: normal;
-    font-size: 13px;
-    line-height: 14px;
-    letter-spacing: 0.03em;
+caption .code,
+caption .pre,
+figcaption .code,
+figcaption .pre {
+  @apply font-mono;
+  @apply font-normal;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 14px;
+  letter-spacing: 0.03em;
 }
 
-code, pre {
-    @apply font-mono;
-    @apply font-normal;
-    font-style: normal;
-    font-size: 14px;
-    line-height: 14px;
-    letter-spacing: 0.02em;
+code,
+pre {
+  @apply font-mono;
+  @apply font-normal;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
 }
 
 @media (min-width: 640px) {
-    main {
-        grid-template-columns: repeat(6, 1fr);
-        gap: 2.5%;
-    }
+  main {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2.5%;
+  }
 }
 
 @media (min-width: 1024px) {
-    main {
-        grid-template-columns: repeat(9, 1fr);
-        gap: 2.5%;
-    }
+  main {
+    grid-template-columns: repeat(9, 1fr);
+    gap: 2.5%;
+  }
 }
 
 @media (min-width: 1440px) {
-    main {
-        grid-template-columns: repeat(12, 1fr);
-        gap: 1.25%;
-        font-size: 24px;
-        line-height: 28px;
-        letter-spacing: -0.01em;
-    }
+  main {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.25%;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.01em;
+  }
 
-    h1 {
-        font-size: 96px;
-        line-height: 84px;
-        letter-spacing: -0.02em;
-    }
+  h1 {
+    font-size: 96px;
+    line-height: 84px;
+    letter-spacing: -0.02em;
+  }
 
-    h2 {
-        font-size: 57.5px;
-        line-height: 56px;
-        letter-spacing: -0.015em;
-    }
+  h2 {
+    font-size: 57.5px;
+    line-height: 56px;
+    letter-spacing: -0.015em;
+  }
 
-    h3 {
-        font-size: 39.5px;
-        line-height: 42px;
-        letter-spacing: -0.01em;
-    }
+  h3 {
+    font-size: 39.5px;
+    line-height: 42px;
+    letter-spacing: -0.01em;
+  }
 
-    caption, figcaption {
-        font-size: 17px;
-        line-height: 28px;
-        letter-spacing: 0.02em;
-    }
+  caption,
+  figcaption {
+    font-size: 17px;
+    line-height: 28px;
+    letter-spacing: 0.02em;
+  }
 
+  caption .code,
+  caption .pre,
+  figcaption .code,
+  figcaption .pre {
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+  }
 
-    caption .code, caption .pre, figcaption .code, figcaption .pre {
-        font-size: 18px;
-        line-height: 18px;
-        letter-spacing: 0.02em;
-    }
-
-    code, pre {
-        font-size: 18px;
-        line-height: 18px;
-        letter-spacing: 0.02em;
-    }
-
+  code,
+  pre {
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+  }
 }
 
 .scroll-lock {
-    overflow: hidden;
-    height: 100vh; /* Prevents resizing quirks */
+  overflow: hidden;
+  height: 100vh; /* Prevents resizing quirks */
 }
-
 
 /*::-webkit-scrollbar {*/
 /*    width: 0.75vw;*/
@@ -228,7 +234,6 @@ code, pre {
 /*::-webkit-scrollbar-track {*/
 /*    background: transparent;*/
 /*}*/
-
 
 /*need to add back .scrollbar-visible*/
 /*::-webkit-scrollbar-thumb {*/
@@ -254,9 +259,9 @@ code, pre {
 /*}*/
 
 ::-webkit-scrollbar-thumb {
-    display: none;
+  display: none;
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
