@@ -1,6 +1,6 @@
 import { SvgKeyProp } from "@/components/util/interfaces";
 
-export const Discord = (prop: SvgKeyProp) => {
+export const Discord = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path
@@ -11,7 +11,7 @@ export const Discord = (prop: SvgKeyProp) => {
   );
 };
 
-export const LinkedIn = (prop: SvgKeyProp) => {
+export const LinkedIn = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path
@@ -22,7 +22,7 @@ export const LinkedIn = (prop: SvgKeyProp) => {
   );
 };
 
-export const Twitter = (prop: SvgKeyProp) => {
+export const Twitter = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path
@@ -33,7 +33,7 @@ export const Twitter = (prop: SvgKeyProp) => {
   );
 };
 
-export const Facebook = (prop: SvgKeyProp) => {
+export const Facebook = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path
@@ -44,7 +44,7 @@ export const Facebook = (prop: SvgKeyProp) => {
   );
 };
 
-export const Github = (prop: SvgKeyProp) => {
+export const Github = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path
