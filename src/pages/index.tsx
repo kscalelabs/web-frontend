@@ -1,10 +1,11 @@
+import NavBar from "@/components/navbar/navbar";
+
 export default function Home() {
     return (
-        <div
-            className={`grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen gap-16 `}
-        >
-            <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-                <div className="flex flex-col gap-4 text-2xl">
+        <>
+            <NavBar/>
+            <main>
+                <div className="text-2xl grid-cols-1">
                     <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
                         <rect width="50" height="50" x="10" y="10" className={"fill-accent-aubergine"}/>
                     </svg>
@@ -31,7 +32,7 @@ export default function Home() {
                     Butter
                 </div>
 
-                <div className="flex flex-col gap-4 text-2xl items-start">
+                <div className="flex flex-col grid-cols-3 gap-4 text-2xl items-start">
                     <h1>H1: Apparat Medium 96px / 84px with -2% tracking</h1>
                     <h2>h2: Apparat Medium 57.5px / 56px with -1.5% tracking</h2>
                     <h3>h3: GT Planar Regular 39.5px /42px with -1% tracking</h3>
@@ -49,8 +50,7 @@ export default function Home() {
                     </blockquote>
                 </div>
             </main>
-            <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-            </footer>
-        </div>
+            <footer> bob was here</footer>
+        </>
     );
 }

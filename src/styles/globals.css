@@ -74,6 +74,7 @@
         }
     }
 }
+
 *::selection {
     background: var(--foreground);
     color: var(--background);
@@ -82,11 +83,14 @@
 body {
     color: var(--foreground);
     background: var(--background);
+}
+
+main {
     @apply font-planar;
     @apply font-normal;
     font-style: normal;
-    font-size: 24px;
-    line-height: 28px;
+    font-size: 17px;
+    line-height: 20px;
     letter-spacing: -0.01em;
     margin-left: 5%;
     margin-right: 5%;
@@ -96,8 +100,8 @@ h1 {
     @apply font-apparat;
     @apply font-medium;
     font-style: normal;
-    font-size: 96px;
-    line-height: 84px;
+    font-size: 62px;
+    line-height: 60px;
     letter-spacing: -0.02em;
 }
 
@@ -105,8 +109,8 @@ h2 {
     @apply font-apparat;
     @apply font-medium;
     font-style: normal;
-    font-size: 57.5px;
-    line-height: 56px;
+    font-size: 38.5px;
+    line-height: 40px;
     letter-spacing: -0.015em;
 }
 
@@ -114,8 +118,8 @@ h3 {
     @apply font-planar;
     @apply font-normal;
     font-style: normal;
-    font-size: 39.5px;
-    line-height: 42px;
+    font-size: 25px;
+    line-height: 25px;
     letter-spacing: -0.01em;
 }
 
@@ -123,73 +127,73 @@ caption, figcaption {
     @apply font-planar;
     @apply font-normal;
     font-style: normal;
-    font-size: 17px;
-    line-height: 28px;
+    font-size: 14px;
+    line-height: 20px;
     letter-spacing: 0.02em;
 }
-
 
 caption .code, caption .pre, figcaption .code, figcaption .pre {
     @apply font-mono;
     @apply font-normal;
     font-style: normal;
-    font-size: 18px;
-    line-height: 18px;
-    letter-spacing: 0.02em;
+    font-size: 13px;
+    line-height: 14px;
+    letter-spacing: 0.03em;
 }
 
 code, pre {
     @apply font-mono;
     @apply font-normal;
     font-style: normal;
-    font-size: 18px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 14px;
     letter-spacing: 0.02em;
 }
 
-
-@media (max-width: 1024px) {
-    body {
-        font-size: 17px;
-        line-height: 20px;
+@media (min-width: 1440px) {
+    main {
+        font-size: 24px;
+        line-height: 28px;
         letter-spacing: -0.01em;
     }
 
-    h1 {;
-        font-size: 62px;
-        line-height: 60px;
+    h1 {
+        font-size: 96px;
+        line-height: 84px;
         letter-spacing: -0.02em;
     }
 
     h2 {
-        font-size: 38.5px;
-        line-height: 40px;
+        font-size: 57.5px;
+        line-height: 56px;
         letter-spacing: -0.015em;
     }
 
     h3 {
-        font-size: 25px;
-        line-height: 25px;
+        font-size: 39.5px;
+        line-height: 42px;
         letter-spacing: -0.01em;
     }
 
     caption, figcaption {
-        font-size: 14px;
-        line-height: 20px;
+        font-size: 17px;
+        line-height: 28px;
         letter-spacing: 0.02em;
     }
 
+
     caption .code, caption .pre, figcaption .code, figcaption .pre {
-        font-size: 13px;
-        line-height: 14px;
-        letter-spacing: 0.03em;
+        font-size: 18px;
+        line-height: 18px;
+        letter-spacing: 0.02em;
     }
 
     code, pre {
-        font-size: 14px;
-        line-height: 14px;
+        font-size: 18px;
+        line-height: 18px;
         letter-spacing: 0.02em;
     }
+
 }
 
 .scroll-lock {
