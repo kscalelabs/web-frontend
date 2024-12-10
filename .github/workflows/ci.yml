@@ -3,7 +3,7 @@ name: CI Checks (Linting and Formatting)
 on:
   push:
     branches:
-      - '**'
+      - "**"
   pull_request:
     branches:
       - master
