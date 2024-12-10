@@ -5,11 +5,11 @@ export const textWhiteDarkBlack: string = " text-off-white dark:text-off-black  
 export const fillBlackDarkWhite: string = " fill-off-black dark:fill-off-white ";
 
 export const navMotionTransition = {
-    duration: 0.7,
-    ease: "circOut",
-    bounce: "spring",
-}
+  duration: 0.7,
+  ease: "circOut",
+  bounce: "spring",
+};
 
 export const scaleMotionNumber = {
-    scale: 0.95
-}
+  scale: 0.95,
+};
