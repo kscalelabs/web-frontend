@@ -1,4 +1,6 @@
-export const Discord = () => {
+import { SvgKeyProp } from "@/components/util/interfaces";
+
+export const Discord = (prop: SvgKeyProp) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path
@@ -9,7 +11,7 @@ export const Discord = () => {
   );
 };
 
-export const LinkedIn = () => {
+export const LinkedIn = (prop: SvgKeyProp) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path
@@ -20,7 +22,7 @@ export const LinkedIn = () => {
   );
 };
 
-export const Twitter = () => {
+export const Twitter = (prop: SvgKeyProp) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path
@@ -31,7 +33,7 @@ export const Twitter = () => {
   );
 };
 
-export const Facebook = () => {
+export const Facebook = (prop: SvgKeyProp) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path
@@ -42,7 +44,7 @@ export const Facebook = () => {
   );
 };
 
-export const Github = () => {
+export const Github = (prop: SvgKeyProp) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path

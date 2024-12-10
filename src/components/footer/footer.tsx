@@ -6,11 +6,11 @@ import FooterSectionList from "@/components/footer/FooterSectionList";
 import { useWindowSize } from "@/components/util/functions";
 
 const socialMediaSvgs: JSX.Element[] = [
-  <Discord />,
-  <LinkedIn />,
-  <Twitter />,
-  <Facebook />,
-  <Github />,
+  <Discord key={"discord"} />,
+  <LinkedIn key={"linkedin"} />,
+  <Twitter key={"twitter"} />,
+  <Facebook key={"facebook"} />,
+  <Github key={"github"} />,
 ];
 
 const socialMediaLinks: string[] = [
