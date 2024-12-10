@@ -13,10 +13,14 @@ export default {
             colors: {
                 background: "var(--background)",
                 foreground: "var(--foreground)",
-                "off-white": "#ffffff",
-                "off-black": "#010101",
-                "kscale-orange": "#ff6124",
-                "col2": "#d000ff",
+                "off-white": "var(--off-white)",
+                "off-black": "var(--off-black)",
+                "accent-aubergine": "var(--accent-aubergine)",
+                "accent-dragonfruit": "var(--accent-dragonfruit)",
+                "accent-apple": "var(--accent-apple)",
+                "accent-blood-orange": "var(--accent-blood-orange)",
+                "accent-tangerine": "var(--accent-tangerine)",
+                "accent-butter": "var(--accent-butter)",
             },
             fontFamily: {
                 apparat: ['KMR Apparat', 'sans-serif'],
