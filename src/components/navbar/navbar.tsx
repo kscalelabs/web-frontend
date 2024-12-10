@@ -69,7 +69,7 @@ export default function NavBar() {
           "overflow-hidden w-[100%] p-4 top-0 left-0 gap-2.5 " +
           (mobileShouldOpenBurger
             ? "h-[100dvh] bg-off-white dark:bg-off-black"
-            : "bg-gradient-to-b from-90% from-off-white dark:from-off-black h-fit")
+            : "  h-fit")
         }
       >
         <div className={" flex flex-row grow justify-between"}>
