@@ -25,14 +25,14 @@ const RobotSection = () => {
 const MissionSection = () => {
   return (
     <section className="flex flex-col items-center text-center py-16 px-4 max-w-4xl mx-auto">
-      <h2 className="text-4xl mb-8">Built for Developers, By Developers</h2>
+      <h2 className="text-4xl mb-8">Built By Hackers, For Hackers</h2>
       <p className="text-xl mb-6">
-        Our humanoid robots are the easiest, most cost-effective way to bring the latest in AI and
-        robotics into your workflow.
+        We&apos;re building the next generation of embodied artificial intelligence, pushing
+        humanity up the Kardashev scale through accessible robotics.
       </p>
       <p className="text-lg mb-6">
-        Designed with developers in mind and built in the open by a community of experts, our robots
-        enable seamless integration with your existing systems.
+        Open source at heart, our robots are designed for those who want to hack, experiment, and
+        push the boundaries of what&apos;s possible with embodied AI.
       </p>
     </section>
   );
@@ -41,14 +41,14 @@ const MissionSection = () => {
 const TeamSection = () => {
   return (
     <section className="flex flex-col items-center text-center py-16 px-4 max-w-4xl mx-auto bg-gray-50">
-      <h2 className="text-4xl mb-8">Silicon Valley Excellence</h2>
+      <h2 className="text-4xl mb-8">Building the Future of Embodied AI</h2>
       <p className="text-xl mb-6">
-        Backed by top investors and built by industry leaders from Tesla, Meta, Stanford, MIT, and
-        more.
+        K-Scale Labs is building a platform for the next generation of embodied artificial
+        intelligence.
       </p>
       <p className="text-lg">
-        Our collective expertise drives innovation in humanoid robotics, pushing humanity up the
-        Kardashev scale.
+        We are working towards a future where embodied intelligence is affordable, accessible,
+        useful and safe for everyone.
       </p>
     </section>
   );
