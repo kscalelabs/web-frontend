@@ -69,9 +69,25 @@ const RobotRenderer: React.FC = () => {
 
     const loader = new URDFLoader();
     loader.load(URDF_URL, (robot: THREE.Object3D) => {
-      scene.add(robot);
+      const updateMaterials = () => {
+        robot.traverse((child) => {
+          if (child instanceof THREE.Mesh) {
+            const originalColor =
+              child.material instanceof THREE.Material
+                ? (child.material as THREE.MeshPhysicalMaterial).color
+                : new THREE.Color(0x808080);
+            child.material = new THREE.MeshPhysicalMaterial({
+              metalness: 0.4,
+              roughness: 0.5,
+              color: originalColor,
+            });
+          }
+        });
+      };
 
-      // Correcting for the robot initial size and position.
+      scene.add(robot);
+      updateMaterials();
+
       robot.rotateY(Math.PI / 2);
       robot.translateY(TRANSLATE_Y);
       robot.scale.set(SCALE, SCALE, SCALE);
@@ -89,7 +105,6 @@ const RobotRenderer: React.FC = () => {
         requestAnimationFrame(animate);
         controls.update();
 
-        // Update joint positions with a sinusoidal pattern
         const time = (Date.now() - startTime) / 1000;
         robot.traverse((child) => {
           const joint = child as URDFJoint;
@@ -109,12 +124,16 @@ const RobotRenderer: React.FC = () => {
       animate();
     });
 
-    const light = new THREE.AmbientLight(0x404040);
-    scene.add(light);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+    scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-    directionalLight.position.set(1, 1, 1).normalize();
-    scene.add(directionalLight);
+    const mainLight = new THREE.DirectionalLight(0xffffff, 2.0);
+    mainLight.position.set(5, 5, 5);
+    scene.add(mainLight);
+
+    const fillLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    fillLight.position.set(-5, 2, -5);
+    scene.add(fillLight);
 
     camera.position.z = 5;
 
