@@ -90,11 +90,6 @@ export default function Footer() {
             ]}
             extraStyling={"col-span-2"}
           />
-          <FooterSectionList
-            title={"Company"}
-            items={[{ title: "About Us", url: "/about" }]}
-            extraStyling={"col-span-2"}
-          />
         </div>
       </div>
       <div className={"container mx-auto mt-6"}>
