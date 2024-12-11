@@ -54,8 +54,10 @@ const RobotRenderer: React.FC = () => {
       1000
     );
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    if (mountRef.current) {
-      const { clientWidth, clientHeight } = mountRef.current;
+    const currentMount = mountRef.current;
+
+    if (currentMount) {
+      const { clientWidth, clientHeight } = currentMount;
       camera.aspect = clientWidth / clientHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(clientWidth, clientHeight);
@@ -63,8 +65,8 @@ const RobotRenderer: React.FC = () => {
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setClearColor(0x000000, 0);
 
-    if (mountRef.current) {
-      mountRef.current.appendChild(renderer.domElement);
+    if (currentMount) {
+      currentMount.appendChild(renderer.domElement);
     }
 
     const loader = new URDFLoader();
@@ -109,18 +111,22 @@ const RobotRenderer: React.FC = () => {
       animate();
     });
 
-    const light = new THREE.AmbientLight(0x404040);
-    scene.add(light);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+    scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-    directionalLight.position.set(1, 1, 1).normalize();
-    scene.add(directionalLight);
+    const mainLight = new THREE.DirectionalLight(0xffffff, 2.0);
+    mainLight.position.set(5, 5, 5);
+    scene.add(mainLight);
+
+    const fillLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    fillLight.position.set(-5, 2, -5);
+    scene.add(fillLight);
 
     camera.position.z = 5;
 
     const handleResize = () => {
-      if (mountRef.current) {
-        const { clientWidth, clientHeight } = mountRef.current;
+      if (currentMount) {
+        const { clientWidth, clientHeight } = currentMount;
         camera.aspect = clientWidth / clientHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(clientWidth, clientHeight);
@@ -130,8 +136,8 @@ const RobotRenderer: React.FC = () => {
     window.addEventListener("resize", handleResize);
 
     return () => {
-      if (mountRef.current) {
-        mountRef.current.removeChild(renderer.domElement);
+      if (currentMount) {
+        currentMount.removeChild(renderer.domElement);
       }
       window.removeEventListener("resize", handleResize);
     };
