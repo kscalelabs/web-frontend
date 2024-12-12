@@ -2,6 +2,7 @@ import CTAButton from "@/components/buttons/ctaButton";
 import Logotype from "@/components/logos/logotype";
 import BurgerMenu from "@/components/navbar/burgerMenu";
 import BurgerOpenButton from "@/components/navbar/burgerOpenButton";
+import DarkModeToggle from "@/components/navbar/DarkModeToggle";
 import NavButton from "@/components/navbar/navButton";
 import { useWindowSize } from "@/components/util/functions";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
@@ -65,12 +66,15 @@ export default function NavBar() {
       <menu
         className={
           "overflow-hidden w-[100%] p-4 top-0 left-0 gap-2.5 " +
-          (mobileShouldOpenBurger ? "h-[100dvh] bg-off-white dark:bg-off-black" : "  h-fit")
+          (mobileShouldOpenBurger ? "h-[100dvh] bg-background dark:bg-background-dark" : "h-fit")
         }
       >
-        <div className={" flex flex-row grow justify-between"}>
+        <div className="flex flex-row grow justify-between">
           {mobileShouldOpenBurger ? (
-            <Logotype />
+            <>
+              <Logotype />
+              <DarkModeToggle />
+            </>
           ) : (
             <motion.div
               variants={navVariants}
@@ -103,9 +107,9 @@ export default function NavBar() {
     return (
       <>
         <Logotype />
-        <div className={"flex flex-row gap-3 items-center"}>
+        <div className="flex flex-row gap-3 items-center">
           <motion.div
-            className={"flex flex-row gap-3 items-center"}
+            className="flex flex-row gap-3 items-center"
             variants={navVariants}
             animate={desktopNavHidden ? "hidden" : "visible"}
             transition={{
@@ -114,20 +118,27 @@ export default function NavBar() {
               staggerChildren: 0.05,
             }}
           >
-            {navItems.map((item, i) => {
-              return (
-                <motion.div
-                  key={i}
-                  variants={navItemVariants}
-                  transition={{
-                    ease: [0.1, 0.25, 0.3, 1],
-                    duration: 0.3,
-                  }}
-                >
-                  <NavButton text={item.name} text2={item.link} />
-                </motion.div>
-              );
-            })}
+            {navItems.map((item, i) => (
+              <motion.div
+                key={i}
+                variants={navItemVariants}
+                transition={{
+                  ease: [0.1, 0.25, 0.3, 1],
+                  duration: 0.3,
+                }}
+              >
+                <NavButton text={item.name} text2={item.link} />
+              </motion.div>
+            ))}
+            <motion.div
+              variants={navItemVariants}
+              transition={{
+                ease: [0.1, 0.25, 0.3, 1],
+                duration: 0.3,
+              }}
+            >
+              <DarkModeToggle />
+            </motion.div>
           </motion.div>
           <CTAButton />
         </div>
