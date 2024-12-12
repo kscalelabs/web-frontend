@@ -36,42 +36,20 @@
   }
 
   :root {
-    --background: #ffffff;
-    --foreground: #120e15;
-    --off-white: #ffffff;
-    --off-black: #120e15;
-    --accent-aubergine: #fa4300;
-    --accent-dragonfruit: #fa4300;
-    --accent-apple: #fa4300;
-    --accent-blood-orange: #fa4300;
-    --accent-tangerine: #fa4300;
-    --accent-butter: #fa4300;
+    @apply bg-background text-foreground transition-colors duration-300;
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background: #ffffff;
-      --foreground: #120e15;
-      --off-black: #120e15;
-      --off-white: #ffffff;
-      --accent-aubergine: #fa4300;
-      --accent-dragonfruit: #fa4300;
-      --accent-apple: #fa4300;
-      --accent-blood-orange: #fa4300;
-      --accent-tangerine: #fa4300;
-      --accent-butter: #fa4300;
-    }
+  .dark {
+    @apply bg-background-dark text-foreground-dark;
   }
-}
 
-*::selection {
-  background: var(--foreground);
-  color: var(--background);
-}
+  body {
+    @apply min-h-screen;
+  }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
+  *::selection {
+    @apply bg-accent-blood-orange text-off-white;
+  }
 }
 
 main {

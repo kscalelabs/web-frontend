@@ -1,13 +1,13 @@
 import type { Config } from "tailwindcss";
 
-export default {
+const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/styles/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: "media",
+  darkMode: "class",
   theme: {
     extend: {
       screens: {
@@ -16,16 +16,17 @@ export default {
         w640: "640px",
       },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        "off-white": "var(--off-white)",
-        "off-black": "var(--off-black)",
-        "accent-aubergine": "var(--accent-aubergine)",
-        "accent-dragonfruit": "var(--accent-dragonfruit)",
-        "accent-apple": "var(--accent-apple)",
-        "accent-blood-orange": "var(--accent-blood-orange)",
-        "accent-tangerine": "var(--accent-tangerine)",
-        "accent-butter": "var(--accent-butter)",
+        background: {
+          DEFAULT: "#ffffff",
+          dark: "#120e15",
+        },
+        foreground: {
+          DEFAULT: "#120e15",
+          dark: "#ffffff",
+        },
+        "off-white": "#ffffff",
+        "off-black": "#120e15",
+        "accent-blood-orange": "#fa4300",
       },
       fontFamily: {
         apparat: ["KMR Apparat", "sans-serif"],
@@ -36,3 +37,5 @@ export default {
   },
   plugins: [],
 } satisfies Config;
+
+export default config;
