@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 
 const navItems = [
   { name: "docs", link: "https://docs.kscale.dev/" },
-  { name: "dashboard", link: "https://dashboard.kscale.dev/login/" },
+  { name: "dashboard", link: "https://dashboard.kscale.dev" },
 ];
 
 const navVariants = {
