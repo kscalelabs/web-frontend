@@ -40,7 +40,7 @@
   }
 
   .dark {
-    @apply bg-background-dark text-foreground-dark;
+    @apply bg-background-dark text-foreground-dark transition-colors duration-300;
   }
 
   body {
