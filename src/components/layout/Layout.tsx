@@ -1,6 +1,6 @@
-import { DarkModeProvider } from '../providers/DarkModeProvider';
-import Footer from '../footer/footer';
-import NavBar from '../navbar/navbar';
+import { DarkModeProvider } from "../providers/DarkModeProvider";
+import Footer from "../footer/footer";
+import NavBar from "../navbar/navbar";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (

@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from "react";
 
 interface DarkModeContextType {
   isDark: boolean;
@@ -19,36 +19,32 @@ export function DarkModeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     // Check system preference on mount
-    const darkModePreference = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModePreference = window.matchMedia("(prefers-color-scheme: dark)");
     setIsDark(darkModePreference.matches);
 
     // Update class on document
     if (darkModePreference.matches) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     }
 
     // Listen for system preference changes
     const handleChange = (e: MediaQueryListEvent) => {
       setIsDark(e.matches);
       if (e.matches) {
-        document.documentElement.classList.add('dark');
+        document.documentElement.classList.add("dark");
       } else {
-        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.remove("dark");
       }
     };
 
-    darkModePreference.addEventListener('change', handleChange);
-    return () => darkModePreference.removeEventListener('change', handleChange);
+    darkModePreference.addEventListener("change", handleChange);
+    return () => darkModePreference.removeEventListener("change", handleChange);
   }, []);
 
   const toggle = () => {
     setIsDark(!isDark);
-    document.documentElement.classList.toggle('dark');
+    document.documentElement.classList.toggle("dark");
   };
 
-  return (
-    <DarkModeContext.Provider value={{ isDark, toggle }}>
-      {children}
-    </DarkModeContext.Provider>
-  );
+  return <DarkModeContext.Provider value={{ isDark, toggle }}>{children}</DarkModeContext.Provider>;
 }

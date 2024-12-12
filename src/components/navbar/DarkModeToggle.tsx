@@ -1,4 +1,4 @@
-import { useDarkMode } from '../providers/DarkModeProvider';
+import { useDarkMode } from "../providers/DarkModeProvider";
 
 export default function DarkModeToggle() {
   const { isDark, toggle } = useDarkMode();
@@ -12,9 +12,9 @@ export default function DarkModeToggle() {
         "hover:bg-accent-blood-orange hover:text-background " +
         "transition-colors duration-300"
       }
-      aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
     >
-      {isDark ? '☀️' : '🌙'}
+      {isDark ? "☀️" : "🌙"}
     </button>
   );
 }
