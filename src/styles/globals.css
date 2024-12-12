@@ -48,7 +48,7 @@
   }
 
   *::selection {
-    @apply bg-accent-blood-orange text-off-white;
+    @apply bg-accent-blood-orange text-background;
   }
 }
 

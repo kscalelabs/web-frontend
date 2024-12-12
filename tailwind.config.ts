@@ -24,8 +24,6 @@ const config: Config = {
           DEFAULT: "#120e15",
           dark: "#ffffff",
         },
-        "off-white": "#ffffff",
-        "off-black": "#120e15",
         "accent-blood-orange": "#fa4300",
       },
       fontFamily: {
