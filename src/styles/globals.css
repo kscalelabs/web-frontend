@@ -36,30 +36,30 @@
   }
 
   :root {
-    --background: #f8f4f2;
+    --background: #ffffff;
     --foreground: #120e15;
-    --off-white: #f8f4f2;
+    --off-white: #ffffff;
     --off-black: #120e15;
-    --accent-aubergine: #7d0d8c;
-    --accent-dragonfruit: #b90674;
-    --accent-apple: #c90e33;
+    --accent-aubergine: #fa4300;
+    --accent-dragonfruit: #fa4300;
+    --accent-apple: #fa4300;
     --accent-blood-orange: #fa4300;
-    --accent-tangerine: #ff9000;
-    --accent-butter: #f2f091;
+    --accent-tangerine: #fa4300;
+    --accent-butter: #fa4300;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --background: #0f0f10;
-      --foreground: #ede6e1;
-      --off-black: #0f0f10;
-      --off-white: #ede6e1;
-      --accent-aubergine: #771584;
-      --accent-dragonfruit: #a81770;
-      --accent-apple: #98253c;
-      --accent-blood-orange: #de4208;
-      --accent-tangerine: #f18a03;
-      --accent-butter: #eae9bc;
+      --background: #ffffff;
+      --foreground: #120e15;
+      --off-black: #120e15;
+      --off-white: #ffffff;
+      --accent-aubergine: #fa4300;
+      --accent-dragonfruit: #fa4300;
+      --accent-apple: #fa4300;
+      --accent-blood-orange: #fa4300;
+      --accent-tangerine: #fa4300;
+      --accent-butter: #fa4300;
     }
   }
 }
