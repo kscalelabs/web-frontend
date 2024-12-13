@@ -14,6 +14,7 @@ const BurgerMenu = (isOpen: boolean) => {
       {navItems.map((navItem, index) => {
         return (
           <motion.button
+            key={index}
             className={
               "font-planar font-normal capitalize text-2xl select-none flex flex-row " +
               textBlackDarkWhite +
