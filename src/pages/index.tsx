@@ -106,26 +106,26 @@ const SpecSection = () => {
         </Link>
       </article>
       <article className="col-span-full grid grid-cols-subgrid gap-y-4">
-        <h3 className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-6 2xl:col-start-6 3xl:col-span-6 3xl:col-start-7 4xl:col-span-4 4xl:col-start-7 text-heading-sm">
+        <h3 className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-6 2xl:col-start-7 3xl:col-span-5 3xl:col-start-8 4xl:col-span-4 4xl:col-start-7 text-heading-sm">
           {`We've built GPR 0.5 with an aerospace-grade alumininum body, for under $20,000 USD. `}
           <span className="inline opacity-60">
             Anodized with a matte black finish, because it looks cooler.
           </span>
         </h3>
-        <div className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-4 xl:col-start-6 2xl:col-span-6 2xl:col-start-6 3xl:col-span-6 3xl:col-start-7 4xl:col-span-4 4xl:col-start-7 bg-gradient-to-b from-methyl via-oxide to-rust aspect-video rounded-md" />
+        <div className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-4 xl:col-start-6 2xl:col-span-6 2xl:col-start-7 3xl:col-span-5 3xl:col-start-8 4xl:col-span-5 4xl:col-start-7 bg-gradient-to-b from-methyl via-oxide to-rust aspect-video rounded-md" />
       </article>
       <article className="col-span-full grid grid-cols-subgrid gap-y-4">
-        <h3 className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-6 2xl:col-start-6 3xl:col-span-6 3xl:col-start-7 4xl:col-span-4 4xl:col-start-7 text-heading-sm">
+        <h3 className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-6 2xl:col-start-7 3xl:col-span-5 3xl:col-start-8 4xl:col-span-4 4xl:col-start-7 text-heading-sm">
           Equipped with 120 Nm actuators at the hips, taking advantage of strong torque for dynamic
           walking and manipulation.
         </h3>
-        <div className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-4 xl:col-start-6 2xl:col-span-6 2xl:col-start-6 3xl:col-span-6 3xl:col-start-7 4xl:col-span-4 4xl:col-start-7 bg-gradient-to-b from-methyl via-oxide to-rust aspect-video rounded-md" />
+        <div className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-4 xl:col-start-6 2xl:col-span-6 2xl:col-start-7 3xl:col-span-5 3xl:col-start-8 4xl:col-span-5 4xl:col-start-7 bg-gradient-to-b from-methyl via-oxide to-rust aspect-video rounded-md" />
       </article>
       <article className="col-span-full grid grid-cols-subgrid gap-y-4">
-        <h3 className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-6 2xl:col-start-6 3xl:col-span-6 3xl:col-start-7 4xl:col-span-4 4xl:col-start-7 text-heading-sm">
+        <h3 className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-6 2xl:col-start-7 3xl:col-span-5 3xl:col-start-8 4xl:col-span-4 4xl:col-start-7 text-heading-sm">
           Explore the potential of any idea with 32 TOPS of AI performance.
         </h3>
-        <div className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-4 xl:col-start-6 2xl:col-span-6 2xl:col-start-6 3xl:col-span-6 3xl:col-start-7 4xl:col-span-4 4xl:col-start-7 bg-gradient-to-b from-methyl via-oxide to-rust aspect-video rounded-md" />
+        <div className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-4 xl:col-start-6 2xl:col-span-6 2xl:col-start-7 3xl:col-span-5 3xl:col-start-8 4xl:col-span-5 4xl:col-start-7 bg-gradient-to-b from-methyl via-oxide to-rust aspect-video rounded-md" />
       </article>
     </section>
   );
