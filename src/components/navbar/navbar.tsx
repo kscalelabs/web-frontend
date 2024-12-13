@@ -4,11 +4,14 @@ import BurgerOpenButton from "@/components/navbar/burgerOpenButton";
 import { NavDocsButton, NavLogInButton } from "@/components/navbar/navButtons";
 import { useWindowSize } from "@/components/util/functions";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ExpressiveArrow } from "@/components/iconography/Iconography";
 import BurgerMenu from "@/components/navbar/burgerMenu";
 
-const navButtons: React.ReactNode[] = [<NavDocsButton />, <NavLogInButton />];
+const navButtons: React.ReactNode[] = [
+  { component: <NavDocsButton />, key: "docs" },
+  { component: <NavLogInButton />, key: "login" },
+].map((item) => React.cloneElement(item.component, { key: item.key }));
 
 const navVariants = {
   visible: {
@@ -87,8 +90,6 @@ export default function NavBar() {
             {navButtons.map((navItem, i) => (
               <motion.div
                 className={"flex flex-row"}
-                initial="initial"
-                whileHover="hover"
                 key={i}
                 variants={navItemVariants}
                 transition={{
@@ -102,7 +103,9 @@ export default function NavBar() {
           </motion.div>
           <NavCTAButton className="md:col-span-2 md:col-start-8 2xl:col-span-2 2xl:col-start-11">
             {`Buy GPR`}
-            <ExpressiveArrow size={"size-4"} />
+            <motion.div initial="initial" whileHover="hover">
+              <ExpressiveArrow size={"size-4"} />
+            </motion.div>
           </NavCTAButton>
         </div>
       </div>
