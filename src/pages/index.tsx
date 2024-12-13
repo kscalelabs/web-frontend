@@ -10,6 +10,7 @@ import PricingSection from "@/landing/PricingSection";
 import DataSection from "@/landing/DataSection";
 import CommunitySection from "@/landing/CommunitySection";
 import { ExpressiveArrow } from "@/components/iconography/Iconography";
+import Sponsors from "@/landing/Sponsors";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <PricingSection />
         <DataSection />
         <CommunitySection />
+        <Sponsors />
       </main>
       <Footer />
     </div>
