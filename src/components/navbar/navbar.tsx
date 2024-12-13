@@ -79,7 +79,7 @@ export default function NavBar() {
     return (
       <div className={"grid-m"}>
         <Logotype />
-        <div className="flex flex-row gap-3 items-center grid-cols-none">
+        <div className="justify-self-end w1440:col-span-10 w1024:col-span-7 w640:col-span-7 flex flex-row gap-3 items-center">
           <motion.div
             className="flex flex-row gap-3 items-center"
             variants={navVariants}
