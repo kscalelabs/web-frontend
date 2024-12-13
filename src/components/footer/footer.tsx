@@ -82,7 +82,7 @@ export default function Footer() {
 
   return (
     <footer
-      className={"z-50 bg-rust text-background dark:text-foreground-dark py-8 grid-r gap-y-8"}
+      className={"z-50 bg-rust text-background dark:text-foreground-dark py-8 grid-m gap-y-8"}
     >
       <ul
         className={

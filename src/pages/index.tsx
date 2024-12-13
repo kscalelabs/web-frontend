@@ -1,5 +1,7 @@
-import { CTAButtonMode, CTASubtitleButton } from "@/components/buttons/ctaButton";
+import CTAButton, { CTASubtitleButton, Size } from "@/components/buttons/ctaButton";
+import { FillMode, ColorVariant } from "@/components/color/Color";
 import Footer from "@/components/footer/footer";
+import { Discord, IconMode } from "@/components/footer/socialMediaSvgs";
 import { Grid } from "@/components/grid/Grid";
 import { ExpressiveArrow } from "@/components/iconography/Iconography";
 import NavBar from "@/components/navbar/navbar";
@@ -9,7 +11,7 @@ import Link from "next/link";
 
 const HeaderSection = () => {
   return (
-    <header className="col-span-full grid-r min-h-[90svh] auto-rows-auto items-end bg-foreground text-background">
+    <header className="col-span-full grid-a min-h-[90svh] auto-rows-auto items-end bg-foreground text-background">
       {/* <Image src="/images/header.png" alt="Header" fill /> */}
       <hgroup className="col-span-full sm:col-span-4 md:col-span-3 md:col-start-6 2xl:col-start-8 2xl:col-span-5 4xl:col-start-8 4xl:col-span-4 flex flex-col mb-12 gap-4">
         <h1 className="text-heading-lg">Made to be modified</h1>
@@ -104,26 +106,26 @@ const SpecSection = () => {
         </Link>
       </article>
       <article className="col-span-full grid grid-cols-subgrid gap-y-4">
-        <h3 className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-6 2xl:col-start-6 4xl:col-span-4 4xl:col-start-7 text-heading-sm">
-          {`We've built GPR 0.5 with an aerospace-grade alumininum body, for under $20,000 USD.`}
+        <h3 className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-6 2xl:col-start-6 3xl:col-span-6 3xl:col-start-7 4xl:col-span-4 4xl:col-start-7 text-heading-sm">
+          {`We've built GPR 0.5 with an aerospace-grade alumininum body, for under $20,000 USD. `}
           <span className="inline opacity-60">
             Anodized with a matte black finish, because it looks cooler.
           </span>
         </h3>
-        <div className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-6 2xl:col-start-6 4xl:col-span-4 4xl:col-start-7 bg-gradient-to-b from-methyl via-oxide to-rust aspect-video rounded-md" />
+        <div className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-4 xl:col-start-6 2xl:col-span-6 2xl:col-start-6 3xl:col-span-6 3xl:col-start-7 4xl:col-span-4 4xl:col-start-7 bg-gradient-to-b from-methyl via-oxide to-rust aspect-video rounded-md" />
       </article>
       <article className="col-span-full grid grid-cols-subgrid gap-y-4">
-        <h3 className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-6 2xl:col-start-6 4xl:col-span-4 4xl:col-start-7 text-heading-sm">
-          Equipped with 120 N m actuators at the hips, taking advantage of strong torque for dynamic
+        <h3 className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-6 2xl:col-start-6 3xl:col-span-6 3xl:col-start-7 4xl:col-span-4 4xl:col-start-7 text-heading-sm">
+          Equipped with 120 Nm actuators at the hips, taking advantage of strong torque for dynamic
           walking and manipulation.
         </h3>
-        <div className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-6 2xl:col-start-6 4xl:col-span-4 4xl:col-start-7 bg-gradient-to-b from-methyl via-oxide to-rust aspect-video rounded-md" />
+        <div className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-4 xl:col-start-6 2xl:col-span-6 2xl:col-start-6 3xl:col-span-6 3xl:col-start-7 4xl:col-span-4 4xl:col-start-7 bg-gradient-to-b from-methyl via-oxide to-rust aspect-video rounded-md" />
       </article>
       <article className="col-span-full grid grid-cols-subgrid gap-y-4">
-        <h3 className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-6 2xl:col-start-6 4xl:col-span-4 4xl:col-start-7 text-heading-sm">
+        <h3 className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-6 2xl:col-start-6 3xl:col-span-6 3xl:col-start-7 4xl:col-span-4 4xl:col-start-7 text-heading-sm">
           Explore the potential of any idea with 32 TOPS of AI performance.
         </h3>
-        <div className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-6 2xl:col-start-6 4xl:col-span-4 4xl:col-start-7 bg-gradient-to-b from-methyl via-oxide to-rust aspect-video rounded-md" />
+        <div className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-4 xl:col-start-6 2xl:col-span-6 2xl:col-start-6 3xl:col-span-6 3xl:col-start-7 4xl:col-span-4 4xl:col-start-7 bg-gradient-to-b from-methyl via-oxide to-rust aspect-video rounded-md" />
       </article>
     </section>
   );
@@ -160,7 +162,7 @@ const PricingSection = () => {
           className="mt-auto"
           href="https://shop.kscale.dev/products/kbot-fe"
           subtitle="$833 per month"
-          mode={CTAButtonMode.INVERT}
+          mode={FillMode.INVERT}
         >
           Order GPR Founders&apos; Edition
         </CTASubtitleButton>
@@ -216,24 +218,9 @@ const CommunitySection = () => {
         </p>
       </hgroup>
       <menu className="col-span-full flex flex-row gap-x-4">
-        <Link
-          href="/"
-          className="text-body w-fit text-plasma dark:text-plasma-dark flex flex-row gap-1 items-center"
-        >
-          Read tech specs{" "}
-          <svg
-            width="25"
-            height="24"
-            viewBox="0 0 25 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12.0195 16L7.01953 11L8.41953 9.55L11.0195 12.15V4H13.0195V12.15L15.6195 9.55L17.0195 11L12.0195 16ZM6.01953 20C5.46953 20 4.99886 19.8043 4.60753 19.413C4.2162 19.0217 4.0202 18.5507 4.01953 18V15H6.01953V18H18.0195V15H20.0195V18C20.0195 18.55 19.8239 19.021 19.4325 19.413C19.0412 19.805 18.5702 20.0007 18.0195 20H6.01953Z"
-              className="fill-plasma dark:fill-plasma-dark"
-            />
-          </svg>
-        </Link>
+        <CTAButton href="/" variant={ColorVariant.PLASMA} size={Size.NORMAL}>
+          Join the Discord <Discord mode={IconMode.SET} />
+        </CTAButton>
 
         <motion.a
           href="/"
@@ -260,8 +247,8 @@ const CommunitySection = () => {
           made for everyone
         </p>
         <p>
-          We&apos;re from: Tesla AI, Google, Meta FAIR, Stanford, Xiaomi building opportunities for
-          robots to be more than workers.
+          We&apos;re from Tesla AI, Google, Meta FAIR, Stanford, and Xiaomi building opportunities
+          for robots to be more than workers.
         </p>
       </article>
     </section>
@@ -274,7 +261,7 @@ export default function Home() {
       <NavBar />
       <Grid />
       <HeaderSection />
-      <main className="grid-r gap-y-4">
+      <main className="grid-a gap-y-4">
         <ResearchSection />
         <SpecSection />
         <RobotSection />

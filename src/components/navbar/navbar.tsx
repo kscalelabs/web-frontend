@@ -64,7 +64,7 @@ export default function NavBar() {
     return (
       <menu
         className={clsx(
-          "grid-r overflow-hidden py-4 items-end md:items-center bg-background dark:bg-background-dark",
+          "grid-m overflow-hidden py-4 items-end md:items-center bg-background dark:bg-background-dark",
           mobileShouldOpenBurger ? "h-[100dvh]" : "h-fit"
         )}
       >

@@ -2,72 +2,58 @@ import { motion } from "motion/react";
 import { transitionEaseLinearDuration300 } from "@/components/util/constants";
 import { useRouter } from "next/router";
 import clsx from "clsx";
+import { ColorVariant, FillMode } from "../color/Color";
 
 const SHOP_URL = "https://shop.kscale.dev/collections/all";
 
-export enum CTAButtonVariant {
-  METHYL,
-  PLASMA,
-  OXIDE,
-  RUST,
-  MOLTEN,
-  SOL,
-}
-
-export enum CTAButtonMode {
-  FILL,
-  INVERT,
-  STROKE,
-}
-
-const getVariantClass = (variant: CTAButtonVariant, mode: CTAButtonMode): string => {
-  if (mode === CTAButtonMode.FILL) {
+const getVariantClass = (variant: ColorVariant, mode: FillMode): string => {
+  if (mode === FillMode.FILL) {
     switch (variant) {
-      case CTAButtonVariant.METHYL:
+      case ColorVariant.METHYL:
         return "bg-methyl text-background dark:text-foreground-dark";
-      case CTAButtonVariant.PLASMA:
+      case ColorVariant.PLASMA:
         return "bg-plasma text-background dark:text-foreground-dark";
-      case CTAButtonVariant.OXIDE:
+      case ColorVariant.OXIDE:
         return "bg-oxide text-background dark:text-foreground-dark";
-      case CTAButtonVariant.RUST:
+      case ColorVariant.RUST:
         return "bg-rust dark:bg-rust-dark text-background dark:text-foreground-dark";
-      case CTAButtonVariant.MOLTEN:
+      case ColorVariant.MOLTEN:
         return "bg-molten text-background dark:text-foreground-dark";
-      case CTAButtonVariant.SOL:
+      case ColorVariant.SOL:
         return "bg-sol text-background dark:text-foreground-dark ";
       default:
         return "bg-foreground  dark:bg-foreground-dark text-background dark:text-background-dark";
     }
-  } else if (mode === CTAButtonMode.INVERT) {
+  } else if (mode === FillMode.INVERT) {
     switch (variant) {
-      case CTAButtonVariant.METHYL:
+      case ColorVariant.METHYL:
         return "bg-background text-methyl dark:bg-foreground-dark dark:text-methyl-dark";
-      case CTAButtonVariant.PLASMA:
+      case ColorVariant.PLASMA:
         return "bg-background text-plasma dark:bg-foreground-dark dark:text-plasma-dark";
-      case CTAButtonVariant.OXIDE:
+      case ColorVariant.OXIDE:
         return "bg-background text-oxide dark:bg-foreground-dark dark:text-oxide-dark";
-      case CTAButtonVariant.RUST:
+      case ColorVariant.RUST:
         return "bg-background text-rust dark:bg-foreground-dark dark:text-rust-dark";
-      case CTAButtonVariant.MOLTEN:
+      case ColorVariant.MOLTEN:
         return "bg-background text-molten dark:bg-foreground-dark dark:text-molten-dark";
-      case CTAButtonVariant.SOL:
+      case ColorVariant.SOL:
         return "bg-background text-sol dark:bg-foreground-dark dark:text-sol-dark";
       default:
         return "bg-foreground dark:bg-foreground-dark text-background dark:text-background-dark";
     }
   } else {
     switch (variant) {
-      case CTAButtonVariant.METHYL:
+      case ColorVariant.METHYL:
         return "bg-background text-methyl dark:bg-foreground-dark dark:text-methyl-dark";
-      case CTAButtonVariant.PLASMA:
+      case ColorVariant.PLASMA:
         return "bg-background text-plasma dark:bg-foreground-dark dark:text-plasma-dark";
-      case CTAButtonVariant.OXIDE:
+      case ColorVariant.OXIDE:
         return "bg-background text-oxide dark:bg-foreground-dark dark:text-oxide-dark";
-      case CTAButtonVariant.RUST:
+      case ColorVariant.RUST:
         return "bg-background text-rust dark:bg-foreground-dark dark:text-rust-dark";
-      case CTAButtonVariant.MOLTEN:
+      case ColorVariant.MOLTEN:
         return "bg-background text-molten dark:bg-foreground-dark dark:text-molten-dark";
-      case CTAButtonVariant.SOL:
+      case ColorVariant.SOL:
         return "bg-background text-sol dark:bg-foreground-dark dark:text-sol-dark";
       default:
         return "bg-foreground dark:bg-foreground-dark text-background dark:text-background-dark";
@@ -85,26 +71,33 @@ const hoverVariants = {
   },
 };
 
+export enum Size {
+  THIN,
+  NORMAL,
+}
+
 export const CTAButton = ({
   children,
   href = SHOP_URL,
   className,
-  variant = CTAButtonVariant.RUST,
-  mode = CTAButtonMode.FILL,
+  variant = ColorVariant.RUST,
+  mode = FillMode.FILL,
+  size = Size.THIN,
 }: {
   children: React.ReactNode;
   href?: string;
   className?: string;
-  variant?: CTAButtonVariant;
-  mode?: CTAButtonMode;
+  variant?: ColorVariant;
+  mode?: FillMode;
+  size?: Size;
 }) => {
   const router = useRouter();
 
   return (
     <motion.button
       className={clsx(
-        "font-planar font-normal text-body px-2 py-1 select-none flex flex-row gap-1 justify-center items-center",
-
+        "font-planar font-normal text-body px-2 select-none flex flex-row gap-1 justify-center items-center",
+        size === Size.THIN ? "py-1" : "py-2",
         "cursor-pointer",
         "rounded",
         getVariantClass(variant, mode),
@@ -132,15 +125,15 @@ export const CTASubtitleButton = ({
   children,
   subtitle,
   href = SHOP_URL,
-  variant = CTAButtonVariant.RUST,
-  mode = CTAButtonMode.FILL,
+  variant = ColorVariant.RUST,
+  mode = FillMode.FILL,
 }: {
   className?: string;
   children: React.ReactNode;
   subtitle: string;
   href?: string;
-  variant?: CTAButtonVariant;
-  mode?: CTAButtonMode;
+  variant?: ColorVariant;
+  mode?: FillMode;
 }) => {
   const router = useRouter();
 

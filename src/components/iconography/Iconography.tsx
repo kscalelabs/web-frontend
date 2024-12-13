@@ -24,7 +24,7 @@ export const ExpressiveArrow = () => {
   };
 
   return (
-    <div className="relative size-4 flex flex-row">
+    <div className="relative size-4 flex flex-row overflow-hidden">
       <motion.span key="arrow-1" className="block absolute" variants={arrowVariants}>
         &#x2197;
       </motion.span>

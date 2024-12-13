@@ -91,10 +91,8 @@ main {
   font-size: 17px;
   line-height: 20px;
   letter-spacing: -0.01em;
-  margin-left: 5%;
-  margin-right: 5%;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 5%;
+  /* grid-template-columns: repeat(4, 1fr);
+  gap: 5%; */
 }
 
 h1 {
@@ -226,8 +224,12 @@ pre {
   height: 100vh; /* Prevents resizing quirks */
 }
 
-.grid-r {
-  @apply px-[5vw] grid grid-cols-4 sm:grid-cols-6 md:grid-cols-9 2xl:grid-cols-12 gap-x-[5vw] sm:gap-x-[2.5vw] 2xl:gap-x-[1.25vw] auto-rows-min;
+.grid-a {
+  @apply px-[5vw] grid grid-cols-4 sm:grid-cols-6 md:grid-cols-9 2xl:grid-cols-12 gap-x-[5vw] sm:gap-x-[2.5vw] 2xl:gap-x-[1.25vw];
+}
+
+.grid-m {
+  @apply grid-a auto-rows-min;
 }
 
 html {
