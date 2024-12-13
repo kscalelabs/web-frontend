@@ -17,7 +17,7 @@ const navVariants = {
     y: "0%",
   },
   hidden: {
-    y: "-100%",
+    y: "-150%",
   },
 };
 
@@ -26,7 +26,7 @@ const navItemVariants = {
     y: "0%",
   },
   hidden: {
-    y: "-100%",
+    y: "-150%",
   },
 };
 
@@ -77,7 +77,7 @@ export default function NavBar() {
 
   const desktopNavBar = () => {
     return (
-      <div className={"grid-m"}>
+      <div className={"grid-m pt-5"}>
         <Logotype />
         <div className="justify-self-end w1440:col-span-10 w1024:col-span-7 w640:col-span-7 flex flex-row gap-3 items-center">
           <motion.div
