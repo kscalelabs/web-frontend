@@ -9,7 +9,6 @@ import GallerySection from "@/landing/GallerySection";
 import PricingSection from "@/landing/PricingSection";
 import DataSection from "@/landing/DataSection";
 import CommunitySection from "@/landing/CommunitySection";
-import { CTASubtitleButton } from "@/components/buttons/CTAButtons";
 
 export default function Home() {
   return (
