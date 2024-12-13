@@ -12,3 +12,10 @@ export const navMotionTransition = {
 export const scaleMotionNumber = {
   scale: 0.95,
 };
+
+export const navItems: string[] = ["Docs", "Log In", "Buy GPR"];
+export const navItemLinks: string[] = [
+  "https://docs.kscale.dev/",
+  "https://dashboard.kscale.dev",
+  "https://shop.kscale.dev/",
+];

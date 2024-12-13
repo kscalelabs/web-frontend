@@ -1,6 +1,6 @@
 import { Dispatch, JSX, SetStateAction } from "react";
 
-export interface Text2Props {
+export interface BurgerButtonProps {
   text: string;
   text2: string;
 }
@@ -22,8 +22,8 @@ export interface SocialMediaItemProps {
   iconSvg: JSX.Element;
 }
 
-export interface SizeColourProps {
-  styling: string;
+export interface ExpressiveArrowProps {
+  size: string;
 }
 
 export interface BurgerMenuProps {

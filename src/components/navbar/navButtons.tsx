@@ -1,13 +1,7 @@
 import { motion } from "motion/react";
 import React from "react";
 import { ExpressiveArrow } from "@/components/iconography/Iconography";
-
-const navItems: string[] = ["Docs", "Log In", "Buy GPR"];
-const navItemLinks: string[] = [
-  "https://docs.kscale.dev/",
-  "https://dashboard.kscale.dev",
-  "https://shop.kscale.dev/",
-];
+import { navItemLinks, navItems } from "@/components/util/constants";
 
 const arrowLinkVariants = {
   hover: {
@@ -40,7 +34,7 @@ export const NavDocsButton = () => {
       initial="initial"
       whileHover="hover"
     >
-      {navItems[0]} <ExpressiveArrow />
+      {navItems[0]} <ExpressiveArrow size={"size-4"} />
     </motion.a>
   );
 };

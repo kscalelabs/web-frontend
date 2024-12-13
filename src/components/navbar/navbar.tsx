@@ -1,13 +1,11 @@
 import { NavCTAButton } from "@/components/buttons/CTAButtons";
 import Logotype from "@/components/logos/logotype";
 import BurgerOpenButton from "@/components/navbar/burgerOpenButton";
-import { NavDocsButton, NavLogInButton } from "@/components/navbar/navButton";
+import { NavDocsButton, NavLogInButton } from "@/components/navbar/navButtons";
 import { useWindowSize } from "@/components/util/functions";
-import clsx from "clsx";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useEffect, useState } from "react";
 import { ExpressiveArrow } from "@/components/iconography/Iconography";
-import { isDarkMode } from "@/components/util/isDarkMode";
 import BurgerMenu from "@/components/navbar/burgerMenu";
 
 const navButtons: React.ReactNode[] = [<NavDocsButton />, <NavLogInButton />];
@@ -27,12 +25,6 @@ const navItemVariants = {
   },
   hidden: {
     y: "-150%",
-  },
-};
-
-const arrowLinkVariants = {
-  hover: {
-    opacity: 0.5,
   },
 };
 
@@ -62,16 +54,18 @@ export default function NavBar() {
 
   const mobileNavBar = () => {
     return (
-      <nav
-        className={clsx(
-          "grid-m overflow-hidden py-4 items-end md:items-center bg-background ",
-          mobileShouldOpenBurger ? "h-[100dvh]" : "h-fit"
-        )}
+      <menu
+        className={
+          "overflow-hidden w-[100%] p-4 top-0 left-0 gap-2.5 " +
+          (mobileShouldOpenBurger ? "h-[100dvh] bg-background " : "h-fit")
+        }
       >
-        <Logotype />
-
-        {/*{width < 640 && BurgerMenu(mobileShouldOpenBurger, navItems, navItemLinks)}*/}
-      </nav>
+        <div className={" flex flex-row grow justify-between"}>
+          <Logotype />
+          <BurgerOpenButton isOpen={mobileShouldOpenBurger} onClick={setMobileShouldOpenBurger} />
+        </div>
+        {BurgerMenu(mobileShouldOpenBurger)}
+      </menu>
     );
   };
 
@@ -92,6 +86,9 @@ export default function NavBar() {
           >
             {navButtons.map((navItem, i) => (
               <motion.div
+                className={"flex flex-row"}
+                initial="initial"
+                whileHover="hover"
                 key={i}
                 variants={navItemVariants}
                 transition={{
@@ -105,7 +102,7 @@ export default function NavBar() {
           </motion.div>
           <NavCTAButton className="md:col-span-2 md:col-start-8 2xl:col-span-2 2xl:col-start-11">
             {`Buy GPR`}
-            <ExpressiveArrow />
+            <ExpressiveArrow size={"size-4"} />
           </NavCTAButton>
         </div>
       </div>
