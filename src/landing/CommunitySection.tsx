@@ -34,7 +34,7 @@ const CommunitySection = () => {
             },
           }}
         >
-          Send feedback <ExpressiveArrow />
+          Send feedback <ExpressiveArrow size={"size-4"} />
         </motion.a>
       </menu>
 
