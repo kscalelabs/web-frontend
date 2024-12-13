@@ -1,5 +1,4 @@
 import CTAButton from "@/components/buttons/ctaButton";
-import Footer from "@/components/footer/footer";
 import NavBar from "@/components/navbar/navbar";
 import RobotRenderer from "@/components/robot/robotRenderer";
 
@@ -39,7 +38,6 @@ export default function Home() {
         <RobotSection />
         <BuyNowSection />
       </main>
-      <Footer />
     </div>
   );
 }
