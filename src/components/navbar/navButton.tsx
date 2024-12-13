@@ -1,37 +1,46 @@
-import { Text2Props } from "@/components/util/interfaces";
 import { motion } from "motion/react";
 import React from "react";
-import Link from "next/link";
-import {
-  textBlackDarkWhite,
-  navMotionTransition,
-  transitionEaseLinearDuration300,
-  scaleMotionNumber,
-} from "@/components/util/constants";
+import { ExpressiveArrow } from "@/components/iconography/Iconography";
 
-const NavButton = (props: Text2Props) => {
+const navItems: string[] = ["Docs", "Log In", "Buy GPR"];
+const navItemLinks: string[] = [
+  "https://docs.kscale.dev/",
+  "https://dashboard.kscale.dev",
+  "https://shop.kscale.dev/",
+];
+
+const arrowLinkVariants = {
+  hover: {
+    opacity: 0.5,
+  },
+};
+
+export const NavLogInButton = () => {
   return (
-    <motion.button
-      className={
-        "font-planar font-normal capitalize w-full h-full text-2xl px-4 py-2 select-none " +
-        textBlackDarkWhite +
-        " hover:bg-rust/10 dark:hover:bg-rust/20 " +
-        transitionEaseLinearDuration300
-      }
-      transition={navMotionTransition}
-      initial={{
-        scale: 1,
-        borderRadius: "0.375rem",
-        borderWidth: "2px",
-        borderColor: "transparent",
-      }}
-      whileHover={scaleMotionNumber}
+    <motion.a
+      href={navItemLinks[1]}
+      target="_blank"
+      className="-col-end-2 md:-col-end-3"
+      variants={arrowLinkVariants}
+      initial="initial"
+      whileHover="hover"
     >
-      <Link className={"flex flex-row"} href={props.text2} target={"_blank"}>
-        {props.text}
-      </Link>
-    </motion.button>
+      {navItems[1]}
+    </motion.a>
   );
 };
 
-export default NavButton;
+export const NavDocsButton = () => {
+  return (
+    <motion.a
+      href={navItemLinks[0]}
+      target="_blank"
+      className="-col-end-3 md:-col-end-4 flex flex-row gap-1 items-center"
+      variants={arrowLinkVariants}
+      initial="initial"
+      whileHover="hover"
+    >
+      {navItems[0]} <ExpressiveArrow />
+    </motion.a>
+  );
+};

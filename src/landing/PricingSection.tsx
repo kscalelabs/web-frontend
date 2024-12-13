@@ -24,7 +24,7 @@ const PricingSection = () => {
         </CTASubtitleButton>
       </article>
 
-      <article className="flex flex-col gap-y-4 p-8 border border-rust dark:border-foreground-dark rounded-lg text-rust dark:text-foreground-dark">
+      <article className="flex flex-col gap-y-4 p-8 border border-rust dark:border-foreground-dark rounded-lg text-rust dark:text-foreground-dark bg-rust dark:bg-filament ">
         <hgroup>
           <span className="text-caption opacity-60">Available for all engineers</span>
           <h3 className="text-heading-md font-apparat">
