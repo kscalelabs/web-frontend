@@ -48,8 +48,10 @@
   :root {
     --background: #f8f4f2ff;
     --foreground: #120e15ff;
-    --foreground-60: rgba(18, 14, 21, 0.6);
-    --foreground-70: rgba(18, 14, 21, 0.7);
+    --logotype: #120e15ff;
+    --background-0: #f8f4f200;
+    --foreground-60: #120e159a;
+    --foreground-70: #120e15b3;
     --filament: #f8f4f2ff;
     --carbon: #120e15ff;
     --carbon-50: #120e1580;
@@ -69,6 +71,8 @@
     :root {
       --background: #0f0f10ff;
       --foreground: #ede6e1ff;
+      --logotype: #de4208ff;
+      --background-0: #0f0f1000;
       --foreground-60: #ede6e180;
       --foreground-70: #ede6e1b3;
       --carbon: #0f0f10ff;

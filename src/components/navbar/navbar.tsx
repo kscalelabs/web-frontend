@@ -60,47 +60,38 @@ export default function NavBar() {
   };
 
   const mobileNavBar = () => {
+    const atTop = scrollY.get() < 100;
     return (
-      <menu
+      <motion.menu
         className={
-          "overflow-hidden w-[100%] p-4 top-0 left-0 gap-2.5 bg-background pb-5" +
+          "overflow-hidden w-[100%] p-4 top-0 left-0 gap-2.5 pb-5" +
           (mobileShouldOpenBurger ? "h-[100dvh] bg-background " : "h-fit")
         }
+        initial={{ backgroundColor: "var(--background-0)" }}
+        animate={{ backgroundColor: atTop ? "var(--background-0)" : "var(--background)" }}
       >
         <div className={" flex flex-row grow justify-between items-baseline "}>
-          <Logotype />
+          <Logotype atTop={atTop} />
           <BurgerOpenButton isOpen={mobileShouldOpenBurger} onClick={setMobileShouldOpenBurger} />
         </div>
         {BurgerMenu(mobileShouldOpenBurger)}
-      </menu>
+      </motion.menu>
     );
   };
 
   const desktopNavBar = () => {
+    const atTop = scrollY.get() < 100;
     return (
-      <div className={"grid-m py-5 bg-background"}>
-        <Logotype />
+      <motion.div
+        className={"grid-m py-5"}
+        initial={{ backgroundColor: "var(--background-0)" }}
+        animate={{ backgroundColor: atTop ? "var(--background-0)" : "var(--background)" }}
+      >
+        <Logotype atTop={atTop} />
         <div className="z-50 justify-self-end w1440:col-span-10 w1024:col-span-7 w640:col-span-7 flex flex-row gap-3 items-center">
-          <motion.div
-            className="flex flex-row gap-3 items-center"
-            variants={navVariants}
-            animate={desktopNavHidden ? "hidden" : "visible"}
-            transition={{
-              ease: [0.1, 0.25, 0.3, 1],
-              duration: 0.5,
-              staggerChildren: 0.05,
-            }}
-          >
+          <motion.div className="flex flex-row gap-3 items-center">
             {navButtons.map((navItem, i) => (
-              <motion.div
-                className={"flex flex-row"}
-                key={i}
-                variants={navItemVariants}
-                transition={{
-                  ease: [0.1, 0.25, 0.3, 1],
-                  duration: 0.3,
-                }}
-              >
+              <motion.div className={"flex flex-row"} key={i}>
                 {navItem}
               </motion.div>
             ))}
@@ -115,12 +106,12 @@ export default function NavBar() {
             </motion.div>
           </NavCTAButton>
         </div>
-      </div>
+      </motion.div>
     );
   };
 
   useEffect(() => {
-    if (mobileShouldOpenBurger && lenis) {
+    if (lenis) {
       if (mobileShouldOpenBurger) {
         lenis.stop();
       } else {
