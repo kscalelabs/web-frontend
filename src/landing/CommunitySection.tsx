@@ -24,7 +24,7 @@ const CommunitySection = () => {
           size={Size.NORMAL}
           mode={FillMode.FILL}
           target="_blank"
-          className="max-md:w-full"
+          className="max-md:w-full pointer-events-auto"
         >
           Join the Discord <Discord mode={IconMode.SET} />
         </NavCTAButton>

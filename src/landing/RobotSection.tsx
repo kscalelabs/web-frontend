@@ -20,7 +20,7 @@ const RobotSection = () => {
           variant={ColorVariant.PLASMA}
           size={Size.NORMAL}
           mode={FillMode.FILL}
-          target="_blank"
+          target="_self"
           className="max-md:w-fit"
         >
           Log in

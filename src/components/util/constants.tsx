@@ -1,17 +1,17 @@
 export const transitionEaseLinearDuration300: string = " transition ease-linear duration-300 ";
 
 export const navItems: string[] = ["Docs", "Log In", "Buy K-Bot"];
-export const navItemLinks: string[] = [
-  "https://docs.kscale.dev/",
-  "https://dashboard.kscale.dev",
-  "https://shop.kscale.dev/",
+export const navItemLinks: { link: string; target: string }[] = [
+  { link: "https://docs.kscale.dev/", target: "_blank" },
+  { link: "https://dashboard.kscale.dev", target: "_self" },
+  { link: "https://discord.com/invite/kscale", target: "_blank" },
 ];
 
 export const navItemsMobile: string[] = ["Docs", "Log In", "Discord"];
-export const navItemLinksMobile: string[] = [
-  "https://docs.kscale.dev/",
-  "https://dashboard.kscale.dev",
-  "https://discord.com/invite/kscale",
+export const navItemLinksMobile: { link: string; target: string }[] = [
+  { link: "https://docs.kscale.dev/", target: "_blank" },
+  { link: "https://dashboard.kscale.dev", target: "_self" },
+  { link: "https://discord.com/invite/kscale", target: "_blank" },
 ];
 
 export enum IconMode {

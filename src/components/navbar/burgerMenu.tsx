@@ -33,8 +33,8 @@ const BurgerMenu = (isOpen: boolean) => {
           >
             <Link
               className={"font-planar pointer-events-auto"}
-              href={navItemLinksMobile[index]}
-              target={"_blank"}
+              href={navItemLinksMobile[index].link}
+              target={navItemLinksMobile[index].target}
             >
               {navItem}
             </Link>
