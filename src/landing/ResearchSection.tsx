@@ -138,32 +138,33 @@ export const SwipeCarousel = () => {
         card: 80,
         gap: 5,
         max: RESEARCH_ITEMS.length - 1,
+        offset: 0,
       };
     }
     if (width < 640) {
       return {
-        card: 66.25,
+        card: 70,
         gap: 5,
         max: RESEARCH_ITEMS.length - 1,
       };
     }
     if (width < 768) {
       return {
-        card: 170 / 3 + 2.5,
+        card: 60,
         gap: 2.5,
         max: RESEARCH_ITEMS.length - 1,
       };
     }
     if (width < 1440) {
       return {
-        card: 280 / 9 + 7.5,
+        card: 40,
         gap: 2.5,
         max: RESEARCH_ITEMS.length - 2,
       };
     }
     if (width < 1920) {
       return {
-        card: 87.5 / 3,
+        card: 30,
         gap: 1.25,
         max: RESEARCH_ITEMS.length - 3,
       };
@@ -240,7 +241,7 @@ export const SwipeCarousel = () => {
             x: dragX,
           }}
           animate={{
-            translateX: `-${imgIndex * (dimensions.card + dimensions.gap / 2)}vw`,
+            translateX: `${-1 * imgIndex * (dimensions.card + dimensions.gap) + (imgIndex > 0 ? dimensions.gap : 0)}vw`,
           }}
           transition={SPRING_OPTIONS}
           onDragEnd={onDragEnd}
