@@ -47,7 +47,9 @@ const SvgChildren = [
 const Sponsors = () => {
   return (
     <section className="col-span-full flex flex-col gap-3 items-center w1440:pt-16 w1024:pt-12 w640:pt-10 pt-8 ">
-      <h4 className={"font-normal font-planar text-foreground "}>Backed by the industry's best</h4>
+      <h4
+        className={"font-normal font-planar text-foreground "}
+      >{`Backed by the industry's best`}</h4>
       <Marquee>
         {SvgChildren.map((sponsor, index) => {
           return (
