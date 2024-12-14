@@ -11,7 +11,7 @@ const RobotSection = () => {
       <div className="w-full h-full relative" ref={ref}>
         <motion.aside
           layout
-          className="absolute w-full h-full bg-carbon z-5 flex flex-col gap-2 items-center pointer-events-none select-none p-12"
+          className="max-sm:hidden absolute w-full h-full bg-carbon z-5 flex flex-col gap-2 items-center pointer-events-none select-none p-4 lg:p-8 2xl:p-12"
           initial={{
             backgroundColor: "var(--carbon-50)",
             pointerEvents: "auto",
@@ -52,7 +52,7 @@ const RobotSection = () => {
                 fill="var(--filament)"
               />
             </motion.svg>
-            <h3 className="text-filament text-heading-sm font-apparat">Drag to orbit</h3>
+            <h3 className="text-filament text-body">Drag to orbit</h3>
           </motion.hgroup>
         </motion.aside>
         <RobotRenderer />

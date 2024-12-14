@@ -5,6 +5,13 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import URDFLoader from "urdf-loader";
 import { URDFJoint } from "urdf-loader/src/URDFClasses";
+import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
+import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
+import { BloomPass } from "three/examples/jsm/postprocessing/BloomPass.js";
+import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
+import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
+import { LuminosityShader } from "three/examples/jsm/shaders/LuminosityShader.js";
+import { SobelOperatorShader } from "three/examples/jsm/shaders/SobelOperatorShader.js";
 
 const URDF_URL = "/cad/gpr-20241204.urdf";
 const SCALE = 3;
@@ -44,7 +51,7 @@ const DURATION_S = 5;
 
 const RobotRenderer: React.FC = () => {
   const mountRef = useRef<HTMLDivElement | null>(null);
-
+  let effectSobel: ShaderPass;
   useEffect(() => {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
@@ -122,7 +129,7 @@ const RobotRenderer: React.FC = () => {
           }
         });
 
-        renderer.render(scene, camera);
+        composer.render();
       };
 
       animate();
@@ -137,7 +144,7 @@ const RobotRenderer: React.FC = () => {
     camera.add(fill1Light);
 
     const fill2Light = new THREE.DirectionalLight(0xffffff, 0.2);
-    fill2Light.position.set(0, 0, 10);
+    fill2Light.position.set(0, 0, 20);
     camera.add(fill2Light);
 
     scene.add(camera);
@@ -145,12 +152,41 @@ const RobotRenderer: React.FC = () => {
     camera.position.z = 20;
     camera.position.y = 2;
 
+    const composer = new EffectComposer(renderer);
+    const renderPass = new RenderPass(scene, camera);
+    composer.addPass(renderPass);
+
+    const shaderPass = new ShaderPass(LuminosityShader);
+    composer.addPass(shaderPass);
+
+    // color to grayscale conversion
+
+    const effectGrayScale = new ShaderPass(LuminosityShader);
+    composer.addPass(effectGrayScale);
+
+    // you might want to use a gaussian blur filter before
+    // the next pass to improve the result of the Sobel operator
+
+    // Sobel operator
+
+    effectSobel = new ShaderPass(SobelOperatorShader);
+    effectSobel.uniforms["resolution"].value.x = window.innerWidth * window.devicePixelRatio;
+    effectSobel.uniforms["resolution"].value.y = window.innerHeight * window.devicePixelRatio;
+    composer.addPass(effectSobel);
+
+    const outputPass = new OutputPass();
+    composer.addPass(outputPass);
+
     const handleResize = () => {
       if (currentMount) {
         const { clientWidth, clientHeight } = currentMount;
         camera.aspect = clientWidth / clientHeight;
         camera.updateProjectionMatrix();
+
         renderer.setSize(clientWidth, clientHeight);
+        composer.setSize(clientWidth, clientHeight);
+        effectSobel.uniforms["resolution"].value.x = clientWidth * window.devicePixelRatio;
+        effectSobel.uniforms["resolution"].value.y = clientHeight * window.devicePixelRatio;
       }
     };
 
