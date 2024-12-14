@@ -12,14 +12,14 @@ import { motion, useMotionValue } from "motion/react";
 import { useState, useEffect, useMemo } from "react";
 import clsx from "clsx";
 import { IconMode } from "@/components/util/constants";
-import { ColorVariant, FillMode } from "@/components/util/constants";
+import { ColorVariant, FillMode, Size } from "@/components/util/constants";
 
 const RESEARCH_ITEMS = [
   {
     title: "Edge VLA",
     description: "We’re collaboratively training a mega mondo beast of a model. ",
     image: "/images/research/edge-vla.png",
-    link: "/",
+    link: "https://github.com/kscalelabs/evla",
     icon: <EVLAIcon />,
     variant: ColorVariant.METHYL,
   },
@@ -27,7 +27,7 @@ const RESEARCH_ITEMS = [
     title: "K-OS",
     description: "Work with reliable real-time ML inference using our Rust-based operating system.",
     image: "/images/research/edge-vla.png",
-    link: "/",
+    link: "https://github.com/kscalelabs/kos",
     icon: <KOSIcon />,
     variant: ColorVariant.PLASMA,
   },
@@ -36,7 +36,7 @@ const RESEARCH_ITEMS = [
     description:
       "Skip writing ROS nodes with our domain-specific language for interfacing with neural interpretation.",
     image: "/images/research/edge-vla.png",
-    link: "/",
+    link: "https://github.com/kscalelabs/klang",
     icon: <KLANGIcon />,
     variant: ColorVariant.OXIDE,
   },
@@ -45,7 +45,7 @@ const RESEARCH_ITEMS = [
     description:
       "Our compact serialization format for robotics telemetry, with efficient decoding to avoid bottlenecks in training neutral networks.",
     image: "/images/research/edge-vla.png",
-    link: "/",
+    link: "https://github.com/kscalelabs/krec",
     icon: <KRECIcon />,
     variant: ColorVariant.RUST,
   },
@@ -54,7 +54,7 @@ const RESEARCH_ITEMS = [
     description:
       "Define any RL objectives for your robot with our open-source repository for policy simulation.",
     image: "/images/research/edge-vla.png",
-    link: "/",
+    link: "https://github.com/kscalelabs/ksim",
     icon: <KSIMIcon />,
     variant: ColorVariant.MOLTEN,
   },
@@ -119,6 +119,7 @@ const ResearchCard = ({ title, description, image, link, index, icon, variant }:
             className="mt-auto w-fit px-2"
             variant={variant}
             mode={FillMode.INVERT}
+            size={Size.NORMAL}
           >
             View on Github <Github mode={IconMode.SET} variant={variant} />
           </NavCTAButton>
@@ -147,32 +148,33 @@ export const SwipeCarousel = () => {
         card: 80,
         gap: 5,
         max: RESEARCH_ITEMS.length - 1,
+        offset: 0,
       };
     }
     if (width < 640) {
       return {
-        card: 66.25,
+        card: 70,
         gap: 5,
         max: RESEARCH_ITEMS.length - 1,
       };
     }
     if (width < 768) {
       return {
-        card: 170 / 3 + 2.5,
+        card: 60,
         gap: 2.5,
         max: RESEARCH_ITEMS.length - 1,
       };
     }
     if (width < 1440) {
       return {
-        card: 280 / 9 + 7.5,
+        card: 40,
         gap: 2.5,
         max: RESEARCH_ITEMS.length - 2,
       };
     }
     if (width < 1920) {
       return {
-        card: 87.5 / 3,
+        card: 30,
         gap: 1.25,
         max: RESEARCH_ITEMS.length - 3,
       };
@@ -216,7 +218,7 @@ export const SwipeCarousel = () => {
       <menu className="flex max-lg:justify-end gap-4 lg:gap-2 mb-4 max-lg:text-heading-sm ">
         <motion.button
           onClick={decrement}
-          aria-label="Previous"
+          aria-label="Previous article"
           className="select-none"
           initial={{ opacity: 1 }}
           animate={{ opacity: imgIndex > 0 ? 1 : 0.5 }}
@@ -226,7 +228,7 @@ export const SwipeCarousel = () => {
         </motion.button>
         <motion.button
           onClick={increment}
-          aria-label="Next"
+          aria-label="Next article"
           className="select-none"
           initial={{ opacity: 1 }}
           animate={{ opacity: imgIndex < dimensions.max ? 1 : 0.5 }}
@@ -249,7 +251,7 @@ export const SwipeCarousel = () => {
             x: dragX,
           }}
           animate={{
-            translateX: `-${imgIndex * (dimensions.card + dimensions.gap / 2)}vw`,
+            translateX: `${-1 * imgIndex * (dimensions.card + dimensions.gap) + (imgIndex > 0 ? dimensions.gap : 0)}vw`,
           }}
           transition={SPRING_OPTIONS}
           onDragEnd={onDragEnd}

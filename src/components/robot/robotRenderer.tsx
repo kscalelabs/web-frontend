@@ -107,6 +107,7 @@ const RobotRenderer: React.FC = () => {
       controls.screenSpacePanning = false;
       controls.maxPolarAngle = Math.PI / 2;
       controls.enableZoom = false;
+      controls.enablePan = false;
 
       const startTime = Date.now();
 
@@ -148,8 +149,9 @@ const RobotRenderer: React.FC = () => {
 
     scene.add(camera);
 
-    camera.position.z = 20;
-    camera.position.y = 2;
+    camera.position.z = 16;
+    camera.position.y = 9;
+    camera.position.x = 9;
 
     const composer = new EffectComposer(renderer);
     const renderPass = new RenderPass(scene, camera);
@@ -199,7 +201,7 @@ const RobotRenderer: React.FC = () => {
     };
   }, []);
 
-  return <div ref={mountRef} className="w-full h-full" />;
+  return <div ref={mountRef} className="w-full h-full overflow-hidden rounded-lg" />;
 };
 
 export default RobotRenderer;

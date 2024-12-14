@@ -17,7 +17,7 @@ const PricingSection = () => {
           Priority delivery and yearly service on new parts and hardware, for the rest of your life.
         </p>
         <CTASubtitleButton
-          className="mt-auto"
+          className="mt-auto w-full"
           href="https://shop.kscale.dev/products/kbot-fe"
           subtitle="$833 per month"
           mode={FillMode.INVERT}
@@ -37,7 +37,7 @@ const PricingSection = () => {
           {`Invest in yourself and your engineering potential with K-Bot's embodied AI ecosystem.`}
         </p>
         <CTASubtitleButton
-          className="mt-auto"
+          className="mt-auto w-full"
           href="https://shop.kscale.dev/products/kbot"
           subtitle="$533 per month"
         >

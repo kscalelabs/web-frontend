@@ -21,6 +21,7 @@ const BurgerMenu = (isOpen: boolean) => {
             }
             initial="initial"
             whileHover="hover"
+            aria-label="Menu"
           >
             <Link href={navItemLinks[index]} target={"_blank"}>
               {navItem}

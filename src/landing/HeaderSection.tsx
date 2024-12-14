@@ -11,8 +11,12 @@ const HeaderSection = () => {
           K-Bot is an open-source &amp; auditable robot, for those who prefer transparency over
           trust.
         </h2>
-        <CTASubtitleButton subtitle="Available on Shopify" className="w-full" mode={FillMode.FILL}>
-          Order K-Bot
+        <CTASubtitleButton
+          subtitle="Available for pre-order, Q1 2025"
+          className="w-full"
+          mode={FillMode.FILL}
+        >
+          Order K-Bot today
         </CTASubtitleButton>
       </hgroup>
     </header>

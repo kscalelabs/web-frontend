@@ -16,13 +16,14 @@ const CommunitySection = () => {
           of embodied AI tools.
         </p>
       </hgroup>
-      <menu className="col-span-full sm:col-span-4 sm:col-start-2 md:col-span-5 md:col-start-2 h-min flex flex-row gap-x-4">
+      <menu className="col-span-full sm:col-span-4 sm:col-start-2 md:col-span-5 md:col-start-2 h-min flex flex-row flex-wrap gap-4">
         <NavCTAButton
           href="https://discord.com/invite/kscale"
           variant={ColorVariant.PLASMA}
           size={Size.NORMAL}
           mode={FillMode.FILL}
           target="_blank"
+          className="max-md:w-full"
         >
           Join the Discord <Discord mode={IconMode.SET} />
         </NavCTAButton>

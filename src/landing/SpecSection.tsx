@@ -1,5 +1,5 @@
 import { InlineCTA } from "@/components/buttons/CTAButtons";
-import { DownloadIcon } from "@/components/iconography/Iconography";
+import { DownloadIcon, ExpressiveArrow } from "@/components/iconography/Iconography";
 
 const SpecSection = () => {
   return (
@@ -12,7 +12,7 @@ const SpecSection = () => {
           </h2>
         </hgroup>
         <InlineCTA href="https://docs.kscale.dev/robot/intro">
-          Read tech specs <DownloadIcon />
+          Read tech specs <ExpressiveArrow size="size-4" />
         </InlineCTA>
       </article>
       <article className="col-span-full grid grid-cols-subgrid gap-y-4">
