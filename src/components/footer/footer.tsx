@@ -59,7 +59,7 @@ export default function Footer() {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       try {
         await navigator.clipboard.writeText(email);
-      } catch (err) {
+      } catch {
         // Fallback to legacy approach
         legacyCopy(email);
       }
@@ -78,7 +78,7 @@ export default function Footer() {
     tempInput.select();
     try {
       document.execCommand("copy");
-    } catch (err) {}
+    } catch {}
     document.body.removeChild(tempInput);
   };
 
