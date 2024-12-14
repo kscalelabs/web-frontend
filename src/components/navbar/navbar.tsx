@@ -67,7 +67,7 @@ export default function NavBar() {
           (mobileShouldOpenBurger ? "h-[100dvh] bg-background " : "h-fit")
         }
       >
-        <div className={" flex flex-row grow justify-between "}>
+        <div className={" flex flex-row grow justify-between items-baseline "}>
           <Logotype />
           <BurgerOpenButton isOpen={mobileShouldOpenBurger} onClick={setMobileShouldOpenBurger} />
         </div>

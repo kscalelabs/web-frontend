@@ -13,16 +13,16 @@ const openBurgerPaths: string[] = [
 const BurgerOpenButton = (props: BurgerOpenButtonProps) => {
   return (
     <button
-      className={"cursor-pointer"}
+      className={"cursor-pointer h-fit"}
       onClick={() => {
         props.onClick(!props.isOpen);
       }}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="30"
-        height="30"
-        viewBox="0 0 30 30"
+        width="23"
+        height="23"
+        viewBox="0 0 23 23"
         fill="none"
       >
         <path
