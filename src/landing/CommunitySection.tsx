@@ -40,6 +40,9 @@ const CommunitySection = () => {
             alt="Photo: wide full shot of K-Bot standing with Master of Technical Staff, Ali Kuwajerwala"
             fill
             className="object-cover"
+            loading={"eager"}
+            priority={true}
+            sizes={"100dvw"}
           />
         </figure>
         <figure className="col-span-full  md:col-span-2 2xl:col-span-3 bg-gradient-to-b from-methyl via-oxide to-rust aspect-square sm:aspect-video rounded-md relative overflow-hidden">
@@ -48,6 +51,9 @@ const CommunitySection = () => {
             alt="Photo: portrait full shot of K-Bot standing with Lead Design Engineer, Chris Thomas"
             fill
             className="object-cover object-[50%_15%]"
+            loading={"eager"}
+            priority={true}
+            sizes={"100dvw"}
           />
         </figure>
         <figure className="col-span-full md:col-span-5 md:col-start-2 2xl:col-span-5 2xl:col-start-4 bg-gradient-to-b from-methyl via-oxide to-rust aspect-square sm:aspect-video rounded-md relative overflow-hidden">
@@ -56,6 +62,9 @@ const CommunitySection = () => {
             alt="Photo: wide full shot of K-Bot standing with Founding Engineer, Jingxiang Mo"
             fill
             className="object-cover"
+            loading={"eager"}
+            priority={true}
+            sizes={"100dvw"}
           />
         </figure>
       </aside>

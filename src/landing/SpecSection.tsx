@@ -33,6 +33,9 @@ const SpecSection = () => {
             alt="Photo: Close-up photo of K-Bot's aluminum chassis"
             fill
             className="object-cover"
+            loading={"eager"}
+            priority={true}
+            sizes={"100dvw"}
           />
         </figure>
       </article>
@@ -47,6 +50,9 @@ const SpecSection = () => {
             alt="Photo: Close-up photo of K-Bot's 120 Nm actuators"
             fill
             className="object-cover"
+            loading={"eager"}
+            priority={true}
+            sizes={"100dvw"}
           />
         </figure>
       </article>
@@ -60,6 +66,9 @@ const SpecSection = () => {
             alt="Photo: Close-up photo of K-Bot's onboard Jetson AGX"
             fill
             className="object-cover"
+            loading={"eager"}
+            priority={true}
+            sizes={"100dvw"}
           />
         </figure>
       </article>

@@ -33,7 +33,15 @@ const GalleryItem = ({ src, alt, index }: { src: string; alt: string; index: num
         scale: useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], [1, 0.8]),
       }}
     >
-      <Image src={src} alt={alt} fill className="object-cover" />
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-cover"
+        loading={"eager"}
+        priority={true}
+        sizes={"100dvw"}
+      />
     </motion.figure>
   );
 };
