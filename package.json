@@ -13,6 +13,7 @@
   "dependencies": {
     "@react-three/drei": "^9.120.4",
     "@react-three/fiber": "^8.17.10",
+    "bun": "^1.1.38",
     "clsx": "^2.1.1",
     "depcheck": "^1.4.7",
     "lenis": "^1.1.18",

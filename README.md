@@ -20,6 +20,7 @@ thanks :))))))))))))
 ## Contributors
 
 - [Deborah Wang](https://github.com/mrpthemrp)
+- [Nathan Lew](https://github.com/nethen)
 - KScale team
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
