@@ -9,19 +9,44 @@ import Lombard from "../../public/sponsors/Lombard";
 import FellowsFund from "../../public/sponsors/FellowsFund";
 import Link from "next/link";
 
+const svgSizeStyling = "w-60 h-fit";
 const SvgChildren = [
-  { component: <GFT styling={"w-60 h-60"} />, linkURL: "", key: "gft" },
-  { component: <YCommunity styling={"w-60 h-60"} />, linkURL: "", key: "yCommunity" },
-  { component: <Pioneer styling={"w-60 h-60"} />, linkURL: "", key: "pioneer" },
-  { component: <AIGrant styling={"w-60 h-60"} />, linkURL: "", key: "aiGrant" },
-  { component: <NinjaCapital styling={"w-60 h-60"} />, linkURL: "", key: "ninja" },
-  { component: <Lombard styling={"w-60 h-60"} />, linkURL: "", key: "lombard" },
-  { component: <FellowsFund styling={"w-60 h-60"} />, linkURL: "", key: "fellows" },
+  {
+    component: <FellowsFund styling={svgSizeStyling} />,
+    linkURL: "https://www.fellowsfundvc.com/",
+    key: "fellows",
+  },
+  { component: <GFT styling={svgSizeStyling} />, linkURL: "https://www.gft.vc/", key: "gft" },
+  {
+    component: <Lombard styling={svgSizeStyling} />,
+    linkURL: "https://lombardstreet.vc/",
+    key: "lombard",
+  },
+  {
+    component: <NinjaCapital styling={svgSizeStyling} />,
+    linkURL: "https://www.ninjacapital.com/",
+    key: "ninja",
+  },
+  {
+    component: <YCommunity styling={svgSizeStyling} />,
+    linkURL: "https://www.ycombinator.com/companies/k-scale-labs",
+    key: "yCommunity",
+  },
+  {
+    component: <AIGrant styling={svgSizeStyling} />,
+    linkURL: "https://aigrant.com/",
+    key: "aiGrant",
+  },
+  {
+    component: <Pioneer styling={svgSizeStyling} />,
+    linkURL: "https://www.pioneerfund.vc/",
+    key: "pioneer",
+  },
 ];
 
 const Sponsors = () => {
   return (
-    <section className="col-span-full flex flex-col gap-10 items-center w1440:py-24 w1024:py-20 w640:py-16 py-12 ">
+    <section className="col-span-full flex flex-col gap-3 items-center w1440:pt-16 w1024:pt-12 w640:pt-10 pt-8 ">
       <h4 className={"font-normal font-planar text-foreground "}>Backed by the industry's best</h4>
       <Marquee>
         {SvgChildren.map((sponsor, index) => {

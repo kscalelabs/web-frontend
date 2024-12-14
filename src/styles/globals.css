@@ -306,3 +306,7 @@ html.lenis body {
     color-scheme: light;
   }
 }
+
+.rfm-child {
+  padding: 1rem;
+}
