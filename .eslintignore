@@ -1,1 +1,3 @@
 src/components/util/*.tsx
+src/types/urdf-loader.d.ts
+src/components/robot/robotRenderer.tsx

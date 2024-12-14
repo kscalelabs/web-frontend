@@ -1,6 +1,5 @@
 import { InlineCTA } from "@/components/buttons/CTAButtons";
 import { DownloadIcon } from "@/components/iconography/Iconography";
-import Link from "next/link";
 
 const SpecSection = () => {
   return (
