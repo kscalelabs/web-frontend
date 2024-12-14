@@ -14,7 +14,7 @@ export const NavLogInButton = () => {
     <motion.a
       href={navItemLinks[1]}
       target="_blank"
-      className="-col-end-2 md:-col-end-3"
+      className="-col-end-2 md:-col-end-3 select-none "
       variants={arrowLinkVariants}
       initial="initial"
       whileHover="hover"
@@ -29,7 +29,7 @@ export const NavDocsButton = () => {
     <motion.a
       href={navItemLinks[0]}
       target="_blank"
-      className="-col-end-3 md:-col-end-4 flex flex-row gap-1 items-center"
+      className="-col-end-3 md:-col-end-4 flex flex-row gap-1 items-center select-none "
       variants={arrowLinkVariants}
       initial="initial"
       whileHover="hover"

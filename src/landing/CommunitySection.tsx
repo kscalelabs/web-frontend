@@ -8,7 +8,7 @@ const CommunitySection = () => {
   return (
     <section className="col-span-full grid grid-cols-subgrid auto-rows-min gap-y-4 py-16 ">
       <hgroup className="col-span-full sm:col-span-4 sm:col-start-2 md:col-span-5 md:col-start-2 lg:col-span-4 lg:col-start-2 2xl:col-span-5 2xl:col-start-2 3xl:col-span-5 3xl:col-start-2 4xl:col-span-4 4xl:col-start-2 flex flex-col gap-4">
-        <span className="text-caption uppercase opacity-70 relative y-1/2">Community</span>
+        <span className="text-caption uppercase text-foreground70 relative y-1/2">Community</span>
         <h2 className="text-heading-md">Take ownership of how we keep building.</h2>
         <p>
           With over 2000 people in our Discord, our community has collaboratively on 6 humanoid
@@ -39,7 +39,7 @@ const CommunitySection = () => {
       </aside>
 
       <article className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-5 xl:col-span-3 xl:col-start-6 2xl:col-span-5 2xl:col-start-7 3xl:col-span-4 3xl:col-start-8 4xl:col-span-4 4xl:col-start-8 5xl:col-span-3 5xl:col-start-9 flex flex-col gap-y-4  my-16">
-        <h2 className="text-caption uppercase opacity-70 relative y-1/2">About us</h2>
+        <h2 className="text-caption uppercase text-foreground70 relative y-1/2">About us</h2>
         <p>
           We&apos;re hackers, engineers, and researchers that believe in a world where robots are
           made for everyone.

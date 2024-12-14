@@ -11,6 +11,10 @@ const config: Config = {
   ],
   darkMode: "media",
   theme: {
+    cursor: {
+      grab: "var(--grab)",
+      grabbing: "var(--grabbing)",
+    },
     extend: {
       screens: {
         xs: "480px",
@@ -75,6 +79,8 @@ const config: Config = {
       },
       colors: {
         background: "var(--background)",
+        foreground60: "var(--foreground-60)",
+        foreground70: "var(--foreground-70)",
         foreground: "var(--foreground)",
         filament: "var(--filament)",
         carbon: "var(--carbon)",
