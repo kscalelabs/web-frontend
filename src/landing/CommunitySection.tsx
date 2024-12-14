@@ -30,7 +30,13 @@ const CommunitySection = () => {
         </InlineCTA>
       </menu>
 
-      <article className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-6 2xl:col-start-7 3xl:col-span-5 3xl:col-start-8 4xl:col-span-4 4xl:col-start-7 flex flex-col gap-y-4 my-16">
+      <aside className="my-8 grid grid-cols-subgrid gap-y-4 md:gap-y-[2.5vw] 2xl:gap-y-[1.25vw] col-span-full md:col-span-7 md:col-start-2 2xl:col-span-10 2xl:col-start-2">
+        <div className="col-span-full md:col-span-5 2xl:col-span-7 bg-gradient-to-b from-methyl via-oxide to-rust aspect-square sm:aspect-video rounded-md" />
+        <div className="col-span-full md:col-span-2 2xl:col-span-3 bg-gradient-to-b from-methyl via-oxide to-rust aspect-square sm:aspect-video rounded-md" />
+        <div className="col-span-full md:col-span-5 md:col-start-2 2xl:col-span-5 2xl:col-start-4 bg-gradient-to-b from-methyl via-oxide to-rust aspect-square sm:aspect-video rounded-md" />
+      </aside>
+
+      <article className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-6 2xl:col-start-7 3xl:col-span-5 3xl:col-start-8 4xl:col-span-4 4xl:col-start-7 flex flex-col gap-y-4  my-16">
         <h2 className="text-caption uppercase opacity-70 relative y-1/2">About us</h2>
         <p>
           We&apos;re hackers, engineers, and researchers that believe in a world where robots are
