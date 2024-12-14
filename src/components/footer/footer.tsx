@@ -1,6 +1,6 @@
 import { AnimatePresence, cubicBezier, motion } from "motion/react";
 import SocialMediaItem from "@/components/footer/SocialMediaItem";
-import { Discord, Github, LinkedIn, Twitter } from "@/components/footer/socialMediaSvgs";
+import { Discord, Github, Twitter } from "@/components/footer/socialMediaSvgs";
 import FooterLogotype from "@/components/logos/footerLogotype";
 import Link from "next/link";
 import { JSX, useEffect, useState } from "react";
@@ -8,14 +8,12 @@ import { circOut } from "motion";
 
 const socialMediaSvgs: JSX.Element[] = [
   <Discord key={"discord"} />,
-  <LinkedIn key={"linkedin"} />,
   <Twitter key={"twitter"} />,
   <Github key={"github"} />,
 ];
 
 const socialMediaLinks: string[] = [
   "https://discord.gg/kscale",
-  "https://www.linkedin.com/company/kscale",
   "https://x.com/kscalelabs",
   "https://github.com/kscalelabs",
 ];
@@ -61,8 +59,7 @@ export default function Footer() {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       try {
         await navigator.clipboard.writeText(email);
-      } catch (err) {
-        console.error("Clipboard API failed:", err);
+      } catch {
         // Fallback to legacy approach
         legacyCopy(email);
       }
@@ -81,9 +78,7 @@ export default function Footer() {
     tempInput.select();
     try {
       document.execCommand("copy");
-    } catch (err) {
-      console.error("Legacy clipboard copy failed:", err);
-    }
+    } catch {}
     document.body.removeChild(tempInput);
   };
 

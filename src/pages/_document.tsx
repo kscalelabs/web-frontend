@@ -26,7 +26,7 @@ export default function Document() {
 
         <link rel="icon" sizes="32x32 48x48" type="image/x-icon" href="/favicons/favicon_ico.ico" />
 
-        <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon_ico.ico" />
       </Head>
       <body className={"antialiased text-body font-planar"}>
         <NextScript />

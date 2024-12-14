@@ -13,3 +13,7 @@ export interface BurgerOpenButtonProps {
   isOpen: boolean;
   onClick: Dispatch<SetStateAction<boolean>>;
 }
+
+export interface SvgProps {
+  styling: string;
+}

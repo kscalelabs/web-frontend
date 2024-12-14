@@ -1,6 +1,4 @@
 import { motion } from "motion/react";
-
-import { ColorVariant } from "@/components/color/Color";
 import { ExpressiveArrowProps } from "@/components/util/interfaces";
 
 export const ExpressiveArrow = (props: ExpressiveArrowProps) => {
@@ -38,7 +36,7 @@ export const ExpressiveArrow = (props: ExpressiveArrowProps) => {
   );
 };
 
-export const DownloadIcon = ({ color }: { color?: ColorVariant }) => {
+export const DownloadIcon = () => {
   const topPath = {
     initial: {
       y: "-100%",

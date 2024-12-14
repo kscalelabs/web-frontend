@@ -7,7 +7,7 @@ import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import React, { useEffect, useState } from "react";
 import { ExpressiveArrow } from "@/components/iconography/Iconography";
 import BurgerMenu from "@/components/navbar/burgerMenu";
-import { FillMode } from "../color/Color";
+import { FillMode } from "@/components/util/constants";
 
 const navButtons: React.ReactNode[] = [
   { component: <NavDocsButton />, key: "docs" },
