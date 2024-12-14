@@ -13,7 +13,7 @@ const BurgerMenu = (isOpen: boolean) => {
   return isOpen ? (
     <div
       className={
-        "flex flex-col items-start w-[100%] gap-10 py-12 list-none " +
+        "flex flex-col items-start w-[100%] gap-10 py-12 list-none justify-evenly " +
         (isOpen ? "h-[100dvh] bg-background " : "h-fit")
       }
     >

@@ -120,7 +120,7 @@ export default function NavBar() {
   };
 
   useEffect(() => {
-    if (lenis) {
+    if (mobileShouldOpenBurger && lenis) {
       if (mobileShouldOpenBurger) {
         lenis.stop();
       } else {
