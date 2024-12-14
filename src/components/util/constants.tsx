@@ -34,3 +34,23 @@ export enum FillMode {
   INVERT,
   STROKE,
 }
+
+export const CursorTypes = {
+  DEFAULT: "default",
+  POINTER: "pointer",
+  PROGRESS: "progress",
+  WAIT: "wait",
+  TEXT: "text",
+  ALIAS: "alias",
+  NOT_ALLOWED: "not-allowed",
+  E_RESIZE: "e-resize",
+  NE_RESIZE: "ne-resize",
+  NW_RESIZE: "nw-resize",
+  S_RESIZE: "s-resize",
+  SE_RESIZE: "se-resize",
+  SW_RESIZE: "sw-resize",
+  W_RESIZE: "w-resize",
+  N_RESIZE: "n-resize",
+  GRAB: "grab",
+  GRABBING: "grabbing",
+};

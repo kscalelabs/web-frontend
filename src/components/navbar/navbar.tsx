@@ -60,11 +60,11 @@ export default function NavBar() {
     return (
       <menu
         className={
-          "overflow-hidden w-[100%] p-4 top-0 left-0 gap-2.5 " +
+          "overflow-hidden w-[100%] p-4 top-0 left-0 gap-2.5 bg-background pb-5" +
           (mobileShouldOpenBurger ? "h-[100dvh] bg-background " : "h-fit")
         }
       >
-        <div className={" flex flex-row grow justify-between"}>
+        <div className={" flex flex-row grow justify-between "}>
           <Logotype />
           <BurgerOpenButton isOpen={mobileShouldOpenBurger} onClick={setMobileShouldOpenBurger} />
         </div>
@@ -75,9 +75,9 @@ export default function NavBar() {
 
   const desktopNavBar = () => {
     return (
-      <div className={"grid-m pt-5"}>
+      <div className={"grid-m py-5 bg-background"}>
         <Logotype />
-        <div className="justify-self-end w1440:col-span-10 w1024:col-span-7 w640:col-span-7 flex flex-row gap-3 items-center">
+        <div className="z-50 justify-self-end w1440:col-span-10 w1024:col-span-7 w640:col-span-7 flex flex-row gap-3 items-center">
           <motion.div
             className="flex flex-row gap-3 items-center"
             variants={navVariants}
