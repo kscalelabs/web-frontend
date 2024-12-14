@@ -1,5 +1,4 @@
 import { NavCTAButton } from "@/components/buttons/CTAButtons";
-import { ColorVariant, FillMode } from "@/components/color/Color";
 import { Github } from "@/components/footer/socialMediaSvgs";
 import {
   EVLAIcon,
@@ -13,6 +12,7 @@ import { motion, useMotionValue } from "motion/react";
 import { useState, useEffect, useMemo } from "react";
 import clsx from "clsx";
 import { IconMode } from "@/components/util/constants";
+import { ColorVariant, FillMode } from "@/components/util/constants";
 
 const RESEARCH_ITEMS = [
   {

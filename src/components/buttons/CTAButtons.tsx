@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { useRouter } from "next/router";
 import clsx from "clsx";
-import { ColorVariant, FillMode } from "../color/Color";
+import { ColorVariant, FillMode } from "@/components/util/constants";
 import { Size } from "@/components/util/constants";
 
 const SHOP_URL = "https://shop.kscale.dev/collections/all";

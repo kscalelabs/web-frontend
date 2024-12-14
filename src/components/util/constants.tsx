@@ -16,3 +16,21 @@ export enum Size {
   THIN,
   NORMAL,
 }
+
+export enum ColorVariant {
+  FILAMENT,
+  CARBON,
+  METHYL,
+  PLASMA,
+  OXIDE,
+  RUST,
+  MOLTEN,
+  SOL,
+}
+
+export enum FillMode {
+  DEFAULT,
+  FILL,
+  INVERT,
+  STROKE,
+}

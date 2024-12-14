@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ColorVariant } from "../color/Color";
+import { ColorVariant } from "@/components/util/constants";
 import clsx from "clsx";
 import { IconMode } from "@/components/util/constants";
 

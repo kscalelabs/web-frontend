@@ -1,5 +1,4 @@
 import { Dispatch, JSX, SetStateAction } from "react";
-import { string } from "postcss-selector-parser";
 
 export interface SocialMediaItemProps {
   linkURL: string;

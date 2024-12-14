@@ -1,5 +1,5 @@
 import { ExpressiveArrow } from "@/components/iconography/Iconography";
-import { ColorVariant, FillMode } from "@/components/color/Color";
+import { ColorVariant, FillMode } from "@/components/util/constants";
 import { Discord } from "@/components/footer/socialMediaSvgs";
 import { InlineCTA, NavCTAButton } from "@/components/buttons/CTAButtons";
 import { IconMode, Size } from "@/components/util/constants";

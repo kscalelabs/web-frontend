@@ -1,5 +1,5 @@
 import { CTASubtitleButton } from "@/components/buttons/CTAButtons";
-import { FillMode } from "@/components/color/Color";
+import { FillMode } from "@/components/util/constants";
 import { isDarkMode } from "@/components/util/isDarkMode";
 
 const PricingSection = () => {
