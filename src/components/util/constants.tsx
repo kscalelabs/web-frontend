@@ -11,3 +11,8 @@ export enum IconMode {
   FULL,
   SET,
 }
+
+export enum Size {
+  THIN,
+  NORMAL,
+}

@@ -1,6 +1,6 @@
 import { AnimatePresence, cubicBezier, motion } from "motion/react";
 import SocialMediaItem from "@/components/footer/SocialMediaItem";
-import { Discord, Github, LinkedIn, Twitter } from "@/components/footer/socialMediaSvgs";
+import { Discord, Github, Twitter } from "@/components/footer/socialMediaSvgs";
 import FooterLogotype from "@/components/logos/footerLogotype";
 import Link from "next/link";
 import { JSX, useEffect, useState } from "react";

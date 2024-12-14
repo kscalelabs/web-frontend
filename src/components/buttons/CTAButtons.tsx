@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { useRouter } from "next/router";
 import clsx from "clsx";
 import { ColorVariant, FillMode } from "../color/Color";
+import { Size } from "@/components/util/constants";
 
 const SHOP_URL = "https://shop.kscale.dev/collections/all";
 
@@ -102,11 +103,6 @@ const hoverVariants = {
     opacity: 0.8,
   },
 };
-
-export enum Size {
-  THIN,
-  NORMAL,
-}
 
 export const NavCTAButton = ({
   children,
