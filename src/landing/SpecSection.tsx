@@ -13,11 +13,11 @@ const SpecSection = () => {
   const opacity = useTransform(scrollYProgress, [0.9, 1], [1, 0]);
   return (
     <section
-      className="col-span-full grid grid-cols-subgrid min-h-[90svh] py-16 gap-y-16  auto-rows-min overflow-y-visible items-start"
+      className="col-span-full grid grid-cols-subgrid min-h-[90svh] py-16 gap-y-16  auto-rows-min overflow-y-visible items-start bg-red-500"
       ref={ref}
     >
       <motion.article
-        className="col-span-full sm:col-span-5 md:col-span-6 lg:col-span-4 xl:col-span-4 2xl:col-span-6 4xl:col-span-5 flex flex-col gap-8 lg:sticky top-32"
+        className="bg-blue-500 col-span-full sm:col-span-5 md:col-span-6 lg:col-span-4 xl:col-span-4 2xl:col-span-6 4xl:col-span-5 flex flex-col gap-8 lg:sticky top-32"
         style={{
           opacity,
         }}
