@@ -62,7 +62,6 @@ export default function Footer() {
       try {
         await navigator.clipboard.writeText(email);
       } catch (err) {
-        console.error("Clipboard API failed:", err);
         // Fallback to legacy approach
         legacyCopy(email);
       }
