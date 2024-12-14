@@ -95,15 +95,24 @@ const ResearchCard = ({ title, description, image, link, index, icon, variant }:
   };
   return (
     <motion.div
-      className={clsx("bg-gradient-to-br rounded-lg flex-none", bg(variant))}
+      className={clsx(
+        "bg-gradient-to-br rounded-lg flex-none cursor-grab active:cursor-grabbing  ",
+        bg(variant)
+      )}
       key={`research-card--${index}`}
       draggable={false}
     >
       <article className="p-4 flex flex-col gap-24 h-full w-[80vw] xs:w-[66.25vw] sm:w-[calc(100vw_*_(1.7_/3_+_0.025))] md:w-[calc(100vw_*_(2.8_/_9_+_0.075))] 2xl:w-[calc(100vw_*_(0.875_/_3))] 4xl:w-[21.5625vw]">
         {icon}
-        <div className="flex flex-col gap-y-4 h-full text-filament">
-          <h3 className="text-heading-sm font-apparat">{title}</h3>
-          <p className="text-body">{description}</p>
+        <div
+          className={
+            "flex flex-col gap-y-4 h-full text-filament cursor-grab active:cursor-grabbing  "
+          }
+        >
+          <h3 className={"text-heading-sm font-apparat cursor-grab active:cursor-grabbing  "}>
+            {title}
+          </h3>
+          <p className={"text-body cursor-grab  active:cursor-grabbing  "}>{description}</p>
           <NavCTAButton
             href={link}
             target="_blank"
@@ -203,8 +212,8 @@ export const SwipeCarousel = () => {
   }, [width]);
 
   return (
-    <div className="col-span-full -mx-[5vw] px-[5vw] overflow-hidden relative">
-      <menu className="flex max-lg:justify-end gap-4 lg:gap-2 mb-4 max-lg:text-heading-sm">
+    <div className={"col-span-full -mx-[5vw] px-[5vw] overflow-hidden relative "}>
+      <menu className="flex max-lg:justify-end gap-4 lg:gap-2 mb-4 max-lg:text-heading-sm ">
         <motion.button
           onClick={decrement}
           aria-label="Previous"
@@ -244,7 +253,7 @@ export const SwipeCarousel = () => {
           }}
           transition={SPRING_OPTIONS}
           onDragEnd={onDragEnd}
-          className="flex flex-none cursor-grab active:cursor-grabbing gap-x-[5vw] sm:gap-x-[2.5vw] 2xl:gap-x-[1.25vw]"
+          className="flex flex-none cursor-grab active:cursor-grabbing  gap-x-[5vw] sm:gap-x-[2.5vw] 2xl:gap-x-[1.25vw]"
         >
           <Images />
         </motion.div>

@@ -13,7 +13,7 @@ import Sponsors from "@/landing/Sponsors";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col ">
       <NavBar />
       <Grid />
       <main className="gap-y-4">

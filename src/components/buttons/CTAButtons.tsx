@@ -126,7 +126,7 @@ export const NavCTAButton = ({
   return target === "_blank" ? (
     <motion.button
       className={clsx(
-        "font-planar font-normal text-body select-none cursor-pointer rounded ",
+        "font-planar font-normal text-body select-none rounded pointer ",
         getVariantClass(variant, mode),
         className
       )}
@@ -145,7 +145,7 @@ export const NavCTAButton = ({
         href={href}
         target={target}
         className={clsx(
-          "flex flex-row gap-1 justify-center items-center px-2",
+          "flex flex-row gap-1 justify-center items-center px-2 pointer select-none",
           size === Size.THIN ? "py-1" : "py-2"
         )}
       >
@@ -155,9 +155,9 @@ export const NavCTAButton = ({
   ) : (
     <motion.button
       className={clsx(
-        "font-planar font-normal text-body px-2 select-none flex flex-row gap-1 justify-center items-center",
+        "font-planar font-normal text-body px-2 select-none flex flex-row gap-1 justify-center items-center pointer ",
         size === Size.THIN ? "py-1" : "py-2",
-        "cursor-pointer",
+        "cursor-pointer select-none",
         "rounded",
         getVariantClass(variant, mode),
         className
@@ -201,9 +201,9 @@ export const CTASubtitleButton = ({
   return target === "_blank" ? (
     <motion.button
       className={clsx(
-        "font-planar font-normal text-body text-center items-center w-fit px-6 py-4 select-none",
+        "font-planar font-normal text-body text-center items-center w-fit px-6 py-4 pointer select-none ",
         className,
-        "cursor-pointer",
+        "cursor-pointer select-none",
         "rounded",
         getVariantClass(variant, mode)
       )}
@@ -218,17 +218,17 @@ export const CTASubtitleButton = ({
         ease: "circOut",
       }}
     >
-      <a href={href} target={target} className="flex flex-col">
+      <a href={href} target={target} className="select-none flex flex-col pointer">
         {children}
-        <span className="block text-caption text-foreground60">{subtitle}</span>
+        <span className="block text-caption text-foreground60 pointer select-none">{subtitle}</span>
       </a>
     </motion.button>
   ) : (
     <motion.button
       className={clsx(
-        "font-planar font-normal text-body text-center items-center w-fit px-6 py-4 select-none",
+        "font-planar font-normal text-body text-center items-center w-fit px-6 py-4 pointer select-none ",
         className,
-        "cursor-pointer flex flex-col",
+        "cursor-pointer select-none flex flex-col",
         "rounded",
         getVariantClass(variant, mode)
       )}
@@ -245,7 +245,7 @@ export const CTASubtitleButton = ({
       onClick={() => router.push(href ? href : SHOP_URL)}
     >
       {children}
-      <span className="block text-caption text-foreground60">{subtitle}</span>
+      <span className="block text-caption pointer select-none ">{subtitle}</span>
     </motion.button>
   );
 };
@@ -263,7 +263,7 @@ export const InlineCTA = ({
     <motion.a
       href={href}
       target={target}
-      className="text-body w-fit text-plasma dark:text-plasma-dark flex flex-row gap-1 items-center fill-plasma"
+      className="text-body w-fit text-plasma dark:text-plasma-dark flex flex-row gap-1 items-center fill-plasma pointer select-none"
       initial="initial"
       whileHover="hover"
       variants={{
