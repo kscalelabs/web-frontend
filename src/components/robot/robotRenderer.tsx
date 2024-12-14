@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import URDFLoader from "urdf-loader";
@@ -49,31 +47,39 @@ const WAYPOINTS: { [key: string]: Waypoint } = {
 const DURATION_S = 5;
 
 const RobotRenderer: React.FC = () => {
-  const mountRef = useRef<HTMLDivElement | null>(null);
-  let effectSobel: ShaderPass;
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const [, setScene] = useState<THREE.Scene | null>(null);
+  const [, setCamera] = useState<THREE.PerspectiveCamera | null>(null);
+  const [, setRenderer] = useState<THREE.WebGLRenderer | null>(null);
+  const [, setComposer] = useState<EffectComposer | null>(null);
+  const [, setEffectSobel] = useState<ShaderPass | null>(null);
+
+
   useEffect(() => {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       13,
       window.innerWidth / window.innerHeight,
       0.1,
-      1000
+      1000,
     );
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    const currentMount = mountRef.current;
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvasRef.current!,
+      antialias: true,
+      alpha: true,
+      premultipliedAlpha: true,
+      powerPreference: "high-performance",
+    });
+    const currentCanvas = canvasRef.current;
 
-    if (currentMount) {
-      const { clientWidth, clientHeight } = currentMount;
+    if (currentCanvas) {
+      const { clientWidth, clientHeight } = currentCanvas;
       camera.aspect = clientWidth / clientHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(clientWidth, clientHeight);
     }
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setClearColor(0x000000, 0);
-
-    if (currentMount) {
-      currentMount.appendChild(renderer.domElement);
-    }
 
     const loader = new URDFLoader();
     loader.load(URDF_URL, (robot: THREE.Object3D) => {
@@ -129,7 +135,7 @@ const RobotRenderer: React.FC = () => {
           }
         });
 
-        composer.render();
+        composer?.render();
       };
 
       animate();
@@ -170,7 +176,7 @@ const RobotRenderer: React.FC = () => {
 
     // Sobel operator
 
-    effectSobel = new ShaderPass(SobelOperatorShader);
+    const effectSobel = new ShaderPass(SobelOperatorShader);
     effectSobel.uniforms["resolution"].value.x = window.innerWidth * window.devicePixelRatio;
     effectSobel.uniforms["resolution"].value.y = window.innerHeight * window.devicePixelRatio;
     composer.addPass(effectSobel);
@@ -178,9 +184,15 @@ const RobotRenderer: React.FC = () => {
     const outputPass = new OutputPass();
     composer.addPass(outputPass);
 
+    setScene(scene);
+    setCamera(camera);
+    setRenderer(renderer);
+    setComposer(composer);
+    setEffectSobel(effectSobel);
+
     const handleResize = () => {
-      if (currentMount) {
-        const { clientWidth, clientHeight } = currentMount;
+      if (currentCanvas) {
+        const { clientWidth, clientHeight } = currentCanvas;
         camera.aspect = clientWidth / clientHeight;
         camera.updateProjectionMatrix();
 
@@ -194,14 +206,17 @@ const RobotRenderer: React.FC = () => {
     window.addEventListener("resize", handleResize);
 
     return () => {
-      if (currentMount) {
-        currentMount.removeChild(renderer.domElement);
-      }
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-  return <div ref={mountRef} className="w-full h-full overflow-hidden rounded-lg" />;
+  return (
+    <canvas
+      ref={canvasRef}
+      className="w-full h-full overflow-hidden rounded-lg"
+      style={{ width: "100%", height: "100%" }}
+    />
+  );
 };
 
 export default RobotRenderer;
