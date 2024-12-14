@@ -149,8 +149,9 @@ const RobotRenderer: React.FC = () => {
 
     scene.add(camera);
 
-    camera.position.z = 20;
-    camera.position.y = 2;
+    camera.position.z = 16;
+    camera.position.y = 9;
+    camera.position.x = 9;
 
     const composer = new EffectComposer(renderer);
     const renderPass = new RenderPass(scene, camera);
