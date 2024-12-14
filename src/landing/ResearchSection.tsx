@@ -1,5 +1,6 @@
 import { NavCTAButton } from "@/components/buttons/CTAButtons";
 import { ColorVariant, FillMode } from "@/components/color/Color";
+import { Github, IconMode } from "@/components/footer/socialMediaSvgs";
 import {
   EVLAIcon,
   KOSIcon,
@@ -82,7 +83,7 @@ const ResearchCard = ({ title, description, image, link, index, icon }: Research
             variant={ColorVariant.PLASMA}
             mode={FillMode.INVERT}
           >
-            View on Github
+            View on Github <Github mode={IconMode.SET} variant={ColorVariant.PLASMA} />
           </NavCTAButton>
         </div>
       </article>

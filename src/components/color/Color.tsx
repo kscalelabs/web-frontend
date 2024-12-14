@@ -5,6 +5,8 @@ export enum ColorVariant {
   RUST,
   MOLTEN,
   SOL,
+  FILAMENT,
+  CARBON,
 }
 
 export enum FillMode {

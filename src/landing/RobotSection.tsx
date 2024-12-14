@@ -8,7 +8,7 @@ const RobotSection = () => {
 
   return (
     <section className="col-span-full grid grid-cols-subgrid items-center text-center max-w-full relative mb-16">
-      <hgroup className="col-span-full md:absolute md:z-50 max-w-48 lg:max-w-64 2xl:max-w-48 top-8 left-8 text-left flex flex-col gap-4 mb-8">
+      <hgroup className="col-span-full md:absolute md:z-50 max-w-48 lg:max-w-64 2xl:max-w-48 top-8 left-8 text-left flex flex-col gap-4 mb-8 text-filament">
         <h2 className="text-heading-sm">Work with your robot in our dashboard</h2>
         <p className="text-body">
           K-Bot is an open-source &amp; auditable robot, for those who prefer transparency over
