@@ -46,30 +46,34 @@
   }
 
   :root {
-    --background: #f8f4f2;
-    --foreground: #120e15;
-    --filament: #f8f4f2;
-    --carbon: #120e15;
-    --methyl: #7d0d8c;
-    --plasma: #b90674;
-    --oxide: #c90e33;
-    --rust: #fa4300;
-    --molten: #ff9000;
-    --sol: #f2f091;
+    --background: #f8f4f2ff;
+    --foreground: #120e15ff;
+    --filament: #f8f4f2ff;
+    --carbon: #120e15ff;
+    --carbon-50: #120e1580;
+    --carbon-0: #120e1500;
+    --methyl: #7d0d8cff;
+    --plasma: #b90674ff;
+    --oxide: #c90e33ff;
+    --rust: #fa4300ff;
+    --molten: #ff9000ff;
+    --sol: #f2f091ff;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --background: #0f0f10;
-      --foreground: #ede6e1;
-      --carbon: #0f0f10;
-      --filament: #ede6e1;
-      --methyl: #771584;
-      --plasma: #a81770;
-      --oxide: #98253c;
-      --rust: #de4208;
-      --molten: #f18a03;
-      --sol: #eae9bc;
+      --background: #0f0f10ff;
+      --foreground: #ede6e1ff;
+      --carbon: #0f0f10ff;
+      --carbon-50: #0f0f1080;
+      --carbon-0: #0f0f1000;
+      --filament: #ede6e1ff;
+      --methyl: #771584ff;
+      --plasma: #a81770ff;
+      --oxide: #98253cff;
+      --rust: #de4208ff;
+      --molten: #f18a03ff;
+      --sol: #eae9bcff;
     }
   }
 }
