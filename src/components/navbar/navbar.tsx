@@ -8,6 +8,8 @@ import React, { useEffect, useState } from "react";
 import { ExpressiveArrow } from "@/components/iconography/Iconography";
 import BurgerMenu from "@/components/navbar/burgerMenu";
 import { FillMode } from "@/components/util/constants";
+import Lenis from "lenis";
+import { useLenis } from "lenis/dist/lenis-react";
 
 const navButtons: React.ReactNode[] = [
   { component: <NavDocsButton />, key: "docs" },
@@ -34,6 +36,7 @@ const navItemVariants = {
 
 export default function NavBar() {
   const { scrollY } = useScroll();
+  const lenis = useLenis();
   const [desktopNavHidden, setDesktopNavHidden] = useState(false);
   const [desktopPreviousScroll, setPrevScroll] = useState(scrollY.get());
   const [mobileShouldOpenBurger, setMobileShouldOpenBurger] = useState(false);
@@ -117,15 +120,13 @@ export default function NavBar() {
   };
 
   useEffect(() => {
-    if (mobileShouldOpenBurger) {
-      document.body.classList.add("scroll-lock");
-    } else {
-      document.body.classList.remove("scroll-lock");
+    if (lenis) {
+      if (mobileShouldOpenBurger) {
+        lenis.stop();
+      } else {
+        lenis.start();
+      }
     }
-
-    return () => {
-      document.body.classList.remove("scroll-lock");
-    };
   }, [mobileShouldOpenBurger]);
 
   return <nav className="fixed top-0 inset-x-0 z-50">{navBasedOnWidth(width >= 768)}</nav>;

@@ -7,6 +7,13 @@ export const navItemLinks: string[] = [
   "https://shop.kscale.dev/",
 ];
 
+export const navItemsMobile: string[] = ["Docs", "Log In", "Discord"];
+export const navItemLinksMobile: string[] = [
+  "https://docs.kscale.dev/",
+  "https://dashboard.kscale.dev",
+  "https://discord.com/invite/kscale",
+];
+
 export enum IconMode {
   FULL,
   SET,

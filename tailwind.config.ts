@@ -12,6 +12,7 @@ const config: Config = {
   darkMode: "media",
   theme: {
     cursor: {
+      pointer: "var(--pointer)",
       grab: "var(--grab)",
       grabbing: "var(--grabbing)",
     },

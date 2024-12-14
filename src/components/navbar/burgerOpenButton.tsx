@@ -13,6 +13,7 @@ const openBurgerPaths: string[] = [
 const BurgerOpenButton = (props: BurgerOpenButtonProps) => {
   return (
     <button
+      className={"cursor-pointer"}
       onClick={() => {
         props.onClick(!props.isOpen);
       }}
