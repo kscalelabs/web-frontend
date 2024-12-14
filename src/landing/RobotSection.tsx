@@ -15,7 +15,10 @@ const RobotSection = () => {
           trust.
         </p>
       </hgroup>
-      <div className="col-span-full w-full h-full relative aspect-square md:aspect-video" ref={ref}>
+      <div
+        className="col-span-full w-full relative h-[60svh] lg:h-full lg:aspect-video min-h-[16rem]"
+        ref={ref}
+      >
         <motion.aside
           layout
           className="max-sm:hidden absolute w-full h-full bg-carbon z-5 flex flex-col gap-2 items-center pointer-events-none select-none p-4 lg:p-8 2xl:p-12"

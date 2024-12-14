@@ -1,6 +1,25 @@
 import { motion, useTransform, useScroll } from "motion/react";
 import { useRef } from "react";
 
+const Images = [
+  {
+    src: "/images/gallery/1.png",
+    alt: "Gallery Image 1",
+  },
+  {
+    src: "/images/gallery/2.png",
+    alt: "Gallery Image 2",
+  },
+  {
+    src: "/images/gallery/3.png",
+    alt: "Gallery Image 3",
+  },
+  {
+    src: "/images/gallery/4.png",
+    alt: "Gallery Image 4",
+  },
+];
+
 const GallerySection = () => {
   const scrollRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -10,29 +29,18 @@ const GallerySection = () => {
 
   return (
     <section
-      className="relative col-span-full bg-gradient-to-b from-methyl via-oxide to-rust min-h-[360svh]"
+      className="relative col-span-full lg:col-span-5 lg:col-start-3 2xl:col-span-8 2xl:col-start-3 flex flex-col gap-y-32"
       ref={scrollRef}
     >
-      <motion.div
-        className="sticky top-16 bg-sol size-8 rounded-full"
-        style={{ opacity: useTransform(scrollYProgress, [0, 0.25], [1, 0]) }}
-      />
-      <motion.div
-        className="sticky top-16 bg-sol size-8 rounded-full translate-x-[100%]"
-        style={{ opacity: useTransform(scrollYProgress, [0.25, 0.5], [1, 0]) }}
-      />
-      <motion.div
-        className="sticky top-16 bg-sol size-8 rounded-full translate-x-[200%]"
-        style={{ opacity: useTransform(scrollYProgress, [0.5, 0.75], [1, 0]) }}
-      />
-      <motion.div
-        className="sticky top-16 bg-sol size-8 rounded-full translate-x-[300%]"
-        style={{ opacity: useTransform(scrollYProgress, [0.75, 1], [1, 0]) }}
-      />
-      <motion.div
-        className="sticky top-16 bg-sol size-8 rounded-full translate-x-[400%]"
-        style={{ opacity: useTransform(scrollYProgress, [0.75, 1], [1, 0]) }}
-      />
+      {Images.map((image, index) => (
+        <motion.div
+          className="sticky top-24 h-[60svh] min-h-[16rem] bg-gradient-to-b from-methyl via-oxide to-rust rounded-lg"
+          style={{
+            opacity: useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], [1, 0]),
+            scaleX: useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], [1, 0.8]),
+          }}
+        />
+      ))}
     </section>
   );
 };
