@@ -7,7 +7,6 @@ import URDFLoader from "urdf-loader";
 import { URDFJoint } from "urdf-loader/src/URDFClasses";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
-import { BloomPass } from "three/examples/jsm/postprocessing/BloomPass.js";
 import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
 import { LuminosityShader } from "three/examples/jsm/shaders/LuminosityShader.js";

@@ -1,17 +1,4 @@
 export const transitionEaseLinearDuration300: string = " transition ease-linear duration-300 ";
-export const bgBlackDarkWhite: string = " bg-foreground";
-export const textBlackDarkWhite: string = " text-foreground";
-export const fillBlackDarkWhite: string = " fill-foreground";
-
-export const navMotionTransition = {
-  duration: 0.7,
-  ease: "circOut",
-  bounce: "spring",
-};
-
-export const scaleMotionNumber = {
-  scale: 0.95,
-};
 
 export const navItems: string[] = ["Docs", "Log In", "Buy K-Bot"];
 export const navItemLinks: string[] = [
@@ -19,3 +6,31 @@ export const navItemLinks: string[] = [
   "https://dashboard.kscale.dev",
   "https://shop.kscale.dev/",
 ];
+
+export enum IconMode {
+  FULL,
+  SET,
+}
+
+export enum Size {
+  THIN,
+  NORMAL,
+}
+
+export enum ColorVariant {
+  FILAMENT,
+  CARBON,
+  METHYL,
+  PLASMA,
+  OXIDE,
+  RUST,
+  MOLTEN,
+  SOL,
+}
+
+export enum FillMode {
+  DEFAULT,
+  FILL,
+  INVERT,
+  STROKE,
+}

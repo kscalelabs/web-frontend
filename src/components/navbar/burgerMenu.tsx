@@ -1,7 +1,6 @@
 import {
   navItemLinks,
   navItems,
-  textBlackDarkWhite,
   transitionEaseLinearDuration300,
 } from "@/components/util/constants";
 import { ExpressiveArrow } from "@/components/iconography/Iconography";
@@ -16,8 +15,7 @@ const BurgerMenu = (isOpen: boolean) => {
           <motion.button
             key={index}
             className={
-              "font-planar font-normal capitalize text-2xl select-none flex flex-row " +
-              textBlackDarkWhite +
+              "font-planar font-normal capitalize text-2xl select-none flex flex-row text-foreground " +
               " hover:text-rust " +
               transitionEaseLinearDuration300
             }

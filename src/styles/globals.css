@@ -306,3 +306,15 @@ html.lenis body {
     color-scheme: light;
   }
 }
+
+.rfm-child {
+  padding: 1rem;
+}
+
+main .sponsors {
+  padding: 0;
+  margin-left: -5vw;
+  margin-right: -5vw;
+  width: 100vw;
+  overflow-x: visible;
+}
