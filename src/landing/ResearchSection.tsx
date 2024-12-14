@@ -19,7 +19,7 @@ const RESEARCH_ITEMS = [
     title: "Edge VLA",
     description: "We’re collaboratively training a mega mondo beast of a model. ",
     image: "/images/research/edge-vla.png",
-    link: "/",
+    link: "https://github.com/kscalelabs/evla",
     icon: <EVLAIcon />,
     variant: ColorVariant.METHYL,
   },
@@ -27,7 +27,7 @@ const RESEARCH_ITEMS = [
     title: "K-OS",
     description: "Work with reliable real-time ML inference using our Rust-based operating system.",
     image: "/images/research/edge-vla.png",
-    link: "/",
+    link: "https://github.com/kscalelabs/kos",
     icon: <KOSIcon />,
     variant: ColorVariant.PLASMA,
   },
@@ -36,7 +36,7 @@ const RESEARCH_ITEMS = [
     description:
       "Skip writing ROS nodes with our domain-specific language for interfacing with neural interpretation.",
     image: "/images/research/edge-vla.png",
-    link: "/",
+    link: "https://github.com/kscalelabs/klang",
     icon: <KLANGIcon />,
     variant: ColorVariant.OXIDE,
   },
@@ -45,7 +45,7 @@ const RESEARCH_ITEMS = [
     description:
       "Our compact serialization format for robotics telemetry, with efficient decoding to avoid bottlenecks in training neutral networks.",
     image: "/images/research/edge-vla.png",
-    link: "/",
+    link: "https://github.com/kscalelabs/krec",
     icon: <KRECIcon />,
     variant: ColorVariant.RUST,
   },
@@ -54,7 +54,7 @@ const RESEARCH_ITEMS = [
     description:
       "Define any RL objectives for your robot with our open-source repository for policy simulation.",
     image: "/images/research/edge-vla.png",
-    link: "/",
+    link: "https://github.com/kscalelabs/ksim",
     icon: <KSIMIcon />,
     variant: ColorVariant.MOLTEN,
   },
@@ -139,32 +139,33 @@ export const SwipeCarousel = () => {
         card: 80,
         gap: 5,
         max: RESEARCH_ITEMS.length - 1,
+        offset: 0,
       };
     }
     if (width < 640) {
       return {
-        card: 66.25,
+        card: 70,
         gap: 5,
         max: RESEARCH_ITEMS.length - 1,
       };
     }
     if (width < 768) {
       return {
-        card: 170 / 3 + 2.5,
+        card: 60,
         gap: 2.5,
         max: RESEARCH_ITEMS.length - 1,
       };
     }
     if (width < 1440) {
       return {
-        card: 280 / 9 + 7.5,
+        card: 40,
         gap: 2.5,
         max: RESEARCH_ITEMS.length - 2,
       };
     }
     if (width < 1920) {
       return {
-        card: 87.5 / 3,
+        card: 30,
         gap: 1.25,
         max: RESEARCH_ITEMS.length - 3,
       };
@@ -241,7 +242,7 @@ export const SwipeCarousel = () => {
             x: dragX,
           }}
           animate={{
-            translateX: `-${imgIndex * (dimensions.card + dimensions.gap / 2)}vw`,
+            translateX: `${-1 * imgIndex * (dimensions.card + dimensions.gap) + (imgIndex > 0 ? dimensions.gap : 0)}vw`,
           }}
           transition={SPRING_OPTIONS}
           onDragEnd={onDragEnd}
