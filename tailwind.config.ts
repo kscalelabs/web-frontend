@@ -80,6 +80,8 @@ const config: Config = {
       },
       colors: {
         background: "var(--background)",
+        filament60: "var(--filament-60)",
+        filament70: "var(--filament-70)",
         foreground60: "var(--foreground-60)",
         foreground70: "var(--foreground-70)",
         foreground: "var(--foreground)",

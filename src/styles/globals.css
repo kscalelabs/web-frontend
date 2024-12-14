@@ -52,6 +52,8 @@
     --background-0: #f8f4f200;
     --foreground-60: #120e159a;
     --foreground-70: #120e15b3;
+    --filament-60: #f8f4f29a;
+    --filament-70: #f8f4f2b3;
     --filament: #f8f4f2ff;
     --carbon: #120e15ff;
     --carbon-50: #120e1580;
@@ -75,6 +77,8 @@
       --background-0: #0f0f1000;
       --foreground-60: #ede6e180;
       --foreground-70: #ede6e1b3;
+      --filament-60: #ede6e180;
+      --filament-70: #ede6e1b3;
       --carbon: #0f0f10ff;
       --carbon-50: #0f0f1080;
       --carbon-0: #0f0f1000;

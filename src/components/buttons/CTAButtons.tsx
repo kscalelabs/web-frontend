@@ -224,7 +224,7 @@ export const CTASubtitleButton = ({
         className="select-none flex flex-col pointer pointer-events-auto"
       >
         {children}
-        <span className="block text-caption text-foreground60 pointer select-none">{subtitle}</span>
+        <span className="block text-caption text-filament60 pointer select-none">{subtitle}</span>
       </a>
     </motion.button>
   ) : (
