@@ -1,6 +1,9 @@
-const YCommunity = () => {
+import { SvgProps } from "@/components/util/interfaces";
+
+const YCommunity = (props: SvgProps) => {
   return (
     <svg
+      className={props.styling}
       xmlns="http://www.w3.org/2000/svg"
       width="2891"
       height="600"

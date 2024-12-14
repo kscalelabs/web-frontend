@@ -1,6 +1,9 @@
-const FellowsFund = () => {
+import { SvgProps } from "@/components/util/interfaces";
+
+const FellowsFund = (props: SvgProps) => {
   return (
     <svg
+      className={props.styling}
       xmlns="http://www.w3.org/2000/svg"
       width="1200"
       height="627"

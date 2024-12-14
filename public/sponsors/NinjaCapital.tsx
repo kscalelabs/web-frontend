@@ -1,6 +1,9 @@
-const NinjaCapital = () => {
+import { SvgProps } from "@/components/util/interfaces";
+
+const NinjaCapital = (props: SvgProps) => {
   return (
     <svg
+      className={props.styling}
       xmlns="http://www.w3.org/2000/svg"
       width="1423"
       height="180"

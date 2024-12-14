@@ -1,6 +1,9 @@
-const AIGrant = () => {
+import { SvgProps } from "@/components/util/interfaces";
+
+const AIGrant = (props: SvgProps) => {
   return (
     <svg
+      className={props.styling}
       xmlns="http://www.w3.org/2000/svg"
       width="1258"
       height="180"

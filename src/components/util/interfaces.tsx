@@ -15,10 +15,6 @@ export interface BurgerOpenButtonProps {
   onClick: Dispatch<SetStateAction<boolean>>;
 }
 
-export interface SponsorPngWrapperProps {
-  imgLink: string;
-  altDescription: string;
+export interface SvgProps {
   styling: string;
-  width: number;
-  height: number;
 }
