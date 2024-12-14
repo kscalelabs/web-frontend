@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { textBlackDarkWhite, transitionEaseLinearDuration300 } from "@/components/util/constants";
 
 const Logotype = () => {
   return (

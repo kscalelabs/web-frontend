@@ -1,11 +1,7 @@
 import { motion } from "motion/react";
 import { ColorVariant } from "../color/Color";
 import clsx from "clsx";
-
-export enum IconMode {
-  FULL,
-  SET,
-}
+import { IconMode } from "@/components/util/constants";
 
 const getVariantClass = (variant: ColorVariant): string => {
   switch (variant) {

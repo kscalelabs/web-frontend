@@ -1,5 +1,4 @@
 import { BurgerOpenButtonProps } from "@/components/util/interfaces";
-import { fillBlackDarkWhite } from "@/components/util/constants";
 
 const closeBurgerPaths: string[] = [
   "M23.025 9.56738C23.025 10.433 22.3233 11.1348 21.4576 11.1348L1.56738 11.1348C0.701742 11.1348 -5.26833e-08 10.433 0 9.56738C5.26833e-08 8.70174 0.701741 8 1.56738 8L21.4576 8C22.3233 8 23.025 8.70174 23.025 9.56738Z",
@@ -26,15 +25,15 @@ const BurgerOpenButton = (props: BurgerOpenButtonProps) => {
         fill="none"
       >
         <path
-          className={fillBlackDarkWhite}
+          className={"fill-foreground"}
           d={props.isOpen ? openBurgerPaths[0] : closeBurgerPaths[0]}
         />
         <path
-          className={fillBlackDarkWhite}
+          className={"fill-foreground"}
           d={props.isOpen ? openBurgerPaths[1] : closeBurgerPaths[1]}
         />
         <path
-          className={fillBlackDarkWhite}
+          className={"fill-foreground"}
           d={props.isOpen ? openBurgerPaths[2] : closeBurgerPaths[2]}
         />
       </svg>

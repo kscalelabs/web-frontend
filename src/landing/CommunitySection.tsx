@@ -1,7 +1,8 @@
 import { ExpressiveArrow } from "@/components/iconography/Iconography";
 import { ColorVariant, FillMode } from "@/components/color/Color";
-import { Discord, IconMode } from "@/components/footer/socialMediaSvgs";
+import { Discord } from "@/components/footer/socialMediaSvgs";
 import { InlineCTA, NavCTAButton, Size } from "@/components/buttons/CTAButtons";
+import { IconMode } from "@/components/util/constants";
 
 const CommunitySection = () => {
   return (
