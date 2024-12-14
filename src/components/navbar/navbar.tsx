@@ -106,7 +106,7 @@ export default function NavBar() {
             className="md:col-span-2 md:col-start-8 2xl:col-span-2 2xl:col-start-11"
             mode={FillMode.FILL}
           >
-            {`Buy GPR`}
+            {`Buy K-Bot`}
             <motion.div initial="initial" whileHover="hover">
               <ExpressiveArrow size={"size-4"} />
             </motion.div>

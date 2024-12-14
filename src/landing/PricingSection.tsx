@@ -22,7 +22,7 @@ const PricingSection = () => {
           subtitle="$833 per month"
           mode={FillMode.INVERT}
         >
-          Order GPR Founders&apos; Edition
+          Order K-Bot FE
         </CTASubtitleButton>
       </article>
 
@@ -34,14 +34,14 @@ const PricingSection = () => {
           </h3>
         </hgroup>
         <p className="text-body mb-8">
-          {`Invest in yourself and your engineering potential with GPR's embodied AI ecosystem.`}
+          {`Invest in yourself and your engineering potential with K-Bot's embodied AI ecosystem.`}
         </p>
         <CTASubtitleButton
           className="mt-auto"
           href="https://shop.kscale.dev/products/kbot"
           subtitle="$533 per month"
         >
-          Order GPR Developers&apos; Edition
+          Order K-Bot
         </CTASubtitleButton>
       </article>
     </section>

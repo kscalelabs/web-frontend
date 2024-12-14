@@ -1,4 +1,6 @@
 export enum ColorVariant {
+  FILAMENT,
+  CARBON,
   METHYL,
   PLASMA,
   OXIDE,
