@@ -305,12 +305,6 @@ html.lenis body {
   display: none;
 }
 
-@media (prefers-color-scheme: light) {
-  html {
-    color-scheme: light;
-  }
-}
-
 .rfm-child {
   padding: 1rem;
 }
@@ -322,3 +316,5 @@ main .sponsors {
   width: 100vw;
   overflow-x: visible;
 }
+
+
