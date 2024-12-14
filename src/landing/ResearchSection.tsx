@@ -16,16 +16,14 @@ import { useState } from "react";
 const RESEARCH_ITEMS = [
   {
     title: "Edge VLA",
-    description:
-      "Our general purpose foundation AI model, helping robots complete tasks autonomously. Through open-source data contributions, we're training a highly efficient model together.",
+    description: "We’re collaboratively training a mega mondo beast of a model. ",
     image: "/images/research/edge-vla.png",
     link: "/",
     icon: <EVLAIcon />,
   },
   {
     title: "K-OS",
-    description:
-      "We've been refining our Rust-based package manager, streamlined operations for humanoid robotics hardware. 40% faster compiling compared to other ROS2-based systems.",
+    description: "Work with reliable real-time ML inference using our Rust-based operating system.",
     image: "/images/research/edge-vla.png",
     link: "/",
     icon: <KOSIcon />,
@@ -33,7 +31,7 @@ const RESEARCH_ITEMS = [
   {
     title: "Klang",
     description:
-      "Dedicated to efficiently parsing natural language, Klang acts a simple and flexible way to get started building robot applications. As of now, it supports EVLA to turn language into actions.",
+      "Skip writing ROS nodes with our domain-specific language for interfacing with neural interpretation.",
     image: "/images/research/edge-vla.png",
     link: "/",
     icon: <KLANGIcon />,
@@ -41,7 +39,7 @@ const RESEARCH_ITEMS = [
   {
     title: "kRec",
     description:
-      "Our system for organizing and managing all your robot data produced during your research.",
+      "Our compact serialization format for robotics telemetry, with efficient decoding to avoid bottlenecks in training neutral networks.",
     image: "/images/research/edge-vla.png",
     link: "/",
     icon: <KRECIcon />,
@@ -49,7 +47,7 @@ const RESEARCH_ITEMS = [
   {
     title: "kSim",
     description:
-      "Built off of Issac Gym, get started with locomotion and manipulation with our simulation packages. We're working on building this out further to help you test your robot's movements on screen and in the physical world. ",
+      "Define any RL objectives for your robot with our open-source repository for policy simulation.",
     image: "/images/research/edge-vla.png",
     link: "/",
     icon: <KSIMIcon />,
@@ -72,11 +70,11 @@ const ResearchCard = ({ title, description, image, link, index, icon }: Research
       key={`research-card--${index}`}
       draggable={false}
     >
-      <article className="p-4 flex flex-col gap-24 h-full w-[66.25vw] sm:w-[calc(100vw_*_(1.7_/3_+_0.025))] md:w-[calc(100vw_*_(2.8_/_9_+_0.075))] 2xl:w-[calc(100vw_*_(0.875_/_3))] 4xl:w-[21.5625vw]">
+      <article className="p-4 flex flex-col gap-24 h-full w-[80vw] xs:w-[66.25vw] sm:w-[calc(100vw_*_(1.7_/3_+_0.025))] md:w-[calc(100vw_*_(2.8_/_9_+_0.075))] 2xl:w-[calc(100vw_*_(0.875_/_3))] 4xl:w-[21.5625vw]">
         {icon}
         <div className="flex flex-col gap-y-4 h-full">
-          <h3 className="text-body">{title}</h3>
-          <p className="text-caption">{description}</p>
+          <h3 className="text-heading-sm">{title}</h3>
+          <p className="text-body">{description}</p>
           <NavCTAButton
             href={link}
             target="_blank"
@@ -84,7 +82,7 @@ const ResearchCard = ({ title, description, image, link, index, icon }: Research
             variant={ColorVariant.PLASMA}
             mode={FillMode.INVERT}
           >
-            View project
+            View on Github
           </NavCTAButton>
         </div>
       </article>
@@ -106,6 +104,13 @@ export const SwipeCarousel = () => {
   const width = useWindowSize().width;
 
   const dimensions = useMemo(() => {
+    if (width < 480) {
+      return {
+        card: 80,
+        gap: 5,
+        max: RESEARCH_ITEMS.length - 1,
+      };
+    }
     if (width < 640) {
       return {
         card: 66.25,
@@ -145,9 +150,9 @@ export const SwipeCarousel = () => {
 
   const onDragEnd = () => {
     const x = dragX.get();
-    if (x <= -DRAG_BUFFER && imgIndex < dimensions.max) {
+    if (x <= -(width < 768 ? dimensions.card / 2 : DRAG_BUFFER) && imgIndex < dimensions.max) {
       setImgIndex((pv) => Math.min(pv + Math.round(x / -DRAG_BUFFER), dimensions.max));
-    } else if (x >= DRAG_BUFFER && imgIndex > 0) {
+    } else if (x >= (width < 768 ? dimensions.card / 2 : DRAG_BUFFER) && imgIndex > 0) {
       setImgIndex((pv) => Math.max(pv - Math.round(x / DRAG_BUFFER), 0));
     }
   };
@@ -206,7 +211,7 @@ export const SwipeCarousel = () => {
             x: dragX,
           }}
           animate={{
-            translateX: `-${imgIndex * (dimensions.card + dimensions.gap)}vw`,
+            translateX: `-${imgIndex * (dimensions.card + dimensions.gap / 2)}vw`,
           }}
           transition={SPRING_OPTIONS}
           onDragEnd={onDragEnd}
