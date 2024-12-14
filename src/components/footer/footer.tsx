@@ -12,10 +12,10 @@ const socialMediaSvgs: JSX.Element[] = [
   <Github key={"github"} />,
 ];
 
-const socialMediaLinks: string[] = [
-  "https://discord.gg/kscale",
-  "https://x.com/kscalelabs",
-  "https://github.com/kscalelabs",
+const socialMediaLinks: { linkURL: string; name: string }[] = [
+  { linkURL: "https://discord.gg/kscale", name: "Discord" },
+  { linkURL: "https://x.com/kscalelabs", name: "Twitter" },
+  { linkURL: "https://github.com/kscalelabs", name: "Github" },
 ];
 
 export interface FooterSectionListProps {
@@ -99,9 +99,13 @@ export default function Footer() {
           "col-span-full sm:col-span-2 md:col-span-3 5xl:col-span-2 flex flex-row gap-4 mb-8"
         }
       >
-        {socialMediaLinks.map((link: string, index: number) => (
+        {socialMediaLinks.map((link, index) => (
           <li className={"list-none"} key={index}>
-            <SocialMediaItem linkURL={link} iconSvg={socialMediaSvgs[index]} />
+            <SocialMediaItem
+              linkURL={link.linkURL}
+              iconSvg={socialMediaSvgs[index]}
+              name={link.name}
+            />
           </li>
         ))}
       </ul>

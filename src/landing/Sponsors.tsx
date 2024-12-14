@@ -63,9 +63,9 @@ const Sponsors = () => {
         " w1440:pt-16 w1024:pt-12 w640:pt-10 pt-8 sponsors"
       }
     >
-      <h4
-        className={"font-normal font-planar text-foreground "}
-      >{`Backed by the industry's best`}</h4>
+      <h2
+        className={"font-normal font-planar text-foreground text-heading-sm "}
+      >{`Backed by the industry's best`}</h2>
       <Marquee className={""}>
         {SvgChildren.map((sponsor, index) => {
           return (

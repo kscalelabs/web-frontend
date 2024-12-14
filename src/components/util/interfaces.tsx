@@ -3,6 +3,7 @@ import { Dispatch, JSX, SetStateAction } from "react";
 export interface SocialMediaItemProps {
   linkURL: string;
   iconSvg: JSX.Element;
+  name: string;
 }
 
 export interface ExpressiveArrowProps {
