@@ -126,7 +126,7 @@ export const NavCTAButton = ({
   return target === "_blank" ? (
     <motion.button
       className={clsx(
-        "font-planar font-normal text-body select-none rounded pointer ",
+        "font-planar font-normal text-body select-none rounded pointer pointer-events-auto",
         getVariantClass(variant, mode),
         className
       )}
@@ -145,7 +145,7 @@ export const NavCTAButton = ({
         href={href}
         target={target}
         className={clsx(
-          "flex flex-row gap-1 justify-center items-center px-2 pointer select-none",
+          "flex flex-row gap-1 justify-center items-center px-2 pointer select-none pointer-events-auto",
           size === Size.THIN ? "py-1" : "py-2"
         )}
       >
@@ -155,7 +155,7 @@ export const NavCTAButton = ({
   ) : (
     <motion.button
       className={clsx(
-        "font-planar font-normal text-body px-2 select-none flex flex-row gap-1 justify-center items-center pointer ",
+        "font-planar font-normal text-body px-2 select-none flex flex-row gap-1 justify-center items-center pointer pointer-events-auto",
         size === Size.THIN ? "py-1" : "py-2",
         "cursor-pointer select-none",
         "rounded",
@@ -201,7 +201,7 @@ export const CTASubtitleButton = ({
   return target === "_blank" ? (
     <motion.button
       className={clsx(
-        "font-planar font-normal text-body text-center items-center w-fit px-6 py-4 pointer select-none ",
+        "font-planar font-normal text-body text-center items-center w-fit px-6 py-4 pointer select-none pointer-events-auto",
         className,
         "cursor-pointer select-none",
         "rounded",
@@ -226,7 +226,7 @@ export const CTASubtitleButton = ({
   ) : (
     <motion.button
       className={clsx(
-        "font-planar font-normal text-body text-center items-center w-fit px-6 py-4 pointer select-none ",
+        "font-planar font-normal text-body text-center items-center w-fit px-6 py-4 pointer select-none pointer-events-auto",
         className,
         "cursor-pointer select-none flex flex-col",
         "rounded",
@@ -263,7 +263,7 @@ export const InlineCTA = ({
     <motion.a
       href={href}
       target={target}
-      className="text-body w-fit text-plasma dark:text-plasma-dark flex flex-row gap-1 items-center fill-plasma pointer select-none"
+      className="text-body w-fit text-plasma dark:text-plasma-dark flex flex-row gap-1 items-center fill-plasma pointer select-none pointer-events-auto"
       initial="initial"
       whileHover="hover"
       variants={{
