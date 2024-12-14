@@ -12,10 +12,10 @@ import Lenis from "lenis";
 import { useLenis } from "lenis/dist/lenis-react";
 import clsx from "clsx";
 
-const navButtons: React.ReactNode[] = [
-  { component: <NavDocsButton />, key: "docs" },
-  { component: <NavLogInButton />, key: "login" },
-].map((item) => React.cloneElement(item.component, { key: item.key }));
+// const navButtons: React.ReactNode[] = [
+//   { component: <NavDocsButton />, key: "docs" },
+//   { component: <NavLogInButton />, key: "login" },
+// ].map((item) => React.cloneElement(item.component, { key: item.key }));
 
 export default function NavBar() {
   const { scrollY } = useScroll();
@@ -60,7 +60,8 @@ export default function NavBar() {
         >
           <Logotype atTop={atTop} />
           <BurgerOpenButton
-            className="-col-end-1 place-self-end"
+            className="-col-end-1 place-self-end pointer-events-auto"
+            atTop={atTop}
             isOpen={mobileShouldOpenBurger}
             onClick={setMobileShouldOpenBurger}
           />
@@ -75,9 +76,8 @@ export default function NavBar() {
       <>
         <Logotype atTop={atTop} />
 
-        {navButtons.map((navItem, i) => (
-          <>{navItem}</>
-        ))}
+        <NavDocsButton atTop={atTop} />
+        <NavLogInButton atTop={atTop} />
 
         <NavCTAButton
           className="md:col-span-2 md:-col-end-1 2xl:col-span-3 2xl:-col-end-1"
@@ -105,7 +105,7 @@ export default function NavBar() {
 
   return (
     <motion.nav
-      className="fixed top-0 inset-x-0 z-50 h-[100dvh] md:h-fit md:py-4 grid-a grid-rows-[min-content_auto]"
+      className="fixed top-0 inset-x-0 z-50 h-[100dvh] md:h-fit md:py-4 grid-a grid-rows-[min-content_auto] pointer-events-none"
       initial={{
         backgroundColor: "var(--background-0)",
       }}

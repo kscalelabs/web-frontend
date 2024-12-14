@@ -1,5 +1,6 @@
 import { BurgerOpenButtonProps } from "@/components/util/interfaces";
 import clsx from "clsx";
+import { motion } from "motion/react";
 
 const closeBurgerPaths: string[] = [
   "M23.025 9.56738C23.025 10.433 22.3233 11.1348 21.4576 11.1348L1.56738 11.1348C0.701742 11.1348 -5.26833e-08 10.433 0 9.56738C5.26833e-08 8.70174 0.701741 8 1.56738 8L21.4576 8C22.3233 8 23.025 8.70174 23.025 9.56738Z",
@@ -11,7 +12,14 @@ const openBurgerPaths: string[] = [
   "M23.025 15.8029C23.025 16.6686 22.3233 17.3703 21.4576 17.3703H1.56738C0.701742 17.3703 -5.26833e-08 16.6685 0 15.8029C5.26833e-08 14.9373 0.701741 14.2355 1.56738 14.2355L21.4576 14.2355C22.3233 14.2355 23.025 14.9373 23.025 15.8029Z",
   "M23.025 21.5197C23.025 22.3853 22.3233 23.0871 21.4576 23.0871H1.56738C0.701742 23.0871 -5.26833e-08 22.3853 0 21.5197C5.26833e-08 20.6541 0.701741 19.9523 1.56738 19.9523H21.4576C22.3233 19.9523 23.025 20.6541 23.025 21.5197Z",
 ];
-const BurgerOpenButton = (props: BurgerOpenButtonProps) => {
+
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="3" y="6" width="18" height="2" fill="#D9D9D9" />
+  <rect x="3" y="11" width="18" height="2" fill="#D9D9D9" />
+  <rect x="3" y="16" width="18" height="2" fill="#D9D9D9" />
+</svg>;
+
+const BurgerOpenButton = ({ atTop = true, ...props }: BurgerOpenButtonProps) => {
   return (
     <button
       className={clsx("cursor-pointer h-fit", props.className)}
@@ -20,23 +28,52 @@ const BurgerOpenButton = (props: BurgerOpenButtonProps) => {
       }}
     >
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="23"
-        height="23"
-        viewBox="0 0 23 23"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
         fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="size-6 translate-y-1"
       >
-        <path
-          className={"fill-foreground"}
-          d={props.isOpen ? openBurgerPaths[0] : closeBurgerPaths[0]}
+        <motion.rect
+          x="3"
+          y="6"
+          width="18"
+          height="2"
+          initial={{
+            rotate: 0,
+            y: 0,
+            fill: "var(--filament)",
+          }}
+          animate={{
+            rotate: props.isOpen ? 15 : 0,
+            y: props.isOpen ? -2 : 0,
+            fill: atTop && !props.isOpen ? "var(--filament)" : "var(--foreground)",
+          }}
         />
-        <path
-          className={"fill-foreground"}
-          d={props.isOpen ? openBurgerPaths[1] : closeBurgerPaths[1]}
+        <motion.rect
+          x="3"
+          y="11"
+          width="18"
+          height="2"
+          initial={{
+            fill: "var(--filament)",
+          }}
+          animate={{
+            fill: atTop && !props.isOpen ? "var(--filament)" : "var(--foreground)",
+          }}
         />
-        <path
-          className={"fill-foreground"}
-          d={props.isOpen ? openBurgerPaths[2] : closeBurgerPaths[2]}
+        <motion.rect
+          x="3"
+          y="16"
+          width="18"
+          height="2"
+          initial={{
+            fill: "var(--filament)",
+          }}
+          animate={{
+            fill: atTop && !props.isOpen ? "var(--filament)" : "var(--foreground)",
+          }}
         />
       </svg>
     </button>

@@ -9,14 +9,15 @@ const arrowLinkVariants = {
   },
 };
 
-export const NavLogInButton = () => {
+export const NavLogInButton = ({ atTop = true }: { atTop: boolean }) => {
   return (
     <motion.a
       href={navItemLinks[1]}
       target="_blank"
-      className="-col-end-2 md:-col-end-3 2xl:-col-end-4 select-none size-fit self-center"
+      className="-col-end-2 md:-col-end-3 2xl:-col-end-4 select-none size-fit self-center pointer-events-auto"
       variants={arrowLinkVariants}
       initial="initial"
+      animate={{ color: atTop ? "var(--filament)" : "var(--foreground)" }}
       whileHover="hover"
     >
       {navItems[1]}
@@ -24,14 +25,15 @@ export const NavLogInButton = () => {
   );
 };
 
-export const NavDocsButton = () => {
+export const NavDocsButton = ({ atTop = true }: { atTop: boolean }) => {
   return (
     <motion.a
       href={navItemLinks[0]}
       target="_blank"
-      className="-col-end-3 md:-col-end-4 2xl:-col-end-5 flex flex-row gap-1 size-fit items-center select-none self-center"
+      className="-col-end-3 md:-col-end-4 2xl:-col-end-5 flex flex-row gap-1 size-fit items-center select-none self-center pointer-events-auto"
       variants={arrowLinkVariants}
       initial="initial"
+      animate={{ color: atTop ? "var(--filament)" : "var(--foreground)" }}
       whileHover="hover"
     >
       {navItems[0]} <ExpressiveArrow size={"size-4"} />

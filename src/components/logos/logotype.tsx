@@ -4,7 +4,10 @@ import { motion } from "motion/react";
 
 const Logotype = ({ atTop = true }: { atTop: boolean }) => {
   return (
-    <button className="col-start-1 col-span-2 lg:col-start-1 lg:col-span-2" aria-label="Homepage">
+    <button
+      className="col-start-1 col-span-2 lg:col-start-1 lg:col-span-2 pointer-events-auto"
+      aria-label="Homepage"
+    >
       <Link href={"/"} aria-label="k-scale labs">
         <motion.svg
           width="383"
