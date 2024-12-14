@@ -2,22 +2,23 @@ import { motion, useTransform, useScroll, MotionValue } from "motion/react";
 import { useContext } from "react";
 import { createContext } from "react";
 import { useRef } from "react";
+import Image from "next/image";
 
 const Images = [
   {
-    src: "/images/gallery/1.png",
+    src: "/photos/DSC06664.jpg",
     alt: "Gallery Image 1",
   },
   {
-    src: "/images/gallery/2.png",
+    src: "/photos/DSC06701.jpg",
     alt: "Gallery Image 2",
   },
   {
-    src: "/images/gallery/3.png",
+    src: "/photos/DSC06663.jpg",
     alt: "Gallery Image 3",
   },
   {
-    src: "/images/gallery/4.png",
+    src: "/photos/DSC06729.jpg",
     alt: "Gallery Image 4",
   },
 ];
@@ -25,13 +26,15 @@ const Images = [
 const GalleryItem = ({ src, alt, index }: { src: string; alt: string; index: number }) => {
   const scrollYProgress = useContext(ScrollContext);
   return (
-    <motion.div
-      className="sticky top-24 h-[60svh] min-h-[16rem] bg-gradient-to-b from-methyl via-oxide to-rust rounded-lg"
+    <motion.figure
+      className="sticky top-24 h-[60svh] min-h-[16rem] bg-gradient-to-b from-methyl via-oxide to-rust rounded-lg overflow-hidden"
       style={{
         opacity: useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], [1, 0]),
-        scaleX: useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], [1, 0.8]),
+        scale: useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], [1, 0.8]),
       }}
-    />
+    >
+      <Image src={src} alt={alt} fill className="object-cover" />
+    </motion.figure>
   );
 };
 

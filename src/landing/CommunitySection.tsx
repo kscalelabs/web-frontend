@@ -3,6 +3,7 @@ import { ColorVariant, FillMode } from "@/components/util/constants";
 import { Discord } from "@/components/footer/socialMediaSvgs";
 import { InlineCTA, NavCTAButton } from "@/components/buttons/CTAButtons";
 import { IconMode, Size } from "@/components/util/constants";
+import Image from "next/image";
 
 const CommunitySection = () => {
   return (
@@ -33,9 +34,30 @@ const CommunitySection = () => {
       </menu>
 
       <aside className="my-8 grid grid-cols-subgrid gap-y-4 md:gap-y-[2.5vw] 2xl:gap-y-[1.25vw] col-span-full md:col-span-7 md:col-start-2 2xl:col-span-10 2xl:col-start-2">
-        <div className="col-span-full md:col-span-5 2xl:col-span-7 bg-gradient-to-b from-methyl via-oxide to-rust aspect-square sm:aspect-video rounded-md" />
-        <div className="col-span-full md:col-span-2 2xl:col-span-3 bg-gradient-to-b from-methyl via-oxide to-rust aspect-square sm:aspect-video rounded-md" />
-        <div className="col-span-full md:col-span-5 md:col-start-2 2xl:col-span-5 2xl:col-start-4 bg-gradient-to-b from-methyl via-oxide to-rust aspect-square sm:aspect-video rounded-md" />
+        <figure className="col-span-full md:col-span-5 2xl:col-span-7 bg-gradient-to-b from-methyl via-oxide to-rust aspect-square sm:aspect-video rounded-md relative overflow-hidden">
+          <Image
+            src="/photos/DSC06756.jpg"
+            alt="Photo: wide full shot of K-Bot standing with Master of Technical Staff, Ali Kuwajerwala"
+            fill
+            className="object-cover"
+          />
+        </figure>
+        <figure className="col-span-full  md:col-span-2 2xl:col-span-3 bg-gradient-to-b from-methyl via-oxide to-rust aspect-square sm:aspect-video rounded-md relative overflow-hidden">
+          <Image
+            src="/photos/DSC06816.jpg"
+            alt="Photo: portrait full shot of K-Bot standing with Lead Design Engineer, Chris Thomas"
+            fill
+            className="object-cover object-[50%_15%]"
+          />
+        </figure>
+        <figure className="col-span-full md:col-span-5 md:col-start-2 2xl:col-span-5 2xl:col-start-4 bg-gradient-to-b from-methyl via-oxide to-rust aspect-square sm:aspect-video rounded-md relative overflow-hidden">
+          <Image
+            src="/photos/DSC06793.jpg"
+            alt="Photo: wide full shot of K-Bot standing with Founding Engineer, Jingxiang Mo"
+            fill
+            className="object-cover"
+          />
+        </figure>
       </aside>
 
       <article className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-5 xl:col-span-3 xl:col-start-6 2xl:col-span-5 2xl:col-start-7 3xl:col-span-4 3xl:col-start-8 4xl:col-span-4 4xl:col-start-8 5xl:col-span-3 5xl:col-start-9 flex flex-col gap-y-4  my-16">

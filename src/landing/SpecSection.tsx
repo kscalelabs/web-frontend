@@ -1,5 +1,6 @@
 import { InlineCTA } from "@/components/buttons/CTAButtons";
-import { DownloadIcon, ExpressiveArrow } from "@/components/iconography/Iconography";
+import { ExpressiveArrow } from "@/components/iconography/Iconography";
+import Image from "next/image";
 
 const SpecSection = () => {
   return (
@@ -22,20 +23,41 @@ const SpecSection = () => {
             Anodized with a matte black finish, because it looks cooler.
           </span>
         </h3>
-        <div className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-5 2xl:col-start-8 3xl:col-span-5 3xl:col-start-8 4xl:col-span-4 4xl:col-start-8 bg-gradient-to-b from-methyl via-oxide to-rust aspect-video rounded-md" />
+        <figure className="relative col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-5 2xl:col-start-8 3xl:col-span-5 3xl:col-start-8 4xl:col-span-4 4xl:col-start-8 aspect-video rounded-md overflow-hidden">
+          <Image
+            src="/photos/DSC06746.jpg"
+            alt="Photo: Close-up photo of K-Bot's aluminum chassis"
+            fill
+            className="object-cover"
+          />
+        </figure>
       </article>
       <article className="col-span-full grid grid-cols-subgrid gap-y-4">
         <h3 className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-5 2xl:col-start-8 3xl:col-span-5 3xl:col-start-8 4xl:col-span-4 4xl:col-start-8 text-heading-sm">
           Equipped with 120 Nm actuators at the hips, taking advantage of strong torque for dynamic
           walking and manipulation.
         </h3>
-        <div className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-5 2xl:col-start-8 3xl:col-span-5 3xl:col-start-8 4xl:col-span-4 4xl:col-start-8 bg-gradient-to-b from-methyl via-oxide to-rust aspect-video rounded-md" />
+        <figure className="relative col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-5 2xl:col-start-8 3xl:col-span-5 3xl:col-start-8 4xl:col-span-4 4xl:col-start-8 aspect-video rounded-md overflow-hidden">
+          <Image
+            src="/photos/actuators.jpg"
+            alt="Photo: Close-up photo of K-Bot's 120 Nm actuators"
+            fill
+            className="object-cover"
+          />
+        </figure>
       </article>
       <article className="col-span-full grid grid-cols-subgrid gap-y-4">
         <h3 className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-5 2xl:col-start-8 3xl:col-span-5 3xl:col-start-8 4xl:col-span-4 4xl:col-start-8 text-heading-sm">
           Explore the potential of any idea with 32 TOPS of AI performance.
         </h3>
-        <div className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-5 2xl:col-start-8 3xl:col-span-5 3xl:col-start-8 4xl:col-span-4 4xl:col-start-8 bg-gradient-to-b from-methyl via-oxide to-rust aspect-video rounded-md" />
+        <figure className="relative col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-span-5 2xl:col-start-8 3xl:col-span-5 3xl:col-start-8 4xl:col-span-4 4xl:col-start-8 aspect-video rounded-md overflow-hidden">
+          <Image
+            src="/photos/DSC06719.jpg"
+            alt="Photo: Close-up photo of K-Bot's onboardJetson AGX"
+            fill
+            className="object-cover"
+          />
+        </figure>
       </article>
     </section>
   );
