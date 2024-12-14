@@ -8,14 +8,12 @@ import { circOut } from "motion";
 
 const socialMediaSvgs: JSX.Element[] = [
   <Discord key={"discord"} />,
-  <LinkedIn key={"linkedin"} />,
   <Twitter key={"twitter"} />,
   <Github key={"github"} />,
 ];
 
 const socialMediaLinks: string[] = [
   "https://discord.gg/kscale",
-  "https://www.linkedin.com/company/kscale",
   "https://x.com/kscalelabs",
   "https://github.com/kscalelabs",
 ];
