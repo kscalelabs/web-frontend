@@ -1,4 +1,6 @@
+import { NavCTAButton } from "@/components/buttons/CTAButtons";
 import RobotRenderer from "@/components/robot/robotRenderer";
+import { ColorVariant, Size, FillMode } from "@/components/util/constants";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 
@@ -11,9 +13,18 @@ const RobotSection = () => {
       <hgroup className="col-span-full md:absolute md:z-40 max-w-48 lg:max-w-64 2xl:max-w-48 top-8 left-8 text-left flex flex-col gap-4 mb-8 text-filament">
         <h2 className="text-heading-sm">Work with your robot in our dashboard</h2>
         <p className="text-body">
-          K-Bot is an open-source &amp; auditable robot, for those who prefer transparency over
-          trust.
+          Interact with your robot through our toolkit, supporting real-time ML application.
         </p>
+        <NavCTAButton
+          href="https://dashboard.kscale.dev"
+          variant={ColorVariant.PLASMA}
+          size={Size.NORMAL}
+          mode={FillMode.FILL}
+          target="_blank"
+          className="max-md:w-fit"
+        >
+          Log in
+        </NavCTAButton>
       </hgroup>
       <div
         className="col-span-full w-full relative h-[60svh] lg:h-full lg:aspect-video min-h-[16rem]"
