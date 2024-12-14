@@ -35,6 +35,7 @@ const GallerySection = () => {
       {Images.map((image, index) => (
         <motion.div
           className="sticky top-24 h-[60svh] min-h-[16rem] bg-gradient-to-b from-methyl via-oxide to-rust rounded-lg"
+          key={`gallery-image-${index}`}
           style={{
             opacity: useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], [1, 0]),
             scaleX: useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], [1, 0.8]),
