@@ -12,7 +12,7 @@ import { motion, useMotionValue } from "motion/react";
 import { useState, useEffect, useMemo } from "react";
 import clsx from "clsx";
 import { IconMode } from "@/components/util/constants";
-import { ColorVariant, FillMode } from "@/components/util/constants";
+import { ColorVariant, FillMode, Size } from "@/components/util/constants";
 
 const RESEARCH_ITEMS = [
   {
@@ -110,6 +110,7 @@ const ResearchCard = ({ title, description, image, link, index, icon, variant }:
             className="mt-auto w-fit px-2"
             variant={variant}
             mode={FillMode.INVERT}
+            size={Size.NORMAL}
           >
             View on Github <Github mode={IconMode.SET} variant={variant} />
           </NavCTAButton>
@@ -207,7 +208,7 @@ export const SwipeCarousel = () => {
       <menu className="flex max-lg:justify-end gap-4 lg:gap-2 mb-4 max-lg:text-heading-sm">
         <motion.button
           onClick={decrement}
-          aria-label="Previous"
+          aria-label="Previous article"
           className="select-none"
           initial={{ opacity: 1 }}
           animate={{ opacity: imgIndex > 0 ? 1 : 0.5 }}
@@ -217,7 +218,7 @@ export const SwipeCarousel = () => {
         </motion.button>
         <motion.button
           onClick={increment}
-          aria-label="Next"
+          aria-label="Next article"
           className="select-none"
           initial={{ opacity: 1 }}
           animate={{ opacity: imgIndex < dimensions.max ? 1 : 0.5 }}

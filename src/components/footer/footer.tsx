@@ -143,6 +143,7 @@ export default function Footer() {
                   },
                 },
               }}
+              aria-label="Copy email"
             >
               <AnimatePresence mode="popLayout">
                 {isCopied ? (

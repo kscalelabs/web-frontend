@@ -3,8 +3,8 @@ import Link from "next/link";
 
 const Logotype = () => {
   return (
-    <button className="col-start-1 col-span-2 lg:col-start-1 lg:col-span-2">
-      <Link href={"/"}>
+    <button className="col-start-1 col-span-2 lg:col-start-1 lg:col-span-2" aria-label="Homepage">
+      <Link href={"/"} aria-label="k-scale labs">
         <svg
           width="383"
           height="80"
