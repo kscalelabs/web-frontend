@@ -7,8 +7,15 @@ const RobotSection = () => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section className=" col-span-full flex flex-col items-center text-center max-w-full aspect-square md:aspect-video bg-plasma">
-      <div className="w-full h-full relative" ref={ref}>
+    <section className="col-span-full grid grid-cols-subgrid items-center text-center max-w-full relative mb-16">
+      <hgroup className="col-span-full md:absolute md:z-50 md:w-1/4 lg:w-1/3 top-8 left-8 text-left flex flex-col gap-4 mb-8">
+        <h2 className="text-heading-sm">Work with your robot in our dashboard</h2>
+        <p className="text-body">
+          K-Bot is an open-source &amp; auditable robot, for those who prefer transparency over
+          trust.
+        </p>
+      </hgroup>
+      <div className="col-span-full w-full h-full relative aspect-square md:aspect-video" ref={ref}>
         <motion.aside
           layout
           className="max-sm:hidden absolute w-full h-full bg-carbon z-5 flex flex-col gap-2 items-center pointer-events-none select-none p-4 lg:p-8 2xl:p-12"
