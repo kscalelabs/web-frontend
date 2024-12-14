@@ -15,32 +15,43 @@ const SvgChildren = [
     component: <FellowsFund styling={svgSizeStyling} />,
     linkURL: "https://www.fellowsfundvc.com/",
     key: "fellows",
+    name: "Fellows Fund",
   },
-  { component: <GFT styling={svgSizeStyling} />, linkURL: "https://www.gft.vc/", key: "gft" },
+  {
+    component: <GFT styling={svgSizeStyling} />,
+    linkURL: "https://www.gft.vc/",
+    key: "gft",
+    name: "GFT Ventures",
+  },
   {
     component: <Lombard styling={svgSizeStyling} />,
     linkURL: "https://lombardstreet.vc/",
     key: "lombard",
+    name: "Lombardstreet Ventures",
   },
   {
     component: <NinjaCapital styling={svgSizeStyling} />,
     linkURL: "https://www.ninjacapital.com/",
     key: "ninja",
+    name: "Ninja Capital",
   },
   {
     component: <YCommunity styling={svgSizeStyling} />,
     linkURL: "https://www.ycombinator.com/companies/k-scale-labs",
-    key: "yCommunity",
+    key: "yCombinator",
+    name: "Y Combinator",
   },
   {
     component: <AIGrant styling={svgSizeStyling} />,
     linkURL: "https://aigrant.com/",
     key: "aiGrant",
+    name: "AI Grant",
   },
   {
     component: <Pioneer styling={svgSizeStyling} />,
     linkURL: "https://www.pioneerfund.vc/",
     key: "pioneer",
+    name: "Pioneer",
   },
 ];
 
@@ -58,7 +69,12 @@ const Sponsors = () => {
       <Marquee className={""}>
         {SvgChildren.map((sponsor, index) => {
           return (
-            <Link href={sponsor.linkURL} target={"_blank"} key={index}>
+            <Link
+              href={sponsor.linkURL}
+              target={"_blank"}
+              key={index}
+              aria-label={`Investor:${sponsor.name}`}
+            >
               {sponsor.component}
             </Link>
           );
