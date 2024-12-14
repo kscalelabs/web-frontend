@@ -256,7 +256,7 @@ const ResearchSection = () => {
           The humanoid robot is as strong as its brain, not its body.
         </h2>
         <p>
-          While we provide robust, accessible hardware, our end-to-end model is what makes GPR 1.0
+          While we provide robust, accessible hardware, our end-to-end model is what makes K-Bot
           perform. Here&apos;s some of the progress we&apos;ve made:
         </p>
       </hgroup>

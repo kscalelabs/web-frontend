@@ -189,7 +189,7 @@ export default function Footer() {
       <FooterSectionList
         title={"Product"}
         items={[
-          { title: "GPR 0.5", url: "https://dashboard.kscale.dev/tos" },
+          { title: "K-Bot", url: "https://dashboard.kscale.dev/tos" },
           { title: "Send feedback", url: "https://dashboard.kscale.dev/privacy" },
         ]}
         extraStyling={"col-span-2 sm:col-span-3 sm:col-start-4 md:col-span-2"}
