@@ -23,7 +23,7 @@ const BurgerMenu = (isOpen: boolean) => {
           <motion.button
             key={index}
             className={
-              "col-span-full font-planar font-normal capitalize text-4xl select-none flex flex-row text-foreground w-fit" +
+              "col-span-full font-planar font-normal capitalize text-4xl select-none flex flex-row text-foreground w-fit pointer-events-auto" +
               " hover:text-rust " +
               transitionEaseLinearDuration300
             }
@@ -31,7 +31,11 @@ const BurgerMenu = (isOpen: boolean) => {
             whileHover="hover"
             aria-label="Menu"
           >
-            <Link className={"font-planar"} href={navItemLinksMobile[index]} target={"_blank"}>
+            <Link
+              className={"font-planar pointer-events-auto"}
+              href={navItemLinksMobile[index]}
+              target={"_blank"}
+            >
               {navItem}
             </Link>
             {index !== 1 ? <ExpressiveArrow size={"size-10"} /> : <></>}
