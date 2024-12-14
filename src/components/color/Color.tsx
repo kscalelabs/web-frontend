@@ -8,6 +8,7 @@ export enum ColorVariant {
 }
 
 export enum FillMode {
+  DEFAULT,
   FILL,
   INVERT,
   STROKE,

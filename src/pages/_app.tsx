@@ -1,10 +1,11 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { ReactLenis } from "lenis/dist/lenis-react";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <ReactLenis root>
       <Head>
         <title>K-Scale Labs</title>
         <meta
@@ -35,6 +36,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:image" content="/meta/twitter-image.png" />
       </Head>
       <Component {...pageProps} />
-    </>
+    </ReactLenis>
   );
 }

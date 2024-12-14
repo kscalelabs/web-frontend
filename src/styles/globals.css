@@ -91,8 +91,9 @@ main {
   font-size: 17px;
   line-height: 20px;
   letter-spacing: -0.01em;
-  /* grid-template-columns: repeat(4, 1fr);
-  gap: 5%; */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5vw;
+  padding: 0 5vw;
 }
 
 h1 {
@@ -157,21 +158,21 @@ pre {
 @media (min-width: 640px) {
   main {
     grid-template-columns: repeat(6, 1fr);
-    gap: 2.5%;
+    gap: 2.5vw;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   main {
     grid-template-columns: repeat(9, 1fr);
-    gap: 2.5%;
+    gap: 2.5vw;
   }
 }
 
 @media (min-width: 1440px) {
   main {
     grid-template-columns: repeat(12, 1fr);
-    gap: 1.25%;
+    gap: 1.25vw;
     font-size: 24px;
     line-height: 28px;
     letter-spacing: -0.01em;
@@ -234,6 +235,27 @@ pre {
 
 html {
   @apply text-[125%] 2xl:text-[175%] 5xl:text-[200%];
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }
 
 /*::-webkit-scrollbar {*/

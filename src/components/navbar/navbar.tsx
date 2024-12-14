@@ -7,6 +7,7 @@ import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import React, { useEffect, useState } from "react";
 import { ExpressiveArrow } from "@/components/iconography/Iconography";
 import BurgerMenu from "@/components/navbar/burgerMenu";
+import { FillMode } from "../color/Color";
 
 const navButtons: React.ReactNode[] = [
   { component: <NavDocsButton />, key: "docs" },
@@ -101,7 +102,10 @@ export default function NavBar() {
               </motion.div>
             ))}
           </motion.div>
-          <NavCTAButton className="md:col-span-2 md:col-start-8 2xl:col-span-2 2xl:col-start-11">
+          <NavCTAButton
+            className="md:col-span-2 md:col-start-8 2xl:col-span-2 2xl:col-start-11"
+            mode={FillMode.FILL}
+          >
             {`Buy GPR`}
             <motion.div initial="initial" whileHover="hover">
               <ExpressiveArrow size={"size-4"} />

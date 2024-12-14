@@ -8,7 +8,7 @@ import { URDFJoint } from "urdf-loader/src/URDFClasses";
 
 const URDF_URL = "/cad/gpr-20241204.urdf";
 const SCALE = 3;
-const TRANSLATE_Y = 1.5;
+const TRANSLATE_Y = 1.2;
 
 interface Waypoint {
   start: number;
@@ -48,7 +48,7 @@ const RobotRenderer: React.FC = () => {
   useEffect(() => {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
-      75,
+      13,
       window.innerWidth / window.innerHeight,
       0.1,
       1000
@@ -128,18 +128,22 @@ const RobotRenderer: React.FC = () => {
       animate();
     });
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
-    scene.add(ambientLight);
+    const mainLight = new THREE.DirectionalLight(0xffffff, 2);
+    mainLight.position.set(100, 0, -20);
+    camera.add(mainLight);
 
-    const mainLight = new THREE.DirectionalLight(0xffffff, 2.0);
-    mainLight.position.set(5, 5, 5);
-    scene.add(mainLight);
+    const fill1Light = new THREE.DirectionalLight(0xffffff, 2);
+    fill1Light.position.set(-100, 0, -200);
+    camera.add(fill1Light);
 
-    const fillLight = new THREE.DirectionalLight(0xffffff, 0.8);
-    fillLight.position.set(-5, 2, -5);
-    scene.add(fillLight);
+    const fill2Light = new THREE.DirectionalLight(0xffffff, 0.2);
+    fill2Light.position.set(0, 0, 10);
+    camera.add(fill2Light);
 
-    camera.position.z = 5;
+    scene.add(camera);
+
+    camera.position.z = 20;
+    camera.position.y = 2;
 
     const handleResize = () => {
       if (currentMount) {
@@ -160,7 +164,12 @@ const RobotRenderer: React.FC = () => {
     };
   }, []);
 
-  return <div ref={mountRef} className="w-full h-full" />;
+  return (
+    <div
+      ref={mountRef}
+      className="w-full h-full bg-gradient-to-b from-rust via-oxide to-methyl dark:from-rust-dark dark:via-oxide-dark dark:to-methyl-dark"
+    />
+  );
 };
 
 export default RobotRenderer;

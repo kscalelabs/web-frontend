@@ -15,92 +15,26 @@
 
   <asset>
     <mesh name="body1-part" file="body1-part.stl" />
-    <mesh name="body1-part_2" file="body1-part_2.stl" />
-    <mesh name="body1-part_3" file="body1-part_3.stl" />
-    <mesh name="body1-part_4" file="body1-part_4.stl" />
-    <mesh name="back_shell" file="back_shell.stl" />
-    <mesh name="front_shell" file="front_shell.stl" />
-    <mesh name="body1-part_5" file="body1-part_5.stl" />
     <mesh name="shoulder" file="shoulder.stl" />
-    <mesh name="body1-part_6" file="body1-part_6.stl" />
     <mesh name="shoulder_2" file="shoulder_2.stl" />
-    <mesh name="body1-part_7" file="body1-part_7.stl" />
-    <mesh name="body1-part_8" file="body1-part_8.stl" />
-    <mesh name="body1-part_9" file="body1-part_9.stl" />
-    <mesh name="body1-part_10" file="body1-part_10.stl" />
-    <mesh name="body1-part_11" file="body1-part_11.stl" />
-    <mesh name="body1-part_12" file="body1-part_12.stl" />
-    <mesh name="body1-part_13" file="body1-part_13.stl" />
-    <mesh name="body1-part_14" file="body1-part_14.stl" />
-    <mesh name="shoulder_3" file="shoulder_3.stl" />
-    <mesh name="shoulder_4" file="shoulder_4.stl" />
-    <mesh name="body1-part_15" file="body1-part_15.stl" />
-    <mesh name="body1-part_16" file="body1-part_16.stl" />
-    <mesh name="body1-part_17" file="body1-part_17.stl" />
-    <mesh name="body1-part_18" file="body1-part_18.stl" />
-    <mesh name="body1-part_19" file="body1-part_19.stl" />
-    <mesh name="body1-part_20" file="body1-part_20.stl" />
     <mesh name="arm1_top" file="arm1_top.stl" />
     <mesh name="arm1_top_2" file="arm1_top_2.stl" />
     <mesh name="leg0_shell" file="leg0_shell.stl" />
-    <mesh name="body1-part_21" file="body1-part_21.stl" />
     <mesh name="leg0_shell_2" file="leg0_shell_2.stl" />
-    <mesh name="body1-part_22" file="body1-part_22.stl" />
-    <mesh name="body1-part_23" file="body1-part_23.stl" />
-    <mesh name="arm-actuator" file="arm-actuator.stl" />
-    <mesh name="arm-actuator_2" file="arm-actuator_2.stl" />
-    <mesh name="leg0_actuator" file="leg0_actuator.stl" />
-    <mesh name="leg0_bearing" file="leg0_bearing.stl" />
-    <mesh name="leg0_actuator_2" file="leg0_actuator_2.stl" />
-    <mesh name="leg0_bearing_2" file="leg0_bearing_2.stl" />
     <mesh name="arm2_shell" file="arm2_shell.stl" />
-    <mesh name="arm-stopper-2.stp" file="arm-stopper-2.stp.stl" />
     <mesh name="arm2_shell_2" file="arm2_shell_2.stl" />
-    <mesh name="arm-stopper-2.stp_2" file="arm-stopper-2.stp_2.stl" />
     <mesh name="leg1_shell" file="leg1_shell.stl" />
     <mesh name="leg1_shell3" file="leg1_shell3.stl" />
-    <mesh name="arm2_actuator" file="arm2_actuator.stl" />
-    <mesh name="arm2_actuator_2" file="arm2_actuator_2.stl" />
-    <mesh name="leg1_actuator" file="leg1_actuator.stl" />
-    <mesh name="leg1_actuator2" file="leg1_actuator2.stl" />
     <mesh name="arm3_shell" file="arm3_shell.stl" />
     <mesh name="arm3_shell2" file="arm3_shell2.stl" />
     <mesh name="leg2_shell" file="leg2_shell.stl" />
-    <mesh name="leg-stopper-2" file="leg-stopper-2.stl" />
     <mesh name="leg2_shell_2" file="leg2_shell_2.stl" />
-    <mesh name="leg-stopper-2_2" file="leg-stopper-2_2.stl" />
-    <mesh name="arm3_actuator" file="arm3_actuator.stl" />
-    <mesh name="arm3_actuator2" file="arm3_actuator2.stl" />
-    <mesh name="leg2_actuator" file="leg2_actuator.stl" />
-    <mesh name="leg2_bearing" file="leg2_bearing.stl" />
-    <mesh name="leg2_actuator_2" file="leg2_actuator_2.stl" />
-    <mesh name="leg2_bearing_2" file="leg2_bearing_2.stl" />
     <mesh name="hand_shell" file="hand_shell.stl" />
     <mesh name="hand_shell_2" file="hand_shell_2.stl" />
     <mesh name="leg3_shell2" file="leg3_shell2.stl" />
     <mesh name="leg3_shell22" file="leg3_shell22.stl" />
-    <mesh name="hand_actuator" file="hand_actuator.stl" />
-    <mesh name="hand_shell2" file="hand_shell2.stl" />
-    <mesh name="hand_actuator_2" file="hand_actuator_2.stl" />
-    <mesh name="hand_shell2_2" file="hand_shell2_2.stl" />
-    <mesh name="leg3_shell1" file="leg3_shell1.stl" />
-    <mesh name="leg3_shell11" file="leg3_shell11.stl" />
-    <mesh name="hand_part2" file="hand_part2.stl" />
-    <mesh name="hand_part" file="hand_part.stl" />
-    <mesh name="hand_part2_2" file="hand_part2_2.stl" />
-    <mesh name="hand_part_2" file="hand_part_2.stl" />
-    <mesh name="leg3_actuator" file="leg3_actuator.stl" />
-    <mesh name="leg3_shell3" file="leg3_shell3.stl" />
     <mesh name="foot3" file="foot3.stl" />
-    <mesh name="leg3_actuator2" file="leg3_actuator2.stl" />
-    <mesh name="leg3_shell33" file="leg3_shell33.stl" />
-    <mesh name="hand_umi2" file="hand_umi2.stl" />
-    <mesh name="hand_umi" file="hand_umi.stl" />
-    <mesh name="hand_umi2_2" file="hand_umi2_2.stl" />
-    <mesh name="hand_umi_2" file="hand_umi_2.stl" />
     <mesh name="foot1" file="foot1.stl" />
-    <mesh name="foot4" file="foot4.stl" />
-    <mesh name="foot2" file="foot2.stl" />
     <texture name="texplane" type="2d" builtin="checker" rgb1=".0 .0 .0" rgb2=".8 .8 .8" width="100" height="100" />
     <material name="matplane" reflectance="0." texture="texplane" texrepeat="1 1" texuniform="true" />
     <material name="visualgeom" rgba="0.5 0.9 0.2 1" />
@@ -110,101 +44,68 @@
     <light directional="true" diffuse="0.4 0.4 0.4" specular="0.1 0.1 0.1" pos="0 0 5.0" dir="0 0 -1" castshadow="false" />
     <light directional="true" diffuse="0.6 0.6 0.6" specular="0.2 0.2 0.2" pos="0 0 4" dir="0 0 -1" />
     <geom name="ground" type="plane" pos="0 0 0" size="100 100 0.001" quat="1 0 0 0" material="matplane" condim="3" conaffinity="15" />
-    <body name="root" pos="0 0 0.2827" quat="1 0 0 0">
+    <camera name="fixed" pos="0 -3.0 0.5" xyaxes="1 0 0 0 0 1" />
+    <camera name="track" mode="trackcom" pos="0 -3.0 0.5" xyaxes="1 0 0 0 0 1" />
+    <body name="root" pos="0 0 0.01" quat="1 0 0 0">
       <freejoint name="root" />
       <site name="imu" size="0.01" pos="0 0 0" />
-      <geom type="mesh" rgba="1 1 1 1" mesh="body1-part" contype="1" conaffinity="0" />
-      <geom pos="-1.06038e-05 0.0180896 0.1455" quat="-2.32051e-08 1 0 0" type="mesh" rgba="1 1 1 1" mesh="body1-part_2" contype="1" conaffinity="0" />
-      <geom pos="-1.06038e-05 0.0180896 0.185" quat="-2.32051e-08 1 0 0" type="mesh" rgba="1 1 1 1" mesh="body1-part_6" contype="1" conaffinity="0" />
-      <geom pos="-1.06038e-05 0.0180896 -0.1455" type="mesh" rgba="1 1 1 1" mesh="body1-part_3" contype="1" conaffinity="0" />
-      <geom pos="-1.06038e-05 0.0180896 -0.185" type="mesh" rgba="1 1 1 1" mesh="body1-part_7" contype="1" conaffinity="0" />
-      <geom pos="-0.0245106 0.0920896 -0.0500002" quat="-1.64085e-08 1.64085e-08 0.707107 -0.707107" type="mesh" rgba="1 1 1 1" mesh="body1-part_4" contype="1" conaffinity="0" />
-      <geom pos="-0.0312106 0.10659 0.0679998" quat="-0.5 0.5 0.5 -0.5" type="mesh" rgba="1 1 1 1" mesh="body1-part_8" contype="1" conaffinity="0" />
-      <geom pos="-0.0312106 0.10659 -0.0680002" quat="-0.5 0.5 0.5 -0.5" type="mesh" rgba="1 1 1 1" mesh="body1-part_9" contype="1" conaffinity="0" />
-      <geom pos="-0.0128287 0.247343 -1.9016e-07" quat="0 2.32051e-08 1 -2.67949e-08" type="mesh" rgba="1 1 1 1" mesh="body1-part_10" contype="1" conaffinity="0" />
-      <geom pos="-0.0390567 0.150425 -1.84966e-07" quat="0 2.32051e-08 1 -2.67949e-08" type="mesh" rgba="1 1 1 1" mesh="body1-part_15" contype="1" conaffinity="0" />
-      <geom pos="-0.0148658 0.213906 -0.000625189" quat="0 2.32051e-08 1 -2.67949e-08" type="mesh" rgba="1 1 1 1" mesh="body1-part_11" contype="1" conaffinity="0" />
-      <geom pos="0.0399894 0.0783038 -0.157" quat="0.5 -0.5 -0.5 0.5" type="mesh" rgba="1 1 1 1" mesh="back_shell" contype="1" conaffinity="0" />
-      <geom pos="-0.0400106 0.0783038 -0.157" quat="0.5 -0.5 -0.5 0.5" type="mesh" rgba="1 1 1 1" mesh="front_shell" contype="1" conaffinity="0" />
-      <geom pos="-1.06037e-05 -0.12991 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 1 1" mesh="body1-part_5" contype="1" conaffinity="0" />
-      <geom pos="0.0374894 -0.42101 -0.016" quat="1.64085e-08 -1.64085e-08 0.707107 0.707107" type="mesh" rgba="1 1 1 1" mesh="body1-part_12" contype="1" conaffinity="0" />
-      <geom pos="-1.06067e-05 -0.43201 0.0487" quat="0 -2.32051e-08 5e-08 1" type="mesh" rgba="1 1 1 1" mesh="body1-part_16" contype="1" conaffinity="0" />
-      <geom pos="-1.06085e-05 -0.43201 0.0877" quat="2.32051e-08 0 1 -7.32051e-08" type="mesh" rgba="1 1 1 1" mesh="body1-part_21" contype="1" conaffinity="0" />
-      <geom pos="-1.06022e-05 -0.43201 -0.0492" quat="0 -2.32051e-08 5e-08 1" type="mesh" rgba="1 1 1 1" mesh="body1-part_17" contype="1" conaffinity="0" />
-      <geom pos="-1.06003e-05 -0.43201 -0.0882" quat="0 -2.32051e-08 5e-08 1" type="mesh" rgba="1 1 1 1" mesh="body1-part_22" contype="1" conaffinity="0" />
-      <geom pos="-0.0350106 -0.36686 6.34905e-09" quat="0 -2.32051e-08 0 1" type="mesh" rgba="1 1 1 1" mesh="body1-part_13" contype="1" conaffinity="0" />
-      <geom pos="-0.0360106 -0.26501 6.30264e-09" quat="0.5 -0.5 -0.5 0.5" type="mesh" rgba="1 1 1 1" mesh="body1-part_18" contype="1" conaffinity="0" />
-      <geom pos="0.0009894 -0.20186 -0.0725" quat="0.5 -0.5 -0.5 0.5" type="mesh" rgba="1 1 1 1" mesh="body1-part_19" contype="1" conaffinity="0" />
-      <geom pos="0.0369894 -0.202085 -0.0818" quat="-1.64085e-08 -1.64085e-08 -0.707107 0.707107" type="mesh" rgba="1 1 1 1" mesh="body1-part_14" contype="1" conaffinity="0" />
-      <geom pos="-0.0600106 -0.250085 -0.0702" quat="-2.32051e-08 0 -1 2.67949e-08" type="mesh" rgba="1 1 1 1" mesh="body1-part_20" contype="1" conaffinity="0" />
-      <geom pos="-0.0599975 -0.151829 -0.00361005" quat="-2.32051e-08 0 -1 2.67949e-08" type="mesh" rgba="1 1 1 1" mesh="body1-part_23" contype="1" conaffinity="0" />
-      <body name="shoulder" pos="-1.06038e-05 0.0180896 0.1875" quat="0 -2.32051e-08 -1 -2.32051e-08">
-        <inertial pos="-0.00214329 5.4983e-05 -0.0664624" quat="0.999995 5.9818e-05 0.00315233 1.81742e-05" mass="1.10769" diaginertia="0.00148214 0.00104085 0.000985989" />
+      <geom type="mesh" rgba="1 1 1 1" mesh="body1-part" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+      <geom type="mesh" rgba="1 1 1 1" mesh="body1-part" />
+      <body name="shoulder" pos="-1.06038e-05 0.0180896 0.1875" quat="0 2.32051e-08 1 2.32051e-08">
+        <inertial pos="-0.00730995 0.000827227 -0.0670756" quat="0.998487 -0.0279049 0.0286765 0.0377207" mass="1.28498" diaginertia="0.00178515 0.00144392 0.00136936" />
         <joint name="L_shoulder_y" pos="0 0 0" axis="0 0 1" range="0 3.14159" actuatorfrcrange="-80 80" />
-        <geom type="mesh" rgba="1 1 1 1" mesh="shoulder" contype="1" conaffinity="0" />
-        <geom pos="0.020012 5.62785e-05 -0.0675" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="1 1 1 1" mesh="shoulder_3" contype="1" conaffinity="0" />
+        <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="shoulder" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+        <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="shoulder" />
         <body name="arm1_top" pos="0.022512 5.62784e-05 -0.0675" quat="0.5 0.5 0.5 0.5">
-          <inertial pos="-0.104917 -2.22448e-06 -0.0227023" quat="-0.000173104 0.567488 -0.000118086 0.823381" mass="0.64852" diaginertia="0.00132407 0.00129493 0.000441655" />
+          <inertial pos="-0.0793712 -0.00125015 -0.0143661" quat="-0.0499719 0.567978 -0.0371955 0.820683" mass="1.10472" diaginertia="0.00408868 0.00384907 0.00107265" />
           <joint name="L_shoulder_x" pos="0 0 0" axis="0 0 -1" range="-0.479966 3.63028" actuatorfrcrange="-80 80" />
-          <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="arm1_top" contype="1" conaffinity="0" />
-          <geom pos="-0.108 0 -0.0235" quat="-1.64085e-08 0.707107 1.64085e-08 0.707107" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="arm-actuator" contype="1" conaffinity="0" />
-          <geom pos="-0.136 -1.29949e-09 -0.0235" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="1 1 1 1" mesh="arm-stopper-2.stp" contype="1" conaffinity="0" />
-          <body name="arm2_shell" pos="-0.1395 -1.46192e-09 -0.0235" quat="-0.707107 0 -0.707107 -3.2817e-08">
-            <inertial pos="-0.00633503 0 -0.0904211" quat="0.999974 0 0.00716284 0" mass="0.511016" diaginertia="0.000678337 0.000535398 0.000254797" />
+          <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="arm1_top" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+          <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="arm1_top" />
+          <body name="arm2_shell" pos="-0.1395 -1.46192e-09 -0.0235" quat="0.707107 -1.64085e-08 0.707107 1.64085e-08">
+            <inertial pos="-0.00179871 -0.00117563 -0.0694628" quat="0.999115 0.0291134 0.0300503 0.00441732" mass="0.888739" diaginertia="0.00186471 0.0017354 0.000866031" />
             <joint name="L_shoulder_z" pos="0 0 0" axis="0 0 1" range="-1.5708 1.5708" actuatorfrcrange="-80 80" />
-            <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="arm2_shell" contype="1" conaffinity="0" />
-            <geom pos="-0.0175 0 -0.098" quat="0.707107 0 -0.707107 0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="arm2_actuator" contype="1" conaffinity="0" />
-            <body name="arm3_shell" pos="-0.026 0 -0.098" quat="-1.64085e-08 0.707107 1.64085e-08 0.707107">
-              <inertial pos="-0.140087 -3.71527e-10 0.0194225" quat="0 0.759525 0 0.650479" mass="0.578875" diaginertia="0.00136107 0.00136078 0.000405662" />
-              <joint name="L_elbow" pos="0 0 0" axis="0 0 1" range="0 2.79253" actuatorfrcrange="-80 80" />
-              <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="arm3_shell" contype="1" conaffinity="0" />
-              <geom pos="-0.15 0 0.0215" quat="-1.64085e-08 0.707107 1.64085e-08 0.707107" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="arm3_actuator" contype="1" conaffinity="0" />
-              <body name="hand_shell" pos="-0.1815 -1.46192e-09 0.0215" quat="-0.5 0.5 -0.5 0.5">
-                <inertial pos="0.000708717 0.00012971 -0.0746297" quat="0.70677 0.0116365 0.0100591 0.707276" mass="0.793352" diaginertia="0.00287111 0.002036 0.00127892" />
+            <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="arm2_shell" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+            <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="arm2_shell" />
+            <body name="arm3_shell" pos="-0.026 0 -0.098" quat="1.64085e-08 -0.707107 -1.64085e-08 -0.707107">
+              <inertial pos="-0.111658 2.01983e-06 0.0179545" quat="-0.000359929 0.750828 -0.000399748 0.660497" mass="1.17435" diaginertia="0.0039329 0.00386554 0.0012513" />
+              <joint name="L_elbow" pos="0 0 0" axis="0 0 1" range="-2.53073 0" actuatorfrcrange="-80 80" />
+              <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="arm3_shell" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+              <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="arm3_shell" />
+              <body name="hand_shell" pos="-0.1815 -1.46192e-09 0.0215" quat="0.5 -0.5 0.5 -0.5">
+                <inertial pos="0.000708717 0.00012971 -0.0746297" quat="0.70677 0.0116364 0.0100591 0.707276" mass="0.793352" diaginertia="0.00287111 0.002036 0.00127892" />
                 <joint name="R_wrist" pos="0 0 0" axis="0 0 1" range="0 6.28319" actuatorfrcrange="-80 80" />
-                <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="hand_shell" contype="1" conaffinity="0" />
-                <geom pos="0 0 -0.062" quat="-2.32051e-08 1 0 0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="hand_actuator" contype="1" conaffinity="0" />
-                <geom pos="0 -0.0297277 -0.107" quat="-1.64085e-08 0.707107 1.64085e-08 0.707107" type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="hand_shell2" contype="1" conaffinity="0" />
-                <geom pos="-0.0545 0.0126288 -0.108018" quat="-0.707107 -3.2817e-08 0.707107 -3.2817e-08" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="hand_part2" contype="1" conaffinity="0" />
-                <geom pos="-0.042 0.000128764 -0.158018" quat="4.92255e-08 -0.707107 -4.92255e-08 -0.707107" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="hand_umi2" contype="1" conaffinity="0" />
-                <geom pos="0.0545 -0.0120642 -0.108018" quat="-0.707107 -3.2817e-08 0.707107 -3.2817e-08" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="hand_part" contype="1" conaffinity="0" />
-                <geom pos="0.042 0.00043576 -0.158018" quat="-0.707107 -3.2817e-08 0.707107 -3.2817e-08" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="hand_umi" contype="1" conaffinity="0" />
+                <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="hand_shell" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+                <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="hand_shell" />
               </body>
             </body>
           </body>
         </body>
       </body>
-      <body name="shoulder_2" pos="-1.06038e-05 0.0180896 -0.1875" quat="-2.32051e-08 0 0 1">
-        <inertial pos="-0.00117286 -5.45076e-05 -0.0660771" quat="0.999997 -5.4751e-05 0.0023976 -2.00948e-05" mass="0.807693" diaginertia="0.00117927 0.000813938 0.00075953" />
+      <body name="shoulder_2" pos="-1.06038e-05 0.0180896 -0.1875" quat="2.32051e-08 0 0 -1">
+        <inertial pos="-0.00808783 -0.00106204 -0.0669464" quat="0.997954 0.0243151 0.0359066 -0.0469722" mass="0.984978" diaginertia="0.00148321 0.00121718 0.00114258" />
         <joint name="R_shoulder_y" pos="0 0 0" axis="0 0 1" range="-3.14159 0" actuatorfrcrange="-80 80" />
-        <geom type="mesh" rgba="1 1 1 1" mesh="shoulder_2" contype="1" conaffinity="0" />
-        <geom pos="0.020012 -5.62785e-05 -0.0675" quat="0.5 -0.5 0.5 -0.5" type="mesh" rgba="1 1 1 1" mesh="shoulder_4" contype="1" conaffinity="0" />
+        <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="shoulder_2" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+        <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="shoulder_2" />
         <body name="arm1_top_2" pos="0.022512 -5.62784e-05 -0.0675" quat="0.5 0.5 -0.5 -0.5">
-          <inertial pos="-0.104917 -2.15785e-06 0.0217023" quat="0.000114638 0.823382 0.000170604 0.567488" mass="0.648519" diaginertia="0.00132407 0.00129493 0.000441654" />
+          <inertial pos="-0.0793712 -0.00125008 0.0133662" quat="0.0371983 0.820683 0.0499765 0.567978" mass="1.10471" diaginertia="0.00408867 0.00384907 0.00107265" />
           <joint name="R_shoulder_x" pos="0 0 0" axis="0 0 1" range="-0.479966 3.63028" actuatorfrcrange="-80 80" />
-          <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="arm1_top_2" contype="1" conaffinity="0" />
-          <geom pos="-0.108 0 0.0225" quat="0.707107 0 0.707107 0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="arm-actuator_2" contype="1" conaffinity="0" />
-          <geom pos="-0.136 0 0.0225" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="1 1 1 1" mesh="arm-stopper-2.stp_2" contype="1" conaffinity="0" />
-          <body name="arm2_shell_2" pos="-0.1395 0 0.0225" quat="-1.64085e-08 0.707107 -1.64085e-08 -0.707107">
-            <inertial pos="0.00633503 0 0.0899211" quat="0.999974 0 0.00716283 0" mass="0.511016" diaginertia="0.000678337 0.000535398 0.000254797" />
+          <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="arm1_top_2" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+          <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="arm1_top_2" />
+          <body name="arm2_shell_2" pos="-0.1395 0 0.0225" quat="1.64085e-08 -0.707107 1.64085e-08 0.707107">
+            <inertial pos="0.00179871 0.00117563 0.0689628" quat="0.999115 0.0291134 0.0300502 0.00441807" mass="0.888739" diaginertia="0.00186471 0.0017354 0.000866031" />
             <joint name="R_shoulder_z" pos="0 0 0" axis="0 0 -1" range="-1.5708 1.5708" actuatorfrcrange="-80 80" />
-            <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="arm2_shell_2" contype="1" conaffinity="0" />
-            <geom pos="0.0175 0 0.0975" quat="0.707107 0 0.707107 0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="arm2_actuator_2" contype="1" conaffinity="0" />
-            <body name="arm3_shell2" pos="0.026 0 0.0975" quat="-1.64085e-08 0.707107 -1.64085e-08 -0.707107">
-              <inertial pos="-0.140087 -3.71527e-10 0.0194225" quat="0 0.759525 0 0.650479" mass="0.578875" diaginertia="0.00136107 0.00136078 0.000405662" />
-              <joint name="R_elbow" pos="0 0 0" axis="0 0 1" range="0 2.79253" actuatorfrcrange="-80 80" />
-              <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="arm3_shell2" contype="1" conaffinity="0" />
-              <geom pos="-0.15 0 0.0215" quat="-1.64085e-08 0.707107 1.64085e-08 0.707107" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="arm3_actuator2" contype="1" conaffinity="0" />
-              <body name="hand_shell_2" pos="-0.1815 -1.46192e-09 0.0215" quat="-0.5 0.5 -0.5 0.5">
-                <inertial pos="0.000708717 0.00012971 -0.0746297" quat="0.70677 0.0116365 0.0100591 0.707276" mass="0.793352" diaginertia="0.00287111 0.002036 0.00127892" />
+            <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="arm2_shell_2" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+            <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="arm2_shell_2" />
+            <body name="arm3_shell2" pos="0.026 0 0.0975" quat="1.64085e-08 -0.707107 1.64085e-08 0.707107">
+              <inertial pos="-0.111658 -1.90252e-06 0.0179545" quat="0.000339011 0.750827 0.00037652 0.660498" mass="1.17435" diaginertia="0.0039329 0.00386555 0.0012513" />
+              <joint name="R_elbow" pos="0 0 0" axis="0 0 1" range="0 2.53073" actuatorfrcrange="-80 80" />
+              <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="arm3_shell2" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+              <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="arm3_shell2" />
+              <body name="hand_shell_2" pos="-0.1815 -1.46192e-09 0.0215" quat="0.5 -0.5 0.5 -0.5">
+                <inertial pos="0.000708717 0.00012971 -0.0746297" quat="0.70677 0.0116364 0.0100591 0.707276" mass="0.793352" diaginertia="0.00287111 0.002036 0.00127892" />
                 <joint name="L_wrist" pos="0 0 0" axis="0 0 1" range="0 6.28319" actuatorfrcrange="-80 80" />
-                <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="hand_shell_2" contype="1" conaffinity="0" />
-                <geom pos="0 0 -0.062" quat="-2.32051e-08 1 0 0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="hand_actuator_2" contype="1" conaffinity="0" />
-                <geom pos="0 -0.0297277 -0.107" quat="-1.64085e-08 0.707107 1.64085e-08 0.707107" type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="hand_shell2_2" contype="1" conaffinity="0" />
-                <geom pos="-0.0545 0.0126288 -0.108018" quat="-0.707107 -3.2817e-08 0.707107 -3.2817e-08" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="hand_part2_2" contype="1" conaffinity="0" />
-                <geom pos="-0.042 0.000128764 -0.158018" quat="4.92255e-08 -0.707107 -4.92255e-08 -0.707107" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="hand_umi2_2" contype="1" conaffinity="0" />
-                <geom pos="0.0545 -0.0120642 -0.108018" quat="-0.707107 -3.2817e-08 0.707107 -3.2817e-08" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="hand_part_2" contype="1" conaffinity="0" />
-                <geom pos="0.042 0.00043576 -0.158018" quat="-0.707107 -3.2817e-08 0.707107 -3.2817e-08" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="hand_umi_2" contype="1" conaffinity="0" />
+                <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="hand_shell_2" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+                <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="hand_shell_2" />
               </body>
             </body>
           </body>
@@ -213,68 +114,58 @@
       <body name="leg0_shell" pos="-1.06085e-05 -0.43201 0.0877" quat="2.32051e-08 0 1 -7.32051e-08">
         <inertial pos="-0.00374632 -5.30704e-10 -0.0681251" quat="0.999982 0 -0.00597565 0" mass="1.32345" diaginertia="0.0018859 0.00142483 0.00129962" />
         <joint name="L_hip_y" pos="0 0 0" axis="0 0 1" range="-1.5708 1.5708" actuatorfrcrange="-80 80" />
-        <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="leg0_shell" contype="1" conaffinity="0" />
-        <geom pos="-0.0301 0 -0.0695" quat="0.5 -0.5 -0.5 0.5" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="leg0_actuator" contype="1" conaffinity="0" />
-        <geom pos="-0.0346 0 -0.0695" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="leg0_bearing" contype="1" conaffinity="0" />
+        <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="leg0_shell" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+        <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="leg0_shell" />
         <body name="leg1_shell" pos="0.0265 -1.51659e-09 -0.0695" quat="0.5 -0.5 -0.5 0.5">
-          <inertial pos="-0.116471 0.00323117 0.025411" quat="0.162954 0.777613 0.0974626 0.599387" mass="1.36077" diaginertia="0.00293018 0.00283394 0.00156523" />
+          <inertial pos="-0.095008 0.0037889 0.0261069" quat="0.491547 0.526837 0.511484 0.468197" mass="2.39754" diaginertia="0.00948319 0.0088461 0.00510047" />
           <joint name="L_hip_x" pos="0 0 0" axis="0 0 1" range="-0.349066 3.18523" actuatorfrcrange="-80 80" />
-          <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="leg1_shell" contype="1" conaffinity="0" />
-          <geom pos="-0.0999 0.000119814 0.0275" quat="0.707107 0 0.707107 0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="leg1_actuator" contype="1" conaffinity="0" />
-          <geom pos="-0.1565 0.000119814 0.0275" quat="0.707107 0 0.707107 0" type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="leg-stopper-2" contype="1" conaffinity="0" />
+          <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="leg1_shell" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+          <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="leg1_shell" />
           <body name="leg2_shell" pos="-0.1565 0.000119814 0.0275" quat="0.707107 0 0.707107 0">
-            <inertial pos="4.08555e-07 0.000531684 -0.137308" quat="0.707084 -0.00547271 0.00548785 0.707088" mass="1.82092" diaginertia="0.00422586 0.00311812 0.00206385" />
+            <inertial pos="0.00146207 9.40256e-06 -0.114948" quat="0.714871 0.0282367 0.0196615 0.698409" mass="2.36731" diaginertia="0.00939993 0.00817177 0.00374967" />
             <joint name="L_hip_z" pos="0 0 0" axis="0 0 1" range="-1.5708 1.5708" actuatorfrcrange="-80 80" />
-            <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="leg2_shell" contype="1" conaffinity="0" />
-            <geom pos="0 0.013 -0.1425" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="leg2_actuator" contype="1" conaffinity="0" />
-            <geom pos="0 0.0307 -0.1425" quat="0.707107 0.707107 0 0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="leg2_bearing" contype="1" conaffinity="0" />
+            <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="leg2_shell" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+            <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="leg2_shell" />
             <body name="leg3_shell2" pos="0 0.0342 -0.1425" quat="0.707107 0.707107 0 0">
-              <inertial pos="0.00103299 -0.12548 0.0366711" quat="0.691727 0.665165 0.198925 -0.19874" mass="1.17968" diaginertia="0.00753953 0.00750258 0.00111461" />
+              <inertial pos="0.000692643 -0.0906724 0.0320265" quat="0.722394 0.691168 0.0174263 -0.0113733" mass="1.75933" diaginertia="0.0146368 0.0141424 0.00277765" />
               <joint name="L_knee" pos="0 0 0" axis="0 0 1" range="-2.0944 2.0944" actuatorfrcrange="-80 80" />
-              <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="leg3_shell2" contype="1" conaffinity="0" />
-              <geom pos="0.029 -0.068 0.0222" type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="leg3_shell1" contype="1" conaffinity="0" />
-              <geom pos="0 -0.11 0.0343" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="leg3_actuator" contype="1" conaffinity="0" />
-              <geom pos="0 -0.11 0.0692" quat="-2.32051e-08 1 0 0" type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="leg3_shell3" contype="1" conaffinity="0" />
-              <body name="foot1" pos="0 -0.3 0.0702" quat="-1 -4.64102e-08 0 0">
+              <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="leg3_shell2" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+              <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="leg3_shell2" />
+              <body name="foot1" pos="0 -0.3 0.0702" quat="1 4.64102e-08 0 0">
                 <inertial pos="0.0210264 -0.018472 -0.0193043" quat="0.505269 0.504957 0.48518 0.504304" mass="0.545747" diaginertia="0.00202977 0.00187214 0.000259286" />
                 <joint name="L_ankle" pos="0 0 0" axis="0 0 -1" range="-0.698132 0.698132" actuatorfrcrange="-80 80" />
-                <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="foot1" contype="1" conaffinity="0" />
-                <geom pos="0.125 -0.015 0.0015" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="foot2" contype="1" conaffinity="0" />
+                <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="foot1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+                <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="foot1" />
               </body>
             </body>
           </body>
         </body>
       </body>
-      <body name="leg0_shell_2" pos="-1.06003e-05 -0.43201 -0.0882" quat="0 -2.32051e-08 5e-08 1">
+      <body name="leg0_shell_2" pos="-1.06003e-05 -0.43201 -0.0882" quat="0 2.32051e-08 -5e-08 -1">
         <inertial pos="-0.00374632 -5.30704e-10 -0.0681251" quat="0.999982 0 -0.00597565 0" mass="1.32345" diaginertia="0.0018859 0.00142483 0.00129962" />
         <joint name="R_hip_y" pos="0 0 0" axis="0 0 1" range="-1.5708 1.5708" actuatorfrcrange="-80 80" />
-        <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="leg0_shell_2" contype="1" conaffinity="0" />
-        <geom pos="-0.0301 0 -0.0695" quat="0.5 -0.5 -0.5 0.5" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="leg0_actuator_2" contype="1" conaffinity="0" />
-        <geom pos="-0.0346 0 -0.0695" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="leg0_bearing_2" contype="1" conaffinity="0" />
-        <body name="leg1_shell3" pos="0.0265 -1.51659e-09 -0.0695" quat="-0.5 -0.5 0.5 0.5">
-          <inertial pos="-0.116295 -0.00323118 0.025411" quat="-0.155155 0.779695 -0.0910895 0.599754" mass="1.36077" diaginertia="0.00290553 0.00280871 0.00156592" />
+        <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="leg0_shell_2" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+        <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="leg0_shell_2" />
+        <body name="leg1_shell3" pos="0.0265 -1.51659e-09 -0.0695" quat="0.5 0.5 -0.5 -0.5">
+          <inertial pos="-0.0949078 -0.0037889 0.0261069" quat="0.468237 0.512268 0.526385 0.491177" mass="2.39754" diaginertia="0.00944772 0.00881137 0.00510089" />
           <joint name="R_hip_x" pos="0 0 0" axis="0 0 1" range="-0.349066 3.18523" actuatorfrcrange="-80 80" />
-          <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="leg1_shell3" contype="1" conaffinity="0" />
-          <geom pos="-0.0999 -0.000119814 0.0275" quat="0.707107 0 0.707107 0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="leg1_actuator2" contype="1" conaffinity="0" />
-          <geom pos="-0.154 -0.000119814 0.0275" quat="0.707107 0 0.707107 0" type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="leg-stopper-2_2" contype="1" conaffinity="0" />
-          <body name="leg2_shell_2" pos="-0.1565 -0.000119814 0.0275" quat="-1.64085e-08 0.707107 -1.64085e-08 0.707107">
-            <inertial pos="4.08555e-07 0.000531684 -0.137308" quat="0.707084 -0.00547271 0.00548785 0.707088" mass="1.82092" diaginertia="0.00422586 0.00311812 0.00206385" />
+          <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="leg1_shell3" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+          <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="leg1_shell3" />
+          <body name="leg2_shell_2" pos="-0.1565 -0.000119814 0.0275" quat="0 -0.707107 0 -0.707107">
+            <inertial pos="-0.00146137 9.41194e-06 -0.114948" quat="0.698405 -0.0196604 -0.0282353 0.714875" mass="2.3673" diaginertia="0.00939994 0.00817176 0.00374968" />
             <joint name="R_hip_z" pos="0 0 0" axis="0 0 1" range="-1.5708 1.5708" actuatorfrcrange="-80 80" />
-            <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="leg2_shell_2" contype="1" conaffinity="0" />
-            <geom pos="0 0.013 -0.1425" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="leg2_actuator_2" contype="1" conaffinity="0" />
-            <geom pos="0 0.0307 -0.1425" quat="0.707107 0.707107 0 0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="leg2_bearing_2" contype="1" conaffinity="0" />
+            <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="leg2_shell_2" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+            <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="leg2_shell_2" />
             <body name="leg3_shell22" pos="0 0.0342 -0.1425" quat="0.707107 0.707107 0 0">
-              <inertial pos="-0.00103303 -0.12548 0.0366712" quat="0.691727 0.665164 -0.198928 0.198742" mass="1.17968" diaginertia="0.00753955 0.0075026 0.00111462" />
+              <inertial pos="-0.000692674 -0.0906727 0.0320266" quat="0.722394 0.691168 -0.0174271 0.0113737" mass="1.75934" diaginertia="0.0146369 0.0141424 0.00277766" />
               <joint name="R_knee" pos="0 0 0" axis="0 0 -1" range="-2.0944 2.0944" actuatorfrcrange="-80 80" />
-              <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="leg3_shell22" contype="1" conaffinity="0" />
-              <geom pos="-0.029 -0.068 0.0222" quat="-2.32051e-08 0 0 1" type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="leg3_shell11" contype="1" conaffinity="0" />
-              <geom pos="1.94923e-09 -0.11 0.0343" quat="-2.32051e-08 0 0 1" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="leg3_actuator2" contype="1" conaffinity="0" />
-              <geom pos="1.94923e-09 -0.11 0.0692" quat="0 -2.32051e-08 1 -2.32051e-08" type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="leg3_shell33" contype="1" conaffinity="0" />
+              <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="leg3_shell22" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+              <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="leg3_shell22" />
               <body name="foot3" pos="1.07672e-08 -0.3 0.0272" quat="0 -2.32051e-08 1 -2.32051e-08">
                 <inertial pos="0.0210264 -0.018472 -0.0236957" quat="0.504957 0.505269 0.504304 0.48518" mass="0.545747" diaginertia="0.00202977 0.00187214 0.000259286" />
                 <joint name="R_ankle" pos="0 0 0" axis="0 0 -1" range="-0.698132 0.698132" actuatorfrcrange="-80 80" />
-                <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="foot3" contype="1" conaffinity="0" />
-                <geom pos="0.11 -0.015 -0.0025" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="foot4" contype="1" conaffinity="0" />
+                <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="foot3" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+                <geom type="mesh" rgba="0.121569 0.121569 0.137255 1" mesh="foot3" />
               </body>
             </body>
           </body>
