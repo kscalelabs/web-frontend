@@ -10,9 +10,8 @@ import {
 } from "@/components/iconography/ResearchIcons";
 import { useWindowSize } from "@/components/util/functions";
 import { cubicBezier, motion, useMotionValue } from "motion/react";
-import { useMemo } from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
+import clsx from "clsx";
 
 const RESEARCH_ITEMS = [
   {
@@ -21,6 +20,7 @@ const RESEARCH_ITEMS = [
     image: "/images/research/edge-vla.png",
     link: "/",
     icon: <EVLAIcon />,
+    variant: ColorVariant.METHYL,
   },
   {
     title: "K-OS",
@@ -28,6 +28,7 @@ const RESEARCH_ITEMS = [
     image: "/images/research/edge-vla.png",
     link: "/",
     icon: <KOSIcon />,
+    variant: ColorVariant.PLASMA,
   },
   {
     title: "Klang",
@@ -36,6 +37,7 @@ const RESEARCH_ITEMS = [
     image: "/images/research/edge-vla.png",
     link: "/",
     icon: <KLANGIcon />,
+    variant: ColorVariant.OXIDE,
   },
   {
     title: "kRec",
@@ -44,6 +46,7 @@ const RESEARCH_ITEMS = [
     image: "/images/research/edge-vla.png",
     link: "/",
     icon: <KRECIcon />,
+    variant: ColorVariant.RUST,
   },
   {
     title: "kSim",
@@ -52,6 +55,7 @@ const RESEARCH_ITEMS = [
     image: "/images/research/edge-vla.png",
     link: "/",
     icon: <KSIMIcon />,
+    variant: ColorVariant.MOLTEN,
   },
 ];
 
@@ -62,28 +66,51 @@ interface ResearchItem {
   link: string;
   index: number;
   icon: React.ReactNode;
+  variant: ColorVariant;
 }
 
-const ResearchCard = ({ title, description, image, link, index, icon }: ResearchItem) => {
+const ResearchCard = ({ title, description, image, link, index, icon, variant }: ResearchItem) => {
+  const bg = (variant: ColorVariant): string => {
+    switch (variant) {
+      case ColorVariant.METHYL:
+        return "bg-methyl ";
+      case ColorVariant.PLASMA:
+        return "bg-plasma ";
+      case ColorVariant.OXIDE:
+        return "bg-oxide ";
+      case ColorVariant.RUST:
+        return "bg-rust ";
+      case ColorVariant.MOLTEN:
+        return "bg-molten ";
+      case ColorVariant.SOL:
+        return "bg-sol ";
+      case ColorVariant.FILAMENT:
+        return "bg-filament ";
+      case ColorVariant.CARBON:
+        return "bg-carbon ";
+      default:
+        return "bg-foreground ";
+    }
+  };
   return (
     <motion.div
-      className="bg-gradient-to-br from-methyl via-plasma to-oxide rounded-lg flex-none"
+      className={clsx("bg-gradient-to-br rounded-lg flex-none", bg(variant))}
       key={`research-card--${index}`}
       draggable={false}
     >
       <article className="p-4 flex flex-col gap-24 h-full w-[80vw] xs:w-[66.25vw] sm:w-[calc(100vw_*_(1.7_/3_+_0.025))] md:w-[calc(100vw_*_(2.8_/_9_+_0.075))] 2xl:w-[calc(100vw_*_(0.875_/_3))] 4xl:w-[21.5625vw]">
         {icon}
-        <div className="flex flex-col gap-y-4 h-full">
+        <div className="flex flex-col gap-y-4 h-full text-filament">
           <h3 className="text-heading-sm">{title}</h3>
           <p className="text-body">{description}</p>
           <NavCTAButton
             href={link}
             target="_blank"
             className="mt-auto w-fit px-2"
-            variant={ColorVariant.PLASMA}
+            variant={variant}
             mode={FillMode.INVERT}
           >
-            View on Github <Github mode={IconMode.SET} variant={ColorVariant.PLASMA} />
+            View on Github <Github mode={IconMode.SET} variant={variant} />
           </NavCTAButton>
         </div>
       </article>
