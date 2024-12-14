@@ -4,7 +4,12 @@ import Link from "next/link";
 
 const SocialMediaItem = (props: SocialMediaItemProps) => {
   return (
-    <Link className={"m-0 p-0 size-6 flex"} href={props.linkURL} target={"_blank"}>
+    <Link
+      className={"m-0 p-0 size-6 flex"}
+      href={props.linkURL}
+      target={"_blank"}
+      aria-label={`Go to ${props.name}`}
+    >
       <motion.div
         // variants={{
         //   initial: {

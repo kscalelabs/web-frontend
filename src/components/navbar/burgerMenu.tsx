@@ -11,18 +11,19 @@ import { CTASubtitleButton } from "@/components/buttons/CTAButtons";
 
 const BurgerMenu = (isOpen: boolean) => {
   return isOpen ? (
-    <div
-      className={
-        "flex flex-col items-start w-[100%] gap-10 py-12 list-none justify-evenly " +
-        (isOpen ? "h-[100dvh] bg-background " : "h-fit")
-      }
+    <motion.div
+      className={"flex flex-col col-span-full list-none justify-evenly"}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2, ease: "circOut" }}
     >
       {navItemsMobile.map((navItem, index) => {
         return (
           <motion.button
             key={index}
             className={
-              "font-planar font-normal capitalize text-4xl select-none flex flex-row text-foreground " +
+              "col-span-full font-planar font-normal capitalize text-4xl select-none flex flex-row text-foreground " +
               " hover:text-rust " +
               transitionEaseLinearDuration300
             }
@@ -40,12 +41,12 @@ const BurgerMenu = (isOpen: boolean) => {
 
       <CTASubtitleButton
         subtitle="Available for pre-order, Q1 2025"
-        className="w-full"
+        className="w-full col-span-full h-fit"
         mode={FillMode.FILL}
       >
         Buy K-Bot today
       </CTASubtitleButton>
-    </div>
+    </motion.div>
   ) : (
     <></>
   );

@@ -3,36 +3,19 @@ import Logotype from "@/components/logos/logotype";
 import BurgerOpenButton from "@/components/navbar/burgerOpenButton";
 import { NavDocsButton, NavLogInButton } from "@/components/navbar/navButtons";
 import { useWindowSize } from "@/components/util/functions";
-import { motion, useMotionValueEvent, useScroll } from "motion/react";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import React, { useEffect, useState } from "react";
 import { ExpressiveArrow } from "@/components/iconography/Iconography";
 import BurgerMenu from "@/components/navbar/burgerMenu";
 import { FillMode } from "@/components/util/constants";
 import Lenis from "lenis";
 import { useLenis } from "lenis/dist/lenis-react";
+import clsx from "clsx";
 
 const navButtons: React.ReactNode[] = [
   { component: <NavDocsButton />, key: "docs" },
   { component: <NavLogInButton />, key: "login" },
 ].map((item) => React.cloneElement(item.component, { key: item.key }));
-
-const navVariants = {
-  visible: {
-    y: "0%",
-  },
-  hidden: {
-    y: "-150%",
-  },
-};
-
-const navItemVariants = {
-  visible: {
-    y: "0%",
-  },
-  hidden: {
-    y: "-150%",
-  },
-};
 
 export default function NavBar() {
   const { scrollY } = useScroll();
@@ -62,20 +45,27 @@ export default function NavBar() {
   const mobileNavBar = () => {
     const atTop = scrollY.get() < 100;
     return (
-      <motion.menu
-        className={
-          "overflow-hidden w-[100%] p-4 top-0 left-0 gap-2.5 pb-5" +
-          (mobileShouldOpenBurger ? "h-[100dvh] bg-background " : "h-fit")
-        }
-        initial={{ backgroundColor: "var(--background-0)" }}
-        animate={{ backgroundColor: atTop ? "var(--background-0)" : "var(--background)" }}
-      >
-        <div className={" flex flex-row grow justify-between items-baseline "}>
+      <>
+        <motion.menu
+          className={clsx(
+            "col-span-full grid grid-cols-subgrid overflow-hidden py-4 items-end h-fit px-[5vw] -mx-[5vw]"
+          )}
+          initial={{ backgroundColor: "var(--background-0)" }}
+          animate={{
+            backgroundColor: !atTop ? "var(--background)" : "var(--background-0)",
+          }}
+          exit={{ backgroundColor: "var(--background-0)" }}
+          transition={{ duration: 0.2, ease: "circOut" }}
+        >
           <Logotype atTop={atTop} />
-          <BurgerOpenButton isOpen={mobileShouldOpenBurger} onClick={setMobileShouldOpenBurger} />
-        </div>
-        {BurgerMenu(mobileShouldOpenBurger)}
-      </motion.menu>
+          <BurgerOpenButton
+            className="-col-end-1 place-self-end"
+            isOpen={mobileShouldOpenBurger}
+            onClick={setMobileShouldOpenBurger}
+          />
+        </motion.menu>
+        <AnimatePresence>{BurgerMenu(mobileShouldOpenBurger)}</AnimatePresence>
+      </>
     );
   };
 
@@ -109,6 +99,10 @@ export default function NavBar() {
       </motion.div>
     );
   };
+  useEffect(() => {
+    setMobileShouldOpenBurger(false);
+    lenis?.start();
+  }, [width]);
 
   useEffect(() => {
     if (lenis) {
@@ -120,5 +114,17 @@ export default function NavBar() {
     }
   }, [mobileShouldOpenBurger]);
 
-  return <nav className="fixed top-0 inset-x-0 z-50">{navBasedOnWidth(width >= 768)}</nav>;
+  return (
+    <motion.nav
+      className="fixed top-0 inset-x-0 z-50 h-[100dvh] md:h-fit grid-a grid-rows-[min-content_auto]"
+      initial={{
+        backgroundColor: "var(--background-0)",
+      }}
+      animate={{
+        backgroundColor: mobileShouldOpenBurger ? "var(--background)" : "var(--background-0)",
+      }}
+    >
+      {navBasedOnWidth(width >= 768)}
+    </motion.nav>
+  );
 }

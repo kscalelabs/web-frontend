@@ -1,4 +1,5 @@
 import { BurgerOpenButtonProps } from "@/components/util/interfaces";
+import clsx from "clsx";
 
 const closeBurgerPaths: string[] = [
   "M23.025 9.56738C23.025 10.433 22.3233 11.1348 21.4576 11.1348L1.56738 11.1348C0.701742 11.1348 -5.26833e-08 10.433 0 9.56738C5.26833e-08 8.70174 0.701741 8 1.56738 8L21.4576 8C22.3233 8 23.025 8.70174 23.025 9.56738Z",
@@ -13,7 +14,7 @@ const openBurgerPaths: string[] = [
 const BurgerOpenButton = (props: BurgerOpenButtonProps) => {
   return (
     <button
-      className={"cursor-pointer h-fit"}
+      className={clsx("cursor-pointer h-fit", props.className)}
       onClick={() => {
         props.onClick(!props.isOpen);
       }}

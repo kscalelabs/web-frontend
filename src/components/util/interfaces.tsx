@@ -11,6 +11,7 @@ export interface ExpressiveArrowProps {
 }
 
 export interface BurgerOpenButtonProps {
+  className?: string;
   isOpen: boolean;
   onClick: Dispatch<SetStateAction<boolean>>;
 }
