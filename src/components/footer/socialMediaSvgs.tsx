@@ -45,12 +45,12 @@ const socialVariants = (mode: IconMode) => {
 
 export const Discord = ({
   mode = IconMode.FULL,
-  variant,
+  variant = ColorVariant.FILAMENT,
 }: {
   mode?: IconMode;
   variant?: ColorVariant;
 }) => {
-  const fill = variant ? getVariantClass(variant) : "fill-filament";
+  const fill = getVariantClass(variant);
 
   return (
     <motion.svg
@@ -72,12 +72,12 @@ export const Discord = ({
 
 export const LinkedIn = ({
   mode = IconMode.FULL,
-  variant,
+  variant = ColorVariant.FILAMENT,
 }: {
   mode?: IconMode;
   variant?: ColorVariant;
 }) => {
-  const fill = variant ? getVariantClass(variant) : "fill-filament";
+  const fill = getVariantClass(variant);
 
   return (
     <motion.svg
@@ -99,12 +99,12 @@ export const LinkedIn = ({
 
 export const Twitter = ({
   mode = IconMode.FULL,
-  variant,
+  variant = ColorVariant.FILAMENT,
 }: {
   mode?: IconMode;
   variant?: ColorVariant;
 }) => {
-  const fill = variant ? getVariantClass(variant) : "fill-filament";
+  const fill = getVariantClass(variant);
 
   return (
     <motion.svg
@@ -126,12 +126,12 @@ export const Twitter = ({
 
 export const Facebook = ({
   mode = IconMode.FULL,
-  variant,
+  variant = ColorVariant.FILAMENT,
 }: {
   mode?: IconMode;
   variant?: ColorVariant;
 }) => {
-  const fill = variant ? getVariantClass(variant) : "fill-filament";
+  const fill = getVariantClass(variant);
 
   return (
     <motion.svg
@@ -153,12 +153,12 @@ export const Facebook = ({
 
 export const Github = ({
   mode = IconMode.FULL,
-  variant,
+  variant = ColorVariant.FILAMENT,
 }: {
   mode?: IconMode;
   variant?: ColorVariant;
 }) => {
-  const fill = variant ? getVariantClass(variant) : "fill-filament";
+  const fill = getVariantClass(variant);
 
   return (
     <motion.svg

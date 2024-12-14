@@ -20,6 +20,10 @@ const getVariantClass = (variant: ColorVariant, mode: FillMode): string => {
         return "bg-molten text-filament";
       case ColorVariant.SOL:
         return "bg-sol text-filament";
+      case ColorVariant.FILAMENT:
+        return "bg-filament text-carbon";
+      case ColorVariant.CARBON:
+        return "bg-carbon text-filament";
       default:
         return "bg-carbon text-filament";
     }
@@ -37,6 +41,10 @@ const getVariantClass = (variant: ColorVariant, mode: FillMode): string => {
         return "bg-filament text-molten";
       case ColorVariant.SOL:
         return "bg-filament text-sol";
+      case ColorVariant.FILAMENT:
+        return "bg-carbon text-filament";
+      case ColorVariant.CARBON:
+        return "bg-filament text-carbon";
       default:
         return "bg-filament text-carbon";
     }
@@ -54,6 +62,10 @@ const getVariantClass = (variant: ColorVariant, mode: FillMode): string => {
         return "border border-molten text-molten";
       case ColorVariant.SOL:
         return "border border-sol text-sol";
+      case ColorVariant.FILAMENT:
+        return "border border-filament text-filament";
+      case ColorVariant.CARBON:
+        return "border border-carbon text-carbon";
       default:
         return "border border-foregrounds text-foreground";
     }
@@ -71,6 +83,10 @@ const getVariantClass = (variant: ColorVariant, mode: FillMode): string => {
         return "bg-molten dark:bg-filament text-filament  dark:text-molten";
       case ColorVariant.SOL:
         return "bg-sol dark:bg-filament text-filament dark:text-sol";
+      case ColorVariant.FILAMENT:
+        return "bg-filament text-carbon dark:bg-filament dark:text-carbon";
+      case ColorVariant.CARBON:
+        return "bg-carbon text-filament dark:bg-filament dark:text-carbon";
       default:
         return "bg-carbon dark:bg-filament text-filament dark:text-carbon";
     }

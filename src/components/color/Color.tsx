@@ -1,12 +1,12 @@
 export enum ColorVariant {
+  FILAMENT,
+  CARBON,
   METHYL,
   PLASMA,
   OXIDE,
   RUST,
   MOLTEN,
   SOL,
-  FILAMENT,
-  CARBON,
 }
 
 export enum FillMode {
