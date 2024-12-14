@@ -1,5 +1,4 @@
 import { NavCTAButton } from "@/components/buttons/CTAButtons";
-import { Discord, IconMode } from "@/components/iconography/Iconography";
 import RobotRenderer from "@/components/robot/robotRenderer";
 import { ColorVariant, Size, FillMode } from "@/components/util/constants";
 import { motion, useInView } from "motion/react";
