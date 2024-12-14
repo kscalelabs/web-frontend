@@ -126,7 +126,7 @@ export const NavCTAButton = ({
   return target === "_blank" ? (
     <motion.button
       className={clsx(
-        "font-planar font-normal text-body select-none cursor-pointer rounded",
+        "font-planar font-normal text-body select-none cursor-pointer rounded ",
         getVariantClass(variant, mode),
         className
       )}
@@ -220,7 +220,7 @@ export const CTASubtitleButton = ({
     >
       <a href={href} target={target} className="flex flex-col">
         {children}
-        <span className="block text-caption opacity-60">{subtitle}</span>
+        <span className="block text-caption text-foreground60">{subtitle}</span>
       </a>
     </motion.button>
   ) : (
@@ -245,7 +245,7 @@ export const CTASubtitleButton = ({
       onClick={() => router.push(href ? href : SHOP_URL)}
     >
       {children}
-      <span className="block text-caption opacity-60">{subtitle}</span>
+      <span className="block text-caption text-foreground60">{subtitle}</span>
     </motion.button>
   );
 };
