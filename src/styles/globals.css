@@ -3,271 +3,271 @@
 @tailwind utilities;
 
 @layer base {
-    @font-face {
-        font-family: "KMR Apparat";
-        src: url("./fonts/trial/KMR-Apparat-Bold.woff") format("woff");
-        font-weight: bold;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: "KMR Apparat";
+    src: url("./fonts/trial/KMR-Apparat-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+  }
 
-    @font-face {
-        font-family: "KMR Apparat";
-        src: url("./fonts/trial/KMR-Apparat-Medium.woff") format("woff");
-        font-weight: 500;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: "KMR Apparat";
+    src: url("./fonts/trial/KMR-Apparat-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+  }
 
-    @font-face {
-        font-family: "GT Planar";
-        src: url("./fonts/GT-Planar-Regular.woff") format("woff");
-        font-weight: bold;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: "GT Planar";
+    src: url("./fonts/GT-Planar-Regular.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+  }
 
-    @font-face {
-        font-family: "GT Planar";
-        src: url("./fonts/GT-Planar-Regular.woff2") format("woff2");
-        font-weight: normal;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: "GT Planar";
+    src: url("./fonts/GT-Planar-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
 
-    @font-face {
-        font-family: "CoFo Sans Mono", monospace, monospace;
-        src: url("./fonts/CoFoSansMono-Regular.woff2") format("woff2");
-        font-weight: normal;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: "CoFo Sans Mono", monospace, monospace;
+    src: url("./fonts/CoFoSansMono-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
 
-    @font-face {
-        font-family: "CoFo Sans Mono", monospace, monospace;
-        src: url("./fonts/CoFoSansMono-Regular.woff") format("woff2");
-        font-weight: 500;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: "CoFo Sans Mono", monospace, monospace;
+    src: url("./fonts/CoFoSansMono-Regular.woff") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+  }
 
+  :root {
+    --background: #f8f4f2ff;
+    --foreground: #120e15ff;
+    --foreground-60: rgba(18, 14, 21, 0.6);
+    --foreground-70: rgba(18, 14, 21, 0.7);
+    --filament: #f8f4f2ff;
+    --carbon: #120e15ff;
+    --carbon-50: #120e1580;
+    --carbon-0: #120e1500;
+    --methyl: #7d0d8cff;
+    --plasma: #b90674ff;
+    --oxide: #c90e33ff;
+    --rust: #fa4300ff;
+    --molten: #ff9000ff;
+    --sol: #f2f091ff;
+    --grab: url("./cursor/grab.svg"), grab;
+    --grabbing: url("./cursor/grabbing.svg"), grabbing;
+  }
+
+  @media (prefers-color-scheme: dark) {
     :root {
-        --background: #f8f4f2ff;
-        --foreground: #120e15ff;
-        --foreground-60: rgba(18, 14, 21, 0.6);
-        --foreground-70: rgba(18, 14, 21, 0.7);
-        --filament: #f8f4f2ff;
-        --carbon: #120e15ff;
-        --carbon-50: #120e1580;
-        --carbon-0: #120e1500;
-        --methyl: #7d0d8cff;
-        --plasma: #b90674ff;
-        --oxide: #c90e33ff;
-        --rust: #fa4300ff;
-        --molten: #ff9000ff;
-        --sol: #f2f091ff;
-        --grab: url("./cursor/grab.svg"), grab;
-        --grabbing: url("./cursor/grabbing.svg"), grabbing;
+      --background: #0f0f10ff;
+      --foreground: #ede6e1ff;
+      --foreground-60: #ede6e180;
+      --foreground-70: #ede6e1b3;
+      --carbon: #0f0f10ff;
+      --carbon-50: #0f0f1080;
+      --carbon-0: #0f0f1000;
+      --filament: #ede6e1ff;
+      --methyl: #771584ff;
+      --plasma: #a81770ff;
+      --oxide: #98253cff;
+      --rust: #de4208ff;
+      --molten: #f18a03ff;
+      --sol: #eae9bcff;
+      --grab: url("./cursor/grab_dark.svg"), grab;
+      --grabbing: url("./cursor/grabbing_dark.svg"), grabbing;
     }
-
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --background: #0f0f10ff;
-            --foreground: #ede6e1ff;
-            --foreground-60: #ede6e180;
-            --foreground-70: #ede6e1b3;
-            --carbon: #0f0f10ff;
-            --carbon-50: #0f0f1080;
-            --carbon-0: #0f0f1000;
-            --filament: #ede6e1ff;
-            --methyl: #771584ff;
-            --plasma: #a81770ff;
-            --oxide: #98253cff;
-            --rust: #de4208ff;
-            --molten: #f18a03ff;
-            --sol: #eae9bcff;
-            --grab: url("./cursor/grab_dark.svg"), grab;
-            --grabbing: url("./cursor/grabbing_dark.svg"), grabbing;
-        }
-    }
+  }
 }
 
 *::selection {
-    @apply bg-rust text-background;
+  @apply bg-rust text-background;
 }
 
 body {
-    color: var(--foreground);
-    background: var(--background);
+  color: var(--foreground);
+  background: var(--background);
 }
 
 main {
-    display: grid;
-    @apply font-planar;
-    @apply font-normal;
-    font-style: normal;
-    font-size: 17px;
-    line-height: 20px;
-    letter-spacing: -0.01em;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5vw;
-    padding: 0 5vw;
+  display: grid;
+  @apply font-planar;
+  @apply font-normal;
+  font-style: normal;
+  font-size: 17px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5vw;
+  padding: 0 5vw;
 }
 
 h1 {
-    @apply font-apparat;
-    @apply font-medium;
-    font-style: normal;
-    font-size: 62px;
-    line-height: 60px;
-    letter-spacing: -0.02em;
+  @apply font-apparat;
+  @apply font-medium;
+  font-style: normal;
+  font-size: 62px;
+  line-height: 60px;
+  letter-spacing: -0.02em;
 }
 
 h2 {
-    @apply font-apparat;
-    @apply font-medium;
-    font-style: normal;
-    font-size: 38.5px;
-    line-height: 40px;
-    letter-spacing: -0.015em;
+  @apply font-apparat;
+  @apply font-medium;
+  font-style: normal;
+  font-size: 38.5px;
+  line-height: 40px;
+  letter-spacing: -0.015em;
 }
 
 h3 {
-    @apply font-planar;
-    @apply font-normal;
-    font-style: normal;
-    font-size: 25px;
-    line-height: 25px;
-    letter-spacing: -0.01em;
+  @apply font-planar;
+  @apply font-normal;
+  font-style: normal;
+  font-size: 25px;
+  line-height: 25px;
+  letter-spacing: -0.01em;
 }
 
 caption,
 figcaption {
-    @apply font-planar;
-    @apply font-normal;
-    font-style: normal;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.02em;
+  @apply font-planar;
+  @apply font-normal;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
 }
 
 caption .code,
 caption .pre,
 figcaption .code,
 figcaption .pre {
-    @apply font-mono;
-    @apply font-normal;
-    font-style: normal;
-    font-size: 13px;
-    line-height: 14px;
-    letter-spacing: 0.03em;
+  @apply font-mono;
+  @apply font-normal;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 14px;
+  letter-spacing: 0.03em;
 }
 
 code,
 pre {
-    @apply font-mono;
-    @apply font-normal;
-    font-style: normal;
-    font-size: 14px;
-    line-height: 14px;
-    letter-spacing: 0.02em;
+  @apply font-mono;
+  @apply font-normal;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
 }
 
 @media (min-width: 640px) {
-    main {
-        grid-template-columns: repeat(6, 1fr);
-        gap: 2.5vw;
-    }
+  main {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2.5vw;
+  }
 }
 
 @media (min-width: 768px) {
-    main {
-        grid-template-columns: repeat(9, 1fr);
-        gap: 2.5vw;
-    }
+  main {
+    grid-template-columns: repeat(9, 1fr);
+    gap: 2.5vw;
+  }
 }
 
 @media (min-width: 1440px) {
-    main {
-        grid-template-columns: repeat(12, 1fr);
-        gap: 1.25vw;
-        font-size: 24px;
-        line-height: 28px;
-        letter-spacing: -0.01em;
-    }
+  main {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.25vw;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.01em;
+  }
 
-    h1 {
-        font-size: 96px;
-        line-height: 84px;
-        letter-spacing: -0.02em;
-    }
+  h1 {
+    font-size: 96px;
+    line-height: 84px;
+    letter-spacing: -0.02em;
+  }
 
-    h2 {
-        font-size: 57.5px;
-        line-height: 56px;
-        letter-spacing: -0.015em;
-    }
+  h2 {
+    font-size: 57.5px;
+    line-height: 56px;
+    letter-spacing: -0.015em;
+  }
 
-    h3 {
-        font-size: 39.5px;
-        line-height: 42px;
-        letter-spacing: -0.01em;
-    }
+  h3 {
+    font-size: 39.5px;
+    line-height: 42px;
+    letter-spacing: -0.01em;
+  }
 
-    caption,
-    figcaption {
-        font-size: 17px;
-        line-height: 28px;
-        letter-spacing: 0.02em;
-    }
+  caption,
+  figcaption {
+    font-size: 17px;
+    line-height: 28px;
+    letter-spacing: 0.02em;
+  }
 
-    caption .code,
-    caption .pre,
-    figcaption .code,
-    figcaption .pre {
-        font-size: 18px;
-        line-height: 18px;
-        letter-spacing: 0.02em;
-    }
+  caption .code,
+  caption .pre,
+  figcaption .code,
+  figcaption .pre {
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+  }
 
-    code,
-    pre {
-        font-size: 18px;
-        line-height: 18px;
-        letter-spacing: 0.02em;
-    }
+  code,
+  pre {
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+  }
 }
 
 .scroll-lock {
-    overflow: hidden;
-    height: 100vh; /* Prevents resizing quirks */
+  overflow: hidden;
+  height: 100vh; /* Prevents resizing quirks */
 }
 
 .grid-a {
-    @apply px-[5vw] grid grid-cols-4 sm:grid-cols-6 md:grid-cols-9 2xl:grid-cols-12 gap-x-[5vw] sm:gap-x-[2.5vw] 2xl:gap-x-[1.25vw];
+  @apply px-[5vw] grid grid-cols-4 sm:grid-cols-6 md:grid-cols-9 2xl:grid-cols-12 gap-x-[5vw] sm:gap-x-[2.5vw] 2xl:gap-x-[1.25vw];
 }
 
 .grid-m {
-    @apply grid-a auto-rows-min;
+  @apply grid-a auto-rows-min;
 }
 
 html {
-    @apply text-[125%] 2xl:text-[175%] 5xl:text-[200%];
+  @apply text-[125%] 2xl:text-[175%] 5xl:text-[200%];
 }
 
 html.lenis,
 html.lenis body {
-    height: auto;
+  height: auto;
 }
 
 .lenis.lenis-smooth {
-    scroll-behavior: auto !important;
+  scroll-behavior: auto !important;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
-    overscroll-behavior: contain;
+  overscroll-behavior: contain;
 }
 
 .lenis.lenis-stopped {
-    overflow: clip;
+  overflow: clip;
 }
 
 .lenis.lenis-smooth iframe {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 /*::-webkit-scrollbar {*/
@@ -302,85 +302,106 @@ html.lenis body {
 /*}*/
 
 ::-webkit-scrollbar-thumb {
-    display: none;
+  display: none;
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .rfm-child {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 main .sponsors {
-    padding: 0;
-    margin-left: -5vw;
-    margin-right: -5vw;
-    width: 100vw;
-    overflow-x: visible;
+  padding: 0;
+  margin-left: -5vw;
+  margin-right: -5vw;
+  width: 100vw;
+  overflow-x: visible;
 }
-
 
 /*CURSOR*/
 @media (pointer: fine) and (prefers-color-scheme: light) {
+  body {
+    cursor: url("./cursor/default.svg"), auto;
+  }
 
-    body {
-        cursor: url("./cursor/default.svg"), auto;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  text,
+  code,
+  blockquote,
+  label,
+  li,
+  p {
+    cursor: url("./cursor/text.svg"), text;
+  }
 
-    h1, h2, h3 , h4, h5, h6, span, text, code, blockquote, label, li, p {
-        cursor: url("./cursor/text.svg"), text;
-    }
+  button,
+  button *,
+  a,
+  a *,
+  input,
+  input *,
+  label,
+  label *,
+  .pointer {
+    cursor: url("./cursor/pointer.svg"), pointer;
+  }
 
-    button,
-    button *,
-    a,
-    a *,
-    input,
-    input *,
-    label,
-    label *,
-    .pointer {
-        cursor: url("./cursor/pointer.svg"), pointer;
-    }
+  .grab {
+    cursor: url("./cursor/grab.svg"), grab;
+  }
 
-    .grab {
-        cursor: url("./cursor/grab.svg"), grab;
-    }
-
-    .grab:active {
-        cursor: url("./cursor/grabbing.svg"), grabbing;
-    }
+  .grab:active {
+    cursor: url("./cursor/grabbing.svg"), grabbing;
+  }
 }
 
 @media (pointer: fine) and (prefers-color-scheme: dark) {
+  body {
+    cursor: url("./cursor/default_dark.svg"), auto;
+  }
 
-    body {
-        cursor: url("./cursor/default_dark.svg"), auto;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  text,
+  code,
+  blockquote,
+  label,
+  li,
+  p {
+    cursor: url("./cursor/text_dark.svg"), text;
+  }
 
-    h1, h2, h3 , h4, h5, h6, span, text, code, blockquote, label, li, p {
-        cursor: url("./cursor/text_dark.svg"), text;
-    }
+  button,
+  button *,
+  a,
+  a *,
+  input,
+  input *,
+  label,
+  label *,
+  .pointer {
+    cursor: url("./cursor/pointer_dark.svg"), pointer;
+  }
 
-    button,
-    button *,
-    a,
-    a *,
-    input,
-    input *,
-    label,
-    label *,
-    .pointer {
-        cursor: url("./cursor/pointer_dark.svg"), pointer;
-    }
+  .grab {
+    cursor: url("./cursor/grab_dark.svg"), grab;
+  }
 
-    .grab {
-        cursor: url("./cursor/grab_dark.svg"), grab;
-    }
-
-    .grab:active {
-        cursor: url("./cursor/grabbing_dark.svg"), grabbing;
-    }
+  .grab:active {
+    cursor: url("./cursor/grabbing_dark.svg"), grabbing;
+  }
 }
