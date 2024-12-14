@@ -42,8 +42,9 @@ export default function NavBar() {
     return isDesktop ? desktopNavBar() : mobileNavBar();
   };
 
+  const atTop = scrollY.get() < 100;
+
   const mobileNavBar = () => {
-    const atTop = scrollY.get() < 100;
     return (
       <>
         <motion.menu
@@ -70,33 +71,21 @@ export default function NavBar() {
   };
 
   const desktopNavBar = () => {
-    const atTop = scrollY.get() < 100;
     return (
-      <motion.div
-        className={"grid-m py-5"}
-        initial={{ backgroundColor: "var(--background-0)" }}
-        animate={{ backgroundColor: atTop ? "var(--background-0)" : "var(--background)" }}
-      >
+      <>
         <Logotype atTop={atTop} />
-        <div className="z-50 justify-self-end w1440:col-span-10 w1024:col-span-7 w640:col-span-7 flex flex-row gap-3 items-center">
-          <motion.div className="flex flex-row gap-3 items-center">
-            {navButtons.map((navItem, i) => (
-              <motion.div className={"flex flex-row"} key={i}>
-                {navItem}
-              </motion.div>
-            ))}
-          </motion.div>
-          <NavCTAButton
-            className="md:col-span-2 md:col-start-8 2xl:col-span-2 2xl:col-start-11"
-            mode={FillMode.FILL}
-          >
-            {`Buy K-Bot`}
-            <motion.div initial="initial" whileHover="hover">
-              <ExpressiveArrow size={"size-4"} />
-            </motion.div>
-          </NavCTAButton>
-        </div>
-      </motion.div>
+
+        {navButtons.map((navItem, i) => (
+          <>{navItem}</>
+        ))}
+
+        <NavCTAButton
+          className="md:col-span-2 md:-col-end-1 2xl:col-span-3 2xl:-col-end-1"
+          mode={FillMode.FILL}
+        >
+          View all products
+        </NavCTAButton>
+      </>
     );
   };
   useEffect(() => {
@@ -116,12 +105,19 @@ export default function NavBar() {
 
   return (
     <motion.nav
-      className="fixed top-0 inset-x-0 z-50 h-[100dvh] md:h-fit grid-a grid-rows-[min-content_auto]"
+      className="fixed top-0 inset-x-0 z-50 h-[100dvh] md:h-fit md:py-4 grid-a grid-rows-[min-content_auto]"
       initial={{
         backgroundColor: "var(--background-0)",
       }}
       animate={{
-        backgroundColor: mobileShouldOpenBurger ? "var(--background)" : "var(--background-0)",
+        backgroundColor:
+          width >= 768
+            ? atTop
+              ? "var(--background-0)"
+              : "var(--background)"
+            : mobileShouldOpenBurger
+              ? "var(--background)"
+              : "var(--background-0)",
       }}
     >
       {navBasedOnWidth(width >= 768)}

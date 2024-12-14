@@ -23,7 +23,7 @@ const BurgerMenu = (isOpen: boolean) => {
           <motion.button
             key={index}
             className={
-              "col-span-full font-planar font-normal capitalize text-4xl select-none flex flex-row text-foreground " +
+              "col-span-full font-planar font-normal capitalize text-4xl select-none flex flex-row text-foreground w-fit" +
               " hover:text-rust " +
               transitionEaseLinearDuration300
             }
