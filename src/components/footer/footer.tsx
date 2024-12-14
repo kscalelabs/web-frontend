@@ -78,9 +78,7 @@ export default function Footer() {
     tempInput.select();
     try {
       document.execCommand("copy");
-    } catch (err) {
-      console.error("Legacy clipboard copy failed:", err);
-    }
+    } catch (err) {}
     document.body.removeChild(tempInput);
   };
 
