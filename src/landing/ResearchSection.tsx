@@ -17,7 +17,8 @@ import { ColorVariant, FillMode, Size } from "@/components/util/constants";
 const RESEARCH_ITEMS = [
   {
     title: "Edge VLA",
-    description: "We’re collaboratively training a mega mondo beast of a model. ",
+    description:
+      "We’re collaboratively training a foundation for general purpose robots, that gets faster with more contributions from the open-source community",
     image: "/images/research/edge-vla.png",
     link: "https://github.com/kscalelabs/evla",
     icon: <EVLAIcon />,
