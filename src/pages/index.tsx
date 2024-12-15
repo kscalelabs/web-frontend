@@ -1,5 +1,4 @@
 import Footer from "@/components/footer/footer";
-import { Grid } from "@/components/grid/Grid";
 import NavBar from "@/components/navbar/navbar";
 import HeaderSection from "@/landing/HeaderSection";
 import ResearchSection from "@/landing/ResearchSection";
