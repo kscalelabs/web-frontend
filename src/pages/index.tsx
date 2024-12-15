@@ -15,7 +15,6 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col ">
       <NavBar />
-      <Grid />
       <main className="gap-y-4">
         <HeaderSection />
         <ResearchSection />
