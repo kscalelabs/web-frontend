@@ -297,9 +297,7 @@ const ResearchSection = () => {
     <section className="col-span-full grid grid-cols-subgrid auto-rows-min py-16">
       <hgroup className="col-span-full sm:col-span-4 2xl:col-span-4 flex flex-col mb-12 gap-4">
         <span className="text-caption uppercase text-foreground70 relative y-1/2">Research</span>
-        <h2 className="text-heading-md">
-          The humanoid robot is as strong as its brain, not its body.
-        </h2>
+        <h2 className="text-heading-md">The humanoid robot is as strong as its brain.</h2>
         <p>
           While we provide robust, accessible hardware, our end-to-end model is what makes K-Bot
           perform. Here&apos;s some of the progress we&apos;ve made:
