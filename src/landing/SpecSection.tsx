@@ -29,7 +29,7 @@ const SpecSection = () => {
         </h3>
         <figure className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 xl:col-span-3 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 3xl:col-span-5 3xl:col-start-2 4xl:col-span-4 4xl:col-start-2 aspect-video relative rounded-md overflow-hidden">
           <Image
-            src="/photos/DSC06746.jpg"
+            src="/photos/aluminium.png"
             alt="Photo: Close-up photo of K-Bot's aluminum chassis"
             fill
             className="object-cover"
@@ -43,7 +43,7 @@ const SpecSection = () => {
         </h3>
         <figure className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 xl:col-span-3 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 3xl:col-span-5 3xl:col-start-2 4xl:col-span-4 4xl:col-start-2 aspect-video relative rounded-md overflow-hidden">
           <Image
-            src="/photos/actuators.jpg"
+            src="/photos/actuators.png"
             alt="Photo: Close-up photo of K-Bot's 120 Nm actuators"
             fill
             className="object-cover"
@@ -56,7 +56,7 @@ const SpecSection = () => {
         </h3>
         <figure className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 xl:col-span-3 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 3xl:col-span-5 3xl:col-start-2 4xl:col-span-4 4xl:col-start-2 aspect-video relative rounded-md overflow-hidden">
           <Image
-            src="/photos/DSC06719.jpg"
+            src="/photos/AGX.png"
             alt="Photo: Close-up photo of K-Bot's onboard Jetson AGX"
             fill
             className="object-cover"

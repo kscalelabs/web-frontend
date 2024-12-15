@@ -6,20 +6,28 @@ import Image from "next/image";
 
 const Images = [
   {
-    src: "/photos/DSC06664.jpg",
+    src: "/photos/1.png",
     alt: "Gallery Image 1",
   },
   {
-    src: "/photos/DSC06701.jpg",
+    src: "/photos/2.png",
     alt: "Gallery Image 2",
   },
   {
-    src: "/photos/DSC06663.jpg",
+    src: "/photos/3.png",
     alt: "Gallery Image 3",
   },
   {
-    src: "/photos/DSC06729.jpg",
+    src: "/photos/4.png",
     alt: "Gallery Image 4",
+  },
+  {
+    src: "/photos/5.png",
+    alt: "Gallery Image 5",
+  },
+  {
+    src: "/photos/6.png",
+    alt: "Gallery Image 6",
   },
 ];
 
@@ -27,7 +35,7 @@ const GalleryItem = ({ src, alt, index }: { src: string; alt: string; index: num
   const scrollYProgress = useContext(ScrollContext);
   return (
     <motion.figure
-      className="sticky top-24 h-[60svh] min-h-[16rem] bg-gradient-to-b from-methyl via-oxide to-rust rounded-lg overflow-hidden"
+      className="sticky top-24 h-[60svh] min-h-[16rem] rounded-lg overflow-hidden"
       style={{
         opacity: useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], [1, 0]),
         scale: useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], [1, 0.8]),

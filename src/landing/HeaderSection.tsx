@@ -7,7 +7,7 @@ const HeaderSection = () => {
     <header className="col-span-full grid grid-cols-subgrid min-h-[90svh] auto-rows-auto items-end text-foreground bg-background relative overflow-hidden -mx-[5vw] px-[5vw]">
       <div className="absolute inset-0">
         <Image
-          src="/photos/DSC06711.jpg"
+          src="/photos/landing.png"
           alt="Header"
           fill
           className="object-cover brightness-50"
