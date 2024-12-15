@@ -249,7 +249,7 @@ export const CTASubtitleButton = ({
       onClick={() => router.push(href ? href : SHOP_URL)}
     >
       {children}
-      <span className="block text-caption pointer select-none ">{subtitle}</span>
+      <span className="block text-caption text-filament60 pointer select-none ">{subtitle}</span>
     </motion.button>
   );
 };
