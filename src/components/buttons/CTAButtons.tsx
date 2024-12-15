@@ -184,8 +184,6 @@ export const CTASubtitleButton = ({
   children,
   subtitle,
   href = SHOP_URL,
-  variant = ColorVariant.RUST,
-  mode = FillMode.DEFAULT,
   target = "_self",
 }: {
   className?: string;
