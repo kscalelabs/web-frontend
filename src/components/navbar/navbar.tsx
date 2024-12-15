@@ -105,7 +105,7 @@ export default function NavBar() {
 
   return (
     <motion.nav
-      className="fixed top-0 inset-x-0 z-50 h-[100dvh] md:h-fit md:py-4 grid-a grid-rows-[min-content_auto] pointer-events-none"
+      className="fixed top-0 inset-x-0 z-50 h-[100dvh] md:h-auto md:py-4 grid-a grid-rows-[min-content_auto] pointer-events-none"
       initial={{
         backgroundColor: "var(--background-0)",
       }}
