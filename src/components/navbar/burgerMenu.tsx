@@ -44,11 +44,11 @@ const BurgerMenu = (isOpen: boolean) => {
       })}
 
       <CTASubtitleButton
-        subtitle="Available for pre-order, Q1 2025"
+        subtitle="Shipping Q1 2025"
         className="w-full col-span-full h-fit"
         mode={FillMode.FILL}
       >
-        Buy K-Bot today
+        Preorder K-Bot today
       </CTASubtitleButton>
     </motion.div>
   ) : (
