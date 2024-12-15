@@ -1,16 +1,18 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { OrbitControls } from "@react-three/drei";
 import URDFLoader from "urdf-loader";
-import { URDFJoint } from "urdf-loader/src/URDFClasses";
-import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
+import { URDFJoint, URDFRobot } from "urdf-loader/src/URDFClasses";
+import { EffectComposer, Outline } from "@react-three/postprocessing";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
 import { LuminosityShader } from "three/examples/jsm/shaders/LuminosityShader.js";
 import { SobelOperatorShader } from "three/examples/jsm/shaders/SobelOperatorShader.js";
+import { Canvas } from "@react-three/fiber";
+import { useThree, useFrame } from "@react-three/fiber";
 
 const URDF_URL = "/cad/gpr-20241204.urdf";
 const SCALE = 3;
@@ -49,36 +51,28 @@ const WAYPOINTS: { [key: string]: Waypoint } = {
 const DURATION_S = 5;
 
 const RobotRenderer: React.FC = () => {
-  const mountRef = useRef<HTMLDivElement | null>(null);
-  let effectSobel: ShaderPass;
+  return (
+    <div className="w-full h-full overflow-hidden rounded-lg">
+      <Canvas
+        className="w-full h-full"
+        camera={{
+          fov: 13,
+          near: 0.1,
+          far: 1000,
+          position: [9, 9, 16],
+        }}
+        fallback={<div>Sorry no WebGL supported!</div>}
+      >
+        <Elements />
+      </Canvas>
+    </div>
+  );
+};
+
+const Elements: React.FC = () => {
+  const [robot, setRobot] = useState<THREE.Object3D | null>(null);
+
   useEffect(() => {
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(
-      13,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
-    );
-    const renderer = new THREE.WebGLRenderer({
-      antialias: true,
-      alpha: true,
-      powerPreference: "high-performance",
-    });
-    const currentMount = mountRef.current;
-
-    if (currentMount) {
-      const { clientWidth, clientHeight } = currentMount;
-      camera.aspect = clientWidth / clientHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(clientWidth, clientHeight);
-    }
-    renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setClearColor(0x000000, 0);
-
-    if (currentMount) {
-      currentMount.appendChild(renderer.domElement);
-    }
-
     const loader = new URDFLoader();
     loader.load(URDF_URL, (robot: THREE.Object3D) => {
       const updateMaterials = () => {
@@ -96,116 +90,76 @@ const RobotRenderer: React.FC = () => {
           }
         });
       };
-
-      scene.add(robot);
       updateMaterials();
-
-      // Correcting for the robot initial size and position.
+      setRobot(robot);
       robot.rotateY(Math.PI / 2);
       robot.translateY(TRANSLATE_Y);
       robot.scale.set(SCALE, SCALE, SCALE);
-
-      const controls = new OrbitControls(camera, renderer.domElement);
-      controls.enableDamping = true;
-      controls.dampingFactor = 0.25;
-      controls.screenSpacePanning = false;
-      controls.maxPolarAngle = Math.PI / 2;
-      controls.enableZoom = false;
-      controls.enablePan = false;
-
-      const startTime = Date.now();
-
-      const animate = () => {
-        requestAnimationFrame(animate);
-        controls.update();
-
-        // Update joint positions with a sinusoidal pattern
-        const time = (Date.now() - startTime) / 1000;
-        robot.traverse((child) => {
-          const joint = child as URDFJoint;
-          if (joint.isURDFJoint) {
-            if (WAYPOINTS[joint.name]) {
-              const { start, end } = WAYPOINTS[joint.name];
-              const value =
-                start + (end - start) * ((Math.sin((time * Math.PI) / DURATION_S) + 1) / 2);
-              joint.setJointValue(value);
-            }
-          }
-        });
-
-        composer.render();
-      };
-
-      animate();
     });
-
-    const mainLight = new THREE.DirectionalLight(0xffffff, 2);
-    mainLight.position.set(100, 0, -20);
-    camera.add(mainLight);
-
-    const fill1Light = new THREE.DirectionalLight(0xffffff, 2);
-    fill1Light.position.set(-100, 0, -200);
-    camera.add(fill1Light);
-
-    const fill2Light = new THREE.DirectionalLight(0xffffff, 0.2);
-    fill2Light.position.set(0, 0, 20);
-    camera.add(fill2Light);
-
-    scene.add(camera);
-
-    camera.position.z = 16;
-    camera.position.y = 9;
-    camera.position.x = 9;
-
-    const composer = new EffectComposer(renderer);
-    const renderPass = new RenderPass(scene, camera);
-    composer.addPass(renderPass);
-
-    const shaderPass = new ShaderPass(LuminosityShader);
-    composer.addPass(shaderPass);
-
-    // color to grayscale conversion
-
-    const effectGrayScale = new ShaderPass(LuminosityShader);
-    composer.addPass(effectGrayScale);
-
-    // you might want to use a gaussian blur filter before
-    // the next pass to improve the result of the Sobel operator
-
-    // Sobel operator
-
-    effectSobel = new ShaderPass(SobelOperatorShader);
-    effectSobel.uniforms["resolution"].value.x = window.innerWidth * window.devicePixelRatio;
-    effectSobel.uniforms["resolution"].value.y = window.innerHeight * window.devicePixelRatio;
-    composer.addPass(effectSobel);
-
-    const outputPass = new OutputPass();
-    composer.addPass(outputPass);
-
-    const handleResize = () => {
-      if (currentMount) {
-        const { clientWidth, clientHeight } = currentMount;
-        camera.aspect = clientWidth / clientHeight;
-        camera.updateProjectionMatrix();
-
-        renderer.setSize(clientWidth, clientHeight);
-        composer.setSize(clientWidth, clientHeight);
-        effectSobel.uniforms["resolution"].value.x = clientWidth * window.devicePixelRatio;
-        effectSobel.uniforms["resolution"].value.y = clientHeight * window.devicePixelRatio;
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      if (currentMount) {
-        currentMount.removeChild(renderer.domElement);
-      }
-      window.removeEventListener("resize", handleResize);
-    };
   }, []);
 
-  return <div ref={mountRef} className="w-full h-full overflow-hidden rounded-lg" />;
+  useFrame(({ clock }) => {
+    if (robot) {
+      robot.traverse((child) => {
+        const joint = child as URDFJoint;
+        if (joint.isURDFJoint) {
+          if (WAYPOINTS[joint.name]) {
+            const { start, end } = WAYPOINTS[joint.name];
+            const value =
+              start +
+              (end - start) * ((Math.sin((clock.getElapsedTime() * Math.PI) / DURATION_S) + 1) / 2);
+            joint.setJointValue(value);
+          }
+        }
+      });
+    }
+  });
+
+  //   const composer = new EffectComposer(renderer);
+  //   const renderPass = new RenderPass(scene, camera);
+  //   composer.addPass(renderPass);
+
+  //   const shaderPass = new ShaderPass(LuminosityShader);
+  //   composer.addPass(shaderPass);
+
+  //   // color to grayscale conversion
+
+  //   const effectGrayScale = new ShaderPass(LuminosityShader);
+  //   composer.addPass(effectGrayScale);
+
+  //   // you might want to use a gaussian blur filter before
+  //   // the next pass to improve the result of the Sobel operator
+
+  //   // Sobel operator
+
+  //   effectSobel = new ShaderPass(SobelOperatorShader);
+  //   effectSobel.uniforms["resolution"].value.x = window.innerWidth * window.devicePixelRatio;
+  //   effectSobel.uniforms["resolution"].value.y = window.innerHeight * window.devicePixelRatio;
+  //   composer.addPass(effectSobel);
+
+  //   const outputPass = new OutputPass();
+  //   composer.addPass(outputPass);
+
+  return (
+    <>
+      <OrbitControls
+        enableZoom={false}
+        enablePan={false}
+        enableRotate={true}
+        enableDamping={true}
+        dampingFactor={0.25}
+        screenSpacePanning={false}
+        maxPolarAngle={Math.PI / 2}
+      />
+      <directionalLight position={[100, 0, -20]} color="white" />
+      <directionalLight position={[-100, 0, -200]} color="white" />
+      <directionalLight position={[0, 0, 20]} color="white" />
+      <EffectComposer>
+        <Outline />
+      </EffectComposer>
+      {robot && <primitive object={robot} />}
+    </>
+  );
 };
 
 export default RobotRenderer;
