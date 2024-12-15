@@ -47,7 +47,7 @@ const CommunitySection = () => {
             src="/photos/C3.png"
             alt="Photo: portrait shot of Martino wearing the homunculus gloves to control a hand "
             fill
-            className="object-cover object-[50%_15%]"
+            className="object-cover object-[100%_0%]"
           />
         </figure>
         <figure className="col-span-full md:col-span-5 md:col-start-2 2xl:col-span-5 2xl:col-start-4 bg-gradient-to-b from-methyl via-oxide to-rust aspect-square sm:aspect-video rounded-md relative overflow-hidden">
