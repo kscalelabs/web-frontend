@@ -326,6 +326,36 @@ main .sponsors {
   overflow-x: visible;
 }
 
+.rust {
+  @apply bg-rust text-filament;
+}
+
+@media (prefers-color-scheme: dark) {
+  .rust {
+    @apply bg-filament text-rust;
+  }
+}
+
+.rust-fill {
+  @apply bg-rust text-filament;
+}
+
+.plasma-fill {
+  @apply bg-plasma text-filament;
+}
+
+.rust-invert {
+  @apply bg-filament text-rust;
+}
+
+.plasma-invert {
+  @apply bg-filament text-plasma;
+}
+
+.rust-stroke {
+  @apply border-rust text-rust bg-background;
+}
+
 /*CURSOR*/
 @media (pointer: fine) and (prefers-color-scheme: light) {
   body {

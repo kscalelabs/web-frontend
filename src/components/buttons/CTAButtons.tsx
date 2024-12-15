@@ -205,7 +205,7 @@ export const CTASubtitleButton = ({
         className,
         "cursor-pointer select-none",
         "rounded",
-        getVariantClass(variant, mode)
+        "rust"
       )}
       variants={hoverVariants}
       initial="initial"
@@ -224,7 +224,7 @@ export const CTASubtitleButton = ({
         className="select-none flex flex-col pointer pointer-events-auto"
       >
         {children}
-        <span className="block text-caption text-filament60 pointer select-none">{subtitle}</span>
+        <span className="block text-caption pointer opacity-60 select-none">{subtitle}</span>
       </a>
     </motion.button>
   ) : (
@@ -234,7 +234,7 @@ export const CTASubtitleButton = ({
         className,
         "cursor-pointer select-none flex flex-col",
         "rounded",
-        getVariantClass(variant, mode)
+        "rust"
       )}
       variants={hoverVariants}
       initial="initial"
@@ -249,7 +249,7 @@ export const CTASubtitleButton = ({
       onClick={() => router.push(href ? href : SHOP_URL)}
     >
       {children}
-      <span className="block text-caption text-filament60 pointer select-none ">{subtitle}</span>
+      <span className="block text-caption opacity-60 pointer select-none ">{subtitle}</span>
     </motion.button>
   );
 };
