@@ -9,7 +9,7 @@ import Lombard from "../../public/sponsors/Lombard";
 import FellowsFund from "../../public/sponsors/FellowsFund";
 import Link from "next/link";
 
-const svgSizeStyling = "w-60 h-fit";
+const svgSizeStyling = "w-60 h-auto";
 const SvgChildren = [
   {
     component: <FellowsFund styling={svgSizeStyling} />,
@@ -60,7 +60,7 @@ const Sponsors = () => {
     <section
       className={
         "w-screen col-span-full flex flex-col gap-3 items-center " +
-        " w1440:pt-16 w1024:pt-12 w640:pt-10 pt-8 sponsors"
+        " w1440:pt-16 w1024:pt-12 w640:pt-10 sponsors "
       }
     >
       <h2
