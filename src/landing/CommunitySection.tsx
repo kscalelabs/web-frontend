@@ -1,11 +1,20 @@
 import { ExpressiveArrow } from "@/components/iconography/Iconography";
-import { ColorVariant, FillMode } from "@/components/util/constants";
+import { ColorVariant, FillMode, TeamCol1, TeamCol2 } from "@/components/util/constants";
 import { Discord } from "@/components/footer/socialMediaSvgs";
 import { InlineCTA, CTAButton } from "@/components/buttons/CTAButtons";
 import { IconMode, Size } from "@/components/util/constants";
 import Image from "next/image";
 import { photoPathAltText, photoPaths } from "@/components/util/photoPaths";
 
+const TeamColumn = ({ members, styling }: { members: string[]; styling: string }) => (
+  <ul className={styling + " col-span-2 whitespace-nowrap"}>
+    {members.map((member, index) => (
+      <li className="list-none" key={index}>
+        {member}
+      </li>
+    ))}
+  </ul>
+);
 const CommunitySection = () => {
   return (
     <section className="col-span-full grid grid-cols-subgrid auto-rows-min gap-y-4 py-16 ">
@@ -18,8 +27,8 @@ const CommunitySection = () => {
         </p>
 
         <p>
-          We&apos;re actively publishing papers and researching deeper into the potential of
-          embodied AI tools.
+          {`We're actively publishing papers and researching deeper into the potential of
+            embodied AI tools.`}
         </p>
       </hgroup>
       <menu className="col-span-full sm:col-span-4 sm:col-start-2 md:col-span-5 md:col-start-2 h-min flex flex-row flex-wrap gap-4">
@@ -74,17 +83,30 @@ const CommunitySection = () => {
         </figure>
       </aside>
 
-      <article className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-5 xl:col-span-3 xl:col-start-6 2xl:col-span-5 2xl:col-start-7 3xl:col-span-4 3xl:col-start-8 4xl:col-span-4 4xl:col-start-8 5xl:col-span-3 5xl:col-start-9 flex flex-col gap-y-4  my-16">
+      <article
+        className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4
+      lg:col-span-4 lg:col-start-5 xl:col-span-3 xl:col-start-6 2xl:col-span-5 2xl:col-start-7
+      3xl:col-span-4 3xl:col-start-8 4xl:col-span-4 4xl:col-start-8 5xl:col-span-3 5xl:col-start-9
+      flex flex-col gap-y-4 pt-16 pb-6"
+      >
         <h2 className="text-caption uppercase text-foreground70 relative y-1/2">About us</h2>
         <p>
-          We&apos;re hackers, engineers, and researchers that believe in a world where robots are
-          made for everyone.
+          {`We're hackers, engineers, and researchers that believe in a world where robots are
+            made for everyone.`}
         </p>
         <p>
-          We&apos;re from Tesla AI, Google, Meta FAIR, Stanford, and Xiaomi building opportunities
-          for robots to be more than workers.
+          {`We're from Tesla AI, Google, Meta FAIR, Stanford, and Xiaomi building opportunities
+            for robots to be more than workers.`}
         </p>
       </article>
+      <TeamColumn
+        members={TeamCol1()}
+        styling={
+          " sm:col-start-2 md:col-start-4 " +
+          " lg:col-start-5 xl:col-start-6 2xl:col-start-7 3xl:col-start-8 4xl:col-start-8 5xl:col-start-9 "
+        }
+      />
+      <TeamColumn members={TeamCol2()} styling={""} />
     </section>
   );
 };

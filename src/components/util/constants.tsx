@@ -61,3 +61,19 @@ export const CursorTypes = {
   GRAB: "grab",
   GRABBING: "grabbing",
 };
+
+export const TeamCol1 = () => [
+  "Benjamin Bolte",
+  "Jingxiang Mo",
+  "Chris Thomas",
+  "Viraj Tipnis",
+  "Aaron Xie",
+];
+
+export const TeamCol2 = () => [
+  "Paweł Budzianowski",
+  "Ali Kuwajerwala",
+  "Rui Xu",
+  "Wesley Maa",
+  "Denys Bezmenov",
+];
