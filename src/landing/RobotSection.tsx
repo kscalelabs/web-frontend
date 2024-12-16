@@ -3,14 +3,21 @@ import RobotRenderer from "@/components/robot/robotRenderer";
 import { ColorVariant, Size, FillMode } from "@/components/util/constants";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
+import { useWindowSize } from "@/components/util/functions";
 
 const RobotSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const width = useWindowSize().width;
 
   return (
     <section className="col-span-full grid grid-cols-subgrid items-center text-center max-w-full relative mb-16">
-      <hgroup className="col-span-full md:absolute md:z-40 max-w-48 lg:max-w-64 2xl:max-w-48 top-8 left-8 text-left flex flex-col gap-4 mb-8 text-filament">
+      <hgroup
+        className={
+          "col-span-full md:absolute md:z-40 max-w-48 lg:max-w-64 2xl:max-w-48 top-8 left-8 text-left flex flex-col gap-4 mb-8 " +
+          (width >= 768 ? "text-filament" : " text-foreground")
+        }
+      >
         <h2 className="text-heading-sm">Work with your robot in our dashboard</h2>
         <p className="text-body">
           Interact with your robot through our toolkit, supporting real-time ML application.
