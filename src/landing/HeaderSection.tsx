@@ -1,6 +1,7 @@
 import { CTASubtitleButton } from "@/components/buttons/CTAButtons";
 import { FillMode } from "@/components/util/constants";
 import Image from "next/image";
+import { photoPathAltText, photoPaths } from "@/components/util/photoPaths";
 
 const HeaderSection = () => {
   return (
@@ -8,8 +9,8 @@ const HeaderSection = () => {
       <div className="absolute inset-0">
         <Image
           sizes={"100vw"}
-          src="/photos/landing.png"
-          alt="Header"
+          src={photoPaths.LANDING_IMAGE}
+          alt={photoPathAltText.LANDING_IMAGE_ALT}
           fill
           className="object-cover brightness-50"
           priority={true}

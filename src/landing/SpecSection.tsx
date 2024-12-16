@@ -2,6 +2,7 @@ import { InlineCTA } from "@/components/buttons/CTAButtons";
 import { ExpressiveArrow } from "@/components/iconography/Iconography";
 import Image from "next/image";
 import { motion } from "motion/react";
+import { photoPathAltText, photoPaths } from "@/components/util/photoPaths";
 
 const SpecSection = () => {
   return (
@@ -25,8 +26,8 @@ const SpecSection = () => {
         </h3>
         <figure className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 xl:col-span-3 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 3xl:col-span-5 3xl:col-start-2 4xl:col-span-4 4xl:col-start-2 aspect-video relative rounded-md overflow-hidden">
           <Image
-            src="/photos/aluminium.png"
-            alt="Photo: Close-up photo of K-Bot's aluminum chassis"
+            src={photoPaths.WHAT_IS_K_BOT_1}
+            alt={photoPathAltText.WHAT_IS_K_BOT_1_ALT}
             fill
             className="object-cover"
             loading={"eager"}
@@ -42,8 +43,8 @@ const SpecSection = () => {
         </h3>
         <figure className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 xl:col-span-3 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 3xl:col-span-5 3xl:col-start-2 4xl:col-span-4 4xl:col-start-2 aspect-video relative rounded-md overflow-hidden">
           <Image
-            src="/photos/actuators.png"
-            alt="Photo: Close-up photo of K-Bot's 120 Nm actuators"
+            src={photoPaths.WHAT_IS_K_BOT_2}
+            alt={photoPathAltText.WHAT_IS_K_BOT_2_ALT}
             fill
             className="object-cover"
             loading={"eager"}
@@ -59,8 +60,8 @@ const SpecSection = () => {
         </h3>
         <figure className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 xl:col-span-3 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 3xl:col-span-5 3xl:col-start-2 4xl:col-span-4 4xl:col-start-2 aspect-video relative rounded-md overflow-hidden">
           <Image
-            src="/photos/AGX.png"
-            alt="Photo: Close-up photo of K-Bot's onboard Jetson AGX"
+            src={photoPaths.WHAT_IS_K_BOT_3}
+            alt={photoPathAltText.WHAT_IS_K_BOT_3_ALT}
             fill
             className="object-cover"
             loading={"eager"}

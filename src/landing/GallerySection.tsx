@@ -3,31 +3,32 @@ import { useContext } from "react";
 import { createContext } from "react";
 import { useRef } from "react";
 import Image from "next/image";
+import { photoPathAltText, photoPaths } from "@/components/util/photoPaths";
 
 const Images = [
   {
-    src: "/photos/1.png",
-    alt: "Gallery Image 1",
+    src: photoPaths.GALLERY_1,
+    alt: photoPathAltText.GALLERY_1_ALT,
   },
   {
-    src: "/photos/2.png",
-    alt: "Gallery Image 2",
+    src: photoPaths.GALLERY_2,
+    alt: photoPathAltText.GALLERY_2_ALT,
   },
   {
-    src: "/photos/3.png",
-    alt: "Gallery Image 3",
+    src: photoPaths.GALLERY_3,
+    alt: photoPathAltText.GALLERY_3_ALT,
   },
   {
-    src: "/photos/4.png",
-    alt: "Gallery Image 4",
+    src: photoPaths.GALLERY_4,
+    alt: photoPathAltText.GALLERY_4_ALT,
   },
   {
-    src: "/photos/5.png",
-    alt: "Gallery Image 5",
+    src: photoPaths.GALLERY_5,
+    alt: photoPathAltText.GALLERY_5_ALT,
   },
   {
-    src: "/photos/6.png",
-    alt: "Gallery Image 6",
+    src: photoPaths.GALLERY_6,
+    alt: photoPathAltText.GALLERY_6_ALT,
   },
 ];
 
