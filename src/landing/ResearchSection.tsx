@@ -104,7 +104,7 @@ const ResearchCard = ({ title, description, link, index, icon, variant }: Resear
       draggable={false}
     >
       <article className="p-4 flex flex-col gap-24 h-full w-[80vw] xs:w-[66.25vw] sm:w-[calc(100vw_*_(1.7_/3_+_0.025))] md:w-[calc(100vw_*_(2.8_/_9_+_0.075))] 2xl:w-[calc(100vw_*_(0.875_/_3))] 4xl:w-[21.5625vw]">
-        {icon}
+        <div className={"size-16"}>{icon}</div>
         <div
           className={
             "flex flex-col gap-y-4 h-full text-filament cursor-grab active:cursor-grabbing  "
