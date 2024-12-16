@@ -5,22 +5,15 @@ import { NavDocsButton, NavLogInButton } from "@/components/navbar/navButtons";
 import { useWindowSize } from "@/components/util/functions";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import React, { useEffect, useState } from "react";
-import { ExpressiveArrow } from "@/components/iconography/Iconography";
 import BurgerMenu from "@/components/navbar/burgerMenu";
 import { FillMode } from "@/components/util/constants";
-import Lenis from "lenis";
 import { useLenis } from "lenis/dist/lenis-react";
 import clsx from "clsx";
-
-// const navButtons: React.ReactNode[] = [
-//   { component: <NavDocsButton />, key: "docs" },
-//   { component: <NavLogInButton />, key: "login" },
-// ].map((item) => React.cloneElement(item.component, { key: item.key }));
 
 export default function NavBar() {
   const { scrollY } = useScroll();
   const lenis = useLenis();
-  const [desktopNavHidden, setDesktopNavHidden] = useState(false);
+  const [, setDesktopNavHidden] = useState(false);
   const [desktopPreviousScroll, setPrevScroll] = useState(scrollY.get());
   const [mobileShouldOpenBurger, setMobileShouldOpenBurger] = useState(false);
 
