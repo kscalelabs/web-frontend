@@ -36,7 +36,7 @@ const GalleryItem = ({ src, alt, index }: { src: string; alt: string; index: num
   const scrollYProgress = useContext(ScrollContext);
   return (
     <motion.figure
-      className="sticky top-24 h-[60svh] min-h-[16rem] bg-gradient-to-b from-methyl via-oxide to-rust rounded-lg overflow-hidden"
+      className="sticky top-24 h-[60svh] min-h-[16rem] rounded-lg overflow-hidden"
       style={{
         opacity: useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], [1, 0]),
         scale: useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], [1, 0.8]),

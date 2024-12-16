@@ -39,7 +39,7 @@ const CommunitySection = () => {
       </menu>
 
       <aside className="my-8 grid grid-cols-subgrid gap-y-4 md:gap-y-[2.5vw] 2xl:gap-y-[1.25vw] col-span-full md:col-span-7 md:col-start-2 2xl:col-span-10 2xl:col-start-2">
-        <figure className="col-span-full md:col-span-5 2xl:col-span-7 bg-gradient-to-b from-methyl via-oxide to-rust aspect-square sm:aspect-video rounded-md relative overflow-hidden">
+        <figure className="col-span-full md:col-span-5 2xl:col-span-7 aspect-square sm:aspect-video rounded-md relative overflow-hidden">
           <Image
             src={photoPaths.COMMUNITY_MAIN_BIG}
             alt={photoPathAltText.COMMUNITY_MAIN_BIG_ALT}
@@ -50,7 +50,7 @@ const CommunitySection = () => {
             sizes={"100dvw"}
           />
         </figure>
-        <figure className="col-span-full  md:col-span-2 2xl:col-span-3 bg-gradient-to-b from-methyl via-oxide to-rust aspect-square sm:aspect-video rounded-md relative overflow-hidden">
+        <figure className="col-span-full  md:col-span-2 2xl:col-span-3 aspect-square sm:aspect-video rounded-md relative overflow-hidden">
           <Image
             src={photoPaths.COMMUNITY_UPPER_RIGHT}
             alt={photoPathAltText.COMMUNITY_UPPER_RIGHT_ALT}
@@ -61,7 +61,7 @@ const CommunitySection = () => {
             sizes={"100dvw"}
           />
         </figure>
-        <figure className="col-span-full md:col-span-5 md:col-start-2 2xl:col-span-5 2xl:col-start-4 bg-gradient-to-b from-methyl via-oxide to-rust aspect-square sm:aspect-video rounded-md relative overflow-hidden">
+        <figure className="col-span-full md:col-span-5 md:col-start-2 2xl:col-span-5 2xl:col-start-4 aspect-square sm:aspect-video rounded-md relative overflow-hidden">
           <Image
             src={photoPaths.COMMUNITY_BOTTOM}
             alt={photoPathAltText.COMMUNITY_BOTTOM_ALT}
