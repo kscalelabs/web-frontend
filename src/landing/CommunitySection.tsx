@@ -40,8 +40,8 @@ const CommunitySection = () => {
       <aside className="my-8 grid grid-cols-subgrid gap-y-4 md:gap-y-[2.5vw] 2xl:gap-y-[1.25vw] col-span-full md:col-span-7 md:col-start-2 2xl:col-span-10 2xl:col-start-2">
         <figure className="col-span-full md:col-span-5 2xl:col-span-7 bg-gradient-to-b from-methyl via-oxide to-rust aspect-square sm:aspect-video rounded-md relative overflow-hidden">
           <Image
-            src="/photos/DSC06756.jpg"
-            alt="Photo: wide full shot of K-Bot standing with Master of Technical Staff, Ali Kuwajerwala"
+            src="/photos/C2.png"
+            alt="Photo: hackathon attendees tinkering with the Z-01"
             fill
             className="object-cover"
             loading={"eager"}
@@ -51,8 +51,8 @@ const CommunitySection = () => {
         </figure>
         <figure className="col-span-full  md:col-span-2 2xl:col-span-3 bg-gradient-to-b from-methyl via-oxide to-rust aspect-square sm:aspect-video rounded-md relative overflow-hidden">
           <Image
-            src="/photos/DSC06816.jpg"
-            alt="Photo: portrait full shot of K-Bot standing with Lead Design Engineer, Chris Thomas"
+            src="/photos/C3.png"
+            alt="Photo: Remi and Martino demoing the homunculus glove and the affordable robotic arm"
             fill
             className="object-cover object-[50%_15%]"
             loading={"eager"}
@@ -62,8 +62,8 @@ const CommunitySection = () => {
         </figure>
         <figure className="col-span-full md:col-span-5 md:col-start-2 2xl:col-span-5 2xl:col-start-4 bg-gradient-to-b from-methyl via-oxide to-rust aspect-square sm:aspect-video rounded-md relative overflow-hidden">
           <Image
-            src="/photos/DSC06793.jpg"
-            alt="Photo: wide full shot of K-Bot standing with Founding Engineer, Jingxiang Mo"
+            src="/photos/C1.png"
+            alt="Photo: wide full shot of K-Bot standing with Master of Technical Staff, Ali Kuwajerwala"
             fill
             className="object-cover"
             loading={"eager"}

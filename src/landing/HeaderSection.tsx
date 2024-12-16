@@ -8,7 +8,7 @@ const HeaderSection = () => {
       <div className="absolute inset-0">
         <Image
           sizes={"100vw"}
-          src="/photos/DSC06711.jpg"
+          src="/photos/landing.png"
           alt="Header"
           fill
           className="object-cover brightness-50"
