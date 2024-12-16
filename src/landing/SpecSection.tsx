@@ -1,8 +1,7 @@
 import { InlineCTA } from "@/components/buttons/CTAButtons";
 import { ExpressiveArrow } from "@/components/iconography/Iconography";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
+import { motion } from "motion/react";
 
 const SpecSection = () => {
   return (

@@ -79,7 +79,7 @@ export default function NavBar() {
   useEffect(() => {
     setMobileShouldOpenBurger(false);
     lenis?.start();
-  }, [width]);
+  }, [width, lenis]);
 
   useEffect(() => {
     if (lenis) {
