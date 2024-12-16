@@ -32,7 +32,7 @@ const RobotSection = () => {
       >
         <motion.aside
           layout
-          className="max-sm:hidden absolute w-full h-full bg-carbon z-5 flex flex-col gap-2 items-center pointer-events-none select-none p-4 lg:p-8 2xl:p-12"
+          className="max-sm:hidden absolute z-20 w-full h-full bg-carbon z-5 flex flex-col gap-2 items-center pointer-events-none select-none p-4 lg:p-8 2xl:p-12"
           initial={{
             backgroundColor: "var(--carbon-50)",
             pointerEvents: "auto",
