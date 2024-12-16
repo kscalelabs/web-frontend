@@ -2,7 +2,13 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
 
-const Logotype = ({ atTop = true }: { atTop: boolean }) => {
+const Logotype = ({
+  atTop = true,
+  isMenuOpen = false,
+}: {
+  atTop: boolean;
+  isMenuOpen: boolean;
+}) => {
   return (
     <button
       className="col-start-1 col-span-2 lg:col-start-1 lg:col-span-2 pointer-events-auto"
@@ -16,7 +22,13 @@ const Logotype = ({ atTop = true }: { atTop: boolean }) => {
           viewBox="0 0 383 80"
           xmlns="http://www.w3.org/2000/svg"
           initial={{ fill: "var(--filament)" }}
-          animate={{ fill: atTop ? "var(--filament)" : "var(--foreground)" }}
+          animate={{
+            fill: isMenuOpen
+              ? "var(--foreground)"
+              : atTop
+                ? "var(--filament)"
+                : "var(--foreground)",
+          }}
         >
           <motion.path
             d="M21.1985 46.5058C5.66364 62.3162 -2.29374 74.2913 1.33209 78.3182C5.00037 82.3922 17.9308 75.6334 35.3754 61.7418C33.7006 61.1057 32.1175 60.2837 30.6511 59.301C19.8262 68.278 14.6913 70.9401 12.4399 68.4396C10.1974 65.949 13.3178 61.116 23.265 51.3472C22.4043 49.8305 21.7075 48.2087 21.1985 46.5058Z"

@@ -58,7 +58,7 @@ export default function NavBar() {
           exit={{ backgroundColor: "var(--background-0)" }}
           transition={{ duration: 0.2, ease: "circOut" }}
         >
-          <Logotype atTop={atTop} />
+          <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} />
           <BurgerOpenButton
             className="-col-end-1 place-self-end pointer-events-auto"
             atTop={atTop}
@@ -74,11 +74,9 @@ export default function NavBar() {
   const desktopNavBar = () => {
     return (
       <>
-        <Logotype atTop={atTop} />
-
+        <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} />
         <NavDocsButton atTop={atTop} />
         <NavLogInButton atTop={atTop} />
-
         <NavCTAButton
           className="md:col-span-2 md:-col-end-1 2xl:col-span-3 2xl:-col-end-1"
           mode={FillMode.FILL}
