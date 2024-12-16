@@ -6,20 +6,28 @@ import Image from "next/image";
 
 const Images = [
   {
-    src: "/photos/DSC06664.jpg",
+    src: "/photos/1.png",
     alt: "Gallery Image 1",
   },
   {
-    src: "/photos/DSC06701.jpg",
+    src: "/photos/2.png",
     alt: "Gallery Image 2",
   },
   {
-    src: "/photos/DSC06663.jpg",
+    src: "/photos/3.png",
     alt: "Gallery Image 3",
   },
   {
-    src: "/photos/DSC06729.jpg",
+    src: "/photos/4.png",
     alt: "Gallery Image 4",
+  },
+  {
+    src: "/photos/5.png",
+    alt: "Gallery Image 5",
+  },
+  {
+    src: "/photos/6.png",
+    alt: "Gallery Image 6",
   },
 ];
 
