@@ -52,7 +52,7 @@ const DURATION_S = 5;
 
 const RobotRenderer: React.FC = () => {
   return (
-    <div className="w-full h-full overflow-hidden rounded-lg">
+    <div className="w-full h-full overflow-hidden rounded-lg bg-black">
       <Canvas
         className="w-full h-full"
         camera={{
