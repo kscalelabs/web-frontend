@@ -8,13 +8,11 @@ import GallerySection from "@/landing/GallerySection";
 import PricingSection from "@/landing/PricingSection";
 import CommunitySection from "@/landing/CommunitySection";
 import Sponsors from "@/landing/Sponsors";
-import { Grid } from "@/components/grid/Grid";
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col ">
       <NavBar />
-      <Grid />
       <main className="gap-y-4">
         <HeaderSection />
         <ResearchSection />
