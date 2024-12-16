@@ -23,7 +23,7 @@ const RobotSection = () => {
           target="_self"
           className="max-md:w-fit"
         >
-          Log in
+          Dashboard
         </NavCTAButton>
       </hgroup>
       <div

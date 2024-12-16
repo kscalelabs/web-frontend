@@ -83,7 +83,7 @@ export default function NavBar() {
           className="md:col-span-2 md:-col-end-1 2xl:col-span-3 2xl:-col-end-1"
           mode={FillMode.FILL}
         >
-          View all products
+          View products
         </NavCTAButton>
       </>
     );

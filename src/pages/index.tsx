@@ -6,7 +6,6 @@ import SpecSection from "@/landing/SpecSection";
 import RobotSection from "@/landing/RobotSection";
 import GallerySection from "@/landing/GallerySection";
 import PricingSection from "@/landing/PricingSection";
-import DataSection from "@/landing/DataSection";
 import CommunitySection from "@/landing/CommunitySection";
 import Sponsors from "@/landing/Sponsors";
 
@@ -21,7 +20,6 @@ export default function Home() {
         <RobotSection />
         <GallerySection />
         <PricingSection />
-        <DataSection />
         <CommunitySection />
         <Sponsors />
       </main>
