@@ -45,6 +45,7 @@ Need to put in new images to the landing page?
 - `/public` folder has live site things, DO NOT CHANGE
 - `/src/types/*.*` don't touch anything in this folder.
 
+
 ## 📁 General Structure
 
 ### Images 
@@ -75,6 +76,15 @@ The actual code file is pretty simple:
   - `/src/components/util` is a folder for util functions, constants, etc. Feel free to create new util files if you can't add any to the pre-existing ones
 - `/src/landing` has all the different sections of the landing page. It is where changes can occur.
   - In a multipage site, this is where all the "pages" would go, but here it is just sections.
+
+
+## 🌑 Dark Mode Light Mode
+
+This site has dark/light mode configured automatically already. 
+
+Colours for dark mode are defined in global.css and the tailwind colours reference them.
+
+> Do not hard code hex/rgba/cmyk inline as this will not configure things properly.
 
 
 ---
