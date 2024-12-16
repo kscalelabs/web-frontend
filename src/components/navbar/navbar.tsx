@@ -77,10 +77,7 @@ export default function NavBar() {
         <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} />
         <NavDocsButton atTop={atTop} />
         <NavLogInButton atTop={atTop} />
-        <NavCTAButton
-          className="md:col-span-2 md:-col-end-1 2xl:col-span-3 2xl:-col-end-1"
-          mode={FillMode.FILL}
-        >
+        <NavCTAButton className=" col-span-2 -col-end-1 " mode={FillMode.FILL}>
           View products
         </NavCTAButton>
       </>

@@ -1,4 +1,4 @@
-import { NavCTAButton } from "@/components/buttons/CTAButtons";
+import { CTAButton } from "@/components/buttons/CTAButtons";
 import { Github } from "@/components/footer/socialMediaSvgs";
 import {
   EVLAIcon,
@@ -114,7 +114,7 @@ const ResearchCard = ({ title, description, image, link, index, icon, variant }:
             {title}
           </h3>
           <p className={"text-body cursor-grab  active:cursor-grabbing  "}>{description}</p>
-          <NavCTAButton
+          <CTAButton
             href={link}
             target="_blank"
             className="mt-auto w-fit px-2"
@@ -123,7 +123,7 @@ const ResearchCard = ({ title, description, image, link, index, icon, variant }:
             size={Size.NORMAL}
           >
             View on Github <Github mode={IconMode.SET} variant={variant} />
-          </NavCTAButton>
+          </CTAButton>
         </div>
       </article>
     </motion.div>

@@ -1,4 +1,4 @@
-import { NavCTAButton } from "@/components/buttons/CTAButtons";
+import { CTAButton } from "@/components/buttons/CTAButtons";
 import RobotRenderer from "@/components/robot/robotRenderer";
 import { ColorVariant, Size, FillMode } from "@/components/util/constants";
 import { motion, useInView } from "motion/react";
@@ -15,7 +15,7 @@ const RobotSection = () => {
         <p className="text-body">
           Interact with your robot through our toolkit, supporting real-time ML application.
         </p>
-        <NavCTAButton
+        <CTAButton
           href="https://dashboard.kscale.dev"
           variant={ColorVariant.PLASMA}
           size={Size.NORMAL}
@@ -24,7 +24,7 @@ const RobotSection = () => {
           className="max-md:w-fit"
         >
           Dashboard
-        </NavCTAButton>
+        </CTAButton>
       </hgroup>
       <div
         className="col-span-full w-full relative h-[60svh] lg:h-full lg:aspect-video min-h-[16rem]"

@@ -126,6 +126,82 @@ export const NavCTAButton = ({
   return target === "_blank" ? (
     <motion.button
       className={clsx(
+        "font-planar font-normal 2xl:text-md xl:text-md text-md whitespace-nowrap select-none rounded pointer pointer-events-auto z-20",
+        getVariantClass(variant, mode),
+        className
+      )}
+      variants={hoverVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      whileHover="hover"
+      whileTap="tap"
+      transition={{
+        duration: 0.2,
+        ease: "circOut",
+      }}
+    >
+      <a
+        href={href}
+        target={target}
+        className={clsx(
+          "flex flex-row gap-1 justify-center items-center px-2 pointer select-none pointer-events-auto",
+          size === Size.THIN ? "py-1" : "py-2"
+        )}
+      >
+        {children}
+      </a>
+    </motion.button>
+  ) : (
+    <motion.button
+      className={clsx(
+        "font-planar font-normal px-2 2xl:text-md xl:text-sm text-md whitespace-nowrap select-none flex flex-row " +
+          "gap-1 justify-center items-center pointer pointer-events-auto z-20",
+        size === Size.THIN ? "py-1" : "py-2",
+        "cursor-pointer select-none",
+        "rounded",
+        getVariantClass(variant, mode),
+        className
+      )}
+      variants={hoverVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      whileHover="hover"
+      whileTap="tap"
+      transition={{
+        duration: 0.2,
+        ease: "circOut",
+      }}
+      onClick={() => router.push(href ? href : SHOP_URL)}
+    >
+      {children}
+    </motion.button>
+  );
+};
+
+export const CTAButton = ({
+  children,
+  href = SHOP_URL,
+  className,
+  variant = ColorVariant.RUST,
+  mode = FillMode.DEFAULT,
+  size = Size.THIN,
+  target = "_self",
+}: {
+  children: React.ReactNode;
+  href?: string;
+  className?: string;
+  variant?: ColorVariant;
+  mode?: FillMode;
+  size?: Size;
+  target?: string;
+}) => {
+  const router = useRouter();
+
+  return target === "_blank" ? (
+    <motion.button
+      className={clsx(
         "font-planar font-normal text-body select-none rounded pointer pointer-events-auto z-20",
         getVariantClass(variant, mode),
         className

@@ -1,7 +1,7 @@
 import { ExpressiveArrow } from "@/components/iconography/Iconography";
 import { ColorVariant, FillMode } from "@/components/util/constants";
 import { Discord } from "@/components/footer/socialMediaSvgs";
-import { InlineCTA, NavCTAButton } from "@/components/buttons/CTAButtons";
+import { InlineCTA, CTAButton } from "@/components/buttons/CTAButtons";
 import { IconMode, Size } from "@/components/util/constants";
 import Image from "next/image";
 
@@ -22,7 +22,7 @@ const CommunitySection = () => {
         </p>
       </hgroup>
       <menu className="col-span-full sm:col-span-4 sm:col-start-2 md:col-span-5 md:col-start-2 h-min flex flex-row flex-wrap gap-4">
-        <NavCTAButton
+        <CTAButton
           href="https://discord.com/invite/kscale"
           variant={ColorVariant.PLASMA}
           size={Size.NORMAL}
@@ -31,7 +31,7 @@ const CommunitySection = () => {
           className="max-md:w-full pointer-events-auto"
         >
           Join the Discord <Discord mode={IconMode.SET} />
-        </NavCTAButton>
+        </CTAButton>
         <InlineCTA href="https://docs.google.com/forms/d/e/1FAIpQLSemVaJ6HfieS9xDKv7SqWYArHyHLV-kraraiT_VEmPL_6lkPw/viewform">
           Send feedback <ExpressiveArrow size={"size-4"} />
         </InlineCTA>
