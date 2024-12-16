@@ -89,7 +89,7 @@ export default function NavBar() {
         lenis.start();
       }
     }
-  }, [mobileShouldOpenBurger]);
+  }, [mobileShouldOpenBurger, lenis]);
 
   return (
     <motion.nav

@@ -71,7 +71,7 @@ interface ResearchItem {
   variant: ColorVariant;
 }
 
-const ResearchCard = ({ title, description, image, link, index, icon, variant }: ResearchItem) => {
+const ResearchCard = ({ title, description, link, index, icon, variant }: ResearchItem) => {
   const bg = (variant: ColorVariant): string => {
     switch (variant) {
       case ColorVariant.METHYL:
