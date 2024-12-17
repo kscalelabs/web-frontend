@@ -1,5 +1,4 @@
 import { CTAButton } from "@/components/buttons/CTAButtons";
-import RobotRenderer from "@/components/robot/robotRenderer";
 import { ColorVariant, Size, FillMode } from "@/components/util/constants";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
