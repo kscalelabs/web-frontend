@@ -4,6 +4,7 @@ import { ColorVariant, Size, FillMode } from "@/components/util/constants";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { useWindowSize } from "@/components/util/functions";
+import RobotWrapper from "@/components/robot/RobotWrapper";
 
 const RobotSection = () => {
   const ref = useRef(null);
@@ -83,7 +84,7 @@ const RobotSection = () => {
             <h3 className="text-filament text-body">Drag to orbit</h3>
           </motion.hgroup>
         </motion.aside>
-        <RobotRenderer />
+        <RobotWrapper />
       </div>
     </section>
   );
