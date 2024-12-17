@@ -5,7 +5,7 @@ import { ReactLenis } from "lenis/dist/lenis-react";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ReactLenis root>
+    <>
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -36,7 +36,10 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta name="twitter:image" content="/meta/twitter-image.png" />
       </Head>
-      <Component {...pageProps} />
-    </ReactLenis>
+
+      <ReactLenis root>
+        <Component {...pageProps} />
+      </ReactLenis>
+    </>
   );
 }
