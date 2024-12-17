@@ -8,7 +8,6 @@ import GallerySection from "@/landing/GallerySection";
 import PricingSection from "@/landing/PricingSection";
 import CommunitySection from "@/landing/CommunitySection";
 import Sponsors from "@/landing/Sponsors";
-import { Grid } from "@/components/grid/Grid";
 import { useEffect } from "react";
 import { useLenis } from "lenis/dist/lenis-react";
 
