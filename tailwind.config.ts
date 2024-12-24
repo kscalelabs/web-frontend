@@ -11,7 +11,6 @@ const config: Config = {
   ],
   darkMode: "media",
   theme: {
-
     extend: {
       screens: {
         xs: "480px",
