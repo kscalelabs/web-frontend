@@ -62,12 +62,6 @@ export const CursorTypes = {
   GRABBING: "grabbing",
 };
 
-export const TeamCol1 = () => [
-  "Aaron",
-  "Ali",
-  "Benjamin",
-  "Denys",
-  "Jingxiang",
-];
+export const TeamCol1 = () => ["Aaron", "Ali", "Benjamin", "Denys", "Jingxiang"];
 
 export const TeamCol2 = () => ["Paweł", "Rui", "Viraj", "Wesley"];
