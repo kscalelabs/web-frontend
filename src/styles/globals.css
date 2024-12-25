@@ -64,9 +64,6 @@
     --rust: #fa4300ff;
     --molten: #ff9000ff;
     --sol: #f2f091ff;
-    --grab: url("./cursor/grab.svg"), grab;
-    --grabbing: url("./cursor/grabbing.svg"), grabbing;
-    --pointer: url("./cursor/pointer.svg"), pointer;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -89,9 +86,6 @@
       --rust: #de4208ff;
       --molten: #f18a03ff;
       --sol: #eae9bcff;
-      --grab: url("./cursor/grab_dark.svg"), grab;
-      --grabbing: url("./cursor/grabbing_dark.svg"), grabbing;
-      --pointer: url("./cursor/pointer_dark.svg"), pointer;
     }
   }
 }
@@ -347,9 +341,9 @@ main .sponsors {
 }
 
 /*CURSOR*/
-@media (pointer: fine) and (prefers-color-scheme: light) {
+@media (pointer: fine) {
   body {
-    cursor: url("./cursor/default.svg"), auto;
+    cursor: auto;
   }
 
   h1,
@@ -365,7 +359,7 @@ main .sponsors {
   label,
   li,
   p {
-    cursor: url("./cursor/text.svg"), text;
+    cursor: text;
   }
 
   button,
@@ -377,56 +371,14 @@ main .sponsors {
   label,
   label *,
   .pointer {
-    cursor: url("./cursor/pointer.svg"), pointer;
+    cursor: pointer;
   }
 
   .grab {
-    cursor: url("./cursor/grab.svg"), grab;
+    cursor: grab;
   }
 
   .grab:active {
-    cursor: url("./cursor/grabbing.svg"), grabbing;
-  }
-}
-
-@media (pointer: fine) and (prefers-color-scheme: dark) {
-  body {
-    cursor: url("./cursor/default_dark.svg"), auto;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  span,
-  text,
-  code,
-  blockquote,
-  label,
-  li,
-  p {
-    cursor: url("./cursor/text_dark.svg"), text;
-  }
-
-  button,
-  button *,
-  a,
-  a *,
-  input,
-  input *,
-  label,
-  label *,
-  .pointer {
-    cursor: url("./cursor/pointer_dark.svg"), pointer;
-  }
-
-  .grab {
-    cursor: url("./cursor/grab_dark.svg"), grab;
-  }
-
-  .grab:active {
-    cursor: url("./cursor/grabbing_dark.svg"), grabbing;
+    cursor: grabbing;
   }
 }
