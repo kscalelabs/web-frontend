@@ -22,8 +22,3 @@ export function useWindowSize() {
   }, []);
   return windowSize;
 }
-
-// Function removed as part of custom cursor removal
-export function setCustomCursorForStates(currentCursor: string | undefined) {
-  return null; // No-op: custom cursors have been removed
-}
