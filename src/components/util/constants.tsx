@@ -63,11 +63,11 @@ export const CursorTypes = {
 };
 
 export const TeamCol1 = () => [
-  "Aaron Xie",
-  "Ali Kuwajerwala",
-  "Benjamin Bolte",
-  "Denys Bezmenov",
-  "Jingxiang Mo",
+  "Aaron",
+  "Ali",
+  "Benjamin",
+  "Denys",
+  "Jingxiang",
 ];
 
-export const TeamCol2 = () => ["Paweł Budzianowski", "Rui Xu", "Viraj Tipnis", "Wesley Maa"];
+export const TeamCol2 = () => ["Paweł", "Rui", "Viraj", "Wesley"];
