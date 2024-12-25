@@ -3,6 +3,45 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import NavBar from './navbar';
 
+// Mock all the component dependencies
+jest.mock('@/components/logos/logotype', () => ({
+  __esModule: true,
+  default: ({ atTop, isMenuOpen }: { atTop: boolean; isMenuOpen: boolean }) => (
+    <div data-testid="logotype">
+      <svg />
+    </div>
+  ),
+}));
+
+jest.mock('@/components/navbar/burgerMenu', () => ({
+  __esModule: true,
+  default: (isOpen: boolean) => (
+    isOpen ? <div data-testid="burger-menu">Burger Menu</div> : null
+  ),
+}));
+
+jest.mock('@/components/navbar/burgerOpenButton', () => ({
+  __esModule: true,
+  default: ({ onClick, atTop, isOpen }: { onClick: (open: boolean) => void; atTop: boolean; isOpen: boolean }) => (
+    <button onClick={() => onClick(!isOpen)} data-testid="burger-button">
+      Toggle Menu
+    </button>
+  ),
+}));
+
+jest.mock('@/components/navbar/navButtons', () => ({
+  NavDocsButton: ({ atTop }: { atTop: boolean }) => (
+    <button data-testid="docs-button">Docs</button>
+  ),
+  NavLogInButton: ({ atTop }: { atTop: boolean }) => (
+    <button data-testid="login-button">Log In</button>
+  ),
+}));
+
+jest.mock('@/components/util/functions', () => ({
+  useWindowSize: () => ({ width: 1024, height: 768 }),
+}));
+
 // Mock the motion component since we don't need to test animations
 jest.mock('motion/react', () => ({
   motion: {
@@ -37,24 +76,25 @@ describe('NavBar', () => {
 
   it('renders desktop navigation with docs and login buttons', () => {
     render(<NavBar />);
-    expect(screen.getByText(/docs/i)).toBeInTheDocument();
-    expect(screen.getByText(/log in/i)).toBeInTheDocument();
+    expect(screen.getByTestId('docs-button')).toBeInTheDocument();
+    expect(screen.getByTestId('login-button')).toBeInTheDocument();
   });
 
   it('renders mobile navigation with burger menu when width is small', () => {
-    window.innerWidth = 600;
+    // Mock window width to mobile size
+    jest.spyOn(require('@/components/util/functions'), 'useWindowSize').mockReturnValue({ width: 600, height: 768 });
     render(<NavBar />);
     // In mobile view, we should see the burger menu button
-    expect(screen.getByRole('button')).toBeInTheDocument();
+    expect(screen.getByTestId('burger-button')).toBeInTheDocument();
   });
 
   it('renders the logo in both desktop and mobile views', () => {
     const { rerender } = render(<NavBar />);
-    expect(document.querySelector('svg')).toBeInTheDocument(); // Logo is an SVG
+    expect(screen.getByTestId('logotype')).toBeInTheDocument();
 
     // Test mobile view
-    window.innerWidth = 600;
+    jest.spyOn(require('@/components/util/functions'), 'useWindowSize').mockReturnValue({ width: 600, height: 768 });
     rerender(<NavBar />);
-    expect(document.querySelector('svg')).toBeInTheDocument();
+    expect(screen.getByTestId('logotype')).toBeInTheDocument();
   });
 });
