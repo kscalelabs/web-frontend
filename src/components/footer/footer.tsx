@@ -200,8 +200,8 @@ export default function Footer() {
       <FooterSectionList
         title={"Legal"}
         items={[
-          { title: "Terms of service", url: "https://dashboard.kscale.dev/tos" },
-          { title: "Privacy policy", url: "https://dashboard.kscale.dev/privacy" },
+          { title: "Terms of service", url: "/tos", isInternal: true },
+          { title: "Privacy policy", url: "/privacy", isInternal: true },
         ]}
         extraStyling={"col-span-2 sm:col-span-3 sm:col-start-4 md:col-span-2"}
       />
