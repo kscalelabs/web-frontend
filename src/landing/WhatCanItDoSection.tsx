@@ -94,6 +94,14 @@ const RequestItem = ({ request }: RequestItemProps) => {
 };
 
 const WhatCanItDoSection = () => {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
+
   return (
     <section className="relative col-span-full grid grid-cols-subgrid py-16 gap-y-16">
       <motion.aside className="col-span-full sm:col-span-5 md:col-span-6 lg:col-span-4 xl:col-span-4 2xl:col-span-6 4xl:col-span-5 flex flex-col gap-8">
@@ -113,15 +121,20 @@ const WhatCanItDoSection = () => {
       </motion.aside>
 
       <article className="col-span-full lg:col-span-5 2xl:col-span-6 2xl:-col-end-1 4xl:col-span-7 4xl:-col-end-1 grid grid-cols-subgrid gap-y-4">
-        <div className="sticky top-32 z-10 col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 xl:col-span-3 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 3xl:col-span-5 3xl:col-start-2 4xl:col-span-4 4xl:col-start-2">
-          <h3 className="relative inline-block bg-background/80 backdrop-blur-sm px-6 py-3 rounded-2xl text-heading-sm after:content-[''] after:absolute after:left-6 after:bottom-0 after:w-4 after:h-4 after:bg-background/80 after:transform after:rotate-45 after:translate-y-2">
-            Hey K-Bot, can you...
-          </h3>
-        </div>
-        <div className="mt-8 col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 xl:col-span-3 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 3xl:col-span-5 3xl:col-start-2 4xl:col-span-4 4xl:col-start-2 relative rounded-md">
-          {requests.map((request, index) => (
-            <RequestItem key={index} request={request} />
-          ))}
+        <div className="relative col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 xl:col-span-3 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 3xl:col-span-5 3xl:col-start-2 4xl:col-span-4 4xl:col-start-2">
+          <div className="sticky top-16 z-20 isolate overflow-hidden">
+            <div className="relative inline-block bg-background/80 backdrop-blur-sm px-6 py-3 rounded-2xl">
+              <h3 className="text-heading-sm">
+                Hey K-Bot, can you...
+              </h3>
+              <div className="absolute left-6 bottom-0 w-4 h-4 bg-background/80 transform rotate-45 translate-y-2"></div>
+            </div>
+          </div>
+          <div className="mt-8 relative rounded-md">
+            {requests.map((request, index) => (
+              <RequestItem key={index} request={request} />
+            ))}
+          </div>
         </div>
       </article>
     </section>
