@@ -117,7 +117,7 @@ const HeaderSection = () => {
         left: 50%;
         transform: translateX(-50%);
         font-size: 24px;
-        color: white;
+        color: #808080;
         z-index: 100;
         transition: transform 0.3s;
       `;
@@ -126,9 +126,9 @@ const HeaderSection = () => {
 
     // Define score thresholds and effects
     const SCORE_THRESHOLDS = {
-      START: 30,
-      WOBBLE: 40,
-      CHAOS: 70,
+      START: 50,
+      WOBBLE: 60,
+      CHAOS: 90,
       WIN: 100,
     };
 
@@ -148,7 +148,7 @@ const HeaderSection = () => {
         scoreElement.style.transform = "translateX(-50%)";
       }
 
-      scoreElement.textContent = `Stars: ${score}`;
+      scoreElement.textContent = `🗿 Stars: ${score}`;
     };
 
     const checkVictory = () => {
