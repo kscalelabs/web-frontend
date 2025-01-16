@@ -106,25 +106,28 @@ const CommunitySection = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
             </figure>
 
-            <div className="flex flex-row gap-4 justify-end items-center -mt-4">
-              <figure className="w-24 aspect-square relative rounded-md overflow-hidden">
-                <Image
-                  src={photoPaths.ZBOT_PARTNER_KSCALE}
-                  alt={photoPathAltText.ZBOT_PARTNER_KSCALE_ALT}
-                  fill
-                  className="object-contain bg-background/80"
-                  sizes="96px"
-                />
-              </figure>
-              <figure className="w-40 aspect-square relative rounded-md overflow-hidden translate-y-1">
-                <Image
-                  src={photoPaths.ZBOT_PARTNER_GRAND_JOURNEY}
-                  alt={photoPathAltText.ZBOT_PARTNER_GRAND_JOURNEY_ALT}
-                  fill
-                  className="object-contain bg-background/80"
-                  sizes="160px"
-                />
-              </figure>
+            <div className="flex flex-col gap-2">
+              <span className="text-caption uppercase text-foreground70">Our Partners</span>
+              <div className="flex flex-row gap-4 justify-end items-center">
+                <figure className="w-24 aspect-square relative rounded-md overflow-hidden">
+                  <Image
+                    src={photoPaths.ZBOT_PARTNER_KSCALE}
+                    alt={photoPathAltText.ZBOT_PARTNER_KSCALE_ALT}
+                    fill
+                    className="object-contain bg-background/80"
+                    sizes="96px"
+                  />
+                </figure>
+                <figure className="w-40 aspect-square relative rounded-md overflow-hidden translate-y-1">
+                  <Image
+                    src={photoPaths.ZBOT_PARTNER_GRAND_JOURNEY}
+                    alt={photoPathAltText.ZBOT_PARTNER_GRAND_JOURNEY_ALT}
+                    fill
+                    className="object-contain bg-background/80"
+                    sizes="160px"
+                  />
+                </figure>
+              </div>
             </div>
           </div>
 
