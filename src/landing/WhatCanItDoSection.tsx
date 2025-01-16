@@ -100,8 +100,6 @@ const WhatCanItDoSection = () => {
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
-
   return (
     <section className="relative col-span-full grid grid-cols-subgrid py-16 gap-y-16">
       <motion.aside className="col-span-full sm:col-span-5 md:col-span-6 lg:col-span-4 xl:col-span-4 2xl:col-span-6 4xl:col-span-5 flex flex-col gap-8">
