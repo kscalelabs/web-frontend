@@ -94,6 +94,7 @@ const CommunitySection = () => {
         
         <div className="col-span-full grid grid-cols-subgrid gap-x-8 gap-y-8">
           <div className="col-span-5 sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-2 lg:col-span-5 lg:col-start-2 xl:col-span-5 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 flex flex-col gap-4">
+            <h4 className="text-heading-sm">The Team</h4>
             <figure className="w-full aspect-[2/1] relative rounded-md overflow-hidden">
               <Image
                 src={photoPaths.ZBOT_TEAM}
@@ -103,10 +104,6 @@ const CommunitySection = () => {
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-              <div className="absolute bottom-4 left-4 text-filament">
-                <h4 className="text-heading-sm">The Team</h4>
-                <p className="text-body">Meet the minds behind Zeroth Bot</p>
-              </div>
             </figure>
 
             <figure className="w-32 aspect-square relative rounded-md overflow-hidden self-end">
