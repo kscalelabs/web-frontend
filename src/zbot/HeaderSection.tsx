@@ -29,7 +29,7 @@ const HeaderSection = () => {
           <input
             type="email"
             name="EMAIL"
-            className="w-full px-4 py-2 text-sm rounded-md bg-background/10 border border-filament/20 backdrop-blur-sm text-filament placeholder:text-filament/50"
+            className="w-full px-4 py-2 text-sm rounded-md bg-background/10 border border-filament/20 backdrop-blur-sm text-rust placeholder:text-filament/50"
             placeholder="Enter your email for updates"
           />
           <div aria-hidden="true" style={{ position: "absolute", left: "-5000px" }}>

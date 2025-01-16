@@ -34,7 +34,7 @@ export default function ZBot() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <NavBar />
+      <NavBar href="/zbot" />
       <main className="gap-y-4">
         <HeaderSection />
         <ResearchSection />
