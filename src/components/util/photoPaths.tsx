@@ -59,4 +59,5 @@ export const photoPathAltText = {
   ZBOT_TEAM_ALT: "Photo: Zeroth Bot team members",
   ZBOT_PARTNER_KSCALE_ALT: "Photo: K-Scale partner",
   ZBOT_PARTNER_GRAND_JOURNEY_ALT: "Photo: Grand Journey partner",
+  ZBOT_PARTNERS_ALT: "Photo: Partner logos",
 };
