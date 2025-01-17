@@ -2,19 +2,19 @@
  * To change the image, just change the name, do not change the folder name, thank you.
  */
 export const photoPaths = {
-  LANDING_IMAGE: "/photos/kbot.webp",
-  WHAT_IS_K_BOT_1: "/photos/aluminium.webp",
-  WHAT_IS_K_BOT_2: "/photos/actuators.webp",
-  WHAT_IS_K_BOT_3: "/photos/2.webp",
-  GALLERY_1: "/photos/1.webp",
-  GALLERY_2: "/photos/2.webp",
-  GALLERY_3: "/photos/3.webp",
-  GALLERY_4: "/photos/4.webp",
-  GALLERY_5: "/photos/5.webp",
-  GALLERY_6: "/photos/6.webp",
-  COMMUNITY_MAIN_BIG: "/photos/C2.webp",
-  COMMUNITY_UPPER_RIGHT: "/photos/C3.webp",
-  COMMUNITY_BOTTOM: "/photos/C1.webp",
+  LANDING_IMAGE: "/photos/kbot.png",
+  WHAT_IS_K_BOT_1: "/photos/aluminium.png",
+  WHAT_IS_K_BOT_2: "/photos/actuators.png",
+  WHAT_IS_K_BOT_3: "/photos/2.png",
+  GALLERY_1: "/photos/1.png",
+  GALLERY_2: "/photos/2.png",
+  GALLERY_3: "/photos/3.png",
+  GALLERY_4: "/photos/4.png",
+  GALLERY_5: "/photos/5.png",
+  GALLERY_6: "/photos/6.png",
+  COMMUNITY_MAIN_BIG: "/photos/C2.png",
+  COMMUNITY_UPPER_RIGHT: "/photos/C3.png",
+  COMMUNITY_BOTTOM: "/photos/C1.png",
 };
 
 export const photoPathAltText = {
