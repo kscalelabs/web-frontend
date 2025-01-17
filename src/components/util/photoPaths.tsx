@@ -7,9 +7,9 @@ export const photoPaths = {
   WHAT_IS_K_BOT_1: "/photos/aluminium.webp",
   WHAT_IS_K_BOT_2: "/photos/actuators.webp",
   WHAT_IS_K_BOT_3: "/photos/2.webp",
-  WHAT_IS_Z_BOT_1: "/photos/isaac_gym.png",
+  WHAT_IS_Z_BOT_1: "/photos/zbot.jpeg",
   WHAT_IS_Z_BOT_2: "/photos/zbot1.jpeg",
-  WHAT_IS_Z_BOT_3: "/photos/code.png",
+  WHAT_IS_Z_BOT_3: "/photos/zbot2.jpeg",
   GALLERY_1: "/photos/1.webp",  
   GALLERY_2: "/photos/2.webp",
   GALLERY_3: "/photos/3.webp",
@@ -27,8 +27,6 @@ export const photoPaths = {
   COMMUNITY_BOTTOM: "/photos/C1.webp",
   ZBOT_COMMUNITY_BOTTOM: "/photos/community1.jpg",
   ZBOT_COMMUNITY_UPPER_RIGHT: "/photos/community2.jpg",
-  ZBOT_TEAM: "/photos/zbotteam.png",
-  ZBOT_PARTNERS: "/photos/zbotpartners.png",
 };
 
 export const photoPathAltText = {
@@ -51,8 +49,6 @@ export const photoPathAltText = {
     "Photo: Remi and Martino demoing the homunculus glove and the affordable robotic arm",
   COMMUNITY_BOTTOM_ALT:
     "Photo: wide full shot of K-Bot standing with Master of Technical Staff, Ali Kuwajerwala",
-  ZBOT_COMMUNITY_BOTTOM_ALT: "Photo: Community members working with Zeroth Bot",
-  ZBOT_COMMUNITY_UPPER_RIGHT_ALT: "Photo: Community collaboration",
-  ZBOT_TEAM_ALT: "Photo: Zeroth Bot team members",
-  ZBOT_PARTNERS_ALT: "Photo: Zeroth Bot partners",
+  ZBOT_COMMUNITY_BOTTOM_ALT: "Photo: wide full shot of K-Bot standing with Master of Technical Staff, Ali Kuwajerwala",
+  ZBOT_COMMUNITY_UPPER_RIGHT_ALT: "Photo: wide full shot of K-Bot standing with Master of Technical Staff, Ali Kuwajerwala",
 };
