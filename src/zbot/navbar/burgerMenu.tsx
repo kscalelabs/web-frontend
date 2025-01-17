@@ -3,12 +3,7 @@ import { navigationConfig, transitionEaseLinearDuration300 } from "@/components/
 import { motion } from "motion/react";
 import Link from "next/link";
 
-interface BurgerMenuProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
-
-const BurgerMenu = ({ isOpen, onClose }: BurgerMenuProps) => {
+const BurgerMenu = (isOpen: boolean) => {
   return isOpen ? (
     <motion.div
       className={"flex flex-col col-span-full list-none justify-evenly"}
@@ -34,7 +29,6 @@ const BurgerMenu = ({ isOpen, onClose }: BurgerMenuProps) => {
               className={"font-planar pointer-events-auto"}
               href={navItem.link}
               target={navItem.isExternal ? "_blank" : "_self"}
-              onClick={onClose}
             >
               {navItem.name}
             </Link>
