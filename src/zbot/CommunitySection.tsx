@@ -23,7 +23,7 @@ const CommunitySection = () => {
       </hgroup>
       <menu className="col-span-full sm:col-span-4 sm:col-start-2 md:col-span-5 md:col-start-2 h-min flex flex-row flex-wrap gap-4">
         <CTAButton
-          href="https://discord.com/invite/kscale"
+          href="https://discord.gg/G6KP76uha5"
           variant={ColorVariant.PLASMA}
           size={Size.NORMAL}
           mode={FillMode.FILL}
