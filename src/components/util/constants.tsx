@@ -1,6 +1,6 @@
 export const transitionEaseLinearDuration300: string = " transition ease-linear duration-300 ";
 
-export type NavigationConfig = {
+type NavigationConfig = {
   name: string;
   link: string;
   isExternal: boolean;
@@ -20,19 +20,6 @@ export const navigationConfig: NavigationConfig[] = [
   {
     name: "Forum",
     link: "https://forum.kscale.dev",
-    isExternal: true,
-  },
-  {
-    name: "Discord",
-    link: "https://discord.com/invite/kscale",
-    isExternal: true,
-  },
-];
-
-export const zbotNavigationConfig: NavigationConfig[] = [
-  {
-    name: "Docs",
-    link: "https://docs.kscale.dev/",
     isExternal: true,
   },
   {
