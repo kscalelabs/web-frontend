@@ -1,11 +1,3 @@
-@import url("//cdn-images.mailchimp.com/embedcode/classic-061523.css");
-
-#mc_embed_signup {
-  background: transparent !important;
-  clear: left;
-  width: 100%;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
