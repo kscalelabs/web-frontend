@@ -81,40 +81,38 @@ const CommunitySection = () => {
         <div className="col-span-full grid grid-cols-subgrid gap-x-8">
           <div className="col-span-5 sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-2 lg:col-span-5 lg:col-start-2 xl:col-span-5 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 flex flex-col gap-4">
             <h2 className="text-heading-md">Our Team</h2>
-            <figure className="w-full aspect-[2/1] relative rounded-md overflow-hidden">
+            <figure className="aspect-[2/1] relative rounded-md overflow-hidden">
               <Image
                 src={photoPaths.ZBOT_TEAM}
                 alt={photoPathAltText.ZBOT_TEAM_ALT}
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
             </figure>
-
-            <div className="flex flex-col items-center mt-4 mb-8 sm:mb-8">
-              <div className="flex flex-row gap-4 justify-center items-center">
-                <figure className="w-24 aspect-square relative rounded-md overflow-hidden">
-                  <Image
-                    src={photoPaths.ZBOT_PARTNER_KSCALE}
-                    alt={photoPathAltText.ZBOT_PARTNER_KSCALE_ALT}
-                    fill
-                    className="object-contain bg-background/80"
-                    sizes="96px"
-                  />
-                </figure>
-                <figure className="w-40 aspect-square relative rounded-md overflow-hidden translate-y-1">
-                  <Image
-                    src={photoPaths.ZBOT_PARTNER_GRAND_JOURNEY}
-                    alt={photoPathAltText.ZBOT_PARTNER_GRAND_JOURNEY_ALT}
-                    fill
-                    className="object-contain bg-background/80"
-                    sizes="160px"
-                  />
-                </figure>
-              </div>
-              <h3 className="text-sm font-medium -mt-32">Our Partners</h3>
-            </div>
+            <div className="flex flex-col items-center mt-4 mb-4 sm:mb-8">
+              <figure className="w-full h-20 relative rounded-md overflow-hidden translate-x-8 mr-16">
+                <Image
+                  src={photoPaths.ZBOT_PARTNERS_SVG_WHITE}
+                  alt={photoPathAltText.ZBOT_PARTNERS_SVG_WHITE_ALT}
+                  width={2688}
+                  height={768}
+                  className="w-full h-full object-cover object-[10%_30%] hidden dark:block"
+                  quality={100}
+                  priority
+                />
+                <Image
+                  src={photoPaths.ZBOT_PARTNERS_SVG_BLACK}
+                  alt={photoPathAltText.ZBOT_PARTNERS_SVG_BLACK_ALT}
+                  width={2688}
+                  height={768}
+                  className="w-full h-full object-cover object-[10%_30%] dark:hidden"
+                  quality={100}
+                  priority
+                />
+              </figure>
+              <h3 className="text-sm font-medium -mt-20">Our Partners</h3>
+            </div>{" "}
           </div>
 
           <div className="col-span-4 sm:col-span-4 sm:col-start-7 md:col-span-4 md:col-start-7 lg:col-span-4 lg:col-start-7 xl:col-span-4 xl:col-start-7 2xl:col-span-4 2xl:col-start-7">

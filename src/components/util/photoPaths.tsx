@@ -29,8 +29,8 @@ export const photoPaths = {
   ZBOT_COMMUNITY_BOTTOM: "/photos/community1.jpg",
   ZBOT_COMMUNITY_UPPER_RIGHT: "/photos/community3.png",
   ZBOT_TEAM: "/photos/zbotteam.png",
-  ZBOT_PARTNER_KSCALE: "/photos/zbotkscalepartner.png",
-  ZBOT_PARTNER_GRAND_JOURNEY: "/photos/zbotgrandjourneypartner.png",
+  ZBOT_PARTNERS_SVG_BLACK: "/photos/zbotpartnersblack.svg",
+  ZBOT_PARTNERS_SVG_WHITE: "/photos/zbotpartnerswhite.svg",
 };
 
 export const photoPathAltText = {
@@ -57,7 +57,6 @@ export const photoPathAltText = {
   ZBOT_COMMUNITY_BOTTOM_ALT: "Photo: Community members working with Zeroth Bot",
   ZBOT_COMMUNITY_UPPER_RIGHT_ALT: "Photo: Community collaboration",
   ZBOT_TEAM_ALT: "Photo: Zeroth Bot team members",
-  ZBOT_PARTNER_KSCALE_ALT: "Photo: K-Scale partner",
-  ZBOT_PARTNER_GRAND_JOURNEY_ALT: "Photo: Grand Journey partner",
-  ZBOT_PARTNERS_ALT: "Photo: Partner logos",
+  ZBOT_PARTNERS_SVG_BLACK_ALT: "Photo: Our partners: k-scale labs and Grand Journey",
+  ZBOT_PARTNERS_SVG_WHITE_ALT: "Photo: Our partners: k-scale labs and Grand Journey",
 };
