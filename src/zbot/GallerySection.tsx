@@ -3,32 +3,32 @@ import { useContext } from "react";
 import { createContext } from "react";
 import { useRef } from "react";
 import Image from "next/image";
-import { photoPathAltText, photoPaths } from "@/components/util/photoPaths";
+import { photoPaths } from "@/components/util/photoPaths";
 
 const Images = [
   {
-    src: photoPaths.GALLERY_1,
-    alt: photoPathAltText.GALLERY_1_ALT,
+    src: photoPaths.ZBOT_GALLERY_1,
+    alt: "Z-Bot Gallery Image 1",
   },
   {
-    src: photoPaths.GALLERY_2,
-    alt: photoPathAltText.GALLERY_2_ALT,
+    src: photoPaths.ZBOT_GALLERY_2,
+    alt: "Z-Bot Gallery Image 2",
   },
   {
-    src: photoPaths.GALLERY_3,
-    alt: photoPathAltText.GALLERY_3_ALT,
+    src: photoPaths.ZBOT_GALLERY_3,
+    alt: "Z-Bot Gallery Image 3",
   },
   {
-    src: photoPaths.GALLERY_4,
-    alt: photoPathAltText.GALLERY_4_ALT,
+    src: photoPaths.ZBOT_GALLERY_4,
+    alt: "Z-Bot Gallery Image 4",
   },
   {
-    src: photoPaths.GALLERY_5,
-    alt: photoPathAltText.GALLERY_5_ALT,
+    src: photoPaths.ZBOT_GALLERY_5,
+    alt: "Z-Bot Gallery Image 5",
   },
   {
-    src: photoPaths.GALLERY_6,
-    alt: photoPathAltText.GALLERY_6_ALT,
+    src: photoPaths.ZBOT_GALLERY_6,
+    alt: "Z-Bot Gallery Image 6",
   },
 ];
 
