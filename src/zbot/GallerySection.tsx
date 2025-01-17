@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { createContext } from "react";
 import { useRef } from "react";
 import Image from "next/image";
-import { photoPaths } from "@/components/util/photoPaths";
+import { photoPathAltText, photoPaths } from "@/components/util/photoPaths";
 
 const Images = [
   {
