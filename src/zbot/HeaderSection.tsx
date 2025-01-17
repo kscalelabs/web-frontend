@@ -1,3 +1,5 @@
+import { CTASubtitleButton } from "@/components/buttons/CTAButtons";
+import { FillMode } from "@/components/util/constants";
 import Image from "next/image";
 import { photoPathAltText, photoPaths } from "@/components/util/photoPaths";
 

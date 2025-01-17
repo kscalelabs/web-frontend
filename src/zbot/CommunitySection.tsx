@@ -1,10 +1,26 @@
 import { CTAButton, InlineCTA } from "@/components/buttons/CTAButtons";
-import { ColorVariant, FillMode, IconMode, Size } from "@/components/util/constants";
-import { ExpressiveArrow } from "@/components/iconography/Iconography";
 import { Discord } from "@/components/footer/socialMediaSvgs";
-import Image from "next/image";
+import { ExpressiveArrow } from "@/components/iconography/Iconography";
+import {
+  ColorVariant,
+  FillMode,
+  IconMode,
+  Size,
+  TeamCol1,
+  TeamCol2,
+} from "@/components/util/constants";
 import { photoPathAltText, photoPaths } from "@/components/util/photoPaths";
+import Image from "next/image";
 
+const TeamColumn = ({ members, styling }: { members: string[]; styling: string }) => (
+  <ul className={styling + " col-span-2 whitespace-nowrap"}>
+    {members.map((member, index) => (
+      <li className="list-none" key={index}>
+        {member}
+      </li>
+    ))}
+  </ul>
+);
 const CommunitySection = () => {
   return (
     <section className="col-span-full grid grid-cols-subgrid auto-rows-min gap-y-4 py-16 ">

@@ -4,6 +4,7 @@ import CommunitySection from "@/zbot/CommunitySection";
 import GallerySection from "@/zbot/GallerySection";
 import HeaderSection from "@/zbot/HeaderSection";
 import ResearchSection from "@/zbot/ResearchSection";
+import RobotSection from "@/zbot/RobotSection";
 import SpecSection from "@/zbot/SpecSection";
 import { useLenis } from "lenis/dist/lenis-react";
 import { useEffect } from "react";
@@ -38,11 +39,12 @@ export default function ZBot() {
         <HeaderSection />
         <ResearchSection />
         <SpecSection />
+        {/* <RobotSection /> */}
         <GallerySection />
         <CommunitySection />
       </main>
       <Footer />
-      <Script src="https://code.jquery.com/jquery-3.7.1.min.js" strategy="afterInteractive" />
+      <Script src="https://code.jquery.com/jquery-3.7.1.min.js" strategy="beforeInteractive" />
       <Script
         src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
         strategy="afterInteractive"
