@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>K-Scale Labs</title>
         <meta
           name="description"
-          content="Developing the world's most accessible platform for embodied intelligence. We're hackers, engineers, and researchers that believe in a world where robots are made for everyone. We're from Tesla AI, Google, Meta FAIR, Stanford, and Xiaomi building opportunities for robots to be more than workers."
+          content="Developing the world's most accessible platform for embodied intelligence. We're hackers, engineers, and researchers that believe in a world where robots are made for everyone."
         />
         <meta
           name="keywords"
@@ -22,7 +22,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:title" content="K-Scale Labs" />
         <meta
           property="og:description"
-          content="Developing the world's most accessible platform for embodied intelligence. We're hackers, engineers, and researchers that believe in a world where robots are made for everyone. We're from Tesla AI, Google, Meta FAIR, Stanford, and Xiaomi building opportunities for robots to be more than workers."
+          content="Developing the world's most accessible platform for embodied intelligence. We're hackers, engineers, and researchers that believe in a world where robots are made for everyone."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://kscalelabs.com" />
@@ -32,7 +32,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:title" content="K-Scale Labs" />
         <meta
           name="twitter:description"
-          content="Developing the world's most accessible platform for embodied intelligence. We're hackers, engineers, and researchers that believe in a world where robots are made for everyone. We're from Tesla AI, Google, Meta FAIR, Stanford, and Xiaomi building opportunities for robots to be more than workers."
+          content="Developing the world's most accessible platform for embodied intelligence. We're hackers, engineers, and researchers that believe in a world where robots are made for everyone."
         />
         <meta name="twitter:image" content="/meta/twitter-image.png" />
       </Head>

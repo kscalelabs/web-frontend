@@ -53,6 +53,7 @@ export default function ZBot() {
         <SpecSection />
         <ResearchSection />
         <GallerySection />
+        <ResearchSection />
         <CommunitySection />
       </main>
       <Footer />
