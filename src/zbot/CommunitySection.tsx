@@ -92,7 +92,7 @@ const CommunitySection = () => {
       <article className="col-span-full grid grid-cols-subgrid gap-y-4">
         <span className="text-caption uppercase text-foreground70 col-span-full sm:col-span-4 sm:col-start-2 md:col-span-5 md:col-start-2 lg:col-span-4 lg:col-start-2 2xl:col-span-5 2xl:col-start-2">About</span>
         
-        <div className="col-span-full grid grid-cols-subgrid gap-x-8">
+        <div className="col-span-full grid grid-cols-subgrid gap-x-8 gap-y-8">
           <div className="col-span-5 sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-2 lg:col-span-5 lg:col-start-2 xl:col-span-5 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 flex flex-col gap-4">
             <h2 className="text-heading-md">Our Team</h2>
             <figure className="w-full aspect-[2/1] relative rounded-md overflow-hidden">
@@ -106,8 +106,9 @@ const CommunitySection = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
             </figure>
 
-            <div className="flex flex-col items-center mt-4">
-              <div className="flex flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col gap-2">
+              <span className="text-caption uppercase text-foreground70">Our Partners</span>
+              <div className="flex flex-row gap-4 justify-end items-center">
                 <figure className="w-24 aspect-square relative rounded-md overflow-hidden">
                   <Image
                     src={photoPaths.ZBOT_PARTNER_KSCALE}
@@ -127,7 +128,6 @@ const CommunitySection = () => {
                   />
                 </figure>
               </div>
-              <h3 className="text-sm font-medium -mt-32">Our Partners</h3>
             </div>
           </div>
 
