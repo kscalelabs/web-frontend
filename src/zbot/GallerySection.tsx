@@ -25,7 +25,7 @@ const Images = [
   {
     src: photoPaths.ZBOT_GALLERY_5,
     alt: photoPathAltText.ZBOT_GALLERY_5_ALT,
-  },
+  },  
   {
     src: photoPaths.ZBOT_GALLERY_6,
     alt: photoPathAltText.ZBOT_GALLERY_6_ALT,

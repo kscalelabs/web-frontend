@@ -21,7 +21,7 @@ const HeaderSection = () => {
         <h1 className="text-heading-lg">Zeroth Bot Physical AI</h1>
         <h2 className="text-body">
           Powerful, affordable, and open-source robotics dev kit & platform for builders.
-        </h2>
+      </h2>
         <form
           action="https://dev.us22.list-manage.com/subscribe/post?u=a090115c9a76e96d327360f7d&amp;id=8a6ee81bb8&amp;f_id=00c3dce1f0"
           method="post"
@@ -35,7 +35,11 @@ const HeaderSection = () => {
             placeholder="Enter your email for updates"
           />
           <div aria-hidden="true" style={{ position: "absolute", left: "-5000px" }}>
-            <input type="text" name="b_a090115c9a76e96d327360f7d_8a6ee81bb8" tabIndex={-1} />
+            <input
+              type="text"
+              name="b_a090115c9a76e96d327360f7d_8a6ee81bb8"
+              tabIndex={-1}
+            />
           </div>
           <input
             type="submit"
