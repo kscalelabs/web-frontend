@@ -19,7 +19,10 @@ const NavBar = ({ href }: { href: string }) => {
           atTop={atTop}
         />
       </div>
-      <BurgerMenu isOpen={mobileShouldOpenBurger} onClose={() => setMobileShouldOpenBurger(false)} />
+      <BurgerMenu
+        isOpen={mobileShouldOpenBurger}
+        onClose={() => setMobileShouldOpenBurger(false)}
+      />
     </nav>
   );
 };
