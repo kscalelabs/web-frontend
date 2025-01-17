@@ -10,7 +10,7 @@ export const photoPaths = {
   WHAT_IS_Z_BOT_1: "/photos/isaac_gym.png",
   WHAT_IS_Z_BOT_2: "/photos/zbot1.jpeg",
   WHAT_IS_Z_BOT_3: "/photos/code.png",
-  GALLERY_1: "/photos/1.webp",
+  GALLERY_1: "/photos/1.webp",  
   GALLERY_2: "/photos/2.webp",
   GALLERY_3: "/photos/3.webp",
   GALLERY_4: "/photos/4.webp",
@@ -57,6 +57,5 @@ export const photoPathAltText = {
   ZBOT_COMMUNITY_BOTTOM_ALT: "Photo: Community members working with Zeroth Bot",
   ZBOT_COMMUNITY_UPPER_RIGHT_ALT: "Photo: Community collaboration",
   ZBOT_TEAM_ALT: "Photo: Zeroth Bot team members",
-  ZBOT_PARTNER_KSCALE_ALT: "Photo: K-Scale partner",
-  ZBOT_PARTNER_GRAND_JOURNEY_ALT: "Photo: Grand Journey partner",
+  ZBOT_PARTNERS_ALT: "Photo: Zeroth Bot partners",
 };
