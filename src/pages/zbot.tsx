@@ -51,8 +51,8 @@ export default function ZBot() {
       <main className="gap-y-4">
         <HeaderSection />
         <SpecSection />
-        <ResearchSection />
         <GallerySection />
+        <ResearchSection />
         <CommunitySection />
       </main>
       <Footer />

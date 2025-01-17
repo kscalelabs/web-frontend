@@ -120,7 +120,7 @@ const CommunitySection = () => {
           <div className="col-span-4 sm:col-span-4 sm:col-start-7 md:col-span-4 md:col-start-7 lg:col-span-4 lg:col-start-7 xl:col-span-4 xl:col-start-7 2xl:col-span-4 2xl:col-start-7">
             <div className="flex flex-col gap-4 text-xs mt-[3rem]">
               <div className="flex flex-col gap-2">
-                <h3 className="text-sm font-medium">The Origin Story</h3>
+                <h3 className="text-heading-sm font-medium">Our Story</h3>
                 <p className="text-foreground80 leading-relaxed">
                   Previously, it was incredibly expensive and time-consuming for programmers,
                   researchers, and students to build the mechanical, electrical, software, and ML
@@ -129,7 +129,7 @@ const CommunitySection = () => {
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <h3 className="text-sm font-medium">Our Mission</h3>
+                <h3 className="text-heading-sm font-medium">Our Mission</h3>
                 <p className="text-foreground80 leading-relaxed">
                   Now, the team is proudly partnered with K-Scale Labs and Grand Journey to bring
                   Zeroth Bots to production and make it possible for anybody that can write Python
