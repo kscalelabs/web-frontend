@@ -68,7 +68,7 @@ export default function NavBar() {
         <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} />
         <div
           className={
-            "flex flex-row gap-6 items-center 2xl:-col-end-3 xl:-col-end-3 lg:-col-end-3 md:-col-end-3"
+            "flex flex-row gap-6 items-center 2xl:-col-end-2 xl:-col-end-2 lg:-col-end-2 md:-col-end-2"
           }
         >
           {navigationConfig.map((navItem, index) => {
