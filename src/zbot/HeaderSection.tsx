@@ -18,8 +18,10 @@ const HeaderSection = () => {
         />
       </div>
       <hgroup className="z-10 text-filament col-span-full sm:col-span-4 md:col-span-5 md:col-start-5 lg:col-span-4 lg:col-start-6 xl:col-span-3 xl:col-start-6 2xl:col-start-8 2xl:col-span-5 4xl:col-start-8 4xl:col-span-4 flex flex-col mb-12 gap-4">
-        <h1 className="text-heading-lg">The compact research humanoid robot</h1>
-        <h2 className="text-body">Accelerating robotics research and development with Z-Bot</h2>
+        <h1 className="text-heading-lg">Zeroth Bot Physical AI</h1>
+        <h2 className="text-body">
+          Powerful, affordable, and open-source robotics dev kit & platform for builders.
+      </h2>
         <form
           action="https://dev.us22.list-manage.com/subscribe/post?u=a090115c9a76e96d327360f7d&amp;id=8a6ee81bb8&amp;f_id=00c3dce1f0"
           method="post"
