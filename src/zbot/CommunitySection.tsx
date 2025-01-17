@@ -89,30 +89,56 @@ const CommunitySection = () => {
         </figure>
       </aside>
 
-      <article
-        className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4
-      lg:col-span-4 lg:col-start-5 xl:col-span-3 xl:col-start-6 2xl:col-span-5 2xl:col-start-7
-      3xl:col-span-4 3xl:col-start-8 4xl:col-span-4 4xl:col-start-8 5xl:col-span-3 5xl:col-start-9
-      flex flex-col gap-y-4 pt-16 pb-6"
-      >
-        <h2 className="text-caption uppercase text-foreground70 relative y-1/2">About us</h2>
-        <p>
-          We&apos;re hackers, engineers, and researchers that believe in a world where robots are
-          made for everyone.
-        </p>
-        <p>
-          We&apos;re from Tesla AI, Google, Meta FAIR, Tencent, and Xiaomi building opportunities
-          for robots to be more than workers.
-        </p>
+      <article className="col-span-full grid grid-cols-subgrid gap-y-4 mt-16">
+        <span className="text-caption uppercase text-foreground70 col-span-full sm:col-span-4 sm:col-start-2 md:col-span-5 md:col-start-2 lg:col-span-4 lg:col-start-2 2xl:col-span-5 2xl:col-start-2">About</span>
+        
+        <div className="col-span-full grid grid-cols-subgrid gap-x-8 gap-y-8">
+          <div className="col-span-5 sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-2 lg:col-span-5 lg:col-start-2 xl:col-span-5 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 flex flex-col gap-4">
+            <figure className="w-full aspect-[2/1] relative rounded-md overflow-hidden">
+              <Image
+                src={photoPaths.ZBOT_TEAM}
+                alt={photoPathAltText.ZBOT_TEAM_ALT}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+              <div className="absolute bottom-4 left-4 text-filament">
+                <h4 className="text-heading-sm">The Team</h4>
+                <p className="text-body">Meet the minds behind Zeroth Bot</p>
+              </div>
+            </figure>
+
+            <figure className="w-32 aspect-square relative rounded-md overflow-hidden self-end">
+              <Image
+                src={photoPaths.ZBOT_PARTNERS}
+                alt={photoPathAltText.ZBOT_PARTNERS_ALT}
+                fill
+                className="object-contain bg-background/80"
+                sizes="128px"
+              />
+            </figure>
+          </div>
+
+          <div className="col-span-4 sm:col-span-4 sm:col-start-7 md:col-span-4 md:col-start-7 lg:col-span-4 lg:col-start-7 xl:col-span-4 xl:col-start-7 2xl:col-span-4 2xl:col-start-7">
+            <div className="flex flex-col gap-4 text-xs">
+              <div className="flex flex-col gap-2">
+                <h3 className="text-sm font-medium">The Origin Story</h3>
+                <p className="text-foreground80 leading-relaxed">
+                  Previously, it was incredibly expensive and time-consuming for programmers, researchers, and students to build the mechanical, electrical, software, and ML stack by themselves. Jingxiang, Kelsey, and Denys made the first Zeroth Bots as an open-source project aimed at making robotics and AI accessible to everyone.
+                </p>
+              </div>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-sm font-medium">Our Mission</h3>
+                <p className="text-foreground80 leading-relaxed">
+                  Now, the team is proudly partnered with K-Scale Labs and Grand Journey to bring Zeroth Bots to production and make it possible for anyone to program and own a physical AI here to make your life easier.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </article>
-      <TeamColumn
-        members={TeamCol1()}
-        styling={
-          " sm:col-start-2 md:col-start-4 " +
-          " lg:col-start-5 xl:col-start-6 2xl:col-start-7 3xl:col-start-8 4xl:col-start-8 5xl:col-start-9 "
-        }
-      />
-      <TeamColumn members={TeamCol2()} styling={""} />
+
     </section>
   );
 };
