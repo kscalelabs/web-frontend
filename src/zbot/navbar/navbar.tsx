@@ -7,7 +7,6 @@ import clsx from "clsx";
 import { useLenis } from "lenis/dist/lenis-react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useEffect, useState } from "react";
-import Link from "next/link";
 
 export default function NavBar() {
   const { scrollY } = useScroll();
@@ -43,14 +42,14 @@ export default function NavBar() {
           className={clsx(
             "col-span-full grid grid-cols-subgrid overflow-hidden py-4 items-end h-fit px-[5vw] -mx-[5vw]"
           )}
-          initial={{ backgroundColor: "var(--carbon)" }}
+          initial={{ backgroundColor: "var(--background-0)" }}
           animate={{
-            backgroundColor: "var(--carbon)",
+            backgroundColor: !atTop ? "var(--background)" : "var(--background-0)",
           }}
-          exit={{ backgroundColor: "var(--carbon)" }}
+          exit={{ backgroundColor: "var(--background-0)" }}
           transition={{ duration: 0.2, ease: "circOut" }}
         >
-          <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} href="/zbot" />
+          <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} />
           <BurgerOpenButton
             className="-col-end-1 place-self-end pointer-events-auto"
             atTop={atTop}
@@ -66,13 +65,13 @@ export default function NavBar() {
   const desktopNavBar = () => {
     return (
       <>
-        <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} href="/zbot" />
+        <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} />
         <div
           className={
-            "flex flex-row gap-6 items-center 2xl:-col-end-3 xl:-col-end-3 lg:-col-end-3 md:-col-end-3"
+            "flex flex-row gap-6 items-center 2xl:-col-end-2 xl:-col-end-2 lg:-col-end-2 md:-col-end-2"
           }
         >
-          {zbotNavigationConfig.map((navItem, index) => {
+          {zbotNavigationConfig.map((navItem: NavigationConfig, index: number) => {
             return (
               <motion.a
                 key={index}
@@ -80,7 +79,7 @@ export default function NavBar() {
                 target={navItem.isExternal ? "_blank" : "_self"}
                 className={clsx(
                   "-col-end-3 md:-col-end-4 2xl:-col-end-4 2xl:text-[0.75rem] lg:text-[1rem] md:text-[0.8rem] flex flex-row gap-2 size-fit items-center select-none self-center pointer-events-auto",
-                  "text-filament"
+                  atTop ? "text-white" : "text-black"
                 )}
                 initial="initial"
                 whileHover="hover"
@@ -114,10 +113,39 @@ export default function NavBar() {
       </>
     );
   };
+  useEffect(() => {
+    setMobileShouldOpenBurger(false);
+    lenis?.start();
+  }, [width, lenis]);
+
+  useEffect(() => {
+    if (lenis) {
+      if (mobileShouldOpenBurger) {
+        lenis.stop();
+      } else {
+        lenis.start();
+      }
+    }
+  }, [mobileShouldOpenBurger, lenis]);
 
   return (
-    <nav className="sticky top-0 z-50 grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-8 2xl:grid-cols-12 gap-x-4 px-4 sm:px-0">
+    <motion.nav
+      className="fixed top-0 inset-x-0 z-50 h-[100dvh] md:h-auto md:py-4 grid-a grid-rows-[min-content_auto] pointer-events-none"
+      initial={{
+        backgroundColor: "var(--background-0)",
+      }}
+      animate={{
+        backgroundColor:
+          width >= 768
+            ? atTop
+              ? "var(--background-0)"
+              : "var(--background)"
+            : mobileShouldOpenBurger
+              ? "var(--background)"
+              : "var(--background-0)",
+      }}
+    >
       {navBasedOnWidth(width >= 768)}
-    </nav>
+    </motion.nav>
   );
 }
