@@ -1,4 +1,3 @@
-import { useLenis } from "lenis/dist/lenis-react";
 import { useState } from "react";
 import BurgerMenu from "./burgerMenu";
 import BurgerOpenButton from "./burgerOpenButton";
@@ -6,7 +5,7 @@ import Logotype from "@/components/logos/logotype";
 
 const NavBar = ({ href }: { href: string }) => {
   const [mobileShouldOpenBurger, setMobileShouldOpenBurger] = useState(false);
-  const [atTop, setAtTop] = useState(true);
+  const [atTop] = useState(true);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 grid-m py-4 pointer-events-none">

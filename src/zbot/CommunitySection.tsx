@@ -91,8 +91,7 @@ const CommunitySection = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
             </figure>
-
-            <div className="flex flex-col items-center mt-4">
+            <div className="flex flex-col items-center mt-4 mb-8 sm:mb-8">
               <div className="flex flex-row gap-4 justify-center items-center">
                 <figure className="w-24 aspect-square relative rounded-md overflow-hidden">
                   <Image

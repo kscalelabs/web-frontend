@@ -94,8 +94,8 @@ const RequestItem = ({ request }: RequestItemProps) => {
 };
 
 const WhatCanItDoSection = () => {
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
+  const ref = useRef(null);
+  useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });

@@ -94,13 +94,11 @@ const RequestItem = ({ request }: RequestItemProps) => {
 };
 
 const WhatCanItDoSection = () => {
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
+  const ref = useRef(null);
+  useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
-
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
 
   return (
     <section className="relative col-span-full grid grid-cols-subgrid py-16 gap-y-16">

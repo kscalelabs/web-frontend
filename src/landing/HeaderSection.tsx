@@ -14,6 +14,32 @@ const HeaderSection = () => {
     // Mouse/touch position tracking
     let mouseX = 0;
     let mouseY = 0;
+
+    // Add score tracking first
+    let score = 0;
+    let scoreElement: HTMLDivElement | null = null;
+
+    const createScoreElement = () => {
+      // Check if element already exists
+      if (document.getElementById("star-score")) return;
+
+      scoreElement = document.createElement("div");
+      scoreElement.id = "star-score";
+      scoreElement.style.cssText = `
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 24px;
+        color: #808080;
+        z-index: 100;
+        transition: transform 0.3s;
+      `;
+      document.body.appendChild(scoreElement);
+    };
+
+    createScoreElement(); // Now we can call it after definition
+
     const updatePointerPosition = (clientX: number, clientY: number) => {
       const rect = canvas.getBoundingClientRect();
       mouseX = clientX - rect.left;
@@ -99,29 +125,6 @@ const HeaderSection = () => {
       ctx.strokeStyle = `hsla(${hue}, 80%, 80%, ${opacity * 0.6})`;
       ctx.lineWidth = 1;
       ctx.stroke();
-    };
-
-    // Add score tracking
-    let score = 0;
-    let scoreElement: HTMLDivElement | null = null;
-
-    const createScoreElement = () => {
-      // Check if element already exists
-      if (document.getElementById("star-score")) return;
-
-      scoreElement = document.createElement("div");
-      scoreElement.id = "star-score";
-      scoreElement.style.cssText = `
-        position: fixed;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 24px;
-        color: #808080;
-        z-index: 100;
-        transition: transform 0.3s;
-      `;
-      document.body.appendChild(scoreElement);
     };
 
     // Define score thresholds and effects
