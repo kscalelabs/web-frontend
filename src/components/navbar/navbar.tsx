@@ -42,11 +42,11 @@ export default function NavBar() {
           className={clsx(
             "col-span-full grid grid-cols-subgrid overflow-hidden py-4 items-end h-fit px-[5vw] -mx-[5vw]"
           )}
-          initial={{ backgroundColor: "var(--carbon)" }}
+          initial={{ backgroundColor: "var(--background-0)" }}
           animate={{
-            backgroundColor: "var(--carbon)",
+            backgroundColor: !atTop ? "var(--background)" : "var(--background-0)",
           }}
-          exit={{ backgroundColor: "var(--carbon)" }}
+          exit={{ backgroundColor: "var(--background-0)" }}
           transition={{ duration: 0.2, ease: "circOut" }}
         >
           <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} />
