@@ -7,28 +7,28 @@ import { photoPathAltText, photoPaths } from "@/components/util/photoPaths";
 
 const Images = [
   {
-    src: photoPaths.ZBOT_GALLERY_1,
-    alt: photoPathAltText.ZBOT_GALLERY_1_ALT,
+    src: photoPaths.GALLERY_1,
+    alt: photoPathAltText.GALLERY_1_ALT,
   },
   {
-    src: photoPaths.ZBOT_GALLERY_2,
-    alt: photoPathAltText.ZBOT_GALLERY_2_ALT,
+    src: photoPaths.GALLERY_2,
+    alt: photoPathAltText.GALLERY_2_ALT,
   },
   {
-    src: photoPaths.ZBOT_GALLERY_3,
-    alt: photoPathAltText.ZBOT_GALLERY_3_ALT,
+    src: photoPaths.GALLERY_3,
+    alt: photoPathAltText.GALLERY_3_ALT,
   },
   {
-    src: photoPaths.ZBOT_GALLERY_4,
-    alt: photoPathAltText.ZBOT_GALLERY_4_ALT,
+    src: photoPaths.GALLERY_4,
+    alt: photoPathAltText.GALLERY_4_ALT,
   },
   {
-    src: photoPaths.ZBOT_GALLERY_5,
-    alt: photoPathAltText.ZBOT_GALLERY_5_ALT,
+    src: photoPaths.GALLERY_5,
+    alt: photoPathAltText.GALLERY_5_ALT,
   },
   {
-    src: photoPaths.ZBOT_GALLERY_6,
-    alt: photoPathAltText.ZBOT_GALLERY_6_ALT,
+    src: photoPaths.GALLERY_6,
+    alt: photoPathAltText.GALLERY_6_ALT,
   },
 ];
 
