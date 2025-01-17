@@ -15,7 +15,6 @@ import { IconMode } from "@/components/util/constants";
 import { ColorVariant, FillMode, Size } from "@/components/util/constants";
 
 const RESEARCH_ITEMS = [
-
   {
     title: "K-OS",
     description: "Work with reliable real-time ML inference using our Rust-based operating system.",

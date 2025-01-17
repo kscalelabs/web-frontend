@@ -90,8 +90,10 @@ const CommunitySection = () => {
       </aside>
 
       <article className="col-span-full grid grid-cols-subgrid gap-y-4">
-        <span className="text-caption uppercase text-foreground70 col-span-full sm:col-span-4 sm:col-start-2 md:col-span-5 md:col-start-2 lg:col-span-4 lg:col-start-2 2xl:col-span-5 2xl:col-start-2">About</span>
-        
+        <span className="text-caption uppercase text-foreground70 col-span-full sm:col-span-4 sm:col-start-2 md:col-span-5 md:col-start-2 lg:col-span-4 lg:col-start-2 2xl:col-span-5 2xl:col-start-2">
+          About
+        </span>
+
         <div className="col-span-full grid grid-cols-subgrid gap-x-8">
           <div className="col-span-5 sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-2 lg:col-span-5 lg:col-start-2 xl:col-span-5 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 flex flex-col gap-4">
             <h2 className="text-heading-md">Our Team</h2>
@@ -136,20 +138,24 @@ const CommunitySection = () => {
               <div className="flex flex-col gap-2">
                 <h3 className="text-sm font-medium">The Origin Story</h3>
                 <p className="text-foreground80 leading-relaxed">
-                  Previously, it was incredibly expensive and time-consuming for programmers, researchers, and students to build the mechanical, electrical, software, and ML stack by themselves. Jingxiang, Kelsey, and Denys made the first Zeroth Bots as an open-source project aimed at making robotics and AI accessible to everyone.
+                  Previously, it was incredibly expensive and time-consuming for programmers,
+                  researchers, and students to build the mechanical, electrical, software, and ML
+                  stack by themselves. Jingxiang, Kelsey, and Denys made the first Zeroth Bots as an
+                  open-source project aimed at making robotics and AI accessible to everyone.
                 </p>
               </div>
               <div className="flex flex-col gap-2">
                 <h3 className="text-sm font-medium">Our Mission</h3>
                 <p className="text-foreground80 leading-relaxed">
-                  Now, the team is proudly partnered with K-Scale Labs and Grand Journey to bring Zeroth Bots to production and make it possible for anyone to program and own a physical AI here to make your life easier.
+                  Now, the team is proudly partnered with K-Scale Labs and Grand Journey to bring
+                  Zeroth Bots to production and make it possible for anyone to program and own a
+                  physical AI here to make your life easier.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </article>
-
     </section>
   );
 };
