@@ -8,7 +8,7 @@ import { useLenis } from "lenis/dist/lenis-react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useEffect, useState } from "react";
 
-export default function NavBar() {
+export default function NavBar({ href = "/" }: { href?: string } = {}) {
   const { scrollY } = useScroll();
   const lenis = useLenis();
   const [, setDesktopNavHidden] = useState(false);
@@ -49,7 +49,7 @@ export default function NavBar() {
           exit={{ backgroundColor: "var(--carbon)" }}
           transition={{ duration: 0.2, ease: "circOut" }}
         >
-          <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} />
+          <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} href={href} />
           <BurgerOpenButton
             className="-col-end-1 place-self-end pointer-events-auto"
             atTop={atTop}
@@ -65,7 +65,7 @@ export default function NavBar() {
   const desktopNavBar = () => {
     return (
       <>
-        <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} />
+        <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} href={href} />
         <div
           className={
             "flex flex-row gap-6 items-center 2xl:-col-end-3 xl:-col-end-3 lg:-col-end-3 md:-col-end-3"
