@@ -53,7 +53,7 @@ const FooterSectionList = ({ extraStyling, items, title }: FooterSectionListProp
 
 export default function Footer() {
   const handleCopyEmail = async () => {
-    const email = "ben@kscale.dev";
+    const email = "inquiries@kscale.dev";
 
     // Check if the clipboard API is available
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -126,7 +126,7 @@ export default function Footer() {
             whileHover="hover"
             whileTap="tap"
           >
-            <p className="opacity-[77%]">ben@kscale.dev</p>
+            <p className="opacity-[77%]">inquiries@kscale.dev</p>
             <motion.button
               className="mt-2 bg-filament text-rust text-code--caption px-1.5 py-[0.15rem] rounded-sm w-20 h-4 flex flex-colitems-center justify-center overflow-hidden"
               variants={{
