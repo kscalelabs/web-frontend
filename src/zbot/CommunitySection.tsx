@@ -56,8 +56,8 @@ const CommunitySection = () => {
       <aside className="my-8 grid grid-cols-subgrid gap-y-4 md:gap-y-[2.5vw] 2xl:gap-y-[1.25vw] col-span-full md:col-span-7 md:col-start-2 2xl:col-span-10 2xl:col-start-2">
         <figure className="col-span-full md:col-span-5 2xl:col-span-7 aspect-square sm:aspect-video rounded-md relative overflow-hidden">
           <Image
-            src={photoPaths.ZBOT_COMMUNITY_MAIN_BIG}
-            alt={photoPathAltText.ZBOT_COMMUNITY_MAIN_BIG_ALT}
+            src={photoPaths.COMMUNITY_MAIN_BIG}
+            alt={photoPathAltText.COMMUNITY_MAIN_BIG_ALT}
             fill
             className="object-cover"
             loading={"eager"}
@@ -89,12 +89,12 @@ const CommunitySection = () => {
         </figure>
       </aside>
 
-      <article className="col-span-full grid grid-cols-subgrid gap-y-4">
+      <article className="col-span-full grid grid-cols-subgrid gap-y-4 mt-16">
         <span className="text-caption uppercase text-foreground70 col-span-full sm:col-span-4 sm:col-start-2 md:col-span-5 md:col-start-2 lg:col-span-4 lg:col-start-2 2xl:col-span-5 2xl:col-start-2">About</span>
         
         <div className="col-span-full grid grid-cols-subgrid gap-x-8 gap-y-8">
           <div className="col-span-5 sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-2 lg:col-span-5 lg:col-start-2 xl:col-span-5 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 flex flex-col gap-4">
-            <h2 className="text-heading-md">Our Team</h2>
+            <h4 className="text-heading-sm">The Team</h4>
             <figure className="w-full aspect-[2/1] relative rounded-md overflow-hidden">
               <Image
                 src={photoPaths.ZBOT_TEAM}
@@ -106,30 +106,19 @@ const CommunitySection = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
             </figure>
 
-            <div className="flex flex-row gap-4 justify-end items-center -mt-4">
-              <figure className="w-24 aspect-square relative rounded-md overflow-hidden">
-                <Image
-                  src={photoPaths.ZBOT_PARTNER_KSCALE}
-                  alt={photoPathAltText.ZBOT_PARTNER_KSCALE_ALT}
-                  fill
-                  className="object-contain bg-background/80"
-                  sizes="96px"
-                />
-              </figure>
-              <figure className="w-40 aspect-square relative rounded-md overflow-hidden translate-y-1">
-                <Image
-                  src={photoPaths.ZBOT_PARTNER_GRAND_JOURNEY}
-                  alt={photoPathAltText.ZBOT_PARTNER_GRAND_JOURNEY_ALT}
-                  fill
-                  className="object-contain bg-background/80"
-                  sizes="160px"
-                />
-              </figure>
-            </div>
+            <figure className="w-32 aspect-square relative rounded-md overflow-hidden self-end">
+              <Image
+                src={photoPaths.ZBOT_PARTNERS}
+                alt={photoPathAltText.ZBOT_PARTNERS_ALT}
+                fill
+                className="object-contain bg-background/80"
+                sizes="128px"
+              />
+            </figure>
           </div>
 
           <div className="col-span-4 sm:col-span-4 sm:col-start-7 md:col-span-4 md:col-start-7 lg:col-span-4 lg:col-start-7 xl:col-span-4 xl:col-start-7 2xl:col-span-4 2xl:col-start-7">
-            <div className="flex flex-col gap-4 text-xs mt-[3rem]">
+            <div className="flex flex-col gap-4 text-xs">
               <div className="flex flex-col gap-2">
                 <h3 className="text-sm font-medium">The Origin Story</h3>
                 <p className="text-foreground80 leading-relaxed">
