@@ -47,7 +47,7 @@ export default function ZBot() {
         src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
         strategy="afterInteractive"
       />
-      <NavBar href="/zbot" />
+      <NavBar href="/" />
       <main className="gap-y-4">
         <HeaderSection />
         <SpecSection />
