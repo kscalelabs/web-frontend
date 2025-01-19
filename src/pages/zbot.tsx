@@ -50,9 +50,9 @@ export default function ZBot() {
       <NavBar href="/" />
       <main className="gap-y-4">
         <HeaderSection />
+        <ResearchSection />
         <SpecSection />
         <GallerySection />
-        <ResearchSection />
         <CommunitySection />
       </main>
       <Footer />
