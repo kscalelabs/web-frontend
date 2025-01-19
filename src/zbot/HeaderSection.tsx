@@ -10,8 +10,7 @@ const HeaderSection = () => {
           src={photoPaths.LANDING_IMAGE_2}
           alt={photoPathAltText.LANDING_IMAGE_ALT_2}
           fill
-          className="object-contain md:object-cover brightness-50
-            sm:object-contain sm:object-center
+          className="object-cover brightness-50
             md:object-center
             object-center"
           priority={true}
