@@ -1,7 +1,6 @@
 import { useState } from "react";
 import BurgerMenu from "./burgerMenu";
 import BurgerOpenButton from "./burgerOpenButton";
-import Logotype from "@/components/logos/logotype";
 
 const NavBar = ({ href }: { href: string }) => {
   const [mobileShouldOpenBurger, setMobileShouldOpenBurger] = useState(false);

@@ -65,7 +65,7 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
   const desktopNavBar = () => {
     return (
       <>
-        <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} href={href} />
+        {/* <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} href={href} /> */}
         <div
           className={
             "flex flex-row gap-6 items-center 2xl:-col-end-3 xl:-col-end-3 lg:-col-end-3 md:-col-end-3"
