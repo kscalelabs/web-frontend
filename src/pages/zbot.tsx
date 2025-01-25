@@ -6,7 +6,6 @@ import GallerySection from "@/zbot/GallerySection";
 import HeaderSection from "@/zbot/HeaderSection";
 import ResearchSection from "@/zbot/ResearchSection";
 import SpecSection from "@/zbot/SpecSection";
-import RobotSection from "@/zbot/RobotSection";
 import { useLenis } from "lenis/dist/lenis-react";
 import { useEffect } from "react";
 
@@ -53,7 +52,6 @@ export default function ZBot() {
         <HeaderSection />
         <ResearchSection />
         <SpecSection />
-        <RobotSection />
         <GallerySection />
         <CommunitySection />
       </main>
