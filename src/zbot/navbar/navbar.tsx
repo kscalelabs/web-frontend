@@ -2,7 +2,7 @@ import { useState } from "react";
 import BurgerMenu from "./burgerMenu";
 import BurgerOpenButton from "./burgerOpenButton";
 
-const NavBar = ({ href }: { href: string }) => {
+const NavBar = () => {
   const [mobileShouldOpenBurger, setMobileShouldOpenBurger] = useState(false);
   const [atTop] = useState(true);
 

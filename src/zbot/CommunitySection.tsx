@@ -74,12 +74,12 @@ const CommunitySection = () => {
       </aside>
 
       <article className="col-span-full grid grid-cols-subgrid gap-y-4">
-        <span className="text-caption uppercase text-foreground70 col-span-full sm:col-span-4 sm:col-start-2 md:col-span-5 md:col-start-2 lg:col-span-4 lg:col-start-2 2xl:col-span-5 2xl:col-start-2">
+        <span className="text-caption uppercase text-foreground70 col-span-full px-4 sm:px-0 sm:col-span-8 sm:col-start-2 md:col-span-10 md:col-start-2 lg:col-span-10 lg:col-start-2 2xl:col-span-10 2xl:col-start-2">
           About
         </span>
 
-        <div className="col-span-full grid grid-cols-subgrid gap-x-8">
-          <div className="col-span-5 sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-2 lg:col-span-5 lg:col-start-2 xl:col-span-5 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 flex flex-col gap-4">
+        <div className="col-span-full grid grid-cols-subgrid">
+          <div className="col-span-full px-4 sm:px-0 sm:col-span-8 sm:col-start-2 md:col-span-5 md:col-start-2 lg:col-span-5 lg:col-start-2 2xl:col-span-5 2xl:col-start-2 flex flex-col gap-4">
             <h2 className="text-heading-md">Our Team</h2>
             <figure className="aspect-[2/1] relative rounded-md overflow-hidden">
               <Image
@@ -112,11 +112,11 @@ const CommunitySection = () => {
                 />
               </figure>
               <h3 className="text-sm font-medium -mt-20">Our Partners</h3>
-            </div>{" "}
+            </div>
           </div>
 
-          <div className="col-span-4 sm:col-span-4 sm:col-start-7 md:col-span-4 md:col-start-7 lg:col-span-4 lg:col-start-7 xl:col-span-4 xl:col-start-7 2xl:col-span-4 2xl:col-start-7">
-            <div className="flex flex-col gap-4 text-xs mt-[3rem]">
+          <div className="col-span-full px-4 sm:px-0 sm:col-span-8 sm:col-start-2 md:col-span-5 md:col-start-7 lg:col-span-5 lg:col-start-7 2xl:col-span-5 2xl:col-start-7">
+            <div className="flex flex-col gap-4 text-xs sm:mt-[3rem]">
               <div className="flex flex-col gap-2">
                 <h3 className="text-heading-sm font-medium">Our Story</h3>
                 <p className="text-foreground80 leading-relaxed">
