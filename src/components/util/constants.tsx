@@ -8,6 +8,12 @@ export type NavigationConfig = {
 
 export const navigationConfig: NavigationConfig[] = [
   {
+    name: "Research",
+    link: "/research", // Internal link to the research page
+    isExternal: false,
+  },
+
+  {
     name: "Docs",
     link: "https://docs.kscale.dev/",
     isExternal: true,
