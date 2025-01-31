@@ -2,7 +2,6 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
-import Image from "next/image";
 import Layout from "../../components/Layout";
 
 const RESEARCH_PATH = path.join(process.cwd(), "src/content/research");
@@ -19,12 +18,18 @@ export async function getStaticProps() {
       slug: file.replace(".mdx", ""),
       title: data.title || "Untitled",
       description: data.description || "No description available.",
+      // We rely on `data.date` for sorting. Make sure it's a valid date format (e.g. "YYYY-MM-DD" or "September 9, 2024").
       date: data.date || "Unknown date",
-      image: data.image || "gradient.png",
+      image: data.image || "/images/research/css-pattern1.png",
     };
   });
 
-  return { props: { posts } };
+  // Sort by oldest date first
+  const sortedPosts = posts.sort((a, b) => {
+    return new Date(a.date).getTime() - new Date(b.date).getTime();
+  });
+
+  return { props: { posts: sortedPosts } };
 }
 
 export default function ResearchIndex({ posts }: { posts: any[] }) {
@@ -44,16 +49,13 @@ export default function ResearchIndex({ posts }: { posts: any[] }) {
           {posts.map((post) => (
             <Link key={post.slug} href={`/research/${post.slug}`} className="group card-link">
               <div className="flex flex-col h-full rounded-lg overflow-hidden shadow-md bg-white dark:bg-gray-900 transition transform hover:-translate-y-1">
-                {/* Updated Image usage for Next.js 13 */}
+                {/* Top image background */}
                 <div className="relative w-full aspect-[16/9] overflow-hidden">
-                  {/* This inner div is made larger (200% height, for example). 
-     Then we can show only the top portion by offsetting or by 
-     limiting the outer container's overflow. */}
                   <div
                     className="absolute top-0 left-0 w-full h-[200%]"
                     style={{
                       backgroundImage: `url(${post.image})`,
-                      backgroundSize: "100% auto", // or "cover" or however you prefer
+                      backgroundSize: "100% auto",
                       backgroundRepeat: "no-repeat",
                       backgroundPosition: "top center",
                     }}

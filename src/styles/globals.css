@@ -467,6 +467,12 @@ main .sponsors {
   border-radius: 8px; /* If using SVG make sure that preserveAspectRatio="none" */
 }
 
+.mdx-content iframe {
+  display: block;
+  margin: 2.5rem auto;
+  border-radius: 8px;
+}
+
 .mdx-content blockquote {
   margin: 2rem auto;
   padding: 1rem;
