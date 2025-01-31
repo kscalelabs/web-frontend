@@ -5,14 +5,13 @@ date: "August 8, 2024"
 image: "/images/research/css-pattern3.png"
 ---
 
-
 # We Are Here for the Long Haul
 
 We believe the world will soon see an exponential increase in the number of useful and affordable humanoids deployed across labs, warehouses, and households worldwide. The price of hardware will soon drop below the cost of your favorite VR headset¹, and the AI software will become much more sophisticated and mature.
 
 We also believe advancements in this field should be publicly accessible, which is why we created K-Scale Labs. The best part of building in the open-source spirit is sharing everything with the community instead of keeping it behind closed doors. With our updates, we want to share what we build and what we learn along the way.
 
-## Laying the foundation  
+## Laying the foundation
 
 My co-founder Ben likes to say that the main reason GPT-2 was adopted faster and more widely than BERT is because you could immediately see the poetry it generated after training.² We are far from that setup in robotics, and K-Scale’s mission is to change that. In upcoming weeks we will share some updates on our affordable humanoidal platform that will open up new possibilities to roboticians, MLEs and enthusiasts so they can easily test new models and skills at home or lab.
 
@@ -20,7 +19,7 @@ In 2018, I collected the largest task-oriented dialogue dataset available to the
 
 We recognize the long road ahead in creating truly useful and widely adopted robots, but we’re excited to embrace the challenge and contribute to working towards a world where embodied intelligence is cheap, plentiful and useful.
 
-## The data challenge: quality and diversity  
+## The data challenge: quality and diversity
 
 Collecting the right data at scale is challenging, to put it mildly. There are two main issues with every collection: data quality and data diversity. Having spent a considerable portion of my ML career collecting conversational data, I believe you can’t escape these constraints, even with unlimited resources. Recent datasets like OXE, Droid (and many more) are fantastic steps forward, but the problem of quality will only become more challenging. Let’s look at some examples from the Droid dataset below:
 
@@ -34,7 +33,6 @@ Collecting the right data at scale is challenging, to put it mildly. There are t
   allowfullscreen
 ></iframe>
 
-
 ### The instruction is ‘Spread the jeans on the couch’.
 
 <iframe
@@ -46,7 +44,6 @@ Collecting the right data at scale is challenging, to put it mildly. There are t
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowfullscreen
 ></iframe>
-
 
 ### The instruction is ‘Move the cup to the left and cover it’.
 
@@ -63,7 +60,6 @@ Teleoperation feels like an obvious path, and most major robotics companies are 
 
 We are quite skeptical of teleop as a solution since it distracts from focusing on the core of the problem. The harsh reality is that our “a lot” of data isn’t really that much, and data diversity will be a major bottleneck if we don’t have these robots in real-world environments. And just like in the NLP world, we try to collect vast amounts of data to train on specific tasks, incentivizing overfitting.
 
-
 <iframe
   width="600"
   height="300"
@@ -74,14 +70,13 @@ We are quite skeptical of teleop as a solution since it distracts from focusing 
   allowfullscreen
 ></iframe>
 
-## Streamlining development  
+## Streamlining development
 
 Dealing with CUDA issues when working on ML models is already frustrating. Adding to that world, ad-hoc URDF changes, different simulators with their quirks, and optimizing for sim-to-real makes ML robotics development a truly painful experience. That’s why we’re building tools to quickly go from CAD designs to modeling in your favorite simulator with URDF or XML files. All of this is shared at the K-Scale Onshape library.
 
-## Modeling through simplicity  
+## Modeling through simplicity
 
 The UMI and Aloha projects popularized ACT and diffusion architectures. IsaacLab, LeRobot, and many other packages significantly lower the barrier to entry for newcomers to the field. Below, you can see a simple policy trained on a handful of examples, with the model generalizing to a new background.
-
 
 <iframe
   width="600"
@@ -93,8 +88,7 @@ The UMI and Aloha projects popularized ACT and diffusion architectures. IsaacLab
   allowfullscreen
 ></iframe>
 
-
-## Conclusions  
+## Conclusions
 
 There will be billions of autonomous, affordable, and helpful robots in the world, enabling us to do more productive and creative work. K-Scale Labs’ mission is to bring them to market at an affordable price with a simple software ecosystem where hardware and software are tightly integrated and driven by a single model.
 
