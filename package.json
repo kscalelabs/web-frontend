@@ -31,6 +31,7 @@
     "three": "0.170.0"
   },
   "devDependencies": {
+    "@types/mdx-js__react": "^1.5.8",
     "@types/node": "^20.17.14",
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.2",
