@@ -13,14 +13,14 @@
 @layer base {
   @font-face {
     font-family: "KMR Apparat";
-    src: url("./fonts/trial/KMR-Apparat-Bold.woff") format("woff");
+    src: url("./fonts/KMR-Apparat-Bold.woff") format("woff");
     font-weight: bold;
     font-style: normal;
   }
 
   @font-face {
     font-family: "KMR Apparat";
-    src: url("./fonts/trial/KMR-Apparat-Medium.woff") format("woff");
+    src: url("./fonts/KMR-Apparat-Medium.woff") format("woff");
     font-weight: 500;
     font-style: normal;
   }
