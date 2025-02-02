@@ -33,7 +33,7 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
     return isDesktop ? desktopNavBar() : mobileNavBar();
   };
 
-  const atTop = scrollY.get() < 100;
+  const atTop = scrollY.get() < 400;
 
   const mobileNavBar = () => {
     return (
@@ -42,11 +42,11 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
           className={clsx(
             "col-span-full grid grid-cols-subgrid overflow-hidden py-4 items-end h-fit px-[5vw] -mx-[5vw]"
           )}
-          initial={{ backgroundColor: "var(--carbon)" }}
+          initial={{ backgroundColor: "var(--background)" }}
           animate={{
-            backgroundColor: "var(--carbon)",
+            backgroundColor: "transparent",
           }}
-          exit={{ backgroundColor: "var(--carbon)" }}
+          exit={{ backgroundColor: "var(--background)" }}
           transition={{ duration: 0.2, ease: "circOut" }}
         >
           <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} href={href} />
