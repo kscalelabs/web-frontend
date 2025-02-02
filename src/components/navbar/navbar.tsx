@@ -14,6 +14,7 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
   const [, setDesktopNavHidden] = useState(false);
   const [desktopPreviousScroll, setPrevScroll] = useState(scrollY.get());
   const [mobileShouldOpenBurger, setMobileShouldOpenBurger] = useState(false);
+  const safelist: string[] = ["-col-end-4", "-col-end-3", "-col-end-2", "-col-end-1"];
 
   function update(current: number, previous: number): void {
     if (current < previous) {
@@ -66,25 +67,23 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
     return (
       <>
         <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} href={href} />
-        <div
-          className={
-            "flex flex-row gap-6 items-center 2xl:-col-end-3 xl:-col-end-3 lg:-col-end-3 md:-col-end-3"
-          }
-        >
-          {navigationConfig.map((navItem, index) => {
-            return (
-              <motion.a
-                key={index}
-                href={navItem.link}
-                target={navItem.isExternal ? "_blank" : "_self"}
-                className={clsx(
-                  "-col-end-3 md:-col-end-4 2xl:-col-end-4 2xl:text-[0.75rem] lg:text-[1rem] md:text-[0.8rem] flex flex-row gap-2 size-fit items-center select-none self-center pointer-events-auto",
-                  atTop ? "text-white" : "text-foreground"
-                )}
-                initial="initial"
-                whileHover="hover"
-                transition={{ duration: 0.2, ease: "circOut" }}
-              >
+        {navigationConfig.map((navItem, index) => {
+          return (
+            <motion.a
+              key={index}
+              href={navItem.link}
+              target={navItem.isExternal ? "_blank" : "_self"}
+              className={clsx(
+                safelist[index] +
+                  " flex justify-end items-end 3xl:text-[0.85rem] 2xl:text-[0.75rem] lg:text-[1rem] md:text-[0.65rem] " +
+                  " select-none self-center pointer-events-auto h-full ",
+                atTop ? "text-white" : "text-foreground"
+              )}
+              initial="initial"
+              whileHover="hover"
+              transition={{ duration: 0.2, ease: "circOut" }}
+            >
+              <div className={clsx("flex flex-row gap-2 items-center size-fit ")}>
                 {navItem.name}
                 {navItem.isExternal && (
                   <motion.svg
@@ -106,10 +105,10 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
                     <path d="M7 7h10v10" />
                   </motion.svg>
                 )}
-              </motion.a>
-            );
-          })}
-        </div>
+              </div>
+            </motion.a>
+          );
+        })}
       </>
     );
   };
