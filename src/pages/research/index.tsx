@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import Link from "next/link";
 import matter from "gray-matter";
+import readingTime from "reading-time";
 import Footer from "@/components/footer/footer";
 import NavBar from "@/components/navbar/navbar";
 import { DownArrowIcon } from "@/components/iconography/Iconography";
@@ -14,19 +15,19 @@ export async function getStaticProps() {
   const posts = files.map((file) => {
     const filePath = path.join(RESEARCH_PATH, file);
     const fileContents = fs.readFileSync(filePath, "utf-8");
-    const { data } = matter(fileContents);
+    const { content, data } = matter(fileContents);
+    const stats = readingTime(content);
 
     return {
       slug: file.replace(".mdx", ""),
       title: data.title || "Untitled",
       description: data.description || "No description available.",
-      // We rely on `data.date` for sorting. Make sure it's a valid date format (e.g. "YYYY-MM-DD" or "September 9, 2024").
       date: data.date || "Unknown date",
       image: data.image || "/images/research/css-pattern1.png",
+      readingTime: stats.text,
     };
   });
 
-  // Sort by oldest date first
   const sortedPosts = posts.sort((a, b) => {
     return new Date(a.date).getTime() - new Date(b.date).getTime();
   });
@@ -54,19 +55,20 @@ export default function ResearchIndex({ posts }: { posts: any[] }) {
         <div className="flex col-span-full pt-4 justify-center">
           <DownArrowIcon />
         </div>
-        <div className="col-span-full flex flex-col items-start text-justify auto-rows-auto text-foreground bg-background relative overflow-hidden px-[5vw] gap-4 py-20">
+        <div className="col-span-full flex flex-col items-start text-justify auto-rows-auto text-foreground bg-background relative overflow-hidden px-[5vw] py-20">
           {posts.map((post) => (
             <Link
               key={post.slug}
               href={`/research/${post.slug}`}
               className="flex flex-row justify-start w-full gap-4 border-b border-white/20 py-6"
             >
-              <div className="w-48 flex flex-col">
-                <p className="font-planar">{post.date}</p>
+              <div className="w-48 flex flex-col gap-2 py-2">
+                <p className="font-planar text-xs">{post.date}</p>
+                <p className="font-planar text-foreground70 text-xs">{post.readingTime}</p>
               </div>
               <div className="flex flex-col w-full items-start justify-start gap-2">
                 <h3 className="text-2xl text-left font-planar">{post.title}</h3>
-                <p className="text-foreground70 tracking-tight max-w-2xl leading-snug text-lg text-left">
+                <p className="text-foreground70 tracking-tight max-w-2xl leading-snug text-body text-left">
                   {post.description}
                 </p>
               </div>
