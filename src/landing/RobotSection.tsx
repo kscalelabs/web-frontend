@@ -36,7 +36,6 @@ const RobotSection = () => {
           }}
           animate={{
             backgroundColor: isInView ? "var(--carbon-0)" : "var(--carbon-50)",
-
             pointerEvents: isInView ? "none" : "auto",
           }}
           style={{
@@ -73,7 +72,7 @@ const RobotSection = () => {
             <h3 className="text-filament text-body">Drag to orbit</h3>
           </motion.hgroup>
         </motion.aside>
-        <RobotWrapper />
+        <RobotWrapper urdfPath="/cad/gpr-20241204.urdf" scale={5.0} translateY={1.2} />
       </div>
     </section>
   );

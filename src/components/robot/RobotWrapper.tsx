@@ -6,7 +6,13 @@ import dynamic from "next/dynamic";
 // Dynamically import the RobotRenderer component
 const RobotRenderer = dynamic(() => import("./robotRenderer"), { ssr: false });
 
-const RobotRendererWrapper: React.FC = () => {
+interface RobotWrapperProps {
+  urdfPath: string;
+  scale?: number;
+  translateY?: number;
+}
+
+const RobotRendererWrapper: React.FC<RobotWrapperProps> = ({ urdfPath, scale, translateY }) => {
   const [isVisible, setIsVisible] = useState(false);
   const mountRef = useRef<HTMLDivElement | null>(null);
 
@@ -30,7 +36,7 @@ const RobotRendererWrapper: React.FC = () => {
 
   return (
     <div ref={mountRef} className="w-full h-full overflow-hidden rounded-lg">
-      {isVisible && <RobotRenderer />}
+      {isVisible && <RobotRenderer urdfPath={urdfPath} scale={scale} translateY={translateY} />}
     </div>
   );
 };

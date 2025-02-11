@@ -73,7 +73,7 @@ const RobotSection = () => {
             <h3 className="text-filament text-body">Drag to orbit</h3>
           </motion.hgroup>
         </motion.aside>
-        <RobotWrapper />
+        <RobotWrapper urdfPath="/cad/z-bot2_fe_urdf.urdf" scale={45} translateY={0.5} />
       </div>
     </section>
   );

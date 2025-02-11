@@ -1,0 +1,559 @@
+<?xml version="1.0" ?>
+<robot name="z-bot2_fe_urdf">
+  <link name="base">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.001"/>
+      <inertia ixx="1e-06" ixy="0" ixz="0" iyy="1e-06" iyz="0" izz="1e-06"/>
+    </inertial>
+  </link>
+  <joint name="floating_base" type="fixed">
+    <origin rpy="0.00 0.00 0.00" xyz="0 0 0"/>
+    <parent link="base"/>
+    <child link="Z-BOT2_MASTER-BODY-SKELETON"/>
+  </joint>
+  <link name="Z-BOT2_MASTER-BODY-SKELETON">
+    <visual name="Z-BOT2_MASTER-BODY-SKELETON_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="Z-BOT2_MASTER-BODY-SKELETON_geometry">
+        <mesh filename="meshes/Z-BOT2_MASTER-BODY-SKELETON.stl"/>
+      </geometry>
+      <material name="Z-BOT2_MASTER-BODY-SKELETON_material">
+        <color rgba="0.49411765 0.62352941 0.74901961 1"/>
+      </material>
+    </visual>
+    <collision name="Z-BOT2_MASTER-BODY-SKELETON_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="Z-BOT2_MASTER-BODY-SKELETON_collision_geometry">
+        <mesh filename="meshes/Z-BOT2_MASTER-BODY-SKELETON.stl"/>
+      </geometry>
+    </collision>
+    <inertial name="Z-BOT2_MASTER-BODY-SKELETON_inertial">
+      <mass value="1.5482792056799994"/>
+      <inertia ixx="0.004795885938585409" iyy="0.005460089672443886" izz="0.0025928493459969493" ixy="7.085490462257138e-06" ixz="9.936366540015333e-06" iyz="-4.086937651942909e-05"/>
+      <origin xyz="-0.0001345050423528239 0.010200664957977983 -0.031203046640751988" rpy="0 0 0"/>
+    </inertial>
+  </link>
+  <joint name="left_shoulder_yaw" type="revolute">
+    <origin xyz="0.05599502633660092 -0.009609988350796517 -0.00952781042498181" rpy="1.5707963999999994 0.0 -3.1415926071795863"/>
+    <parent link="Z-BOT2_MASTER-BODY-SKELETON"/>
+    <child link="Z-BOT2-MASTER-SHOULDER2"/>
+    <limit effort="2" velocity="2" lower="-1.0471976" upper="0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="Z-BOT2-MASTER-SHOULDER2">
+    <visual name="Z-BOT2-MASTER-SHOULDER2_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="Z-BOT2-MASTER-SHOULDER2_geometry">
+        <mesh filename="meshes/Z-BOT2-MASTER-SHOULDER2.stl"/>
+      </geometry>
+      <material name="Z-BOT2-MASTER-SHOULDER2_material">
+        <color rgba="0.36470588 0.36078431 0.74901961 1"/>
+      </material>
+    </visual>
+    <collision name="Z-BOT2-MASTER-SHOULDER2_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="Z-BOT2-MASTER-SHOULDER2_collision_geometry">
+        <mesh filename="meshes/Z-BOT2-MASTER-SHOULDER2.stl"/>
+      </geometry>
+    </collision>
+    <inertial name="Z-BOT2-MASTER-SHOULDER2_inertial">
+      <mass value="0.0240976"/>
+      <inertia ixx="7.4193846e-06" iyy="7.798111e-06" izz="2.9824626e-06" ixy="0" ixz="0" iyz="0"/>
+      <origin xyz="-0.012788045 0.0013741162 0.018800156" rpy="0 0 0"/>
+    </inertial>
+  </link>
+  <joint name="right_shoulder_yaw" type="revolute">
+    <origin xyz="-0.055994973533463444 -0.009609990641140206 -0.009527810424981806" rpy="-1.5707963071795867 0.0 9.282041324443213e-08"/>
+    <parent link="Z-BOT2_MASTER-BODY-SKELETON"/>
+    <child link="Z-BOT2-MASTER-SHOULDER2_2"/>
+    <limit effort="2" velocity="2" lower="0" upper="1.0471976"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="Z-BOT2-MASTER-SHOULDER2_2">
+    <visual name="Z-BOT2-MASTER-SHOULDER2_visual_2">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="Z-BOT2-MASTER-SHOULDER2_geometry_2">
+        <mesh filename="meshes/Z-BOT2-MASTER-SHOULDER2_2.stl"/>
+      </geometry>
+      <material name="Z-BOT2-MASTER-SHOULDER2_material_2">
+        <color rgba="0.36470588 0.36078431 0.74901961 1"/>
+      </material>
+    </visual>
+    <collision name="Z-BOT2-MASTER-SHOULDER2_collision_2">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="Z-BOT2-MASTER-SHOULDER2_collision_geometry_2">
+        <mesh filename="meshes/Z-BOT2-MASTER-SHOULDER2_2.stl"/>
+      </geometry>
+    </collision>
+    <inertial name="Z-BOT2-MASTER-SHOULDER2_inertial_2">
+      <mass value="0.0240976"/>
+      <inertia ixx="7.4193846e-06" iyy="7.798111e-06" izz="2.9824626e-06" ixy="0" ixz="0" iyz="0"/>
+      <origin xyz="-0.012788045 -0.0013741162 0.018799844" rpy="0 0 0"/>
+    </inertial>
+  </link>
+  <joint name="left_hip_yaw" type="revolute">
+    <origin xyz="0.04280822375832449 0.007735076030833817 -0.08441842862429541" rpy="3.1415926071795863 -2.220446049250313e-15 3.1415926071795863"/>
+    <parent link="Z-BOT2_MASTER-BODY-SKELETON"/>
+    <child link="U-HIP-L"/>
+    <limit effort="2" velocity="2" lower="-1.0471976" upper="1.0471976"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="U-HIP-L">
+    <visual name="U-HIP-L_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="U-HIP-L_geometry">
+        <mesh filename="meshes/U-HIP-L.stl"/>
+      </geometry>
+      <material name="U-HIP-L_material">
+        <color rgba="0.76862745 0.88627451 0.95294118 1"/>
+      </material>
+    </visual>
+    <collision name="U-HIP-L_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="U-HIP-L_collision_geometry">
+        <mesh filename="meshes/U-HIP-L.stl"/>
+      </geometry>
+    </collision>
+    <inertial name="U-HIP-L_inertial">
+      <mass value="0.047132399"/>
+      <inertia ixx="2.871821e-05" iyy="2.9931549e-05" izz="1.8876006e-05" ixy="4.4096062e-06" ixz="-8.0012699e-06" iyz="3.8359105e-06"/>
+      <origin xyz="-0.0011606228 -0.0043962041 0.03539619" rpy="0 0 0"/>
+    </inertial>
+  </link>
+  <joint name="right_hip_yaw" type="revolute">
+    <origin xyz="-0.04286813624167551 0.007735076030833817 -0.08441842862429541" rpy="3.1415926071795863 -2.220446049250313e-15 3.1415926071795863"/>
+    <parent link="Z-BOT2_MASTER-BODY-SKELETON"/>
+    <child link="U-HIP-R"/>
+    <limit effort="2" velocity="2" lower="-1.0471976" upper="1.0471976"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="U-HIP-R">
+    <visual name="U-HIP-R_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="U-HIP-R_geometry">
+        <mesh filename="meshes/U-HIP-R.stl"/>
+      </geometry>
+      <material name="U-HIP-R_material">
+        <color rgba="0.76862745 0.88627451 0.95294118 1"/>
+      </material>
+    </visual>
+    <collision name="U-HIP-R_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="U-HIP-R_collision_geometry">
+        <mesh filename="meshes/U-HIP-R.stl"/>
+      </geometry>
+    </collision>
+    <inertial name="U-HIP-R_inertial">
+      <mass value="0.047132399"/>
+      <inertia ixx="2.871821e-05" iyy="2.9931549e-05" izz="1.8876006e-05" ixy="-4.4096062e-06" ixz="8.0012699e-06" iyz="3.8359105e-06"/>
+      <origin xyz="0.0011606228 -0.0043962041 0.03539619" rpy="0 0 0"/>
+    </inertial>
+  </link>
+  <joint name="left_shoulder_pitch" type="revolute">
+    <origin xyz="-0.019845 -0.0049 0.0188" rpy="-1.5707963 0 -1.5707963"/>
+    <parent link="Z-BOT2-MASTER-SHOULDER2"/>
+    <child link="3215_1Flange"/>
+    <limit effort="2" velocity="2" lower="-1.5707963" upper="1.5707963"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="3215_1Flange">
+    <visual name="3215_1Flange_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="3215_1Flange_geometry">
+        <mesh filename="meshes/3215_1Flange.stl"/>
+      </geometry>
+      <material name="3215_1Flange_material">
+        <color rgba="0.74901961 0.49803922 0.7254902 1"/>
+      </material>
+    </visual>
+    <collision name="3215_1Flange_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="3215_1Flange_collision_geometry">
+        <mesh filename="meshes/3215_1Flange.stl"/>
+      </geometry>
+    </collision>
+    <inertial name="3215_1Flange_inertial">
+      <mass value="0.181960114"/>
+      <inertia ixx="5.3899353341064585e-05" iyy="0.00022822195264545652" izz="0.00023184532723853924" ixy="-3.863960913011218e-06" ixz="6.095910283489962e-06" iyz="-1.7453075993636389e-09"/>
+      <origin xyz="0.033641620470353496 0.00043799006685695294 -0.019963155305665035" rpy="0 0 0"/>
+    </inertial>
+  </link>
+  <joint name="right_shoulder_pitch" type="revolute">
+    <origin xyz="-0.019845 0.0049 0.0188" rpy="1.5707963 0 1.5707963"/>
+    <parent link="Z-BOT2-MASTER-SHOULDER2_2"/>
+    <child link="3215_1Flange_2"/>
+    <limit effort="2" velocity="2" lower="-1.5707963" upper="1.5707963"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="3215_1Flange_2">
+    <visual name="3215_1Flange_visual_2">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="3215_1Flange_geometry_2">
+        <mesh filename="meshes/3215_1Flange_2.stl"/>
+      </geometry>
+      <material name="3215_1Flange_material_2">
+        <color rgba="0.74901961 0.49803922 0.7254902 1"/>
+      </material>
+    </visual>
+    <collision name="3215_1Flange_collision_2">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="3215_1Flange_collision_geometry_2">
+        <mesh filename="meshes/3215_1Flange_2.stl"/>
+      </geometry>
+    </collision>
+    <inertial name="3215_1Flange_inertial_2">
+      <mass value="0.181960114"/>
+      <inertia ixx="5.389763669337584e-05" iyy="0.00022821937594259294" izz="0.00023184619600107801" ixy="3.884943543858969e-06" ixz="6.140742999932222e-06" iyz="-3.1291384351947472e-09"/>
+      <origin xyz="0.0336416206898591 -0.00043253367565453777 -0.019968349743603512" rpy="0 0 0"/>
+    </inertial>
+  </link>
+  <joint name="left_hip_roll" type="revolute">
+    <origin xyz="0 0.018699662 0.0564" rpy="-1.5707963 0 0"/>
+    <parent link="U-HIP-L"/>
+    <child link="3215_BothFlange"/>
+    <limit effort="2" velocity="2" lower="-1.5707963" upper="0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="3215_BothFlange">
+    <visual name="3215_BothFlange_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="3215_BothFlange_geometry">
+        <mesh filename="meshes/3215_BothFlange.stl"/>
+      </geometry>
+      <material name="3215_BothFlange_material">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+    <collision name="3215_BothFlange_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="3215_BothFlange_collision_geometry">
+        <mesh filename="meshes/3215_BothFlange.stl"/>
+      </geometry>
+    </collision>
+    <inertial name="3215_BothFlange_inertial">
+      <mass value="0.068295303"/>
+      <inertia ixx="1.92480178585582e-05" iyy="2.3756011900231574e-05" izz="2.5208772736735547e-05" ixy="2.7247427049494293e-07" ixz="-2.8732568478511528e-08" iyz="6.109806519994374e-07"/>
+      <origin xyz="0.012331582350656753 -0.008997121561487848 -0.01850841926961605" rpy="0 0 0"/>
+    </inertial>
+  </link>
+  <joint name="right_hip_roll" type="revolute">
+    <origin xyz="0 -0.018699662 0.0564" rpy="-1.5707963 0 -3.1415927"/>
+    <parent link="U-HIP-R"/>
+    <child link="3215_BothFlange_2"/>
+    <limit effort="2" velocity="2" lower="-1.5707963" upper="0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="3215_BothFlange_2">
+    <visual name="3215_BothFlange_visual_2">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="3215_BothFlange_geometry_2">
+        <mesh filename="meshes/3215_BothFlange_2.stl"/>
+      </geometry>
+      <material name="3215_BothFlange_material_2">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+    <collision name="3215_BothFlange_collision_2">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="3215_BothFlange_collision_geometry_2">
+        <mesh filename="meshes/3215_BothFlange_2.stl"/>
+      </geometry>
+    </collision>
+    <inertial name="3215_BothFlange_inertial_2">
+      <mass value="0.068295303"/>
+      <inertia ixx="1.9232532721494387e-05" iyy="2.3723531811676066e-05" izz="2.5225767664568804e-05" ixy="2.7287346218958285e-07" ixz="2.0232946620458347e-08" iyz="-4.308719969093426e-07"/>
+      <origin xyz="0.012331582155648887 -0.008983281046134235 -0.017811063083855855" rpy="0 0 0"/>
+    </inertial>
+  </link>
+  <joint name="left_hip_pitch" type="revolute">
+    <origin xyz="-0.007399653999999995 -0.032 -0.017899999999999996" rpy="1.5707963 0.0 -1.5707963"/>
+    <parent link="3215_BothFlange"/>
+    <child link="3215_BothFlange_3"/>
+    <limit effort="2" velocity="2" lower="-1.5707963" upper="1.5707963"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="3215_BothFlange_3">
+    <visual name="3215_BothFlange_visual_3">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="3215_BothFlange_geometry_3">
+        <mesh filename="meshes/3215_BothFlange_3.stl"/>
+      </geometry>
+      <material name="3215_BothFlange_material_3">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+    <collision name="3215_BothFlange_collision_3">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="3215_BothFlange_collision_geometry_3">
+        <mesh filename="meshes/3215_BothFlange_3.stl"/>
+      </geometry>
+    </collision>
+    <inertial name="3215_BothFlange_inertial_3">
+      <mass value="0.14333659199999998"/>
+      <inertia ixx="4.878675726862223e-05" iyy="0.00014813238577565966" izz="0.00012751812605570905" ixy="2.743517501477886e-06" ixz="2.1979120901787534e-06" iyz="-1.936140035432996e-07"/>
+      <origin xyz="0.04366219515177414 -0.0028568393111346596 -0.01852507842244729" rpy="0 0 0"/>
+    </inertial>
+  </link>
+  <joint name="right_hip_pitch" type="revolute">
+    <origin xyz="-0.007399654 -0.031999999252795654 -0.018899720409421977" rpy="1.5707963535897942 4.6410206566704915e-08 -1.5707963000000003"/>
+    <parent link="3215_BothFlange_2"/>
+    <child link="3215_BothFlange_4"/>
+    <limit effort="2" velocity="2" lower="-1.5707963" upper="1.5707963"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="3215_BothFlange_4">
+    <visual name="3215_BothFlange_visual_4">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="3215_BothFlange_geometry_4">
+        <mesh filename="meshes/3215_BothFlange_4.stl"/>
+      </geometry>
+      <material name="3215_BothFlange_material_4">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+    <collision name="3215_BothFlange_collision_4">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="3215_BothFlange_collision_geometry_4">
+        <mesh filename="meshes/3215_BothFlange_4.stl"/>
+      </geometry>
+    </collision>
+    <inertial name="3215_BothFlange_inertial_4">
+      <mass value="0.14333659199999998"/>
+      <inertia ixx="4.878224114486772e-05" iyy="0.00014813327992273823" izz="0.0001275127225175327" ixy="-2.7135040673429437e-06" ixz="2.18600051154369e-06" iyz="1.9209773639879582e-07"/>
+      <origin xyz="0.04366219628683341 0.002863433704770056 -0.01853663820790603" rpy="0 0 0"/>
+    </inertial>
+  </link>
+  <joint name="left_elbow" type="revolute">
+    <origin xyz="0.09298379430410701 0.018799717128502175 -0.018600374924981792" rpy="1.5707963000000005 2.220446049250313e-16 3.1415926"/>
+    <parent link="3215_1Flange"/>
+    <child link="R-ARM-MIRROR-1"/>
+    <limit effort="2" velocity="2" lower="-1.5707963" upper="0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="R-ARM-MIRROR-1">
+    <visual name="R-ARM-MIRROR-1_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="R-ARM-MIRROR-1_geometry">
+        <mesh filename="meshes/R-ARM-MIRROR-1.stl"/>
+      </geometry>
+      <material name="R-ARM-MIRROR-1_material">
+        <color rgba="0.64705882 0.64705882 0.64705882 1"/>
+      </material>
+    </visual>
+    <collision name="R-ARM-MIRROR-1_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="R-ARM-MIRROR-1_collision_geometry">
+        <mesh filename="meshes/R-ARM-MIRROR-1.stl"/>
+      </geometry>
+    </collision>
+    <inertial name="R-ARM-MIRROR-1_inertial">
+      <mass value="0.186072694"/>
+      <inertia ixx="6.0567719416328625e-05" iyy="0.0002183379644806765" izz="0.00020130160387532152" ixy="2.0547267238849788e-05" ixz="5.7181148211945506e-08" iyz="1.9311961604242037e-06"/>
+      <origin xyz="-0.05111908248915886 0.0011495472657406835 -0.01774252869902593" rpy="0 0 0"/>
+    </inertial>
+  </link>
+  <joint name="right_elbow" type="revolute">
+    <origin xyz="0.09298379437380098 -0.01879971897680248 -0.018600374222947996" rpy="-1.570796346410206 -1.5707963071795867 0.0"/>
+    <parent link="3215_1Flange_2"/>
+    <child link="L-ARM-MIRROR_1"/>
+    <limit effort="2" velocity="2" lower="-1.5707963" upper="0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="L-ARM-MIRROR_1">
+    <visual name="L-ARM-MIRROR_1_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="L-ARM-MIRROR_1_geometry">
+        <mesh filename="meshes/L-ARM-MIRROR_1.stl"/>
+      </geometry>
+      <material name="L-ARM-MIRROR_1_material">
+        <color rgba="0.62745098 0.62745098 0.62745098 1"/>
+      </material>
+    </visual>
+    <collision name="L-ARM-MIRROR_1_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="L-ARM-MIRROR_1_collision_geometry">
+        <mesh filename="meshes/L-ARM-MIRROR_1.stl"/>
+      </geometry>
+    </collision>
+    <inertial name="L-ARM-MIRROR_1_inertial">
+      <mass value="0.186073123"/>
+      <inertia ixx="0.0002184697496067428" iyy="6.058853370405641e-05" izz="0.00020144144950757522" ixy="-2.0548764534903407e-05" ixz="-1.9759136575251413e-06" iyz="-3.077329627005033e-07"/>
+      <origin xyz="0.0011442767311520062 0.05112332206403472 0.017764173476155855" rpy="0 0 0"/>
+    </inertial>
+  </link>
+  <joint name="left_knee" type="revolute">
+    <origin xyz="0.10000000066047848 0.009999997542907976 -0.0002597236558159698" rpy="4.641020790984154e-08 4.641020678874952e-08 2.6469779601696886e-23"/>
+    <parent link="3215_BothFlange_3"/>
+    <child link="3215_BothFlange_5"/>
+    <limit effort="2" velocity="2" lower="0" upper="2.0943951"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="3215_BothFlange_5">
+    <visual name="3215_BothFlange_visual_5">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="3215_BothFlange_geometry_5">
+        <mesh filename="meshes/3215_BothFlange_5.stl"/>
+      </geometry>
+      <material name="3215_BothFlange_material_5">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+    <collision name="3215_BothFlange_collision_5">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="3215_BothFlange_collision_geometry_5">
+        <mesh filename="meshes/3215_BothFlange_5.stl"/>
+      </geometry>
+    </collision>
+    <inertial name="3215_BothFlange_inertial_5">
+      <mass value="0.128212813"/>
+      <inertia ixx="3.536609748105865e-05" iyy="0.00015438577386624072" izz="0.000145407263608089" ixy="3.600108456066878e-08" ixz="2.666301254666005e-07" iyz="-9.509928463700252e-11"/>
+      <origin xyz="0.04999996359240914 2.6032646298625976e-09 -0.017988356190372052" rpy="0 0 0"/>
+    </inertial>
+  </link>
+  <joint name="right_knee" type="revolute">
+    <origin xyz="0.10000000042471464 -0.009999997542907983 -0.00025971514418403357" rpy="4.641020790984154e-08 -4.641020678874952e-08 -2.6469779601696886e-23"/>
+    <parent link="3215_BothFlange_4"/>
+    <child link="3215_BothFlange_6"/>
+    <limit effort="2" velocity="2" lower="-2.0943951" upper="0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="3215_BothFlange_6">
+    <visual name="3215_BothFlange_visual_6">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="3215_BothFlange_geometry_6">
+        <mesh filename="meshes/3215_BothFlange_6.stl"/>
+      </geometry>
+      <material name="3215_BothFlange_material_6">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+    <collision name="3215_BothFlange_collision_6">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="3215_BothFlange_collision_geometry_6">
+        <mesh filename="meshes/3215_BothFlange_6.stl"/>
+      </geometry>
+    </collision>
+    <inertial name="3215_BothFlange_inertial_6">
+      <mass value="0.128212813"/>
+      <inertia ixx="3.552398378904618e-05" iyy="0.00015454366017422747" izz="0.0001454072636080885" ixy="3.60010000618421e-08" ixz="-5.963491685822506e-12" iyz="9.316785763132404e-14"/>
+      <origin xyz="0.04999996365469782 2.8812070800632004e-09 -0.017888312014853903" rpy="0 0 0"/>
+    </inertial>
+  </link>
+  <joint name="left_gripper" type="revolute">
+    <origin xyz="-0.06620574753840905 -0.011778206850776777 0.0002597172676098991" rpy="3.1415926099784643 1.5873225178708594e-08 1.9198621999999999"/>
+    <parent link="R-ARM-MIRROR-1"/>
+    <child link="FINGER_1"/>
+    <limit effort="2" velocity="2" lower="0" upper="0.52359878"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="FINGER_1">
+    <visual name="FINGER_1_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="FINGER_1_geometry">
+        <mesh filename="meshes/FINGER_1.stl"/>
+      </geometry>
+      <material name="FINGER_1_material">
+        <color rgba="0.62745098 0.62745098 0.62745098 1"/>
+      </material>
+    </visual>
+    <collision name="FINGER_1_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="FINGER_1_collision_geometry">
+        <mesh filename="meshes/FINGER_1.stl"/>
+      </geometry>
+    </collision>
+    <inertial name="FINGER_1_inertial">
+      <mass value="0.044317970000000005"/>
+      <inertia ixx="2.3213880668240897e-05" iyy="1.0191884814170426e-05" izz="1.6289943280670787e-05" ixy="-2.476923971395067e-06" ixz="-6.215307804413495e-13" iyz="-4.938339035345441e-11"/>
+      <origin xyz="-0.01067089257609412 -0.02898474955328322 0.018799794869921917" rpy="0 0 0"/>
+    </inertial>
+  </link>
+  <joint name="right_gripper" type="revolute">
+    <origin xyz="-0.011778204959700955 0.06620574806126743 -0.00025971899999999853" rpy="0.0 0.0 0.3490658"/>
+    <parent link="L-ARM-MIRROR_1"/>
+    <child link="FINGER_1_2"/>
+    <limit effort="2" velocity="2" lower="-0.52359878" upper="0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="FINGER_1_2">
+    <visual name="FINGER_1_visual_2">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="FINGER_1_geometry_2">
+        <mesh filename="meshes/FINGER_1_2.stl"/>
+      </geometry>
+      <material name="FINGER_1_material_2">
+        <color rgba="0.62745098 0.62745098 0.62745098 1"/>
+      </material>
+    </visual>
+    <collision name="FINGER_1_collision_2">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="FINGER_1_collision_geometry_2">
+        <mesh filename="meshes/FINGER_1_2.stl"/>
+      </geometry>
+    </collision>
+    <inertial name="FINGER_1_inertial_2">
+      <mass value="0.044317970000000005"/>
+      <inertia ixx="2.32138806540555e-05" iyy="1.0191884812233272e-05" izz="1.628994326455023e-05" ixy="2.476923890246143e-06" ixz="5.575491824133256e-13" iyz="-4.934950914465001e-11"/>
+      <origin xyz="-0.010670892444550918 0.02898474954177468 0.018799479084134273" rpy="0 0 0"/>
+    </inertial>
+  </link>
+  <joint name="left_ankle" type="revolute">
+    <origin xyz="0.09999999987006428 3.3640795954944433e-09 -0.00019999526847941937" rpy="-3.141592653589792 4.641020900919557e-08 1.5707964071795835"/>
+    <parent link="3215_BothFlange_5"/>
+    <child link="FOOT"/>
+    <limit effort="2" velocity="2" lower="-1.5707963" upper="1.5707963"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="FOOT">
+    <visual name="FOOT_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="FOOT_geometry">
+        <mesh filename="meshes/FOOT.stl"/>
+      </geometry>
+      <material name="FOOT_material">
+        <color rgba="0.62745098 0.62745098 0.62745098 1"/>
+      </material>
+    </visual>
+    <collision name="FOOT_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="FOOT_collision_geometry">
+        <mesh filename="meshes/FOOT.stl"/>
+      </geometry>
+    </collision>
+    <inertial name="FOOT_inertial">
+      <mass value="0.27814003"/>
+      <inertia ixx="4.494275498886861e-05" iyy="0.00020526784219643997" izz="0.00018187119318530804" ixy="4.668990035178566e-06" ixz="-2.8062672075965645e-12" iyz="-9.572651957744206e-13"/>
+      <origin xyz="-0.015077854176055176 0.027835259225792868 0.018700000506988616" rpy="0 0 0"/>
+    </inertial>
+  </link>
+  <joint name="right_ankle" type="revolute">
+    <origin xyz="0.09999999987006428 3.3640795954944433e-09 4.731520580284615e-09" rpy="-3.141592560769378 -4.6410206566704915e-08 -1.5707963000000027"/>
+    <parent link="3215_BothFlange_6"/>
+    <child link="FOOT_2"/>
+    <limit effort="2" velocity="2" lower="-1.5707963" upper="1.5707963"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="FOOT_2">
+    <visual name="FOOT_visual_2">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="FOOT_geometry_2">
+        <mesh filename="meshes/FOOT_2.stl"/>
+      </geometry>
+      <material name="FOOT_material_2">
+        <color rgba="0.62745098 0.62745098 0.62745098 1"/>
+      </material>
+    </visual>
+    <collision name="FOOT_collision_2">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="FOOT_collision_geometry_2">
+        <mesh filename="meshes/FOOT_2.stl"/>
+      </geometry>
+    </collision>
+    <inertial name="FOOT_inertial_2">
+      <mass value="0.27814003"/>
+      <inertia ixx="4.4942753119734386e-05" iyy="0.0002052678421055485" izz="0.0001818711912252823" ixy="-4.668996916793466e-06" ixz="2.8062672299978272e-12" iyz="-9.572648319183004e-13"/>
+      <origin xyz="-0.015077853990476281 -0.027835257754536755 0.018699999493011384" rpy="0 0 0"/>
+    </inertial>
+  </link>
+</robot>
