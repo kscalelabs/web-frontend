@@ -1,8 +1,10 @@
 import fs from "fs";
 import path from "path";
-import matter from "gray-matter";
 import Link from "next/link";
-import Layout from "../../components/Layout";
+import matter from "gray-matter";
+import Footer from "@/components/footer/footer";
+import NavBar from "@/components/navbar/navbar";
+import { DownArrowIcon } from "@/components/iconography/Iconography";
 
 const RESEARCH_PATH = path.join(process.cwd(), "src/content/research");
 
@@ -34,50 +36,45 @@ export async function getStaticProps() {
 
 export default function ResearchIndex({ posts }: { posts: any[] }) {
   return (
-    <Layout>
-      {/* 1) Override .mdx-content paragraph text alignment */}
-      <style jsx global>{`
-        .mdx-content p {
-          text-align: left !important;
-          font-size: 70% !important;
-        }
-      `}</style>
-
-      <div className="min-h-screen px-6 py-8 max-w-5xl mx-auto">
-        <h1 className="text-3xl font-semibold mb-2 text-left">Research</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 auto-rows-fr">
+    <div className="min-h-screen flex flex-col">
+      <NavBar />
+      <div className="gap-y-4">
+        <header className="col-span-full flex flex-row min-h-[90svh] auto-rows-auto items-center text-foreground bg-background relative overflow-hidden px-[5vw]">
+          <div className="flex flex-col self-end gap-5 justify-center items-start">
+            <div className="flex flex-col gap-4">
+              <h1 className="text-[4.2rem] tracking-tight">Beyond Black Boxes</h1>
+              <h4 className="text-[1.1rem] tracking-tight leading-snug">
+                Unraveling the science behind intelligent general-purpose
+                <br />
+                robots and shaping the future of human-machine interaction.
+              </h4>
+            </div>
+          </div>
+        </header>
+        <div className="flex col-span-full pt-4 justify-center">
+          <DownArrowIcon />
+        </div>
+        <div className="col-span-full flex flex-col items-start text-justify auto-rows-auto text-foreground bg-background relative overflow-hidden px-[5vw] gap-4 py-20">
           {posts.map((post) => (
-            <Link key={post.slug} href={`/research/${post.slug}`} className="group card-link">
-              <div className="flex flex-col h-full rounded-lg overflow-hidden shadow-md bg-white dark:bg-gray-900 transition transform hover:-translate-y-1">
-                {/* Top image background */}
-                <div className="relative w-full aspect-[16/9] overflow-hidden">
-                  <div
-                    className="absolute top-0 left-0 w-full h-[200%]"
-                    style={{
-                      backgroundImage: `url(${post.image})`,
-                      backgroundSize: "100% auto",
-                      backgroundRepeat: "no-repeat",
-                      backgroundPosition: "top center",
-                    }}
-                  ></div>
-                </div>
-
-                <div className="p-4 text-left flex flex-col flex-1">
-                  <h2 className="card-h2 text-base font-medium leading-snug line-clamp-2">
-                    {post.title}
-                  </h2>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1 line-clamp-3">
-                    {post.description}
-                  </p>
-                  <div className="mt-auto pt-2">
-                    <p className="text-xs text-gray-500">{post.date}</p>
-                  </div>
-                </div>
+            <Link
+              key={post.slug}
+              href={`/research/${post.slug}`}
+              className="flex flex-row justify-start w-full gap-4 border-b border-white/20 py-6"
+            >
+              <div className="w-48 flex flex-col">
+                <p className="font-planar">{post.date}</p>
+              </div>
+              <div className="flex flex-col w-full items-start justify-start gap-2">
+                <h3 className="text-2xl text-left font-planar">{post.title}</h3>
+                <p className="text-foreground70 tracking-tight max-w-2xl leading-snug text-lg text-left">
+                  {post.description}
+                </p>
               </div>
             </Link>
           ))}
         </div>
+        <Footer />
       </div>
-    </Layout>
+    </div>
   );
 }
