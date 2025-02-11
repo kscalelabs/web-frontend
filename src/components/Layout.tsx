@@ -19,7 +19,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <MDXProvider components={mdxComponents}>
       <div className="min-h-screen flex flex-col">
         <Navbar />
-        <article className="mdx-content flex-1 max-w-3xl mx-auto px-4 py-8">{children}</article>
+        <article className="mdx-content w-full flex-1 max-w-3xl mx-auto px-4 py-8">
+          {children}
+        </article>
         <Footer />
       </div>
     </MDXProvider>

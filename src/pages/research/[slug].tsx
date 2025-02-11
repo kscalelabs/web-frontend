@@ -1,9 +1,9 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import Layout from "../../components/Layout";
+import { serialize } from "next-mdx-remote/serialize";
 
 const RESEARCH_PATH = path.join(process.cwd(), "src/content/research");
 

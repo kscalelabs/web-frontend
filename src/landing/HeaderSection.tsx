@@ -1,4 +1,4 @@
-import { CTAButton, CTASubtitleButton } from "@/components/buttons/CTAButtons";
+import { CTAButton } from "@/components/buttons/CTAButtons";
 import { DownArrowIcon } from "@/components/iconography/Iconography";
 import { ColorVariant, FillMode } from "@/components/util/constants";
 
