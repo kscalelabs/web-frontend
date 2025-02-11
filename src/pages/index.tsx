@@ -38,11 +38,11 @@ export default function Home() {
       <NavBar />
       <main className="gap-y-4">
         <HeaderSection />
-        <ResearchSection />
-        <SpecSection />
-        <WhatCanItDoSection />
-        <RobotSection />
-        <GallerySection />
+        {/* <ResearchSection /> */}
+        {/* <SpecSection /> */}
+        {/* <WhatCanItDoSection /> */}
+        {/* <RobotSection /> */}
+        {/* <GallerySection /> */}
         <CommunitySection />
         <Sponsors />
       </main>
