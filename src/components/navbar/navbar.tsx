@@ -14,7 +14,8 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
   const [, setDesktopNavHidden] = useState(false);
   const [desktopPreviousScroll, setPrevScroll] = useState(scrollY.get());
   const [mobileShouldOpenBurger, setMobileShouldOpenBurger] = useState(false);
-  const safelist: string[] = ["-col-end-4", "-col-end-3", "-col-end-2", "-col-end-1"];
+  const safelist: string[] = ["-col-end-2", "-col-end-1"];
+  // const safelist: string[] = ["-col-end-4", "-col-end-3", "-col-end-2", "-col-end-1"];
 
   function update(current: number, previous: number): void {
     if (current < previous) {

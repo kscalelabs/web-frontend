@@ -37,7 +37,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <NavBar />
-      <main className="gap-y-4">
+      <main className="gap-y-4 relative">
         <HeaderSection />
         <CatchphraseSection />
         {/* <ResearchSection /> */}
@@ -46,8 +46,8 @@ export default function Home() {
         {/* <RobotSection /> */}
         {/* <GallerySection /> */}
         <CommunitySection />
-        <Sponsors />
       </main>
+      <Sponsors />
       <Footer />
     </div>
   );

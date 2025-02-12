@@ -12,10 +12,12 @@ const HeaderSection = () => {
 
   return (
     <>
-      <header className="col-span-full flex flex-row min-h-[90svh] auto-rows-auto items-center text-foreground bg-background relative overflow-hidden -mx-[5vw] px-[5vw]">
+      <header className="col-span-full flex flex-row min-h-[90svh] auto-rows-auto items-center text-foreground bg-background -mx-[5vw] px-[5vw] gap-10">
         <div className="flex flex-col w-full md:w-auto self-end gap-3 md:gap-5 justify-center items-start">
           <div className="flex flex-col w-full md:w-auto md:gap-4">
-            <h1 className="text-4xl md:text-[4.2rem] tracking-tight">K-Scale AI Day</h1>
+            <h1 className="text-4xl md:text-[4.2rem] tracking-tight whitespace-nowrap">
+              K-Scale AI Day
+            </h1>
             <h4 className="text-base md:text-[1.1rem] tracking-tight">
               Launching our robots, research, and models
             </h4>
@@ -29,12 +31,12 @@ const HeaderSection = () => {
             Join us on Feb 22nd ↗
           </CTAButton>
         </div>
-        {/* <div
-          className="flex flex-col items-end relative h-[60svh] lg:h-full lg:w-full min-h-[16rem]"
+        <div
+          className="flex flex-col w-full items-end flex-1 top-0 lg:h-full min-h-[16rem]"
           ref={ref}
         >
           <RobotWrapper />
-        </div> */}
+        </div>
       </header>
       <div className="flex col-span-full pt-4 justify-center">
         <DownArrowIcon />

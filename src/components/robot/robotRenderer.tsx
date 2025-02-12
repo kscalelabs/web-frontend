@@ -53,6 +53,7 @@ const RobotRenderer: React.FC = () => {
   let effectSobel: ShaderPass;
   useEffect(() => {
     const scene = new THREE.Scene();
+    scene.background = null;
     const camera = new THREE.PerspectiveCamera(
       13,
       window.innerWidth / window.innerHeight,
@@ -73,7 +74,8 @@ const RobotRenderer: React.FC = () => {
       renderer.setSize(clientWidth, clientHeight);
     }
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setClearColor(0x000000, 0);
+    renderer.setClearColor(0xffffff, 1);
+    renderer.setClearAlpha(0);
 
     if (currentMount) {
       currentMount.appendChild(renderer.domElement);
@@ -158,7 +160,9 @@ const RobotRenderer: React.FC = () => {
     camera.position.x = 9;
 
     const composer = new EffectComposer(renderer);
-    const renderPass = new RenderPass(scene, camera);
+
+    const renderPass = new RenderPass(scene, camera, null, new THREE.Color(0x0f0f10), 1);
+
     composer.addPass(renderPass);
 
     const shaderPass = new ShaderPass(LuminosityShader);
@@ -167,6 +171,7 @@ const RobotRenderer: React.FC = () => {
     // color to grayscale conversion
 
     const effectGrayScale = new ShaderPass(LuminosityShader);
+    effectGrayScale.renderToScreen = false;
     composer.addPass(effectGrayScale);
 
     // you might want to use a gaussian blur filter before
@@ -175,11 +180,13 @@ const RobotRenderer: React.FC = () => {
     // Sobel operator
 
     effectSobel = new ShaderPass(SobelOperatorShader);
+    effectSobel.renderToScreen = false;
     effectSobel.uniforms["resolution"].value.x = window.innerWidth * window.devicePixelRatio;
     effectSobel.uniforms["resolution"].value.y = window.innerHeight * window.devicePixelRatio;
     composer.addPass(effectSobel);
 
     const outputPass = new OutputPass();
+    outputPass.renderToScreen = true;
     composer.addPass(outputPass);
 
     const handleResize = () => {
