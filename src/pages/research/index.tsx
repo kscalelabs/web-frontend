@@ -43,10 +43,9 @@ export default function ResearchIndex({ posts }: { posts: any[] }) {
         <header className="col-span-full flex flex-row min-h-[90svh] auto-rows-auto items-center text-foreground bg-background relative overflow-hidden px-[5vw]">
           <div className="flex flex-col self-end gap-1 md:gap-4 justify-center items-start">
             <h1 className="text-4xl md:text-[4.2rem] tracking-tight">Open Research</h1>
-            <h4 className="text-base md:text-[1.1rem] tracking-tight leading-snug">
-              Bringing VLA models to the edge, enabling natural interaction with robots, {" "}
-              <br className="hidden md:inline" />
-              and generalizing the science behind LLMs for embodied AI.
+            <h4 className="text-base md:text-[1.1rem] tracking-tight max-w-lg leading-snug">
+              Bringing VLA models to the edge, enabling natural interaction with robots, and
+              generalizing the science behind LLMs for embodied AI.
             </h4>
           </div>
         </header>
