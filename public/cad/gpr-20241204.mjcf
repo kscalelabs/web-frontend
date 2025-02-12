@@ -1,8 +1,4 @@
-<mujoco model="robot_assy">
-  <option iterations="50" timestep="0.001" solver="PGS" gravity="0 0 -9.81" />
-
-  <compiler angle="radian" meshdir="meshes" eulerseq="zyx" autolimits="true" />
-
+<mujoco model="kbot-v2">
   <default>
     <joint limited="true" damping="0.01" armature="0.01" frictionloss="0.01" />
     <geom condim="4" contype="1" conaffinity="15" friction="0.9 0.2 0.2" solref="0.001 2" />
@@ -13,252 +9,237 @@
     </default>
   </default>
 
+  <compiler angle="radian" meshdir="meshes" eulerseq="zyx" autolimits="true" />
+
   <asset>
-    <mesh name="KB-B-102B_TORSO_BOTTOM" file="KB-B-102B_TORSO_BOTTOM.stl" />
-    <mesh name="KB-D-102R_R_Hip_Yoke_Drive" file="KB-D-102R_R_Hip_Yoke_Drive.stl" />
-    <mesh name="KB-D-102L_L_Hip_Yoke_Drive" file="KB-D-102L_L_Hip_Yoke_Drive.stl" />
-    <mesh name="KB-C-101R_R_Shoulder_Drive" file="KB-C-101R_R_Shoulder_Drive.stl" />
-    <mesh name="KB-C-101L_ShldYokeROLL" file="KB-C-101L_ShldYokeROLL.stl" />
-    <mesh name="RS03" file="RS03.stl" />
-    <mesh name="RS03_2" file="RS03_2.stl" />
-    <mesh name="RS03_3" file="RS03_3.stl" />
-    <mesh name="RS03_4" file="RS03_4.stl" />
-    <mesh name="KB-D-301L_L_Femur_Lower_Drive" file="KB-D-301L_L_Femur_Lower_Drive.stl" />
-    <mesh name="R_Bicep_Lower_Drive" file="R_Bicep_Lower_Drive.stl" />
-    <mesh name="KB-D-301R_R_Femur_Lower_Drive" file="KB-D-301R_R_Femur_Lower_Drive.stl" />
-    <mesh name="L_Bicep_Lower_Drive" file="L_Bicep_Lower_Drive.stl" />
-    <mesh name="KB-D-401L_L_Shin_Drive" file="KB-D-401L_L_Shin_Drive.stl" />
-    <mesh name="R_Forearm_Upper_Structural" file="R_Forearm_Upper_Structural.stl" />
-    <mesh name="KB-D-501L_L_LEG-FOOT" file="KB-D-501L_L_LEG-FOOT.stl" />
-    <mesh name="KB-D-401R_R_Shin_Drive" file="KB-D-401R_R_Shin_Drive.stl" />
-    <mesh name="L_Forearm_Upper_Drive" file="L_Forearm_Upper_Drive.stl" />
-    <mesh name="KB-D-501R_R_LEG-FOOT" file="KB-D-501R_R_LEG-FOOT.stl" />
-    <mesh name="KB-C-501X_Bayonet_Adapter_Hard_Stop" file="KB-C-501X_Bayonet_Adapter_Hard_Stop.stl" />
-    <mesh name="KB-C-501X_Bayonet_Adapter_Hard_Stop_2" file="KB-C-501X_Bayonet_Adapter_Hard_Stop_2.stl" />
     <texture name="texplane" type="2d" builtin="checker" rgb1=".0 .0 .0" rgb2=".8 .8 .8" width="100" height="100" />
     <material name="matplane" reflectance="0." texture="texplane" texrepeat="1 1" texuniform="true" />
-    <material name="visualgeom" rgba="0.5 0.9 0.2 1" />
+    <material name="KB-B-102B_TORSO_BOTTOM_material" rgba="0.61568627 0.81176471 0.92941176 1" />
+    <material name="KB-D-102R_R_Hip_Yoke_Drive_material" rgba="0.2627451 0.28235294 0.30196078 1" />
+    <material name="KB-D-102L_L_Hip_Yoke_Drive_material" rgba="0.2627451 0.28235294 0.30196078 1" />
+    <material name="imu_material" rgba="0.61568627 0.81176471 0.92941176 1" />
+    <material name="KB-C-101R_R_Shoulder_Drive_material" rgba="0.61568627 0.81176471 0.92941176 1" />
+    <material name="KB-C-101L_ShldYokeROLL_material" rgba="0.61568627 0.81176471 0.92941176 1" />
+    <material name="RS03_material_3" rgba="0.61568627 0.81176471 0.92941176 1" />
+    <material name="RS03_material_4" rgba="0.61568627 0.81176471 0.92941176 1" />
+    <material name="RS03_material_5" rgba="0.61568627 0.81176471 0.92941176 1" />
+    <material name="RS03_material_6" rgba="0.61568627 0.81176471 0.92941176 1" />
+    <material name="KB-D-301R_R_Femur_Lower_Drive_material" rgba="0.43921569 0.4745098 0.50196078 1" />
+    <material name="R_Bicep_Lower_Drive_material" rgba="0.76470588 0.54509804 0.80392157 1" />
+    <material name="KB-D-301L_L_Femur_Lower_Drive_material" rgba="0.43921569 0.4745098 0.50196078 1" />
+    <material name="L_Bicep_Lower_Drive_material" rgba="0.76470588 0.54509804 0.80392157 1" />
+    <material name="KB-D-401R_R_Shin_Drive_material" rgba="0.34901961 0.37647059 0.4 1" />
+    <material name="R_Forearm_Upper_Structural_material" rgba="0.61568627 0.81176471 0.92941176 1" />
+    <material name="KB-D-501R_R_LEG-FOOT_material" rgba="0.97254902 0.52941176 0.0039215686 1" />
+    <material name="KB-D-401L_L_Shin_Drive_material" rgba="0.34901961 0.37647059 0.4 1" />
+    <material name="L_Forearm_Upper_Drive_material" rgba="0.61568627 0.81176471 0.92941176 1" />
+    <material name="KB-D-501L_L_LEG-FOOT_material" rgba="0.97254902 0.52941176 0.0039215686 1" />
+    <material name="KB-C-501X_Bayonet_Adapter_Hard_Stop_material" rgba="0.91764706 0.91764706 0.91764706 1" />
+    <material name="KB-C-501X_Bayonet_Adapter_Hard_Stop_material_2" rgba="0.91764706 0.91764706 0.91764706 1" />
+    <material name="default_material" rgba="0.7 0.7 0.7 1" />
+    <mesh name="KB-B-102B_TORSO_BOTTOM_collision.stl" file="KB-B-102B_TORSO_BOTTOM_collision.stl" />
+    <mesh name="KB-B-102B_TORSO_BOTTOM.stl" file="KB-B-102B_TORSO_BOTTOM.stl" />
+    <mesh name="KB-D-102R_R_Hip_Yoke_Drive.stl" file="KB-D-102R_R_Hip_Yoke_Drive.stl" />
+    <mesh name="RS03_3_collision.stl" file="RS03_3_collision.stl" />
+    <mesh name="RS03_3.stl" file="RS03_3.stl" />
+    <mesh name="KB-D-301R_R_Femur_Lower_Drive_collision.stl" file="KB-D-301R_R_Femur_Lower_Drive_collision.stl" />
+    <mesh name="KB-D-301R_R_Femur_Lower_Drive.stl" file="KB-D-301R_R_Femur_Lower_Drive.stl" />
+    <mesh name="KB-D-401R_R_Shin_Drive_collision.stl" file="KB-D-401R_R_Shin_Drive_collision.stl" />
+    <mesh name="KB-D-401R_R_Shin_Drive.stl" file="KB-D-401R_R_Shin_Drive.stl" />
+    <mesh name="KB-D-501R_R_LEG-FOOT.convex.stl" file="KB-D-501R_R_LEG-FOOT.convex.stl" />
+    <mesh name="KB-D-501R_R_LEG-FOOT.stl" file="KB-D-501R_R_LEG-FOOT.stl" />
+    <mesh name="KB-D-102L_L_Hip_Yoke_Drive.stl" file="KB-D-102L_L_Hip_Yoke_Drive.stl" />
+    <mesh name="RS03_4_collision.stl" file="RS03_4_collision.stl" />
+    <mesh name="RS03_4.stl" file="RS03_4.stl" />
+    <mesh name="KB-D-301L_L_Femur_Lower_Drive_collision.stl" file="KB-D-301L_L_Femur_Lower_Drive_collision.stl" />
+    <mesh name="KB-D-301L_L_Femur_Lower_Drive.stl" file="KB-D-301L_L_Femur_Lower_Drive.stl" />
+    <mesh name="KB-D-401L_L_Shin_Drive_collision.stl" file="KB-D-401L_L_Shin_Drive_collision.stl" />
+    <mesh name="KB-D-401L_L_Shin_Drive.stl" file="KB-D-401L_L_Shin_Drive.stl" />
+    <mesh name="KB-D-501L_L_LEG-FOOT.convex.stl" file="KB-D-501L_L_LEG-FOOT.convex.stl" />
+    <mesh name="KB-D-501L_L_LEG-FOOT.stl" file="KB-D-501L_L_LEG-FOOT.stl" />
+    <mesh name="imu.stl" file="imu.stl" />
+    <mesh name="KB-C-101R_R_Shoulder_Drive.stl" file="KB-C-101R_R_Shoulder_Drive.stl" />
+    <mesh name="RS03_5_collision.stl" file="RS03_5_collision.stl" />
+    <mesh name="RS03_5.stl" file="RS03_5.stl" />
+    <mesh name="R_Bicep_Lower_Drive_collision.stl" file="R_Bicep_Lower_Drive_collision.stl" />
+    <mesh name="R_Bicep_Lower_Drive.stl" file="R_Bicep_Lower_Drive.stl" />
+    <mesh name="R_Forearm_Upper_Structural_collision.stl" file="R_Forearm_Upper_Structural_collision.stl" />
+    <mesh name="R_Forearm_Upper_Structural.stl" file="R_Forearm_Upper_Structural.stl" />
+    <mesh name="KB-C-501X_Bayonet_Adapter_Hard_Stop.convex.stl" file="KB-C-501X_Bayonet_Adapter_Hard_Stop.convex.stl" />
+    <mesh name="KB-C-501X_Bayonet_Adapter_Hard_Stop.stl" file="KB-C-501X_Bayonet_Adapter_Hard_Stop.stl" />
+    <mesh name="KB-C-101L_ShldYokeROLL.stl" file="KB-C-101L_ShldYokeROLL.stl" />
+    <mesh name="RS03_6_collision.stl" file="RS03_6_collision.stl" />
+    <mesh name="RS03_6.stl" file="RS03_6.stl" />
+    <mesh name="L_Bicep_Lower_Drive_collision.stl" file="L_Bicep_Lower_Drive_collision.stl" />
+    <mesh name="L_Bicep_Lower_Drive.stl" file="L_Bicep_Lower_Drive.stl" />
+    <mesh name="L_Forearm_Upper_Drive_collision.stl" file="L_Forearm_Upper_Drive_collision.stl" />
+    <mesh name="L_Forearm_Upper_Drive.stl" file="L_Forearm_Upper_Drive.stl" />
+    <mesh name="KB-C-501X_Bayonet_Adapter_Hard_Stop_2.convex.stl" file="KB-C-501X_Bayonet_Adapter_Hard_Stop_2.convex.stl" />
+    <mesh name="KB-C-501X_Bayonet_Adapter_Hard_Stop_2.stl" file="KB-C-501X_Bayonet_Adapter_Hard_Stop_2.stl" />
   </asset>
 
   <worldbody>
     <light directional="true" diffuse="0.4 0.4 0.4" specular="0.1 0.1 0.1" pos="0 0 5.0" dir="0 0 -1" castshadow="false" />
     <light directional="true" diffuse="0.6 0.6 0.6" specular="0.2 0.2 0.2" pos="0 0 4" dir="0 0 -1" />
-    <geom name="ground" type="plane" pos="0 0 0" size="100 100 0.001" quat="1 0 0 0" material="matplane" condim="3" conaffinity="15" />
-    <camera name="fixed" pos="0 -3.0 0.5" xyaxes="1 0 0 0 0 1" />
-    <camera name="track" mode="trackcom" pos="0 -3.0 0.5" xyaxes="1 0 0 0 0 1" />
-    <body name="root" pos="0 0 0.01" quat="1 0 0 0">
-      <freejoint name="root" />
-      <site name="imu" size="0.01" pos="0 0 0" />
-      <geom type="mesh" rgba="0.615686 0.811765 0.929412 1" mesh="KB-B-102B_TORSO_BOTTOM" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
-      <geom type="mesh" rgba="0.615686 0.811765 0.929412 1" mesh="KB-B-102B_TORSO_BOTTOM" />
-      <body name="KB-D-102R_R_Hip_Yoke_Drive" pos="0.047048 -0.000737259 -0.0729935" quat="0.5 0.5 -0.5 -0.5">
-        <inertial pos="-0.00518705 -0.00237372 -0.0391575" quat="-0.395694 0.566905 0.00397172 0.722516" mass="0.710534" diaginertia="0.00190819 0.00146086 0.00119488" />
-        <joint name="right_hip_pitch_04" pos="0 0 0" axis="0 0 1" range="-1.91986 1.5708" actuatorfrcrange="-80 80" />
-        <geom type="mesh" rgba="0.262745 0.282353 0.301961 1" mesh="KB-D-102R_R_Hip_Yoke_Drive" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
-        <geom type="mesh" rgba="0.262745 0.282353 0.301961 1" mesh="KB-D-102R_R_Hip_Yoke_Drive" />
-        <body name="RS03" pos="-0.02925 -0.03 -0.071" quat="0.707107 0 -0.707107 0">
-          <inertial pos="-0.00067719 -0.0582557 -0.0282885" quat="0.49968 0.502022 -0.504248 0.493992" mass="2.59032" diaginertia="0.0115811 0.0110638 0.00380208" />
-          <joint name="right_hip_roll_03" pos="0 0 0" axis="0 0 1" range="-2.61799 0.20944" actuatorfrcrange="-80 80" />
-          <geom type="mesh" rgba="0.615686 0.811765 0.929412 1" mesh="RS03" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
-          <geom type="mesh" rgba="0.615686 0.811765 0.929412 1" mesh="RS03" />
-          <body name="KB-D-301L_L_Femur_Lower_Drive" pos="0 -0.14175 -0.0298" quat="0.707107 -0.707107 0 0">
-            <inertial pos="-0.000138526 0.0105108 -0.162476" quat="0.995842 0.0773442 -0.0449612 -0.0171919" mass="2.55677" diaginertia="0.0181434 0.0166515 0.00432563" />
-            <joint name="right_hip_yaw_03" pos="0 0 0" axis="0 0 1" range="-1.5708 1.91986" actuatorfrcrange="-80 80" />
-            <geom type="mesh" rgba="0.439216 0.47451 0.501961 1" mesh="KB-D-301L_L_Femur_Lower_Drive" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
-            <geom type="mesh" rgba="0.439216 0.47451 0.501961 1" mesh="KB-D-301L_L_Femur_Lower_Drive" />
-            <body name="KB-D-401L_L_Shin_Drive" pos="-0.0196 0.021 -0.212" quat="0.5 0.5 0.5 0.5">
-              <inertial pos="-0.0261276 -0.0975927 0.0201948" quat="0.712741 0.698136 0.0365784 -0.0571758" mass="2.0621" diaginertia="0.0181457 0.0178723 0.00377024" />
-              <joint name="right_knee_04" pos="0 0 0" axis="0 0 1" range="0 2.67035" actuatorfrcrange="-80 80" />
-              <geom type="mesh" rgba="0.34902 0.376471 0.4 1" mesh="KB-D-401L_L_Shin_Drive" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
-              <geom type="mesh" rgba="0.34902 0.376471 0.4 1" mesh="KB-D-401L_L_Shin_Drive" />
-              <body name="KB-D-501L_L_LEG-FOOT" pos="-0.0313 -0.2925 0.005">
-                <inertial pos="-0.0132646 -0.0285779 0.0119443" quat="0.425323 0.53702 0.470051 0.556563" mass="0.492748" diaginertia="0.00156934 0.00148223 0.000277396" />
-                <joint name="right_ankle_02" pos="0 0 0" axis="0 0 -1" range="-0.296706 0.785398" actuatorfrcrange="-80 80" />
-                <geom type="mesh" rgba="0.972549 0.529412 0.00392157 1" mesh="KB-D-501L_L_LEG-FOOT" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
-                <geom type="mesh" rgba="0.972549 0.529412 0.00392157 1" mesh="KB-D-501L_L_LEG-FOOT" />
+    <geom name="ground" type="plane" pos="0 0 0" size="10 10 0.001" quat="1 0 0 0" material="matplane" condim="3" conaffinity="15" />
+    <body name="base" pos="0.00000000 0.00000000 0.80124348" quat="1 0 0 0">
+      <freejoint name="floating_base" />
+      <body name="KB-B-102B_TORSO_BOTTOM" pos="0.0 0.0 -0.001" quat="0.0007963267107332633 0.0 0.0 0.9999996829318346">
+        <inertial pos="0.0003782656637492197 0.0026708360136527445 0.1600861519363398" quat="1.0 0.0 0.0 0.0" mass="15.456196869999996" diaginertia="0.6144236576682701 0.6513734713020699 0.07488731286920623" />
+        <geom name="KB-B-102B_TORSO_BOTTOM_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="KB-B-102B_TORSO_BOTTOM_collision.stl" rgba="0 0 0 0" />
+        <geom name="KB-B-102B_TORSO_BOTTOM_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="KB-B-102B_TORSO_BOTTOM_material" type="mesh" mesh="KB-B-102B_TORSO_BOTTOM.stl" />
+        <body name="KB-D-102R_R_Hip_Yoke_Drive" pos="0.04804799199999996 -0.0007372588564082805 -0.07299347712820414" quat="0.49999997499999965 0.500000001794897 -0.500000011602551 -0.5000000116025513">
+          <joint name="right_hip_pitch_04" type="hinge" range="-1.9198622 1.5707963" axis="0 0 1" />
+          <inertial pos="-0.00518705193700639 -0.002373719838251741 -0.03915745987700441" quat="1.0 0.0 0.0 0.0" mass="0.7105343159999999" diaginertia="0.0012846056614709512 0.0015499048649316174 0.0017294271620225273" />
+          <geom name="KB-D-102R_R_Hip_Yoke_Drive_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="KB-D-102R_R_Hip_Yoke_Drive_material" type="mesh" mesh="KB-D-102R_R_Hip_Yoke_Drive.stl" />
+          <body name="RS03_3" pos="-0.02825 -0.03 -0.0710000000267949" quat="0.7071067906599741 0.0 -0.707106771713121 0.0">
+            <joint name="right_hip_roll_03" type="hinge" range="-2.6179939 0.20943951" axis="0 0 1" />
+            <inertial pos="-0.0006771898283941686 -0.0582557273766471 -0.02828850020246948" quat="1.0 0.0 0.0 0.0" mass="2.5903163030000003" diaginertia="0.011063347679976337 0.0038037668340952352 0.011579821564733453" />
+            <geom name="RS03_3_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="RS03_3_collision.stl" rgba="0 0 0 0" />
+            <geom name="RS03_3_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="RS03_material_3" type="mesh" mesh="RS03_3.stl" />
+            <body name="KB-D-301R_R_Femur_Lower_Drive" pos="0.0 -0.14275 -0.0297999999732051" quat="0.7071067906599741 0.707106771713121 0.0 0.0">
+              <joint name="right_hip_yaw_02" type="hinge" range="-1.5707963 1.9198622" axis="0 0 -1" />
+              <inertial pos="0.00013858062495375275 -0.010511168723892824 0.16247356818486833" quat="1.0 0.0 0.0 0.0" mass="2.556833893" diaginertia="0.018025570314963765 0.016368281312503202 0.004728526690542313" />
+              <geom name="KB-D-301R_R_Femur_Lower_Drive_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="KB-D-301R_R_Femur_Lower_Drive_collision.stl" rgba="0 0 0 0" />
+              <geom name="KB-D-301R_R_Femur_Lower_Drive_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="KB-D-301R_R_Femur_Lower_Drive_material" type="mesh" mesh="KB-D-301R_R_Femur_Lower_Drive.stl" />
+              <body name="KB-D-401R_R_Shin_Drive" pos="0.02059999707935614 -0.02099999737725783 0.21199999817878992" quat="0.5000000344734256 0.5000000021291254 -0.49999997892402115 -0.49999998447342586">
+                <joint name="left_knee_04" type="hinge" range="-2.6703538 0" axis="0 0 1" />
+                <inertial pos="-0.026271134321132848 0.09758948179643992 0.02046254186557558" quat="1.0 0.0 0.0 0.0" mass="2.0622413400000004" diaginertia="0.018159448746640505 0.0038004776595966347 0.01785348023026493" />
+                <geom name="KB-D-401R_R_Shin_Drive_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="KB-D-401R_R_Shin_Drive_collision.stl" rgba="0 0 0 0" />
+                <geom name="KB-D-401R_R_Shin_Drive_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="KB-D-401R_R_Shin_Drive_material" type="mesh" mesh="KB-D-401R_R_Shin_Drive.stl" />
+                <body name="KB-D-501R_R_LEG-FOOT" pos="-0.0313 0.2924999999535898 0.005999999999999999" quat="-2.3205103333142417e-08 0.9999999999999998 0.0 -0.0">
+                  <joint name="left_ankle_02" type="hinge" range="-0.29670597 0.78539816" axis="0 0 1" />
+                  <inertial pos="-0.013264634594717278 -0.028577942366742486 -0.011944334277895376" quat="1.0 0.0 0.0 0.0" mass="0.49274711000000004" diaginertia="0.00028345862075299837 0.0015602847602564514 0.0014852253016744811" />
+                  <geom name="KB-D-501R_R_LEG-FOOT_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="KB-D-501R_R_LEG-FOOT.convex.stl" rgba="0 0 0 0" />
+                  <geom name="KB-D-501R_R_LEG-FOOT_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="KB-D-501R_R_LEG-FOOT_material" type="mesh" mesh="KB-D-501R_R_LEG-FOOT.stl" />
+                </body>
               </body>
             </body>
           </body>
         </body>
-      </body>
-      <body name="KB-D-102L_L_Hip_Yoke_Drive" pos="-0.047048 -0.000737257 -0.0729935" quat="0.5 -0.5 0.5 -0.5">
-        <inertial pos="-0.00526924 0.00243321 -0.0391574" quat="0.398842 0.563025 -0.0105267 0.723752" mass="0.710534" diaginertia="0.00190529 0.00145789 0.00119359" />
-        <joint name="left_hip_pitch_04" pos="0 0 0" axis="0 0 1" range="-1.5708 1.91986" actuatorfrcrange="-80 80" />
-        <geom type="mesh" rgba="0.262745 0.282353 0.301961 1" mesh="KB-D-102L_L_Hip_Yoke_Drive" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
-        <geom type="mesh" rgba="0.262745 0.282353 0.301961 1" mesh="KB-D-102L_L_Hip_Yoke_Drive" />
-        <body name="RS03_2" pos="-0.02925 0.03 -0.071" quat="-1.64085e-08 0.707107 -1.64085e-08 -0.707107">
-          <inertial pos="0.00067678 -0.0582571 -0.0282895" quat="0.494046 0.504303 -0.501971 0.499622" mass="2.59043" diaginertia="0.0115813 0.0110642 0.00380245" />
-          <joint name="left_hip_roll_03" pos="0 0 0" axis="0 0 1" range="-0.20944 2.61799" actuatorfrcrange="-80 80" />
-          <geom type="mesh" rgba="0.615686 0.811765 0.929412 1" mesh="RS03_2" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
-          <geom type="mesh" rgba="0.615686 0.811765 0.929412 1" mesh="RS03_2" />
-          <body name="KB-D-301R_R_Femur_Lower_Drive" pos="0 -0.14175 -0.0298" quat="0.707107 -0.707107 0 0">
-            <inertial pos="0.000138587 0.0105112 -0.162474" quat="0.995842 0.0773383 0.0449574 0.0172221" mass="2.55683" diaginertia="0.0181442 0.0166524 0.00432586" />
-            <joint name="left_hip_yaw_03" pos="0 0 0" axis="0 0 1" range="-1.5708 1.91986" actuatorfrcrange="-80 80" />
-            <geom type="mesh" rgba="0.439216 0.47451 0.501961 1" mesh="KB-D-301R_R_Femur_Lower_Drive" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
-            <geom type="mesh" rgba="0.439216 0.47451 0.501961 1" mesh="KB-D-301R_R_Femur_Lower_Drive" />
-            <body name="KB-D-401R_R_Shin_Drive" pos="0.0196 0.021 -0.212" quat="0.5 -0.5 -0.5 0.5">
-              <inertial pos="-0.0262711 0.0975895 0.0204625" quat="0.698387 0.713003 0.0538058 -0.0314237" mass="2.06224" diaginertia="0.0181774 0.017856 0.00378002" />
-              <joint name="left_knee_04" pos="0 0 0" axis="0 0 1" range="-2.67035 0" actuatorfrcrange="-80 80" />
-              <geom type="mesh" rgba="0.34902 0.376471 0.4 1" mesh="KB-D-401R_R_Shin_Drive" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
-              <geom type="mesh" rgba="0.34902 0.376471 0.4 1" mesh="KB-D-401R_R_Shin_Drive" />
-              <body name="KB-D-501R_R_LEG-FOOT" pos="-0.0313 0.2925 0.005" quat="-2.32051e-08 1 0 0">
-                <inertial pos="-0.0132646 -0.0285779 -0.0119443" quat="0.53702 0.425323 0.556563 0.470051" mass="0.492747" diaginertia="0.00156934 0.00148223 0.000277396" />
-                <joint name="left_ankle_02" pos="0 0 0" axis="0 0 1" range="-0.296706 0.785398" actuatorfrcrange="-80 80" />
-                <geom type="mesh" rgba="0.972549 0.529412 0.00392157 1" mesh="KB-D-501R_R_LEG-FOOT" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
-                <geom type="mesh" rgba="0.972549 0.529412 0.00392157 1" mesh="KB-D-501R_R_LEG-FOOT" />
+        <body name="KB-D-102L_L_Hip_Yoke_Drive" pos="-0.048048021999999996 -0.0007372570000000047 -0.07299347927179586" quat="0.5000000133974482 -0.4999999866025516 0.4999999999999999 -0.4999999999999999">
+          <joint name="left_hip_pitch_04" type="hinge" range="-1.5707963 1.9198622" axis="0 0 1" />
+          <inertial pos="-0.005269236736187477 0.0024332109371640754 -0.039157406265559025" quat="1.0 0.0 0.0 0.0" mass="0.710534346" diaginertia="0.0012869651899179624 0.0015439607861880997 0.0017258416243540707" />
+          <geom name="KB-D-102L_L_Hip_Yoke_Drive_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="KB-D-102L_L_Hip_Yoke_Drive_material" type="mesh" mesh="KB-D-102L_L_Hip_Yoke_Drive.stl" />
+          <body name="RS03_4" pos="-0.028250000000000004 0.029999999953589793 -0.0709999999732051" quat="-1.64084861448314e-08 0.707106790659974 -1.6408485705167716e-08 -0.7071067717131209">
+            <joint name="left_hip_roll_03" type="hinge" range="-0.20943951 2.6179939" axis="0 0 1" />
+            <inertial pos="0.0006767801077187306 -0.05825706087927863 -0.028289463890326716" quat="1.0 0.0 0.0 0.0" mass="2.590428564" diaginertia="0.011063775523078797 0.00380414415674446 0.011580096572929934" />
+            <geom name="RS03_4_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="RS03_4_collision.stl" rgba="0 0 0 0" />
+            <geom name="RS03_4_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="RS03_material_4" type="mesh" mesh="RS03_4.stl" />
+            <body name="KB-D-301L_L_Femur_Lower_Drive" pos="0.0 -0.14275000000000002 -0.0297999999732051" quat="0.7071067906599741 0.707106771713121 0.0 0.0">
+              <joint name="left_hip_yaw_" type="hinge" range="-1.5707963 1.9198622" axis="0 0 -1" />
+              <inertial pos="-0.00013851960764557286 -0.010510826872415776 0.1624762514749413" quat="1.0 0.0 0.0 0.0" mass="2.5567669129999997" diaginertia="0.018024794914299758 0.016367389347675666 0.004728344166477157" />
+              <geom name="KB-D-301L_L_Femur_Lower_Drive_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="KB-D-301L_L_Femur_Lower_Drive_collision.stl" rgba="0 0 0 0" />
+              <geom name="KB-D-301L_L_Femur_Lower_Drive_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="KB-D-301L_L_Femur_Lower_Drive_material" type="mesh" mesh="KB-D-301L_L_Femur_Lower_Drive.stl" />
+              <body name="KB-D-401L_L_Shin_Drive" pos="-0.02059999595397059 -0.020999998909925658 0.21199999817878992" quat="0.5000000112683232 -0.49999997892402176 0.500000002129125 -0.5000000076785294">
+                <joint name="right_knee_04" type="hinge" range="0 2.6703538" axis="0 0 1" />
+                <inertial pos="-0.026127567283860474 -0.09759272580605333 0.02019484301225384" quat="1.0 0.0 0.0 0.0" mass="2.062098443" diaginertia="0.018129915712165132 0.0037884644914203086 0.01786986766558831" />
+                <geom name="KB-D-401L_L_Shin_Drive_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="KB-D-401L_L_Shin_Drive_collision.stl" rgba="0 0 0 0" />
+                <geom name="KB-D-401L_L_Shin_Drive_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="KB-D-401L_L_Shin_Drive_material" type="mesh" mesh="KB-D-401L_L_Shin_Drive.stl" />
+                <body name="KB-D-501L_L_LEG-FOOT" pos="-0.0313 -0.2925 0.006" quat="1.0 0.0 0.0 0.0">
+                  <joint name="right_ankle_02" type="hinge" range="-0.29670597 0.78539816" axis="0 0 -1" />
+                  <inertial pos="-0.013264629288447597 -0.028577941761324492 0.011944320235142284" quat="1.0 0.0 0.0 0.0" mass="0.49274759" diaginertia="0.00028345878071963943 0.0015602852574658024 0.0014852257414326982" />
+                  <geom name="KB-D-501L_L_LEG-FOOT_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="KB-D-501L_L_LEG-FOOT.convex.stl" rgba="0 0 0 0" />
+                  <geom name="KB-D-501L_L_LEG-FOOT_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="KB-D-501L_L_LEG-FOOT_material" type="mesh" mesh="KB-D-501L_L_LEG-FOOT.stl" />
+                </body>
               </body>
             </body>
           </body>
         </body>
-      </body>
-      <body name="KB-C-101R_R_Shoulder_Drive" pos="0.12495 -0.000737261 0.337507" quat="0.5 0.5 -0.5 -0.5">
-        <inertial pos="-0.00496284 0.00334441 -0.0445282" quat="0.590219 0.393242 0.545702 0.446332" mass="0.545077" diaginertia="0.00138635 0.00117231 0.000944142" />
-        <joint name="left_shoulder_pitch_03" pos="0 0 0" axis="0 0 1" range="-1.91986 3.49066" actuatorfrcrange="-80 80" />
-        <geom type="mesh" rgba="0.615686 0.811765 0.929412 1" mesh="KB-C-101R_R_Shoulder_Drive" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
-        <geom type="mesh" rgba="0.615686 0.811765 0.929412 1" mesh="KB-C-101R_R_Shoulder_Drive" />
-        <body name="RS03_3" pos="-0.02525 0 -0.075" quat="0.707107 0 -0.707107 0">
-          <inertial pos="-0.00553354 -0.044204 -0.0297113" quat="0.52809 0.471291 -0.531324 0.465511" mass="1.86143" diaginertia="0.00823598 0.00777473 0.00204396" />
-          <joint name="left_shoulder_roll_03" pos="0 0 0" axis="0 0 1" range="-1.48353 0.488692" actuatorfrcrange="-80 80" />
-          <geom type="mesh" rgba="0.615686 0.811765 0.929412 1" mesh="RS03_3" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
-          <geom type="mesh" rgba="0.615686 0.811765 0.929412 1" mesh="RS03_3" />
-          <body name="R_Bicep_Lower_Drive" pos="-0.013 -0.141 -0.0302502" quat="0.707107 -0.707107 0 0">
-            <inertial pos="0.00174116 -0.00312809 -0.0961052" quat="0.998065 -0.0428951 0.0444119 -0.00727027" mass="0.863923" diaginertia="0.00302076 0.002803 0.000862969" />
-            <joint name="left_shoulder_yaw_02" pos="0 0 0" axis="0 0 1" range="-1.74533 1.74533" actuatorfrcrange="-80 80" />
-            <geom type="mesh" rgba="0.764706 0.545098 0.803922 1" mesh="R_Bicep_Lower_Drive" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
-            <geom type="mesh" rgba="0.764706 0.545098 0.803922 1" mesh="R_Bicep_Lower_Drive" />
-            <body name="R_Forearm_Upper_Structural" pos="0.0175 -0.01 -0.137" quat="0.5 -0.5 -0.5 0.5">
-              <inertial pos="0.0160903 0.0590489 0.0144697" quat="0.622902 0.709651 0.222019 -0.243098" mass="0.67694" diaginertia="0.00140509 0.00138273 0.000678509" />
-              <joint name="left_elbow_02" pos="0 0 0" axis="0 0 1" range="0 2.53073" actuatorfrcrange="-80 80" />
-              <geom type="mesh" rgba="0.615686 0.811765 0.929412 1" mesh="R_Forearm_Upper_Structural" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
-              <geom type="mesh" rgba="0.615686 0.811765 0.929412 1" mesh="R_Forearm_Upper_Structural" />
-              <body name="KB-C-501X_Bayonet_Adapter_Hard_Stop" pos="0.01735 0.1055 0.018" quat="0.5 0.5 0.5 -0.5">
-                <inertial pos="-0.00257119 3.50738e-06 -0.0393706" quat="0.999406 -0.00102682 0.0344309 -0.000738314" mass="0.571799" diaginertia="0.000750674 0.000720096 0.000580472" />
-                <joint name="left_wrist_02" pos="0 0 0" axis="0 0 1" range="-1.74533 1.74533" actuatorfrcrange="-80 80" />
-                <geom type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="KB-C-501X_Bayonet_Adapter_Hard_Stop" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
-                <geom type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="KB-C-501X_Bayonet_Adapter_Hard_Stop" />
+        <body name="KB-C-101R_R_Shoulder_Drive" pos="0.1259499752752948 -0.0007372607282038752 0.3375065238332571" quat="0.4999999905265728 0.4999999728708734 -0.5000000460759765 -0.4999999905265743">
+          <joint name="left_shoulder_pitch_03" type="hinge" range="-1.9198622 3.4906585" axis="0 0 1" />
+          <inertial pos="-0.0049628393686060365 0.0033444089602305623 -0.044528158616558317" quat="1.0 0.0 0.0 0.0" mass="0.5450769340000001" diaginertia="0.0009463345633721918 0.001367831779393941 0.0011886349434901396" />
+          <geom name="KB-C-101R_R_Shoulder_Drive_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="KB-C-101R_R_Shoulder_Drive_material" type="mesh" mesh="KB-C-101R_R_Shoulder_Drive.stl" />
+          <body name="RS03_5" pos="-0.02425 0.0 -0.0750000000267949" quat="0.7071067906599741 0.0 -0.707106771713121 0.0">
+            <joint name="left_shoulder_roll_03" type="hinge" range="-1.4835299 0.48869219" axis="0 0 1" />
+            <inertial pos="-0.0055335420515801705 -0.044203985461663695 -0.0297112802863472" quat="1.0 0.0 0.0 0.0" mass="1.861434012" diaginertia="0.007688888113351309 0.002130291592508498 0.0082354913293496" />
+            <geom name="RS03_5_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="RS03_5_collision.stl" rgba="0 0 0 0" />
+            <geom name="RS03_5_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="RS03_material_5" type="mesh" mesh="RS03_5.stl" />
+            <body name="R_Bicep_Lower_Drive" pos="-0.013 -0.14199999871210736 -0.03025020675723656" quat="0.7071068234769445 -0.707106738896148 0.0 0.0">
+              <joint name="left_shoulder_yaw_02" type="hinge" range="-1.7453293 1.7453293" axis="0 0 1" />
+              <inertial pos="0.0017411616388135823 -0.0031280919212400083 -0.09610515410729122" quat="1.0 0.0 0.0 0.0" mass="0.8639227300000001" diaginertia="0.003003535191347657 0.0027890615217899565 0.0008941286732271809" />
+              <geom name="R_Bicep_Lower_Drive_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="R_Bicep_Lower_Drive_collision.stl" rgba="0 0 0 0" />
+              <geom name="R_Bicep_Lower_Drive_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="R_Bicep_Lower_Drive_material" type="mesh" mesh="R_Bicep_Lower_Drive.stl" />
+              <body name="R_Forearm_Upper_Structural" pos="0.01849999579319584 -0.010000000495705515 -0.13699999839332602" quat="0.49999999052657385 -0.5000000228708746 -0.4999999960759779 0.499999990526573">
+                <joint name="left_elbow_02" type="hinge" range="0 2.5307274" axis="0 0 1" />
+                <inertial pos="0.01609026283073225 0.05904894315785105 0.014469685328960948" quat="1.0 0.0 0.0 0.0" mass="0.67694019" diaginertia="0.0013931469503859005 0.0006896925851535309 0.0013834881101174952" />
+                <geom name="R_Forearm_Upper_Structural_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="R_Forearm_Upper_Structural_collision.stl" rgba="0 0 0 0" />
+                <geom name="R_Forearm_Upper_Structural_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="R_Forearm_Upper_Structural_material" type="mesh" mesh="R_Forearm_Upper_Structural.stl" />
+                <body name="KB-C-501X_Bayonet_Adapter_Hard_Stop" pos="0.0173500001 0.1065 0.018000000000000002" quat="0.49999998839744764 0.5000000249999996 0.49999997500000004 -0.500000011602551">
+                  <joint name="left_wrist_02" type="hinge" range="-1.7453293 1.7453293" axis="0 0 1" />
+                  <inertial pos="-0.0025711914314223063 3.507378735866289e-06 -0.03937061937464469" quat="1.0 0.0 0.0 0.0" mass="0.571798567" diaginertia="0.0007498682482275756 0.0007200954438047711 0.0005812785366945832" />
+                  <geom name="KB-C-501X_Bayonet_Adapter_Hard_Stop_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="KB-C-501X_Bayonet_Adapter_Hard_Stop.convex.stl" rgba="0 0 0 0" />
+                  <geom name="KB-C-501X_Bayonet_Adapter_Hard_Stop_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="KB-C-501X_Bayonet_Adapter_Hard_Stop_material" type="mesh" mesh="KB-C-501X_Bayonet_Adapter_Hard_Stop.stl" />
+                </body>
               </body>
             </body>
           </body>
         </body>
-      </body>
-      <body name="KB-C-101L_ShldYokeROLL" pos="-0.12495 -0.000737256 0.337507" quat="0.5 -0.5 -0.5 0.5">
-        <inertial pos="0.00518945 -0.00334428 0.0445274" quat="0.595797 0.385204 0.539419 0.45351" mass="0.545099" diaginertia="0.00137432 0.00116155 0.000942909" />
-        <joint name="right_shoulder_pitch_03" pos="0 0 0" axis="0 0 -1" range="-1.91986 3.49066" actuatorfrcrange="-80 80" />
-        <geom type="mesh" rgba="0.615686 0.811765 0.929412 1" mesh="KB-C-101L_ShldYokeROLL" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
-        <geom type="mesh" rgba="0.615686 0.811765 0.929412 1" mesh="KB-C-101L_ShldYokeROLL" />
-        <body name="RS03_4" pos="0.02525 0 0.075" quat="-1.64085e-08 0.707107 1.64085e-08 0.707107">
-          <inertial pos="0.00553364 -0.0442196 -0.0297116" quat="0.4655 0.531351 -0.471257 0.528103" mass="1.86146" diaginertia="0.00824155 0.00778052 0.0020438" />
-          <joint name="right_shoulder_roll_03" pos="0 0 0" axis="0 0 1" range="-0.488692 1.48353" actuatorfrcrange="-80 80" />
-          <geom type="mesh" rgba="0.615686 0.811765 0.929412 1" mesh="RS03_4" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
-          <geom type="mesh" rgba="0.615686 0.811765 0.929412 1" mesh="RS03_4" />
-          <body name="L_Bicep_Lower_Drive" pos="0.013 -0.141 -0.0302502" quat="0.707107 -0.707107 0 0">
-            <inertial pos="-0.00172376 -0.00312338 -0.0960877" quat="0.998073 -0.0429053 -0.0442889 0.00694271" mass="0.864297" diaginertia="0.0030215 0.00280439 0.000863807" />
-            <joint name="right_shoulder_yaw_02" pos="0 0 0" axis="0 0 1" range="-1.74533 1.74533" actuatorfrcrange="-80 80" />
-            <geom type="mesh" rgba="0.764706 0.545098 0.803922 1" mesh="L_Bicep_Lower_Drive" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
-            <geom type="mesh" rgba="0.764706 0.545098 0.803922 1" mesh="L_Bicep_Lower_Drive" />
-            <body name="L_Forearm_Upper_Drive" pos="-0.0175 -0.01 -0.137" quat="0.5 0.5 0.5 0.5">
-              <inertial pos="0.0160893 -0.0590493 0.0144693" quat="0.70963 0.622865 0.243183 -0.222094" mass="0.676937" diaginertia="0.00140505 0.00138276 0.000678509" />
-              <joint name="right_elbow_02" pos="0 0 0" axis="0 0 1" range="-2.53073 0" actuatorfrcrange="-80 80" />
-              <geom type="mesh" rgba="0.615686 0.811765 0.929412 1" mesh="L_Forearm_Upper_Drive" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
-              <geom type="mesh" rgba="0.615686 0.811765 0.929412 1" mesh="L_Forearm_Upper_Drive" />
-              <body name="KB-C-501X_Bayonet_Adapter_Hard_Stop_2" pos="0.01735 -0.1055 0.018" quat="0.5 0.5 -0.5 0.5">
-                <inertial pos="0.00257119 3.50757e-06 0.0393706" quat="0.999406 0.0010268 0.0344309 0.00073833" mass="0.571799" diaginertia="0.000750674 0.000720096 0.000580472" />
-                <joint name="right_wrist_02" pos="0 0 0" axis="0 0 -1" range="-1.74533 1.74533" actuatorfrcrange="-80 80" />
-                <geom type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="KB-C-501X_Bayonet_Adapter_Hard_Stop_2" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
-                <geom type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="KB-C-501X_Bayonet_Adapter_Hard_Stop_2" />
+        <body name="KB-C-101L_ShldYokeROLL" pos="-0.12595002472470498 -0.0007372554994855747 0.33750651981315316" quat="0.5000000021291257 -0.5000000112683226 -0.4999999844734263 0.5000000021291249">
+          <joint name="right_shoulder_pitch_03" type="hinge" range="-1.9198622 3.4906585" axis="0 0 -1" />
+          <inertial pos="0.005189448927249461 -0.0033442798689079967 0.04452743143713337" quat="1.0 0.0 0.0 0.0" mass="0.5450985750000001" diaginertia="0.000946335188923059 0.0013557994541993801 0.0011766514582420865" />
+          <geom name="KB-C-101L_ShldYokeROLL_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="KB-C-101L_ShldYokeROLL_material" type="mesh" mesh="KB-C-101L_ShldYokeROLL.stl" />
+          <body name="RS03_6" pos="0.024250000000000004 -4.6410206666284833e-11 0.0750000000267949" quat="-1.64084861448314e-08 0.707106790659974 1.6408485705167716e-08 0.7071067717131209">
+            <joint name="right_shoulder_roll_03" type="hinge" range="-0.48869219 1.4835299" axis="0 0 1" />
+            <inertial pos="0.0055336383154532395 -0.04421963407414807 -0.02971155273896361" quat="1.0 0.0 0.0 0.0" mass="1.86146043" diaginertia="0.0076944721487699815 0.0021303412001471567 0.008241064234760254" />
+            <geom name="RS03_6_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="RS03_6_collision.stl" rgba="0 0 0 0" />
+            <geom name="RS03_6_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="RS03_material_6" type="mesh" mesh="RS03_6.stl" />
+            <body name="L_Bicep_Lower_Drive" pos="0.012999999999999998 -0.14199999871210692 -0.030250213106331834" quat="0.7071068209385776 -0.7071067414345152 0.0 0.0">
+              <joint name="right_shoulder_yaw_02" type="hinge" range="-1.7453293 1.7453293" axis="0 0 1" />
+              <inertial pos="-0.0017237583507574645 -0.0031233771479135383 -0.09608773793030688" quat="1.0 0.0 0.0 0.0" mass="0.86429688" diaginertia="0.0030043829770575164 0.002790430770809992 0.0008948845399314567" />
+              <geom name="L_Bicep_Lower_Drive_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="L_Bicep_Lower_Drive_collision.stl" rgba="0 0 0 0" />
+              <geom name="L_Bicep_Lower_Drive_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="L_Bicep_Lower_Drive_material" type="mesh" mesh="L_Bicep_Lower_Drive.stl" />
+              <body name="L_Forearm_Upper_Drive" pos="-0.01849999632909377 -0.009999999504294511 -0.13700000085641692" quat="0.5000000228708743 0.4999999905265736 0.49999999052657323 0.499999996075978">
+                <joint name="right_elbow_02" type="hinge" range="-2.5307274 0" axis="0 0 1" />
+                <inertial pos="0.01608930935043711 -0.05904931390894698 0.014469293934365857" quat="1.0 0.0 0.0 0.0" mass="0.67693693" diaginertia="0.001393125691692786 0.0006896973269303887 0.001383494899296689" />
+                <geom name="L_Forearm_Upper_Drive_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="L_Forearm_Upper_Drive_collision.stl" rgba="0 0 0 0" />
+                <geom name="L_Forearm_Upper_Drive_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="L_Forearm_Upper_Drive_material" type="mesh" mesh="L_Forearm_Upper_Drive.stl" />
+                <body name="KB-C-501X_Bayonet_Adapter_Hard_Stop_2" pos="0.01734999994641021 -0.1065 0.018" quat="0.5000000133974483 0.4999999999999999 -0.49999999999999983 0.4999999866025518">
+                  <joint name="right_wrist_02" type="hinge" range="-1.7453293 1.7453293" axis="0 0 -1" />
+                  <inertial pos="0.0025711916062907607 3.5075700050043644e-06 0.039370619375316135" quat="1.0 0.0 0.0 0.0" mass="0.571798567" diaginertia="0.0007498682482197616 0.000720095439536694 0.0005812785324046792" />
+                  <geom name="KB-C-501X_Bayonet_Adapter_Hard_Stop_2_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="KB-C-501X_Bayonet_Adapter_Hard_Stop_2.convex.stl" rgba="0 0 0 0" />
+                  <geom name="KB-C-501X_Bayonet_Adapter_Hard_Stop_2_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="KB-C-501X_Bayonet_Adapter_Hard_Stop_material_2" type="mesh" mesh="KB-C-501X_Bayonet_Adapter_Hard_Stop_2.stl" />
+                </body>
               </body>
             </body>
           </body>
         </body>
+        <site name="imu" pos="-4.488159466925432e-05 0.009977114961696199 0.40030576959807607" quat="0.002413754053603244 -0.99999708689144 4.996751611903313e-08 -1.351809638104972e-08" />
       </body>
+      <site name="base_site" pos="0 0 0" quat="1 0 0 0" />
     </body>
   </worldbody>
 
   <actuator>
-    <motor name="right_hip_pitch_04" joint="right_hip_pitch_04" ctrllimited="true" ctrlrange="-80 80" gear="1" />
-    <motor name="right_hip_roll_03" joint="right_hip_roll_03" ctrllimited="true" ctrlrange="-80 80" gear="1" />
-    <motor name="right_hip_yaw_03" joint="right_hip_yaw_03" ctrllimited="true" ctrlrange="-80 80" gear="1" />
-    <motor name="right_knee_04" joint="right_knee_04" ctrllimited="true" ctrlrange="-80 80" gear="1" />
-    <motor name="right_ankle_02" joint="right_ankle_02" ctrllimited="true" ctrlrange="-80 80" gear="1" />
-    <motor name="left_hip_pitch_04" joint="left_hip_pitch_04" ctrllimited="true" ctrlrange="-80 80" gear="1" />
-    <motor name="left_hip_roll_03" joint="left_hip_roll_03" ctrllimited="true" ctrlrange="-80 80" gear="1" />
-    <motor name="left_hip_yaw_03" joint="left_hip_yaw_03" ctrllimited="true" ctrlrange="-80 80" gear="1" />
-    <motor name="left_knee_04" joint="left_knee_04" ctrllimited="true" ctrlrange="-80 80" gear="1" />
-    <motor name="left_ankle_02" joint="left_ankle_02" ctrllimited="true" ctrlrange="-80 80" gear="1" />
-    <motor name="left_shoulder_pitch_03" joint="left_shoulder_pitch_03" ctrllimited="true" ctrlrange="-80 80" gear="1" />
-    <motor name="left_shoulder_roll_03" joint="left_shoulder_roll_03" ctrllimited="true" ctrlrange="-80 80" gear="1" />
-    <motor name="left_shoulder_yaw_02" joint="left_shoulder_yaw_02" ctrllimited="true" ctrlrange="-80 80" gear="1" />
-    <motor name="left_elbow_02" joint="left_elbow_02" ctrllimited="true" ctrlrange="-80 80" gear="1" />
-    <motor name="left_wrist_02" joint="left_wrist_02" ctrllimited="true" ctrlrange="-80 80" gear="1" />
-    <motor name="right_shoulder_pitch_03" joint="right_shoulder_pitch_03" ctrllimited="true" ctrlrange="-80 80" gear="1" />
-    <motor name="right_shoulder_roll_03" joint="right_shoulder_roll_03" ctrllimited="true" ctrlrange="-80 80" gear="1" />
-    <motor name="right_shoulder_yaw_02" joint="right_shoulder_yaw_02" ctrllimited="true" ctrlrange="-80 80" gear="1" />
-    <motor name="right_elbow_02" joint="right_elbow_02" ctrllimited="true" ctrlrange="-80 80" gear="1" />
-    <motor name="right_wrist_02" joint="right_wrist_02" ctrllimited="true" ctrlrange="-80 80" gear="1" />
+    <position name="right_hip_pitch_04_ctrl" joint="right_hip_pitch_04" kp="250.00000000" kv="30.00000000" forcerange="-120.00000000 120.00000000" forcelimited="true" ctrlrange="-1.9198622 1.5707963" ctrllimited="true" />
+    <position name="right_hip_roll_03_ctrl" joint="right_hip_roll_03" kp="150.00000000" kv="8.00000000" forcerange="-60.00000000 60.00000000" forcelimited="true" ctrlrange="-2.6179939 0.20943951" ctrllimited="true" />
+    <position name="right_hip_yaw_02_ctrl" joint="right_hip_yaw_02" kp="20.00000000" kv="2.00000000" forcerange="-17.00000000 17.00000000" forcelimited="true" ctrlrange="-1.5707963 1.9198622" ctrllimited="true" />
+    <position name="left_knee_04_ctrl" joint="left_knee_04" kp="200.00000000" kv="8.00000000" forcerange="-120.00000000 120.00000000" forcelimited="true" ctrlrange="-2.6703538 0.0" ctrllimited="true" />
+    <position name="left_ankle_02_ctrl" joint="left_ankle_02" kp="80.00000000" kv="10.00000000" forcerange="-17.00000000 17.00000000" forcelimited="true" ctrlrange="-0.29670597 0.78539816" ctrllimited="true" />
+    <position name="left_hip_pitch_04_ctrl" joint="left_hip_pitch_04" kp="250.00000000" kv="30.00000000" forcerange="-120.00000000 120.00000000" forcelimited="true" ctrlrange="-1.5707963 1.9198622" ctrllimited="true" />
+    <position name="left_hip_roll_03_ctrl" joint="left_hip_roll_03" kp="150.00000000" kv="8.00000000" forcerange="-60.00000000 60.00000000" forcelimited="true" ctrlrange="-0.20943951 2.6179939" ctrllimited="true" />
+    <position name="left_hip_yaw__ctrl" joint="left_hip_yaw_" kp="20.00000000" kv="2.00000000" forcerange="-17.00000000 17.00000000" forcelimited="true" ctrlrange="-1.5707963 1.9198622" ctrllimited="true" />
+    <position name="right_knee_04_ctrl" joint="right_knee_04" kp="200.00000000" kv="8.00000000" forcerange="-120.00000000 120.00000000" forcelimited="true" ctrlrange="0.0 2.6703538" ctrllimited="true" />
+    <position name="right_ankle_02_ctrl" joint="right_ankle_02" kp="80.00000000" kv="10.00000000" forcerange="-17.00000000 17.00000000" forcelimited="true" ctrlrange="-0.29670597 0.78539816" ctrllimited="true" />
+    <position name="left_shoulder_pitch_03_ctrl" joint="left_shoulder_pitch_03" kp="150.00000000" kv="8.00000000" forcerange="-60.00000000 60.00000000" forcelimited="true" ctrlrange="-1.9198622 3.4906585" ctrllimited="true" />
+    <position name="left_shoulder_roll_03_ctrl" joint="left_shoulder_roll_03" kp="150.00000000" kv="8.00000000" forcerange="-60.00000000 60.00000000" forcelimited="true" ctrlrange="-1.4835299 0.48869219" ctrllimited="true" />
+    <position name="left_shoulder_yaw_02_ctrl" joint="left_shoulder_yaw_02" kp="50.00000000" kv="5.00000000" forcerange="-17.00000000 17.00000000" forcelimited="true" ctrlrange="-1.7453293 1.7453293" ctrllimited="true" />
+    <position name="left_elbow_02_ctrl" joint="left_elbow_02" kp="50.00000000" kv="5.00000000" forcerange="-17.00000000 17.00000000" forcelimited="true" ctrlrange="0.0 2.5307274" ctrllimited="true" />
+    <position name="left_wrist_02_ctrl" joint="left_wrist_02" kp="20.00000000" kv="2.00000000" forcerange="-17.00000000 17.00000000" forcelimited="true" ctrlrange="-1.7453293 1.7453293" ctrllimited="true" />
+    <position name="right_shoulder_pitch_03_ctrl" joint="right_shoulder_pitch_03" kp="150.00000000" kv="8.00000000" forcerange="-60.00000000 60.00000000" forcelimited="true" ctrlrange="-1.9198622 3.4906585" ctrllimited="true" />
+    <position name="right_shoulder_roll_03_ctrl" joint="right_shoulder_roll_03" kp="150.00000000" kv="8.00000000" forcerange="-60.00000000 60.00000000" forcelimited="true" ctrlrange="-0.48869219 1.4835299" ctrllimited="true" />
+    <position name="right_shoulder_yaw_02_ctrl" joint="right_shoulder_yaw_02" kp="50.00000000" kv="5.00000000" forcerange="-17.00000000 17.00000000" forcelimited="true" ctrlrange="-1.7453293 1.7453293" ctrllimited="true" />
+    <position name="right_elbow_02_ctrl" joint="right_elbow_02" kp="50.00000000" kv="5.00000000" forcerange="-17.00000000 17.00000000" forcelimited="true" ctrlrange="-2.5307274 0.0" ctrllimited="true" />
+    <position name="right_wrist_02_ctrl" joint="right_wrist_02" kp="20.00000000" kv="2.00000000" forcerange="-17.00000000 17.00000000" forcelimited="true" ctrlrange="-1.7453293 1.7453293" ctrllimited="true" />
   </actuator>
 
   <sensor>
-    <actuatorpos name="right_hip_pitch_04_p" actuator="right_hip_pitch_04" />
-    <actuatorvel name="right_hip_pitch_04_v" actuator="right_hip_pitch_04" />
-    <actuatorfrc name="right_hip_pitch_04_f" actuator="right_hip_pitch_04" noise="0.001" />
-    <actuatorpos name="right_hip_roll_03_p" actuator="right_hip_roll_03" />
-    <actuatorvel name="right_hip_roll_03_v" actuator="right_hip_roll_03" />
-    <actuatorfrc name="right_hip_roll_03_f" actuator="right_hip_roll_03" noise="0.001" />
-    <actuatorpos name="right_hip_yaw_03_p" actuator="right_hip_yaw_03" />
-    <actuatorvel name="right_hip_yaw_03_v" actuator="right_hip_yaw_03" />
-    <actuatorfrc name="right_hip_yaw_03_f" actuator="right_hip_yaw_03" noise="0.001" />
-    <actuatorpos name="right_knee_04_p" actuator="right_knee_04" />
-    <actuatorvel name="right_knee_04_v" actuator="right_knee_04" />
-    <actuatorfrc name="right_knee_04_f" actuator="right_knee_04" noise="0.001" />
-    <actuatorpos name="right_ankle_02_p" actuator="right_ankle_02" />
-    <actuatorvel name="right_ankle_02_v" actuator="right_ankle_02" />
-    <actuatorfrc name="right_ankle_02_f" actuator="right_ankle_02" noise="0.001" />
-    <actuatorpos name="left_hip_pitch_04_p" actuator="left_hip_pitch_04" />
-    <actuatorvel name="left_hip_pitch_04_v" actuator="left_hip_pitch_04" />
-    <actuatorfrc name="left_hip_pitch_04_f" actuator="left_hip_pitch_04" noise="0.001" />
-    <actuatorpos name="left_hip_roll_03_p" actuator="left_hip_roll_03" />
-    <actuatorvel name="left_hip_roll_03_v" actuator="left_hip_roll_03" />
-    <actuatorfrc name="left_hip_roll_03_f" actuator="left_hip_roll_03" noise="0.001" />
-    <actuatorpos name="left_hip_yaw_03_p" actuator="left_hip_yaw_03" />
-    <actuatorvel name="left_hip_yaw_03_v" actuator="left_hip_yaw_03" />
-    <actuatorfrc name="left_hip_yaw_03_f" actuator="left_hip_yaw_03" noise="0.001" />
-    <actuatorpos name="left_knee_04_p" actuator="left_knee_04" />
-    <actuatorvel name="left_knee_04_v" actuator="left_knee_04" />
-    <actuatorfrc name="left_knee_04_f" actuator="left_knee_04" noise="0.001" />
-    <actuatorpos name="left_ankle_02_p" actuator="left_ankle_02" />
-    <actuatorvel name="left_ankle_02_v" actuator="left_ankle_02" />
-    <actuatorfrc name="left_ankle_02_f" actuator="left_ankle_02" noise="0.001" />
-    <actuatorpos name="left_shoulder_pitch_03_p" actuator="left_shoulder_pitch_03" />
-    <actuatorvel name="left_shoulder_pitch_03_v" actuator="left_shoulder_pitch_03" />
-    <actuatorfrc name="left_shoulder_pitch_03_f" actuator="left_shoulder_pitch_03" noise="0.001" />
-    <actuatorpos name="left_shoulder_roll_03_p" actuator="left_shoulder_roll_03" />
-    <actuatorvel name="left_shoulder_roll_03_v" actuator="left_shoulder_roll_03" />
-    <actuatorfrc name="left_shoulder_roll_03_f" actuator="left_shoulder_roll_03" noise="0.001" />
-    <actuatorpos name="left_shoulder_yaw_02_p" actuator="left_shoulder_yaw_02" />
-    <actuatorvel name="left_shoulder_yaw_02_v" actuator="left_shoulder_yaw_02" />
-    <actuatorfrc name="left_shoulder_yaw_02_f" actuator="left_shoulder_yaw_02" noise="0.001" />
-    <actuatorpos name="left_elbow_02_p" actuator="left_elbow_02" />
-    <actuatorvel name="left_elbow_02_v" actuator="left_elbow_02" />
-    <actuatorfrc name="left_elbow_02_f" actuator="left_elbow_02" noise="0.001" />
-    <actuatorpos name="left_wrist_02_p" actuator="left_wrist_02" />
-    <actuatorvel name="left_wrist_02_v" actuator="left_wrist_02" />
-    <actuatorfrc name="left_wrist_02_f" actuator="left_wrist_02" noise="0.001" />
-    <actuatorpos name="right_shoulder_pitch_03_p" actuator="right_shoulder_pitch_03" />
-    <actuatorvel name="right_shoulder_pitch_03_v" actuator="right_shoulder_pitch_03" />
-    <actuatorfrc name="right_shoulder_pitch_03_f" actuator="right_shoulder_pitch_03" noise="0.001" />
-    <actuatorpos name="right_shoulder_roll_03_p" actuator="right_shoulder_roll_03" />
-    <actuatorvel name="right_shoulder_roll_03_v" actuator="right_shoulder_roll_03" />
-    <actuatorfrc name="right_shoulder_roll_03_f" actuator="right_shoulder_roll_03" noise="0.001" />
-    <actuatorpos name="right_shoulder_yaw_02_p" actuator="right_shoulder_yaw_02" />
-    <actuatorvel name="right_shoulder_yaw_02_v" actuator="right_shoulder_yaw_02" />
-    <actuatorfrc name="right_shoulder_yaw_02_f" actuator="right_shoulder_yaw_02" noise="0.001" />
-    <actuatorpos name="right_elbow_02_p" actuator="right_elbow_02" />
-    <actuatorvel name="right_elbow_02_v" actuator="right_elbow_02" />
-    <actuatorfrc name="right_elbow_02_f" actuator="right_elbow_02" noise="0.001" />
-    <actuatorpos name="right_wrist_02_p" actuator="right_wrist_02" />
-    <actuatorvel name="right_wrist_02_v" actuator="right_wrist_02" />
-    <actuatorfrc name="right_wrist_02_f" actuator="right_wrist_02" noise="0.001" />
-    <framequat name="orientation" objtype="site" noise="0.001" objname="imu" />
-    <gyro name="angular-velocity" site="imu" noise="0.005" cutoff="34.9" />
+    <accelerometer name="imu_acc" site="imu" noise="0.01" />
+    <gyro name="imu_gyro" site="imu" noise="0.01" />
+    <magnetometer name="imu_mag" site="imu" noise="0.05" />
+    <framepos name="base_link_pos" objtype="site" objname="imu" />
+    <framequat name="base_link_quat" objtype="site" objname="imu" />
+    <framelinvel name="base_link_vel" objtype="site" objname="imu" />
+    <frameangvel name="base_link_ang_vel" objtype="site" objname="imu" />
   </sensor>
 </mujoco>
