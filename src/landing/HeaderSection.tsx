@@ -12,7 +12,7 @@ const HeaderSection = () => {
 
   return (
     <>
-      <header className="col-span-full flex flex-row min-h-[90svh] auto-rows-auto items-center text-foreground bg-black -mx-[5vw] px-[5vw] gap-10 relative">
+      <header className="col-span-full flex flex-row min-h-[90svh] auto-rows-auto items-center text-foreground bg-black -mx-[5vw] px-[5vw] gap-10">
         <div className="flex flex-col w-full md:w-auto self-end gap-3 md:gap-5 justify-center items-start z-10">
           <div className="flex flex-col w-full md:w-auto md:gap-4">
             <h1 className="text-4xl md:text-[4.2rem] tracking-tight whitespace-nowrap">
@@ -32,7 +32,7 @@ const HeaderSection = () => {
           </CTAButton>
         </div>
         <div
-          className="absolute flex flex-col w-full items-end flex-1 top-0 lg:h-full min-h-[16rem] z-[0]"
+          className="absolute flex flex-col w-full items-end flex-1 top-0 lg:h-full min-h-[16rem]"
           ref={ref}
         >
           <RobotWrapper />
