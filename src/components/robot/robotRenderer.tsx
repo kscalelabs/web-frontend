@@ -14,7 +14,7 @@ import { SobelOperatorShader } from "three/examples/jsm/shaders/SobelOperatorSha
 
 const URDF_URL = "/cad/gpr-20241204.urdf";
 const SCALE = 3;
-const TRANSLATE_Y = 1.2;
+const TRANSLATE_Y = 0.5;
 
 interface Waypoint {
   start: number;
@@ -103,8 +103,9 @@ const RobotRenderer: React.FC = () => {
       updateMaterials();
 
       // Correcting for the robot initial size and position.
-      robot.rotateY(Math.PI / 2);
-      robot.translateY(TRANSLATE_Y);
+      // robot.rotateY(Math.PI / 2);
+      robot.rotateX(-Math.PI / 2);
+      robot.translateZ(TRANSLATE_Y);
       robot.scale.set(SCALE, SCALE, SCALE);
 
       const controls = new OrbitControls(camera, renderer.domElement);
