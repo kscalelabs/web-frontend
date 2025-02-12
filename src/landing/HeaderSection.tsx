@@ -12,7 +12,7 @@ const HeaderSection = () => {
 
   return (
     <>
-      <header className="col-span-full flex flex-col md:flex-row min-h-[90svh] auto-rows-auto justify-end md:justify-start items-center text-foreground bg-black -mx-[5vw] px-[5vw] gap-6 md:gap-10">
+      <header className="col-span-full flex flex-col md:flex-row min-h-[90svh] auto-rows-auto justify-end md:justify-start items-center text-foreground -mx-[5vw] px-[5vw] gap-6 md:gap-10">
         <div className="flex order-2 md:order-1 flex-col w-full md:w-auto self-end gap-3 md:gap-5 justify-center items-start z-10">
           <div className="flex flex-col w-full md:w-auto md:gap-4">
             <h1 className="text-4xl md:text-[4.2rem] tracking-tight whitespace-nowrap">
