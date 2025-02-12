@@ -17,7 +17,7 @@ const RobotRendererWrapper: React.FC = () => {
       (entries) => {
         if (entries[0].isIntersecting) {
           setIsVisible(true);
-          observer.disconnect(); // Load component only once
+          observer.disconnect();
         }
       },
       { threshold: 0.1 }
@@ -29,8 +29,14 @@ const RobotRendererWrapper: React.FC = () => {
   }, []);
 
   return (
-    <div ref={mountRef} className="w-full h-full overflow-hidden rounded-lg">
-      {isVisible && <RobotRenderer />}
+    <div className="h-full items-start absolute flex right-0 w-[48vw] z-50 top-0">
+      <div
+        ref={mountRef}
+        id="test"
+        className="w-full h-[calc(100vh-5rem)] top-20 sticky rounded-lg"
+      >
+        {isVisible && <RobotRenderer />}
+      </div>
     </div>
   );
 };
