@@ -14,7 +14,7 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
   const [, setDesktopNavHidden] = useState(false);
   const [desktopPreviousScroll, setPrevScroll] = useState(scrollY.get());
   const [mobileShouldOpenBurger, setMobileShouldOpenBurger] = useState(false);
-  const safelist: string[] = ["-col-end-2", "-col-end-1"];
+
   // const safelist: string[] = ["-col-end-4", "-col-end-3", "-col-end-2", "-col-end-1"];
 
   function update(current: number, previous: number): void {
@@ -66,53 +66,55 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
 
   const desktopNavBar = () => {
     return (
-      <>
+      <div className="col-span-full flex flex-row justify-between overflow-hidden py-4 items-center h-fit px-[5vw] -mx-[5vw]">
         <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} href={href} />
-        {navigationConfig.map((navItem, index) => {
-          return (
-            <motion.a
-              key={index}
-              href={navItem.link}
-              target={navItem.isExternal ? "_blank" : "_self"}
-              className={clsx(
-                safelist[index] +
-                  " flex justify-end items-end 3xl:text-[0.85rem] 2xl:text-[0.75rem] lg:text-[1rem] md:text-[0.65rem] " +
-                  " select-none self-center pointer-events-auto h-full ",
-                atTop ? "text-white" : "text-foreground"
-              )}
-              initial="initial"
-              whileHover="hover"
-              transition={{ duration: 0.2, ease: "circOut" }}
-            >
-              <div className={clsx("flex flex-row gap-2 items-center size-fit ")}>
-                {navItem.name}
-                {navItem.isExternal && (
-                  <motion.svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    variants={{
-                      initial: { x: 0 },
-                      hover: { x: 4 },
-                    }}
-                  >
-                    <path d="M7 17L17 7" />
-                    <path d="M7 7h10v10" />
-                  </motion.svg>
+        <div className="flex flex-row gap-4">
+          {navigationConfig.map((navItem, index) => {
+            return (
+              <motion.a
+                key={index}
+                href={navItem.link}
+                target={navItem.isExternal ? "_blank" : "_self"}
+                className={clsx(
+                  " flex justify-end items-end 3xl:text-[0.85rem] 2xl:text-[0.75rem] text-[1rem] " +
+                    " select-none self-center pointer-events-auto h-full ",
+                  atTop ? "text-white" : "text-foreground"
                 )}
-              </div>
-            </motion.a>
-          );
-        })}
-      </>
+                initial="initial"
+                whileHover="hover"
+                transition={{ duration: 0.2, ease: "circOut" }}
+              >
+                <div className={clsx("flex flex-row gap-2 items-center size-fit ")}>
+                  {navItem.name}
+                  {navItem.isExternal && (
+                    <motion.svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      variants={{
+                        initial: { x: 0 },
+                        hover: { x: 4 },
+                      }}
+                    >
+                      <path d="M7 17L17 7" />
+                      <path d="M7 7h10v10" />
+                    </motion.svg>
+                  )}
+                </div>
+              </motion.a>
+            );
+          })}
+        </div>
+      </div>
     );
   };
+
   useEffect(() => {
     setMobileShouldOpenBurger(false);
     lenis?.start();
