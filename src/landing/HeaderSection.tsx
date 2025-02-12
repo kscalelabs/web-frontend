@@ -29,12 +29,12 @@ const HeaderSection = () => {
             Join us on Feb 22nd ↗
           </CTAButton>
         </div>
-        <div
+        {/* <div
           className="flex flex-col items-end relative h-[60svh] lg:h-full lg:w-full min-h-[16rem]"
           ref={ref}
         >
-          {/* <RobotWrapper /> */}
-        </div>
+          <RobotWrapper />
+        </div> */}
       </header>
       <div className="flex col-span-full pt-4 justify-center">
         <DownArrowIcon />
