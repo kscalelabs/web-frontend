@@ -24,7 +24,7 @@ const HeaderSection = () => {
             mode={FillMode.FILL}
             href={REGISTRATION_URL}
             variant={ColorVariant.RUST}
-            className="w-full md:px-24 whitespace-nowrap py-4 text-[1rem]"
+            className="w-full md:w-auto md:px-24 whitespace-nowrap py-4 text-[1rem]"
           >
             Join us on Feb 22nd ↗
           </CTAButton>
