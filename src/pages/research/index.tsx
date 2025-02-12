@@ -41,15 +41,13 @@ export default function ResearchIndex({ posts }: { posts: any[] }) {
       <NavBar />
       <div className="gap-y-4">
         <header className="col-span-full flex flex-row min-h-[90svh] auto-rows-auto items-center text-foreground bg-background relative overflow-hidden px-[5vw]">
-          <div className="flex flex-col self-end gap-5 justify-center items-start">
-            <div className="flex flex-col gap-4">
-              <h1 className="text-[4.2rem] tracking-tight">Beyond Black Boxes</h1>
-              <h4 className="text-[1.1rem] tracking-tight leading-snug">
-                Unraveling the science behind intelligent general-purpose
-                <br />
-                robots and shaping the future of human-machine interaction.
-              </h4>
-            </div>
+          <div className="flex flex-col self-end gap-1 md:gap-4 justify-center items-start">
+            <h1 className="text-4xl md:text-[4.2rem] tracking-tight">Beyond Black Boxes</h1>
+            <h4 className="text-base md:text-[1.1rem] tracking-tight leading-snug">
+              Unraveling the science behind intelligent general-purpose
+              <br className="hidden md:inline" />
+              robots and shaping the future of human-machine interaction.
+            </h4>
           </div>
         </header>
         <div className="flex col-span-full pt-4 justify-center">
@@ -62,12 +60,12 @@ export default function ResearchIndex({ posts }: { posts: any[] }) {
               href={`/research/${post.slug}`}
               className="flex flex-row justify-start w-full gap-4 border-b border-white/20 py-6"
             >
-              <div className="w-48 flex flex-col gap-2 py-2">
-                <p className="font-planar text-xs">{post.date}</p>
+              <div className="w-20 md:w-48 flex flex-col gap-2 py-2">
+                <p className="font-planar text-xs text-left">{post.date}</p>
                 <p className="font-planar text-foreground70 text-xs">{post.readingTime}</p>
               </div>
               <div className="flex flex-col w-full items-start justify-start gap-2">
-                <h3 className="text-2xl text-left font-planar">{post.title}</h3>
+                <h3 className="text-lg md:text-2xl text-left font-planar">{post.title}</h3>
                 <p className="text-foreground70 tracking-tight max-w-2xl leading-snug text-body text-left">
                   {post.description}
                 </p>
