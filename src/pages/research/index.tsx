@@ -44,7 +44,7 @@ export default function ResearchIndex({ posts }: { posts: any[] }) {
           <div className="flex flex-col self-end gap-1 md:gap-4 justify-center items-start">
             <h1 className="text-4xl md:text-[4.2rem] tracking-tight">Beyond Black Boxes</h1>
             <h4 className="text-base md:text-[1.1rem] tracking-tight leading-snug">
-              Unraveling the science behind intelligent general-purpose
+              Unraveling the science behind intelligent general-purpose{" "}
               <br className="hidden md:inline" />
               robots and shaping the future of human-machine interaction.
             </h4>
