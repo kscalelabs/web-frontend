@@ -3,7 +3,7 @@ import { photoPathAltText, photoPaths } from "@/components/util/photoPaths";
 
 const HeaderSection = () => {
   return (
-    <header className="col-span-full grid grid-cols-subgrid min-h-[90svh] auto-rows-auto items-end text-foreground bg-background relative overflow-hidden -mx-[5vw] px-[5vw]">
+    <header className="col-span-full grid grid-cols-subgrid min-h-[90svh] auto-rows-auto items-end text-foreground relative overflow-hidden -mx-[5vw] px-[5vw]">
       <div className="absolute inset-0">
         <Image
           sizes="100vw"
