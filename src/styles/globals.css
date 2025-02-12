@@ -76,7 +76,7 @@
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --background: #0f0f10ff;
+      --background: #000000ff;
       --foreground: #ede6e1ff;
       --logotype: #de4208ff;
       --background-0: #0f0f1000;
