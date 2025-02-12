@@ -29,12 +29,8 @@ const RobotRendererWrapper: React.FC = () => {
   }, []);
 
   return (
-    <div className="h-full items-start absolute flex right-0 w-[48vw] z-50 top-0">
-      <div
-        ref={mountRef}
-        id="test"
-        className="w-full h-[calc(100vh-5rem)] top-20 sticky rounded-lg"
-      >
+    <div className="h-full items-start md:absolute right-0 w1024:flex w1024:w-[45vw] 3xl:w-[48vw] z-50 top-0">
+      <div ref={mountRef} id="test" className="w-full h-[calc(100vh-5rem)] top-20 sticky">
         {isVisible && <RobotRenderer />}
       </div>
     </div>
