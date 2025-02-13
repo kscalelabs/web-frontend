@@ -50,6 +50,7 @@ const DURATION_S = 5;
 
 const RobotRenderer: React.FC = () => {
   const mountRef = useRef<HTMLDivElement | null>(null);
+  // STEP 1: Add a ref to store the robot object
   const robotRef = useRef<THREE.Object3D | null>(null);
   let effectSobel: ShaderPass;
   useEffect(() => {
@@ -85,7 +86,14 @@ const RobotRenderer: React.FC = () => {
     const loader = new URDFLoader();
     loader.load(URDF_URL, (robot: THREE.Object3D) => {
       scene.add(robot);
+
+      // NEW: Store the robot in the ref, so we can rotate this exact object later
+      robotRef.current = robot;
+
       robot.scale.set(SCALE, SCALE, SCALE);
+
+      // MOVE THE ROBOT UP BY 1 UNIT
+      robot.position.y += 0.4;
 
       const updateMaterials = () => {
         robot.traverse((child) => {
@@ -141,11 +149,18 @@ const RobotRenderer: React.FC = () => {
 
         // STEP 4b: Apply rotation from mouse
         if (robotRef.current) {
-          // Convert mouse position [0...width/height] to some rotation range
-          // Tweak the 0.005 factor to adjust how sensitive the rotation is
-          robotRef.current.rotation.x = (mouseY / window.innerHeight - 0.5) * Math.PI * 2 * 0.2 + -Math.PI / 2;
-          robotRef.current.rotation.z = (mouseX / window.innerWidth - 0.5) * Math.PI * 2 * 0.5;
-          robotRef.current.rotation.y = (mouseY / window.innerHeight - 0.5) * Math.PI * 2 * 0.02;
+          // Step 3a: Let's rotate the robot around X using mouseY
+          robotRef.current.rotation.x =
+            (mouseY / window.innerHeight - 0.5) * Math.PI * 2 * 0.05 +
+            -Math.PI / 2; // This sets a "neutral" tilt property and adds the up/down tilt
+
+          // Step 3b: Let's rotate the robot around Z using mouseX
+          robotRef.current.rotation.z =
+            (mouseX / window.innerWidth - 0.5) * Math.PI * 2 * 0.3; // This handles left/right roll
+
+          // Step 3c: If you want a slight yaw around Y, you can keep this small
+          robotRef.current.rotation.y =
+            (mouseX / window.innerWidth - 0.5) * Math.PI * 2 * 0.05;
         }
 
         composer.render();
@@ -224,6 +239,7 @@ const RobotRenderer: React.FC = () => {
     const handleMouseMove = (event: MouseEvent) => {
       mouseX = event.clientX;
       mouseY = event.clientY;
+      console.log("mouseX:", mouseX, "mouseY:", mouseY);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
