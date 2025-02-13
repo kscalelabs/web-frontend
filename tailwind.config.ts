@@ -14,9 +14,9 @@ const config: Config = {
     extend: {
       screens: {
         xs: "480px",
-        w1440: "1440px",
-        w1024: "1024px",
         w640: "640px",
+        w1024: "1024px",
+        w1440: "1440px",
         "2xl": "1440px",
         "3xl": "1536px",
         "4xl": "1920px",
