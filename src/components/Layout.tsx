@@ -4,7 +4,6 @@ import Navbar from "./navbar/navbar";
 import Footer from "./footer/footer";
 import { MDXProvider } from "@mdx-js/react";
 
-
 const mdxComponents = {
   Image,
 };
