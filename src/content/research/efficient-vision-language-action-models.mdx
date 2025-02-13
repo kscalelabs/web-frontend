@@ -2,20 +2,9 @@
 title: "Efficient Vision-Language-Action Models"
 description: "Improving inference speed of vision-language-action models for edge devices while preserving encoding power."
 date: "September 9, 2024"
-image: "/images/research/css-pattern1.png"
-author: Author
-readingTime: "8 min read"
+image: "/research/images/css-pattern1.png"
+author: Paweł Budzianowski
 ---
-
-<Image
-  src="/images/research/evla_architecture.webp"
-  alt="EVLA Architecture"
-  width={600}
-  height={300}
-/>
-
-## Introduction
-
 Vision-language models (VLMs) offer a fantastic opportunity to address a fundamental challenge in robotics: the scarcity of data. Models like [OpenVLA](https://openvla.github.io/) have demonstrated the potential of these approaches. However, deploying an 8B parameter model on edge devices presents significant challenges. In this post, we present a path to significantly improve the inference speed of vision-language-action (VLA) models while maintaining two core requirements:
 
 1. Adaptation of VLMs while preserving their encoding representation power.
@@ -28,39 +17,30 @@ Our proposed Edge VLA (EVLA) model satisfies both requirements, enabling easier 
 Models like OpenVLA require substantial computational resources, making deployment and testing on edge devices challenging. Just to host the model, 16GB VRAM is needed, necessitating devices like the Jetson AGX, which costs over $2,000. This high barrier to entry prevents widespread adoption and experimentation.
 
 Even with high-end hardware, these models are often too slow for practical manipulation tasks, running at only 1–2 Hz without significant optimization and quantization efforts. This limitation hinders real-time applications and research progress.
-
 While quantization methods and hardware-specific kernels can accelerate the model, these techniques alone may not yield the potential 10x improvements we seek.
 
 ## Our Approach: Balancing Efficiency and Performance
 
-## Joint Control vs. Autoregressive Prediction
+### Joint Control vs. Autoregressive Prediction
 
 Large language models are trained using a causal mask, which aligns with the natural way humans write text. However, when predicting end-effector positions or humanoid joint poses, it’s worth questioning whether such a restrictive structure is necessary. We demonstrate that autoregressive requirements are not essential for predicting end-effector positions. In our proposed setup, the pre-trained LLM outputs the end effector position at once. We have trained different models to validate that this change of prediction setup does not lower the encoding capabilities for both small and large variants. By adopting a joint control approach, we increase inference speed by a factor of 6. This advancement is crucial for real-time robotic control on edge devices.
 
-## Small Language Models (SLMs)
+### Small Language Models (SLMs)
 
 Secondly, the recent advancements in small language models (such as Phi, Gemma and many more) show the potential in making LLMs much more effective than early versions. These models, trained on a large number of tokens, effectively achieve performance comparable to larger models while requiring significantly less computational resources thanks to scaling laws. We have tested multiple different small foundation models achieving very comparable performance in the pre-training runs proving that we can do more with less greatly lowering the requirements for the hardware.
 
 ## Putting It All Together:
 
-The EVLA Architecture
 We have combined above two ideas to achieve required architectural improvements. First, we trained a VLM resulting in our base EVLA model. Key components include:
 
-## Qwen2 with 0.5B parameters for language processing.
+1. Qwen2 with 0.5B parameters for language processing.
+2. A two-part visual encoder using pretrained SigLIP and DinoV2 models, following the original OpenVLA recipe.
 
-A two-part visual encoder using pretrained SigLIP and DinoV2 models, following the original OpenVLA recipe.
-
-<Image
-  src="/images/research/evla_architecture.webp"
-  alt="The comparison of generation logic between OpenVLA and EVLA."
-  width={600}
-  height={300}
-/>
-
-### The comparison of generation logic between OpenVLA and EVLA.
-
-The pretraining phase is identical for both
-models. In phase two, the EVLA LLM is being retrained to generate end-effector position in an autoregressive fashion.
+<figure>
+  <img src="/research/images/evla_architecture.webp" alt="Comparison of OpenVLA vs EVLA" style={{ marginBottom: "0.1rem" }} />
+    <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}> The comparison of generation logic between OpenVLA and EVLA. The pretraining phase is identical for both
+models. In phase two, the EVLA LLM is being retrained to generate end-effector position in an autoregressive fashion.</figcaption>
+</figure>
 
 We adopt a standard approach by training a projection layer that maps the visual representation to the language model’s token space. Our pre-training dataset comprises of two subsets: 1) a 558K sample mixture of examples sourced from various captioning datasets, and 2) a 665K set of multimodal instruction-tuning examples composed of synthetic data. In total, the pre-training dataset contains 1.2M text-image pairs.
 
@@ -68,25 +48,17 @@ We adopt a standard approach by training a projection layer that maps the visual
 
 Having pretrained the foundation VLM, we explore the minimal setup to verify the strategy. We initially trained on the Bridge subset using one node with 8 GPUs. This quick experiment validated that our model could achieve similar performance compared to original 7B OpenVLA.
 
-<Image
-  src="/images/research/OpenVLA_vs_EVLA.webp"
-  alt="OpenVLA (yellow) versus EVLA (green) on the Bridge dataset smoothed with time-weighted EMA."
-  width={600}
-  height={300}
-/>
-
-### OpenVLA (yellow) versus EVLA (green) on the Bridge dataset smoothed with time-weighted EMA.
+<figure>
+  <img src="/research/images/OpenVLA_vs_EVLA.webp" alt="OpenVLA (yellow) versus EVLA (green) on the Bridge dataset smoothed with time-weighted EMA." style={{ marginBottom: "0.1rem" }}/>
+    <figcaption style={{ marginBottom: "1rem" , textAlign: "center" }}>OpenVLA (yellow) versus EVLA (green) on the Bridge dataset smoothed with time-weighted EMA.</figcaption>
+</figure>
 
 We then scaled up the training to use our full cluster to evaluate performance on [the OXE dataset](https://robotics-transformer-x.github.io/). While EVLA trains more slowly than its larger counterpart due to the dataset’s size, the training pass is 7x faster and allows for much larger batch sizes, effectively compensating for the slower training efficiency.
 
-<Image
-  src="/images/research/OpenVLA_vs_EVLA_OXE.webp"
-  alt="OpenVLA (grey) versus EVLA (pink) on the full OXE dataset smoothed with time-weighted EMA."
-  width={600}
-  height={300}
-/>
-
-### OpenVLA (grey) versus EVLA (pink) on the full OXE dataset smoothed with time-weighted EMA.
+<figure>
+  <img src="/research/images/OpenVLA_vs_EVLA_OXE.webp" alt="." style={{ marginBottom: "0.1rem" }}/>
+    <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}>OpenVLA (grey) versus EVLA (pink) on the full OXE dataset smoothed with time-weighted EMA.</figcaption>
+</figure>
 
 These early runs shows that adapting efficient and smaller LLMs to non-autoregressive objectives achieves similar training performance than the original larger counterparts.
 
@@ -94,14 +66,10 @@ These early runs shows that adapting efficient and smaller LLMs to non-autoregre
 
 Employing VLM for predicting end-effector position or whole body joint pose requires much faster inference speed than currently available LLM approaches. EVLA achieves both high-speed inference time but also lowers the memory requirements allowing to use cheaper hardware.
 
-<Image
-  src="/images/research/Evaluation_ A100.webp"
-  alt="Evaluation performed on A100–40GB."
-  width={600}
-  height={300}
-/>
-
-### Evaluation performed on A100–40GB.
+<figure>
+  <img src="/research/images/Evaluation_ A100.webp" alt="Evaluation performed on A100–40GB."     style={{ marginBottom: "0.1rem", width: "500px" }} />
+  <figcaption style={{ marginBottom: "1rem", textAlign: "center"  }}>Evaluation performed on A100–40GB.</figcaption>
+</figure>
 
 By using a smaller VLM and optimizing our architecture, you can achieve as expected significant inference speed improvements. It is worth noting that OpenVLA uses flash_attention2, while EVLA is evaluated in the eager mode. Advances in flexible and efficient attention mechanisms, such as those discussed in [the PyTorch blog on FlexAttention](https://pytorch.org/blog/flexattention/), are expected to push these numbers even lower in the near future. This size of the model also offers a potential to be deployed on CPU architectures.
 
