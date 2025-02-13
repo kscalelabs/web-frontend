@@ -1,25 +1,32 @@
 ---
-title: "Wait, That’s Not an Option: LLMs Robustness with In-correct Multiple-Choice Options"
+title: "LLMs Robustness with In-correct Multiple-Choice Options"
 description: "Exploring Reflective Judgment in language models and their ability to critically evaluate input even in flawed multiple-choice scenarios."
 date: "October 14, 2024"
-image: "/images/research/css-pattern4.png"
-author: Author
-readingTime: "6 min read"
+image: "/research/images/css-pattern4.png"
+author: Paweł Budzianowski and Gracjan Góral
 ---
-
-Reflective judgment is a critical process that enables individuals to evaluate and analyze information to form well-founded conclusions. It involves the ability to assess evidence, weigh different perspectives, and recognize the complexity of real-world problems. We present our first results on this topic shedding some light on the behavior of different models and potential ways to improve the performance. You can also see our project website and the Github code.
+Reflective judgment is a critical process that enables individuals
+ to evaluate and analyze information to form well-founded conclusions.
+  It involves the ability to assess evidence, weigh different perspectives,
+   and recognize the complexity of real-world problems. 
+   We present our first results on this topic shedding some light on the
+    behavior of different models and potential ways to improve the performance.
+     You can also see our project [website](https://sites.google.com/view/reflective-jugment/strona-g%C5%82%C3%B3wna?pli=1) and the [Github code](https://github.com/GracjanGoral/When-All-Options-Are-Wrong/tree/main).
 
 ## What do we measure?
 
-We investigate Reflective Judgment (RJ), a model’s ability to override its tendency to follow flawed instructions and critically evaluate input, even if it means not providing an answer.
+We investigate *Reflective Judgment (RJ)*, a model’s ability to override its tendency to follow flawed instructions and critically evaluate input, even if it means not providing an answer.
 
-## Why RJ?
+### Why RJ?
 
 Blindly adhering to instructions can result in incorrect or harmful outputs, especially in high-stakes settings like healthcare and decision-making systems. Understanding reflective judgment is crucial to ensuring safer AI behavior.
 
-<Image src="/images/research/why-rj.webp" alt="Why RJ?" width={600} height={300} />
+<figure>
+  <img src="/research/images/why-rj.webp" alt="Why RJ?" style={{ marginBottom: "0.3rem" }} />
+  <figcaption style={{ marginBottom: "1rem",  textAlign: "center" }}>Why RJ?</figcaption>
+</figure>
 
-## How do we measure RJ?
+### How do we measure RJ?
 
 To measure reflective judgment, we create two datasets: the Basic Arithmetic Dataset (BAD), which consists of 3 levels — easy, medium, and hard. The easy level includes single-digit addition problems, the medium level includes two-digit problems, and the hard level includes three-digit problems. In the BAD dataset, we provide questions with incorrect options. Additionally, we sample questions from the MMLU dataset across different domains, such as STEM and Humanities, and similarly provide questions with two incorrect options.
 
@@ -32,24 +39,30 @@ We evaluate how often models correctly identify situations where no valid answer
 3. Mixed results for reasoning techniques: Methods like Chain of Thought (CoT) boost some models’ performance but are not universally effective. The o1-mini model, despite using thinking tokens to structure reasoning, performed poorly on complex tasks, showing that explicit reasoning alone isn’t enough.
 4. Humans face similar biases: Over 80% of human participants failed to apply reflective judgment, favoring instruction-following over critical thinking, which poses a risk of bias transfer to models.
 
-<Image
-  src="/images/research/rj-score.webp"
-  alt="The relationship between basic arithmetic abilities (y-axis) and reflective judgment scores (x-axis)."
-  width={600}
-  height={300}
-/>
+<figure>
+  <img src="/research/images/rj-score.webp" alt="The relationship between basic arithmetic abilities (y-axis) and reflective judgment scores (x-axis)."    style={{ marginBottom: "0.3rem" }} />
+  <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}>The relationship between basic arithmetic abilities (y-axis) and reflective judgment scores (x-axis).</figcaption>
+</figure>
 
 We can see that most fine-tuned/aligned models obtain good results on tasks when the correct option is provided but perform poorly when faced with questions containing two incorrect options.
 
-<Image
-  src="/images/research/qwen-llama.webp"
-  alt="Performance of Llama 3.1 models (8B, 70B, 405B) and Qwen2.5 models (7B, 14B, 32B) on simple arithmetic tasks."
-  width={600}
-  height={300}
-/>
+<figure>
+  <img src="/research/images/qwen-llama.webp" alt="Performance of Llama 3.1 models (8B, 70B, 405B) and Qwen2.5 models (7B, 14B, 32B) on simple arithmetic tasks." />
+  <figcaption style={{ marginBottom: "1rem" }}>Performance of Llama 3.1 models (8B, 70B, 405B) and Qwen2.5 models (7B, 14B, 32B) on simple arithmetic tasks.</figcaption>
+</figure>
 
 Performance of Llama 3.1 models (8B, 70B, 405B) and Qwen2.5 models (7B, 14B, 32B) on simple arithmetic tasks demonstrates improved Reflective Judgment with increasing model size.
 
-We conducted an experiment on humans, showing similar patterns. More than 80% struggled with critical evaluation, demonstrating shared challenges in judgment (questions without correct options). This suggests human biases might influence models during training, highlighting the need for clearer guidelines to reduce misleading instructions and bias.
+We conducted an experiment on humans, showing similar patterns. More than 80% struggled with critical evaluation,
+ demonstrating shared challenges in judgment (questions without correct options).
+  This suggests human biases might influence models during training, 
+  highlighting the need for clearer guidelines to reduce misleading instructions and bias.
 
-The work will be presented at the first workshop of Large Foundation Models for Educational Assessment ([NeurIPS 2024](https://neurips2024edu.github.io/)). See you there!
+<figure>
+  <img src="/research/images/human_experiment.webp"  style={{ marginBottom: "0.3rem", width: "500px" }} />
+  <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}>Comparison of human and model performance.</figcaption>
+</figure>
+
+## Conclusions
+The work will be presented at the first workshop of Large Foundation Models for Educational Assessment
+([NeurIPS 2024](https://neurips2024edu.github.io/)). See you there!
