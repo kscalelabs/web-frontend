@@ -43,7 +43,7 @@ export default function ResearchPost({ source, frontMatter }: { source: any; fro
             <p>{frontMatter.author}</p>
             <p>{frontMatter.date}</p>
           </div>
-          <p className="text-foreground70">{frontMatter.readingTime}</p>  
+          <p className="text-foreground70">{frontMatter.readingTime}</p>
         </div>
       </header>
       <article className="mdx-content w-[90%] mx-auto !p-0">
