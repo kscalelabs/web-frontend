@@ -131,7 +131,7 @@ const RobotRenderer: React.FC = () => {
         // If you'd like to keep damping in, you can optionally keep controls.update()
         // but for a purely manual rotation, you can keep the line commented out.
         // controls.update();
-        
+
         // Update joint positions with a sinusoidal pattern
         const time = (Date.now() - startTime) / 1000;
         robot.traverse((child) => {
@@ -148,14 +148,11 @@ const RobotRenderer: React.FC = () => {
 
         if (robotRef.current) {
           robotRef.current.rotation.x =
-            (mouseY / window.innerHeight - 0.5) * Math.PI * 2 * 0.05 +
-            -Math.PI / 2; // This sets a "neutral" tilt property and adds the up/down tilt
+            (mouseY / window.innerHeight - 0.5) * Math.PI * 2 * 0.05 + -Math.PI / 2; // This sets a "neutral" tilt property and adds the up/down tilt
 
-          robotRef.current.rotation.z =
-            (mouseX / window.innerWidth - 0.5) * Math.PI * 2 * 0.3; // This handles left/right roll
+          robotRef.current.rotation.z = (mouseX / window.innerWidth - 0.5) * Math.PI * 2 * 0.3; // This handles left/right roll
 
-          robotRef.current.rotation.y =
-            (mouseX / window.innerWidth - 0.5) * Math.PI * 2 * 0.05;
+          robotRef.current.rotation.y = (mouseX / window.innerWidth - 0.5) * Math.PI * 2 * 0.05;
         }
 
         composer.render();
