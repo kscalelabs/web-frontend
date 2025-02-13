@@ -52,7 +52,7 @@ The graph below showcases $4$ levels, each with quantizer using a codebook of si
 Tokenizer with Residual Vector Quantizer.
 Each number references specific codebook vector at particular level. 
 
-<figure>
+<figure style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
   <img
     src="/research/images/rvq.png"
     alt="RVQ."
@@ -76,7 +76,7 @@ embeddings in the codebook to find the closest match. LFQ eliminates this comput
 Look up free quantization opens up efficient video
 modelling and shows promise for other modalities, including audio.
 
-<figure>
+<figure style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
   <img src="/research/images/lfq.png" alt="RVQ." style={{ width: "70%", marginBottom: "0.1rem" }} />
   <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}>
     {" "}
@@ -101,8 +101,8 @@ No code embeddings allows to improve the processing speed while maintaining
 the similar architecture as in the image or video modalities.
 KST - LFQ quantization with Semantic Alignment against HuBERT Tokens.
 
-<figure>
-  <img src="/research/images/kst.png" alt="RV Q." width="50%" style={{ marginBottom: "0.1rem" }} />
+<figure style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+  <img src="/research/images/kst.png" alt="RVQ." width="50%" style={{ marginBottom: "0.1rem" }} />
   <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}>
     {" "}
     KST - LFQ quantization with Semantic Alignment against HuBERT Tokens.
@@ -132,7 +132,9 @@ we randomly sampled $500$ speech samples from the LJSpeech test set.
 We focused on the semantic utility of the tokens by assessing content
 accuracy through Word Error Rate (WER), obtained by transcribing the reconstructed speech.
 
-<figure>
+{" "}
+
+<figure style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
   <img
     src="/research/images/table_lfq.png"
     alt="RVQ."
@@ -140,7 +142,6 @@ accuracy through Word Error Rate (WER), obtained by transcribing the reconstruct
     style={{ marginBottom: "0.1rem" }}
   />
   <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}>
-    {" "}
     Speech reconstruction results.
   </figcaption>
 </figure>
@@ -166,10 +167,6 @@ to encoded and subsequently decoded audio examples from different:
     <figcaption>Tokenizer reconstruction</figcaption>
   </figure>
 </div>
-
-{/_ We did not observe significant variations in reconstruction quality or performance
-across different codebook sizes within LFQ, therefore we present results only for the
-1024 codebook configuration. _/}
 
 ### Text-to-Speech
 
@@ -202,27 +199,15 @@ from just one voice actor. You can hear some samples here:
 
 Efficient tokenization across different modalities is fundamental to improving end-to-end approaches.
 We have demonstrated that efficient tokenization of video can be transferred to audio modality.
-{/\* You can try the model yourself by pulling one of the KST tokenizers:
-
-<div style={{ textAlign: 'left' }}>
-```python
-from kst import KST
-
-tokenizer = KST(model="kst_1_1024")
-codes = = tokenizer.encode(audio_input)
-audio = tokenizer.decode(codes)
-
-```
-</div>
-*/}
 
 ## References
+
 <div id="footnote-1">
-[1] [Even if we yell at them.](https://yay-robot.github.io/) \
-[2] [EdgeVLA](https://kscale.dev/research/efficient-video-language-action-models-for-robots) \
-[3] [MagVIT2](https://magvit.cs.cmu.edu/v2/) \
-[4] See recent robotics tokenizers: [Cosmos](https://github.com/NVlabs/TokenBench) tokenizer or [FAST tokenizer](https://www.physicalintelligence.company/research/fast) \
-[5] [HuBERT](https://ieeexplore.ieee.org/abstract/document/9585401) \
-[6] [SpeechTokenizer](https://arxiv.org/abs/2308.16692)
+  [1] [Even if we yell at them.](https://yay-robot.github.io/) \ [2]
+  [EdgeVLA](https://kscale.dev/research/efficient-video-language-action-models-for-robots) \ [3]
+  [MagVIT2](https://magvit.cs.cmu.edu/v2/) \ [4] See recent robotics tokenizers:
+  [Cosmos](https://github.com/NVlabs/TokenBench) tokenizer or [FAST
+  tokenizer](https://www.physicalintelligence.company/research/fast) \ [5]
+  [HuBERT](https://ieeexplore.ieee.org/abstract/document/9585401) \ [6]
+  [SpeechTokenizer](https://arxiv.org/abs/2308.16692)
 </div>
-```
