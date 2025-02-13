@@ -50,7 +50,7 @@ const DURATION_S = 5;
 
 const RobotRenderer: React.FC = () => {
   const mountRef = useRef<HTMLDivElement | null>(null);
-  // STEP 1: Add a ref to store the robot object
+
   const robotRef = useRef<THREE.Object3D | null>(null);
   let effectSobel: ShaderPass;
   useEffect(() => {
@@ -146,18 +146,14 @@ const RobotRenderer: React.FC = () => {
           }
         });
 
-        // STEP 4b: Apply rotation from mouse
         if (robotRef.current) {
-          // Step 3a: Let's rotate the robot around X using mouseY
           robotRef.current.rotation.x =
             (mouseY / window.innerHeight - 0.5) * Math.PI * 2 * 0.05 +
             -Math.PI / 2; // This sets a "neutral" tilt property and adds the up/down tilt
 
-          // Step 3b: Let's rotate the robot around Z using mouseX
           robotRef.current.rotation.z =
             (mouseX / window.innerWidth - 0.5) * Math.PI * 2 * 0.3; // This handles left/right roll
 
-          // Step 3c: If you want a slight yaw around Y, you can keep this small
           robotRef.current.rotation.y =
             (mouseX / window.innerWidth - 0.5) * Math.PI * 2 * 0.05;
         }
@@ -231,14 +227,12 @@ const RobotRenderer: React.FC = () => {
 
     window.addEventListener("resize", handleResize);
 
-    // STEP 4: Create variables to track mouse position
     let mouseX = 0;
     let mouseY = 0;
 
     const handleMouseMove = (event: MouseEvent) => {
       mouseX = event.clientX;
       mouseY = event.clientY;
-      console.log("mouseX:", mouseX, "mouseY:", mouseY);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
