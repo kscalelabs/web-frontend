@@ -4,21 +4,7 @@ description: "Improving inference speed of vision-language-action models for edg
 date: "September 9, 2024"
 image: "/research/images/css-pattern1.png"
 author: Paweł Budzianowski
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
-=======
-readingTime: "8 min read"
----
-
-
-
-## Introduction
-
->>>>>>> cc13136 (update files, adapt mdx)
-=======
----
->>>>>>> 1a5d97f (update global css and rendering)
 Vision-language models (VLMs) offer a fantastic opportunity to address a fundamental challenge in robotics: the scarcity of data. Models like [OpenVLA](https://openvla.github.io/) have demonstrated the potential of these approaches. However, deploying an 8B parameter model on edge devices presents significant challenges. In this post, we present a path to significantly improve the inference speed of vision-language-action (VLA) models while maintaining two core requirements:
 
 1. Adaptation of VLMs while preserving their encoding representation power.
@@ -52,15 +38,7 @@ We have combined above two ideas to achieve required architectural improvements.
 
 <figure>
   <img src="/research/images/evla_architecture.webp" alt="Comparison of OpenVLA vs EVLA" style={{ marginBottom: "0.1rem" }} />
-<<<<<<< HEAD
-<<<<<<< HEAD
     <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}> The comparison of generation logic between OpenVLA and EVLA. The pretraining phase is identical for both
-=======
-    <figcaption style={{ marginBottom: "1rem" }}> The comparison of generation logic between OpenVLA and EVLA. The pretraining phase is identical for both
->>>>>>> cc13136 (update files, adapt mdx)
-=======
-    <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}> The comparison of generation logic between OpenVLA and EVLA. The pretraining phase is identical for both
->>>>>>> 1a5d97f (update global css and rendering)
 models. In phase two, the EVLA LLM is being retrained to generate end-effector position in an autoregressive fashion.</figcaption>
 </figure>
 
@@ -72,35 +50,6 @@ Having pretrained the foundation VLM, we explore the minimal setup to verify the
 
 <figure>
   <img src="/research/images/OpenVLA_vs_EVLA.webp" alt="OpenVLA (yellow) versus EVLA (green) on the Bridge dataset smoothed with time-weighted EMA." style={{ marginBottom: "0.1rem" }}/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <figcaption style={{ marginBottom: "1rem" , textAlign: "center" }}>OpenVLA (yellow) versus EVLA (green) on the Bridge dataset smoothed with time-weighted EMA.</figcaption>
-</figure>
-=======
-    <figcaption style={{ marginBottom: "1rem" }}>OpenVLA (yellow) versus EVLA (green) on the Bridge dataset smoothed with time-weighted EMA.</figcaption>
-</figure>
-
-
-### OpenVLA (yellow) versus EVLA (green) on the Bridge dataset smoothed with time-weighted EMA.
->>>>>>> cc13136 (update files, adapt mdx)
-
-We then scaled up the training to use our full cluster to evaluate performance on [the OXE dataset](https://robotics-transformer-x.github.io/). While EVLA trains more slowly than its larger counterpart due to the dataset’s size, the training pass is 7x faster and allows for much larger batch sizes, effectively compensating for the slower training efficiency.
-
-<figure>
-<<<<<<< HEAD
-  <img src="/research/images/OpenVLA_vs_EVLA_OXE.webp" alt="." style={{ marginBottom: "0.1rem" }}/>
-    <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}>OpenVLA (grey) versus EVLA (pink) on the full OXE dataset smoothed with time-weighted EMA.</figcaption>
-</figure>
-=======
-  <img src="/research/images/OpenVLA_vs_EVLA_OXE.webp" alt="OpenVLA (grey) versus EVLA (pink) on the full OXE dataset smoothed with time-weighted EMA." style={{ marginBottom: "0.1rem" }}/>
-    <figcaption style={{ marginBottom: "1rem" }}>OpenVLA (grey) versus EVLA (pink) on the full OXE dataset smoothed with time-weighted EMA.</figcaption>
-</figure>
-
-
-### OpenVLA (grey) versus EVLA (pink) on the full OXE dataset smoothed with time-weighted EMA.
->>>>>>> cc13136 (update files, adapt mdx)
-
-=======
     <figcaption style={{ marginBottom: "1rem" , textAlign: "center" }}>OpenVLA (yellow) versus EVLA (green) on the Bridge dataset smoothed with time-weighted EMA.</figcaption>
 </figure>
 
@@ -111,7 +60,6 @@ We then scaled up the training to use our full cluster to evaluate performance o
     <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}>OpenVLA (grey) versus EVLA (pink) on the full OXE dataset smoothed with time-weighted EMA.</figcaption>
 </figure>
 
->>>>>>> 1a5d97f (update global css and rendering)
 These early runs shows that adapting efficient and smaller LLMs to non-autoregressive objectives achieves similar training performance than the original larger counterparts.
 
 ## Efficiency Gains
@@ -120,22 +68,9 @@ Employing VLM for predicting end-effector position or whole body joint pose requ
 
 <figure>
   <img src="/research/images/Evaluation_ A100.webp" alt="Evaluation performed on A100–40GB."     style={{ marginBottom: "0.1rem", width: "600px" }} />
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <figcaption style={{ marginBottom: "1rem", textAlign: "center"  }}>Evaluation performed on A100–40GB.</figcaption>
-</figure>
-=======
-  <figcaption style={{ marginBottom: "1rem" }}>Evaluation performed on A100–40GB.</figcaption>
-</figure>
-
-### Evaluation performed on A100–40GB.
->>>>>>> cc13136 (update files, adapt mdx)
-
-=======
   <figcaption style={{ marginBottom: "1rem", textAlign: "center"  }}>Evaluation performed on A100–40GB.</figcaption>
 </figure>
 
->>>>>>> 1a5d97f (update global css and rendering)
 By using a smaller VLM and optimizing our architecture, you can achieve as expected significant inference speed improvements. It is worth noting that OpenVLA uses flash_attention2, while EVLA is evaluated in the eager mode. Advances in flexible and efficient attention mechanisms, such as those discussed in [the PyTorch blog on FlexAttention](https://pytorch.org/blog/flexattention/), are expected to push these numbers even lower in the near future. This size of the model also offers a potential to be deployed on CPU architectures.
 
 ## Sharing with the community
