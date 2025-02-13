@@ -17,7 +17,6 @@ const config: Config = {
         w640: "640px",
         w1024: "1024px",
         w1440: "1440px",
-        "2xl": "1440px",
         "3xl": "1536px",
         "4xl": "1920px",
         "5xl": "2560px",
