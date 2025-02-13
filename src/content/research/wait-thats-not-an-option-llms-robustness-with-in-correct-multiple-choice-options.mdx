@@ -5,17 +5,18 @@ date: "October 14, 2024"
 image: "/research/images/css-pattern4.png"
 author: Paweł Budzianowski and Gracjan Góral
 ---
+
 Reflective judgment is a critical process that enables individuals
- to evaluate and analyze information to form well-founded conclusions.
-  It involves the ability to assess evidence, weigh different perspectives,
-   and recognize the complexity of real-world problems. 
-   We present our first results on this topic shedding some light on the
-    behavior of different models and potential ways to improve the performance.
-     You can also see our project [website](https://sites.google.com/view/reflective-jugment/strona-g%C5%82%C3%B3wna?pli=1) and the [Github code](https://github.com/GracjanGoral/When-All-Options-Are-Wrong/tree/main).
+to evaluate and analyze information to form well-founded conclusions.
+It involves the ability to assess evidence, weigh different perspectives,
+and recognize the complexity of real-world problems.
+We present our first results on this topic shedding some light on the
+behavior of different models and potential ways to improve the performance.
+You can also see our project [website](https://sites.google.com/view/reflective-jugment/strona-g%C5%82%C3%B3wna?pli=1) and the [Github code](https://github.com/GracjanGoral/When-All-Options-Are-Wrong/tree/main).
 
 ## What do we measure?
 
-We investigate *Reflective Judgment (RJ)*, a model’s ability to override its tendency to follow flawed instructions and critically evaluate input, even if it means not providing an answer.
+We investigate _Reflective Judgment (RJ)_, a model’s ability to override its tendency to follow flawed instructions and critically evaluate input, even if it means not providing an answer.
 
 ### Why RJ?
 
@@ -23,7 +24,7 @@ Blindly adhering to instructions can result in incorrect or harmful outputs, esp
 
 <figure>
   <img src="/research/images/why-rj.webp" alt="Why RJ?" style={{ marginBottom: "0.3rem" }} />
-  <figcaption style={{ marginBottom: "1rem",  textAlign: "center" }}>Why RJ?</figcaption>
+  <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}>Why RJ?</figcaption>
 </figure>
 
 ### How do we measure RJ?
@@ -40,29 +41,48 @@ We evaluate how often models correctly identify situations where no valid answer
 4. Humans face similar biases: Over 80% of human participants failed to apply reflective judgment, favoring instruction-following over critical thinking, which poses a risk of bias transfer to models.
 
 <figure>
-  <img src="/research/images/rj-score.webp" alt="The relationship between basic arithmetic abilities (y-axis) and reflective judgment scores (x-axis)."    style={{ marginBottom: "0.3rem" }} />
-  <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}>The relationship between basic arithmetic abilities (y-axis) and reflective judgment scores (x-axis).</figcaption>
+  <img
+    src="/research/images/rj-score.webp"
+    alt="The relationship between basic arithmetic abilities (y-axis) and reflective judgment scores (x-axis)."
+    style={{ marginBottom: "0.3rem" }}
+  />
+  <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}>
+    The relationship between basic arithmetic abilities (y-axis) and reflective judgment scores
+    (x-axis).
+  </figcaption>
 </figure>
 
 We can see that most fine-tuned/aligned models obtain good results on tasks when the correct option is provided but perform poorly when faced with questions containing two incorrect options.
 
 <figure>
-  <img src="/research/images/qwen-llama.webp" alt="Performance of Llama 3.1 models (8B, 70B, 405B) and Qwen2.5 models (7B, 14B, 32B) on simple arithmetic tasks." />
-  <figcaption style={{ marginBottom: "1rem" }}>Performance of Llama 3.1 models (8B, 70B, 405B) and Qwen2.5 models (7B, 14B, 32B) on simple arithmetic tasks.</figcaption>
+  <img
+    src="/research/images/qwen-llama.webp"
+    alt="Performance of Llama 3.1 models (8B, 70B, 405B) and Qwen2.5 models (7B, 14B, 32B) on simple arithmetic tasks."
+  />
+  <figcaption style={{ marginBottom: "1rem" }}>
+    Performance of Llama 3.1 models (8B, 70B, 405B) and Qwen2.5 models (7B, 14B, 32B) on simple
+    arithmetic tasks.
+  </figcaption>
 </figure>
 
 Performance of Llama 3.1 models (8B, 70B, 405B) and Qwen2.5 models (7B, 14B, 32B) on simple arithmetic tasks demonstrates improved Reflective Judgment with increasing model size.
 
 We conducted an experiment on humans, showing similar patterns. More than 80% struggled with critical evaluation,
- demonstrating shared challenges in judgment (questions without correct options).
-  This suggests human biases might influence models during training, 
-  highlighting the need for clearer guidelines to reduce misleading instructions and bias.
+demonstrating shared challenges in judgment (questions without correct options).
+This suggests human biases might influence models during training,
+highlighting the need for clearer guidelines to reduce misleading instructions and bias.
 
 <figure>
-  <img src="/research/images/human_experiment.webp"  style={{ marginBottom: "0.3rem", width: "500px" }} />
-  <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}>Comparison of human and model performance.</figcaption>
+  <img
+    src="/research/images/human_experiment.webp"
+    style={{ marginBottom: "0.3rem", width: "500px" }}
+  />
+  <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}>
+    Comparison of human and model performance.
+  </figcaption>
 </figure>
 
 ## Conclusions
+
 The work will be presented at the first workshop of Large Foundation Models for Educational Assessment
 ([NeurIPS 2024](https://neurips2024edu.github.io/)). See you there!

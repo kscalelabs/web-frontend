@@ -5,8 +5,8 @@ import readingTime from "reading-time";
 import { MDXRemote } from "next-mdx-remote";
 import Layout from "../../components/Layout";
 import { serialize } from "next-mdx-remote/serialize";
-import remarkMath from 'remark-math';
-import rehypeKatex from 'rehype-katex';
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 
 const RESEARCH_PATH = path.join(process.cwd(), "src/content/research");
 
