@@ -450,11 +450,13 @@ main .sponsors {
 }
 
 .mdx-content h3 {
-  font-size: 0.5rem;
+  font-size: 1.25rem;
   font-weight: normal;
+  margin-top: 1rem;
   margin-bottom: 1rem;
-  text-align: center;
+  text-align: left;
 }
+
 
 .mdx-content a:not(.card-link) {
   text-decoration: underline;
