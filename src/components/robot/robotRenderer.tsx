@@ -83,6 +83,9 @@ const RobotRenderer: React.FC = () => {
 
     const loader = new URDFLoader();
     loader.load(URDF_URL, (robot: THREE.Object3D) => {
+      scene.add(robot);
+      robot.scale.set(SCALE, SCALE, SCALE);
+
       const updateMaterials = () => {
         robot.traverse((child) => {
           if (child instanceof THREE.Mesh) {
@@ -102,11 +105,7 @@ const RobotRenderer: React.FC = () => {
       scene.add(robot);
       updateMaterials();
 
-      // Correcting for the robot initial size and position.
-      // robot.rotateY(Math.PI / 2);
-      robot.rotateX(-Math.PI / 2);
-      robot.translateZ(TRANSLATE_Y);
-      robot.scale.set(SCALE, SCALE, SCALE);
+      updateMaterials();
 
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
@@ -120,8 +119,11 @@ const RobotRenderer: React.FC = () => {
 
       const animate = () => {
         requestAnimationFrame(animate);
-        controls.update();
 
+        // If you'd like to keep damping in, you can optionally keep controls.update()
+        // but for a purely manual rotation, you can keep the line commented out.
+        // controls.update();
+        
         // Update joint positions with a sinusoidal pattern
         const time = (Date.now() - startTime) / 1000;
         robot.traverse((child) => {
@@ -135,6 +137,15 @@ const RobotRenderer: React.FC = () => {
             }
           }
         });
+
+        // STEP 4b: Apply rotation from mouse
+        if (robotRef.current) {
+          // Convert mouse position [0...width/height] to some rotation range
+          // Tweak the 0.005 factor to adjust how sensitive the rotation is
+          robotRef.current.rotation.x = (mouseY / window.innerHeight - 0.5) * Math.PI * 2 * 0.2 + -Math.PI / 2;
+          robotRef.current.rotation.z = (mouseX / window.innerWidth - 0.5) * Math.PI * 2 * 0.5;
+          robotRef.current.rotation.y = (mouseY / window.innerHeight - 0.5) * Math.PI * 2 * 0.02;
+        }
 
         composer.render();
       };
@@ -205,11 +216,23 @@ const RobotRenderer: React.FC = () => {
 
     window.addEventListener("resize", handleResize);
 
+    // STEP 4: Create variables to track mouse position
+    let mouseX = 0;
+    let mouseY = 0;
+
+    const handleMouseMove = (event: MouseEvent) => {
+      mouseX = event.clientX;
+      mouseY = event.clientY;
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
     return () => {
       if (currentMount) {
         currentMount.removeChild(renderer.domElement);
       }
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
