@@ -22,7 +22,7 @@ We investigate _Reflective Judgment (RJ)_, a model’s ability to override its t
 
 Blindly adhering to instructions can result in incorrect or harmful outputs, especially in high-stakes settings like healthcare and decision-making systems. Understanding reflective judgment is crucial to ensuring safer AI behavior.
 
-<figure>
+<figure style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
   <img src="/research/images/why-rj.webp" alt="Why RJ?" style={{ marginBottom: "0.3rem" }} />
   <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}>Why RJ?</figcaption>
 </figure>
@@ -40,7 +40,9 @@ We evaluate how often models correctly identify situations where no valid answer
 3. Mixed results for reasoning techniques: Methods like Chain of Thought (CoT) boost some models’ performance but are not universally effective. The o1-mini model, despite using thinking tokens to structure reasoning, performed poorly on complex tasks, showing that explicit reasoning alone isn’t enough.
 4. Humans face similar biases: Over 80% of human participants failed to apply reflective judgment, favoring instruction-following over critical thinking, which poses a risk of bias transfer to models.
 
-<figure>
+{" "}
+
+<figure style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
   <img
     src="/research/images/rj-score.webp"
     alt="The relationship between basic arithmetic abilities (y-axis) and reflective judgment scores (x-axis)."
@@ -54,7 +56,9 @@ We evaluate how often models correctly identify situations where no valid answer
 
 We can see that most fine-tuned/aligned models obtain good results on tasks when the correct option is provided but perform poorly when faced with questions containing two incorrect options.
 
-<figure>
+{" "}
+
+<figure style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
   <img
     src="/research/images/qwen-llama.webp"
     alt="Performance of Llama 3.1 models (8B, 70B, 405B) and Qwen2.5 models (7B, 14B, 32B) on simple arithmetic tasks."
@@ -72,7 +76,9 @@ demonstrating shared challenges in judgment (questions without correct options).
 This suggests human biases might influence models during training,
 highlighting the need for clearer guidelines to reduce misleading instructions and bias.
 
-<figure>
+{" "}
+
+<figure style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
   <img
     src="/research/images/human_experiment.webp"
     style={{ marginBottom: "0.3rem", width: "500px" }}
