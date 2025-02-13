@@ -54,47 +54,24 @@
   }
 
   :root {
-    --background: #f8f4f2ff;
-    --foreground: #120e15ff;
-    --logotype: #120e15ff;
-    --background-0: #f8f4f200;
-    --foreground-60: #120e159a;
-    --foreground-70: #120e15b3;
-    --filament-60: #f8f4f29a;
-    --filament-70: #f8f4f2b3;
-    --filament: #f8f4f2ff;
-    --carbon: #120e15ff;
-    --carbon-50: #120e1580;
-    --carbon-0: #120e1500;
-    --methyl: #7d0d8cff;
-    --plasma: #b90674ff;
-    --oxide: #c90e33ff;
-    --rust: #fa4300ff;
-    --molten: #ff9000ff;
-    --sol: #f2f091ff;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background: #000000ff;
-      --foreground: #ede6e1ff;
-      --logotype: #de4208ff;
-      --background-0: #0f0f1000;
-      --foreground-60: #ede6e180;
-      --foreground-70: #ede6e1b3;
-      --filament-60: #ede6e180;
-      --filament-70: #ede6e1b3;
-      --carbon: #0f0f10ff;
-      --carbon-50: #0f0f1080;
-      --carbon-0: #0f0f1000;
-      --filament: #ede6e1ff;
-      --methyl: #771584ff;
-      --plasma: #a81770ff;
-      --oxide: #98253cff;
-      --rust: #de4208ff;
-      --molten: #f18a03ff;
-      --sol: #eae9bcff;
-    }
+    --background: #000000ff;
+    --foreground: #ede6e1ff;
+    --logotype: #de4208ff;
+    --background-0: #0f0f1000;
+    --foreground-60: #ede6e180;
+    --foreground-70: #ede6e1b3;
+    --filament-60: #ede6e180;
+    --filament-70: #ede6e1b3;
+    --carbon: #0f0f10ff;
+    --carbon-50: #0f0f1080;
+    --carbon-0: #0f0f1000;
+    --filament: #ede6e1ff;
+    --methyl: #771584ff;
+    --plasma: #a81770ff;
+    --oxide: #98253cff;
+    --rust: #de4208ff;
+    --molten: #f18a03ff;
+    --sol: #eae9bcff;
   }
 }
 
@@ -320,12 +297,6 @@ main .sponsors {
 
 .rust {
   @apply bg-rust text-filament;
-}
-
-@media (prefers-color-scheme: dark) {
-  .rust {
-    @apply bg-filament text-rust;
-  }
 }
 
 .rust-fill {

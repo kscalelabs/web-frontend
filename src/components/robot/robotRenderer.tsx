@@ -76,8 +76,7 @@ const RobotRenderer: React.FC = () => {
       renderer.setSize(clientWidth, clientHeight);
     }
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setClearColor(0xffffff, 1);
-    renderer.setClearAlpha(0);
+    renderer.setClearColor(0x0f0f10, 1);
 
     if (currentMount) {
       currentMount.appendChild(renderer.domElement);
