@@ -260,7 +260,7 @@ pre {
 }
 
 html {
-  @apply text-[125%] 2xl:text-[175%] 4xl:text-[200%];
+  @apply text-[125%] 2xl:text-[130%] 4xl:text-[175%];
 }
 
 html.lenis,
@@ -391,9 +391,7 @@ main .sponsors {
   }
 }
 
-/* Center and style MDX content */
 .mdx-content {
-  max-width: 130ch;
   margin: 0 auto;
   padding: 2rem;
 }
