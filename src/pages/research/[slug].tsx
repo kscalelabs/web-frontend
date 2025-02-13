@@ -5,6 +5,8 @@ import readingTime from "reading-time";
 import { MDXRemote } from "next-mdx-remote";
 import Layout from "../../components/Layout";
 import { serialize } from "next-mdx-remote/serialize";
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 const RESEARCH_PATH = path.join(process.cwd(), "src/content/research");
 
@@ -22,7 +24,12 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
   const fileContents = fs.readFileSync(filePath, "utf-8");
   const { content, data } = matter(fileContents);
 
-  const mdxSource = await serialize(content);
+  const mdxSource = await serialize(content, {
+    mdxOptions: {
+      remarkPlugins: [remarkMath],
+      rehypePlugins: [rehypeKatex],
+    },
+  });
   const stats = readingTime(content);
 
   return {

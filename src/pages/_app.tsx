@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { ReactLenis } from "lenis/dist/lenis-react";
+import 'katex/dist/katex.min.css';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

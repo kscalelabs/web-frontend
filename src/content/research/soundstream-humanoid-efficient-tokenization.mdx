@@ -19,8 +19,7 @@ around our houses and factories and translate our voice directly into robot acti
 Fast tokenization is a key ingredient in processing that amount of data. 
 Lately, look-up free quantization has opened up efficient tokenization of images and video.<sup id="fn-1">[3](#footnote-1)</sup>  
 We share our research on expanding these efficient methods to audio so that the world model is able to process all sensors the way humans do.
-If you want to try the tokenizer, we share K-Scale Speech Tokenizer family of models and accompanying [Github] 
-repository(https://github.com/kscalelabs/kst). 
+If you want to try the tokenizer, we share K-Scale Speech Tokenizer family of models and accompanying [Github repository](https://github.com/kscalelabs/kst). 
 
 ## Pushing tokenization to the limits
 Tokenizers allow processing of continuous world data into a discrete space that is
@@ -38,17 +37,17 @@ effectively capture both local and global image features.
 In the case of audio processing, we need to convert continuous waveforms into discrete 
 tokens that capture both acoustic and semantic information. This typically involves first converting the raw audio into spectrograms or mel-spectrograms, then applying vector quantization to map these continuous features into a discrete codebook space. The challenge lies in preserving both the acoustic quality and semantic meaning while maintaining computational efficiency.
 
-Let's follow an example from SoundStorm and consider encoding audio information at 4000
+Let's follow an example from SoundStorm and consider encoding audio information at $4000$
 bits per second (bps). 
-If the tokenizer can pull and process around 320 steps together per second, 
-processing audio at 16kHz produces 50 frames per second. This corresponds to 4000/50 = 80 bits allocated to each frame. 
-A standard vector quantizer would require storing 2^{80} codebooks, which is roughly comparable to the number of stars in the universe.
+If the tokenizer can pull and process around $320$ steps together per second, 
+processing audio at $16$ kHz produces $50$ frames per second. This corresponds to $4000/50 = 80$ bits allocated to each frame. 
+A standard vector quantizer would require storing $2^{80}$ codebooks, which is roughly comparable to the number of stars in the universe.
 
 
 ### Residual Vector Quantization
 Residual Vector Quantizer (RVQ), cascades multiple layers of vector quantization. 
 The process begins by quantizing the input vector through the first quantizer. Then, the quantization residual (the difference between the input and its quantized version) is computed and passed through subsequent quantization layers. This cascading approach allows us to break down the massive codebook requirement into manageable pieces while maintaining high fidelity. 
-The graph below showcases 4 levels, each with quantizer using a codebook of size 1024. 
+The graph below showcases $4$ levels, each with quantizer using a codebook of size $1024$. 
 Tokenizer with Residual Vector Quantizer. 
 Each number references specific codebook vector at particular level. 
 
@@ -62,9 +61,9 @@ Above approach requires typically from 4 to 8 levels of quantizers for
 achieving high quality of compression. Look-up free quantization<sup id="fn-1">[3](#footnote-1)</sup> 
 represents a significant advancement in efficient video modeling by eliminating 
 the need for expensive codebook lookups. The key insight is reducing the VQ-VAE 
-codebook's embedding dimension to zero. Instead of maintaining a codebook C of 
-d-dimensional embeddings of size K, we replace it with a simple integer set C where |C| = K.
-Traditional VQ-VAE models must compare encoder outputs against all K d-dimensional 
+codebook's embedding dimension to zero. Instead of maintaining a codebook $C$ of 
+d-dimensional embeddings of size $K$, we replace it with a simple integer set $C$ where $|C| = K$.
+Traditional VQ-VAE models must compare encoder outputs against all $K$ $d$-dimensional 
 embeddings in the codebook to find the closest match. LFQ eliminates this computational burden by decomposing the latent space into independent dimensions. 
 Look up free quantization opens up efficient video
  modelling and shows promise for other modalities, including audio.
@@ -73,7 +72,7 @@ Look up free quantization opens up efficient video
   <img src="/research/images/lfq.png" alt="RVQ."  style={{ width: "70%", marginBottom: "0.1rem" }}/>
   <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}> Lookup Free Quantizer Architecture.</figcaption>
 </figure>
-Since LFQ is a single-layer quantizer, we operate at 8 times smaller bit rate than with RVQ which results in 500 bps. 
+Since LFQ is a single-layer quantizer, we operate at 8 times smaller bit rate than with RVQ which results in $500$ bps. 
 
 ## K-Scale Speech Tokens (KST)
 Given above inspiration we propose a fast and semantically informed tokenizer 
