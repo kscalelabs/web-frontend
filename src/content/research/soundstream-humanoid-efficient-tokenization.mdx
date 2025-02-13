@@ -6,7 +6,6 @@ image: "/research/images/css-pattern1.png"
 author: Benjamin Bolte and Paweł Budzianowski
 ---
 
-## Sound stream for humanoid with efficient tokenization
 Having an efficient end-to-end model that processes all types of modalities which include audio, video, and proprioception while outputting multiple actions is fundamental to effective deployments of robots around us. 
 Lately, we have shared our research on speeding up video-language-action models where actions are output at 50Hz.<sup id="fn-1">[1](#footnote-1)</sup> 
 In this blog, we want to share our results on speeding up processing of what is going on inside the humanoid brain, 
@@ -25,7 +24,6 @@ repository(https://github.com/kscalelabs/kst). 
 $ 123$
 
 ## Pushing tokenization to the limits
-
 Tokenizers allow processing of continuous world data into a discrete space that is
 more suitable for neural network processing.
 They are key building blocks of the modern machine learning stack and are used across image, 
@@ -42,10 +40,10 @@ In the case of audio processing, we need to convert continuous waveforms into di
 tokens that capture both acoustic and semantic information. This typically involves first converting the raw audio into spectrograms or mel-spectrograms, then applying vector quantization to map these continuous features into a discrete codebook space. The challenge lies in preserving both the acoustic quality and semantic meaning while maintaining computational efficiency.
 
 Let's follow an example from SoundStorm and consider encoding audio information at 4000
- bits per second (bps). 
- If the tokenizer can pull and process around 320 steps together per second, 
- processing audio at 16kHz produces 50 frames per second. This corresponds to 4000/50 = 80 bits allocated to each frame. 
- A standard vector quantizer would require storing 2^{80} codebooks, which is roughly comparable to the number of stars in the universe.
+bits per second (bps). 
+If the tokenizer can pull and process around 320 steps together per second, 
+processing audio at 16kHz produces 50 frames per second. This corresponds to 4000/50 = 80 bits allocated to each frame. 
+A standard vector quantizer would require storing 2^{80} codebooks, which is roughly comparable to the number of stars in the universe.
 
 
 ### Residual Vector Quantization
@@ -55,10 +53,9 @@ The graph below showcases 4 levels, each with quantizer using a codebook of size
 Tokenizer with Residual Vector Quantizer. 
 Each number references specific codebook vector at particular level. 
 
-
 <figure>
-  <img src="/research/images/encodec.webp" alt="RVQ."  style={{ width: "70%", marginBottom: "0.1rem" }}/>
-  <figcaption style={{ marginBottom: "1rem" }}>Tokenizer with Residual Vector Quantizer..</figcaption>
+  <img src="/research/images/encodec.webp" alt="RVQ." style={{ width: "90%", display: "block", margin: "0 auto", marginBottom: "0.1rem" }}/>
+  <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}>Tokenizer with Residual Vector Quantizer.</figcaption>
 </figure>
 
 ### Lookup Free Quantization
@@ -75,8 +72,9 @@ Look up free quantization opens up efficient video
 
 <figure>
   <img src="/research/images/lfq.png" alt="RVQ."  style={{ width: "70%", marginBottom: "0.1rem" }}/>
-  <figcaption style={{ marginBottom: "1rem" }}> Lookup Free Quantizer Architecture.</figcaption>
+  <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}> Lookup Free Quantizer Architecture.</figcaption>
 </figure>
+Since LFQ is a single-layer quantizer, we operate at 8 times smaller bit rate than with RVQ which results in 500 bps. 
 
 ## K-Scale Speech Tokens (KST)
 Given above inspiration we propose a fast and semantically informed tokenizer 
@@ -93,10 +91,10 @@ KST - LFQ quantization with Semantic Alignment against HuBERT Tokens.
 
 <figure>
   <img src="/research/images/kst.png" alt="RVQ." width="50%" style={{ marginBottom: "0.1rem" }} />
-  <figcaption style={{ marginBottom: "1rem" }}> KST - LFQ quantization with Semantic Alignment against HuBERT Tokens.</figcaption>
+  <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}> KST - LFQ quantization with Semantic Alignment against HuBERT Tokens.</figcaption>
 </figure>
 
-### Aligning with Human-like Information
+## Aligning with Human-like Information
 Drawing inspiration from SpeechTokenizer approach we guide
 the training of the efficient tokenizer to be semantically rich.
 This stems from the fact that interaction with robots ACTION: 
@@ -118,7 +116,7 @@ accuracy through Word Error Rate (WER), obtained by transcribing the reconstruct
 
 <figure>
   <img src="/research/images/table_lfq.png" alt="RVQ." width="50%" style={{ marginBottom: "0.1rem" }} />
-  <figcaption style={{ marginBottom: "1rem" }}> Speech reconstruction results.</figcaption>
+  <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}> Speech reconstruction results.</figcaption>
 </figure>
 
 As anticipated, our proposed tokenization achieved a lower reconstruction quality compared to SpeechTokenizer. 
@@ -186,7 +184,7 @@ audio = tokenizer.decode(codes)
 </div>
 */}
 
-### References
+## References
 <div id="footnote-1">
 [1] [Even if we yell at them](https://yay-robot.github.io/) \
 [2] [EdgeVLA](https://kscale.dev/research/efficient-video-language-action-models-for-robots) \
