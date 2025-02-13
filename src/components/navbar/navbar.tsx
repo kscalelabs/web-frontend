@@ -68,7 +68,7 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
     return (
       <div className="col-span-full flex flex-row justify-between overflow-hidden py-4 items-center h-fit px-[5vw] -mx-[5vw]">
         <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} href={href} />
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-12">
           {navigationConfig.map((navItem, index) => {
             return (
               <motion.a
@@ -76,8 +76,7 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
                 href={navItem.link}
                 target={navItem.isExternal ? "_blank" : "_self"}
                 className={clsx(
-                  " flex justify-end items-end 3xl:text-[0.85rem] 2xl:text-[0.75rem] text-[1rem] " +
-                    " select-none self-center pointer-events-auto h-full ",
+                  "flex justify-end items-end text-base lg:text-md select-none self-center pointer-events-auto h-full",
                   atTop ? "text-white" : "text-foreground"
                 )}
                 initial="initial"
