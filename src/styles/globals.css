@@ -260,7 +260,7 @@ pre {
 }
 
 html {
-  @apply text-[125%] 2xl:text-[175%] 5xl:text-[200%];
+  @apply text-[125%] 2xl:text-[175%] 4xl:text-[200%];
 }
 
 html.lenis,
@@ -393,24 +393,45 @@ main .sponsors {
 
 /* Center and style MDX content */
 .mdx-content {
-  max-width: 130ch; /* Optimal line width for readability */
+  max-width: 130ch;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center; /* Center all text */
+}
+
+.mdx-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+  margin-bottom: 1.5rem;
 }
 
 .mdx-content h1 {
-  font-size: 1.5rem; /* Resize main title */
-  font-weight: bold;
-  margin-bottom: 3rem;
-  margin-top: 4.5rem;
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: left;
 }
 
 .mdx-content h2 {
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
+  font-family: "GT Planar";
   text-align: left;
+}
+
+.mdx-content img {
+  display: block;
+  margin: 2.5rem auto;
+  border-radius: 0;
+}
+
+.mdx-content .caption {
+  font-size: 0.875rem;
+  color: var(--foreground70);
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Keep leading-snug for normal use */
@@ -437,12 +458,6 @@ main .sponsors {
   text-align: center;
 }
 
-.mdx-content p {
-  margin-bottom: 1.5rem;
-  line-height: 1.75;
-  text-align: justify; /* Optional for paragraph alignment */
-}
-
 .mdx-content a:not(.card-link) {
   text-decoration: underline;
   font-weight: bold;
@@ -459,12 +474,6 @@ main .sponsors {
 
 .mdx-content ol li {
   margin: 0.5em 0;
-}
-
-.mdx-content img {
-  display: block;
-  margin: 2.5rem auto;
-  border-radius: 8px; /* If using SVG make sure that preserveAspectRatio="none" */
 }
 
 .mdx-content iframe {
