@@ -42,14 +42,8 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
       <>
         <motion.menu
           className={clsx(
-            "col-span-full grid grid-cols-subgrid overflow-hidden py-4 items-end h-fit px-[5vw] -mx-[5vw]"
+            "col-span-full grid grid-cols-subgrid overflow-hidden py-4 items-end h-fit px-[5vw] -mx-[5vw] bg-background"
           )}
-          initial={{ backgroundColor: "var(--background)" }}
-          animate={{
-            backgroundColor: "transparent",
-          }}
-          exit={{ backgroundColor: "var(--background)" }}
-          transition={{ duration: 0.2, ease: "circOut" }}
         >
           <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} href={href} />
           <BurgerOpenButton
