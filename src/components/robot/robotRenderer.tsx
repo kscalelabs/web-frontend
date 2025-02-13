@@ -50,6 +50,7 @@ const DURATION_S = 5;
 
 const RobotRenderer: React.FC = () => {
   const mountRef = useRef<HTMLDivElement | null>(null);
+  const robotRef = useRef<THREE.Object3D | null>(null);
   let effectSobel: ShaderPass;
   useEffect(() => {
     const scene = new THREE.Scene();
