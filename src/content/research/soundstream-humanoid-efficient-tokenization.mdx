@@ -51,9 +51,9 @@ Since LFQ is a single-layer quantizer, we operate at $8$ times smaller bit rate 
 
 Given above inspiration we propose a fast and semantically informed tokenizer for audio that is useful for transferring audio into humanoid actions. We propose a family of different tokenizers ranging from 1 to 8 levels of quantization and varying size of the codebooks.
 
-### LFQ for Sound
+### LFQ for Audio
 
-Drawing inspiration from SoundStorm and SpeechTokenizer approach, we combined Lookup-Free Quantization with encoder-decoder setup. No code embeddings allows to improve the processing speed while maintaining the similar architecture as in the image or video modalities. the similar architecture as in the image or video modalities. KST - LFQ quantization with Semantic Alignment against HuBERT Tokens.
+Drawing inspiration from the SoundStorm and SpeechTokenizer approaches, we combined Lookup-Free Quantization with encoder-decoder setup. No code embeddings allows to improve the processing speed while maintaining the similar architecture as in the image or video modalities. the similar architecture as in the image or video modalities. KST - LFQ quantization with Semantic Alignment against HuBERT Tokens.
 
 <figure style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
   <img src="/research/images/kst.png" alt="RVQ." width="80%" style={{ marginBottom: "0.1rem" }} />
@@ -132,6 +132,9 @@ Efficiency in tokenization allows to propagate that across different speech doma
 Efficient tokenization across different modalities is fundamental to improving end-to-end approaches. We have demonstrated that efficient tokenization of video can be transferred to audio modality.
 
 [^edge-devices]: As an open-source company, we hope you will use your robots in whatever way you see fit, including controlling it with powerful cloud-based models; however, we think it's important that the out-of-the-box product is a good, stand-alone unit.
+
 [^magvit-2]: [MagVIT2](https://magvit.cs.cmu.edu/v2/)
+
 [^fast-tokenizer]: See recent robotics tokenizers like [Cosmos](https://github.com/NVlabs/TokenBench) or [FAST tokenizer](https://www.physicalintelligence.company/research/fast)
+
 [^speech-tokenizer]: [SpeechTokenizer](https://arxiv.org/abs/2308.16692)
