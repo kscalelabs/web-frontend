@@ -151,15 +151,15 @@ However, owing to the single-layer quantization and the elimination of lookup op
 the inference speed was improved. The qualitative analysis can be done by listening
 to encoded and subsequently decoded audio examples from different:
 
-<div style={{ display: "flex", gap: "1rem" }}>
-  <figure style={{ textAlign: "center" }}>
+<div className="flex flex-col md:flex-row items-center justify-center gap-4">
+  <figure className="flex flex-col items-center text-center">
     <audio controls>
       <source src="/research/audio/lfq_gt.wav" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
     <figcaption>Ground Truth</figcaption>
   </figure>
-  <figure style={{ textAlign: "center" }}>
+  <figure className="flex flex-col items-center text-center">
     <audio controls>
       <source src="/research/audio/lfq_base.wav" type="audio/mpeg" />
       Your browser does not support the audio element.
@@ -178,15 +178,15 @@ predicting one-level LFQ tokens given some prompt. We gave it a shot with a ridi
 comprising of $6$M parameters and around $2$ hours of artificially generated speech data
 from just one voice actor. You can hear some samples here:
 
-<div style={{ display: "flex", gap: "1rem" }}>
-  <figure style={{ textAlign: "center" }}>
+<div className="flex flex-col md:flex-row items-center justify-center gap-4">
+  <figure className="flex flex-col items-center text-center">
     <audio controls>
       <source src="/research/audio/sample_1.wav" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
     <figcaption>Generated sample 1</figcaption>
   </figure>
-  <figure style={{ textAlign: "center" }}>
+  <figure className="flex flex-col items-center text-center">
     <audio controls>
       <source src="/research/audio/sample_2.wav" type="audio/mpeg" />
       Your browser does not support the audio element.
@@ -203,7 +203,7 @@ We have demonstrated that efficient tokenization of video can be transferred to 
 ## References
 
 <div id="footnote-1">
-  [1] [Even if we yell at them.](https://yay-robot.github.io/)
+[1] [Even if we yell at them.](https://yay-robot.github.io/)
 
 [2] [EdgeVLA](https://kscale.dev/research/efficient-video-language-action-models-for-robots)
 

@@ -240,6 +240,10 @@ html {
   @apply text-[125%] 2xl:text-[130%] 4xl:text-[175%];
 }
 
+.mdx-content p {
+  @apply !text-[100%] md:!text-[125%] 2xl:!text-[130%] 4xl:!text-[175%];
+}
+
 html.lenis,
 html.lenis body {
   height: auto;
