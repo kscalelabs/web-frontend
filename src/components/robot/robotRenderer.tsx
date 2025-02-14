@@ -138,7 +138,7 @@ const RobotRenderer: React.FC = () => {
         });
 
         if (robotRef.current) {
-          robotRef.current.rotation.z = ((mouseX / window.innerWidth) - 0.5) * Math.PI * 1.5;
+          robotRef.current.rotation.z = (mouseX / window.innerWidth - 0.5) * Math.PI * 1.5;
         }
 
         composer.render();
