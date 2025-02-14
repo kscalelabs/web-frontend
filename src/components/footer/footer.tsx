@@ -1,10 +1,10 @@
-import { AnimatePresence, cubicBezier, motion } from "motion/react";
 import SocialMediaItem from "@/components/footer/SocialMediaItem";
 import { Discord, Github, Twitter } from "@/components/footer/socialMediaSvgs";
 import FooterLogotype from "@/components/logos/footerLogotype";
+import { circOut } from "motion";
+import { AnimatePresence, cubicBezier, motion } from "motion/react";
 import Link from "next/link";
 import { JSX, useEffect, useState } from "react";
-import { circOut } from "motion";
 
 const socialMediaSvgs: JSX.Element[] = [
   <Discord key={"discord"} />,
@@ -78,7 +78,7 @@ export default function Footer() {
     tempInput.select();
     try {
       document.execCommand("copy");
-    } catch {}
+    } catch { }
     document.body.removeChild(tempInput);
   };
 
@@ -117,7 +117,6 @@ export default function Footer() {
       >
         <h3 className={"text-caption uppercase opacity-[77%]"}>Get in touch</h3>
         <hgroup>
-          <h4>Business inquiries</h4>
           <motion.div
             className="cursor-pointer"
             onClick={() => handleCopyEmail()}
@@ -190,6 +189,7 @@ export default function Footer() {
         title={"Product"}
         items={[
           { title: "K-Bot", url: "https://shop.kscale.dev/collections/all" },
+          { title: "Z-Bot", url: "https://zerothbot.com" },
           {
             title: "Send feedback",
             url: "https://docs.google.com/forms/d/e/1FAIpQLSemVaJ6HfieS9xDKv7SqWYArHyHLV-kraraiT_VEmPL_6lkPw/viewform",
