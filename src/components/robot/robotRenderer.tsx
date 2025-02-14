@@ -2,19 +2,17 @@
 
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import URDFLoader from "urdf-loader";
-import { URDFJoint } from "urdf-loader/src/URDFClasses";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
-import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
+import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
 import { LuminosityShader } from "three/examples/jsm/shaders/LuminosityShader.js";
 import { SobelOperatorShader } from "three/examples/jsm/shaders/SobelOperatorShader.js";
+import URDFLoader from "urdf-loader";
+import { URDFJoint } from "urdf-loader/src/URDFClasses";
 
 const URDF_URL = "/cad/gpr-20241204.urdf";
 const SCALE = 3;
-const TRANSLATE_Y = 0.5;
 
 interface Waypoint {
   start: number;
@@ -56,8 +54,11 @@ const RobotRenderer: React.FC = () => {
   useEffect(() => {
     const scene = new THREE.Scene();
     scene.background = null;
+
+    // Adjust FOV based on screen width
+    const fov = window.innerWidth < 768 ? 25 : 13;
     const camera = new THREE.PerspectiveCamera(
-      13,
+      fov,
       window.innerWidth / window.innerHeight,
       0.1,
       1000
@@ -86,13 +87,15 @@ const RobotRenderer: React.FC = () => {
     loader.load(URDF_URL, (robot: THREE.Object3D) => {
       scene.add(robot);
 
+      // Sets the robot position and rotation.
+      robot.rotation.x = -90.0;
+      robot.rotation.y = 0.0;
+      robot.position.y += 0.4;
+
       // NEW: Store the robot in the ref, so we can rotate this exact object later
       robotRef.current = robot;
 
       robot.scale.set(SCALE, SCALE, SCALE);
-
-      // MOVE THE ROBOT UP BY 1 UNIT
-      robot.position.y += 0.4;
 
       const updateMaterials = () => {
         robot.traverse((child) => {
@@ -115,22 +118,10 @@ const RobotRenderer: React.FC = () => {
 
       updateMaterials();
 
-      const controls = new OrbitControls(camera, renderer.domElement);
-      controls.enableDamping = true;
-      controls.dampingFactor = 0.25;
-      controls.screenSpacePanning = false;
-      controls.maxPolarAngle = Math.PI / 2;
-      controls.enableZoom = false;
-      controls.enablePan = false;
-
       const startTime = Date.now();
 
       const animate = () => {
         requestAnimationFrame(animate);
-
-        // If you'd like to keep damping in, you can optionally keep controls.update()
-        // but for a purely manual rotation, you can keep the line commented out.
-        // controls.update();
 
         // Update joint positions with a sinusoidal pattern
         const time = (Date.now() - startTime) / 1000;
@@ -147,12 +138,7 @@ const RobotRenderer: React.FC = () => {
         });
 
         if (robotRef.current) {
-          robotRef.current.rotation.x =
-            (mouseY / window.innerHeight - 0.5) * Math.PI * 2 * 0.05 + -Math.PI / 2; // This sets a "neutral" tilt property and adds the up/down tilt
-
-          robotRef.current.rotation.z = (mouseX / window.innerWidth - 0.5) * Math.PI * 2 * 0.3; // This handles left/right roll
-
-          robotRef.current.rotation.y = (mouseX / window.innerWidth - 0.5) * Math.PI * 2 * 0.05;
+          robotRef.current.rotation.z = ((mouseX / window.innerWidth) - 0.5) * Math.PI * 1.5;
         }
 
         composer.render();
@@ -175,9 +161,10 @@ const RobotRenderer: React.FC = () => {
 
     scene.add(camera);
 
-    camera.position.z = 16;
-    camera.position.y = 9;
-    camera.position.x = 9;
+    camera.position.z = 20;
+    camera.position.y = 10;
+    camera.position.x = 0;
+    camera.lookAt(0, 0, 0);
 
     const composer = new EffectComposer(renderer);
 
@@ -188,16 +175,9 @@ const RobotRenderer: React.FC = () => {
     const shaderPass = new ShaderPass(LuminosityShader);
     composer.addPass(shaderPass);
 
-    // color to grayscale conversion
-
     const effectGrayScale = new ShaderPass(LuminosityShader);
     effectGrayScale.renderToScreen = false;
     composer.addPass(effectGrayScale);
-
-    // you might want to use a gaussian blur filter before
-    // the next pass to improve the result of the Sobel operator
-
-    // Sobel operator
 
     effectSobel = new ShaderPass(SobelOperatorShader);
     effectSobel.renderToScreen = false;
@@ -213,8 +193,13 @@ const RobotRenderer: React.FC = () => {
       if (currentMount) {
         const { clientWidth, clientHeight } = currentMount;
         camera.aspect = clientWidth / clientHeight;
-        camera.updateProjectionMatrix();
 
+        // Update FOV and position based on screen width
+        camera.fov = clientWidth < 768 ? 25 : 13;
+        camera.position.z = clientWidth < 768 ? 12 : 20;
+        camera.position.y = clientWidth < 768 ? 6 : 10;
+
+        camera.updateProjectionMatrix();
         renderer.setSize(clientWidth, clientHeight);
         composer.setSize(clientWidth, clientHeight);
         effectSobel.uniforms["resolution"].value.x = clientWidth * window.devicePixelRatio;
@@ -224,15 +209,19 @@ const RobotRenderer: React.FC = () => {
 
     window.addEventListener("resize", handleResize);
 
-    let mouseX = 0;
-    let mouseY = 0;
+    let mouseX = window.innerWidth * 0.4;
 
     const handleMouseMove = (event: MouseEvent) => {
       mouseX = event.clientX;
-      mouseY = event.clientY;
     };
 
     window.addEventListener("mousemove", handleMouseMove);
+
+    const handleTouchMove = (event: TouchEvent) => {
+      mouseX = event.touches[0].clientX;
+    };
+
+    window.addEventListener("touchmove", handleTouchMove);
 
     return () => {
       if (currentMount) {
@@ -240,6 +229,7 @@ const RobotRenderer: React.FC = () => {
       }
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchmove", handleTouchMove);
     };
   }, []);
 
