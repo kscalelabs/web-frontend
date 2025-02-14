@@ -1,11 +1,11 @@
-import fs from "fs";
-import path from "path";
-import Link from "next/link";
-import matter from "gray-matter";
-import readingTime from "reading-time";
 import Footer from "@/components/footer/footer";
-import NavBar from "@/components/navbar/navbar";
 import { DownArrowIcon } from "@/components/iconography/Iconography";
+import NavBar from "@/components/navbar/navbar";
+import fs from "fs";
+import matter from "gray-matter";
+import Link from "next/link";
+import path from "path";
+import readingTime from "reading-time";
 
 const RESEARCH_PATH = path.join(process.cwd(), "src/content/research");
 
@@ -42,10 +42,9 @@ export default function ResearchIndex({ posts }: { posts: any[] }) {
       <div className="gap-y-4">
         <header className="col-span-full flex flex-row min-h-[90svh] auto-rows-auto items-center text-foreground bg-background relative overflow-hidden px-[5vw]">
           <div className="flex flex-col self-end gap-1 md:gap-4 justify-center items-start">
-            <h1 className="text-4xl md:text-[4.2rem] tracking-tight">Open Research</h1>
+            <h1 className="text-4xl md:text-[4.2rem] tracking-tight">Research</h1>
             <h4 className="text-base md:text-[1.1rem] tracking-tight max-w-lg leading-snug">
-              Bringing VLA models to the edge, enabling natural interaction with robots, and
-              generalizing the science behind LLMs for embodied AI.
+              At K-Scale, our research focuses on building efficient and effective end-to-end multimodal models for embodied intelligence. We share our latest findings here.
             </h4>
           </div>
         </header>
