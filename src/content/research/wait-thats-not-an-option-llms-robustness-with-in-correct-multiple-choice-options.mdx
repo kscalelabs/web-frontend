@@ -1,18 +1,12 @@
 ---
-title: "LLMs Robustness with In-correct Multiple-Choice Options"
+title: "Evaluating LLM Robustness with Incorrect Multiple-Choice Options"
 description: "Exploring Reflective Judgment in language models and their ability to critically evaluate input even in flawed multiple-choice scenarios."
 date: "October 14, 2024"
 image: "/research/images/css-pattern4.png"
 author: Paweł Budzianowski and Gracjan Góral
 ---
 
-Reflective judgment is a critical process that enables individuals
-to evaluate and analyze information to form well-founded conclusions.
-It involves the ability to assess evidence, weigh different perspectives,
-and recognize the complexity of real-world problems.
-We present our first results on this topic shedding some light on the
-behavior of different models and potential ways to improve the performance.
-You can also see our project [website](https://sites.google.com/view/reflective-jugment/strona-g%C5%82%C3%B3wna?pli=1) and the [Github code](https://github.com/GracjanGoral/When-All-Options-Are-Wrong/tree/main).
+Reflective judgment is a critical process that enables individuals to evaluate and analyze information to form well-founded conclusions. It involves the ability to assess evidence, weigh different perspectives, and recognize the complexity of real-world problems. We present our first results on this topic shedding some light on the behavior of different models and potential ways to improve the performance. You can also see our project [website](https://sites.google.com/view/reflective-jugment/strona-g%C5%82%C3%B3wna?pli=1) and the [Github code](https://github.com/GracjanGoral/When-All-Options-Are-Wrong/tree/main).
 
 ## What do we measure?
 
@@ -40,8 +34,6 @@ We evaluate how often models correctly identify situations where no valid answer
 3. Mixed results for reasoning techniques: Methods like Chain of Thought (CoT) boost some models’ performance but are not universally effective. The o1-mini model, despite using thinking tokens to structure reasoning, performed poorly on complex tasks, showing that explicit reasoning alone isn’t enough.
 4. Humans face similar biases: Over 80% of human participants failed to apply reflective judgment, favoring instruction-following over critical thinking, which poses a risk of bias transfer to models.
 
-{" "}
-
 <figure style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
   <img
     src="/research/images/rj-score.webp"
@@ -55,8 +47,6 @@ We evaluate how often models correctly identify situations where no valid answer
 </figure>
 
 We can see that most fine-tuned/aligned models obtain good results on tasks when the correct option is provided but perform poorly when faced with questions containing two incorrect options.
-
-{" "}
 
 <figure style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
   <img
@@ -76,8 +66,6 @@ demonstrating shared challenges in judgment (questions without correct options).
 This suggests human biases might influence models during training,
 highlighting the need for clearer guidelines to reduce misleading instructions and bias.
 
-{" "}
-
 <figure style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
   <img
     src="/research/images/human_experiment.webp"
@@ -90,5 +78,4 @@ highlighting the need for clearer guidelines to reduce misleading instructions a
 
 ## Conclusions
 
-The work will be presented at the first workshop of Large Foundation Models for Educational Assessment
-([NeurIPS 2024](https://neurips2024edu.github.io/)). See you there!
+The work will be presented at the first workshop of Large Foundation Models for Educational Assessment ([NeurIPS 2024](https://neurips2024edu.github.io/)). See you there!
