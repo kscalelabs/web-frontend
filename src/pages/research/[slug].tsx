@@ -46,16 +46,16 @@ export default function ResearchPost({ source, frontMatter }: { source: any; fro
       <header className="flex flex-col w-[90%] mx-auto gap-2 items-start justify-end pb-10 min-h-[60svh]">
         <div className="flex flex-col gap-2">
           <div className="flex items-center w-full justify-between text-xs">
-            <p className="!m-0 !text-sm">{frontMatter.date}</p>
-            <p className="text-foreground70 !m-0 !text-sm">{frontMatter.readingTime}</p>
+            <p className="m-0 text-sm">{frontMatter.date}</p>
+            <p className="text-foreground70 m-0 text-sm">{frontMatter.readingTime}</p>
           </div>
-          <h1 className="!text-3xl !m-0 !font-medium">{frontMatter.title}</h1>
+          <h1 className="!text-3xl !m-0 !font-medium font-apparat">{frontMatter.title}</h1>
         </div>
-        <div className="flex items-center w-full justify-between text-xs">
+        <div className="flex items-center w-full justify-between text-sm">
           <p>{frontMatter.author}</p>
         </div>
       </header>
-      <article className="mdx-content w-[90%] *:!text-[100%] mx-auto !p-0">
+      <article className="mdx-content w-[90%] mx-auto !p-0">
         <MDXRemote {...source} />
       </article>
     </Layout>
