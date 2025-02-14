@@ -1,12 +1,13 @@
 import fs from "fs";
-import path from "path";
 import matter from "gray-matter";
-import remarkMath from "remark-math";
+import { MDXRemote } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
+import path from "path";
 import readingTime from "reading-time";
 import rehypeKatex from "rehype-katex";
-import { MDXRemote } from "next-mdx-remote";
+import remarkFootnotes from "remark-footnotes";
+import remarkMath from "remark-math";
 import Layout from "../../components/Layout";
-import { serialize } from "next-mdx-remote/serialize";
 
 const RESEARCH_PATH = path.join(process.cwd(), "src/content/research");
 
@@ -26,7 +27,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 
   const mdxSource = await serialize(content, {
     mdxOptions: {
-      remarkPlugins: [remarkMath],
+      remarkPlugins: [remarkMath, remarkFootnotes as any],
       rehypePlugins: [rehypeKatex],
     },
   });
