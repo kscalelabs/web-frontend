@@ -36,10 +36,6 @@ const CommunitySection = () => {
           We&apos;re hackers, engineers, and researchers that believe in a world where robots are
           made for everyone.
         </p>
-        <p>
-          We&apos;re from Tesla AI, Google, Meta FAIR, Tencent, and Xiaomi building opportunities
-          for robots to be more than workers.
-        </p>
       </article>
       <div className="col-span-full flex gap-x-6 justify-start">
         <TeamColumn members={TeamCol1()} styling={"space-y-0.5"} />

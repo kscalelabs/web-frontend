@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import { motion, useInView } from "motion/react";
 import RobotWrapper from "@/components/robot/RobotWrapper";
 import { CTAButton } from "@/components/buttons/CTAButtons";
 import { DownArrowIcon } from "@/components/iconography/Iconography";
