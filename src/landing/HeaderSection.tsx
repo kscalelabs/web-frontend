@@ -36,7 +36,7 @@ const HeaderSection = () => {
               variant={ColorVariant.FILAMENT}
               className="w-full md:w-auto md:px-12 whitespace-nowrap py-4 text-[1rem]"
             >
-              Learn More ↗
+              Read More ↗
             </CTAButton>
           </div>
         </div>
