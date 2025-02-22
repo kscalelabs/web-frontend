@@ -24,6 +24,7 @@ export async function getStaticProps() {
       description: data.description || "No description available.",
       date: data.date || "Unknown date",
       image: data.image || "/images/research/css-pattern1.png",
+      draft: data.draft || false,
       readingTime: stats.text,
     };
   });
@@ -54,22 +55,24 @@ export default function ResearchIndex({ posts }: { posts: any[] }) {
         </div>
         <div className="col-span-full flex flex-col items-start text-justify auto-rows-auto text-foreground bg-background relative overflow-hidden px-[5vw] py-20">
           {posts.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/research/${post.slug}`}
-              className="flex flex-row justify-start w-full gap-4 border-b border-white/20 py-6"
-            >
-              <div className="w-20 md:w-48 flex flex-col gap-2 py-2">
-                <p className="font-planar text-xs text-left">{post.date}</p>
-                <p className="font-planar text-foreground70 text-xs">{post.readingTime}</p>
-              </div>
-              <div className="flex flex-col w-full items-start justify-start gap-2">
-                <h3 className="text-lg md:text-2xl text-left font-planar">{post.title}</h3>
-                <p className="text-foreground70 tracking-tight max-w-2xl leading-snug text-body text-left">
-                  {post.description}
-                </p>
-              </div>
-            </Link>
+            !post.draft && (
+              <Link
+                key={post.slug}
+                href={`/research/${post.slug}`}
+                className="flex flex-row justify-start w-full gap-4 border-b border-white/20 py-6"
+              >
+                <div className="w-20 md:w-48 flex flex-col gap-2 py-2">
+                  <p className="font-planar text-xs text-left">{post.date}</p>
+                  <p className="font-planar text-foreground70 text-xs">{post.readingTime}</p>
+                </div>
+                <div className="flex flex-col w-full items-start justify-start gap-2">
+                  <h3 className="text-lg md:text-2xl text-left font-planar">{post.title}</h3>
+                  <p className="text-foreground70 tracking-tight max-w-2xl leading-snug text-body text-left">
+                    {post.description}
+                  </p>
+                </div>
+              </Link>
+            )
           ))}
         </div>
         <Footer />

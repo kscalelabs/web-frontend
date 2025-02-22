@@ -12,7 +12,6 @@ export const navigationConfig: NavigationConfig[] = [
     link: "/research", // Internal link to the research page
     isExternal: false,
   },
-
   // {
   //   name: "Docs",
   //   link: "https://docs.kscale.dev/",
