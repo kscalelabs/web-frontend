@@ -4,7 +4,8 @@ import RobotWrapper from "@/components/robot/RobotWrapper";
 import { ColorVariant, FillMode } from "@/components/util/constants";
 import { useRef } from "react";
 
-const PREORDER_URL = "https://shop.kscale.dev/collections/all";
+// const PREORDER_URL = "https://shop.kscale.dev/collections/all";
+const PREORDER_URL = "https://discord.gg/kscale";
 
 const HeaderSection = () => {
   const ref = useRef(null);
@@ -28,7 +29,7 @@ const HeaderSection = () => {
               variant={ColorVariant.RUST}
               className="w-full md:w-auto md:px-12 whitespace-nowrap py-4 text-[1rem]"
             >
-              Buy Now ↗
+              Join Discord ↗
             </CTAButton>
             <CTAButton
               mode={FillMode.FILL}
