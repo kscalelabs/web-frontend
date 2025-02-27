@@ -5,7 +5,7 @@ import { ColorVariant, FillMode } from "@/components/util/constants";
 import { useRef } from "react";
 
 // const PREORDER_URL = "https://shop.kscale.dev/collections/all";
-const PREORDER_URL = "https://discord.gg/kscale";
+const PREORDER_URL = "https://discord.gg/pVwubQT9Sg";
 
 const HeaderSection = () => {
   const ref = useRef(null);
