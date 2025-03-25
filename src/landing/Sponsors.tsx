@@ -1,13 +1,12 @@
-import Marquee from "react-fast-marquee";
-import Pioneer from "../../public/sponsors/Pioneer";
-import React from "react";
-import GFT from "../../public/sponsors/GFT";
-import YCommunity from "../../public/sponsors/YCommunity";
-import AIGrant from "../../public/sponsors/AIGrant";
-import NinjaCapital from "../../public/sponsors/NinjaCapital";
-import Lombard from "../../public/sponsors/Lombard";
-import FellowsFund from "../../public/sponsors/FellowsFund";
 import Link from "next/link";
+import Marquee from "react-fast-marquee";
+import AIGrant from "../../public/sponsors/AIGrant";
+import FellowsFund from "../../public/sponsors/FellowsFund";
+import GFT from "../../public/sponsors/GFT";
+import Lombard from "../../public/sponsors/Lombard";
+import NinjaCapital from "../../public/sponsors/NinjaCapital";
+import Pioneer from "../../public/sponsors/Pioneer";
+import YCommunity from "../../public/sponsors/YCommunity";
 
 const svgSizeStyling = "w-60 h-auto";
 const SvgChildren = [
@@ -63,9 +62,6 @@ const Sponsors = () => {
         " w1440:pt-16 w1024:pt-12 w640:pt-10 sponsors "
       }
     >
-      <h2
-        className={"font-normal font-planar text-foreground text-heading-sm "}
-      >{`Backed by the industry's best`}</h2>
       <Marquee className={""}>
         {SvgChildren.map((sponsor, index) => {
           return (

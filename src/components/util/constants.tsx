@@ -12,7 +12,6 @@ export const navigationConfig: NavigationConfig[] = [
     link: "/research", // Internal link to the research page
     isExternal: false,
   },
-
   // {
   //   name: "Docs",
   //   link: "https://docs.kscale.dev/",
@@ -96,6 +95,6 @@ export const CursorTypes = {
   GRABBING: "grabbing",
 };
 
-export const TeamCol1 = () => ["Aaron", "Benjamin", "Denys", "Pawel", "Viraj"];
+export const TeamCol1 = () => ["Aaron", "Benjamin", "Denys", "Paweł", "Viraj"];
 
 export const TeamCol2 = () => ["Ali", "Chris", "Jinxiang", "Rui", "Wesley"];

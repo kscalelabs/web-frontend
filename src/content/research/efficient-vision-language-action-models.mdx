@@ -2,7 +2,6 @@
 title: "Efficient Vision-Language-Action Models"
 description: "Improving inference speed of vision-language-action models for edge devices while preserving encoding power."
 date: "September 9, 2024"
-image: "/research/images/css-pattern1.png"
 author: Paweł Budzianowski
 ---
 
@@ -17,8 +16,7 @@ Our proposed Edge VLA (EVLA) model satisfies both requirements, enabling easier 
 
 Models like OpenVLA require substantial computational resources, making deployment and testing on edge devices challenging. Just to host the model, 16GB VRAM is needed, necessitating devices like the Jetson AGX, which costs over $2,000. This high barrier to entry prevents widespread adoption and experimentation.
 
-Even with high-end hardware, these models are often too slow for practical manipulation tasks, running at only 1–2 Hz without significant optimization and quantization efforts. This limitation hinders real-time applications and research progress.
-While quantization methods and hardware-specific kernels can accelerate the model, these techniques alone may not yield the potential 10x improvements we seek.
+Even with high-end hardware, these models are often too slow for practical manipulation tasks, running at only 1–2 Hz without significant optimization and quantization efforts. This limitation hinders real-time applications and research progress. While quantization methods and hardware-specific kernels can accelerate the model, these techniques alone may not yield the potential 10x improvements we seek.
 
 ## Our Approach: Balancing Efficiency and Performance
 
@@ -39,7 +37,7 @@ We have combined above two ideas to achieve required architectural improvements.
 
 <figure style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
   <img
-    src="/research/images/evla_architecture.webp"
+    src="/research/images/evla_arch.png"
     alt="Comparison of OpenVLA vs EVLA"
     style={{ marginBottom: "0.1rem" }}
   />
@@ -83,11 +81,13 @@ These early runs shows that adapting efficient and smaller LLMs to non-autoregre
 
 Employing VLM for predicting end-effector position or whole body joint pose requires much faster inference speed than currently available LLM approaches. EVLA achieves both high-speed inference time but also lowers the memory requirements allowing to use cheaper hardware.
 
-<figure style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+<figure
+  style={{ display: "flex", flexDirection: "column", alignItems: "center", topBottom: "0.4rem" }}
+>
   <img
-    src="/research/images/Evaluation_ A100.webp"
+    src="/research/images/evla_speed.png"
     alt="Evaluation performed on A100–40GB."
-    style={{ marginBottom: "0.1rem", width: "500px" }}
+    style={{ marginBottom: "0.1rem", width: "700px" }}
   />
   <figcaption style={{ marginBottom: "1rem", textAlign: "center" }}>
     Evaluation performed on A100–40GB.
