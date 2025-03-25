@@ -5,7 +5,7 @@ import { ColorVariant, FillMode } from "@/components/util/constants";
 import { useRef } from "react";
 
 // const PREORDER_URL = "https://shop.kscale.dev/collections/all";
-const PREORDER_URL = "https://discord.gg/pVwubQT9Sg";
+// const PREORDER_URL = "https://discord.gg/pVwubQT9Sg";
 
 const HeaderSection = () => {
   const ref = useRef(null);
@@ -25,11 +25,11 @@ const HeaderSection = () => {
           <div className="flex flex-col md:flex-row w-full md:w-auto gap-3">
             <CTAButton
               mode={FillMode.FILL}
-              href={PREORDER_URL}
+              href="https://docs.kscale.dev/"
               variant={ColorVariant.RUST}
               className="w-full md:w-auto md:px-12 whitespace-nowrap py-4 text-[1rem]"
             >
-              Join Discord ↗
+              Documentation ↗
             </CTAButton>
             <CTAButton
               mode={FillMode.FILL}
