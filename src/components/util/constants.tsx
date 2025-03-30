@@ -8,15 +8,20 @@ export type NavigationConfig = {
 
 export const navigationConfig: NavigationConfig[] = [
   {
+    name: "Mission",
+    link: "/why",
+    isExternal: false,
+  },
+  {
+    name: "Docs",
+    link: "https://docs.kscale.dev/",
+    isExternal: true,
+  },
+  {
     name: "Research",
     link: "/research", // Internal link to the research page
     isExternal: false,
   },
-  // {
-  //   name: "Docs",
-  //   link: "https://docs.kscale.dev/",
-  //   isExternal: true,
-  // },
   // {
   //   name: "Dashboard",
   //   link: "https://dashboard.kscale.dev",
@@ -29,20 +34,7 @@ export const navigationConfig: NavigationConfig[] = [
   // },
   {
     name: "Discord",
-    link: "https://discord.com/invite/kscale",
-    isExternal: true,
-  },
-];
-
-export const zbotNavigationConfig: NavigationConfig[] = [
-  {
-    name: "Docs",
-    link: "https://docs.kscale.dev/",
-    isExternal: true,
-  },
-  {
-    name: "Discord",
-    link: "https://discord.com/invite/kscale",
+    link: "https://discord.gg/pVwubQT9Sg",
     isExternal: true,
   },
 ];

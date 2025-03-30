@@ -65,42 +65,20 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
         <div className="flex flex-row gap-12">
           {navigationConfig.map((navItem, index) => {
             return (
-              <motion.a
+              <a
                 key={index}
                 href={navItem.link}
                 target={navItem.isExternal ? "_blank" : "_self"}
                 className={clsx(
-                  "flex justify-end items-end text-base lg:text-md select-none self-center pointer-events-auto h-full",
+                  "flex justify-end items-end text-base lg:text-md select-none self-center pointer-events-auto h-full relative group",
                   atTop ? "text-white" : "text-foreground"
                 )}
-                initial="initial"
-                whileHover="hover"
-                transition={{ duration: 0.2, ease: "circOut" }}
               >
-                <div className={clsx("flex flex-row gap-2 items-center size-fit ")}>
+                <div className={clsx("flex flex-row gap-2 items-center size-fit")}>
                   {navItem.name}
-                  {navItem.isExternal && (
-                    <motion.svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      variants={{
-                        initial: { x: 0 },
-                        hover: { x: 4 },
-                      }}
-                    >
-                      <path d="M7 17L17 7" />
-                      <path d="M7 7h10v10" />
-                    </motion.svg>
-                  )}
                 </div>
-              </motion.a>
+                <div className="absolute bottom-[-4px] left-0 w-0 h-[2px] bg-rust transition-all duration-300 group-hover:w-full" />
+              </a>
             );
           })}
         </div>

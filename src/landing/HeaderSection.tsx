@@ -1,11 +1,37 @@
-import { CTAButton } from "@/components/buttons/CTAButtons";
 import { DownArrowIcon } from "@/components/iconography/Iconography";
 import RobotWrapper from "@/components/robot/RobotWrapper";
-import { ColorVariant, FillMode } from "@/components/util/constants";
 import { useRef } from "react";
 
 // const PREORDER_URL = "https://shop.kscale.dev/collections/all";
 // const PREORDER_URL = "https://discord.gg/pVwubQT9Sg";
+
+const EmailSignupSection = () => (
+  <form
+    action="https://dev.us22.list-manage.com/subscribe/post?u=a090115c9a76e96d327360f7d&amp;id=8a6ee81bb8&amp;f_id=00c3dce1f0"
+    method="post"
+    target="_blank"
+    className="w-full sm:w-auto md:w-full lg:max-w-md"
+  >
+    <div className="flex flex-col sm:flex-row sm:gap-0 gap-3">
+      <input
+        type="email"
+        name="EMAIL"
+        className="w-full px-4 py-2 text-sm sm:rounded-r-none rounded-md bg-background/20 border border-foreground/10 backdrop-blur-md text-rust placeholder:text-filament/50 focus:outline-none focus:ring-1 focus:ring-rust/50 transition-all"
+        placeholder="Your email address"
+      />
+      <div aria-hidden="true" style={{ position: "absolute", left: "-5000px" }}>
+        <input type="text" name="b_a090115c9a76e96d327360f7d_8a6ee81bb8" tabIndex={-1} />
+      </div>
+      <button
+        type="submit"
+        name="subscribe"
+        className="whitespace-nowrap px-4 py-2 text-sm sm:rounded-l-none rounded-md bg-rust text-filament font-medium cursor-pointer hover:bg-rust/90 transition-colors sm:-ml-px"
+      >
+        Get Early Access
+      </button>
+    </div>
+  </form>
+)
 
 const HeaderSection = () => {
   const ref = useRef(null);
@@ -23,22 +49,7 @@ const HeaderSection = () => {
             </h4>
           </div>
           <div className="flex flex-col md:flex-row w-full md:w-auto gap-3">
-            <CTAButton
-              mode={FillMode.FILL}
-              href="https://docs.kscale.dev/"
-              variant={ColorVariant.RUST}
-              className="w-full md:w-auto md:px-12 whitespace-nowrap py-4 text-[1rem]"
-            >
-              Documentation ↗
-            </CTAButton>
-            <CTAButton
-              mode={FillMode.FILL}
-              href="/why"
-              variant={ColorVariant.FILAMENT}
-              className="w-full md:w-auto md:px-12 whitespace-nowrap py-4 text-[1rem]"
-            >
-              Mission ↗
-            </CTAButton>
+            <EmailSignupSection />
           </div>
         </div>
         <div
