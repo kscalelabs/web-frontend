@@ -31,7 +31,7 @@ const EmailSignupSection = () => (
       </button>
     </div>
   </form>
-)
+);
 
 const HeaderSection = () => {
   const ref = useRef(null);
