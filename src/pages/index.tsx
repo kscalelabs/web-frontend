@@ -39,12 +39,12 @@ export default function Home() {
       <NavBar />
       <main className="gap-y-4 relative">
         <HeaderSection />
-        <CatchphraseSection />
-        {/* <ResearchSection /> */}
-        {/* <SpecSection /> */}
-        {/* <WhatCanItDoSection /> */}
-        {/* <RobotSection /> */}
-        {/* <GallerySection /> */}
+        {/* <CatchphraseSection /> */}
+        <ResearchSection />
+        <SpecSection />
+        <WhatCanItDoSection />
+        <RobotSection />
+        <GallerySection />
         <CommunitySection />
       </main>
       <Sponsors />
