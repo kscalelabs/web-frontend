@@ -27,8 +27,8 @@ const CommunitySection = () => {
     <section className="col-span-full grid grid-cols-subgrid auto-rows-min gap-y-4 pb-16">
       <article
         className="col-span-full sm:col-span-5 md:col-span-5 
-          lg:col-span-4 xl:col-span-3 2xl:col-span-5 
-          3xl:col-span-4 4xl:col-span-4 5xl:col-span-3 
+          lg:col-span-4 xl:col-span-3 w1440:col-span-4 
+          2xl:col-span-4 4xl:col-span-3 5xl:col-span-3 
           flex flex-col gap-y-4 pb-6"
       >
         <h2 className="text-caption uppercase text-foreground70 relative y-1/2">About us</h2>

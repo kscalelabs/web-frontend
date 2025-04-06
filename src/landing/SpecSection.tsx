@@ -20,12 +20,12 @@ const SpecSection = () => {
           </InlineCTA>
         </div>
       </motion.aside>
-      <article className="col-span-full lg:col-span-5 2xl:col-span-6 2xl:-col-end-1 4xl:col-span-7 4xl:-col-end-1 grid grid-cols-subgrid gap-y-4">
-        <h3 className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 xl:col-span-3 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 3xl:col-span-5 3xl:col-start-2 4xl:col-span-4 4xl:col-start-2 text-heading-sm">
+      <article className="col-span-full lg:col-span-5 xl:col-span-5 w1440:col-span-6 w1440:-col-end-1 xl:-col-end-1 4xl:col-span-7 4xl:-col-end-1 grid grid-cols-subgrid gap-y-4">
+        <h3 className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 w1440:col-span-5 w1440:col-start-2 2xl:col-span-5 2xl:col-start-2 4xl:col-span-4 4xl:col-start-2 text-heading-sm">
           We built K-Bot with an aerospace-grade aluminium body, anodized in a protective matte
           black finish.
         </h3>
-        <figure className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 xl:col-span-3 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 3xl:col-span-5 3xl:col-start-2 4xl:col-span-4 4xl:col-start-2 aspect-video relative rounded-md overflow-hidden">
+        <figure className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 w1440:col-span-5 w1440:col-start-2 2xl:col-span-5 2xl:col-start-2 4xl:col-span-4 4xl:col-start-2 aspect-video relative rounded-md overflow-hidden">
           <Image
             src={photoPaths.WHAT_IS_K_BOT_1}
             alt={photoPathAltText.WHAT_IS_K_BOT_1_ALT}
@@ -37,12 +37,12 @@ const SpecSection = () => {
           />
         </figure>
       </article>
-      <article className="col-span-full lg:col-span-5 2xl:col-span-6 2xl:-col-end-1 4xl:col-span-7 4xl:-col-end-1 grid grid-cols-subgrid gap-y-4">
-        <h3 className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 xl:col-span-3 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 3xl:col-span-5 3xl:col-start-2 4xl:col-span-4 4xl:col-start-2 text-heading-sm">
+      <article className="col-span-full lg:col-span-5 xl:col-span-5 w1440:col-span-6 w1440:-col-end-1 xl:-col-end-1 4xl:col-span-7 4xl:-col-end-1 grid grid-cols-subgrid gap-y-4">
+        <h3 className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 w1440:col-span-5 w1440:col-start-2 2xl:col-span-5 2xl:col-start-2 4xl:col-span-4 4xl:col-start-2 text-heading-sm">
           Equipped with high-torque quasi-direct drive electric actuators running high-frequency
           closed-loop control.
         </h3>
-        <figure className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 xl:col-span-3 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 3xl:col-span-5 3xl:col-start-2 4xl:col-span-4 4xl:col-start-2 aspect-video relative rounded-md overflow-hidden">
+        <figure className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 w1440:col-span-5 w1440:col-start-2 2xl:col-span-5 2xl:col-start-2 4xl:col-span-4 4xl:col-start-2 aspect-video relative rounded-md overflow-hidden">
           <Image
             src={photoPaths.WHAT_IS_K_BOT_2}
             alt={photoPathAltText.WHAT_IS_K_BOT_2_ALT}
@@ -54,12 +54,12 @@ const SpecSection = () => {
           />
         </figure>
       </article>
-      <article className="col-span-full lg:col-span-5 2xl:col-span-6 2xl:-col-end-1 4xl:col-span-7 4xl:-col-end-1 grid grid-cols-subgrid gap-y-4">
-        <h3 className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 xl:col-span-3 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 3xl:col-span-5 3xl:col-start-2 4xl:col-span-4 4xl:col-start-2 text-heading-sm">
+      <article className="col-span-full lg:col-span-5 xl:col-span-5 w1440:col-span-6 w1440:-col-end-1 xl:-col-end-1 4xl:col-span-7 4xl:-col-end-1 grid grid-cols-subgrid gap-y-4">
+        <h3 className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 w1440:col-span-5 w1440:col-start-2 2xl:col-span-5 2xl:col-start-2 4xl:col-span-4 4xl:col-start-2 text-heading-sm">
           Dependable, blazing-fast end-to-end neural network inference with our custom
           high-performance operating system.
         </h3>
-        <figure className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 xl:col-span-3 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 3xl:col-span-5 3xl:col-start-2 4xl:col-span-4 4xl:col-start-2 aspect-video relative rounded-md overflow-hidden">
+        <figure className="col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 w1440:col-span-5 w1440:col-start-2 2xl:col-span-5 2xl:col-start-2 4xl:col-span-4 4xl:col-start-2 aspect-video relative rounded-md overflow-hidden">
           <Image
             src={photoPaths.WHAT_IS_K_BOT_3}
             alt={photoPathAltText.WHAT_IS_K_BOT_3_ALT}
