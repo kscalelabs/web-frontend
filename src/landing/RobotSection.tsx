@@ -12,19 +12,25 @@ const RobotSection = () => {
     <section className="col-span-full grid grid-cols-subgrid items-center text-center max-w-full relative mb-16">
       <hgroup
         className={
-          "col-span-full md:absolute md:z-40 max-w-48 lg:max-w-64 2xl:max-w-48 top-8 left-8 text-left flex flex-col gap-4 mb-8 " +
+          "col-span-4 text-left flex flex-col gap-4 mb-8 " +
           (width >= 768 ? "text-filament" : " text-foreground")
         }
       >
-        <h2 className="text-heading-sm">
+        <h2 className="text-heading-md">
           The best humanoid robot platform for the K-Scale software ecosystem
         </h2>
-        <p className="text-body">
+        <p className="text-heading-sm">
           Bringing high-performance, real-time teleoperation and machine learning into every robot
         </p>
       </hgroup>
       <div
-        className="col-span-full w-full relative h-[60svh] lg:h-full lg:aspect-video min-h-[16rem]"
+        className="col-span-4 -col-end-2 w1440:-col-end-3 w-full relative lg:h-full xl:h-[70svh] min-h-[16rem]"
+        ref={ref}
+      >
+        <RobotWrapper />
+      </div>
+      {/* <div
+        className="col-span-full w-full relative h-[40svh] lg:h-full lg:aspect-video min-h-[16rem]"
         ref={ref}
       >
         <motion.aside
@@ -74,7 +80,7 @@ const RobotSection = () => {
           </motion.hgroup>
         </motion.aside>
         <RobotWrapper />
-      </div>
+      </div> */}
     </section>
   );
 };
