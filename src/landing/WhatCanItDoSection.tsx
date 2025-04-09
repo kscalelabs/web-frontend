@@ -110,8 +110,8 @@ const WhatCanItDoSection = () => {
         </div>
       </motion.aside>
 
-      <article className="col-span-full lg:col-span-5 2xl:col-span-6 2xl:-col-end-1 4xl:col-span-7 4xl:-col-end-1 grid grid-cols-subgrid gap-y-4">
-        <div className="relative col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 xl:col-span-3 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 3xl:col-span-5 3xl:col-start-2 4xl:col-span-4 4xl:col-start-2">
+      <article className="col-span-full lg:col-span-5 lg:-col-end-1 2xl:col-span-6 2xl:-col-end-1 4xl:col-span-7 4xl:-col-end-1 grid grid-cols-subgrid gap-y-4">
+        <div className="relative col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 xl:col-span-3 w1440:col-span-5 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 3xl:col-span-5 3xl:col-start-2 4xl:col-span-4 4xl:col-start-2">
           <div className="sticky top-16 z-20 isolate overflow-hidden">
             <div className="relative inline-block bg-background/80 backdrop-blur-sm px-6 py-3 rounded-2xl">
               <h3 className="text-heading-sm">Hey K-Bot, can you...</h3>
