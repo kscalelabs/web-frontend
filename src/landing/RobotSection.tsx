@@ -1,11 +1,9 @@
 import RobotWrapper from "@/components/robot/RobotWrapper";
 import { useWindowSize } from "@/components/util/functions";
-import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 
 const RobotSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
   const width = useWindowSize().width;
 
   return (

@@ -1,5 +1,3 @@
-import { InlineCTA } from "@/components/buttons/CTAButtons";
-import { ExpressiveArrow } from "@/components/iconography/Iconography";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 

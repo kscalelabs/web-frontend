@@ -1,6 +1,3 @@
-import { CTASubtitleButton } from "@/components/buttons/CTAButtons";
-import { FillMode } from "@/components/util/constants";
-import Image from "next/image";
 import { photoPathAltText, photoPaths } from "@/components/util/photoPaths";
 
 const EmailSignupSection = () => (
@@ -48,8 +45,8 @@ const HeaderSection = () => {
       <hgroup className="z-10 text-filament col-span-full sm:col-span-4 md:col-span-5 md:col-start-5 lg:col-span-4 lg:col-start-6 w1440:col-span-5 w1440:col-start-8 2xl:col-start-8 2xl:col-span-5 4xl:col-start-8 4xl:col-span-4 flex flex-col mb-12 gap-4">
         <h1 className="text-heading-lg">Intelligent Robot, Today</h1>
         <h2 className="text-body">
-          The world's most intelligent and accessible open-source humanoid robot for a world where
-          robots are made for everyone and by everyone.
+          The world&apos;s most intelligent and accessible open-source humanoid robot for a world
+          where robots are made for everyone and by everyone.
         </h2>
         <EmailSignupSection />
       </hgroup>

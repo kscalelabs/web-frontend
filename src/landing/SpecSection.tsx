@@ -1,5 +1,3 @@
-import { InlineCTA } from "@/components/buttons/CTAButtons";
-import { ExpressiveArrow } from "@/components/iconography/Iconography";
 import { photoPathAltText, photoPaths } from "@/components/util/photoPaths";
 import { motion } from "motion/react";
 import Image from "next/image";
