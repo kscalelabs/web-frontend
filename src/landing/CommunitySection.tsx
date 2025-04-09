@@ -91,8 +91,8 @@ const CommunitySection = () => {
         </figure>
         <figure className="col-span-full  md:col-span-2 2xl:col-span-3 aspect-square sm:aspect-video rounded-md relative overflow-hidden">
           <Image
-            src={photoPaths.COMMUNITY_UPPER_RIGHT}
-            alt={photoPathAltText.COMMUNITY_UPPER_RIGHT_ALT}
+            src={photoPaths.ZBOT_COMMUNITY_BOTTOM}
+            alt={photoPathAltText.ZBOT_COMMUNITY_BOTTOM_ALT}
             fill
             className="object-cover object-[50%_15%]"
             loading={"eager"}
