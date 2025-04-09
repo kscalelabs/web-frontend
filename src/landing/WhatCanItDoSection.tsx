@@ -100,18 +100,16 @@ const WhatCanItDoSection = () => {
             <span className="text-heading-md text-foreground60 font-apparat">
               What can K-Bot do?
             </span>
-            <h2 className="text-heading-md">
-              Designed by top AI researchers and engineers to be the best robot for AGI.
-            </h2>
-            <InlineCTA href="https://github.com/kscalelabs">
+            <h2 className="text-heading-md">Continually learning and improving tasks.</h2>
+            {/* <InlineCTA href="https://github.com/kscalelabs">
               Continuously learning and improving <ExpressiveArrow size="size-4" />
-            </InlineCTA>
+            </InlineCTA> */}
           </hgroup>
         </div>
       </motion.aside>
 
-      <article className="col-span-full lg:col-span-5 lg:-col-end-1 2xl:col-span-6 2xl:-col-end-1 4xl:col-span-7 4xl:-col-end-1 grid grid-cols-subgrid gap-y-4">
-        <div className="relative col-span-full sm:col-span-5 sm:col-start-2 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-2 xl:col-span-3 w1440:col-span-5 xl:col-start-2 2xl:col-span-5 2xl:col-start-2 3xl:col-span-5 3xl:col-start-2 4xl:col-span-4 4xl:col-start-2">
+      <article className="col-span-full lg:col-span-5 2xl:col-span-6 4xl:col-span-7 grid grid-cols-subgrid gap-y-4">
+        <div className="relative col-span-full sm:col-span-5 md:col-span-5 lg:col-span-4 xl:col-span-3 w1440:col-span-5 2xl:col-span-5 3xl:col-span-5 4xl:col-span-4">
           <div className="sticky top-16 z-20 isolate overflow-hidden">
             <div className="relative inline-block bg-background/80 backdrop-blur-sm px-6 py-3 rounded-2xl">
               <h3 className="text-heading-sm">Hey K-Bot, can you...</h3>

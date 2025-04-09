@@ -13,7 +13,7 @@ const socialMediaSvgs: JSX.Element[] = [
 ];
 
 const socialMediaLinks: { linkURL: string; name: string }[] = [
-  { linkURL: "https://discord.gg/kscale", name: "Discord" },
+  { linkURL: "https://discord.gg/se4fRTsek7", name: "Discord" },
   { linkURL: "https://x.com/kscalelabs", name: "Twitter" },
   { linkURL: "https://github.com/kscalelabs", name: "Github" },
 ];
