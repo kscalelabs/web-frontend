@@ -1,62 +1,56 @@
 import { CTAButton } from "@/components/buttons/CTAButtons";
 import { Github } from "@/components/footer/socialMediaSvgs";
 import {
-  EVLAIcon,
+  KBotIcon,
   KOSIcon,
-  KRECIcon,
+  KOSSimIcon,
   KSIMIcon,
-  KLANGIcon,
+  OnshapeIcon,
 } from "@/components/iconography/ResearchIcons";
+import { ColorVariant, FillMode, IconMode, Size } from "@/components/util/constants";
 import { useWindowSize } from "@/components/util/functions";
-import { motion, useMotionValue } from "motion/react";
-import { useState, useEffect, useMemo } from "react";
 import clsx from "clsx";
-import { IconMode } from "@/components/util/constants";
-import { ColorVariant, FillMode, Size } from "@/components/util/constants";
+import { motion, useMotionValue } from "motion/react";
+import { useEffect, useMemo, useState } from "react";
 
 const RESEARCH_ITEMS = [
   {
-    title: "K-SIM",
+    title: "K-Bot",
     description:
-      "High performant open-source locomotion and manipulation simulation library for robot learning built with MJX.",
-    image: "/images/research/edge-vla.png",
-    link: "https://github.com/kscalelabs/ksim",
-    icon: <KSIMIcon />,
+      "Our monorepo with the core dependencies required for building and deploying your own K-Bot.",
+    link: "https://github.com/kscalelabs/kbot",
+    icon: <KBotIcon />,
     variant: ColorVariant.METHYL,
   },
   {
-    title: "K-OS",
-    description: "Work with reliable real-time ML inference using our Rust-based operating system.",
-    image: "/images/research/edge-vla.png",
-    link: "https://github.com/kscalelabs/kos",
-    icon: <KOSIcon />,
+    title: "K-SIM",
+    description:
+      "Open-source reinforcement learning library for learning locomotion and manipulation policies, built on MJX.",
+    link: "https://github.com/kscalelabs/ksim",
+    icon: <KSIMIcon />,
     variant: ColorVariant.PLASMA,
   },
   {
-    title: "KOS SIM",
+    title: "K-OS",
     description:
-      "Digital twin and simulation backend of KOS for prototyping and sim2real evaluation in MuJoCo.",
-    image: "/images/research/edge-vla.png",
-    link: "https://github.com/kscalelabs/kos-sim",
-    icon: <KLANGIcon />, // TODO: change icon
+      "K-Scale's real-time operating system, built on Rust, with support for language-agnostic downstream clients.",
+    link: "https://github.com/kscalelabs/kos",
+    icon: <KOSIcon />,
     variant: ColorVariant.OXIDE,
   },
   {
-    title: "Edge VLA",
+    title: "K-OS SIM",
     description:
-      "We’re collaboratively training a foundation for general purpose robots, that gets faster with more contributions from the open-source community",
-    image: "/images/research/edge-vla.png",
-    link: "https://github.com/kscalelabs/evla",
-    icon: <EVLAIcon />,
+      "Simulation backend for K-OS, letting you test your deployment code in a simulated environment before trying it out on a physical robot.",
+    link: "https://github.com/kscalelabs/kos-sim",
+    icon: <KOSSimIcon />,
     variant: ColorVariant.RUST,
   },
   {
-    title: "kRec",
-    description:
-      "Our compact serialization format for robotics telemetry, with efficient decoding to avoid bottlenecks in training neutral networks.",
-    image: "/images/research/edge-vla.png",
-    link: "https://github.com/kscalelabs/krec",
-    icon: <KRECIcon />,
+    title: "Onshape Converter",
+    description: "Convert Onshape CAD models to simulation-ready artifacts.",
+    link: "https://github.com/kscalelabs/onshape",
+    icon: <OnshapeIcon />,
     variant: ColorVariant.MOLTEN,
   },
 ];
@@ -64,7 +58,6 @@ const RESEARCH_ITEMS = [
 interface ResearchItem {
   title: string;
   description: string;
-  image: string;
   link: string;
   index: number;
   icon: React.ReactNode;
@@ -289,8 +282,7 @@ const ResearchSection = () => {
     <section className="col-span-full grid grid-cols-subgrid auto-rows-min py-16">
       <hgroup className="col-span-full sm:col-span-4 2xl:col-span-4 flex flex-col mb-12 gap-4">
         <span className="text-caption uppercase text-foreground70 relative y-1/2">Research</span>
-        <h2 className="text-heading-md">The humanoid robot is as strong as its brain.</h2>
-        <p></p>
+        <h2 className="text-heading-md">Humanoid robots as strong as their brains.</h2>
       </hgroup>
       {/* <ResearchCarousel /> */}
       <SwipeCarousel />

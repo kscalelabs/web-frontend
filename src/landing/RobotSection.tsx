@@ -14,9 +14,10 @@ const RobotSection = () => {
           (width >= 768 ? "text-filament" : " text-foreground")
         }
       >
-        <h2 className="text-heading-md">Powered by the K-Scale open-source software ecosystem</h2>
+        <h2 className="text-heading-md">Powered by the K-Scale software ecosystem</h2>
         <p className="text-heading-sm">
-          The K-Bot is the most intelligent and low-cost humanoid robot of its kind, ever.
+          Developed by leading robotics and machine learning researchers and engineers in the heart
+          of Silicon Valley, in a platform that respects your freedom.
         </p>
       </hgroup>
       <div

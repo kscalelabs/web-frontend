@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 
-export const EVLAIcon = () => {
+export const KBotIcon = () => {
   return (
     <motion.svg
       width="24"
@@ -10,21 +10,59 @@ export const EVLAIcon = () => {
       xmlns="http://www.w3.org/2000/svg"
       className="size-16 w-fit"
     >
-      <path d="M12 12L9.5 3.5" stroke="var(--filament)" strokeWidth="0.5" />
-      <path d="M12 12L20.5 6.5" stroke="var(--filament)" strokeWidth="0.5" />
-      <path d="M12 12L20.5 15.5" stroke="var(--filament)" strokeWidth="0.5" />
-      <path d="M12 12L9.5 20.5" stroke="var(--filament)" strokeWidth="0.5" />
-      <path d="M12 12L3.5 13.5" stroke="var(--filament)" strokeWidth="0.5" />
-      <circle cx="12" cy="12" r="3" fill="var(--filament)" />
-      <circle cx="9.5" cy="3.5" r="1.5" fill="var(--filament)" />
-      <circle cx="9.5" cy="20.5" r="1.5" fill="var(--filament)" />
-      <circle cx="3.5" cy="13.5" r="1.5" fill="var(--filament)" />
-      <circle opacity="0.7" cx="16" cy="6" r="1" fill="var(--filament)" />
-      <circle opacity="0.7" cx="16" cy="18" r="1" fill="var(--filament)" />
-      <circle opacity="0.7" cx="7" cy="17" r="1" fill="var(--filament)" />
-      <circle opacity="0.5" cx="5" cy="8" r="1" fill="var(--filament)" />
-      <circle cx="20.5" cy="15.5" r="1.5" fill="var(--filament)" />
-      <circle cx="20.5" cy="6.5" r="1.5" fill="var(--filament)" />
+      {/* Head */}
+      <rect
+        x="8"
+        y="4"
+        width="8"
+        height="7"
+        rx="2"
+        stroke="var(--filament)"
+        strokeWidth="0.5"
+        fill="none"
+      />
+
+      {/* Antenna */}
+      <line x1="12" y1="2" x2="12" y2="4" stroke="var(--filament)" strokeWidth="0.5" />
+      <circle cx="12" cy="1.5" r="0.5" fill="var(--filament)" />
+
+      {/* Eyes */}
+      <circle cx="10" cy="7" r="1" fill="var(--filament)" opacity="0.7" />
+      <circle cx="14" cy="7" r="1" fill="var(--filament)" opacity="0.7" />
+
+      {/* Body */}
+      <rect
+        x="6"
+        y="13"
+        width="12"
+        height="8"
+        rx="2"
+        stroke="var(--filament)"
+        strokeWidth="0.5"
+        fill="none"
+      />
+
+      {/* Neck */}
+      <rect
+        x="10"
+        y="11"
+        width="4"
+        height="2"
+        stroke="var(--filament)"
+        strokeWidth="0.5"
+        fill="none"
+      />
+
+      {/* Body Details */}
+      <circle cx="9" cy="15" r="0.5" fill="var(--filament)" />
+      <circle cx="12" cy="15" r="0.5" fill="var(--filament)" />
+      <circle cx="15" cy="15" r="0.5" fill="var(--filament)" />
+
+      {/* Arms */}
+      <line x1="6" y1="15" x2="4" y2="15" stroke="var(--filament)" strokeWidth="0.5" />
+      <line x1="18" y1="15" x2="20" y2="15" stroke="var(--filament)" strokeWidth="0.5" />
+      <circle cx="3.5" cy="15" r="0.5" fill="var(--filament)" />
+      <circle cx="20.5" cy="15" r="0.5" fill="var(--filament)" />
     </motion.svg>
   );
 };
@@ -63,7 +101,7 @@ export const KOSIcon = () => {
   );
 };
 
-export const KLANGIcon = () => {
+export const KOSSimIcon = () => {
   return (
     <motion.svg
       width="24"
@@ -101,7 +139,7 @@ export const KLANGIcon = () => {
   );
 };
 
-export const KRECIcon = () => {
+export const OnshapeIcon = () => {
   return (
     <motion.svg
       width="24"

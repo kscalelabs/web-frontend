@@ -98,10 +98,9 @@ const WhatCanItDoSection = () => {
             <span className="text-heading-md text-foreground60 font-apparat">
               What can K-Bot do?
             </span>
-            <h2 className="text-heading-md">Continually learning and improving tasks.</h2>
-            {/* <InlineCTA href="https://github.com/kscalelabs">
-              Continuously learning and improving <ExpressiveArrow size="size-4" />
-            </InlineCTA> */}
+            <h2 className="text-heading-md">
+              Constantly improving with community-driven development.
+            </h2>
           </hgroup>
         </div>
       </motion.aside>

@@ -52,13 +52,9 @@ const CommunitySection = () => {
         <span className="text-caption uppercase text-foreground70 relative y-1/2">Community</span>
         <h2 className="text-heading-md">Take ownership of how we keep building.</h2>
         <p>
-          Get rapid-fire support during your development process through our Discord&mdash;home to
-          2000+ active members who have collaborated on 6 humanoid robots and counting.
-        </p>
-
-        <p>
-          We are actively publishing papers and collectively exploring the frontier of embodied
-          intelligence.
+          Get real-time support during your development process through our Discord
+          community&mdash;home to 2000+ members who have collaborated on 6 humanoid robots and
+          counting.
         </p>
       </hgroup>
       <menu className="col-span-full sm:col-span-4 sm:col-start-2 md:col-span-5 md:col-start-2 h-min flex flex-row flex-wrap gap-4">
