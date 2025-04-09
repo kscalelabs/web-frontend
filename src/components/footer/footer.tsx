@@ -78,7 +78,7 @@ export default function Footer() {
     tempInput.select();
     try {
       document.execCommand("copy");
-    } catch { }
+    } catch {}
     document.body.removeChild(tempInput);
   };
 
