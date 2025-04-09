@@ -78,7 +78,7 @@ export default function Footer() {
     tempInput.select();
     try {
       document.execCommand("copy");
-    } catch {}
+    } catch { }
     document.body.removeChild(tempInput);
   };
 
@@ -188,8 +188,8 @@ export default function Footer() {
       <FooterSectionList
         title={"Product"}
         items={[
-          { title: "K-Bot", url: "https://shop.kscale.dev/collections/all" },
-          { title: "Z-Bot", url: "https://zerothbot.com" },
+          // { title: "K-Bot", url: "https://shop.kscale.dev/collections/all" },
+          // { title: "Z-Bot", url: "https://zerothbot.com" },
           {
             title: "Send feedback",
             url: "https://docs.google.com/forms/d/e/1FAIpQLSemVaJ6HfieS9xDKv7SqWYArHyHLV-kraraiT_VEmPL_6lkPw/viewform",
