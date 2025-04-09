@@ -45,7 +45,7 @@ const HeaderSection = () => {
       <hgroup className="z-10 text-filament col-span-full sm:col-span-4 md:col-span-5 md:col-start-5 lg:col-span-4 lg:col-start-6 w1440:col-span-5 w1440:col-start-8 2xl:col-start-8 2xl:col-span-5 4xl:col-start-8 4xl:col-span-4 flex flex-col mb-12 gap-4">
         <h1 className="text-heading-lg">Open-Source Humanoid Robots</h1>
         <h2 className="text-heading-sm">
-          Free as in freedom, not free as in beer, made by everyone, for everyone.
+          Free as in freedom, made by everyone, for everyone.
         </h2>
         <EmailSignupSection />
       </hgroup>
