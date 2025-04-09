@@ -114,9 +114,9 @@ const CommunitySection = () => {
       </aside>
 
       <article
-        className="col-span-full sm:col-span-5 md:col-span-5
-          lg:col-span-4 xl:col-span-3 2xl:col-span-5
-          3xl:col-span-4 4xl:col-span-4 5xl:col-span-3
+        className="col-span-full sm:col-span-5 md:col-span-5 md:col-start-2
+          lg:col-span-4 lg:col-start-2 xl:col-span-3 xl:col-start-2 2xl:col-span-5 2xl:col-start-2
+          3xl:col-span-4 3xl:col-start-2 4xl:col-span-4 4xl:col-start-2 5xl:col-span-3 5xl:col-start-2
           flex flex-col gap-y-4 pt-16 pb-6"
       >
         <h2 className="text-caption uppercase text-foreground70 relative y-1/2">
@@ -127,7 +127,12 @@ const CommunitySection = () => {
           made for everyone.
         </p>
       </article>
-      <div className="col-span-full flex gap-x-6 justify-start">
+      <div
+        className="col-span-full sm:col-span-5 md:col-span-5 md:col-start-2
+          lg:col-span-4 lg:col-start-2 xl:col-span-3 xl:col-start-2 2xl:col-span-5 2xl:col-start-2
+          3xl:col-span-4 3xl:col-start-2 4xl:col-span-4 4xl:col-start-2 5xl:col-span-3 5xl:col-start-2
+          flex gap-x-6 justify-start"
+      >
         <TeamColumn members={TeamCol1()} styling={"space-y-0.5"} />
         <TeamColumn members={TeamCol2()} styling={"space-y-0.5"} />
       </div>

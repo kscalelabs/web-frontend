@@ -7,28 +7,28 @@ import { photoPathAltText, photoPaths } from "@/components/util/photoPaths";
 
 const Images = [
   {
-    src: photoPaths.GALLERY_1,
-    alt: photoPathAltText.GALLERY_1_ALT,
+    src: photoPaths.K_SCALE_LABS_RENDER,
+    alt: photoPathAltText.K_SCALE_LABS_RENDER_ALT,
   },
   {
-    src: photoPaths.GALLERY_2,
-    alt: photoPathAltText.GALLERY_2_ALT,
+    src: photoPaths.K_BOT_KSCALE_RENDER,
+    alt: photoPathAltText.K_BOT_KSCALE_RENDER_ALT,
   },
   {
-    src: photoPaths.GALLERY_3,
-    alt: photoPathAltText.GALLERY_3_ALT,
+    src: photoPaths.K_BOT_LEG_RENDER,
+    alt: photoPathAltText.K_BOT_LEG_RENDER_ALT,
   },
   {
-    src: photoPaths.GALLERY_4,
-    alt: photoPathAltText.GALLERY_4_ALT,
+    src: photoPaths.K_BOT_ARM_RENDER,
+    alt: photoPathAltText.K_BOT_ARM_RENDER_ALT,
   },
   {
-    src: photoPaths.GALLERY_5,
-    alt: photoPathAltText.GALLERY_5_ALT,
+    src: photoPaths.K_BOT_TORSO_RENDER,
+    alt: photoPathAltText.K_BOT_TORSO_RENDER_ALT,
   },
   {
-    src: photoPaths.GALLERY_6,
-    alt: photoPathAltText.GALLERY_6_ALT,
+    src: photoPaths.K_BOT_ACTUATOR_RENDER,
+    alt: photoPathAltText.K_BOT_ACTUATOR_RENDER_ALT,
   },
 ];
 

@@ -33,12 +33,12 @@ const RESEARCH_ITEMS = [
     variant: ColorVariant.PLASMA,
   },
   {
-    title: "Klang",
+    title: "KOS SIM",
     description:
-      "Skip writing ROS nodes with our domain-specific language for interfacing with neural interpretation.",
+      "Digital twin and simulation backend of KOS for prototyping and sim2real evaluation in MuJoCo.",
     image: "/images/research/edge-vla.png",
-    link: "https://github.com/kscalelabs/klang",
-    icon: <KLANGIcon />,
+    link: "https://github.com/kscalelabs/kos-sim",
+    icon: <KLANGIcon />, // TODO: change icon
     variant: ColorVariant.OXIDE,
   },
   {
