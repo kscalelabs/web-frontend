@@ -61,7 +61,7 @@ export const photoPathAltText = {
   GALLERY_6_ALT: "Gallery Image 6",
   COMMUNITY_MAIN_BIG_ALT: "Photo: k-scale team tinkering on K-Bot in the garage",
   COMMUNITY_UPPER_RIGHT_ALT: "Photo: k-scale team photo",
-  COMMUNITY_BOTTOM_ALT: "Photo: k-scale labs hacakthon",
+  COMMUNITY_BOTTOM_ALT: "Photo: k-scale labs hackathon",
   ZBOT_COMMUNITY_MAIN_BIG_ALT: "Photo: Community members working with Zeroth Bot",
   ZBOT_COMMUNITY_BOTTOM_ALT: "Photo: Community members working with Zeroth Bot",
   ZBOT_COMMUNITY_UPPER_RIGHT_ALT: "Photo: Community collaboration",
