@@ -89,4 +89,4 @@ export const CursorTypes = {
 
 export const TeamCol1 = () => ["Aaron", "Benjamin", "Denys", "Paweł", "Viraj"];
 
-export const TeamCol2 = () => ["Ali", "Chris", "Jinxiang", "Rui", "Wesley"];
+export const TeamCol2 = () => ["Ali", "Chris", "Jingxiang", "Rui", "Wesley"];

@@ -1,6 +1,5 @@
 import Footer from "@/components/footer/footer";
 import NavBar from "@/components/navbar/navbar";
-import CatchphraseSection from "@/landing/CatchphraseSection";
 import CommunitySection from "@/landing/CommunitySection";
 import GallerySection from "@/landing/GallerySection";
 import HeaderSection from "@/landing/HeaderSection";
@@ -39,12 +38,12 @@ export default function Home() {
       <NavBar />
       <main className="gap-y-4 relative">
         <HeaderSection />
-        <CatchphraseSection />
-        {/* <ResearchSection /> */}
-        {/* <SpecSection /> */}
-        {/* <WhatCanItDoSection /> */}
-        {/* <RobotSection /> */}
-        {/* <GallerySection /> */}
+        {/* <CatchphraseSection /> */}
+        <ResearchSection />
+        <SpecSection />
+        <WhatCanItDoSection />
+        <RobotSection />
+        <GallerySection />
         <CommunitySection />
       </main>
       <Sponsors />

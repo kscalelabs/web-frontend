@@ -16,12 +16,12 @@ import { ColorVariant, FillMode, Size } from "@/components/util/constants";
 
 const RESEARCH_ITEMS = [
   {
-    title: "Edge VLA",
+    title: "K-SIM",
     description:
-      "We’re collaboratively training a foundation for general purpose robots, that gets faster with more contributions from the open-source community",
+      "High performant open-source locomotion and manipulation simulation library for robot learning built with MJX.",
     image: "/images/research/edge-vla.png",
-    link: "https://github.com/kscalelabs/evla",
-    icon: <EVLAIcon />,
+    link: "https://github.com/kscalelabs/ksim",
+    icon: <KSIMIcon />,
     variant: ColorVariant.METHYL,
   },
   {
@@ -33,13 +33,22 @@ const RESEARCH_ITEMS = [
     variant: ColorVariant.PLASMA,
   },
   {
-    title: "Klang",
+    title: "KOS SIM",
     description:
-      "Skip writing ROS nodes with our domain-specific language for interfacing with neural interpretation.",
+      "Digital twin and simulation backend of KOS for prototyping and sim2real evaluation in MuJoCo.",
     image: "/images/research/edge-vla.png",
-    link: "https://github.com/kscalelabs/klang",
-    icon: <KLANGIcon />,
+    link: "https://github.com/kscalelabs/kos-sim",
+    icon: <KLANGIcon />, // TODO: change icon
     variant: ColorVariant.OXIDE,
+  },
+  {
+    title: "Edge VLA",
+    description:
+      "We’re collaboratively training a foundation for general purpose robots, that gets faster with more contributions from the open-source community",
+    image: "/images/research/edge-vla.png",
+    link: "https://github.com/kscalelabs/evla",
+    icon: <EVLAIcon />,
+    variant: ColorVariant.RUST,
   },
   {
     title: "kRec",
@@ -48,15 +57,6 @@ const RESEARCH_ITEMS = [
     image: "/images/research/edge-vla.png",
     link: "https://github.com/kscalelabs/krec",
     icon: <KRECIcon />,
-    variant: ColorVariant.RUST,
-  },
-  {
-    title: "kSim",
-    description:
-      "Define any RL objectives for your robot with our open-source repository for policy simulation.",
-    image: "/images/research/edge-vla.png",
-    link: "https://github.com/kscalelabs/ksim",
-    icon: <KSIMIcon />,
     variant: ColorVariant.MOLTEN,
   },
 ];

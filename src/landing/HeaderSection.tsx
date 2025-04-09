@@ -1,9 +1,4 @@
-import { DownArrowIcon } from "@/components/iconography/Iconography";
-import RobotWrapper from "@/components/robot/RobotWrapper";
-import { useRef } from "react";
-
-// const PREORDER_URL = "https://shop.kscale.dev/collections/all";
-// const PREORDER_URL = "https://discord.gg/pVwubQT9Sg";
+import { photoPathAltText, photoPaths } from "@/components/util/photoPaths";
 
 const EmailSignupSection = () => (
   <form
@@ -34,35 +29,28 @@ const EmailSignupSection = () => (
 );
 
 const HeaderSection = () => {
-  const ref = useRef(null);
-
   return (
-    <>
-      <header className="col-span-full flex flex-col md:flex-row min-h-[90svh] auto-rows-auto justify-end md:justify-start items-center text-foreground -mx-[5vw] px-[5vw] gap-6 md:gap-10">
-        <div className="flex order-2 md:order-1 flex-col w-full md:w-auto self-end gap-3 md:gap-5 justify-center items-start z-10">
-          <div className="flex flex-col w-full md:w-auto md:gap-4">
-            <h1 className="text-4xl md:text-[4.2rem] tracking-tight whitespace-nowrap">
-              K-Scale Labs
-            </h1>
-            <h4 className="text-base md:text-[1.1rem] tracking-tight">
-              Moving humanity up the Kardashev scale
-            </h4>
-          </div>
-          <div className="flex flex-col md:flex-row w-full md:w-auto gap-3">
-            <EmailSignupSection />
-          </div>
-        </div>
-        <div
-          className="order-1 md:order-2 md:flex flex-col w-full items-end md:flex-1 top-0 lg:h-full h-[50vh] overflow-hidden md:min-h-[16rem]"
-          ref={ref}
-        >
-          <RobotWrapper />
-        </div>
-      </header>
-      <div className="flex col-span-full pt-4 justify-center">
-        <DownArrowIcon />
+    <header className="col-span-full grid grid-cols-subgrid min-h-[90svh] auto-rows-auto items-end text-foreground bg-background relative overflow-hidden -mx-[5vw] px-[5vw]">
+      <div className="absolute inset-0">
+        <video
+          src={photoPaths.LANDING_VIDEO}
+          className="w-full h-full object-cover brightness-50"
+          autoPlay
+          loop
+          muted
+          playsInline
+          aria-label={photoPathAltText.LANDING_VIDEO_ALT}
+        />
       </div>
-    </>
+      <hgroup className="z-10 text-filament col-span-full sm:col-span-4 md:col-span-5 md:col-start-5 lg:col-span-4 lg:col-start-6 w1440:col-span-5 w1440:col-start-8 2xl:col-start-8 2xl:col-span-5 4xl:col-start-8 4xl:col-span-4 flex flex-col mb-12 gap-4">
+        <h1 className="text-heading-lg">Intelligent Robot, Today</h1>
+        <h2 className="text-body">
+          The world&apos;s most intelligent and accessible open-source humanoid robot for a world
+          where robots are made for everyone and by everyone.
+        </h2>
+        <EmailSignupSection />
+      </hgroup>
+    </header>
   );
 };
 

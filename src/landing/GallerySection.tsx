@@ -7,28 +7,28 @@ import { photoPathAltText, photoPaths } from "@/components/util/photoPaths";
 
 const Images = [
   {
-    src: photoPaths.GALLERY_1,
-    alt: photoPathAltText.GALLERY_1_ALT,
+    src: photoPaths.K_SCALE_LABS_RENDER,
+    alt: photoPathAltText.K_SCALE_LABS_RENDER_ALT,
   },
   {
-    src: photoPaths.GALLERY_2,
-    alt: photoPathAltText.GALLERY_2_ALT,
+    src: photoPaths.K_BOT_KSCALE_RENDER,
+    alt: photoPathAltText.K_BOT_KSCALE_RENDER_ALT,
   },
   {
-    src: photoPaths.GALLERY_3,
-    alt: photoPathAltText.GALLERY_3_ALT,
+    src: photoPaths.K_BOT_LEG_RENDER,
+    alt: photoPathAltText.K_BOT_LEG_RENDER_ALT,
   },
   {
-    src: photoPaths.GALLERY_4,
-    alt: photoPathAltText.GALLERY_4_ALT,
+    src: photoPaths.K_BOT_ARM_RENDER,
+    alt: photoPathAltText.K_BOT_ARM_RENDER_ALT,
   },
   {
-    src: photoPaths.GALLERY_5,
-    alt: photoPathAltText.GALLERY_5_ALT,
+    src: photoPaths.K_BOT_TORSO_RENDER,
+    alt: photoPathAltText.K_BOT_TORSO_RENDER_ALT,
   },
   {
-    src: photoPaths.GALLERY_6,
-    alt: photoPathAltText.GALLERY_6_ALT,
+    src: photoPaths.K_BOT_ACTUATOR_RENDER,
+    alt: photoPathAltText.K_BOT_ACTUATOR_RENDER_ALT,
   },
 ];
 
@@ -36,7 +36,7 @@ const GalleryItem = ({ src, alt, index }: { src: string; alt: string; index: num
   const scrollYProgress = useContext(ScrollContext);
   return (
     <motion.figure
-      className="sticky top-24 h-[60svh] min-h-[16rem] rounded-lg overflow-hidden"
+      className="sticky top-24 h-[20svh] xl:h-[30svh] w1440:h-[40svh] 2xl:h-[50svh] 4xl:h-[60svh] min-h-[16rem] rounded-lg overflow-hidden"
       style={{
         opacity: useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], [1, 0]),
         scale: useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], [1, 0.8]),
@@ -66,7 +66,7 @@ const GallerySection = () => {
 
   return (
     <section
-      className="relative col-span-full lg:col-span-5 lg:col-start-3 2xl:col-span-8 2xl:col-start-3 flex flex-col gap-y-32"
+      className="relative col-span-full lg:col-span-5 lg:col-start-3 w1440:col-span-8 w1440:col-start-3 2xl:col-span-8 2xl:col-start-3 flex flex-col gap-y-32"
       ref={scrollRef}
     >
       <ScrollContext.Provider value={scrollYProgress}>
