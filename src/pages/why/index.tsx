@@ -25,19 +25,19 @@ export default function ResearchIndex() {
           <div className="flex flex-col gap-4 max-w-2xl mx-auto">
             <p>
               Our mission at K-Scale Labs is to build a world with billions of general-purpose
-              robots. We think that making generally-useful embodied artificial intelligence is the
-              most important challenge of our generation, and we expect that doing so will spark the
-              most important industrial revolution of this century.
+              robots. We believe that making generally-intelligent robots is the most important
+              challenge of our generation, and we expect that doing this well will spark the next
+              industrial revolution.
             </p>
             <p>
               In our opinion, the only path to achieving this is by building robots that are
               open-source and accessible to everyone. On a technical level, making real-world AI
               systems that work well is very difficult and requires working across a huge range of
-              disciplines, from training and deploying machine learning models to designing and
-              building physical hardware to collecting useful data from diverse real-world
-              environments. In the face of such large operational challenges, any additional
-              friction only serve to slow down progress and reduce the efficient allocation of
-              resources towards achieving that end goal.
+              disciplines, from designing and building physical hardware, to collecting useful data
+              from diverse real-world environments, to training and deploying machine learning
+              models. In the face of such challenges, any additional friction only serves to slow
+              down progress and reduce the efficient allocation of resources towards achieving that
+              end goal.
             </p>
             <p>
               Put differently, as a guiding principle, we are more concerned with making sure that
