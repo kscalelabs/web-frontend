@@ -24,21 +24,22 @@ export default function ResearchIndex() {
         <div className="col-span-full flex flex-col items-start text-justify auto-rows-auto text-foreground bg-background relative overflow-hidden px-[5vw] py-20">
           <div className="flex flex-col gap-4 max-w-2xl mx-auto">
             <p>
-              Our mission at K-Scale Labs is to make humanity into a Type 1 Kardashev scale
-              civilization. This means building a civilization that is capable of harnessing all of
-              the energy available on Earth and channeling it toward beneficial outcomes. We are
-              doing this by building general-purpose humanoid robots as vehicles for embodied
-              intelligence.
+              Our mission at K-Scale Labs is to build a world with billions of general-purpose
+              robots. This means building a civilization that is capable of harnessing all of the
+              energy available on Earth and channeling it toward beneficial outcomes. We are doing
+              this by building general-purpose humanoid robots as vehicles for embodied
+              intelligence, and we expect that doing this well will catalyze the next industrial
+              revolution.
             </p>
             <p>
-              In our opinion, the best way to achieve this is by building robots that are
-              open-source and accessible to everyone. Making real-world AI systems that work well is
-              very difficult and requires working across a huge range of disciplines, from training
-              and deploying machine learning models to designing and building physical hardware to
-              collecting useful data from diverse real-world environments. In the face of such large
-              technical and operational challenges, any additional barriers only serve to slow down
-              progress and reduce the efficient allocation of resources towards achieving that end
-              goal.
+              In our opinion, the only path to achieving this is by building robots that are
+              open-source and accessible to everyone. On a technical level, making real-world AI
+              systems that work well is very difficult and requires working across a huge range of
+              disciplines, from designing and building physical hardware, to collecting useful data
+              from diverse real-world environments, to training and deploying machine learning
+              models. In the face of such challenges, any additional friction only serves to slow
+              down progress and reduce the efficient allocation of resources towards achieving that
+              end goal.
             </p>
             <p>
               Put differently, as a guiding principle, we are more concerned with making sure that
@@ -49,17 +50,17 @@ export default function ResearchIndex() {
               problems makes this forcing function paramount.
             </p>
             <p>
-              More importantly, in order for embodied intelligence to achieve its full potential, we
-              expect that it ultimately <i>must</i> function in a way that allows buy-in from
-              humanity at large. In a democratic society, technological development can only take
-              place with widespread support. In a world where robots perform large amounts of labor
-              in our homes and businesses, if their benefits are not widely shared instead of being
-              concentrated in a small number of hands, it will be extremely difficult to make rapid
-              forward progress.
+              More importantly, however, in order for embodied intelligence to achieve its full
+              potential, we expect that it ultimately <i>must</i> function in a way that allows
+              buy-in from humanity at large. Highly-capable robots are poised to take over large
+              amounts of labor in our homes and businesses, and in a democratic society, the only
+              way to make rapid forward progress is if the benefits from such changes are widely
+              shared. In other words, we expect that the <i>only</i> way for humanoid robots to
+              achieve mass adoption is by being open-source, auditable, and broadly accessible.
             </p>
             <p>
-              K-Scale was started in a Palo Alto garage with the ambitious dream of building a way
-              for everyone to share in the benefits of embodied artificial intelligence. We are
+              K-Scale was started in a Palo Alto garage with the dream of building a way for
+              everyone to share in the benefits of embodied artificial intelligence. We are
               immensely grateful to those who have supported us thus far, and we intend to work
               diligently until this dream is achieved. We hope you will join us.
             </p>
