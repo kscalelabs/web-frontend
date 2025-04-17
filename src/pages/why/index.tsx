@@ -25,9 +25,11 @@ export default function ResearchIndex() {
           <div className="flex flex-col gap-4 max-w-2xl mx-auto">
             <p>
               Our mission at K-Scale Labs is to build a world with billions of general-purpose
-              robots. We believe that making generally-intelligent robots is the most important
-              challenge of our generation, and we expect that doing this well will spark the next
-              industrial revolution.
+              robots. This means building a civilization that is capable of harnessing all of the
+              energy available on Earth and channeling it toward beneficial outcomes. We are doing
+              this by building general-purpose humanoid robots as vehicles for embodied
+              intelligence, and we expect that doing this well will catalyze the next industrial
+              revolution.
             </p>
             <p>
               In our opinion, the only path to achieving this is by building robots that are
@@ -45,21 +47,16 @@ export default function ResearchIndex() {
               and we expect that our own progress will be much faster and more efficient when work
               is done in the open. Building in the open provides a forcing function for quality that
               is absent in more opaque organizations, and working on deeply technical and integrated
-              problems makes this forcing function paramount. The sunlight of open development
-              provides much-needed oversight that prevents bad actors from exploiting information
-              asymmetry for personal gain at the expense of customers, investors and other
-              stakeholders, a problem which is particularly acute when working on ambitious
-              long-horizon projects like humanoid robots.
+              problems makes this forcing function paramount.
             </p>
             <p>
               More importantly, however, in order for embodied intelligence to achieve its full
               potential, we expect that it ultimately <i>must</i> function in a way that allows
               buy-in from humanity at large. Highly-capable robots are poised to take over large
-              amounts of labor in our homes and businesses, and if their benefits are not
-              decentralized, it will be extremely difficult to overcome the social barriers to
-              widespread acceptance that exist in a free society. In other words, we expect that the{" "}
-              <i>only</i> way for humanoid robots to achieve mass adoption is by being open-source,
-              auditable, and broadly accessible.
+              amounts of labor in our homes and businesses, and in a democratic society, the only
+              way to make rapid forward progress is if the benefits from such changes are widely
+              shared. In other words, we expect that the <i>only</i> way for humanoid robots to
+              achieve mass adoption is by being open-source, auditable, and broadly accessible.
             </p>
             <p>
               K-Scale was started in a Palo Alto garage with the dream of building a way for
