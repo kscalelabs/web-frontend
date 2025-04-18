@@ -24,22 +24,21 @@ export default function ResearchIndex() {
         <div className="col-span-full flex flex-col items-start text-justify auto-rows-auto text-foreground bg-background relative overflow-hidden px-[5vw] py-20">
           <div className="flex flex-col gap-4 max-w-2xl mx-auto">
             <p>
-              Our mission at K-Scale Labs is to build a world with billions of general-purpose
-              robots. This means building a civilization that is capable of harnessing all of the
-              energy available on Earth and channeling it toward beneficial outcomes. We are doing
-              this by building general-purpose humanoid robots as vehicles for embodied
-              intelligence, and we expect that doing this well will catalyze the next industrial
-              revolution.
+              Our mission at K-Scale Labs is to accelerate the timeline to a world with billions of
+              general-purpose robots, by making them open-source and universally accessible. We
+              believe this is the best route towards making humanity into a Type 1 civilization on
+              the Kardashev scale.
             </p>
             <p>
-              In our opinion, the only path to achieving this is by building robots that are
-              open-source and accessible to everyone. On a technical level, making real-world AI
-              systems that work well is very difficult and requires working across a huge range of
-              disciplines, from designing and building physical hardware, to collecting useful data
-              from diverse real-world environments, to training and deploying machine learning
-              models. In the face of such challenges, any additional friction only serves to slow
-              down progress and reduce the efficient allocation of resources towards achieving that
-              end goal.
+              On a technical level, making real-world AI systems that work well is very difficult
+              and requires working across a huge range of disciplines, from designing and building
+              physical hardware, to collecting useful data from diverse real-world environments, to
+              training and deploying machine learning models. In the face of such challenges, the
+              advantages that developing in the open provides, in the form of reduced friction,
+              greater collaboration, and increased visibility, greatly outweigh the monetary
+              downsides. There is a long historical precedent for companies capitalizing on key
+              technological shifts by adopting similar strategies, and we view this as a principled
+              business decision in addition to a moral one.
             </p>
             <p>
               Put differently, as a guiding principle, we are more concerned with making sure that
