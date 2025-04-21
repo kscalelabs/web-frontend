@@ -59,9 +59,19 @@ export default function ResearchIndex() {
             </p>
             <p>
               K-Scale was started in a Palo Alto garage with the dream of building a way for
-              everyone to share in the benefits of embodied artificial intelligence. We are
-              immensely grateful to those who have supported us thus far, and we intend to work
-              diligently until this dream is achieved. We hope you will join us.
+              everyone to share in the benefits of embodied artificial intelligence. This will not
+              be possible without building a critical mass of people who also believe in this dream.
+              If you believe it is important - that a world of open-source humanoid robots owned by
+              everyone is better than a world run by a few corporations - we would be immensely
+              grateful for your support, by{" "}
+              <a href="http://url.kscale.dev/bounties" className="underline">
+                contributing to our codebase
+              </a>
+              ,{" "}
+              <a href="http://url.kscale.dev/shop" className="underline">
+                buying a robot
+              </a>
+              , or simply telling your friends.
             </p>
             <p className="text-right">
               <i>- The K-Scale Team</i>
