@@ -44,24 +44,29 @@ const BuyNowButton = () => (
 
 const HeaderSection = () => {
   return (
-    <header className="col-span-full grid grid-cols-subgrid min-h-[90svh] auto-rows-auto items-end text-foreground bg-background relative overflow-hidden -mx-[5vw] px-[5vw]">
+    <header className="col-span-full min-h-[90svh] flex flex-col items-start justify-end text-foreground bg-background relative overflow-hidden -mx-[5vw] px-[5vw]">
       <div className="absolute inset-0">
-        <video
-          src={photoPaths.LANDING_VIDEO}
-          className="w-full h-full object-cover brightness-50"
-          autoPlay
-          loop
-          muted
-          playsInline
-          aria-label={photoPathAltText.LANDING_VIDEO_ALT}
+        <img
+          src={photoPaths.LANDING_IMAGE_3}
+          className="w-full h-full object-cover"
+          aria-label={photoPathAltText.LANDING_IMAGE_3_ALT}
         />
       </div>
-      <hgroup className="z-10 text-filament col-span-full sm:col-span-4 md:col-span-5 md:col-start-5 lg:col-span-4 lg:col-start-6 w1440:col-span-5 w1440:col-start-8 2xl:col-start-8 2xl:col-span-5 4xl:col-start-8 4xl:col-span-4 flex flex-col mb-12 gap-4">
-        <h1 className="text-heading-lg">Free as in Freedom</h1>
-        <p className="text-heading-sm">Moving humanity up the Kardashev scale</p>
-        <BuyNowButton />
-        <EmailSignupSection />
-      </hgroup>
+      <div className="flex items-end justify-between w-full mb-12">
+        <hgroup className="z-10 text-filament flex flex-col gap-4">
+          <h1 className="text-heading-lg text-rust font-medium">Humanoid robots</h1>
+          <h1 className="text-heading-lg font-medium">made for developers, by developers</h1>
+          {/* <BuyNowButton />
+        <EmailSignupSection /> */}
+        </hgroup>
+        <hgroup className="flex flex-col items-end gap-1.5 justify-end text-white z-10">
+          <p className="text-body">GESTURE SUPPORT</p>
+          <p className="text-body">VOICE COMMAND</p>
+          <p className="text-body">INTEGRATED HARDWARE</p>
+          <p className="text-body">SOFTWARE ECOSYSTEM</p>
+          <p className="text-body">OPEN-SOURCE AI</p>
+        </hgroup>
+      </div>
     </header>
   );
 };

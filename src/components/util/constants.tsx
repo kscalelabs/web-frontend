@@ -2,42 +2,65 @@ export const transitionEaseLinearDuration300: string = " transition ease-linear 
 
 export type NavigationConfig = {
   name: string;
-  link: string;
-  isExternal: boolean;
+  children: {
+    name: string;
+    link: string;
+    isExternal: boolean;
+  }[];
 };
 
 export const navigationConfig: NavigationConfig[] = [
   {
-    name: "Mission",
-    link: "/why",
-    isExternal: false,
+    name: "Products",
+    children: [
+      {
+        name: "K-Bot",
+        link: "/products/k-bot",
+        isExternal: false,
+      },
+      {
+        name: "Z-Bot",
+        link: "/products/z-bot",
+        isExternal: false,
+      },
+    ],
   },
   {
-    name: "Docs",
-    link: "https://docs.kscale.dev/",
-    isExternal: true,
+    name: "Community",
+    children: [
+      {
+        name: "Leaderboard",
+        link: "/leaderboard",
+        isExternal: false,
+      },
+      {
+        name: "Docs",
+        link: "https://docs.kscale.dev/",
+        isExternal: true,
+      },
+      {
+        name: "Discord",
+        link: "https://discord.gg/pVwubQT9Sg",
+        isExternal: true,
+      },
+    ],
   },
   {
-    name: "Research",
-    link: "/research", // Internal link to the research page
-    isExternal: false,
+    name: "Company",
+    children: [
+      {
+        name: "About",
+        link: "/about",
+        isExternal: false,
+      },
+      {
+        name: "Research",
+        link: "/research",
+        isExternal: false,
+      },
+    ],
   },
-  // {
-  //   name: "Dashboard",
-  //   link: "https://dashboard.kscale.dev",
-  //   isExternal: false,
-  // },
-  // {
-  //   name: "Forum",
-  //   link: "https://forum.kscale.dev",
-  //   isExternal: true,
-  // },
-  {
-    name: "Discord",
-    link: "https://discord.gg/pVwubQT9Sg",
-    isExternal: true,
-  },
-];
+]
 
 export enum IconMode {
   FULL,

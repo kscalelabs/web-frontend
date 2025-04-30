@@ -43,6 +43,13 @@ const config: Config = {
             letterSpacing: "-0.02em",
           },
         ],
+        "heading-display": [
+          "3.1rem",
+          {
+            lineHeight: "4rem",
+            letterSpacing: "-0.02em",
+          },
+        ],
         body: [
           "0.85rem",
           {

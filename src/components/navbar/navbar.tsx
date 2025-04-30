@@ -60,27 +60,23 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
 
   const desktopNavBar = () => {
     return (
-      <div className="col-span-full flex flex-row justify-between overflow-hidden py-4 items-center h-fit px-[5vw] -mx-[5vw]">
+      <div className="z-10 col-span-full flex flex-row justify-between overflow-hidden py-4 items-start h-fit px-[5vw] -mx-[5vw]">
         <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} href={href} />
-        <div className="flex flex-row gap-12">
-          {navigationConfig.map((navItem, index) => {
-            return (
-              <a
-                key={index}
-                href={navItem.link}
-                target={navItem.isExternal ? "_blank" : "_self"}
-                className={clsx(
-                  "flex justify-end items-end text-base lg:text-md select-none self-center pointer-events-auto h-full relative group",
-                  atTop ? "text-white" : "text-foreground"
-                )}
-              >
-                <div className={clsx("flex flex-row gap-2 items-center size-fit")}>
-                  {navItem.name}
-                </div>
-                <div className="absolute bottom-[-4px] left-0 w-0 h-[2px] bg-rust transition-all duration-300 group-hover:w-full" />
-              </a>
-            );
-          })}
+        <div className="flex flex-row z-10 gap-16">
+          {navigationConfig.map((navItem, index) => (
+            <div className="flex flex-col gap-2">
+              <p className="uppercase">{navItem.name}</p>
+              <div className="flex flex-col gap-1">
+                {navItem.children.map((child, index) => {
+                  return (
+                    <a href={child.link} target={child.isExternal ? "_blank" : "_self"}>
+                      {child.name}
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     );
@@ -103,7 +99,7 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
 
   return (
     <motion.nav
-      className="fixed top-0 inset-x-0 z-50 h-[100dvh] md:h-auto md:py-4 grid-a grid-rows-[min-content_auto] pointer-events-none"
+      className="fixed top-0 inset-x-0 z-10 h-[100dvh] md:h-auto md:py-4 grid-a grid-rows-[min-content_auto] pointer-events-none"
       initial={{
         backgroundColor: "var(--background-0)",
       }}
