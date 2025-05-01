@@ -34,17 +34,35 @@ export default function Home() {
   }, [lenis]);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <NavBar />
-      <main className="gap-y-4 relative">
-        <HeaderSection />
+    <div className="min-h-screen">
+      {/* <NavBar /> */}
+      <main className="">
+        <section className="px-5 md:px-10">
+          <h1 className="text-heading-d">K-Scale Labs</h1>
+          <h2 className="text-heading-1">The new frontier</h2>
+          <h3 className="text-heading-2">Electronic masterpieces of America</h3>
+          <p className="text-body-1">
+            If the differences between desktop and mobile are primarily visual (e.g., spacing, font
+            sizes, or alignment), using CSS media queries to restyle the same component is more
+            efficient.
+          </p>
+          <p className="text-body-2">
+            If both versions share most of the same logic or structure, restyling avoids duplicating
+            code and reduces maintenance overhead.
+          </p>
+          <p className="text-body-3">
+            CSS media queries are designed for responsive design and can handle many layout
+            adjustments without requiring separate components.
+          </p>
+        </section>
+        {/* <HeaderSection />
         {/* <CatchphraseSection /> */}
-        <ResearchSection />
+        {/* <ResearchSection />
         <SpecSection />
         <WhatCanItDoSection />
         <RobotSection />
         <GallerySection />
-        <CommunitySection />
+        <CommunitySection /> */}
       </main>
       <Sponsors />
       <Footer />

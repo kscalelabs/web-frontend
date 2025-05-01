@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { ReactLenis } from "lenis/dist/lenis-react";
 import "katex/dist/katex.min.css";
+import { Grid } from "@/components/grid/Grid";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -37,7 +38,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta name="twitter:image" content="/meta/twitter-image.png" />
       </Head>
-
+      <Grid />
       <ReactLenis root>
         <Component {...pageProps} />
       </ReactLenis>

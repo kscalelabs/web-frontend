@@ -91,19 +91,6 @@ body {
   scrollbar-gutter: stable both-edges;
 }
 
-main {
-  display: grid;
-  @apply font-planar;
-  @apply font-normal;
-  font-style: normal;
-  font-size: 17px;
-  line-height: 20px;
-  letter-spacing: -0.01em;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 5vw;
-  padding: 0 5vw;
-}
-
 h1 {
   @apply font-apparat;
   @apply font-medium;
@@ -163,29 +150,7 @@ pre {
   letter-spacing: 0.02em;
 }
 
-@media (min-width: 640px) {
-  main {
-    grid-template-columns: repeat(6, 1fr);
-    gap: 2.5vw;
-  }
-}
-
-@media (min-width: 768px) {
-  main {
-    grid-template-columns: repeat(9, 1fr);
-    gap: 2.5vw;
-  }
-}
-
 @media (min-width: 1440px) {
-  main {
-    grid-template-columns: repeat(12, 1fr);
-    gap: 1.25vw;
-    font-size: 24px;
-    line-height: 28px;
-    letter-spacing: -0.01em;
-  }
-
   h1 {
     font-size: 96px;
     line-height: 84px;
@@ -228,16 +193,28 @@ pre {
   }
 }
 
-.grid-a {
-  @apply px-[5vw] grid grid-cols-4 sm:grid-cols-6 md:grid-cols-9 2xl:grid-cols-12 gap-x-[5vw] sm:gap-x-[2.15vw] 2xl:gap-x-[1vw];
-}
-
-.grid-m {
-  @apply grid-a auto-rows-min;
-}
-
-html {
-  @apply text-[125%] 2xl:text-[130%] 4xl:text-[135%];
+@layer utilities {
+  .grid-responsive {
+    @apply grid px-5 gap-4 md:px-10 md:gap-6 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-8;
+  }
+  .text-heading-d {
+    @apply text-heading-d-sm md:text-heading-d-md lg:text-heading-d-lg 2xl:text-heading-d-xl;
+  }
+  .text-heading-1 {
+    @apply text-heading-1-sm md:text-heading-1-md lg:text-heading-1-lg 2xl:text-heading-1-xl;
+  }
+  .text-heading-2 {
+    @apply text-heading-2-sm md:text-heading-2-md lg:text-heading-2-lg 2xl:text-heading-2-xl;
+  }
+  .text-body-1 {
+    @apply text-body-1-sm md:text-body-1-md lg:text-body-1-lg 2xl:text-body-1-xl;
+  }
+  .text-body-2 {
+    @apply text-body-2-sm md:text-body-2-md lg:text-body-2-lg 2xl:text-body-2-xl;
+  }
+  .text-body-3 {
+    @apply text-body-3-sm md:text-body-3-md lg:text-body-3-lg 2xl:text-body-3-xl;
+  }
 }
 
 html.lenis,

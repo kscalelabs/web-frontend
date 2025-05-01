@@ -40,11 +40,7 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
   const mobileNavBar = () => {
     return (
       <>
-        <motion.menu
-          className={clsx(
-            "col-span-full grid grid-cols-subgrid overflow-hidden py-4 items-end h-fit px-[5vw] -mx-[5vw] bg-background"
-          )}
-        >
+        <motion.menu className={clsx(" overflow-hidden py-4 items-end h-fit bg-background")}>
           <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} href={href} />
           <BurgerOpenButton
             className="-col-end-1 place-self-end pointer-events-auto"
