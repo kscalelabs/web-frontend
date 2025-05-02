@@ -32,7 +32,7 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
   const width = useWindowSize().width;
 
   const navBasedOnWidth = (isDesktop: boolean) => {
-    return isDesktop ? desktopNavBar() : mobileNavBar();
+    return mobileNavBar();
   };
 
   const atTop = scrollY.get() < 400;
@@ -94,23 +94,8 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
   }, [mobileShouldOpenBurger, lenis]);
 
   return (
-    <motion.nav
-      className="fixed top-0 inset-x-0 z-10 h-[100dvh] md:h-auto md:py-4 grid-a grid-rows-[min-content_auto] pointer-events-none"
-      initial={{
-        backgroundColor: "var(--background-0)",
-      }}
-      animate={{
-        backgroundColor:
-          width >= 768
-            ? atTop
-              ? "var(--background-0)"
-              : "var(--background)"
-            : mobileShouldOpenBurger
-              ? "var(--background)"
-              : "var(--background-0)",
-      }}
-    >
+    <motion.header className="sticky top-0 inset-x-0 z-10 md:h-auto md:py-4 pointer-events-none">
       {navBasedOnWidth(width >= 768)}
-    </motion.nav>
+    </motion.header>
   );
 }

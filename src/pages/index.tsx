@@ -35,7 +35,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      {/* <NavBar /> */}
       <main className="">
         <section className="px-5 md:px-10">
           <h1 className="mb-4">K-Scale Labs</h1>

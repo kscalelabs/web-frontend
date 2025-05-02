@@ -5,6 +5,7 @@ import { ReactLenis } from "lenis/dist/lenis-react";
 import "katex/dist/katex.min.css";
 import { Grid } from "@/components/grid/Grid";
 import localFont from "next/font/local";
+import NavBar from "@/components/navbar/navbar";
 
 const apparat = localFont({
   src: [
@@ -90,6 +91,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <Grid />
       <ReactLenis root>
+        <NavBar />
         <Component {...pageProps} />
       </ReactLenis>
     </div>
