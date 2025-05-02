@@ -10,7 +10,6 @@ import { useEffect, useState } from "react";
 import Logo from "@/assets/logo.svg";
 import Wordmark from "@/assets/wordmark.svg";
 import Link from "next/link";
-import { map } from "d3";
 
 export default function NavBar({ href = "/" }: { href?: string } = {}) {
   const { scrollY } = useScroll();
@@ -34,29 +33,6 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
     setPrevScroll(current);
   });
   const width = useWindowSize().width;
-
-  const navBasedOnWidth = (isDesktop: boolean) => {
-    return mobileNavBar();
-  };
-
-  const atTop = scrollY.get() < 400;
-
-  const mobileNavBar = () => {
-    return (
-      <>
-        <motion.menu className={clsx(" overflow-hidden py-4 items-end h-fit bg-background")}>
-          {/* <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} href={href} /> */}
-          {/* <BurgerOpenButton
-            className="-col-end-1 place-self-end pointer-events-auto"
-            atTop={atTop}
-            isOpen={mobileShouldOpenBurger}
-            onClick={setMobileShouldOpenBurger}
-          /> */}
-        </motion.menu>
-        {/* <AnimatePresence>{BurgerMenu(mobileShouldOpenBurger)}</AnimatePresence> */}
-      </>
-    );
-  };
 
   const desktopNavBar = () => {
     return (
@@ -82,10 +58,10 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
     );
   };
 
-  // useEffect(() => {
-  //   setMobileShouldOpenBurger(false);
-  //   lenis?.start();
-  // }, [width, lenis]);
+  useEffect(() => {
+    setOpen(false);
+    lenis?.start();
+  }, [width, lenis]);
 
   useEffect(() => {
     if (lenis) {
@@ -98,7 +74,7 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
   }, [open, lenis]);
 
   return (
-    <>
+    <div className="relative h-20">
       <motion.header className="fixed top-0 inset-x-0 z-50 px-layout py-4 bg-background flex justify-between items-center border-b border-b-stone-800">
         {/* {navBasedOnWidth(width >= 768)} */}
         <Link href="/">
@@ -153,7 +129,7 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
           </motion.aside>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 }
 

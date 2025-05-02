@@ -93,7 +93,7 @@ export default function Footer() {
   }, [isCopied]);
 
   return (
-    <footer className={"bg-rust text-filament py-8 gap-y-8 grid-m"}>
+    <footer className={"bg-rust text-filament py-8 gap-y-8 px-layout"}>
       <ul
         className={
           "col-span-full sm:col-span-2 md:col-span-3 5xl:col-span-2 flex flex-row gap-4 mb-8"

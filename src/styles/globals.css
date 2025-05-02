@@ -120,10 +120,10 @@ body {
     @apply text-heading-d-sm md:text-heading-d-md lg:text-heading-d-lg 2xl:text-heading-d-xl;
   }
   .text-heading-1 {
-    @apply text-heading-1-sm md:text-heading-1-md lg:text-heading-1-lg 2xl:text-heading-1-xl;
+    @apply text-heading-1-sm md:text-heading-1-md lg:text-heading-1-lg 2xl:text-heading-1-xl font-medium;
   }
   .text-heading-2 {
-    @apply text-heading-2-sm md:text-heading-2-md lg:text-heading-2-lg 2xl:text-heading-2-xl;
+    @apply text-heading-2-sm md:text-heading-2-md lg:text-heading-2-lg 2xl:text-heading-2-xl font-medium;
   }
   .text-body-1 {
     @apply text-body-1-sm md:text-body-1-md lg:text-body-1-lg 2xl:text-body-1-xl;

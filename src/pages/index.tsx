@@ -40,7 +40,7 @@ export default function Home() {
           <h1 className="mb-4">K-Scale Labs</h1>
           <h2 className="mb-4">The new frontier</h2>
           <h3 className="mb-4">Electronic masterpieces of America</h3>
-          <p className="mb-4">
+          <p className="text-body-1 mb-4">
             If the differences between desktop and mobile are primarily visual (e.g., spacing, font
             sizes, or alignment), using CSS media queries to restyle the same component is more
             efficient.
@@ -49,7 +49,7 @@ export default function Home() {
             If both versions share most of the same logic or structure, restyling avoids duplicating
             code and reduces maintenance overhead.
           </p>
-          <p className="mb-4">
+          <p className="text-body-3 mb-4">
             CSS media queries are designed for responsive design and can handle many layout
             adjustments without requiring separate components.
           </p>
