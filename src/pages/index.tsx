@@ -63,7 +63,7 @@ export default function Home() {
         <GallerySection />
         <CommunitySection /> */}
       </main>
-      <Sponsors />
+      {/* <Sponsors /> */}
       <Footer />
     </div>
   );
