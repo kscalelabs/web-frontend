@@ -110,8 +110,11 @@ body {
 }
 
 @layer utilities {
+  .px-layout {
+    @apply px-5 md:px-10;
+  }
   .grid-responsive {
-    @apply grid px-5 gap-4 md:px-10 md:gap-6 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-8;
+    @apply px-layout grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-8;
   }
   .text-heading-d {
     @apply text-heading-d-sm md:text-heading-d-md lg:text-heading-d-lg 2xl:text-heading-d-xl;
@@ -138,42 +141,22 @@ html.lenis body {
   height: auto;
 }
 
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
 }
 
-.lenis.lenis-stopped {
-  overflow: clip;
-}
-
 .lenis.lenis-smooth iframe {
   pointer-events: none;
 }
-html::-webkit-scrollbar {
-  display: none;
-}
 
-body::-webkit-scrollbar {
-  overflow: inherit;
-  scrollbar-gutter: stable;
-}
-
-body.scroll-bar::-webkit-scrollbar-thumb,
-body::-webkit-scrollbar-thumb:hover {
-  background: var(--plasma);
-  border-radius: 1rem;
-}
-
-body::-webkit-scrollbar-track {
-  border-radius: 4px;
-}
-
-body::-webkit-scrollbar-button {
-  display: none;
+.lenis.lenis-autoToggle {
+  transition-property: overflow;
+  transition-duration: 1ms;
+  transition-behavior: allow-discrete;
 }
 
 .rfm-child {

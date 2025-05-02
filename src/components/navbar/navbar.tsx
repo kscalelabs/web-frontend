@@ -1,12 +1,14 @@
 import Logotype from "@/components/logos/logotype";
-import BurgerMenu from "@/components/navbar/burgerMenu";
-import BurgerOpenButton from "@/components/navbar/burgerOpenButton";
+// import BurgerMenu from "@/components/navbar/burgerMenu";
+// import BurgerOpenButton from "@/components/navbar/burgerOpenButton";
 import { navigationConfig } from "@/components/util/constants";
 import { useWindowSize } from "@/components/util/functions";
 import clsx from "clsx";
 import { useLenis } from "lenis/dist/lenis-react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useEffect, useState } from "react";
+import Logo from "@/assets/logo.svg";
+import Wordmark from "@/assets/wordmark.svg";
 
 export default function NavBar({ href = "/" }: { href?: string } = {}) {
   const { scrollY } = useScroll();
@@ -42,14 +44,14 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
       <>
         <motion.menu className={clsx(" overflow-hidden py-4 items-end h-fit bg-background")}>
           <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} href={href} />
-          <BurgerOpenButton
+          {/* <BurgerOpenButton
             className="-col-end-1 place-self-end pointer-events-auto"
             atTop={atTop}
             isOpen={mobileShouldOpenBurger}
             onClick={setMobileShouldOpenBurger}
-          />
+          /> */}
         </motion.menu>
-        <AnimatePresence>{BurgerMenu(mobileShouldOpenBurger)}</AnimatePresence>
+        {/* <AnimatePresence>{BurgerMenu(mobileShouldOpenBurger)}</AnimatePresence> */}
       </>
     );
   };
@@ -94,8 +96,15 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
   }, [mobileShouldOpenBurger, lenis]);
 
   return (
-    <motion.header className="sticky top-0 inset-x-0 z-10 md:h-auto md:py-4 pointer-events-none">
-      {navBasedOnWidth(width >= 768)}
+    <motion.header className="sticky top-0 inset-x-0 z-10 px-layout py-4 bg-background flex justify-between items-center">
+      {/* {navBasedOnWidth(width >= 768)} */}
+      <Logo className="w-auto h-8" />
+      <nav className="flex gap-2">
+        <button className="bg-orange-600 text-body-2 py-[0.5625rem] px-2 rounded-lg">
+          View benchmarks
+        </button>
+        <button className="bg-orange-600/50 size-12 rounded-lg" />
+      </nav>
     </motion.header>
   );
 }
