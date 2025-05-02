@@ -5,7 +5,7 @@ import { ReactLenis } from "lenis/dist/lenis-react";
 import "katex/dist/katex.min.css";
 import { Grid } from "@/components/grid/Grid";
 import localFont from "next/font/local";
-import NavBar from "@/components/navbar/navbar";
+import NavBar from "@/components/Navbar/Navbar";
 
 const apparat = localFont({
   src: [

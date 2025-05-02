@@ -1,5 +1,5 @@
 import Footer from "@/components/footer/footer";
-import NavBar from "@/components/navbar/navbar";
+import NavBar from "@/components/Navbar/Navbar";
 import CommunitySection from "@/landing/CommunitySection";
 import GallerySection from "@/landing/GallerySection";
 import HeaderSection from "@/landing/HeaderSection";

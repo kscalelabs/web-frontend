@@ -1,6 +1,3 @@
-import Logotype from "@/components/logos/logotype";
-// import BurgerMenu from "@/components/navbar/burgerMenu";
-// import BurgerOpenButton from "@/components/navbar/burgerOpenButton";
 import { navigationConfig } from "@/components/util/constants";
 import { useWindowSize } from "@/components/util/functions";
 import clsx from "clsx";
@@ -9,6 +6,9 @@ import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/
 import { useEffect, useState } from "react";
 import Logo from "@/assets/logo.svg";
 import Wordmark from "@/assets/wordmark.svg";
+import Discord from "@/assets/icons/icon_discord.svg";
+import X from "@/assets/icons/icon_x.svg";
+import Github from "@/assets/icons/icon_github.svg";
 import Link from "next/link";
 
 export default function NavBar({ href = "/" }: { href?: string } = {}) {
@@ -74,17 +74,20 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
   }, [open, lenis]);
 
   return (
-    <div className="relative h-20">
-      <motion.header className="fixed top-0 inset-x-0 z-50 px-layout py-4 bg-background flex justify-between items-center border-b border-b-stone-800">
+    <div className="relative h-20 md:h-24">
+      <motion.header className="fixed top-0 inset-x-0 z-50 px-layout py-4 bg-background flex justify-between max-md:items-center border-b border-b-stone-800 md:h-24">
         {/* {navBasedOnWidth(width >= 768)} */}
-        <Link href="/">
-          <Logo className="w-auto h-10 md:hidden" />
-          <Wordmark className="max-md:hidden w-auto h-10" />
+        <Link href="/" className="my-auto">
+          <Logo className="w-auto h-10 sm:hidden" />
+          <Wordmark className="max-sm:hidden w-auto h-10" />
         </Link>
-        <nav className="flex gap-2 items-center">
-          <button className="bg-orange-600 text-body-2 py-[0.75rem] px-2 rounded-lg">
+        <nav className="flex gap-2 md:gap-6 items-center md:hidden">
+          <Link
+            className="bg-orange-600 hover:bg-orange-700 focus:bg-orange-700 active:bg-orange-800 transition-colors duration-300 text-body-2 py-[0.75rem] px-2 rounded-lg"
+            href="/benchmarks"
+          >
             View benchmarks
-          </button>
+          </Link>
           <motion.button
             className="bg-orange-600/50 size-12 rounded-lg"
             onClick={() => setOpen(!open)}
@@ -92,40 +95,140 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
             <Hamburger open={open} />
           </motion.button>
         </nav>
+        <motion.nav className="flex gap-2 md:gap-6 items-center md:items-start max-md:hidden bg-stone-800 border border-stone-900 p-2 pl-4 rounded-2xl h-48">
+          <hgroup className="relative mt-3.5 w-32">
+            <h2 className="text-body-3 opacity-50">Products</h2>
+            <ul className="mt-2 flex flex-col gap-2 absolute">
+              <li>
+                <a
+                  href="https://discord.com/invite/pVwubQT9Sg"
+                  target="_blank"
+                  className="hover:text-neutral-400 transition-colors duration-300 font-medium"
+                >
+                  K-Bot
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://discord.com/invite/pVwubQT9Sg"
+                  target="_blank"
+                  className="hover:text-neutral-400 transition-colors duration-300 font-medium"
+                >
+                  Z-Bot
+                </a>
+              </li>
+            </ul>
+          </hgroup>
+          <hgroup className="relative mt-3.5 w-32">
+            <h2 className="text-body-3 opacity-50">Community</h2>
+            <ul className="mt-2 flex flex-col gap-2">
+              <li>
+                <Link
+                  href="/research"
+                  className="hover:text-neutral-400 transition-colors duration-300 font-medium"
+                >
+                  Research
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/careers"
+                  className="hover:text-neutral-400 transition-colors duration-300 font-medium"
+                >
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="https://discord.com/invite/pVwubQT9Sg"
+                  target="_blank"
+                  className="hover:text-neutral-400 transition-colors duration-300 font-medium"
+                >
+                  Discord
+                </a>
+              </li>
+            </ul>
+          </hgroup>
+          <Link
+            className="bg-orange-600 hover:bg-orange-700 focus:bg-orange-700 active:bg-orange-800 transition-colors duration-300 text-body-2 py-[0.75rem] px-2 rounded-lg font-medium"
+            href="/benchmarks"
+          >
+            View benchmarks
+          </Link>
+        </motion.nav>
       </motion.header>
       <AnimatePresence>
-        {open && (
+        {!open && (
           <motion.aside
-            className={`fixed px-layout py-4 top-20 bg-background inset-x-0 bottom-0 z-50 flex flex-col`}
+            className={`fixed top-20 bg-background inset-x-0 bottom-0 z-50`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <ul className="flex flex-col gap-8">
-              <li className="text-heading-1">K-Bot</li>
-              <li className="text-heading-1">Z-Bot</li>
-              <li className="text-heading-1">Docs</li>
-              <li className="text-heading-1">Research</li>
-            </ul>
-            <ul className="flex flex-col gap-4 mt-auto">
-              <li>
-                <span className="block">inquiries@kscale.dev</span>
-                <button className="">Copy email</button>
-              </li>
-              <li>
-                <menu className="flex gap-4">
-                  <li>
-                    <div className="rounded-full bg-white size-6" />
-                  </li>
-                  <li>
-                    <div className="rounded-full bg-white size-6" />
-                  </li>
-                  <li>
-                    <div className="rounded-full bg-white size-6" />
-                  </li>
-                </menu>
-              </li>
-            </ul>
+            <div className="h-full flex flex-col gap-16 py-8 overflow-auto px-layout">
+              <ul className="flex flex-col gap-8">
+                <li className="text-heading-1">K-Bot</li>
+                <li className="text-heading-1">Z-Bot</li>
+                <li className="text-heading-1">Docs</li>
+                <li className="text-heading-1">Research</li>
+              </ul>
+              <ul className="flex flex-col gap-6 mt-auto">
+                <li className="text-body-2">
+                  <span
+                    className="block text-stone-500 transition-colors duration-300 cursor-pointer peer"
+                    role="button"
+                    onClick={() => {
+                      copyEmail();
+                    }}
+                  >
+                    inquiries@kscale.dev
+                  </span>
+                  <button
+                    className="font-medium relative flex items-center hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
+                    onClick={() => {
+                      copyEmail();
+                    }}
+                  >
+                    <span className="absolute h-12 w-full [@media(pointer:fine)]:hidden" />
+                    Copy email
+                  </button>
+                </li>
+                <li>
+                  <menu className="flex gap-6 items-center">
+                    <li>
+                      <a
+                        href="https://discord.com/invite/pVwubQT9Sg"
+                        target="_blank"
+                        className="relative block group"
+                      >
+                        <Discord className="size-9 group-hover:scale-110 group-focus:scale-110 group-active:scale-90 transition-transform duration-300" />
+                        <span className="absolute size-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 [@media(pointer:fine)]:hidden" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://x.com/kscalelabs"
+                        target="_blank"
+                        className="relative block group"
+                      >
+                        <X className="size-9 group-hover:scale-110 group-focus:scale-110 group-active:scale-90 transition-transform duration-300" />
+                        <span className="absolute size-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  [@media(pointer:fine)]:hidden" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="github.com/kscalelabs"
+                        target="_blank"
+                        className="relative block group"
+                      >
+                        <Github className="size-9 group-hover:scale-110 group-focus:scale-110 group-active:scale-90 transition-transform duration-300" />
+                        <span className="absolute size-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 [@media(pointer:fine)]:hidden" />
+                      </a>
+                    </li>
+                  </menu>
+                </li>
+              </ul>
+            </div>
           </motion.aside>
         )}
       </AnimatePresence>
@@ -170,3 +273,11 @@ const Hamburger = ({ open }: { open: boolean }) => {
     // </button>
   );
 };
+
+function copyEmail() {
+  try {
+    navigator.clipboard.writeText("inquiries@kscale.dev");
+  } catch (error) {
+    console.error("Failed to copy email: ", error);
+  }
+}

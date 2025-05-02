@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Navbar from "./navbar/navbar";
+import Navbar from "./Navbar/Navbar";
 import Footer from "./footer/footer";
 import { MDXProvider } from "@mdx-js/react";
 

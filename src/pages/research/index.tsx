@@ -1,6 +1,6 @@
 import Footer from "@/components/footer/footer";
 import { DownArrowIcon } from "@/components/iconography/Iconography";
-import NavBar from "@/components/navbar/navbar";
+import NavBar from "@/components/Navbar/Navbar";
 import fs from "fs";
 import matter from "gray-matter";
 import Link from "next/link";

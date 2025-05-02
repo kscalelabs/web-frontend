@@ -1,6 +1,6 @@
 import Footer from "@/components/footer/footer";
 import { DownArrowIcon } from "@/components/iconography/Iconography";
-import NavBar from "@/components/navbar/navbar";
+import NavBar from "@/components/Navbar/Navbar";
 
 export default function ResearchIndex() {
   return (
