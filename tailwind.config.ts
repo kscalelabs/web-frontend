@@ -209,9 +209,9 @@ const config: Config = {
         sol: "var(--sol)",
       },
       fontFamily: {
-        apparat: ["KMR Apparat", "sans-serif"],
-        planar: ["GT Planar", "sans-serif"],
-        mono: ["Cofo Sans Mono", "monospace"],
+        display: ["var(--font-apparat)"],
+        sans: ["var(--font-planar)"],
+        mono: ["var(--font-cofo)"],
       },
     },
   },
