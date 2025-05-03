@@ -78,7 +78,7 @@ export const Navbar = () => {
           onMouseLeave={() => setDesktopOpen(false)}
         >
           <motion.div
-            className="-z-10 absolute inset-0 bg-stone-800 border border-stone-900 rounded-2xl"
+            className="-z-10 absolute inset-0 bg-stone-800/80 backdrop-blur-md border border-stone-700 rounded-2xl"
             animate={{
               height: desktopOpen ? "12rem" : "auto",
             }}
@@ -154,7 +154,7 @@ export const Navbar = () => {
                   href="https://discord.com/invite/pVwubQT9Sg"
                   rel="noopener noreferrer"
                   target="_blank"
-                  className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
+                  className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium relative"
                 >
                   Discord
                 </a>
