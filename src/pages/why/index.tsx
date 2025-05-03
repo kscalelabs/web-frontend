@@ -1,11 +1,8 @@
-import Footer from "@/components/footer/footer";
 import { DownArrowIcon } from "@/components/iconography/Iconography";
-import NavBar from "@/components/navbar/navbar";
 
 export default function ResearchIndex() {
   return (
     <div className="min-h-screen flex flex-col">
-      <NavBar />
       <div className="gap-y-4">
         <header className="col-span-full flex flex-row min-h-[90svh] auto-rows-auto items-center text-foreground bg-background relative overflow-hidden px-[5vw]">
           <div className="flex flex-col self-end gap-1 md:gap-4 justify-center items-start">
@@ -78,7 +75,6 @@ export default function ResearchIndex() {
             </p>
           </div>
         </div>
-        <Footer />
       </div>
     </div>
   );

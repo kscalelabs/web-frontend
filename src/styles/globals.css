@@ -1,5 +1,4 @@
 @import url("//cdn-images.mailchimp.com/embedcode/classic-061523.css");
-
 #mc_embed_signup {
   background: transparent !important;
   clear: left;
@@ -73,6 +72,11 @@
     --molten: #f18a03ff;
     --sol: #eae9bcff;
   }
+  * {
+    font-feature-settings:
+      "ss02" on,
+      "ss03" on;
+  }
 }
 
 * {
@@ -91,153 +95,54 @@ body {
   scrollbar-gutter: stable both-edges;
 }
 
-main {
-  display: grid;
-  @apply font-planar;
-  @apply font-normal;
-  font-style: normal;
-  font-size: 17px;
-  line-height: 20px;
-  letter-spacing: -0.01em;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 5vw;
-  padding: 0 5vw;
-}
-
-h1 {
-  @apply font-apparat;
-  @apply font-medium;
-  font-style: normal;
-  font-size: 62px;
-  line-height: 60px;
-  letter-spacing: -0.02em;
-}
-
-h2 {
-  @apply font-apparat;
-  @apply font-medium;
-  font-style: normal;
-  font-size: 38.5px;
-  line-height: 40px;
-  letter-spacing: -0.015em;
-}
-
-h3 {
-  @apply font-planar;
-  @apply font-normal;
-  font-style: normal;
-  font-size: 25px;
-  line-height: 25px;
-  letter-spacing: -0.01em;
-}
-
-caption,
-figcaption {
-  @apply font-planar;
-  @apply font-normal;
-  font-style: normal;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0.02em;
-}
-
-caption .code,
-caption .pre,
-figcaption .code,
-figcaption .pre {
-  @apply font-mono;
-  @apply font-normal;
-  font-style: normal;
-  font-size: 13px;
-  line-height: 14px;
-  letter-spacing: 0.03em;
-}
-
-code,
-pre {
-  @apply font-mono;
-  @apply font-normal;
-  font-style: normal;
-  font-size: 14px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-}
-
-@media (min-width: 640px) {
-  main {
-    grid-template-columns: repeat(6, 1fr);
-    gap: 2.5vw;
-  }
-}
-
-@media (min-width: 768px) {
-  main {
-    grid-template-columns: repeat(9, 1fr);
-    gap: 2.5vw;
-  }
-}
-
-@media (min-width: 1440px) {
-  main {
-    grid-template-columns: repeat(12, 1fr);
-    gap: 1.25vw;
-    font-size: 24px;
-    line-height: 28px;
-    letter-spacing: -0.01em;
-  }
-
+@layer base {
   h1 {
-    font-size: 96px;
-    line-height: 84px;
-    letter-spacing: -0.02em;
+    @apply text-heading-d font-display;
   }
-
   h2 {
-    font-size: 57.5px;
-    line-height: 56px;
-    letter-spacing: -0.015em;
+    @apply text-heading-1;
   }
-
   h3 {
-    font-size: 39.5px;
-    line-height: 42px;
-    letter-spacing: -0.01em;
+    @apply text-heading-2;
   }
-
-  caption,
-  figcaption {
-    font-size: 17px;
-    line-height: 28px;
-    letter-spacing: 0.02em;
+  p,
+  ul,
+  ol {
+    @apply text-body-2;
   }
-
-  caption .code,
-  caption .pre,
-  figcaption .code,
-  figcaption .pre {
-    font-size: 18px;
-    line-height: 18px;
-    letter-spacing: 0.02em;
-  }
-
-  code,
-  pre {
-    font-size: 18px;
-    line-height: 18px;
-    letter-spacing: 0.02em;
+  blockquote {
+    @apply text-body-1 italic;
   }
 }
 
-.grid-a {
-  @apply px-[5vw] grid grid-cols-4 sm:grid-cols-6 md:grid-cols-9 2xl:grid-cols-12 gap-x-[5vw] sm:gap-x-[2.15vw] 2xl:gap-x-[1vw];
-}
-
-.grid-m {
-  @apply grid-a auto-rows-min;
-}
-
-html {
-  @apply text-[125%] 2xl:text-[130%] 4xl:text-[135%];
+@layer utilities {
+  .px-layout {
+    @apply px-5 md:px-10;
+  }
+  .grid-responsive {
+    @apply px-layout grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-8 auto-rows-min;
+  }
+  .grid-r {
+    @apply md:grid md:gap-x-6 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-8 auto-rows-min;
+  }
+  .text-heading-d {
+    @apply text-heading-d-sm md:text-heading-d-md lg:text-heading-d-lg 2xl:text-heading-d-xl;
+  }
+  .text-heading-1 {
+    @apply text-heading-1-sm md:text-heading-1-md lg:text-heading-1-lg 2xl:text-heading-1-xl font-medium;
+  }
+  .text-heading-2 {
+    @apply text-heading-2-sm md:text-heading-2-md lg:text-heading-2-lg 2xl:text-heading-2-xl font-medium;
+  }
+  .text-body-1 {
+    @apply text-body-1-sm md:text-body-1-md lg:text-body-1-lg 2xl:text-body-1-xl;
+  }
+  .text-body-2 {
+    @apply text-body-2-sm md:text-body-2-md lg:text-body-2-lg 2xl:text-body-2-xl;
+  }
+  .text-body-3 {
+    @apply text-body-3-sm md:text-body-3-md lg:text-body-3-lg 2xl:text-body-3-xl;
+  }
 }
 
 html.lenis,
@@ -245,42 +150,22 @@ html.lenis body {
   height: auto;
 }
 
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
 }
 
-.lenis.lenis-stopped {
-  overflow: clip;
-}
-
 .lenis.lenis-smooth iframe {
   pointer-events: none;
 }
-html::-webkit-scrollbar {
-  display: none;
-}
 
-body::-webkit-scrollbar {
-  overflow: inherit;
-  scrollbar-gutter: stable;
-}
-
-body.scroll-bar::-webkit-scrollbar-thumb,
-body::-webkit-scrollbar-thumb:hover {
-  background: var(--plasma);
-  border-radius: 1rem;
-}
-
-body::-webkit-scrollbar-track {
-  border-radius: 4px;
-}
-
-body::-webkit-scrollbar-button {
-  display: none;
+.lenis.lenis-autoToggle {
+  transition-property: overflow;
+  transition-duration: 1ms;
+  transition-behavior: allow-discrete;
 }
 
 .rfm-child {

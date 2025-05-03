@@ -1,5 +1,4 @@
 import { CTAButton, InlineCTA } from "@/components/buttons/CTAButtons";
-import { Discord } from "@/components/footer/socialMediaSvgs";
 import { ExpressiveArrow } from "@/components/iconography/Iconography";
 import {
   ColorVariant,
@@ -66,7 +65,7 @@ const CommunitySection = () => {
           target="_blank"
           className="max-md:w-full pointer-events-auto"
         >
-          Join the Discord <Discord mode={IconMode.SET} />
+          Join the Discord
         </CTAButton>
         <InlineCTA href="https://docs.google.com/forms/d/e/1FAIpQLSemVaJ6HfieS9xDKv7SqWYArHyHLV-kraraiT_VEmPL_6lkPw/viewform">
           Send feedback <ExpressiveArrow size={"size-4"} />

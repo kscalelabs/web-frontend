@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Privacy() {
   return (
-    <main className="px-6 py-4 flex flex-col">
+    <main className="px-layout py-4 flex flex-col">
       <h1 className="text-3xl font-bold mb-2">Privacy Policy</h1>
       <p className="mb-4 text-sm text-background">Last updated {new Date().toLocaleDateString()}</p>
       <section className="mb-6">

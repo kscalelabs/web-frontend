@@ -3,10 +3,63 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { ReactLenis } from "lenis/dist/lenis-react";
 import "katex/dist/katex.min.css";
+import { Grid } from "@/components/grid/Grid";
+import localFont from "next/font/local";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
+
+const apparat = localFont({
+  src: [
+    {
+      path: "../styles/fonts/KMR-Apparat-Bold.woff",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-apparat",
+});
+
+const planar = localFont({
+  src: [
+    {
+      path: "../styles/fonts/GT-Planar-Regular.woff",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../styles/fonts/GT-Planar-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../styles/fonts/GT-Planar-Medium.woff",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../styles/fonts/GT-Planar-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../styles/fonts/GT-Planar-Bold.woff",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../styles/fonts/GT-Planar-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-planar",
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <div
+      className={`${apparat.variable} ${planar.variable} font-sans bg-background text-foreground`}
+    >
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -37,10 +90,12 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta name="twitter:image" content="/meta/twitter-image.png" />
       </Head>
-
+      <Grid />
       <ReactLenis root>
+        <Navbar />
         <Component {...pageProps} />
+        <Footer />
       </ReactLenis>
-    </>
+    </div>
   );
 }

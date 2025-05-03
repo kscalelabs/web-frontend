@@ -1,5 +1,4 @@
 import { CTAButton } from "@/components/buttons/CTAButtons";
-import { Github } from "@/components/footer/socialMediaSvgs";
 import {
   KBotIcon,
   KOSIcon,
@@ -106,7 +105,7 @@ const ResearchCard = ({ title, description, link, index, icon, variant }: Resear
             mode={FillMode.INVERT}
             size={Size.NORMAL}
           >
-            View on Github <Github mode={IconMode.SET} variant={variant} />
+            View on Github
           </CTAButton>
         </div>
       </article>
