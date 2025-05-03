@@ -39,6 +39,9 @@ const buttonStyles = cva(
         primary: "bg-orange-600 hover:bg-orange-700 focus:bg-orange-700 active:bg-orange-800",
         secondary: "bg-gray-200 hover:bg-gray-300 focus:bg-gray-300 active:bg-gray-400",
       },
+      fullWidth: {
+        true: "w-full",
+      },
     },
     defaultVariants: {
       intent: "primary",
@@ -46,11 +49,11 @@ const buttonStyles = cva(
   }
 );
 
-export const Button = ({ href, external, intent, ...props }: Props) => {
+export const Button = ({ href, external, intent, fullWidth, ...props }: Props) => {
   return href ? (
     external ? (
       <a
-        className={buttonStyles({ intent })}
+        className={buttonStyles({ intent, fullWidth })}
         href={href}
         target="_blank"
         rel="noopener noreferrer"
@@ -59,13 +62,17 @@ export const Button = ({ href, external, intent, ...props }: Props) => {
         {props.children}
       </a>
     ) : (
-      <Link className={buttonStyles({ intent })} href={href} {...(props as ButtonOrLinkProps)}>
+      <Link
+        className={buttonStyles({ intent, fullWidth })}
+        href={href}
+        {...(props as ButtonOrLinkProps)}
+      >
         {props.children}
       </Link>
     )
   ) : (
     <button
-      className={buttonStyles({ intent })}
+      className={buttonStyles({ intent, fullWidth })}
       type={props.type}
       {...(props as ButtonOrLinkProps)}
     >
