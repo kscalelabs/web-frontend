@@ -105,9 +105,7 @@ body {
   }
   p,
   ul,
-  ol,
-  li,
-  a {
+  ol {
     @apply text-body-2;
   }
   blockquote {

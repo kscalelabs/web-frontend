@@ -150,12 +150,14 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
               animate={{ opacity: desktopOpen ? 1 : 0, display: desktopOpen ? "flex" : "none" }}
             >
               <li>
-                <Link
-                  href="/research"
+                <a
+                  href="https://docs.kscale.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
                 >
-                  Research
-                </Link>
+                  Docs
+                </a>
               </li>
               <li>
                 <Link
@@ -220,14 +222,14 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
                     Docs
                   </a>
                 </li>
-                <li className="text-heading-1">
+                {/* <li className="text-heading-1">
                   <Link
                     href="kscale.dev/research"
                     className="hover:text-stone-400 focus:text-stone-400 transition-colors duration-300 font-medium"
                   >
                     Research
                   </Link>
-                </li>
+                </li> */}
               </ul>
               <ul className="flex flex-col gap-6 mt-auto">
                 <li className="text-body-2">

@@ -19,7 +19,7 @@ export default function Footer() {
         <h2 className="text-body-3 font-bold text-stone-500 mb-2">Product</h2>
         <div className="flex flex-col gap-6 lg:gap-4">
           <a
-            href="/tos"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSemVaJ6HfieS9xDKv7SqWYArHyHLV-kraraiT_VEmPL_6lkPw/viewform"
             target="_blank"
             rel="noopener noreferrer"
             className="text-body-2 lg:text-body-3 font-medium lg:font-bold relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
