@@ -41,10 +41,12 @@ const buttonStyles = cva(
       },
       fullWidth: {
         true: "w-full",
+        false: "w-fit",
       },
     },
     defaultVariants: {
       intent: "primary",
+      fullWidth: false,
     },
   }
 );
