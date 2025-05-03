@@ -3,7 +3,6 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { ReactLenis } from "lenis/dist/lenis-react";
 import "katex/dist/katex.min.css";
-import { Grid } from "@/components/grid/Grid";
 import localFont from "next/font/local";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
@@ -90,7 +89,6 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta name="twitter:image" content="/meta/twitter-image.png" />
       </Head>
-      <Grid />
       <ReactLenis root>
         <Navbar />
         <Component {...pageProps} />
