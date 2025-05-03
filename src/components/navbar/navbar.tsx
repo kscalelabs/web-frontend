@@ -16,22 +16,22 @@ import { CopyButton } from "../ui/Button/CopyButton";
 export default function NavBar({ href = "/" }: { href?: string } = {}) {
   const { scrollY } = useScroll();
   const lenis = useLenis();
-  const [, setDesktopNavHidden] = useState(false);
+  const [desktopOpen, setDesktopOpen] = useState(false);
   const [desktopPreviousScroll, setPrevScroll] = useState(scrollY.get());
-  const [open, setOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   // const safelist: string[] = ["-col-end-4", "-col-end-3", "-col-end-2", "-col-end-1"];
 
   function update(current: number, previous: number): void {
     if (current < previous) {
-      setDesktopNavHidden(false);
+      setDesktopOpen(false);
     } else if (current > 100 && current > previous) {
-      setDesktopNavHidden(true);
+      setDesktopOpen(true);
     }
   }
 
   useMotionValueEvent(scrollY, "change", (current: number) => {
-    update(current, desktopPreviousScroll);
+    // update(current, desktopPreviousScroll);
     setPrevScroll(current);
   });
   const width = useWindowSize().width;
@@ -61,46 +61,60 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
   };
 
   useEffect(() => {
-    setOpen(false);
+    setMobileOpen(false);
     lenis?.start();
   }, [width, lenis]);
 
   useEffect(() => {
     if (lenis) {
-      if (open) {
+      if (mobileOpen) {
         lenis.stop();
       } else {
         lenis.start();
       }
     }
-  }, [open, lenis]);
+  }, [mobileOpen, lenis]);
 
   return (
     <div className="relative h-20 md:h-24">
-      <motion.header className="fixed top-0 inset-x-0 z-50 px-layout py-4 bg-background flex justify-between max-md:items-center border-b border-b-stone-800 md:h-24">
+      <motion.header className="fixed top-0 inset-x-0 z-50 px-layout py-4 max-md:bg-background flex justify-between max-md:items-center max-md:border-b border-b-stone-800 md:h-24">
         {/* {navBasedOnWidth(width >= 768)} */}
         <Link href="/" className="my-auto">
           <Logo className="w-auto h-10 sm:hidden" />
           <Wordmark className="max-sm:hidden w-auto h-10" />
         </Link>
         <nav className="flex gap-2 md:gap-6 items-center md:hidden">
-          <Link
-            className="bg-orange-600 hover:bg-orange-700 focus:bg-orange-700 active:bg-orange-800 transition-colors duration-300 text-body-2 py-[0.75rem] px-2 rounded-lg"
-            href="/benchmarks"
-          >
-            View benchmarks
-          </Link>
+          <LinkButton href="/benchmarks">View benchmarks</LinkButton>
           <motion.button
             className="bg-orange-600/50 size-12 rounded-lg"
-            onClick={() => setOpen(!open)}
+            onClick={() => setMobileOpen(!mobileOpen)}
           >
-            <Hamburger open={open} />
+            <Hamburger open={mobileOpen} />
           </motion.button>
         </nav>
-        <motion.nav className="flex gap-2 md:gap-6 items-center md:items-start max-md:hidden bg-stone-800 border border-stone-900 p-2 pl-4 rounded-2xl h-48">
+        <motion.nav
+          className="relative flex gap-2 md:gap-6 items-center md:items-start max-md:hidden p-2 pl-4"
+          onMouseOver={() => setDesktopOpen(true)}
+          onMouseLeave={() => setDesktopOpen(false)}
+          animate={{
+            height: desktopOpen ? "12rem" : "4rem",
+          }}
+        >
+          <div className="-z-10 absolute inset-0 bg-stone-800 border border-stone-900 rounded-2xl" />
           <hgroup className="relative mt-3.5 w-32">
-            <h2 className="text-body-3 opacity-50">Products</h2>
-            <ul className="mt-2 flex flex-col gap-2 absolute">
+            <h2
+              className={clsx(
+                "text-body-3 transition-colors duration-300",
+                desktopOpen ? "text-stone-400" : "text-foreground"
+              )}
+              onMouseOver={() => setDesktopOpen(true)}
+            >
+              Products
+            </h2>
+            <motion.ul
+              className="mt-2 flex flex-col gap-2 absolute"
+              animate={{ opacity: desktopOpen ? 1 : 0, display: desktopOpen ? "flex" : "none" }}
+            >
               <li>
                 <a
                   href="https://discord.com/invite/pVwubQT9Sg"
@@ -119,11 +133,22 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
                   Z-Bot
                 </a>
               </li>
-            </ul>
+            </motion.ul>
           </hgroup>
           <hgroup className="relative mt-3.5 w-32">
-            <h2 className="text-body-3 opacity-50">Community</h2>
-            <ul className="mt-2 flex flex-col gap-2">
+            <h2
+              className={clsx(
+                "text-body-3 transition-colors duration-300",
+                desktopOpen ? "text-stone-400" : "text-foreground"
+              )}
+              onMouseOver={() => setDesktopOpen(true)}
+            >
+              Community
+            </h2>
+            <motion.ul
+              className="mt-2 flex flex-col gap-2"
+              animate={{ opacity: desktopOpen ? 1 : 0, display: desktopOpen ? "flex" : "none" }}
+            >
               <li>
                 <Link
                   href="/research"
@@ -150,13 +175,13 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
                   Discord
                 </a>
               </li>
-            </ul>
+            </motion.ul>
           </hgroup>
           <LinkButton href="/benchmarks">View benchmarks</LinkButton>
         </motion.nav>
       </motion.header>
       <AnimatePresence>
-        {open && (
+        {mobileOpen && (
           <motion.aside
             className={`fixed top-20 bg-background inset-x-0 bottom-0 z-50`}
             initial={{ opacity: 0 }}

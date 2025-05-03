@@ -36,7 +36,8 @@ export default function Home() {
   return (
     <div>
       <main className="">
-        <section className="px-5 md:px-10">
+        <section className="h-[200svh] bg-gradient-to-b from-background to-rust" />
+        {/* <section className="px-5 md:px-10">
           <h1 className="mb-4">K-Scale Labs</h1>
           <h2 className="mb-4">The new frontier</h2>
           <h3 className="mb-4">Electronic masterpieces of America</h3>
@@ -53,11 +54,11 @@ export default function Home() {
             CSS media queries are designed for responsive design and can handle many layout
             adjustments without requiring separate components.
           </p>
-        </section>
-        {/* <HeaderSection />
+        </section> */}
+        {/* <HeaderSection /> */}
         {/* <CatchphraseSection /> */}
-        {/* <ResearchSection />
-        <SpecSection />
+        {/* <ResearchSection /> */}
+        {/* <SpecSection />
         <WhatCanItDoSection />
         <RobotSection />
         <GallerySection />
