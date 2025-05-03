@@ -34,7 +34,7 @@ export default function Home() {
   }, [lenis]);
 
   return (
-    <div className="min-h-screen">
+    <div>
       <main className="">
         <section className="px-5 md:px-10">
           <h1 className="mb-4">K-Scale Labs</h1>

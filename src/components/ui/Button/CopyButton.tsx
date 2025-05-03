@@ -1,6 +1,7 @@
+import clsx from "clsx";
 import { useEffect, useState } from "react";
 
-export const CopyButton = () => {
+export const CopyButton = ({ className }: { className?: string }) => {
   const handleCopyEmail = async () => {
     const email = "inquiries@kscale.dev";
 
@@ -37,24 +38,24 @@ export const CopyButton = () => {
     if (isCopied) {
       setTimeout(() => {
         setIsCopied(false);
-      }, 2500);
+      }, 1500);
     }
   }, [isCopied]);
   return (
-    <div className="text-body-2">
+    <div className={clsx("flex flex-col", className)}>
       <span
-        className="block text-stone-500 transition-colors duration-300 cursor-pointer peer"
+        className="text-body-3 font-bold w-fit text-stone-500 transition-colors duration-300 cursor-pointer peer"
         role="button"
         onClick={() => handleCopyEmail()}
       >
         inquiries@kscale.dev
       </span>
       <button
-        className="font-medium relative flex items-center hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
+        className="text-body-2 font-medium relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
         onClick={() => handleCopyEmail()}
       >
-        <span className="absolute h-12 w-full [@media(pointer:fine)]:hidden" />
-        Copy email
+        <span className="absolute h-12 top-1/2 -translate-y-1/2 w-full [@media(pointer:fine)]:hidden" />
+        {isCopied ? "Copied to clipboard" : "Copy email"}
       </button>
     </div>
   );

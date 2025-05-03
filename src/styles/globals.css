@@ -116,6 +116,9 @@ body {
   .grid-responsive {
     @apply px-layout grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-8;
   }
+  .grid-r {
+    @apply md:grid md:gap-6 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-8;
+  }
   .text-heading-d {
     @apply text-heading-d-sm md:text-heading-d-md lg:text-heading-d-lg 2xl:text-heading-d-xl;
   }
