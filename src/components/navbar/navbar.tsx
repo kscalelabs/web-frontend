@@ -23,7 +23,7 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
   function update(current: number, previous: number): void {
     if (current > previous) {
       setDesktopOpen(false);
-    } else if (current > 100 && current < previous) {
+    } else if (current < 100 || current < previous) {
       setDesktopOpen(true);
     }
   }
@@ -33,30 +33,6 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
     setPrevScroll(current);
   });
   const width = useWindowSize().width;
-
-  const desktopNavBar = () => {
-    return (
-      <div className="z-10 col-span-full flex flex-row justify-between overflow-hidden py-4 items-start h-fit px-[5vw] -mx-[5vw]">
-        {/* <Logotype atTop={atTop} isMenuOpen={mobileShouldOpenBurger} href={href} /> */}
-        <div className="flex flex-row z-10 gap-16">
-          {navigationConfig.map((navItem, index) => (
-            <div className="flex flex-col gap-2">
-              <p className="uppercase">{navItem.name}</p>
-              <div className="flex flex-col gap-1">
-                {navItem.children.map((child, index) => {
-                  return (
-                    <a href={child.link} target={child.isExternal ? "_blank" : "_self"}>
-                      {child.name}
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  };
 
   useEffect(() => {
     setMobileOpen(false);
@@ -74,7 +50,7 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
   }, [mobileOpen, lenis]);
 
   return (
-    <div className="relative h-20 md:h-24">
+    <div className="h-20 lg:h-0">
       <motion.header className="fixed top-0 inset-x-0 z-50 px-layout py-4 max-lg:bg-background flex justify-between max-lg:items-center max-lg:border-b border-b-stone-800 lg:h-24 2xl:h-[6.25rem]">
         {/* {navBasedOnWidth(width >= 768)} */}
         <Link href="/" className="my-auto">
@@ -289,6 +265,10 @@ const Hamburger = ({ open }: { open: boolean }) => {
         [16, 24, 32].map((y, index_y) => (
           <motion.circle
             r={2}
+            initial={{
+              cx: x,
+              cy: y,
+            }}
             animate={{
               cx: open ? 24 : x,
               cy: open ? 24 : y,
@@ -305,6 +285,9 @@ const Hamburger = ({ open }: { open: boolean }) => {
       {[16, 32].map((x, index_x) =>
         [16, 32].map((y, index_y) => (
           <motion.path
+            initial={{
+              d: `M ${x} ${y} L ${x} ${y}`,
+            }}
             animate={{
               d: open ? `M ${x} ${y} L 24 24` : `M ${x} ${y} L ${x} ${y}`,
             }}

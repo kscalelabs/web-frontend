@@ -43,19 +43,25 @@ const buttonStyles = cva(
         true: "w-full",
         false: "w-fit",
       },
+      adaptive: {
+        true: "w-full sm:w-fit",
+        false: null,
+      },
     },
     defaultVariants: {
       intent: "primary",
       fullWidth: false,
+      adaptive: false,
     },
   }
 );
 
-export const Button = ({ href, external, intent, fullWidth, ...props }: Props) => {
+export const Button = ({ href, external, intent, adaptive, fullWidth, ...props }: Props) => {
+  const classes = buttonStyles({ intent, fullWidth, adaptive });
   return href ? (
     external ? (
       <a
-        className={buttonStyles({ intent, fullWidth })}
+        className={classes}
         href={href}
         target="_blank"
         rel="noopener noreferrer"
@@ -64,20 +70,12 @@ export const Button = ({ href, external, intent, fullWidth, ...props }: Props) =
         {props.children}
       </a>
     ) : (
-      <Link
-        className={buttonStyles({ intent, fullWidth })}
-        href={href}
-        {...(props as ButtonOrLinkProps)}
-      >
+      <Link className={classes} href={href} {...(props as ButtonOrLinkProps)}>
         {props.children}
       </Link>
     )
   ) : (
-    <button
-      className={buttonStyles({ intent, fullWidth })}
-      type={props.type}
-      {...(props as ButtonOrLinkProps)}
-    >
+    <button className={classes} type={props.type} {...(props as ButtonOrLinkProps)}>
       {props.children}
     </button>
   );

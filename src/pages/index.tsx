@@ -37,12 +37,14 @@ export default function Home() {
   return (
     <div>
       <main className="">
-        <section className="px-layout min-h-[80svh] flex flex-col justify-end bg-gradient-to-t from-background to-rust py-16">
-          <h1 className="mb-4">Embodied AI for everybody with a computer</h1>
-          <p className="mb-4">
-            K-Scale Labs provides open-source tools to train and develop general-purpose robots.
-          </p>
-          <Button fullWidth>View community benchmarks</Button>
+        <section className="px-layout min-h-[20rem] h-[80svh] lg:h-svh flex flex-col grid-r justify-end md:content-end bg-gradient-to-t from-background to-rust py-16">
+          <hgroup className="col-span-4 lg:col-span-3 2xl:col-span-5">
+            <h1 className="mb-4">Embodied AI for everybody with a computer</h1>
+            <p className="mb-4">
+              K-Scale Labs provides open-source tools to train and develop general-purpose robots.
+            </p>
+            <Button adaptive={true}>View community benchmarks</Button>
+          </hgroup>
         </section>
         <section className="px-layout flex flex-col py-16 ">
           <hgroup className="col-span-full mb-4">
@@ -86,7 +88,7 @@ export default function Home() {
           </ul>
         </section>
         <section className="px-layout flex flex-col grid-r py-16 bg-stone-950">
-          <hgroup className="col-span-full mb-4">
+          <hgroup className="col-span-full 2xl:col-span-4 2xl:col-start-2 mb-4">
             <h2 className="text-body-2 font-medium text-stone-400 mb-1">Demos</h2>
             <h3 className="mb-4">See how K-Bot&apos;s continuously improved</h3>
           </hgroup>
@@ -95,7 +97,7 @@ export default function Home() {
           </article>
         </section>
         <section className="px-layout flex flex-col grid-r py-16 ">
-          <hgroup className="col-span-full mb-4">
+          <hgroup className="col-span-full 2xl:col-span-4 2xl:col-start-2 mb-4">
             <h2 className="text-body-2 font-medium text-stone-400 mb-1">Our achievements</h2>
             <h3 className="mb-4">
               We&apos;ve completed 3 generations of robots in less than a year
