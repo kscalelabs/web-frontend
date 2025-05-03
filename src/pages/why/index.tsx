@@ -1,6 +1,4 @@
-import Footer from "@/components/Footer/Footer";
 import { DownArrowIcon } from "@/components/iconography/Iconography";
-import NavBar from "@/components/Navbar/Navbar";
 
 export default function ResearchIndex() {
   return (
@@ -77,7 +75,6 @@ export default function ResearchIndex() {
             </p>
           </div>
         </div>
-        <Footer />
       </div>
     </div>
   );

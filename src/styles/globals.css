@@ -72,8 +72,10 @@
     --molten: #f18a03ff;
     --sol: #eae9bcff;
   }
-  *{
-    font-feature-settings: "ss02" on, "ss03" on;
+  * {
+    font-feature-settings:
+      "ss02" on,
+      "ss03" on;
   }
 }
 

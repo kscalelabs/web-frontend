@@ -60,7 +60,7 @@ export const navigationConfig: NavigationConfig[] = [
       },
     ],
   },
-]
+];
 
 export enum IconMode {
   FULL,

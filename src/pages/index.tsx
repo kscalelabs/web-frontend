@@ -1,14 +1,4 @@
-import Footer from "@/components/Footer/Footer";
-import NavBar from "@/components/Navbar/Navbar";
 import { Button } from "@/components/ui/Button/Button";
-import CommunitySection from "@/landing/CommunitySection";
-import GallerySection from "@/landing/GallerySection";
-import HeaderSection from "@/landing/HeaderSection";
-import ResearchSection from "@/landing/ResearchSection";
-import RobotSection from "@/landing/RobotSection";
-import SpecSection from "@/landing/SpecSection";
-import Sponsors from "@/landing/Sponsors";
-import WhatCanItDoSection from "@/landing/WhatCanItDoSection";
 import { useLenis } from "lenis/dist/lenis-react";
 import { useEffect } from "react";
 

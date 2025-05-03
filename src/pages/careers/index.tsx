@@ -1,4 +1,3 @@
-import Footer from "@/components/Footer/Footer";
 import { CopyButton } from "@/components/ui/Button/CopyButton";
 import Arrow from "@/assets/icons/icon_arrowTR.svg";
 
@@ -56,15 +55,15 @@ export default function Page() {
           ))}
         </ul>
         <aside className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 mb-16">
-          <p className="mb-4"> Don't see an role that matches you?</p>
+          <p className="mb-4"> Don&apos;t see an role that matches you?</p>
           <CopyButton />
         </aside>
         <div className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 mb-16">
           {/* <p className="text-body-3 text-stone-400 mb-2">People of K-Scale</p> */}
           <h2 className="text-heading-2 mb-4">Who we&apos;re looking for</h2>
           <p className="text-body-2">
-            We don't care about degrees or traditional backgrounds. We care about people who can
-            independently ship top-tier open-source humanoid robots. Show us your GitHub,
+            We don&apos;t care about degrees or traditional backgrounds. We care about people who
+            can independently ship top-tier open-source humanoid robots. Show us your GitHub,
             open-source work, standout projects, or competition wins.
           </p>
         </div>
