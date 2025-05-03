@@ -10,13 +10,15 @@ import Discord from "@/assets/icons/icon_discord.svg";
 import X from "@/assets/icons/icon_x.svg";
 import Github from "@/assets/icons/icon_github.svg";
 import Link from "next/link";
-import { LinkButton, Button } from "../ui/Button/Button";
+import { Button } from "../ui/Button/Button";
 import { CopyButton } from "../ui/Button/CopyButton";
+import { usePathname } from "next/navigation";
 
-export default function NavBar({ href = "/" }: { href?: string } = {}) {
+export default function Navbar() {
+  const pathname = usePathname();
   const { scrollY } = useScroll();
   const lenis = useLenis();
-  const [desktopOpen, setDesktopOpen] = useState(true);
+  const [desktopOpen, setDesktopOpen] = useState(pathname === "/");
   const [desktopPreviousScroll, setPrevScroll] = useState(scrollY.get());
   const [mobileOpen, setMobileOpen] = useState(false);
 
