@@ -17,7 +17,7 @@ export default function Footer() {
       </Link>
       <section className="md:col-start-3 max-md:col-span-2 lg:col-start-5 2xl:col-start-7">
         <h2 className="text-body-3 font-bold text-stone-500 mb-2">Product</h2>
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 lg:gap-4">
           <a
             href="/tos"
             target="_blank"
@@ -31,7 +31,7 @@ export default function Footer() {
       </section>
       <section className="md:col-start-3 max-md:col-span-2 lg:col-start-auto">
         <h2 className="text-body-3 font-bold text-stone-500 mb-2">Legal</h2>
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 lg:gap-4">
           <Link
             href="/tos"
             className="text-body-2 lg:text-body-3 font-medium lg:font-bold relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
