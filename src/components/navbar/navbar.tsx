@@ -51,7 +51,12 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
 
   return (
     <div className="h-20 lg:h-0">
-      <motion.header className="fixed top-0 inset-x-0 z-50 px-layout py-4 max-lg:bg-background flex justify-between max-lg:items-center max-lg:border-b border-b-stone-800 lg:h-24 2xl:h-[6.25rem]">
+      <motion.header
+        className={clsx(
+          "fixed top-0 inset-x-0 z-50 px-layout py-4 flex justify-between max-lg:items-center border-b-stone-800 lg:h-24 2xl:h-[6.25rem] transitions-color duration-300",
+          scrollY.get() > 100 ? "max-lg:bg-background max-lg:border-b" : "max-lg:bg-transparent"
+        )}
+      >
         {/* {navBasedOnWidth(width >= 768)} */}
         <Link href="/" className="my-auto">
           <Logo className="w-auto h-10 sm:hidden" />

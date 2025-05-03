@@ -37,8 +37,18 @@ export default function Home() {
   return (
     <div>
       <main className="">
-        <section className="px-layout min-h-[20rem] h-[80svh] lg:h-svh flex flex-col grid-r justify-end md:content-end bg-gradient-to-t from-background to-rust py-16">
-          <hgroup className="col-span-4 lg:col-span-3 2xl:col-span-5">
+        <section className="relative px-layout min-h-[20rem] h-[80svh] lg:h-svh flex flex-col grid-r justify-end md:content-end py-16 overflow-hidden">
+          <video
+            width="1920"
+            height="1080"
+            autoPlay
+            muted
+            loop
+            className="absolute inset-0 size-full object-cover brightness-50"
+          >
+            <source src="/videos/landing_video_test.mp4" type="video/mp4" />
+          </video>
+          <hgroup className="col-span-4 lg:col-span-3 2xl:col-span-5 z-10">
             <h1 className="mb-4">Embodied AI for everybody with a computer</h1>
             <p className="mb-4">
               K-Scale Labs provides open-source tools to train and develop general-purpose robots.
