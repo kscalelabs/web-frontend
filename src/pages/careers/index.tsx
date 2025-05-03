@@ -23,14 +23,21 @@ export default function Page() {
   ];
   return (
     <>
-      <section className="h-[80svh] px-layout min-h-screen py-8">
-
-        <hgroup className="mb-16">
+      <section className="min-h-[20rem] h-[80svh] px-layout flex flex-col grid-r content-end bg-gradient-to-t py-16">
+        <hgroup className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 mb-16">
           <h1 className="text-body-3 text-stone-400 mb-2">Careers</h1>
-          <h2 className="mb-4">Open roles (3)</h2>
-          <h3 className="mb-4">All roles are on-site in Palo Alto, CA, USA. </h3>
+          <h2 className="mb-4">Come build friendly open-source robots</h2>
+          <p>
+            We&apos;re K-Scale Labs, a team of hackers, engineers and researchers building humanoids
+            and a robotics general purpose foundation model in Palo Alto, USA.
+          </p>
         </hgroup>
-        <ul className="flex flex-col gap-8 mb-16">
+      </section>
+      <section className="px-layout min-h-screen grid-responsive py-8">
+        <h2 className="text-heading-2 col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 mb-2">
+          Open roles (3)
+        </h2>
+        <ul className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 flex flex-col gap-8 mb-16">
           {jobs.map((item, i) => (
             <li key={`job-listing-${i}`} className="flex flex-col gap-4">
               <a
@@ -48,16 +55,17 @@ export default function Page() {
             </li>
           ))}
         </ul>
-        <aside>
+        <aside className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 mb-16">
           <p className="mb-4"> Don't see an role that matches you?</p>
           <CopyButton />
         </aside>
-        <div className="h-16" />
-        <div className="mb-16 w-full lg:w-1/2">
-          <p className="text-body-3 text-stone-400 mb-2">People of K-Scale</p>
-          <h2 className="mb-4">Who we are looking for?</h2>
+        <div className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 mb-16">
+          {/* <p className="text-body-3 text-stone-400 mb-2">People of K-Scale</p> */}
+          <h2 className="text-heading-2 mb-4">Who we&apos;re looking for</h2>
           <p className="text-body-2">
-            We don't care about degrees or traditional backgrounds. We care about people who can independently ship top-tier open-source humanoid robots. Show us your GitHub, open-source work, standout projects, or competition wins.
+            We don't care about degrees or traditional backgrounds. We care about people who can
+            independently ship top-tier open-source humanoid robots. Show us your GitHub,
+            open-source work, standout projects, or competition wins.
           </p>
         </div>
       </section>
