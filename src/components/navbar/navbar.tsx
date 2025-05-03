@@ -10,6 +10,8 @@ import Discord from "@/assets/icons/icon_discord.svg";
 import X from "@/assets/icons/icon_x.svg";
 import Github from "@/assets/icons/icon_github.svg";
 import Link from "next/link";
+import { LinkButton } from "../ui/Button/Button";
+import { CopyButton } from "../ui/Button/CopyButton";
 
 export default function NavBar({ href = "/" }: { href?: string } = {}) {
   const { scrollY } = useScroll();
@@ -103,7 +105,7 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
                 <a
                   href="https://discord.com/invite/pVwubQT9Sg"
                   target="_blank"
-                  className="hover:text-neutral-400 transition-colors duration-300 font-medium"
+                  className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
                 >
                   K-Bot
                 </a>
@@ -112,7 +114,7 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
                 <a
                   href="https://discord.com/invite/pVwubQT9Sg"
                   target="_blank"
-                  className="hover:text-neutral-400 transition-colors duration-300 font-medium"
+                  className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
                 >
                   Z-Bot
                 </a>
@@ -125,7 +127,7 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
               <li>
                 <Link
                   href="/research"
-                  className="hover:text-neutral-400 transition-colors duration-300 font-medium"
+                  className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
                 >
                   Research
                 </Link>
@@ -133,7 +135,7 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
               <li>
                 <Link
                   href="/careers"
-                  className="hover:text-neutral-400 transition-colors duration-300 font-medium"
+                  className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
                 >
                   Careers
                 </Link>
@@ -141,24 +143,20 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
               <li>
                 <a
                   href="https://discord.com/invite/pVwubQT9Sg"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  className="hover:text-neutral-400 transition-colors duration-300 font-medium"
+                  className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
                 >
                   Discord
                 </a>
               </li>
             </ul>
           </hgroup>
-          <Link
-            className="bg-orange-600 hover:bg-orange-700 focus:bg-orange-700 active:bg-orange-800 transition-colors duration-300 text-body-2 py-[0.75rem] px-2 rounded-lg font-medium"
-            href="/benchmarks"
-          >
-            View benchmarks
-          </Link>
+          <LinkButton href="/benchmarks">View benchmarks</LinkButton>
         </motion.nav>
       </motion.header>
       <AnimatePresence>
-        {!open && (
+        {open && (
           <motion.aside
             className={`fixed top-20 bg-background inset-x-0 bottom-0 z-50`}
             initial={{ opacity: 0 }}
@@ -167,37 +165,55 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
           >
             <div className="h-full flex flex-col gap-16 py-8 overflow-auto px-layout">
               <ul className="flex flex-col gap-8">
-                <li className="text-heading-1">K-Bot</li>
-                <li className="text-heading-1">Z-Bot</li>
-                <li className="text-heading-1">Docs</li>
-                <li className="text-heading-1">Research</li>
+                <li className="text-heading-1">
+                  <a
+                    href="https://google.com"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    className="hover:text-stone-400 focus:text-stone-400 transition-colors duration-300 font-medium"
+                  >
+                    K-Bot
+                  </a>
+                </li>
+                <li className="text-heading-1">
+                  <a
+                    href="https://google.com"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    className="hover:text-stone-400 focus:text-stone-400 transition-colors duration-300 font-medium"
+                  >
+                    Z-Bot
+                  </a>
+                </li>
+                <li className="text-heading-1">
+                  <a
+                    href="https://docs.kscale.dev"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    className="hover:text-stone-400 focus:text-stone-400 transition-colors duration-300 font-medium"
+                  >
+                    Docs
+                  </a>
+                </li>
+                <li className="text-heading-1">
+                  <Link
+                    href="kscale.dev/research"
+                    className="hover:text-stone-400 focus:text-stone-400 transition-colors duration-300 font-medium"
+                  >
+                    Research
+                  </Link>
+                </li>
               </ul>
               <ul className="flex flex-col gap-6 mt-auto">
                 <li className="text-body-2">
-                  <span
-                    className="block text-stone-500 transition-colors duration-300 cursor-pointer peer"
-                    role="button"
-                    onClick={() => {
-                      copyEmail();
-                    }}
-                  >
-                    inquiries@kscale.dev
-                  </span>
-                  <button
-                    className="font-medium relative flex items-center hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
-                    onClick={() => {
-                      copyEmail();
-                    }}
-                  >
-                    <span className="absolute h-12 w-full [@media(pointer:fine)]:hidden" />
-                    Copy email
-                  </button>
+                  <CopyButton />
                 </li>
                 <li>
                   <menu className="flex gap-6 items-center">
                     <li>
                       <a
                         href="https://discord.com/invite/pVwubQT9Sg"
+                        rel="noopener noreferrer"
                         target="_blank"
                         className="relative block group"
                       >
@@ -208,6 +224,7 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
                     <li>
                       <a
                         href="https://x.com/kscalelabs"
+                        rel="noopener noreferrer"
                         target="_blank"
                         className="relative block group"
                       >
@@ -217,7 +234,8 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
                     </li>
                     <li>
                       <a
-                        href="github.com/kscalelabs"
+                        href="https://github.com/kscalelabs"
+                        rel="noopener noreferrer"
                         target="_blank"
                         className="relative block group"
                       >

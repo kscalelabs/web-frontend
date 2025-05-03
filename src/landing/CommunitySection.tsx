@@ -1,5 +1,5 @@
 import { CTAButton, InlineCTA } from "@/components/buttons/CTAButtons";
-import { Discord } from "@/components/footer/socialMediaSvgs";
+import { Discord } from "@/components/Footer/socialMediaSvgs";
 import { ExpressiveArrow } from "@/components/iconography/Iconography";
 import {
   ColorVariant,

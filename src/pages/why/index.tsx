@@ -1,4 +1,4 @@
-import Footer from "@/components/footer/footer";
+import Footer from "@/components/Footer/Footer";
 import { DownArrowIcon } from "@/components/iconography/Iconography";
 import NavBar from "@/components/Navbar/Navbar";
 

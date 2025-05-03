@@ -1,4 +1,4 @@
-import Footer from "@/components/footer/footer";
+import Footer from "@/components/Footer/Footer";
 import NavBar from "@/components/Navbar/Navbar";
 import CommunitySection from "@/landing/CommunitySection";
 import GallerySection from "@/landing/GallerySection";

@@ -1,5 +1,5 @@
 import { CTAButton } from "@/components/buttons/CTAButtons";
-import { Github } from "@/components/footer/socialMediaSvgs";
+import { Github } from "@/components/Footer/socialMediaSvgs";
 import {
   KBotIcon,
   KOSIcon,
