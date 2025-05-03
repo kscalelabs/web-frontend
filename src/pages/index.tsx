@@ -34,6 +34,7 @@ export default function Home() {
             autoPlay
             muted
             loop
+            playsInline
             className="absolute inset-0 size-full object-cover brightness-50"
           >
             <source src="/videos/landing_video_test.mp4" type="video/mp4" />
