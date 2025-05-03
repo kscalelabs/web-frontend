@@ -10,28 +10,26 @@ import Discord from "@/assets/icons/icon_discord.svg";
 import X from "@/assets/icons/icon_x.svg";
 import Github from "@/assets/icons/icon_github.svg";
 import Link from "next/link";
-import { LinkButton } from "../ui/Button/Button";
+import { LinkButton, Button } from "../ui/Button/Button";
 import { CopyButton } from "../ui/Button/CopyButton";
 
 export default function NavBar({ href = "/" }: { href?: string } = {}) {
   const { scrollY } = useScroll();
   const lenis = useLenis();
-  const [desktopOpen, setDesktopOpen] = useState(false);
+  const [desktopOpen, setDesktopOpen] = useState(true);
   const [desktopPreviousScroll, setPrevScroll] = useState(scrollY.get());
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // const safelist: string[] = ["-col-end-4", "-col-end-3", "-col-end-2", "-col-end-1"];
-
   function update(current: number, previous: number): void {
-    if (current < previous) {
+    if (current > previous) {
       setDesktopOpen(false);
-    } else if (current > 100 && current > previous) {
+    } else if (current > 100 && current < previous) {
       setDesktopOpen(true);
     }
   }
 
   useMotionValueEvent(scrollY, "change", (current: number) => {
-    // update(current, desktopPreviousScroll);
+    update(current, desktopPreviousScroll);
     setPrevScroll(current);
   });
   const width = useWindowSize().width;
@@ -77,14 +75,14 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
 
   return (
     <div className="relative h-20 md:h-24">
-      <motion.header className="fixed top-0 inset-x-0 z-50 px-layout py-4 max-md:bg-background flex justify-between max-md:items-center max-md:border-b border-b-stone-800 md:h-24">
+      <motion.header className="fixed top-0 inset-x-0 z-50 px-layout py-4 max-lg:bg-background flex justify-between max-lg:items-center max-lg:border-b border-b-stone-800 lg:h-24 2xl:h-[6.25rem]">
         {/* {navBasedOnWidth(width >= 768)} */}
         <Link href="/" className="my-auto">
           <Logo className="w-auto h-10 sm:hidden" />
           <Wordmark className="max-sm:hidden w-auto h-10" />
         </Link>
-        <nav className="flex gap-2 md:gap-6 items-center md:hidden">
-          <LinkButton href="/benchmarks">View benchmarks</LinkButton>
+        <nav className="flex gap-2 md:gap-6 items-center lg:hidden">
+          <Button href="/benchmarks">View benchmarks</Button>
           <motion.button
             className="bg-orange-600/50 size-12 rounded-lg"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -92,15 +90,17 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
             <Hamburger open={mobileOpen} />
           </motion.button>
         </nav>
-        <motion.nav
-          className="relative flex gap-2 md:gap-6 items-center md:items-start max-md:hidden p-2 pl-4"
+        <nav
+          className="relative flex gap-2 md:gap-6 items-center md:items-start max-lg:hidden p-2 pl-4"
           onMouseOver={() => setDesktopOpen(true)}
           onMouseLeave={() => setDesktopOpen(false)}
-          animate={{
-            height: desktopOpen ? "12rem" : "4rem",
-          }}
         >
-          <div className="-z-10 absolute inset-0 bg-stone-800 border border-stone-900 rounded-2xl" />
+          <motion.div
+            className="-z-10 absolute inset-0 bg-stone-800 border border-stone-900 rounded-2xl"
+            animate={{
+              height: desktopOpen ? "12rem" : "auto",
+            }}
+          />
           <hgroup className="relative mt-3.5 w-32">
             <h2
               className={clsx(
@@ -126,7 +126,7 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
               </li>
               <li>
                 <a
-                  href="https://discord.com/invite/pVwubQT9Sg"
+                  href="https://www.zerothbot.com/"
                   target="_blank"
                   className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
                 >
@@ -177,8 +177,8 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
               </li>
             </motion.ul>
           </hgroup>
-          <LinkButton href="/benchmarks">View benchmarks</LinkButton>
-        </motion.nav>
+          <Button href="/benchmarks">View benchmarks</Button>
+        </nav>
       </motion.header>
       <AnimatePresence>
         {mobileOpen && (
@@ -202,7 +202,7 @@ export default function NavBar({ href = "/" }: { href?: string } = {}) {
                 </li>
                 <li className="text-heading-1">
                   <a
-                    href="https://google.com"
+                    href="https://www.zerothbot.com/"
                     rel="noopener noreferrer"
                     target="_blank"
                     className="hover:text-stone-400 focus:text-stone-400 transition-colors duration-300 font-medium"
@@ -316,11 +316,3 @@ const Hamburger = ({ open }: { open: boolean }) => {
     // </button>
   );
 };
-
-function copyEmail() {
-  try {
-    navigator.clipboard.writeText("inquiries@kscale.dev");
-  } catch (error) {
-    console.error("Failed to copy email: ", error);
-  }
-}

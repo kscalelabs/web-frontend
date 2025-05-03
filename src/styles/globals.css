@@ -101,7 +101,10 @@ body {
     @apply text-heading-2;
   }
   p,
-  li {
+  ul,
+  ol,
+  li,
+  a {
     @apply text-body-2;
   }
   blockquote {
