@@ -50,15 +50,17 @@ export default function Home() {
         <section className="px-layout flex flex-col py-16 ">
           <hgroup className="col-span-full mb-4">
             <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2>
-            <h3 className="mb-4">Humanoid robots for all your research and development needs</h3>
+            <h3 className="text-heading-1 mb-4">
+              Humanoid robots for all your research and development needs
+            </h3>
           </hgroup>
           <ul className="flex flex-col gap-8 md:gap-6 md:grid grid-cols-2 lg:grid-cols-3">
             <li>
               <article>
                 <div className="aspect-[3/4] sm:aspect-video bg-gradient-to-br from-rust via-background to-methyl rounded-2xl mb-4" />
-                <h4 className="text-heading-1">K-Bot</h4>
-                <h5 className="text-heading-2 mb-1">Full sized humanoid</h5>
-                <p className="text-stone-400 mb-4">Starting at $9,000 USD</p>
+                <h4 className="text-heading-2 mb-1">K-Bot</h4>
+                <h5 className="text-body-2">Full sized humanoid</h5>
+                <p className="text-body-3 text-stone-400 mb-4">Starting at $9,000 USD</p>
                 <Button href="https://shop.kscale.dev" external>
                   Pre-order now
                 </Button>
@@ -67,9 +69,9 @@ export default function Home() {
             <li>
               <article>
                 <div className="aspect-[3/4] sm:aspect-video bg-gradient-to-br from-rust via-background to-methyl rounded-2xl mb-4" />
-                <h4 className="text-heading-1">Z-Bot</h4>
-                <h5 className="text-heading-2 mb-1">Small but mighty</h5>
-                <p className="text-stone-400 mb-4">Starting at $1,000 USD</p>
+                <h4 className="text-heading-2 mb-1">Z-Bot</h4>
+                <h5 className="text-body-2">Small but mighty</h5>
+                <p className="text-body-3 text-stone-400 mb-4">Starting at $1,000 USD</p>
                 <Button href="https://zeroth.bot" external>
                   Buy now
                 </Button>
@@ -78,7 +80,7 @@ export default function Home() {
             <li>
               <article>
                 <div className="aspect-[3/4] sm:aspect-video bg-gradient-to-br from-rust via-background to-methyl rounded-2xl mb-4" />
-                <h4 className="text-heading-1 flex items-center gap-2">
+                <h4 className="text-heading-2 flex items-center gap-2">
                   M-Bot{" "}
                   <span className="text-stone-500 text-body-3 font-bold border border-stone-500 rounded-full px-3 py-1">
                     Coming soon

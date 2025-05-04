@@ -9,11 +9,12 @@ interface Props extends ButtonOrLinkProps, VariantProps<typeof buttonStyles> {
 }
 
 const buttonStyles = cva(
-  "transition-colors duration-300 text-body-2 px-3 py-3 rounded-lg font-medium flex justify-center items-center",
+  "transition-colors duration-300 text-body-2 px-3 py-3 rounded-lg flex justify-center items-center",
   {
     variants: {
       intent: {
-        primary: "bg-orange-600 hover:bg-orange-700 focus:bg-orange-700 active:bg-orange-800",
+        primary:
+          "text-foreground bg-orange-700 hover:bg-orange-800 focus:bg-orange-800 active:bg-orange-900",
         secondary: "bg-gray-200 hover:bg-gray-300 focus:bg-gray-300 active:bg-gray-400",
       },
       fullWidth: {

@@ -136,7 +136,7 @@ const config: Config = {
           },
         ],
         "body-2-xl": [
-          "1.25rem",
+          "1.1875rem",
           {
             lineHeight: "1.3",
             letterSpacing: "0",

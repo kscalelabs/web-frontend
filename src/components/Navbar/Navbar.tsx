@@ -17,24 +17,47 @@ import { IconButton } from "../ui/IconButton/IconButton";
 export const Navbar = () => {
   const pathname = usePathname();
   const { scrollY } = useScroll();
-  const lenis = useLenis();
+  const lenis = useLenis((lenis) => {
+    if (lenis.isScrolling === false) setDesktopScrollDetect(true);
+  });
+  const [desktopHover, setDesktopHover] = useState(false);
+  const [desktopScrollDetect, setDesktopScrollDetect] = useState(true);
   const [desktopOpen, setDesktopOpen] = useState(pathname === "/");
-  const [desktopPreviousScroll, setPrevScroll] = useState(scrollY.get());
+  const [desktopPreviousScroll, setPrevScroll] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  function update(current: number, previous: number): void {
-    if (current > previous && width >= 1024) {
+  function update(previous: number): void {
+    if (width < 1024 || desktopHover) return;
+    if (previous > 0) {
       setDesktopOpen(false);
-    } else if (current < 100 || current < previous) {
+    } else if (previous < 0) {
       setDesktopOpen(true);
     }
   }
 
-  useMotionValueEvent(scrollY, "change", (current: number) => {
-    update(current, desktopPreviousScroll);
-    setPrevScroll(current);
+  useMotionValueEvent(scrollY, "change", () => {
+    if (desktopScrollDetect) {
+      console.log("desktopPreviousScroll", desktopPreviousScroll);
+      update(desktopPreviousScroll);
+      const y = scrollY.getPrevious();
+      console.log("y", y);
+      if (y !== undefined) {
+        setPrevScroll(Math.sign(scrollY.get() - y));
+      }
+    }
   });
+
   const width = useWindowSize().width;
+
+  useEffect(() => {
+    if (width >= 1024 && scrollY.get() > 20) {
+      if (desktopHover === false) {
+        setDesktopScrollDetect(false);
+        setPrevScroll(0);
+      }
+      setDesktopOpen(desktopHover);
+    }
+  }, [desktopHover, width]);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -71,6 +94,8 @@ export const Navbar = () => {
 
   return (
     <div className="lg:h-0">
+      {desktopHover && <div className="fixed top-0 left-0 size-8 rounded-full bg-red-500 z-50" />}
+      {desktopOpen && <div className="fixed top-0 left-12 size-8 rounded-full bg-green-500 z-50" />}
       <motion.header
         className={clsx(
           "fixed top-0 inset-x-0 z-50 px-layout py-4 flex justify-between max-lg:items-center border-b-stone-800 lg:h-24 2xl:h-[6.25rem] transitions-color duration-300 ease-out",
@@ -95,11 +120,12 @@ export const Navbar = () => {
         </nav>
         <nav
           className="relative flex gap-2 md:gap-6 items-center md:items-start max-lg:hidden p-2 pl-4"
-          onMouseOver={() => setDesktopOpen(true)}
-          onMouseLeave={() => setDesktopOpen(false)}
+          onMouseOver={() => setDesktopHover(true)}
+          onMouseLeave={() => setDesktopHover(false)}
         >
           <motion.div
             className="max-lg:hidden -z-10 absolute inset-0 bg-stone-800/80 backdrop-blur-md border border-stone-700 rounded-2xl"
+            initial={false}
             animate={{
               height: desktopOpen ? "12rem" : "auto",
             }}
@@ -110,12 +136,12 @@ export const Navbar = () => {
                 "text-body-3 transition-colors duration-300",
                 desktopOpen ? "text-stone-400" : "text-foreground"
               )}
-              onMouseOver={() => setDesktopOpen(true)}
             >
               Products
             </h2>
             <motion.ul
               className="mt-2 flex flex-col gap-2 absolute"
+              initial={false}
               animate={{ opacity: desktopOpen ? 1 : 0, display: desktopOpen ? "flex" : "none" }}
             >
               <li>
@@ -144,12 +170,12 @@ export const Navbar = () => {
                 "text-body-3 transition-colors duration-300",
                 desktopOpen ? "text-stone-400" : "text-foreground"
               )}
-              onMouseOver={() => setDesktopOpen(true)}
             >
               Community
             </h2>
             <motion.ul
               className="mt-2 flex flex-col gap-2"
+              initial={false}
               animate={{ opacity: desktopOpen ? 1 : 0, display: desktopOpen ? "flex" : "none" }}
             >
               <li>
