@@ -94,8 +94,6 @@ export const Navbar = () => {
 
   return (
     <div className="lg:h-0">
-      {desktopHover && <div className="fixed top-0 left-0 size-8 rounded-full bg-red-500 z-50" />}
-      {desktopOpen && <div className="fixed top-0 left-12 size-8 rounded-full bg-green-500 z-50" />}
       <motion.header
         className={clsx(
           "fixed top-0 inset-x-0 z-50 px-layout py-4 flex justify-between max-lg:items-center border-b-stone-800 lg:h-24 2xl:h-[6.25rem] transitions-color duration-300 ease-out",
