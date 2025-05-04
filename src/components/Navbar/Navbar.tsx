@@ -37,10 +37,10 @@ export const Navbar = () => {
 
   useMotionValueEvent(scrollY, "change", () => {
     if (desktopScrollDetect) {
-      console.log("desktopPreviousScroll", desktopPreviousScroll);
+      // console.log("desktopPreviousScroll", desktopPreviousScroll);
       update(desktopPreviousScroll);
       const y = scrollY.getPrevious();
-      console.log("y", y);
+      // console.log("y", y);
       if (y !== undefined) {
         setPrevScroll(Math.sign(scrollY.get() - y));
       }
