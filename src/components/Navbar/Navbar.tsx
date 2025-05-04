@@ -12,6 +12,7 @@ import Link from "next/link";
 import { Button } from "../ui/Button/Button";
 import { CopyButton } from "../ui/Button/CopyButton";
 import { usePathname } from "next/navigation";
+import { IconButton } from "../ui/IconButton/IconButton";
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -49,6 +50,24 @@ export const Navbar = () => {
       }
     }
   }, [mobileOpen, lenis]);
+
+  const socials = [
+    {
+      name: "Discord",
+      icon: Discord,
+      href: "https://discord.com/invite/pVwubQT9Sg",
+    },
+    {
+      name: "X",
+      icon: X,
+      href: "https://x.com/kscalelabs",
+    },
+    {
+      name: "Github",
+      icon: Github,
+      href: "https://github.com/kscalelabs",
+    },
+  ];
 
   return (
     <div className="lg:h-0">
@@ -221,39 +240,11 @@ export const Navbar = () => {
                 </li>
                 <li>
                   <menu className="flex gap-6 items-center">
-                    <li>
-                      <a
-                        href="https://discord.com/invite/pVwubQT9Sg"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        className="relative block group"
-                      >
-                        <Discord className="size-9 group-hover:scale-110 group-focus:scale-110 group-active:scale-90 transition-transform duration-300" />
-                        <span className="absolute size-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 [@media(pointer:fine)]:hidden" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://x.com/kscalelabs"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        className="relative block group"
-                      >
-                        <X className="size-9 group-hover:scale-110 group-focus:scale-110 group-active:scale-90 transition-transform duration-300" />
-                        <span className="absolute size-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  [@media(pointer:fine)]:hidden" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://github.com/kscalelabs"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        className="relative block group"
-                      >
-                        <Github className="size-9 group-hover:scale-110 group-focus:scale-110 group-active:scale-90 transition-transform duration-300" />
-                        <span className="absolute size-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 [@media(pointer:fine)]:hidden" />
-                      </a>
-                    </li>
+                    {socials.map((social, i) => (
+                      <li key={`footer-social-${social.name}`}>
+                        <IconButton key={i} icon={social.icon} href={social.href} />
+                      </li>
+                    ))}
                   </menu>
                 </li>
               </ul>
@@ -267,7 +258,6 @@ export const Navbar = () => {
 
 const Hamburger = ({ open }: { open: boolean }) => {
   return (
-    // <button className="bg-orange-600/50 size-12 rounded-lg">
     <svg viewBox="0 0 48 48">
       {[16, 24, 32].map((x, index_x) =>
         [16, 24, 32].map((y, index_y) => (
@@ -306,7 +296,6 @@ const Hamburger = ({ open }: { open: boolean }) => {
         ))
       )}
     </svg>
-    // </button>
   );
 };
 
