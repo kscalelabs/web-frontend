@@ -1,15 +1,17 @@
-import { ComponentProps } from "react";
+import { ComponentProps, ElementType } from "react";
 import { cva, VariantProps } from "class-variance-authority";
 import Link from "next/link";
 
 export type ButtonOrLinkProps = ComponentProps<"button"> & ComponentProps<"a">;
 interface Props extends ButtonOrLinkProps, VariantProps<typeof buttonStyles> {
+  icon?: ElementType; // Optional SVGR icon
+  iconPosition?: "start" | "end";
   external?: boolean;
   type?: "button" | "submit" | "reset";
 }
 
 const buttonStyles = cva(
-  "transition-colors duration-300 text-body-2 px-3 py-3 rounded-lg flex justify-center items-center",
+  "transition-colors duration-300 text-body-2 px-3 py-3 rounded-lg flex justify-center items-center gap-2",
   {
     variants: {
       intent: {
@@ -34,8 +36,26 @@ const buttonStyles = cva(
   }
 );
 
-export const Button = ({ href, external, intent, adaptive, fullWidth, ...props }: Props) => {
+export const Button = ({
+  href,
+  external,
+  iconPosition = "end",
+  intent,
+  adaptive,
+  fullWidth,
+  icon: Icon,
+  ...props
+}: Props) => {
   const classes = buttonStyles({ intent, fullWidth, adaptive });
+
+  const renderContent = () => (
+    <>
+      {iconPosition === "start" && Icon && <Icon className="size-6" />}
+      {props.children}
+      {iconPosition === "end" && Icon && <Icon className="size-6" />}
+    </>
+  );
+
   return href ? (
     external ? (
       <a
@@ -45,16 +65,16 @@ export const Button = ({ href, external, intent, adaptive, fullWidth, ...props }
         rel="noopener noreferrer"
         {...(props as ButtonOrLinkProps)}
       >
-        {props.children}
+        {renderContent()}
       </a>
     ) : (
       <Link className={classes} href={href} {...(props as ButtonOrLinkProps)}>
-        {props.children}
+        {renderContent()}
       </Link>
     )
   ) : (
     <button className={classes} type={props.type} {...(props as ButtonOrLinkProps)}>
-      {props.children}
+      {renderContent()}
     </button>
   );
 };

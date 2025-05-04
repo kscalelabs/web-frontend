@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/Button/Button";
 import { useLenis } from "lenis/dist/lenis-react";
 import { useEffect } from "react";
+import Github from "@/assets/icons/icon_github.svg";
 
 export default function Home() {
   const lenis = useLenis();
@@ -44,7 +45,9 @@ export default function Home() {
             <p className="mb-4">
               K-Scale Labs provides open-source tools to train and develop general-purpose robots.
             </p>
-            <Button adaptive={true}>View community benchmarks</Button>
+            <Button adaptive={true} href="/benchmarks" icon={Github}>
+              View community benchmarks
+            </Button>
           </hgroup>
         </section>
         <section className="px-layout flex flex-col py-16 ">
