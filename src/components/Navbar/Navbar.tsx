@@ -22,7 +22,7 @@ export const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   function update(current: number, previous: number): void {
-    if (current > previous) {
+    if (current > previous && width >= 1024) {
       setDesktopOpen(false);
     } else if (current < 100 || current < previous) {
       setDesktopOpen(true);
@@ -51,11 +51,13 @@ export const Navbar = () => {
   }, [mobileOpen, lenis]);
 
   return (
-    <div className="h-20 lg:h-0">
+    <div className="lg:h-0">
       <motion.header
         className={clsx(
-          "fixed top-0 inset-x-0 z-50 px-layout py-4 flex justify-between max-lg:items-center border-b-stone-800 lg:h-24 2xl:h-[6.25rem] transitions-color duration-300",
-          scrollY.get() > 100 ? "max-lg:bg-background max-lg:border-b" : "max-lg:bg-transparent"
+          "fixed top-0 inset-x-0 z-50 px-layout py-4 flex justify-between max-lg:items-center border-b-stone-800 lg:h-24 2xl:h-[6.25rem] transitions-color duration-300 ease-out",
+          scrollY.get() > 100 || mobileOpen
+            ? "max-lg:bg-background max-lg:border-b"
+            : "max-lg:bg-transparent"
         )}
       >
         {/* {navBasedOnWidth(width >= 768)} */}
@@ -78,7 +80,7 @@ export const Navbar = () => {
           onMouseLeave={() => setDesktopOpen(false)}
         >
           <motion.div
-            className="-z-10 absolute inset-0 bg-stone-800/80 backdrop-blur-md border border-stone-700 rounded-2xl"
+            className="max-lg:hidden -z-10 absolute inset-0 bg-stone-800/80 backdrop-blur-md border border-stone-700 rounded-2xl"
             animate={{
               height: desktopOpen ? "12rem" : "auto",
             }}
