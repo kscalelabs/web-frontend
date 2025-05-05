@@ -92,6 +92,39 @@ export const Navbar = () => {
     },
   ];
 
+  const desktopLinks = [
+    {
+      name: "Products",
+      items: [
+        {
+          name: "K-Bot",
+          href: "https://shop.kscale.dev/",
+        },
+        {
+          name: "Z-Bot",
+          href: "https://www.zerothbot.com/",
+        },
+      ],
+    },
+    {
+      name: "Community",
+      items: [
+        {
+          name: "Docs",
+          href: "https://docs.kscale.dev",
+        },
+        {
+          name: "Careers",
+          href: "/careers",
+        },
+        {
+          name: "Discord",
+          href: "https://discord.com/invite/pVwubQT9Sg",
+        },
+      ],
+    },
+  ];
+
   return (
     <div className="lg:h-0">
       <motion.header
@@ -128,84 +161,45 @@ export const Navbar = () => {
               height: desktopOpen ? "12rem" : "auto",
             }}
           />
-          <hgroup className="relative mt-3.5 w-32">
-            <h2
-              className={clsx(
-                "text-body-3 transition-colors duration-300",
-                desktopOpen ? "text-stone-400" : "text-foreground"
-              )}
-            >
-              Products
-            </h2>
-            <motion.ul
-              className="mt-2 flex flex-col gap-2 absolute"
-              initial={false}
-              animate={{ opacity: desktopOpen ? 1 : 0, display: desktopOpen ? "flex" : "none" }}
-            >
-              <li>
-                <a
-                  href="https://discord.com/invite/pVwubQT9Sg"
-                  target="_blank"
-                  className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
-                >
-                  K-Bot
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.zerothbot.com/"
-                  target="_blank"
-                  className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
-                >
-                  Z-Bot
-                </a>
-              </li>
-            </motion.ul>
-          </hgroup>
-          <hgroup className="relative mt-3.5 w-32">
-            <h2
-              className={clsx(
-                "text-body-3 transition-colors duration-300",
-                desktopOpen ? "text-stone-400" : "text-foreground"
-              )}
-            >
-              Community
-            </h2>
-            <motion.ul
-              className="mt-2 flex flex-col gap-2"
-              initial={false}
-              animate={{ opacity: desktopOpen ? 1 : 0, display: desktopOpen ? "flex" : "none" }}
-            >
-              <li>
-                <a
-                  href="https://docs.kscale.dev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
-                >
-                  Docs
-                </a>
-              </li>
-              <li>
-                <Link
-                  href="/careers"
-                  className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
-                >
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="https://discord.com/invite/pVwubQT9Sg"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium relative"
-                >
-                  Discord
-                </a>
-              </li>
-            </motion.ul>
-          </hgroup>
+          {desktopLinks.map((group) => (
+            <hgroup className="relative mt-3.5 w-32" key={`nav-group-${group.name}`}>
+              <h2
+                className={clsx(
+                  "text-body-3 transition-colors duration-300",
+                  desktopOpen ? "text-stone-400" : "text-foreground"
+                )}
+              >
+                {group.name}
+              </h2>
+              <motion.ul
+                className="mt-2 flex flex-col gap-2 absolute"
+                initial={false}
+                animate={{ opacity: desktopOpen ? 1 : 0, display: desktopOpen ? "flex" : "none" }}
+              >
+                {group.items.map((item) => (
+                  <li key={`nav-item-${group.name}-${item.name}`}>
+                    {item.href.startsWith("http") ? (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
+                      >
+                        {item.name}
+                      </a>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
+                      >
+                        {item.name}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </motion.ul>
+            </hgroup>
+          ))}
           <Button href="/benchmarks">View benchmarks</Button>
         </nav>
       </motion.header>
