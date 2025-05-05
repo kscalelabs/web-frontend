@@ -92,6 +92,25 @@ export const Navbar = () => {
     },
   ];
 
+  const mobileLinks = [
+    {
+      name: "K-Bot",
+      href: "https://shop.kscale.dev/",
+    },
+    {
+      name: "Z-Bot",
+      href: "https://www.zerothbot.com/",
+    },
+    {
+      name: "Docs",
+      href: "https://docs.kscale.dev",
+    },
+    {
+      name: "Careers",
+      href: "/careers",
+    },
+  ];
+
   const desktopLinks = [
     {
       name: "Products",
@@ -140,7 +159,7 @@ export const Navbar = () => {
           <Logo className="w-auto h-10 sm:hidden" />
           <Wordmark className="max-sm:hidden w-auto h-10" />
         </Link>
-        <nav className="flex gap-2 md:gap-6 items-center lg:hidden">
+        <nav className="flex gap-2 items-center lg:hidden">
           <Button href="/benchmarks">View benchmarks</Button>
           <motion.button
             className="bg-orange-600/50 size-12 rounded-lg"
@@ -213,44 +232,27 @@ export const Navbar = () => {
           >
             <div className="h-full flex flex-col gap-16 py-8 overflow-auto px-layout">
               <ul className="flex flex-col gap-8">
-                <li className="text-heading-1">
-                  <a
-                    href="https://google.com"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    className="hover:text-stone-400 focus:text-stone-400 transition-colors duration-300 font-medium"
-                  >
-                    K-Bot
-                  </a>
-                </li>
-                <li className="text-heading-1">
-                  <a
-                    href="https://www.zerothbot.com/"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    className="hover:text-stone-400 focus:text-stone-400 transition-colors duration-300 font-medium"
-                  >
-                    Z-Bot
-                  </a>
-                </li>
-                <li className="text-heading-1">
-                  <a
-                    href="https://docs.kscale.dev"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    className="hover:text-stone-400 focus:text-stone-400 transition-colors duration-300 font-medium"
-                  >
-                    Docs
-                  </a>
-                </li>
-                {/* <li className="text-heading-1">
-                  <Link
-                    href="kscale.dev/research"
-                    className="hover:text-stone-400 focus:text-stone-400 transition-colors duration-300 font-medium"
-                  >
-                    Research
-                  </Link>
-                </li> */}
+                {mobileLinks.map((link) => (
+                  <li key={`nav-mobile-${link.name}`} className="text-heading-1">
+                    {link.href.startsWith("http") ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-stone-400 focus:text-stone-400 transition-colors duration-300 font-medium"
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="hover:text-stone-400 focus:text-stone-400 transition-colors duration-300 font-medium"
+                      >
+                        {link.name}
+                      </Link>
+                    )}
+                  </li>
+                ))}
               </ul>
               <ul className="flex flex-col gap-6 mt-auto">
                 <li className="text-body-2">
