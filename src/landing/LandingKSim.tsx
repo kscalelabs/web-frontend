@@ -1,0 +1,173 @@
+import TableTrue from "@/assets/icons/table_true.svg";
+import TableFalse from "@/assets/icons/table_false.svg";
+
+export const LandingKSim = () => {
+  const tableItems = [
+    {
+      name: "Differentiable physics",
+      ksim: true,
+      mujoco: true,
+      issac: false,
+      brax: true,
+      gazebo: false,
+    },
+    {
+      name: "GPU acceleration",
+      ksim: true,
+      mujoco: true,
+      issac: true,
+      brax: true,
+      gazebo: false,
+    },
+    {
+      name: "Single-file training scripts",
+      ksim: true,
+      mujoco: true,
+      issac: false,
+      brax: false,
+      gazebo: false,
+    },
+    {
+      name: "Real robot deployment scripts",
+      ksim: true,
+      mujoco: false,
+      issac: false,
+      brax: false,
+      gazebo: false,
+    },
+    {
+      name: "AMP implementation",
+      ksim: true,
+      mujoco: false,
+      issac: false,
+      brax: false,
+      gazebo: false,
+    },
+    {
+      name: "Stateful (RNNs, SSMs)",
+      ksim: true,
+      mujoco: false,
+      issac: true,
+      brax: false,
+      gazebo: false,
+    },
+    {
+      name: "Open-source",
+      ksim: true,
+      mujoco: true,
+      issac: false,
+      brax: false,
+      gazebo: false,
+    },
+  ];
+
+  return (
+    <section className="section">
+      <hgroup className="col-span-full mb-6">
+        <h2 className="text-heading-1 mb-2">Meet K-Sim</h2>
+        <p className="text-body-2">
+          K-Sim is a lightweight, modular framework for developing reinforcement-learning policies
+          in simulation and deploying them on physical robots.
+        </p>
+      </hgroup>
+      <div className="col-span-full lg:col-span-3 2xl:col-span-6 2xl:col-start-2 aspect-[3/4] sm:aspect-video bg-gradient-to-br from-rust via-background to-methyl rounded-2xl p-4 md:p-6 mb-6">
+        <p className="text-body-1">
+          See how our ML lead, Ali uses K-Sim to train a humanoid robot to walk in under 30 minutes.
+        </p>
+      </div>
+      <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-start-2">
+        <h3 className="text-body-2 font-bold mb-1">Made for speed</h3>
+        <p>
+          Built on JAX and MuJoCo-XLA, K-Sim can run thousands of parallel environments on a single
+          GPU—over 50,000 samples per second on an RTX 4090.
+        </p>
+      </div>
+      <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3">
+        <h3 className="text-body-2 font-bold mb-1">Single-file workflows.</h3>
+        <p>
+          A complete experiment—model, task, and config—lives in one python file, so you can easily
+          root cause performance regressions.
+        </p>
+      </div>
+      <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-start-2">
+        <h3 className="text-body-2 font-bold mb-1">Sim-to-real focus</h3>
+        <p>
+          Domain-randomisation utilities, real-time vizualization, accurate motor models, and CLI
+          deploy helpers let you seamlessly deploy a trained policy on a real robot.
+        </p>
+      </div>
+      <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3">
+        <h3 className="text-body-2 font-bold mb-1">Extensible by design</h3>
+        <p>
+          Swap in your own environments, rewards, algorithms, or choose from several built in tasks
+          ready to go.
+        </p>
+      </div>
+      <table className="relative col-span-full 2xl:col-span-6 2xl:col-start-2 mt-12">
+        <thead className="max-lg:sticky top-20 ">
+          <tr className="grid grid-cols-3 md:grid-cols-6 items-start py-4 bg-background border-b border-b-stone-800">
+            <th scope="col" className="text-body-3 font-bold md:col-start-2">
+              K-Sim
+            </th>
+            <th scope="col" className="text-body-3 font-bold">
+              MuJoCo Playground
+            </th>
+            <th scope="col" className="text-body-3 font-bold">
+              Issac Lab
+            </th>
+            <th scope="col" className="max-md:hidden text-body-3 font-bold">
+              Brax
+            </th>
+            <th scope="col" className="max-md:hidden text-body-3 font-bold">
+              Gazebo Sim
+            </th>
+          </tr>
+        </thead>
+        <tbody className="flex flex-col">
+          {tableItems.map((item, index) => (
+            <tr className="grid grid-cols-3 md:grid-cols-6 col-span-full items-center">
+              <th scope="row" className="max-md:col-span-full py-2 text-left text-body-2 font-bold">
+                {item.name}
+              </th>
+              <td>
+                {item.ksim ? (
+                  <TableTrue className="size-9 mx-auto" />
+                ) : (
+                  <TableFalse className="size-9 mx-auto" />
+                )}
+              </td>
+              <td>
+                {item.mujoco ? (
+                  <TableTrue className="size-9 mx-auto" />
+                ) : (
+                  <TableFalse className="size-9 mx-auto" />
+                )}
+              </td>
+              <td>
+                {item.issac ? (
+                  <TableTrue className="size-9 mx-auto" />
+                ) : (
+                  <TableFalse className="size-9 mx-auto" />
+                )}
+              </td>
+              <td className="max-md:hidden">
+                {item.brax ? (
+                  <TableTrue className="size-9 mx-auto" />
+                ) : (
+                  <TableFalse className="size-9 mx-auto" />
+                )}
+              </td>
+              <td className="max-md:hidden">
+                {item.gazebo ? (
+                  <TableTrue className="size-9 mx-auto" />
+                ) : (
+                  <TableFalse className="size-9 mx-auto" />
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  );
+};

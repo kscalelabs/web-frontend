@@ -24,7 +24,7 @@ export const LandingAchievements = () => {
     return {
       width: width < 768 ? 80 : width < 1440 ? 40 : 30,
       gap: width < 768 ? 1 : 1.5,
-      max: width < 768 ? imgs.length - 1 : width < 1440 ? imgs.length - 2 : imgs.length - 3,
+      max: width < 768 ? imgs.length - 1 : imgs.length - 2,
     };
   }, [width]);
 
@@ -69,7 +69,7 @@ export const LandingAchievements = () => {
       </div>
       <div className="-mx-5 px-5 lg:-mx-10 lg:px-10 col-span-full overflow-hidden">
         <motion.div
-          className="flex gap-4 md:gap-6"
+          className="grid-r"
           drag="x"
           // dragConstraints={dragRef}
           dragConstraints={{ left: 0, right: 0 }}
@@ -84,18 +84,20 @@ export const LandingAchievements = () => {
           onDragEnd={onDragEnd}
           transition={SPRING_OPTIONS}
         >
-          {imgs.map((item) => (
-            <article className="min-w-[80vw] md:min-w-[40vw] 2xl:min-w-[30vw] flex flex-col md:flex-col-reverse gap-2">
-              <hgroup>
-                <h3 className="text-body-3 font-bold inline-flex gap-4">
-                  <time dateTime="2025-02">Feb. 2025</time>
-                  <span>K-Bot</span>
-                </h3>
-                <p>An impressive statistic about the current state of locomotion.</p>
-              </hgroup>
-              <div className="aspect-[3/4] sm:aspect-video bg-gradient-to-br from-rust via-background to-methyl rounded-2xl"></div>
-            </article>
-          ))}
+          <div className="flex gap-4 md:gap-6 2xl:col-start-2">
+            {imgs.map((item) => (
+              <article className="min-w-[80vw] md:min-w-[40vw] 2xl:min-w-[30vw] flex flex-col md:flex-col-reverse gap-2">
+                <hgroup>
+                  <h3 className="text-body-3 font-bold inline-flex gap-4">
+                    <time dateTime="2025-02">Feb. 2025</time>
+                    <span>K-Bot</span>
+                  </h3>
+                  <p>An impressive statistic about the current state of locomotion.</p>
+                </hgroup>
+                <div className="aspect-[3/4] sm:aspect-video bg-gradient-to-br from-rust via-background to-methyl rounded-2xl"></div>
+              </article>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

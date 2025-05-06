@@ -26,6 +26,7 @@ export const Navbar = () => {
   const [desktopOpen, setDesktopOpen] = useState(true);
   const [desktopPreviousScroll, setPrevScroll] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileTopOpen, setMobileTopOpen] = useState(false);
 
   const resetNavbar = () => {
     setDesktopOpen(pathname === "/");
@@ -53,6 +54,7 @@ export const Navbar = () => {
         setPrevScroll(Math.sign(scrollY.get() - y));
       }
     }
+    setMobileTopOpen(scrollY.get() > 50);
   });
 
   const width = useWindowSize().width;
@@ -162,10 +164,10 @@ export const Navbar = () => {
     <div className="lg:h-0">
       <motion.header
         className={clsx(
-          "fixed top-0 inset-x-0 z-50 px-layout py-4 flex justify-between max-lg:items-center border-b-stone-800 lg:h-24 2xl:h-[6.25rem] transitions-color duration-300 ease-out",
-          scrollY.get() > 100 || mobileOpen
-            ? "max-lg:bg-background max-lg:border-b"
-            : "max-lg:bg-transparent"
+          "fixed top-0 inset-x-0 z-50 px-layout py-4 flex justify-between max-lg:items-center max-lg:border-b lg:h-24 2xl:h-[6.25rem] transitions-all duration-300 ease-out",
+          mobileTopOpen || mobileOpen
+            ? "max-lg:bg-background max-lg:border-b-stone-800"
+            : "max-lg:bg-transparent max-lg:border-b-transparent"
         )}
       >
         {/* {navBasedOnWidth(width >= 768)} */}

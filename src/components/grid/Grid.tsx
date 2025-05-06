@@ -26,8 +26,8 @@ export const Grid = () => {
     >
       <div className="bg-orange-500 opacity-10 h-full min-h-svh" />
       <div className="bg-orange-500 opacity-10  h-full min-h-svh" />
-      <div className="max-md:hidden bg-orange-500 opacity-10  h-full min-h-svh" />
-      <div className="max-md:hidden bg-orange-500 opacity-10  h-full min-h-svh" />
+      <div className="max-sm:hidden bg-orange-500 opacity-10  h-full min-h-svh" />
+      <div className="max-sm:hidden bg-orange-500 opacity-10  h-full min-h-svh" />
       <div className="max-lg:hidden bg-orange-500 opacity-10  h-full min-h-svh" />
       <div className="max-lg:hidden bg-orange-500 opacity-10  h-full min-h-svh" />
       <div className="max-2xl:hidden bg-orange-500 opacity-10  h-full min-h-svh" />
