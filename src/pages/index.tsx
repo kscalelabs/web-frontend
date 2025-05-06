@@ -106,17 +106,6 @@ export default function Home() {
               Count on us to deliver cutting-edge tech, built on high-community standards from
               robust hardware and firmware to machine learning models.
             </p>
-            <div className="flex flex-wrap gap-4 items-center">
-              <Button onClick={() => copyEmail()} icon={Copy}>
-                Copy email address
-              </Button>
-              <Link
-                className="w-fit text-body-2 transition-colors duration-300 text-orange-700 hover:text-orange-800 focus:text-orange-800 active:text-orange-900"
-                href="/careers"
-              >
-                See open roles (3)
-              </Link>
-            </div>
           </hgroup>
         </section>
         <LandingDemos />
