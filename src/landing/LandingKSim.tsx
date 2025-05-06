@@ -1,6 +1,8 @@
 import TableTrue from "@/assets/icons/table_true.svg";
 import TableFalse from "@/assets/icons/table_false.svg";
+import Play from "@/assets/icons/icon_play.svg";
 import { Button } from "@/components/ui/Button/Button";
+import { MediaPlaceholder } from "@/components/ui/Media/MediaPlaceholder";
 
 export const LandingKSim = () => {
   const tableItems = [
@@ -64,20 +66,28 @@ export const LandingKSim = () => {
 
   return (
     <>
-      <section className="section">
-        <hgroup className="col-span-full mb-6">
-          <h2 className="text-heading-1 mb-2">Meet K-Sim</h2>
-          <p className="text-body-2">
+      <section className="section bg-stone-950 lg:pt-64">
+        <hgroup className="col-span-default mb-6">
+          <h2 className="text-heading-1 mb-2">K-Sim</h2>
+          <p className="text-body-1">
             K-Sim is a lightweight, modular framework for developing reinforcement-learning policies
             in simulation and deploying them on physical robots.
           </p>
         </hgroup>
-        <div className="col-span-full lg:col-span-3 2xl:col-span-6 2xl:col-start-2 aspect-[3/4] sm:aspect-video bg-gradient-to-br from-rust via-background to-methyl rounded-2xl p-4 md:p-6 mb-6">
-          <p className="text-body-1">
-            See how our ML lead, Ali uses K-Sim to train a humanoid robot to walk in under 30
-            minutes.
-          </p>
+        <div className="col-span-full lg:col-span-2 lg:col-start-1 2xl:col-start-2 2xl:col-span-2 lg:mb-6 grid gap-x-4 md:gap-x-4 grid-cols-subgrid items-center">
+          <MediaPlaceholder className="lg:col-span-full" />
+          <hgroup className="max-lg:my-4 lg:mt-4 sm:col-span-3 lg:col-span-full">
+            <h3 className="text-body-2 font-bold">See how our ML lead, Ali uses K-Sim</h3>
+            <div className="flex w-full items-center gap-2">
+              <p className="inline-flex w-fit items-center gap-1 ">
+                <Play className="size-6 -ml-0.5" /> Play video
+              </p>
+              <span className="text-body-3 text-stone-400"> (2:30)</span>
+            </div>
+          </hgroup>
         </div>
+      </section>
+      <section className="section">
         <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-start-2">
           <h3 className="text-body-2 font-bold mb-1">Made for speed</h3>
           <p>
@@ -137,37 +147,37 @@ export const LandingKSim = () => {
                 </th>
                 <td>
                   {item.ksim ? (
-                    <TableTrue className="size-9 mx-auto" />
+                    <TableTrue className="size-8 mx-auto" />
                   ) : (
-                    <TableFalse className="size-9 mx-auto" />
+                    <TableFalse className="size-8 mx-auto" />
                   )}
                 </td>
                 <td>
                   {item.mujoco ? (
-                    <TableTrue className="size-9 mx-auto" />
+                    <TableTrue className="size-8 mx-auto" />
                   ) : (
-                    <TableFalse className="size-9 mx-auto" />
+                    <TableFalse className="size-8 mx-auto" />
                   )}
                 </td>
                 <td>
                   {item.issac ? (
-                    <TableTrue className="size-9 mx-auto" />
+                    <TableTrue className="size-8 mx-auto" />
                   ) : (
-                    <TableFalse className="size-9 mx-auto" />
+                    <TableFalse className="size-8 mx-auto" />
                   )}
                 </td>
                 <td className="max-md:hidden">
                   {item.brax ? (
-                    <TableTrue className="size-9 mx-auto" />
+                    <TableTrue className="size-8 mx-auto" />
                   ) : (
-                    <TableFalse className="size-9 mx-auto" />
+                    <TableFalse className="size-8 mx-auto" />
                   )}
                 </td>
                 <td className="max-md:hidden">
                   {item.gazebo ? (
-                    <TableTrue className="size-9 mx-auto" />
+                    <TableTrue className="size-8 mx-auto" />
                   ) : (
-                    <TableFalse className="size-9 mx-auto" />
+                    <TableFalse className="size-8 mx-auto" />
                   )}
                 </td>
               </tr>

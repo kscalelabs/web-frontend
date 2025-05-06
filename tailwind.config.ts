@@ -215,7 +215,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/container-queries")],
 } satisfies Config;
 
 export default config;
