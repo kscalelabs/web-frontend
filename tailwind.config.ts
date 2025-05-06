@@ -185,7 +185,7 @@ const config: Config = {
           },
         ],
         "body-3-sm": [
-          "1rem",
+          "0.875rem",
           {
             lineHeight: "1.3",
             letterSpacing: "0",

@@ -22,16 +22,16 @@ export const Grid = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: active ? 1 : 0 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[1000] grid-responsive auto-rows-auto pointer-events-none"
+      className="px-layout fixed inset-0 z-[1000] grid-r pointer-events-none size-full "
     >
-      <div className="bg-oxide opacity-10" />
-      <div className="bg-oxide opacity-10" />
-      <div className="hidden md:block bg-oxide opacity-10" />
-      <div className="hidden md:block bg-oxide opacity-10" />
-      <div className="hidden lg:block bg-oxide opacity-10" />
-      <div className="hidden lg:block bg-oxide opacity-10" />
-      <div className="hidden 2xl:block bg-oxide opacity-10" />
-      <div className="hidden 2xl:block bg-oxide opacity-10" />
+      <div className="bg-orange-500 opacity-10 h-full min-h-svh" />
+      <div className="bg-orange-500 opacity-10  h-full min-h-svh" />
+      <div className="max-md:hidden bg-orange-500 opacity-10  h-full min-h-svh" />
+      <div className="max-md:hidden bg-orange-500 opacity-10  h-full min-h-svh" />
+      <div className="max-lg:hidden bg-orange-500 opacity-10  h-full min-h-svh" />
+      <div className="max-lg:hidden bg-orange-500 opacity-10  h-full min-h-svh" />
+      <div className="max-2xl:hidden bg-orange-500 opacity-10  h-full min-h-svh" />
+      <div className="max-2xl:hidden bg-orange-500 opacity-10  h-full min-h-svh" />
     </motion.div>
   );
 };

@@ -7,11 +7,12 @@ interface Props extends ButtonOrLinkProps, VariantProps<typeof buttonStyles> {
   icon?: ElementType; // Optional SVGR icon
   iconPosition?: "start" | "end";
   external?: boolean;
+  disabled?: boolean;
   type?: "button" | "submit" | "reset";
 }
 
 const buttonStyles = cva(
-  "transition-colors duration-300 text-body-2 px-3 py-3 rounded-lg flex justify-center items-center gap-2",
+  "transition-all duration-300 text-body-2 px-3 py-3 rounded-lg flex justify-center items-center gap-2",
   {
     variants: {
       intent: {
@@ -25,6 +26,10 @@ const buttonStyles = cva(
       },
       adaptive: {
         true: "w-full sm:w-fit",
+        false: null,
+      },
+      disabled: {
+        true: "opacity-25 cursor-not-allowed",
         false: null,
       },
     },
@@ -43,16 +48,17 @@ export const Button = ({
   intent,
   adaptive,
   fullWidth,
+  disabled = false,
   icon: Icon,
   ...props
 }: Props) => {
-  const classes = buttonStyles({ intent, fullWidth, adaptive });
+  const classes = buttonStyles({ intent, fullWidth, adaptive, disabled });
 
   const renderContent = () => (
     <>
-      {iconPosition === "start" && Icon && <Icon className="size-6" />}
+      {iconPosition === "start" && Icon && <Icon className="size-6 pointer-events-none" />}
       {props.children}
-      {iconPosition === "end" && Icon && <Icon className="size-6" />}
+      {iconPosition === "end" && Icon && <Icon className="size-6 pointer-events-none" />}
     </>
   );
 

@@ -18,13 +18,20 @@ export const Navbar = () => {
   const pathname = usePathname();
   const { scrollY } = useScroll();
   const lenis = useLenis((lenis) => {
+    console.log("lenis fire");
     if (lenis.isScrolling === false) setDesktopScrollDetect(true);
   });
   const [desktopHover, setDesktopHover] = useState(false);
   const [desktopScrollDetect, setDesktopScrollDetect] = useState(true);
-  const [desktopOpen, setDesktopOpen] = useState(pathname === "/");
+  const [desktopOpen, setDesktopOpen] = useState(true);
   const [desktopPreviousScroll, setPrevScroll] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const resetNavbar = () => {
+    setDesktopOpen(pathname === "/");
+    setMobileOpen(false);
+    setDesktopScrollDetect(true);
+  };
 
   function update(previous: number): void {
     if (width < 1024 || desktopHover) return;
@@ -36,6 +43,7 @@ export const Navbar = () => {
   }
 
   useMotionValueEvent(scrollY, "change", () => {
+    console.log("scrollY fire");
     if (desktopScrollDetect) {
       // console.log("desktopPreviousScroll", desktopPreviousScroll);
       update(desktopPreviousScroll);
@@ -50,14 +58,15 @@ export const Navbar = () => {
   const width = useWindowSize().width;
 
   useEffect(() => {
-    if (width >= 1024 && scrollY.get() > 20) {
+    console.log("fire");
+    if (width >= 1024) {
       if (desktopHover === false) {
         setDesktopScrollDetect(false);
         setPrevScroll(0);
       }
       setDesktopOpen(desktopHover);
     }
-  }, [desktopHover, width]);
+  }, [desktopHover]);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -73,6 +82,11 @@ export const Navbar = () => {
       }
     }
   }, [mobileOpen, lenis]);
+
+  useEffect(() => {
+    console.log("pathname", pathname);
+    resetNavbar();
+  }, [pathname]);
 
   const socials = [
     {

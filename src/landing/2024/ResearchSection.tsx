@@ -1,11 +1,3 @@
-import { CTAButton } from "@/components/buttons/CTAButtons";
-import {
-  KBotIcon,
-  KOSIcon,
-  KOSSimIcon,
-  KSIMIcon,
-  OnshapeIcon,
-} from "@/components/iconography/ResearchIcons";
 import { ColorVariant, FillMode, IconMode, Size } from "@/components/util/constants";
 import { useWindowSize } from "@/components/util/functions";
 import clsx from "clsx";
@@ -18,7 +10,7 @@ const RESEARCH_ITEMS = [
     description:
       "Our monorepo with the core dependencies required for building and deploying your own K-Bot.",
     link: "https://github.com/kscalelabs/kbot",
-    icon: <KBotIcon />,
+
     variant: ColorVariant.METHYL,
   },
   {
@@ -26,7 +18,7 @@ const RESEARCH_ITEMS = [
     description:
       "Open-source reinforcement learning library for learning locomotion and manipulation policies, built on MJX.",
     link: "https://github.com/kscalelabs/ksim",
-    icon: <KSIMIcon />,
+
     variant: ColorVariant.PLASMA,
   },
   {
@@ -34,7 +26,7 @@ const RESEARCH_ITEMS = [
     description:
       "K-Scale's real-time operating system, built on Rust, with support for language-agnostic downstream clients.",
     link: "https://github.com/kscalelabs/kos",
-    icon: <KOSIcon />,
+
     variant: ColorVariant.OXIDE,
   },
   {
@@ -42,14 +34,14 @@ const RESEARCH_ITEMS = [
     description:
       "Simulation backend for K-OS, letting you test your deployment code in a simulated environment before trying it out on a physical robot.",
     link: "https://github.com/kscalelabs/kos-sim",
-    icon: <KOSSimIcon />,
+
     variant: ColorVariant.RUST,
   },
   {
     title: "Onshape Converter",
     description: "Convert Onshape CAD models to simulation-ready artifacts.",
     link: "https://github.com/kscalelabs/onshape",
-    icon: <OnshapeIcon />,
+
     variant: ColorVariant.MOLTEN,
   },
 ];
@@ -59,11 +51,10 @@ interface ResearchItem {
   description: string;
   link: string;
   index: number;
-  icon: React.ReactNode;
   variant: ColorVariant;
 }
 
-const ResearchCard = ({ title, description, link, index, icon, variant }: ResearchItem) => {
+const ResearchCard = ({ title, description, link, index, variant }: ResearchItem) => {
   const bg = (variant: ColorVariant): string => {
     switch (variant) {
       case ColorVariant.METHYL:
@@ -93,20 +84,9 @@ const ResearchCard = ({ title, description, link, index, icon, variant }: Resear
       draggable={false}
     >
       <article className="p-4 flex flex-col gap-24 h-full w-[80vw] xs:w-[66.25vw] sm:w-[calc(100vw_*_(1.7_/3_+_0.025))] md:w-[calc(100vw_*_(2.8_/_9_+_0.075))] 2xl:w-[calc(100vw_*_(0.875_/_3))] 4xl:w-[21.5625vw]">
-        <div className={"size-16"}>{icon}</div>
         <div className={"flex flex-col gap-y-4 h-full text-filament cursor-grab"}>
           <h3 className={"text-heading-sm font-apparat cursor-grab"}>{title}</h3>
           <p className={"text-body cursor-grab"}>{description}</p>
-          <CTAButton
-            href={link}
-            target="_blank"
-            className="mt-auto w-fit px-2"
-            variant={variant}
-            mode={FillMode.INVERT}
-            size={Size.NORMAL}
-          >
-            View on Github
-          </CTAButton>
         </div>
       </article>
     </motion.div>
@@ -237,7 +217,7 @@ export const SwipeCarousel = () => {
           animate={{
             translateX: `${-1 * imgIndex * (dimensions.card + dimensions.gap) + (imgIndex > 0 ? dimensions.gap : 0)}vw`,
           }}
-          transition={SPRING_OPTIONS}
+          transition={{ SPRING_OPTIONS }}
           onDragEnd={onDragEnd}
           className="flex flex-none cursor-grab gap-x-[5vw] sm:gap-x-[2.5vw] 2xl:gap-x-[1.25vw]"
         >
