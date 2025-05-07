@@ -66,8 +66,8 @@ export const LandingKSim = () => {
 
   return (
     <>
-      <section className="section  md:pt-32 lg:pt-64">
-        <hgroup className="col-span-default mb-6">
+      <section className="section md:pt-32 lg:pt-64">
+        <hgroup className="col-span-default col-start-default mb-6">
           <h2 className="text-heading-1 mb-2">K-Sim</h2>
           <p className="text-body-1">
             K-Sim is a lightweight, modular framework for developing reinforcement-learning policies

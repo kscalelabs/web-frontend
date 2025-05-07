@@ -9,6 +9,7 @@ import { copyEmail } from "@/components/ui/Button/CopyButton";
 import { LandingCommunity } from "@/landing/LandingCommunity";
 import { LandingKSim } from "@/landing/LandingKSim";
 import { LandingProducts } from "@/landing/LandingProducts";
+import { LandingStack } from "@/landing/LandingStack";
 
 export default function Home() {
   const lenis = useLenis();
@@ -59,7 +60,7 @@ export default function Home() {
         </section>
         <LandingProducts />
         <section className="section">
-          <hgroup className="col-span-default mb-6">
+          <hgroup className="col-span-default col-start-default mb-6">
             <h2 className="text-heading-1 mb-2">
               We&apos;re building the most integrated ML robotics platform
             </h2>
@@ -70,11 +71,12 @@ export default function Home() {
           </hgroup>
         </section>
         <LandingDemos />
+        <LandingStack />
         <LandingKSim />
         <LandingAchievements />
         <LandingCommunity />
         <section className="section">
-          <hgroup className="col-span-default mb-6">
+          <hgroup className="col-span-default col-start-default mb-6">
             <h2 className="text-body-2 font-medium text-stone-400 mb-1">Our team</h2>
             <p className="text-heading-1 mb-2">
               We&apos;re hackers, engineers, and researchers that believe in a world where robots

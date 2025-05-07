@@ -126,7 +126,10 @@ body {
     @apply gap-x-4 sm:grid md:gap-x-6 grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-8 auto-rows-min;
   }
   .col-span-default {
-    @apply col-span-full md:col-span-3 lg:col-span-4 xl:col-span-3 2xl:col-span-4 3xl:col-span-3 4xl:col-span-3 2xl:col-start-2 3xl:col-start-2 4xl:col-start-2;
+    @apply col-span-full md:col-span-3 lg:col-span-4 xl:col-span-3 2xl:col-span-4 3xl:col-span-3 4xl:col-span-3;
+  }
+  .col-start-default {
+    @apply 2xl:col-start-2 3xl:col-start-2 4xl:col-start-2;
   }
   .text-heading-d {
     @apply text-heading-d-sm sm:text-heading-d-md lg:text-heading-d-lg 4xl:text-heading-d-xl;

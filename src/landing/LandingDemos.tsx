@@ -8,7 +8,7 @@ export const LandingDemos = () => {
 
   return (
     <section className="section">
-      <hgroup className="col-span-default mb-4 sm:mb-6">
+      <hgroup className="col-span-default col-start-default mb-4 sm:mb-6">
         <h2 className="text-body-2 font-medium text-stone-400 mb-1">Demos</h2>
         <p className="text-heading-1">See our general purpose humanoid robot in action</p>
       </hgroup>

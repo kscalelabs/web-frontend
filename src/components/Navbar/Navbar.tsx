@@ -18,7 +18,7 @@ export const Navbar = () => {
   const pathname = usePathname();
   const { scrollY } = useScroll();
   const lenis = useLenis((lenis) => {
-    console.log("lenis fire");
+    // console.log("lenis fire");
     if (lenis.isScrolling === false) setDesktopScrollDetect(true);
   });
   const [desktopHover, setDesktopHover] = useState(false);
@@ -44,7 +44,7 @@ export const Navbar = () => {
   }
 
   useMotionValueEvent(scrollY, "change", () => {
-    console.log("scrollY fire");
+    // console.log("scrollY fire");
     if (desktopScrollDetect) {
       // console.log("desktopPreviousScroll", desktopPreviousScroll);
       update(desktopPreviousScroll);
@@ -60,7 +60,7 @@ export const Navbar = () => {
   const width = useWindowSize().width;
 
   useEffect(() => {
-    console.log("fire");
+    // console.log("fire");
     if (width >= 1024) {
       if (desktopHover === false) {
         setDesktopScrollDetect(false);
@@ -86,7 +86,7 @@ export const Navbar = () => {
   }, [mobileOpen, lenis]);
 
   useEffect(() => {
-    console.log("pathname", pathname);
+    // console.log("pathname", pathname);
     resetNavbar();
   }, [pathname]);
 

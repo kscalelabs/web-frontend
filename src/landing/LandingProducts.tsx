@@ -55,18 +55,9 @@ export const LandingProducts = () => {
     setIndex(0);
   }, [width]);
 
-  <section className="section">
-    <hgroup className="col-span-default mb-6">
-      <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2>
-      <h3 className="text-heading-1">
-        Humanoid robots for all your research and development needs
-      </h3>
-    </hgroup>
-    <ul className="col-span-full 2xl:col-span-6 2xl:col-start-2 flex flex-col gap-8 sm:gap-4 md:gap-6 sm:grid grid-cols-2 lg:grid-cols-3 auto-rows-fr"></ul>
-  </section>;
   return (
     <section className="section">
-      <hgroup className="col-span-default mb-6">
+      <hgroup className="col-span-default col-start-default mb-6">
         <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2>
         <p className="text-heading-1">
           Humanoid robots for all your research and development needs

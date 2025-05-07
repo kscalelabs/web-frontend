@@ -6,7 +6,7 @@ import Image from "next/image";
 export const LandingCommunity = () => {
   return (
     <section className="section">
-      <hgroup className="col-span-default mb-6">
+      <hgroup className="col-span-default col-start-default mb-6">
         <h2 className="text-body-2 font-medium text-stone-400 mb-1">Community</h2>
         <p className="text-heading-1 mb-2">Take ownership of how we build</p>
         <p className="mb-4">
