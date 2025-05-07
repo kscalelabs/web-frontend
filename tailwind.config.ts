@@ -108,14 +108,14 @@ const config: Config = {
           },
         ],
         "body-1-xl": [
-          "1.4375rem",
+          "1.625rem",
           {
             lineHeight: "1.2",
             letterSpacing: "0",
           },
         ],
         "body-1-lg": [
-          "1.3125rem",
+          "1.5rem",
           {
             lineHeight: "1.2",
             letterSpacing: "0",

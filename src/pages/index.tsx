@@ -8,6 +8,7 @@ import { LandingAchievements } from "@/landing/LandingAchievements";
 import { copyEmail } from "@/components/ui/Button/CopyButton";
 import { LandingCommunity } from "@/landing/LandingCommunity";
 import { LandingKSim } from "@/landing/LandingKSim";
+import { LandingProducts } from "@/landing/LandingProducts";
 
 export default function Home() {
   const lenis = useLenis();
@@ -56,47 +57,7 @@ export default function Home() {
             </Button>
           </hgroup>
         </section>
-        <section className="section">
-          <hgroup className="col-span-default mb-6">
-            <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2>
-            <h3 className="text-heading-1">
-              Humanoid robots for all your research and development needs
-            </h3>
-          </hgroup>
-          <ul className="col-span-full 2xl:col-span-6 2xl:col-start-2 flex flex-col gap-8 sm:gap-4 md:gap-6 sm:grid grid-cols-2 lg:grid-cols-3 auto-rows-fr">
-            <li>
-              <article className="p-4 bg-stone-950 rounded-2xl h-full flex flex-col justify-end items-center">
-                <div className="aspect-[3/4] sm:aspect-video mb-4 size-full" />
-                <h4 className="text-heading-2 mb-1">K-Bot</h4>
-                <h5 className="text-body-2">Full sized humanoid</h5>
-                <p className="text-body-3 text-stone-400 mb-4">Starting at $9,000 USD</p>
-                <Button href="https://shop.kscale.dev" external fullWidth>
-                  Pre-order now
-                </Button>
-              </article>
-            </li>
-            <li>
-              <article className="p-4 bg-stone-950 rounded-2xl h-full flex flex-col justify-end items-center">
-                <div className="aspect-[3/4] sm:aspect-video mb-4 size-full" />
-                <h4 className="text-heading-2 mb-1">Z-Bot</h4>
-                <h5 className="text-body-2">Small but mighty</h5>
-                <p className="text-body-3 text-stone-400 mb-4">Starting at $1,000 USD</p>
-                <Button href="https://zeroth.bot" external fullWidth>
-                  Buy now
-                </Button>
-              </article>
-            </li>
-            <li>
-              <article className="p-4 bg-stone-950 rounded-2xl h-full flex flex-col justify-end items-center">
-                <div className="aspect-[3/4] sm:aspect-video mb-4 size-full" />
-                <h4 className="text-heading-2 flex items-center gap-2 mb-1">M-Bot </h4>
-                <span className="text-stone-500 text-body-3 font-bold border border-stone-500 rounded-full px-3 py-1">
-                  Coming soon
-                </span>
-              </article>
-            </li>
-          </ul>
-        </section>
+        <LandingProducts />
         <section className="section">
           <hgroup className="col-span-default mb-6">
             <h2 className="text-heading-1 mb-2">

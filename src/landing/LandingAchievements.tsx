@@ -85,8 +85,11 @@ export const LandingAchievements = () => {
           transition={SPRING_OPTIONS}
         >
           <div className="flex gap-4 md:gap-6 2xl:col-start-2">
-            {imgs.map((item) => (
-              <article className="min-w-[80vw] md:min-w-[40vw] 2xl:min-w-[30vw] flex flex-col md:flex-col-reverse gap-2">
+            {imgs.map((_, index) => (
+              <article
+                className="min-w-[80vw] md:min-w-[40vw] 2xl:min-w-[30vw] flex flex-col md:flex-col-reverse gap-2"
+                key={`achievement--${index}`}
+              >
                 <hgroup>
                   <h3 className="text-body-3 font-bold inline-flex gap-4">
                     <time dateTime="2025-02">Feb. 2025</time>

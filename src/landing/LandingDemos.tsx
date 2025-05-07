@@ -10,7 +10,7 @@ export const LandingDemos = () => {
     <section className="section">
       <hgroup className="col-span-default mb-4 sm:mb-6">
         <h2 className="text-body-2 font-medium text-stone-400 mb-1">Demos</h2>
-        <p className="text-heading-1">See K-Bot move into action</p>
+        <p className="text-heading-1">See our general purpose humanoid robot in action</p>
       </hgroup>
 
       <div className="relative col-span-full 2xl:col-span-6 2xl:col-start-2">

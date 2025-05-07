@@ -66,7 +66,7 @@ export const LandingKSim = () => {
 
   return (
     <>
-      <section className="section bg-stone-950 lg:pt-64">
+      <section className="section  md:pt-32 lg:pt-64">
         <hgroup className="col-span-default mb-6">
           <h2 className="text-heading-1 mb-2">K-Sim</h2>
           <p className="text-body-1">
@@ -138,7 +138,10 @@ export const LandingKSim = () => {
           </thead>
           <tbody className="flex flex-col">
             {tableItems.map((item, index) => (
-              <tr className="grid grid-cols-3 md:grid-cols-6 col-span-full items-center">
+              <tr
+                className="grid grid-cols-3 md:grid-cols-6 col-span-full items-center"
+                key={`ksim-table-row--${index}`}
+              >
                 <th
                   scope="row"
                   className="max-md:col-span-full py-2 text-left text-body-2 font-bold"
