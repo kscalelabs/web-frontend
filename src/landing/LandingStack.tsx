@@ -37,7 +37,7 @@ export const LandingStack = () => {
     {
       layer: "ML",
       id: "ml",
-      heading: "The best platform for cutting-edge machine learning",
+      heading: "Open-source library for GPU-accelerated robot learning and sim-to-real transfer",
     },
     {
       layer: "OS",

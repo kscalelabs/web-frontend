@@ -77,7 +77,7 @@ export default function Home() {
         <LandingCommunity />
         <section className="section">
           <hgroup className="col-span-default col-start-default mb-6">
-            <h2 className="text-body-2 font-medium text-stone-400 mb-1">Our team</h2>
+            <h2 className="text-body-2 font-medium text-stone-400 mb-1">Our motivation</h2>
             <p className="text-heading-1 mb-2">
               We&apos;re hackers, engineers, and researchers that believe in a world where robots
               are made for everyone.
@@ -104,6 +104,19 @@ export default function Home() {
               </Link>
             </div>
           </hgroup>
+          <aside className="col-span-full md:col-span-2 lg:col-span-1 lg:-col-end-1 2xl:-col-end-2">
+            <h3 className="text-body-3 font-medium text-stone-400 mb-1">Our team (8)</h3>
+            <ul className="grid grid-cols-2 gap-x-4 lg:flex flex-col gap-y-2">
+              <li>Aaron</li>
+              <li>Ali</li>
+              <li>Ben</li>
+              <li>Chris</li>
+              <li>Jingxiang</li>
+              <li>Pawel</li>
+              <li>Rui</li>
+              <li>Wesley</li>
+            </ul>
+          </aside>
         </section>
       </main>
     </div>
