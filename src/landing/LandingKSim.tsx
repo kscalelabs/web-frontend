@@ -66,7 +66,7 @@ export const LandingKSim = () => {
 
   return (
     <>
-      <section className="section md:pt-32 lg:pt-64">
+      <section className="section">
         <hgroup className="col-span-default col-start-default mb-6">
           <h2 className="text-heading-1 mb-2">K-Sim</h2>
           <p className="text-body-1">
@@ -74,7 +74,7 @@ export const LandingKSim = () => {
             in simulation and deploying them on physical robots.
           </p>
         </hgroup>
-        <div className="col-span-full lg:col-span-2 lg:col-start-1 2xl:col-start-2 2xl:col-span-2 lg:mb-6 grid gap-x-4 md:gap-x-4 grid-cols-subgrid items-center">
+        {/* <div className="col-span-full lg:col-span-2 lg:col-start-1 2xl:col-start-2 2xl:col-span-2 lg:mb-6 grid gap-x-4 md:gap-x-4 grid-cols-subgrid items-center">
           <MediaPlaceholder className="lg:col-span-full" />
           <hgroup className="max-lg:my-4 lg:mt-4 sm:col-span-3 lg:col-span-full">
             <h3 className="text-body-2 font-bold">See how our ML lead, Ali uses K-Sim</h3>
@@ -85,7 +85,7 @@ export const LandingKSim = () => {
               <span className="text-body-3 text-stone-400"> (2:30)</span>
             </div>
           </hgroup>
-        </div>
+        </div> */}
       </section>
       <section className="section">
         <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-start-2">
@@ -188,7 +188,7 @@ export const LandingKSim = () => {
           </tbody>
         </table>
       </section>
-      <section className="section bg-stone-950">
+      <section className="section bg-stone-900">
         <hgroup className="col-span-full lg:col-span-4 lg:col-start-2 2xl:col-start-3 flex flex-col items-center">
           <h2 className="text-heading-2 text-center mb-2">
             K-Sim lets you iterate quickly and trust the code that you deploy on your hardware.{" "}

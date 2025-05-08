@@ -12,6 +12,7 @@ import { LandingProducts } from "@/landing/LandingProducts";
 import { LandingStack } from "@/landing/LandingStack";
 import RobotSection from "@/landing/2024/RobotSection";
 import { LandingMission } from "@/landing/LandingMission";
+import { LandingDiagram } from "@/landing/LandingDiagram";
 
 export default function Home() {
   const lenis = useLenis();
@@ -53,7 +54,8 @@ export default function Home() {
           <hgroup className="col-span-4 lg:col-span-3 2xl:col-span-5 z-10">
             <h1 className="mb-4">Open-source humanoid robots, build for developers</h1>
             <p className="mb-4">
-              Accelerating the world's transition to general-purpose robots by building the most integrated stack for humanoid robots.
+              Accelerating the world's transition to general-purpose robots by building the most
+              integrated stack for humanoid robots.
             </p>
             <Button adaptive={true} href="/benchmarks">
               View community benchmarks
@@ -62,6 +64,7 @@ export default function Home() {
         </section>
         <LandingProducts />
         <LandingMission />
+        <LandingDiagram />
         {/* <RobotSection /> */}
         <LandingDemos />
         <LandingStack />
