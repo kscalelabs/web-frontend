@@ -1,5 +1,4 @@
-import Footer from "@/components/Footer/Footer";
-import { DownArrowIcon } from "@/components/iconography/Iconography";
+import ArrowD from "@/assets/icons/icon_arrowD.svg";
 import fs from "fs";
 import matter from "gray-matter";
 import Link from "next/link";
@@ -49,7 +48,7 @@ export default function ResearchIndex({ posts }: { posts: any[] }) {
           </div>
         </header>
         <div className="flex col-span-full pt-4 justify-center">
-          <DownArrowIcon />
+          <ArrowD className="w-8 h-8 animate-bounce" />
         </div>
         <div className="col-span-full flex flex-col items-start text-justify auto-rows-auto text-foreground bg-background relative overflow-hidden px-[5vw] py-20">
           {posts.map(
@@ -74,7 +73,6 @@ export default function ResearchIndex({ posts }: { posts: any[] }) {
               )
           )}
         </div>
-        <Footer />
       </div>
     </div>
   );
