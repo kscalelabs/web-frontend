@@ -262,6 +262,9 @@ export const Navbar = () => {
                     ) : (
                       <Link
                         href={link.href}
+                        onClick={() => {
+                          setMobileOpen(false);
+                        }}
                         className="hover:text-stone-400 focus:text-stone-400 transition-colors duration-300 font-medium"
                       >
                         {link.name}
