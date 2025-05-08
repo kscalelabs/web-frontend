@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { useEffect, useState } from "react";
-import { Button } from "./Button";
+// import { Button } from "./Button";
 
 export const copyEmail = async () => {
   const email = "inquiries@kscale.dev";

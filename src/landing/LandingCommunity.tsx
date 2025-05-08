@@ -40,8 +40,8 @@ export const LandingCommunity = () => {
       </figure>
       <figure className="col-span-full sm:col-span-2 aspect-square sm:aspect-video rounded-lg relative overflow-hidden mb-4 md:mb-6">
         <Image
-          src={"/photos/community/leRobotHand.webp"}
-          alt={"Hugging Face leRobot demo"}
+          src={"/photos/community/Hackathon_Demo_2.webp"}
+          alt={"Hackathon demos at K-Scale Labs"}
           fill
           className="object-cover object-[50%_15%]"
           loading={"eager"}
