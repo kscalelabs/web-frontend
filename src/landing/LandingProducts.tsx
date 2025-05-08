@@ -4,6 +4,7 @@ import { motion, useMotionValue } from "motion/react";
 import { useEffect, useMemo, useState } from "react";
 import ArrowL from "@/assets/icons/icon_arrowL.svg";
 import ArrowR from "@/assets/icons/icon_arrowR.svg";
+import RobotWrapper from "@/components/robot/RobotWrapper";
 
 const DRAG_BUFFER = 50;
 
@@ -98,8 +99,9 @@ export const LandingProducts = () => {
               </article>
             ))} */}
             <li className="min-w-[80vw] md:min-w-[40vw] lg:min-w-0 lg:col-span-2 lg:w-full">
-              <article className="p-4 bg-stone-950 rounded-2xl h-full flex flex-col justify-end items-center">
-                <div className="aspect-square sm:aspect-video mb-4 size-full" />
+              <article className="p-4 bg-stone-900 rounded-2xl h-full flex flex-col items-center">
+                {/* <div className="aspect-square sm:aspect-video mb-4 size-full" /> */}
+                <RobotWrapper />
                 <h4 className="text-heading-2 mb-1">K-Bot</h4>
                 <h5 className="text-body-2">Full sized humanoid</h5>
                 <p className="text-body-3 text-stone-400 mb-4">Starting at $9,000 USD</p>
@@ -109,8 +111,9 @@ export const LandingProducts = () => {
               </article>
             </li>
             <li className="min-w-[80vw] md:min-w-[40vw] lg:min-w-0 lg:col-span-2 lg:w-full">
-              <article className="p-4 bg-stone-950 rounded-2xl h-full flex flex-col justify-end items-center">
-                <div className="aspect-square sm:aspect-video mb-4 size-full" />
+              <article className="p-4 bg-stone-900 rounded-2xl h-full flex flex-col items-center">
+                {/* <div className="aspect-square sm:aspect-video mb-4 size-full" /> */}
+                <RobotWrapper />
                 <h4 className="text-heading-2 mb-1">Z-Bot</h4>
                 <h5 className="text-body-2">Small but mighty</h5>
                 <p className="text-body-3 text-stone-400 mb-4">Starting at $1,000 USD</p>
@@ -120,12 +123,15 @@ export const LandingProducts = () => {
               </article>
             </li>
             <li className="min-w-[80vw] md:min-w-[40vw] lg:min-w-0 lg:col-span-2 lg:w-full">
-              <article className="p-4 bg-stone-950 rounded-2xl h-full flex flex-col justify-end items-center">
-                <div className="aspect-square sm:aspect-video mb-4 size-full" />
-                <h4 className="text-heading-2 flex items-center gap-2 mb-1">M-Bot </h4>
-                <span className="text-stone-500 text-body-3 font-bold border border-stone-500 rounded-full px-3 py-1">
-                  Coming soon
-                </span>
+              <article className="p-4 bg-stone-900 rounded-2xl h-full flex flex-col items-center">
+                {/* <div className="aspect-square sm:aspect-video mb-4 size-full" /> */}
+                <RobotWrapper />
+                <hgroup className="mt-auto flex flex-col items-center">
+                  <h4 className="text-heading-2 flex items-center gap-2 mb-1">M-Bot </h4>
+                  <span className="text-stone-500 text-body-3 font-bold border border-stone-500 rounded-full px-3 py-1">
+                    Coming soon
+                  </span>
+                </hgroup>
               </article>
             </li>
           </ul>

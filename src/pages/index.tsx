@@ -10,6 +10,7 @@ import { LandingCommunity } from "@/landing/LandingCommunity";
 import { LandingKSim } from "@/landing/LandingKSim";
 import { LandingProducts } from "@/landing/LandingProducts";
 import { LandingStack } from "@/landing/LandingStack";
+import RobotSection from "@/landing/2024/RobotSection";
 
 export default function Home() {
   const lenis = useLenis();
@@ -70,6 +71,7 @@ export default function Home() {
             </p>
           </hgroup>
         </section>
+        {/* <RobotSection /> */}
         <LandingDemos />
         <LandingStack />
         <LandingKSim />
