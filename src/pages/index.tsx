@@ -1,6 +1,17 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/Button/Button";
 import { useLenis } from "lenis/dist/lenis-react";
-import { useEffect } from "react";
+import Copy from "@/assets/icons/icon_copy.svg";
+import Link from "next/link";
+import { LandingDemos } from "@/landing/LandingDemos";
+import { LandingAchievements } from "@/landing/LandingAchievements";
+import { copyEmail } from "@/components/ui/Button/CopyButton";
+import { LandingCommunity } from "@/landing/LandingCommunity";
+import { LandingKSim } from "@/landing/LandingKSim";
+import { LandingProducts } from "@/landing/LandingProducts";
+import { LandingStack } from "@/landing/LandingStack";
+import { LandingMission } from "@/landing/LandingMission";
+import { LandingDiagram } from "@/landing/LandingDiagram";
 
 export default function Home() {
   const lenis = useLenis();
@@ -27,115 +38,82 @@ export default function Home() {
   return (
     <div>
       <main className="">
-        <section className="relative px-layout min-h-[20rem] h-[80svh] lg:h-svh flex flex-col grid-r justify-end md:content-end py-16 overflow-hidden">
+        <section className="relative px-layout min-h-[20rem] h-[80svh] lg:h-svh flex flex-col grid-r justify-end sm:content-end py-16 overflow-hidden">
           <video
             width="1920"
             height="1080"
             autoPlay
             muted
             loop
+            playsInline
             className="absolute inset-0 size-full object-cover brightness-50"
           >
-            <source src="/videos/landing_video_test.mp4" type="video/mp4" />
+            <source src="/videos/landing_video_0506.mp4" type="video/mp4" />
           </video>
           <hgroup className="col-span-4 lg:col-span-3 2xl:col-span-5 z-10">
-            <h1 className="mb-4">Embodied AI for everybody with a computer</h1>
+            <h1 className="mb-4">Open-source humanoid robots, build for developers</h1>
             <p className="mb-4">
-              K-Scale Labs provides open-source tools to train and develop general-purpose robots.
+              Accelerating the world&apos;s transition to general-purpose robots by building the
+              most integrated stack for humanoid robots.
             </p>
-            <Button adaptive={true}>View community benchmarks</Button>
+            <Button adaptive={true} href="/benchmarks">
+              View community benchmarks
+            </Button>
           </hgroup>
         </section>
-        <section className="px-layout flex flex-col py-16 ">
-          <hgroup className="col-span-full mb-4">
-            <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2>
-            <h3 className="mb-4">Humanoid robots for all your research and development needs</h3>
+        <LandingProducts />
+        <LandingMission />
+        <LandingDiagram />
+        {/* <RobotSection /> */}
+        <LandingDemos />
+        <LandingStack />
+        <LandingKSim />
+        <LandingAchievements />
+        <LandingCommunity />
+        <section className="section">
+          <hgroup className="col-span-default col-start-default mb-6">
+            <h2 className="text-body-2 font-medium text-stone-400 mb-1">About us</h2>
+            <p className="text-heading-1 mb-2">
+              We&apos;re hackers, engineers, and researchers that believe in a world where robots
+              are made for everyone.
+            </p>
+            <p className="mb-6">
+              Shoot us an email at{" "}
+              <span
+                className="inline-flex mx-0.5 px-1.5 bg-stone-900 rounded-md border border-stone-800 text-stone-400 hover:text-stone-300 active:text-stone-400 transition-colors duration-300 cursor-pointer"
+                onClick={() => copyEmail()}
+              >
+                inquiries@kscale.dev
+              </span>{" "}
+              for any business inquiries or if you want to connect with us!
+            </p>
+            <div className="flex flex-wrap gap-4 items-center">
+              <Button onClick={() => copyEmail()} icon={Copy}>
+                Copy email address
+              </Button>
+              <Link
+                className="w-fit text-body-2 transition-colors duration-300 text-orange-700 hover:text-orange-800 focus:text-orange-800 active:text-orange-900"
+                href="/careers"
+              >
+                See open roles (3)
+              </Link>
+            </div>
           </hgroup>
-          <ul className="flex flex-col gap-8 md:gap-6 md:grid grid-cols-2 lg:grid-cols-3">
-            <li>
-              <article>
-                <div className="aspect-[3/4] sm:aspect-video bg-gradient-to-br from-rust via-background to-methyl rounded-2xl mb-4" />
-                <h4 className="text-heading-1">K-Bot</h4>
-                <h5 className="text-heading-2 mb-1">Full sized humanoid</h5>
-                <p className="text-stone-400 mb-4">Starting at $9,000 USD</p>
-                <Button href="https://shop.kscale.dev" external>
-                  Pre-order now
-                </Button>
-              </article>
-            </li>
-            <li>
-              <article>
-                <div className="aspect-[3/4] sm:aspect-video bg-gradient-to-br from-rust via-background to-methyl rounded-2xl mb-4" />
-                <h4 className="text-heading-1">Z-Bot</h4>
-                <h5 className="text-heading-2 mb-1">Small but mighty</h5>
-                <p className="text-stone-400 mb-4">Starting at $1,000 USD</p>
-                <Button href="https://zeroth.bot" external>
-                  Buy now
-                </Button>
-              </article>
-            </li>
-            <li>
-              <article>
-                <div className="aspect-[3/4] sm:aspect-video bg-gradient-to-br from-rust via-background to-methyl rounded-2xl mb-4" />
-                <h4 className="text-heading-1 flex items-center gap-2">
-                  M-Bot{" "}
-                  <span className="text-stone-500 text-body-3 font-bold border border-stone-500 rounded-full px-3 py-1">
-                    Coming soon
-                  </span>
-                </h4>
-              </article>
-            </li>
-          </ul>
+          <aside className="col-span-full md:col-span-2 lg:col-span-1 lg:-col-end-1 2xl:-col-end-2">
+            <h3 className="text-body-3 font-medium text-stone-400 mb-1">Our team (8)</h3>
+            <ul className="grid grid-cols-2 gap-x-4 lg:flex flex-col gap-y-2">
+              <li>Aaron</li>
+              <li>Ali</li>
+              <li>Ben</li>
+              <li>Chris</li>
+              <li>Jingxiang</li>
+              <li>Pawel</li>
+              <li>Rui</li>
+              <li>Wesley</li>
+            </ul>
+          </aside>
         </section>
-        <section className="px-layout flex flex-col grid-r py-16 bg-stone-950">
-          <hgroup className="col-span-full 2xl:col-span-4 2xl:col-start-2 mb-4">
-            <h2 className="text-body-2 font-medium text-stone-400 mb-1">Demos</h2>
-            <h3 className="mb-4">See how K-Bot&apos;s continuously improved</h3>
-          </hgroup>
-          <article className="col-span-full 2xl:col-span-6 2xl:col-start-2 aspect-[3/4] sm:aspect-video bg-gradient-to-br from-rust via-background to-methyl rounded-2xl p-6 flex flex-col justify-end">
-            <p>An impressive statistic about the current state of locomotion.</p>
-          </article>
-        </section>
-        <section className="px-layout flex flex-col grid-r py-16 ">
-          <hgroup className="col-span-full 2xl:col-span-4 2xl:col-start-2 mb-4">
-            <h2 className="text-body-2 font-medium text-stone-400 mb-1">Our achievements</h2>
-            <h3 className="mb-4">
-              We&apos;ve completed 3 generations of robots in less than a year
-            </h3>
-          </hgroup>
-          <article className="col-span-full 2xl:col-span-6 2xl:col-start-2 aspect-[3/4] sm:aspect-video bg-gradient-to-br from-rust via-background to-methyl rounded-2xl p-6 flex flex-col justify-end">
-            <p>An impressive statistic about the current state of locomotion.</p>
-          </article>
-        </section>
-
-        {/* <section className="px-5 md:px-10">
-          <h1 className="mb-4">K-Scale Labs</h1>
-          <h2 className="mb-4">The new frontier</h2>
-          <h3 className="mb-4">Electronic masterpieces of America</h3>
-          <p className="text-body-1 mb-4">
-            If the differences between desktop and mobile are primarily visual (e.g., spacing, font
-            sizes, or alignment), using CSS media queries to restyle the same component is more
-            efficient.
-          </p>
-          <p className="mb-4">
-            If both versions share most of the same logic or structure, restyling avoids duplicating
-            code and reduces maintenance overhead.
-          </p>
-          <p className="text-body-3 mb-4">
-            CSS media queries are designed for responsive design and can handle many layout
-            adjustments without requiring separate components.
-          </p>
-        </section> */}
-        {/* <HeaderSection /> */}
-        {/* <CatchphraseSection /> */}
-        {/* <ResearchSection /> */}
-        {/* <SpecSection />
-        <WhatCanItDoSection />
-        <RobotSection />
-        <GallerySection />
-        <CommunitySection /> */}
       </main>
-      {/* <Sponsors /> */}
     </div>
   );
 }

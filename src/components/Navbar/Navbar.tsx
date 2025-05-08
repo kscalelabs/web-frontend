@@ -12,28 +12,63 @@ import Link from "next/link";
 import { Button } from "../ui/Button/Button";
 import { CopyButton } from "../ui/Button/CopyButton";
 import { usePathname } from "next/navigation";
+import { IconButton } from "../ui/IconButton/IconButton";
 
 export const Navbar = () => {
   const pathname = usePathname();
   const { scrollY } = useScroll();
-  const lenis = useLenis();
-  const [desktopOpen, setDesktopOpen] = useState(pathname === "/");
-  const [desktopPreviousScroll, setPrevScroll] = useState(scrollY.get());
+  const lenis = useLenis((lenis) => {
+    // console.log("lenis fire");
+    if (lenis.isScrolling === false) setDesktopScrollDetect(true);
+  });
+  const [desktopHover, setDesktopHover] = useState(false);
+  const [desktopScrollDetect, setDesktopScrollDetect] = useState(true);
+  const [desktopOpen, setDesktopOpen] = useState(true);
+  const [desktopPreviousScroll, setPrevScroll] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileTopOpen, setMobileTopOpen] = useState(false);
 
-  function update(current: number, previous: number): void {
-    if (current > previous) {
+  const resetNavbar = () => {
+    setDesktopOpen(pathname === "/");
+    setMobileOpen(false);
+    setDesktopScrollDetect(true);
+  };
+
+  function update(previous: number): void {
+    if (width < 1024 || desktopHover) return;
+    if (previous > 0) {
       setDesktopOpen(false);
-    } else if (current < 100 || current < previous) {
+    } else if (previous < 0) {
       setDesktopOpen(true);
     }
   }
 
-  useMotionValueEvent(scrollY, "change", (current: number) => {
-    update(current, desktopPreviousScroll);
-    setPrevScroll(current);
+  useMotionValueEvent(scrollY, "change", () => {
+    // console.log("scrollY fire");
+    if (desktopScrollDetect) {
+      // console.log("desktopPreviousScroll", desktopPreviousScroll);
+      update(desktopPreviousScroll);
+      const y = scrollY.getPrevious();
+      // console.log("y", y);
+      if (y !== undefined) {
+        setPrevScroll(Math.sign(scrollY.get() - y));
+      }
+    }
+    setMobileTopOpen(scrollY.get() > 50);
   });
+
   const width = useWindowSize().width;
+
+  useEffect(() => {
+    // console.log("fire");
+    if (width >= 1024) {
+      if (desktopHover === false) {
+        setDesktopScrollDetect(false);
+        setPrevScroll(0);
+      }
+      setDesktopOpen(desktopHover);
+    }
+  }, [desktopHover]);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -50,12 +85,89 @@ export const Navbar = () => {
     }
   }, [mobileOpen, lenis]);
 
+  useEffect(() => {
+    // console.log("pathname", pathname);
+    resetNavbar();
+  }, [pathname]);
+
+  const socials = [
+    {
+      name: "Discord",
+      icon: Discord,
+      href: "https://discord.com/invite/pVwubQT9Sg",
+    },
+    {
+      name: "X",
+      icon: X,
+      href: "https://x.com/kscalelabs",
+    },
+    {
+      name: "Github",
+      icon: Github,
+      href: "https://github.com/kscalelabs",
+    },
+  ];
+
+  const mobileLinks = [
+    {
+      name: "K-Bot",
+      href: "https://shop.kscale.dev/",
+    },
+    {
+      name: "Z-Bot",
+      href: "https://www.zerothbot.com/",
+    },
+    {
+      name: "Docs",
+      href: "https://docs.kscale.dev",
+    },
+    {
+      name: "Careers",
+      href: "/careers",
+    },
+  ];
+
+  const desktopLinks = [
+    {
+      name: "Products",
+      items: [
+        {
+          name: "K-Bot",
+          href: "https://shop.kscale.dev/",
+        },
+        {
+          name: "Z-Bot",
+          href: "https://www.zerothbot.com/",
+        },
+      ],
+    },
+    {
+      name: "Community",
+      items: [
+        {
+          name: "Docs",
+          href: "https://docs.kscale.dev",
+        },
+        {
+          name: "Careers",
+          href: "/careers",
+        },
+        {
+          name: "Discord",
+          href: "https://discord.com/invite/pVwubQT9Sg",
+        },
+      ],
+    },
+  ];
+
   return (
-    <div className="h-20 lg:h-0">
+    <div className="lg:h-0">
       <motion.header
         className={clsx(
-          "fixed top-0 inset-x-0 z-50 px-layout py-4 flex justify-between max-lg:items-center border-b-stone-800 lg:h-24 2xl:h-[6.25rem] transitions-color duration-300",
-          scrollY.get() > 100 ? "max-lg:bg-background max-lg:border-b" : "max-lg:bg-transparent"
+          "fixed top-0 inset-x-0 z-50 px-layout py-4 flex justify-between max-lg:items-center max-lg:border-b lg:h-24 2xl:h-[6.25rem] transitions-all duration-300 ease-out",
+          mobileTopOpen || mobileOpen
+            ? "max-2xl:bg-background max-2xl:border-b-stone-800"
+            : "max-2xl:bg-transparent max-2xl:border-b-transparent"
         )}
       >
         {/* {navBasedOnWidth(width >= 768)} */}
@@ -63,7 +175,7 @@ export const Navbar = () => {
           <Logo className="w-auto h-10 sm:hidden" />
           <Wordmark className="max-sm:hidden w-auto h-10" />
         </Link>
-        <nav className="flex gap-2 md:gap-6 items-center lg:hidden">
+        <nav className="flex gap-2 items-center lg:hidden">
           <Button href="/benchmarks">View benchmarks</Button>
           <motion.button
             className="bg-orange-600/50 size-12 rounded-lg"
@@ -74,93 +186,55 @@ export const Navbar = () => {
         </nav>
         <nav
           className="relative flex gap-2 md:gap-6 items-center md:items-start max-lg:hidden p-2 pl-4"
-          onMouseOver={() => setDesktopOpen(true)}
-          onMouseLeave={() => setDesktopOpen(false)}
+          onMouseOver={() => setDesktopHover(true)}
+          onMouseLeave={() => setDesktopHover(false)}
         >
           <motion.div
-            className="-z-10 absolute inset-0 bg-stone-800 border border-stone-900 rounded-2xl"
+            className="max-lg:hidden -z-10 absolute inset-0 bg-stone-800/80 backdrop-blur-md border border-stone-700 rounded-2xl"
+            initial={false}
             animate={{
               height: desktopOpen ? "12rem" : "auto",
             }}
           />
-          <hgroup className="relative mt-3.5 w-32">
-            <h2
-              className={clsx(
-                "text-body-3 transition-colors duration-300",
-                desktopOpen ? "text-stone-400" : "text-foreground"
-              )}
-              onMouseOver={() => setDesktopOpen(true)}
-            >
-              Products
-            </h2>
-            <motion.ul
-              className="mt-2 flex flex-col gap-2 absolute"
-              animate={{ opacity: desktopOpen ? 1 : 0, display: desktopOpen ? "flex" : "none" }}
-            >
-              <li>
-                <a
-                  href="https://discord.com/invite/pVwubQT9Sg"
-                  target="_blank"
-                  className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
-                >
-                  K-Bot
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.zerothbot.com/"
-                  target="_blank"
-                  className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
-                >
-                  Z-Bot
-                </a>
-              </li>
-            </motion.ul>
-          </hgroup>
-          <hgroup className="relative mt-3.5 w-32">
-            <h2
-              className={clsx(
-                "text-body-3 transition-colors duration-300",
-                desktopOpen ? "text-stone-400" : "text-foreground"
-              )}
-              onMouseOver={() => setDesktopOpen(true)}
-            >
-              Community
-            </h2>
-            <motion.ul
-              className="mt-2 flex flex-col gap-2"
-              animate={{ opacity: desktopOpen ? 1 : 0, display: desktopOpen ? "flex" : "none" }}
-            >
-              <li>
-                <a
-                  href="https://docs.kscale.dev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
-                >
-                  Docs
-                </a>
-              </li>
-              <li>
-                <Link
-                  href="/careers"
-                  className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
-                >
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="https://discord.com/invite/pVwubQT9Sg"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
-                >
-                  Discord
-                </a>
-              </li>
-            </motion.ul>
-          </hgroup>
+          {desktopLinks.map((group) => (
+            <hgroup className="relative mt-3.5 w-32" key={`nav-group-${group.name}`}>
+              <h2
+                className={clsx(
+                  "text-body-3 transition-colors duration-300",
+                  desktopOpen ? "text-stone-400" : "text-foreground"
+                )}
+              >
+                {group.name}
+              </h2>
+              <motion.ul
+                className="mt-2 flex flex-col gap-2 absolute"
+                initial={false}
+                animate={{ opacity: desktopOpen ? 1 : 0, display: desktopOpen ? "flex" : "none" }}
+              >
+                {group.items.map((item) => (
+                  <li key={`nav-item-${group.name}-${item.name}`}>
+                    {item.href.startsWith("http") ? (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
+                      >
+                        {item.name}
+                      </a>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
+                      >
+                        {item.name}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </motion.ul>
+            </hgroup>
+          ))}
           <Button href="/benchmarks">View benchmarks</Button>
         </nav>
       </motion.header>
@@ -174,44 +248,27 @@ export const Navbar = () => {
           >
             <div className="h-full flex flex-col gap-16 py-8 overflow-auto px-layout">
               <ul className="flex flex-col gap-8">
-                <li className="text-heading-1">
-                  <a
-                    href="https://google.com"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    className="hover:text-stone-400 focus:text-stone-400 transition-colors duration-300 font-medium"
-                  >
-                    K-Bot
-                  </a>
-                </li>
-                <li className="text-heading-1">
-                  <a
-                    href="https://www.zerothbot.com/"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    className="hover:text-stone-400 focus:text-stone-400 transition-colors duration-300 font-medium"
-                  >
-                    Z-Bot
-                  </a>
-                </li>
-                <li className="text-heading-1">
-                  <a
-                    href="https://docs.kscale.dev"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    className="hover:text-stone-400 focus:text-stone-400 transition-colors duration-300 font-medium"
-                  >
-                    Docs
-                  </a>
-                </li>
-                {/* <li className="text-heading-1">
-                  <Link
-                    href="kscale.dev/research"
-                    className="hover:text-stone-400 focus:text-stone-400 transition-colors duration-300 font-medium"
-                  >
-                    Research
-                  </Link>
-                </li> */}
+                {mobileLinks.map((link) => (
+                  <li key={`nav-mobile-${link.name}`} className="text-heading-1">
+                    {link.href.startsWith("http") ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-stone-400 focus:text-stone-400 transition-colors duration-300 font-medium"
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="hover:text-stone-400 focus:text-stone-400 transition-colors duration-300 font-medium"
+                      >
+                        {link.name}
+                      </Link>
+                    )}
+                  </li>
+                ))}
               </ul>
               <ul className="flex flex-col gap-6 mt-auto">
                 <li className="text-body-2">
@@ -219,39 +276,11 @@ export const Navbar = () => {
                 </li>
                 <li>
                   <menu className="flex gap-6 items-center">
-                    <li>
-                      <a
-                        href="https://discord.com/invite/pVwubQT9Sg"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        className="relative block group"
-                      >
-                        <Discord className="size-9 group-hover:scale-110 group-focus:scale-110 group-active:scale-90 transition-transform duration-300" />
-                        <span className="absolute size-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 [@media(pointer:fine)]:hidden" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://x.com/kscalelabs"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        className="relative block group"
-                      >
-                        <X className="size-9 group-hover:scale-110 group-focus:scale-110 group-active:scale-90 transition-transform duration-300" />
-                        <span className="absolute size-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  [@media(pointer:fine)]:hidden" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://github.com/kscalelabs"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        className="relative block group"
-                      >
-                        <Github className="size-9 group-hover:scale-110 group-focus:scale-110 group-active:scale-90 transition-transform duration-300" />
-                        <span className="absolute size-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 [@media(pointer:fine)]:hidden" />
-                      </a>
-                    </li>
+                    {socials.map((social, i) => (
+                      <li key={`footer-social-${social.name}`}>
+                        <IconButton key={i} icon={social.icon} href={social.href} />
+                      </li>
+                    ))}
                   </menu>
                 </li>
               </ul>
@@ -265,7 +294,6 @@ export const Navbar = () => {
 
 const Hamburger = ({ open }: { open: boolean }) => {
   return (
-    // <button className="bg-orange-600/50 size-12 rounded-lg">
     <svg viewBox="0 0 48 48">
       {[16, 24, 32].map((x, index_x) =>
         [16, 24, 32].map((y, index_y) => (
@@ -304,7 +332,6 @@ const Hamburger = ({ open }: { open: boolean }) => {
         ))
       )}
     </svg>
-    // </button>
   );
 };
 

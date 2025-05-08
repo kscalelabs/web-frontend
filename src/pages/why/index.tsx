@@ -1,4 +1,4 @@
-import { DownArrowIcon } from "@/components/iconography/Iconography";
+import ArrowD from "@/assets/icons/icon_arrowD.svg";
 
 export default function ResearchIndex() {
   return (
@@ -16,7 +16,7 @@ export default function ResearchIndex() {
           </div>
         </header>
         <div className="flex col-span-full pt-4 justify-center">
-          <DownArrowIcon />
+          <ArrowD className="w-8 h-8 animate-bounce" />
         </div>
         <div className="col-span-full flex flex-col items-start text-justify auto-rows-auto text-foreground bg-background relative overflow-hidden px-[5vw] py-20">
           <div className="flex flex-col gap-4 max-w-2xl mx-auto">
