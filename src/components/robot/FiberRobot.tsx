@@ -1,19 +1,17 @@
 "use client";
 
-import { Canvas, useThree, ThreeElements } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import React, { useEffect, useRef } from "react";
 import { OrbitControls } from "@react-three/drei";
-import { EffectComposer, Outline, Bloom, Selection, Select } from "@react-three/postprocessing";
+import { EffectComposer, Outline, Selection, Select } from "@react-three/postprocessing";
 import * as THREE from "three";
 // import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
-import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
-import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
-import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
-import { LuminosityShader } from "three/examples/jsm/shaders/LuminosityShader.js";
-import { SobelOperatorShader } from "three/examples/jsm/shaders/SobelOperatorShader.js";
+// import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
+// import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
+// import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
+// import { LuminosityShader } from "three/examples/jsm/shaders/LuminosityShader.js";
+// import { SobelOperatorShader } from "three/examples/jsm/shaders/SobelOperatorShader.js";
 import URDFLoader from "urdf-loader";
-import { URDFJoint } from "urdf-loader/src/URDFClasses";
-import { BlendFunction } from "postprocessing";
 
 const URDF_URL = "/cad/gpr-20241204.urdf";
 const SCALE = 3;

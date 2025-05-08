@@ -1,6 +1,6 @@
 import Link from "next/link";
 import clsx from "clsx";
-import { motion, useInView, useScroll } from "motion/react";
+import { motion, useInView } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import Arrow from "@/assets/icons/icon_arrowTR.svg";
 import Apps from "@/assets/content/application_apps.svg";
@@ -254,6 +254,7 @@ const Article = ({
       </hgroup>
       {items.map((item, i) => (
         <div
+          key={`landing-stack-item-${id}--${i}`}
           className={clsx(
             "col-span-full md:col-span-2 first-of-type:lg:col-start-1 mb-6",
             id == "hardware" ? "lg:col-span-2" : "lg:col-span-3"
