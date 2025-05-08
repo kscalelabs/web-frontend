@@ -1,8 +1,8 @@
 import TableTrue from "@/assets/icons/table_true.svg";
 import TableFalse from "@/assets/icons/table_false.svg";
-import Play from "@/assets/icons/icon_play.svg";
+// import Play from "@/assets/icons/icon_play.svg";
 import { Button } from "@/components/ui/Button/Button";
-import { MediaPlaceholder } from "@/components/ui/Media/MediaPlaceholder";
+// import { MediaPlaceholder } from "@/components/ui/Media/MediaPlaceholder";
 
 export const LandingKSim = () => {
   const tableItems = [
