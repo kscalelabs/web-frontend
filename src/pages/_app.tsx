@@ -55,10 +55,26 @@ const planar = localFont({
   variable: "--font-planar",
 });
 
+const cofo = localFont({
+  src: [
+    {
+      path: "../styles/fonts/CoFoSansMono-Regular.woff",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../styles/fonts/CoFoSansMono-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-cofo",
+});
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <div
-      className={`${apparat.variable} ${planar.variable} font-sans bg-background text-foreground`}
+      className={`${apparat.variable} ${planar.variable} ${cofo.variable} font-sans bg-background text-foreground`}
     >
       <Head>
         <meta charSet="UTF-8" />

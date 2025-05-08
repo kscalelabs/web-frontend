@@ -2,6 +2,24 @@ import Link from "next/link";
 import clsx from "clsx";
 import { motion, useInView, useScroll } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import Arrow from "@/assets/icons/icon_arrowTR.svg";
+import Apps from "@/assets/content/application_apps.svg";
+
+type ArticleItem = {
+  name: string;
+  description?: string;
+  href?: string;
+  thumbnail?: any;
+  condensed: boolean;
+  code?: string;
+};
+
+type Article = {
+  name: string;
+  id: string;
+  heading: string;
+  items: ArticleItem[];
+};
 
 export const LandingStack = () => {
   const [activeId, setActiveId] = useState<number>(0);
@@ -33,21 +51,87 @@ export const LandingStack = () => {
       layer: "Application",
       id: "application",
       heading: "Build and use robot policies, apps, and tools made by you and the community",
+      items: [
+        {
+          name: "Robot Apps Store",
+          description:
+            "All-in-one hub to install community policies, apps, and tools, as well as customize and train your very own robot–like teleop.",
+          thumbnail: <Apps className="w-full h-auto mb-4" />,
+          condensed: true,
+        },
+        {
+          name: "K-Lang",
+          description:
+            "Skip writing ROS nodes with our domain-specific language for interfacing with neural interpretation.",
+          condensed: true,
+        },
+      ],
     },
     {
       layer: "ML",
       id: "ml",
       heading: "Open-source library for GPU-accelerated robot learning and sim-to-real transfer",
+      items: [
+        {
+          name: "K-SIM",
+          href: "https://github.com/kscalelabs/ksim",
+          code: "`pip install k-sim`",
+          description:
+            "High-performance reinforcement learning framework optimized for training humanoid robot locomotion, manipulation, and real world deployment. For tasks like walking, dancing, and object picking.",
+          condensed: false,
+        },
+        {
+          name: "K-VLA",
+          href: "https://github.com/kscalelabs/kvla",
+          description:
+            "We’re training a generalist policy using large-scale robot data with a new network architecture to enable the most capable and dexterous robots, running locally. Capable of integrating with other VLAs such as Pi0.5 or Gr00t",
+          condensed: false,
+        },
+      ],
     },
     {
       layer: "OS",
       id: "os",
       heading: "Rust based OS to run policies on the real robot, or evaluate in simulation",
+      items: [
+        {
+          name: "K-OS",
+          href: "https://github.com/kscalelabs/ksim",
+          code: "`pip install pykos`",
+          description:
+            "Rust based fast and reliable robot operating system combining hardware, software, and firmware, with easy to use Python SDK. Easily develop robot application with Python.",
+          condensed: false,
+        },
+        {
+          name: "K-OS SIM",
+          href: "https://github.com/kscalelabs/kvla",
+          code: "`pip install kos-sim`",
+          description:
+            "​KOS-Sim is a digital twin and model evaluator for the K-Scale Operating System (KOS), using the same gRPC interface as the real robot. Easily test and refine your models in simulation.",
+          condensed: false,
+        },
+      ],
     },
     {
       layer: "Hardware",
       id: "hardware",
       heading: "Deploy policies, VLA models, and run applications on robot hardware",
+      items: [
+        {
+          name: "K-Bot",
+          href: "https://shop.kscale.dev/products/kbot",
+          condensed: false,
+        },
+        {
+          name: "Z-Bot",
+          href: "https://zerothbot.com",
+          condensed: false,
+        },
+        {
+          name: "M-Bot",
+          condensed: false,
+        },
+      ],
     },
   ];
   return (
@@ -86,6 +170,7 @@ export const LandingStack = () => {
             index={i + 1}
             onInViewChange={handleInViewChange}
             registerRef={(el) => (sectionRefs.current[i] = el)}
+            items={article.items}
           />
         ))}
       </section>
@@ -100,6 +185,7 @@ const Article = ({
   index,
   onInViewChange,
   registerRef,
+  items,
 }: {
   name: string;
   id: string;
@@ -107,6 +193,7 @@ const Article = ({
   index: number;
   onInViewChange: (id: number, inView: boolean) => void;
   registerRef: (el: HTMLElement | null) => void;
+  items: ArticleItem[];
 }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { amount: "some", margin: "-320px 0px -80px 0px" }); // 50% in view
@@ -119,22 +206,61 @@ const Article = ({
     registerRef(ref.current);
   }, [ref.current]);
 
+  console.log(items);
+
   return (
     <motion.article
-      className="grid grid-cols-subgrid col-span-full 2xl:col-span-6 2xl:col-start-2 scroll-mt-44 2xl:scroll-mt-32"
+      className="grid grid-cols-subgrid col-span-full 2xl:col-span-6 2xl:col-start-2 scroll-mt-44 2xl:scroll-mt-32 mb-16"
       //   initial={{ opacity: 0 }}
       //   animate={{ opacity: inView ? 1 : 0.5 }}
       id={id}
       ref={ref}
     >
-      <hgroup className="col-span-default mb-6">
+      <hgroup className="col-span-default">
         <h2 className="text-body-2 font-medium text-stone-400 mb-1">{name} layer</h2>
-        <h3 className="text-heading-1 mb-2">{heading}</h3>
-        <p className="text-body-1 mb-6">
-          Count on us to deliver cutting-edge tech, built on high-community standards from robust
-          hardware and firmware to machine learning models.
-        </p>
+        <p className="text-heading-1 mb-4">{heading}</p>
       </hgroup>
+      {items.map((item, i) => (
+        <div className="col-span-full md:col-span-2 lg:col-span-3 first-of-type:lg:col-start-1 mb-6">
+          {item.thumbnail ? item.thumbnail : <Placeholder condensed={item.condensed} />}
+          <h3 className={clsx("mb-2", item.condensed ? "text-body-2 font-bold" : "text-heading-2")}>
+            {item.href ? (
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex"
+              >
+                {item.name}
+                <Arrow className="size-8 group-hover:translate-x-[12.5%] group-hover:-translate-y-[12.5%] group-focus:translate-x-[12.5%] group-focus:-translate-y-[12.5%] transition-transform duration-300" />
+              </a>
+            ) : (
+              item.name
+            )}
+            {item.code && (
+              <code className="inline-flex mx-2 lg:mx-4 px-1.5 bg-stone-900 rounded-md border border-stone-800 text-stone-400 text-body-3">
+                {item.code}
+              </code>
+            )}
+          </h3>
+          {item.description && <p>{item.description}</p>}
+        </div>
+      ))}
     </motion.article>
+  );
+};
+
+const Placeholder = ({ condensed }: { condensed: boolean }) => {
+  return (
+    <div
+      className={clsx(
+        "bg-stone-900 mb-4 flex items-center justify-center",
+        condensed ? "aspect-[5/1]" : "aspect-video"
+      )}
+    >
+      <span className="text-stone-500 text-body-3 font-bold border border-stone-500 rounded-full px-3 py-1">
+        Coming soon
+      </span>
+    </div>
   );
 };
