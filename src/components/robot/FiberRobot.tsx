@@ -62,34 +62,73 @@ function URDFRobot() {
       urdf.scale.set(SCALE, SCALE, SCALE);
       group.current?.add(urdf);
 
-      const updateMaterials = () => {
-        urdf.traverse((child) => {
-          // child.visible = false;
-          console.log(
-            child,
-            child.children.map(
-              (e) => (e instanceof THREE.Mesh ? "mesh" : "not mesh"),
-              child.children
-            )
-          );
-          if (child instanceof THREE.Mesh) {
-            const originalColor =
-              child.material instanceof THREE.Material
-                ? (child.material as THREE.MeshPhysicalMaterial).color
-                : new THREE.Color(0x808080);
-            child.material = new THREE.MeshPhysicalMaterial({
-              metalness: 0.4,
-              roughness: 0.5,
-              color: originalColor,
-              transparent: true,
+      console.log(Object.values(urdf.visual).map((e) => e));
+      console.log(Object.values(urdf.visual).map((e) => e instanceof THREE.Object3D));
+      console.log(Object.values(urdf.visual).map((e) => e.traverse((i) => i)));
+      console.log(Object.values(urdf.visual).map((e) => e.children));
+      console.log(Object.values(urdf.visual).map((e) => [...e.children]));
+
+      const checkForMeshes = () => {
+        const visuals = Object.values(urdf.visual || {});
+        const hasMeshes = visuals.some((v: any) =>
+          v.children.some((c: any) => c instanceof THREE.Mesh)
+        );
+
+        const allReady =
+          visuals.length > 0 &&
+          visuals.every((v: any) => v.children.some((c: any) => c instanceof THREE.Mesh));
+
+        if (allReady) {
+          // Now safe to traverse and apply material
+          visuals.forEach((visual: any) => {
+            visual.traverse((child: any) => {
+              if (child instanceof THREE.Mesh) {
+                child.material = new THREE.MeshPhysicalMaterial({
+                  metalness: 0.8,
+                  roughness: 0.5,
+                  color: 0x111111,
+                  transparent: true,
+                  opacity: 1,
+                });
+              }
             });
-          }
-        });
-        console.log("updated materials");
+          });
+        } else {
+          // Try again on the next frame
+          requestAnimationFrame(checkForMeshes);
+        }
       };
-      updateMaterials();
+      checkForMeshes();
+      Object.values(urdf.visual).map((e) => e.name);
+      // const updateMaterials = () => {
+      //   urdf.traverse((child) => {
+      //     // child.visible = false;
+      //     console.log(
+      //       child,
+      //       child.children.map((e) => (e instanceof THREE.Mesh ? "mesh" : "not mesh"))
+      //     );
+      //     if (child instanceof THREE.Mesh) {
+      //       const originalColor =
+      //         child.material instanceof THREE.Material
+      //           ? (child.material as THREE.MeshPhysicalMaterial).color
+      //           : new THREE.Color(0x808080);
+      //       child.material = new THREE.MeshPhysicalMaterial({
+      //         metalness: 0.4,
+      //         roughness: 0.5,
+      //         color: originalColor,
+      //         transparent: true,
+      //       });
+      //     }
+      //   });
+      //   console.log("updated materials");
+      // };
+      // updateMaterials();
     });
   }, []);
+
+  useEffect(() => {
+    console.log(group);
+  }, [group]);
 
   return <group ref={group} />;
 }
@@ -267,16 +306,12 @@ const FiberRobot: React.FC = () => {
     <div className="absolute inset-0 overflow-hidden mb-4">
       <Canvas camera={{ position: [0, 10, 20], fov: 10 }} frameloop="demand">
         <OrbitControls />
-        <directionalLight color={0xffffff} intensity={2} position={[100, 0, -20]} />
-        <directionalLight color={0xffffff} intensity={2} position={[-100, 0, -200]} />
-        <directionalLight color={0xffffff} intensity={0.2} position={[0, 0, 20]} />
+        {/* <directionalLight color={0xffffff} intensity={2} position={[100, 0, -20]} /> */}
+        {/* <directionalLight color={0xffffff} intensity={2} position={[-100, 0, -200]} /> */}
+        <directionalLight color={0xffffff} intensity={1} position={[0, 0, 20]} />
         <Selection>
           <Select enabled>
             <URDFRobot />
-            {/* <mesh position={[-2, 0, 0]} ref={ref1}>
-              <icosahedronGeometry />
-              <meshStandardMaterial />
-            </mesh> */}
           </Select>
           <EffectComposer autoClear={false} multisampling={0}>
             <Outline
