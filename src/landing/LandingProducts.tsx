@@ -4,8 +4,7 @@ import { motion, useMotionValue } from "motion/react";
 import { useEffect, useMemo, useState } from "react";
 import ArrowL from "@/assets/icons/icon_arrowL.svg";
 import ArrowR from "@/assets/icons/icon_arrowR.svg";
-import RobotWrapper from "@/components/robot/RobotWrapper";
-import FiberRobot from "@/components/robot/FiberRobot";
+// import FiberRobot from "@/components/robot/FiberRobot";
 
 const DRAG_BUFFER = 50;
 
@@ -102,7 +101,7 @@ export const LandingProducts = () => {
             <li className="min-w-[80vw] md:min-w-[40vw] lg:min-w-0 lg:col-span-2 lg:w-full">
               <article className="relative bg-stone-900 rounded-2xl flex flex-col justify-end items-center overflow-hidden aspect-[4/5]">
                 {/* <div className="aspect-square sm:aspect-video mb-4 size-full" /> */}
-                <FiberRobot />
+                {/* <FiberRobot /> */}
                 <hgroup className="mt-auto flex flex-col items-center z-10 w-full bg-gradient-to-t from-stone-900 from-60% to-transparent p-4">
                   <h4 className="text-heading-2 mb-1">K-Bot</h4>
                   <h5 className="text-body-2">Full sized humanoid</h5>

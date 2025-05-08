@@ -4,6 +4,7 @@ import { motion, useInView, useScroll } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import Arrow from "@/assets/icons/icon_arrowTR.svg";
 import Apps from "@/assets/content/application_apps.svg";
+import Image from "next/image";
 
 type ArticleItem = {
   name: string;
@@ -11,7 +12,12 @@ type ArticleItem = {
   href?: string;
   thumbnail?: any;
   condensed: boolean;
+  video?: boolean;
   code?: string;
+  thumbnailSrc?: string;
+  thumbnailAlt?: string;
+  width?: number;
+  height?: number;
 };
 
 type Article = {
@@ -76,6 +82,12 @@ export const LandingStack = () => {
           name: "K-SIM",
           href: "https://github.com/kscalelabs/ksim",
           code: "`pip install k-sim`",
+          thumbnailSrc: "/photos/stack/K-Sim.mp4",
+          thumbnailAlt: "K-SIM",
+          width: 2560,
+          height: 1440,
+          video: true,
+          // thumbnailSrc: "/photos//ksim.png",
           description:
             "High-performance reinforcement learning framework optimized for training humanoid robot locomotion, manipulation, and real world deployment. For tasks like walking, dancing, and object picking.",
           condensed: false,
@@ -86,6 +98,10 @@ export const LandingStack = () => {
           description:
             "We’re training a generalist policy using large-scale robot data with a new network architecture to enable the most capable and dexterous robots, running locally. Capable of integrating with other VLAs such as Pi0.5 or Gr00t",
           condensed: false,
+          thumbnailSrc: "/photos/stack/K-VLA.webp",
+          thumbnailAlt: "K-VLA",
+          width: 991,
+          height: 512,
         },
       ],
     },
@@ -101,6 +117,10 @@ export const LandingStack = () => {
           description:
             "Rust based fast and reliable robot operating system combining hardware, software, and firmware, with easy to use Python SDK. Easily develop robot application with Python.",
           condensed: false,
+          thumbnailSrc: "/photos/stack/KOS.webp",
+          thumbnailAlt: "K-OS",
+          width: 992,
+          height: 512,
         },
         {
           name: "K-OS SIM",
@@ -109,6 +129,10 @@ export const LandingStack = () => {
           description:
             "​KOS-Sim is a digital twin and model evaluator for the K-Scale Operating System (KOS), using the same gRPC interface as the real robot. Easily test and refine your models in simulation.",
           condensed: false,
+          thumbnailSrc: "/photos/stack/KOSsim.gif",
+          thumbnailAlt: "K-OS SIM",
+          width: 640,
+          height: 480,
         },
       ],
     },
@@ -121,11 +145,19 @@ export const LandingStack = () => {
           name: "K-Bot",
           href: "https://shop.kscale.dev/products/kbot",
           condensed: false,
+          thumbnailSrc: "/photos/stack/kbot.webp",
+          thumbnailAlt: "K-Bot",
+          width: 643,
+          height: 385,
         },
         {
           name: "Z-Bot",
           href: "https://zerothbot.com",
           condensed: false,
+          thumbnailSrc: "/photos/stack/zbot.webp",
+          thumbnailAlt: "Z-Bot",
+          width: 642,
+          height: 385,
         },
         {
           name: "M-Bot",
@@ -222,7 +254,36 @@ const Article = ({
       </hgroup>
       {items.map((item, i) => (
         <div className="col-span-full md:col-span-2 lg:col-span-3 first-of-type:lg:col-start-1 mb-6">
-          {item.thumbnail ? item.thumbnail : <Placeholder condensed={item.condensed} />}
+          {item.thumbnail ? (
+            item.thumbnail
+          ) : item.thumbnailSrc ? (
+            item.video ? (
+              <video
+                width="1920"
+                height="1080"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="object-cover aspect-video mb-4"
+              >
+                <source src={item.thumbnailSrc} type="video/mp4" />
+              </video>
+            ) : (
+              <Image
+                src={item.thumbnailSrc}
+                alt={item.thumbnailAlt ?? ""}
+                width={item.width}
+                height={item.height}
+                className="object-cover aspect-video mb-4"
+                loading={"eager"}
+                priority={true}
+                sizes={"100dvw"}
+              />
+            )
+          ) : (
+            <Placeholder condensed={item.condensed} />
+          )}
           <h3 className={clsx("mb-2", item.condensed ? "text-body-2 font-bold" : "text-heading-2")}>
             {item.href ? (
               <a
