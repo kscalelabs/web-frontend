@@ -29,7 +29,7 @@ const RobotRendererWrapper: React.FC = () => {
   }, []);
 
   return (
-    <div ref={mountRef} className="w-full h-full overflow-hidden">
+    <div ref={mountRef} className="w-full overflow-hidden aspect-square sm:aspect-video mb-4">
       {isVisible && <RobotRenderer />}
     </div>
   );

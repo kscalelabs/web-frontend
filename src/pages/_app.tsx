@@ -3,10 +3,10 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { ReactLenis } from "lenis/dist/lenis-react";
 import "katex/dist/katex.min.css";
-import { Grid } from "@/components/grid/Grid";
 import localFont from "next/font/local";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import { Grid } from "@/components/grid/Grid";
 
 const apparat = localFont({
   src: [

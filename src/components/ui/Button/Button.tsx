@@ -1,42 +1,24 @@
-import { ComponentProps } from "react";
+import { ComponentProps, ElementType, useEffect, useState } from "react";
 import { cva, VariantProps } from "class-variance-authority";
 import Link from "next/link";
+import { AnimatePresence, motion } from "motion/react";
 
-type ButtonOrLinkProps = ComponentProps<"button"> & ComponentProps<"a">;
+export type ButtonOrLinkProps = ComponentProps<"button"> & ComponentProps<"a">;
 interface Props extends ButtonOrLinkProps, VariantProps<typeof buttonStyles> {
+  icon?: ElementType; // Optional SVGR icon
+  iconPosition?: "start" | "end";
   external?: boolean;
+  disabled?: boolean;
   type?: "button" | "submit" | "reset";
 }
 
-export const AButton = ({ href, children }: { href: string; children: React.ReactNode }) => {
-  return (
-    <a
-      className="bg-orange-600 hover:bg-orange-700 focus:bg-orange-700 active:bg-orange-800 transition-colors duration-300 text-body-2 py-[0.75rem] px-2 rounded-lg font-medium"
-      href={href}
-      target="_blank"
-    >
-      {children}
-    </a>
-  );
-};
-
-export const LinkButton = ({ href, children }: { href: string; children: React.ReactNode }) => {
-  return (
-    <Link
-      className="bg-orange-600 hover:bg-orange-700 focus:bg-orange-700 active:bg-orange-800 transition-colors duration-300 text-body-2 py-[0.75rem] px-3 rounded-lg font-medium"
-      href={href}
-    >
-      {children}
-    </Link>
-  );
-};
-
 const buttonStyles = cva(
-  "transition-colors duration-300 text-body-2 px-3 py-3 rounded-lg font-medium flex justify-center items-center",
+  "relative overflow-hidden transition-all duration-300 text-body-2 px-3 py-3 rounded-lg flex justify-center items-center gap-2",
   {
     variants: {
       intent: {
-        primary: "bg-orange-600 hover:bg-orange-700 focus:bg-orange-700 active:bg-orange-800",
+        primary:
+          "text-foreground bg-orange-700 hover:bg-orange-800 focus:bg-orange-800 active:bg-orange-900",
         secondary: "bg-gray-200 hover:bg-gray-300 focus:bg-gray-300 active:bg-gray-400",
       },
       fullWidth: {
@@ -45,6 +27,10 @@ const buttonStyles = cva(
       },
       adaptive: {
         true: "w-full sm:w-fit",
+        false: null,
+      },
+      disabled: {
+        true: "opacity-25 cursor-not-allowed",
         false: null,
       },
     },
@@ -56,8 +42,27 @@ const buttonStyles = cva(
   }
 );
 
-export const Button = ({ href, external, intent, adaptive, fullWidth, ...props }: Props) => {
-  const classes = buttonStyles({ intent, fullWidth, adaptive });
+export const Button = ({
+  href,
+  external,
+  iconPosition = "end",
+  intent,
+  adaptive,
+  fullWidth,
+  disabled = false,
+  icon: Icon,
+  ...props
+}: Props) => {
+  const classes = buttonStyles({ intent, fullWidth, adaptive, disabled });
+
+  const renderContent = () => (
+    <>
+      {iconPosition === "start" && Icon && <Icon className="size-6 pointer-events-none" />}
+      {props.children}
+      {iconPosition === "end" && Icon && <Icon className="size-6 pointer-events-none" />}
+    </>
+  );
+
   return href ? (
     external ? (
       <a
@@ -67,16 +72,73 @@ export const Button = ({ href, external, intent, adaptive, fullWidth, ...props }
         rel="noopener noreferrer"
         {...(props as ButtonOrLinkProps)}
       >
-        {props.children}
+        {renderContent()}
       </a>
     ) : (
       <Link className={classes} href={href} {...(props as ButtonOrLinkProps)}>
-        {props.children}
+        {renderContent()}
       </Link>
     )
   ) : (
     <button className={classes} type={props.type} {...(props as ButtonOrLinkProps)}>
+      {renderContent()}
+    </button>
+  );
+};
+
+export const ExpressiveButton = ({
+  iconPosition = "end",
+  intent,
+  adaptive,
+  fullWidth,
+  disabled = false,
+  icon: Icon,
+  ...props
+}: Props) => {
+  const classes = buttonStyles({ intent, fullWidth, adaptive, disabled });
+
+  const renderContent = () => (
+    <>
+      {iconPosition === "start" && Icon && <Icon className="size-6 pointer-events-none" />}
       {props.children}
+      {iconPosition === "end" && Icon && <Icon className="size-6 pointer-events-none" />}
+    </>
+  );
+
+  const [clicked, setClicked] = useState(false);
+
+  useEffect(() => {
+    if (clicked) {
+      setTimeout(() => {
+        setClicked(false);
+      }, 1500);
+    }
+  }, [clicked]);
+
+  return (
+    <button
+      className={classes}
+      type={props.type}
+      onClick={() => {
+        setClicked(true);
+      }}
+      {...(props as ButtonOrLinkProps)}
+    >
+      {renderContent()}
+      <AnimatePresence>
+        {clicked && (
+          <motion.div
+            initial={{ y: "100%" }}
+            animate={{ y: "0%" }}
+            exit={{ y: "-100%" }}
+            transition={{ duration: 0.3, ease: "circOut" }}
+            key="confirmation"
+            className="absolute inset-0 bg-purple-600 flex justify-center items-center"
+          >
+            <span className="text-body-2">Confirmed</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </button>
   );
 };

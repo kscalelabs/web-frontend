@@ -113,35 +113,41 @@ body {
   blockquote {
     @apply text-body-1 italic;
   }
+  .section {
+    @apply px-layout flex flex-col grid-r py-16;
+  }
 }
 
 @layer utilities {
   .px-layout {
     @apply px-5 md:px-10;
   }
-  .grid-responsive {
-    @apply px-layout grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-8 auto-rows-min;
-  }
   .grid-r {
-    @apply md:grid md:gap-x-6 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-8 auto-rows-min;
+    @apply gap-x-4 sm:grid md:gap-x-6 grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-8 auto-rows-min;
+  }
+  .col-span-default {
+    @apply col-span-full md:col-span-3 lg:col-span-4 xl:col-span-3 2xl:col-span-4 3xl:col-span-3 4xl:col-span-3;
+  }
+  .col-start-default {
+    @apply 2xl:col-start-2 3xl:col-start-2 4xl:col-start-2;
   }
   .text-heading-d {
-    @apply text-heading-d-sm md:text-heading-d-md lg:text-heading-d-lg 2xl:text-heading-d-xl;
+    @apply text-heading-d-sm sm:text-heading-d-md lg:text-heading-d-lg 4xl:text-heading-d-xl;
   }
   .text-heading-1 {
-    @apply text-heading-1-sm md:text-heading-1-md lg:text-heading-1-lg 2xl:text-heading-1-xl font-medium;
+    @apply text-heading-1-sm sm:text-heading-1-md lg:text-heading-1-lg 4xl:text-heading-1-xl font-medium;
   }
   .text-heading-2 {
-    @apply text-heading-2-sm md:text-heading-2-md lg:text-heading-2-lg 2xl:text-heading-2-xl font-medium;
+    @apply text-heading-2-sm sm:text-heading-2-md lg:text-heading-2-lg 4xl:text-heading-2-xl font-medium;
   }
   .text-body-1 {
-    @apply text-body-1-sm md:text-body-1-md lg:text-body-1-lg 2xl:text-body-1-xl;
+    @apply text-body-1-sm sm:text-body-1-md lg:text-body-1-lg 4xl:text-body-1-xl;
   }
   .text-body-2 {
-    @apply text-body-2-sm md:text-body-2-md lg:text-body-2-lg 2xl:text-body-2-xl;
+    @apply text-body-2-sm sm:text-body-2-md lg:text-body-2-lg 4xl:text-body-2-xl;
   }
   .text-body-3 {
-    @apply text-body-3-sm md:text-body-3-md lg:text-body-3-lg 2xl:text-body-3-xl;
+    @apply text-body-3-sm sm:text-body-3-md lg:text-body-3-lg 4xl:text-body-3-xl;
   }
 }
 

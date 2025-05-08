@@ -49,6 +49,7 @@
     "@storybook/react": "^8.6.12",
     "@storybook/test": "^8.6.12",
     "@svgr/webpack": "^8.1.0",
+    "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/typography": "^0.5.16",
     "@types/mdx-js__react": "^1.5.8",
     "@types/node": "^20.17.14",

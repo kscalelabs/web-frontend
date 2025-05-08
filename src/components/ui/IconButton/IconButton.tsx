@@ -1,46 +1,42 @@
-// components/IconButton.tsx
+import { ComponentProps, ElementType } from "react";
 import clsx from "clsx";
-import { ComponentPropsWithoutRef, ElementType } from "react";
+import { cva, VariantProps } from "class-variance-authority";
+import Link from "next/link";
+import { ButtonOrLinkProps } from "../Button/Button";
 
-type IconButtonProps = {
+interface Props extends ButtonOrLinkProps, VariantProps<typeof buttonStyles> {
   icon: ElementType;
-  href?: string;
-  className?: string;
-  iconClassName?: string;
-  "aria-label": string;
-} & ComponentPropsWithoutRef<"button">;
+  external?: boolean;
+  type?: "button" | "submit" | "reset";
+}
 
-export default function IconButton({
-  icon: Icon,
-  href,
-  className,
-  iconClassName,
-  ...props
-}: IconButtonProps) {
-  const baseClasses = clsx(
-    "inline-flex items-center justify-center p-2 rounded transition-colors hover:bg-gray-200",
-    className
-  );
+const buttonStyles = cva("relative block group");
 
-  const iconClasses = clsx("w-6 h-6", iconClassName);
+const iconStyles = cva(
+  "size-9 group-hover:scale-110 group-focus:scale-110 group-active:scale-90 transition-transform duration-300"
+);
 
-  if (href) {
-    return (
-      <a
-        href={href}
-        className={baseClasses}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={props["aria-label"]}
-      >
-        <Icon className={iconClasses} />
-      </a>
-    );
-  }
+export const IconButton = ({ href, icon: Icon, ...props }: Props) => {
+  const wrapperClasses = buttonStyles({});
+  const iconClasses = iconStyles({});
+  const touchTarget =
+    "absolute size-12 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 [@media(pointer:fine)]:hidden";
 
-  return (
-    <button type="button" className={baseClasses} {...props}>
+  return href ? (
+    <a
+      className={wrapperClasses}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      {...(props as ButtonOrLinkProps)}
+    >
+      <span className={touchTarget} />
+      <Icon className={iconClasses} />
+    </a>
+  ) : (
+    <button className={wrapperClasses} type={props.type} {...(props as ButtonOrLinkProps)}>
+      <span className={touchTarget} />
       <Icon className={iconClasses} />
     </button>
   );
-}
+};
