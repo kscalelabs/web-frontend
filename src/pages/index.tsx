@@ -50,9 +50,9 @@ export default function Home() {
             <source src="/videos/landing_video_0506.mp4" type="video/mp4" />
           </video>
           <hgroup className="col-span-4 lg:col-span-3 2xl:col-span-5 z-10">
-            <h1 className="mb-4">Embodied AI for everybody with a computer</h1>
+            <h1 className="mb-4">Open-source humanoid robots, build for developers</h1>
             <p className="mb-4">
-              K-Scale Labs provides open-source tools to train and develop general-purpose robots.
+              Accelerating the world's transition to general-purpose robots by building the most integrated stack for humanoid robots.
             </p>
             <Button adaptive={true} href="/benchmarks">
               View community benchmarks
