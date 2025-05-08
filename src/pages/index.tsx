@@ -11,6 +11,7 @@ import { LandingKSim } from "@/landing/LandingKSim";
 import { LandingProducts } from "@/landing/LandingProducts";
 import { LandingStack } from "@/landing/LandingStack";
 import RobotSection from "@/landing/2024/RobotSection";
+import { LandingMission } from "@/landing/LandingMission";
 
 export default function Home() {
   const lenis = useLenis();
@@ -60,17 +61,7 @@ export default function Home() {
           </hgroup>
         </section>
         <LandingProducts />
-        <section className="section">
-          <hgroup className="col-span-default col-start-default mb-6">
-            <h2 className="text-heading-1 mb-2">
-              We&apos;re building the most integrated ML robotics platform
-            </h2>
-            <p className="text-body-1 mb-6">
-              Count on us to deliver cutting-edge tech, built on high-community standards from
-              robust hardware and firmware to machine learning models.
-            </p>
-          </hgroup>
-        </section>
+        <LandingMission />
         {/* <RobotSection /> */}
         <LandingDemos />
         <LandingStack />
