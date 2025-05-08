@@ -25,12 +25,36 @@ export default function Page() {
       <section className="min-h-[20rem] h-[80svh] px-layout flex flex-col grid-r content-end bg-gradient-to-t py-16">
         <hgroup className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 mb-16">
           <h1 className="text-body-3 text-stone-400 mb-2">Careers</h1>
-          <h2 className="mb-4">Come build friendly open-source robots</h2>
-          <p>
-            We&apos;re K-Scale Labs, a team of hackers, engineers and researchers building humanoids
-            and a robotics general purpose foundation model in Palo Alto, USA.
+          <h2 className="mb-4">Come build the future of robotics</h2>
+          <p className="text-body-2 text-stone-200 mb-4">
+            Our mission is to build general purpose robotics and open-source it to everyone.
+          </p>
+          <p className="text-body-2 text-stone-200 mb-4">
+            Over the past six months, we've built a humanoid robot stack from state-of-the-art
+            machine learning models trained on our infrastructure, building the operating system,
+            designing the hardware, and manufactured it:
           </p>
         </hgroup>
+
+        <hgroup className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 mb-16">
+          <h2 className="text-heading-2 mb-4">Our Team</h2>
+          <p className="text-body-2 text-stone-200 mb-4">
+            K-Scale is 10 people across 3 teams:
+          </p>
+          <ul className="flex flex-col gap-4">
+            <li>
+              The <span className="font-bold underline">ML Team</span> bulding machine learning infrasturcture state of the art VLA and RL models.
+            </li>
+            <li>
+              The <span className="font-bold underline">Product Team</span> designs and manufactures the product, including the hardware and software.
+            </li>
+            <li>
+              The <span className="font-bold underline">Operations and Marketing Team</span> maintains company infrastucture, press, partnership, and logistics.
+            </li>
+          </ul>
+        </hgroup>
+
+
       </section>
       <section className="px-layout min-h-screen grid-responsive py-8">
         <h2 className="text-heading-2 col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 mb-2">
