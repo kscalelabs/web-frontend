@@ -79,7 +79,7 @@ export default function Home() {
         <LandingCommunity />
         <section className="section">
           <hgroup className="col-span-default col-start-default mb-6">
-            <h2 className="text-body-2 font-medium text-stone-400 mb-1">Our motivation</h2>
+            <h2 className="text-body-2 font-medium text-stone-400 mb-1">About us</h2>
             <p className="text-heading-1 mb-2">
               We&apos;re hackers, engineers, and researchers that believe in a world where robots
               are made for everyone.

@@ -57,7 +57,7 @@ export const LandingStack = () => {
           <h2 className="text-body-2 font-medium text-stone-400 2xl:mb-4">Our stack</h2>
           <menu className="flex 2xl:flex-col gap-6 2xl:gap-4">
             {articles.map((e, i) => (
-              <li>
+              <li key={`landing-stack-link--${i}`}>
                 <Link
                   href={`#${e.id}`}
                   className={clsx(

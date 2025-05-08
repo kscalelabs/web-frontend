@@ -42,4 +42,5 @@ module.exports = withMDX({
     return config;
   },
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"], // Add MDX support
+  transpilePackages: ["three"],
 });
