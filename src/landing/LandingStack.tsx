@@ -253,7 +253,12 @@ const Article = ({
         <p className="text-heading-1 mb-4">{heading}</p>
       </hgroup>
       {items.map((item, i) => (
-        <div className="col-span-full md:col-span-2 lg:col-span-3 first-of-type:lg:col-start-1 mb-6">
+        <div
+          className={clsx(
+            "col-span-full md:col-span-2 first-of-type:lg:col-start-1 mb-6",
+            id == "hardware" ? "lg:col-span-2" : "lg:col-span-3"
+          )}
+        >
           {item.thumbnail ? (
             item.thumbnail
           ) : item.thumbnailSrc ? (

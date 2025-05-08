@@ -4,6 +4,7 @@ import { motion, useMotionValue } from "motion/react";
 import { useEffect, useMemo, useState } from "react";
 import ArrowL from "@/assets/icons/icon_arrowL.svg";
 import ArrowR from "@/assets/icons/icon_arrowR.svg";
+import Image from "next/image";
 // import FiberRobot from "@/components/robot/FiberRobot";
 
 const DRAG_BUFFER = 50;
@@ -102,6 +103,16 @@ export const LandingProducts = () => {
               <article className="relative bg-stone-900 rounded-2xl flex flex-col justify-end items-center overflow-hidden aspect-[4/5]">
                 {/* <div className="aspect-square sm:aspect-video mb-4 size-full" /> */}
                 {/* <FiberRobot /> */}
+                <Image
+                  src={"/photos/stack/kbot.webp"}
+                  alt={"K-Bot"}
+                  width={642}
+                  height={385}
+                  className="object-cover mb-4 absolute inset-0 size-full"
+                  loading={"eager"}
+                  priority={true}
+                  sizes={"100dvw"}
+                />
                 <hgroup className="mt-auto flex flex-col items-center z-10 w-full bg-gradient-to-t from-stone-900 from-60% to-transparent p-4">
                   <h4 className="text-heading-2 mb-1">K-Bot</h4>
                   <h5 className="text-body-2">Full sized humanoid</h5>
@@ -116,6 +127,16 @@ export const LandingProducts = () => {
               <article className="relative bg-stone-900 rounded-2xl flex flex-col justify-end items-center overflow-hidden aspect-[4/5]">
                 {/* <div className="aspect-square sm:aspect-video mb-4 size-full" /> */}
                 {/* <FiberRobot /> */}
+                <Image
+                  src={"/photos/stack/zbot.webp"}
+                  alt={"Z-Bot"}
+                  width={642}
+                  height={385}
+                  className="object-cover mb-4 absolute inset-0 size-full"
+                  loading={"eager"}
+                  priority={true}
+                  sizes={"100dvw"}
+                />
                 <hgroup className="mt-auto flex flex-col items-center z-10 w-full bg-gradient-to-t from-stone-900 from-60% to-transparent p-4">
                   <h4 className="text-heading-2 mb-1">Z-Bot</h4>
                   <h5 className="text-body-2">Small but mighty</h5>
@@ -130,8 +151,9 @@ export const LandingProducts = () => {
               <article className="p-4 bg-stone-900 rounded-2xl h-full flex flex-col items-center">
                 {/* <div className="aspect-square sm:aspect-video mb-4 size-full" /> */}
                 {/* <RobotWrapper /> */}
+
                 <hgroup className="mt-auto flex flex-col items-center">
-                  <h4 className="text-heading-2 flex items-center gap-2 mb-1">M-Bot </h4>
+                  <h4 className="text-heading-2 flex items-center gap-2 mb-2">M-Bot </h4>
                   <span className="text-stone-500 text-body-3 font-bold border border-stone-500 rounded-full px-3 py-1">
                     Coming soon
                   </span>
