@@ -43,9 +43,9 @@ export default function Page() {
               Our mission is to build general purpose robotics and open-source it to everyone.
             </p>
             <p className="text-body-2 text-stone-200 mb-4">
-              Over the past six months, we&apos;ve built a humanoid robot stack from state-of-the-art
-              machine learning models trained on our infrastructure, building the operating system,
-              designing the hardware, and manufactured it:
+              Over the past six months, we&apos;ve built a humanoid robot stack from
+              state-of-the-art machine learning models trained on our infrastructure, building the
+              operating system, designing the hardware, and manufactured it:
             </p>
           </hgroup>
         </div>
@@ -75,8 +75,8 @@ export default function Page() {
           <hgroup>
             <h2 className="text-heading-2 mb-4">Who we&apos;re looking for</h2>
             <p className="text-body-2 text-stone-200 mb-4">
-              We don&apos;t care about degrees or backgrounds. We&apos;re building a world-class team in
-              shipping cutting-edge engineering, research, and product. Show us your GitHub,
+              We don&apos;t care about degrees or backgrounds. We&apos;re building a world-class
+              team in shipping cutting-edge engineering, research, and product. Show us your GitHub,
               open-source work, standout projects, or competition wins.
             </p>
 
