@@ -268,7 +268,7 @@ const Article = ({
                 muted
                 loop
                 playsInline
-                className="object-cover aspect-video mb-4"
+                className="object-cover aspect-video mb-4 w-full"
               >
                 <source src={item.thumbnailSrc} type="video/mp4" />
               </video>
