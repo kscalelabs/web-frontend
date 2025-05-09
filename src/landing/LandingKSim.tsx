@@ -89,28 +89,28 @@ export const LandingKSim = () => {
       </section>
       <section className="section">
         <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-start-2">
-          <h3 className="text-body-2 font-bold mb-1">Made for speed</h3>
+          <h3 className="text-body-2 font-bold mb-2">Made for speed</h3>
           <p>
             Built on JAX and MuJoCo-XLA, K-Sim can run thousands of parallel environments on a
             single GPU—over 50,000 samples per second on an RTX 4090.
           </p>
         </div>
         <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3">
-          <h3 className="text-body-2 font-bold mb-1">Single-file workflows</h3>
+          <h3 className="text-body-2 font-bold mb-2">Single-file workflows</h3>
           <p>
             A complete experiment—model, task, and config—lives in one python file, so you can
             easily root cause performance regressions.
           </p>
         </div>
         <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-start-2">
-          <h3 className="text-body-2 font-bold mb-1">Sim-to-real focus</h3>
+          <h3 className="text-body-2 font-bold mb-2">Sim-to-real focus</h3>
           <p>
             Domain-randomisation utilities, real-time vizualization, accurate motor models, and CLI
             deploy helpers let you seamlessly deploy a trained policy on a real robot.
           </p>
         </div>
         <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3">
-          <h3 className="text-body-2 font-bold mb-1">Extensible by design</h3>
+          <h3 className="text-body-2 font-bold mb-2">Extensible by design</h3>
           <p>
             Customize your own environment, rewards and algorithms or choose from several built-in
             tasks ready to go.
@@ -188,7 +188,7 @@ export const LandingKSim = () => {
           </tbody>
         </table>
       </section>
-      <section className="section bg-stone-900">
+      <section className="section mb-8">
         <hgroup className="col-span-full lg:col-span-4 lg:col-start-2 2xl:col-start-3 flex flex-col items-center">
           <h2 className="text-heading-2 text-center mb-2">
             K-SIM lets you iterate quickly and trust the code that you deploy on your hardware.{" "}

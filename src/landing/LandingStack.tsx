@@ -256,8 +256,8 @@ const Article = ({
       ref={ref}
     >
       <hgroup className="col-span-default">
-        <h2 className="text-body-2 font-medium text-stone-400 mb-1">{name} layer</h2>
-        <p className="text-heading-1 mb-4">{heading}</p>
+        <h2 className="text-body-2 font-medium text-stone-400 mb-2">{name} layer</h2>
+        <p className="text-heading-1 mb-6">{heading}</p>
       </hgroup>
       {items.map((item, i) => (
         <div
@@ -278,7 +278,7 @@ const Article = ({
                 muted
                 loop
                 playsInline
-                className="object-cover aspect-video mb-4 w-full"
+                className="object-cover aspect-video mb-6 w-full"
               >
                 <source src={item.thumbnailSrc} type="video/mp4" />
               </video>
@@ -288,7 +288,7 @@ const Article = ({
                 alt={item.thumbnailAlt ?? ""}
                 width={item.width}
                 height={item.height}
-                className="object-cover aspect-video mb-4 w-full"
+                className="object-cover aspect-video mb-6 w-full"
                 loading={"eager"}
                 priority={true}
                 sizes={"100dvw"}
@@ -337,11 +337,11 @@ const Placeholder = ({ condensed }: { condensed: boolean }) => {
   return (
     <div
       className={clsx(
-        "bg-stone-900 mb-4 flex items-center justify-center",
+        "bg-stone-900 mb-4 flex items-center justify-center select-none cursor-default",
         condensed ? "aspect-[5/1]" : "aspect-video"
       )}
     >
-      <span className="text-stone-500 text-body-3 font-bold border border-stone-500 rounded-full px-3 py-1">
+      <span className="text-stone-500 text-body-3 font-bold border border-stone-500 rounded-full px-3 py-1 cursor-default">
         Coming soon
       </span>
     </div>
