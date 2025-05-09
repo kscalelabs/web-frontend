@@ -134,7 +134,7 @@ export default function Page() {
           ))}
         </ul>
         <aside className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 mb-16">
-          <p className="mb-4"> Don&apos;t see an role that matches you?</p>
+          <p className="mb-4"> Don&apos;t see a role that matches you?</p>
           <CopyButton />
         </aside>
       </section>

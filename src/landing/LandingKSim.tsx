@@ -70,14 +70,14 @@ export const LandingKSim = () => {
         <hgroup className="col-span-default col-start-default mb-6">
           <h2 className="text-heading-1 mb-2">K-SIM</h2>
           <p className="text-body-1">
-            K-SIM is a lightweight, modular framework for developing reinforcement-learning policies
-            in simulation and deploying them on physical robots.
+            A lightweight, modular framework for developing reinforcement learning policies in
+            simulation and subsequently deploying on physical robots
           </p>
         </hgroup>
         {/* <div className="col-span-full lg:col-span-2 lg:col-start-1 2xl:col-start-2 2xl:col-span-2 lg:mb-6 grid gap-x-4 md:gap-x-4 grid-cols-subgrid items-center">
           <MediaPlaceholder className="lg:col-span-full" />
           <hgroup className="max-lg:my-4 lg:mt-4 sm:col-span-3 lg:col-span-full">
-            <h3 className="text-body-2 font-bold">See how our ML lead, Ali uses K-Sim</h3>
+            <h3 className="text-body-2 font-bold">See how our ML lead Ali uses K-Sim</h3>
             <div className="flex w-full items-center gap-2">
               <p className="inline-flex w-fit items-center gap-1 ">
                 <Play className="size-6 -ml-0.5" /> Play video
