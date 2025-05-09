@@ -54,28 +54,42 @@ const SvgChildren = [
   },
 ];
 
+// Add CSS for fill-foreground if it doesn't exist
+const sponsorStyles = `
+  .fill-foreground {
+    fill: var(--foreground);
+  }
+`;
+
 const Sponsors = () => {
   return (
-    <section
-      className={
-        "w-screen col-span-full flex flex-col gap-3 items-center " +
-        " w1440:pt-16 w1024:pt-12 w640:pt-10 sponsors "
-      }
-    >
-      <Marquee className={""}>
-        {SvgChildren.map((sponsor, index) => {
-          return (
-            <Link
-              href={sponsor.linkURL}
-              target={"_blank"}
-              key={index}
-              aria-label={`Investor:${sponsor.name}`}
-            >
-              {sponsor.component}
-            </Link>
-          );
-        })}
-      </Marquee>
+    
+    <section className="section">
+      {/* Adding a heading for visibility */}
+      <hgroup className="col-span-default col-start-default mb-6">
+        <h2 className="text-body-2 font-medium text-stone-400 mb-1">Our supporters</h2>
+        <p className="text-heading-1 mb-4">Backed by world-class investors</p>
+      </hgroup>
+      
+      <style dangerouslySetInnerHTML={{ __html: sponsorStyles }} />
+      
+      <div className="w-screen col-span-full flex flex-col gap-3 items-center pt-8 pb-16">
+        <Marquee className="min-h-20" speed={40}>
+          {SvgChildren.map((sponsor, index) => {
+            return (
+              <Link
+                href={sponsor.linkURL}
+                target={"_blank"}
+                key={index}
+                aria-label={`Investor:${sponsor.name}`}
+                className="mx-8"
+              >
+                {sponsor.component}
+              </Link>
+            );
+          })}
+        </Marquee>
+      </div>
     </section>
   );
 };
