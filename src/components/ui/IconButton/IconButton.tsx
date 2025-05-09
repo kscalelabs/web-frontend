@@ -1,7 +1,5 @@
-import { ComponentProps, ElementType } from "react";
-import clsx from "clsx";
+import { ElementType } from "react";
 import { cva, VariantProps } from "class-variance-authority";
-import Link from "next/link";
 import { ButtonOrLinkProps } from "../Button/Button";
 
 interface Props extends ButtonOrLinkProps, VariantProps<typeof buttonStyles> {

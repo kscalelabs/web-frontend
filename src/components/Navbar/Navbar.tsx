@@ -28,12 +28,6 @@ export const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileTopOpen, setMobileTopOpen] = useState(false);
 
-  const resetNavbar = () => {
-    setDesktopOpen(pathname === "/");
-    setMobileOpen(false);
-    setDesktopScrollDetect(true);
-  };
-
   function update(previous: number): void {
     if (width < 1024 || desktopHover) return;
     if (previous > 0) {
@@ -68,7 +62,7 @@ export const Navbar = () => {
       }
       setDesktopOpen(desktopHover);
     }
-  }, [desktopHover]);
+  }, [desktopHover, width]);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -87,6 +81,11 @@ export const Navbar = () => {
 
   useEffect(() => {
     // console.log("pathname", pathname);
+    const resetNavbar = () => {
+      setDesktopOpen(pathname === "/");
+      setMobileOpen(false);
+      setDesktopScrollDetect(true);
+    };
     resetNavbar();
   }, [pathname]);
 

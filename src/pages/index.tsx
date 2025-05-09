@@ -12,6 +12,7 @@ import { LandingProducts } from "@/landing/LandingProducts";
 import { LandingStack } from "@/landing/LandingStack";
 import { LandingMission } from "@/landing/LandingMission";
 import { LandingDiagram } from "@/landing/LandingDiagram";
+import Sponsors from "@/landing/Sponsors";
 
 export default function Home() {
   const lenis = useLenis();
@@ -113,6 +114,8 @@ export default function Home() {
             </ul>
           </aside>
         </section>
+
+        <Sponsors />
       </main>
     </div>
   );
