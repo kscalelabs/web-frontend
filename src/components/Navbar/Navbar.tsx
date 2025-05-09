@@ -110,7 +110,7 @@ export const Navbar = () => {
   const mobileLinks = [
     {
       name: "K-Bot",
-      href: "https://shop.kscale.dev/",
+      href: "https://shop.kscale.dev/products/kbot",
     },
     {
       name: "Z-Bot",
@@ -132,7 +132,7 @@ export const Navbar = () => {
       items: [
         {
           name: "K-Bot",
-          href: "https://shop.kscale.dev/",
+          href: "https://shop.kscale.dev/products/kbot",
         },
         {
           name: "Z-Bot",

@@ -115,9 +115,11 @@ export const LandingProducts = () => {
                 />
                 <hgroup className="mt-auto flex flex-col items-center z-10 w-full bg-gradient-to-t from-stone-900 from-60% to-transparent p-4">
                   <h4 className="text-heading-2 mb-1">K-Bot</h4>
-                  <h5 className="text-body-2">Full sized humanoid</h5>
-                  <p className="text-body-3 text-stone-400 mb-4">Starting at $9,000 USD</p>
-                  <Button href="https://shop.kscale.dev" external fullWidth>
+                  <h5 className="text-body-2">Full sized (4&apos;) humanoid</h5>
+                  <p className="text-body-3 text-stone-400 mb-4">
+                    Starting at <s>$16,999</s> $8,999 USD
+                  </p>
+                  <Button href="https://shop.kscale.dev/products/kbot" external fullWidth>
                     Pre-order now
                   </Button>
                 </hgroup>
@@ -139,8 +141,10 @@ export const LandingProducts = () => {
                 />
                 <hgroup className="mt-auto flex flex-col items-center z-10 w-full bg-gradient-to-t from-stone-900 from-60% to-transparent p-4">
                   <h4 className="text-heading-2 mb-1">Z-Bot</h4>
-                  <h5 className="text-body-2">Small but mighty</h5>
-                  <p className="text-body-3 text-stone-400 mb-4">Starting at $1,000 USD</p>
+                  <h5 className="text-body-2">Small but mighty (1.5&apos;)</h5>
+                  <p className="text-body-3 text-stone-400 mb-4">
+                    Starting at <s>$1,999</s> $999 USD
+                  </p>
                   <Button href="https://zeroth.bot" external fullWidth>
                     Pre-order now
                   </Button>
