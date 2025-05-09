@@ -194,6 +194,7 @@ export const Navbar = () => {
             animate={{
               height: desktopOpen ? "12rem" : "auto",
             }}
+            transition={{ duration: 0.35 }}
           />
           {desktopLinks.map((group) => (
             <hgroup className="relative mt-3.5 w-32" key={`nav-group-${group.name}`}>
@@ -209,6 +210,7 @@ export const Navbar = () => {
                 className="mt-2 flex flex-col gap-2 absolute"
                 initial={false}
                 animate={{ opacity: desktopOpen ? 1 : 0, display: desktopOpen ? "flex" : "none" }}
+                transition={{ duration: 0.35 }}
               >
                 {group.items.map((item) => (
                   <li key={`nav-item-${group.name}-${item.name}`}>
