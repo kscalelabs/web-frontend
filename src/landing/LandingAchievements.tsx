@@ -68,7 +68,7 @@ const imgs = [
   },
   {
     name: "Stompy Mini",
-    src: "/photos/achievements/StompyMini.webp",
+    src: "/photos/achievements/Stompymini.webp",
     alt: "Photo of Stompy Mini",
     dateTime: "2024-08",
     time: "Aug. 2024",
