@@ -13,6 +13,7 @@ import { LandingStack } from "@/landing/LandingStack";
 import { LandingMission } from "@/landing/LandingMission";
 import { LandingDiagram } from "@/landing/LandingDiagram";
 import Sponsors from "@/landing/Sponsors";
+import { CopyCode } from "@/components/ui/Code/CopyCode";
 
 export default function Home() {
   const lenis = useLenis();
@@ -78,20 +79,15 @@ export default function Home() {
               We&apos;re hackers, engineers, and researchers that believe in a world where robots
               are made for everyone.
             </p>
-            <p className="mb-6">
+            <p className="text-body-1 mb-6">
               Shoot us an email at{" "}
-              <span
-                className="inline-flex mx-0.5 px-1.5 bg-stone-900 rounded-md border border-stone-800 text-stone-400 hover:text-stone-300 active:text-stone-400 transition-colors duration-300 cursor-pointer"
-                onClick={() => copyEmail()}
-              >
-                inquiries@kscale.dev
-              </span>{" "}
-              for any business inquiries or if you want to connect with us!
+              <CopyCode string="inquiries@kscale.dev" size="large" font="regular" /> for any
+              business inquiries or if you want to connect with us!
             </p>
             <div className="flex flex-wrap gap-4 items-center">
-              <Button onClick={() => copyEmail()} icon={Copy}>
+              {/* <Button onClick={() => copyEmail()} icon={Copy}>
                 Copy email address
-              </Button>
+              </Button> */}
               <Link
                 className="w-fit text-body-2 transition-colors duration-300 text-orange-700 hover:text-orange-800 focus:text-orange-800 active:text-orange-900"
                 href="/careers"

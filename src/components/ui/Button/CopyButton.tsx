@@ -1,41 +1,13 @@
+import { copyString } from "@/components/util/functions";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 // import { Button } from "./Button";
-
-export const copyEmail = async () => {
-  const email = "inquiries@kscale.dev";
-
-  // Check if the clipboard API is available
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    try {
-      await navigator.clipboard.writeText(email);
-    } catch {
-      // Fallback to legacy approach
-      legacyCopy(email);
-    }
-  } else {
-    // Use legacy approach for browsers that don't support clipboard API
-    legacyCopy(email);
-  }
-};
-
-// Legacy approach using temporary input element
-const legacyCopy = (text: string) => {
-  const tempInput = document.createElement("input");
-  tempInput.value = text;
-  document.body.appendChild(tempInput);
-  tempInput.select();
-  try {
-    document.execCommand("copy");
-  } catch {}
-  document.body.removeChild(tempInput);
-};
 
 export const CopyButton = ({ className }: { className?: string }) => {
   const [isCopied, setIsCopied] = useState(false);
 
   const handleCopyEmail = async () => {
-    await copyEmail();
+    await copyString("inquiries@kscale.dev");
     setIsCopied(true);
   };
 

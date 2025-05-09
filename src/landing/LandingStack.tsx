@@ -6,6 +6,7 @@ import Arrow from "@/assets/icons/icon_arrowTR.svg";
 import Apps from "@/assets/content/application_apps.svg";
 import Image from "next/image";
 import { useInView } from "motion/react";
+import { CopyCode } from "@/components/ui/Code/CopyCode";
 
 type ArticleItem = {
   name: string;
@@ -61,7 +62,7 @@ export const LandingStack = () => {
         {
           name: "Robot Apps Store",
           description:
-            "All-in-one hub to install community policies, apps, and tools, as well as customize and train your very own robot–like teleop.",
+            "All-in-one hub to install community policies, apps, and tools, as well as customize and train your robot and use teleoperation.",
           thumbnail: <Apps className="w-full h-auto mb-4" />,
           condensed: true,
         },
@@ -81,7 +82,7 @@ export const LandingStack = () => {
         {
           name: "K-SIM",
           href: "https://github.com/kscalelabs/ksim",
-          code: "`pip install k-sim`",
+          code: "pip install k-sim",
           thumbnailSrc: "/photos/stack/K-Sim.mp4",
           thumbnailAlt: "K-SIM",
           width: 2560,
@@ -97,10 +98,10 @@ export const LandingStack = () => {
           description:
             "We're training a generalist policy using large-scale robot data with a new network architecture to enable the most capable and dexterous robots, running locally. Capable of integrating with other VLAs such as Pi0.5 or Gr00t",
           condensed: false,
-          thumbnailSrc: "/photos/stack/K-VLA.webp",
-          thumbnailAlt: "K-VLA",
-          width: 991,
-          height: 512,
+          // thumbnailSrc: "/photos/stack/K-VLA.webp",
+          // thumbnailAlt: "K-VLA",
+          // width: 991,
+          // height: 512,
         },
       ],
     },
@@ -112,7 +113,7 @@ export const LandingStack = () => {
         {
           name: "K-OS",
           href: "https://github.com/kscalelabs/ksim",
-          code: "`pip install pykos`",
+          code: "pip install pykos",
           description:
             "Rust based fast and reliable robot operating system combining hardware, software, and firmware, with easy to use Python SDK. Easily develop robot application with Python.",
           condensed: false,
@@ -124,7 +125,7 @@ export const LandingStack = () => {
         {
           name: "K-OS SIM",
           href: "https://github.com/kscalelabs/kvla",
-          code: "`pip install kos-sim`",
+          code: "pip install kos-sim",
           description:
             "KOS-Sim is a digital twin and model evaluator for the K-Scale Operating System (KOS), using the same gRPC interface as the real robot. Easily test and refine your models in simulation.",
           condensed: false,
@@ -277,7 +278,7 @@ const Article = ({
                 alt={item.thumbnailAlt ?? ""}
                 width={item.width}
                 height={item.height}
-                className="object-cover aspect-video mb-4"
+                className="object-cover aspect-video mb-4 w-full"
                 loading={"eager"}
                 priority={true}
                 sizes={"100dvw"}
@@ -292,7 +293,7 @@ const Article = ({
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex"
+                className="group inline-flex flex-wrap"
               >
                 {item.name}
                 <Arrow className="size-8 group-hover:translate-x-[12.5%] group-hover:-translate-y-[12.5%] group-focus:translate-x-[12.5%] group-focus:-translate-y-[12.5%] transition-transform duration-300" />
@@ -301,9 +302,10 @@ const Article = ({
               item.name
             )}
             {item.code && (
-              <code className="inline-flex mx-2 lg:mx-4 px-1.5 bg-stone-900 rounded-md border border-stone-800 text-stone-400 text-body-3">
-                {item.code}
-              </code>
+              // <code className="mb-2 inline-flex lg:mx-4 px-1.5 bg-stone-900 rounded-md border border-stone-800 text-stone-400 text-body-3">
+              //   {item.code}
+              // </code>
+              <CopyCode string={item.code} />
             )}
           </h3>
           {item.description && <p>{item.description}</p>}

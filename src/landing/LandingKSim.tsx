@@ -68,9 +68,9 @@ export const LandingKSim = () => {
     <>
       <section className="section">
         <hgroup className="col-span-default col-start-default mb-6">
-          <h2 className="text-heading-1 mb-2">K-Sim</h2>
+          <h2 className="text-heading-1 mb-2">K-SIM</h2>
           <p className="text-body-1">
-            K-Sim is a lightweight, modular framework for developing reinforcement-learning policies
+            K-SIM is a lightweight, modular framework for developing reinforcement-learning policies
             in simulation and deploying them on physical robots.
           </p>
         </hgroup>
@@ -96,7 +96,7 @@ export const LandingKSim = () => {
           </p>
         </div>
         <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3">
-          <h3 className="text-body-2 font-bold mb-1">Single-file workflows.</h3>
+          <h3 className="text-body-2 font-bold mb-1">Single-file workflows</h3>
           <p>
             A complete experiment—model, task, and config—lives in one python file, so you can
             easily root cause performance regressions.
@@ -112,7 +112,7 @@ export const LandingKSim = () => {
         <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3">
           <h3 className="text-body-2 font-bold mb-1">Extensible by design</h3>
           <p>
-            Swap in your own environments, rewards, algorithms, or choose from several built in
+            Customize your own environment, rewards and algorithms or choose from several built-in
             tasks ready to go.
           </p>
         </div>
@@ -120,7 +120,7 @@ export const LandingKSim = () => {
           <thead className="max-lg:sticky top-20 ">
             <tr className="grid grid-cols-3 md:grid-cols-6 items-start py-4 bg-background border-b border-b-stone-800">
               <th scope="col" className="text-body-3 font-bold md:col-start-2">
-                K-Sim
+                K-SIM
               </th>
               <th scope="col" className="text-body-3 font-bold">
                 MuJoCo Playground
@@ -191,7 +191,7 @@ export const LandingKSim = () => {
       <section className="section bg-stone-900">
         <hgroup className="col-span-full lg:col-span-4 lg:col-start-2 2xl:col-start-3 flex flex-col items-center">
           <h2 className="text-heading-2 text-center mb-2">
-            K-Sim lets you iterate quickly and trust the code that you deploy on your hardware.{" "}
+            K-SIM lets you iterate quickly and trust the code that you deploy on your hardware.{" "}
           </h2>
           <p className="text-body-2 text-center mb-4">
             Check out the source on{" "}
