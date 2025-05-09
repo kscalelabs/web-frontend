@@ -142,7 +142,7 @@ export const LandingProducts = () => {
                   <h5 className="text-body-2">Small but mighty</h5>
                   <p className="text-body-3 text-stone-400 mb-4">Starting at $1,000 USD</p>
                   <Button href="https://zeroth.bot" external fullWidth>
-                    Buy now
+                    Pre-order now
                   </Button>
                 </hgroup>
               </article>
