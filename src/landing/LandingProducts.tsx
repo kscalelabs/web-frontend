@@ -157,7 +157,8 @@ export const LandingProducts = () => {
                 {/* <RobotWrapper /> */}
 
                 <hgroup className="mt-auto flex flex-col items-center">
-                  <h4 className="text-heading-2 flex items-center gap-2 mb-2">M-Bot </h4>
+                  <h4 className="text-heading-2 flex items-center gap-2 mb-1">M-Bot </h4>
+                  <h5 className="text-body-2 mb-4">QDD actuators, plastic (2.5&apos;)</h5>
                   <span className="text-stone-500 text-body-3 font-bold border border-stone-500 rounded-full px-3 py-1">
                     Coming soon
                   </span>
