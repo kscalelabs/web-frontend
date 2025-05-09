@@ -114,7 +114,7 @@ export default function Home() {
             </ul>
           </aside>
         </section>
-        
+
         <Sponsors />
       </main>
     </div>
