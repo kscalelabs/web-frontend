@@ -1,11 +1,9 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/Button/Button";
 import { useLenis } from "lenis/dist/lenis-react";
-import Copy from "@/assets/icons/icon_copy.svg";
 import Link from "next/link";
 import { LandingDemos } from "@/landing/LandingDemos";
 import { LandingAchievements } from "@/landing/LandingAchievements";
-import { copyEmail } from "@/components/ui/Button/CopyButton";
 import { LandingCommunity } from "@/landing/LandingCommunity";
 import { LandingKSim } from "@/landing/LandingKSim";
 import { LandingProducts } from "@/landing/LandingProducts";
@@ -97,15 +95,17 @@ export default function Home() {
             </div>
           </hgroup>
           <aside className="col-span-full md:col-span-2 lg:col-span-1 lg:-col-end-1 2xl:-col-end-2">
-            <h3 className="text-body-3 font-medium text-stone-400 mb-1">Our team (8)</h3>
+            <h3 className="text-body-3 font-medium text-stone-400 mb-1">Our team (10)</h3>
             <ul className="grid grid-cols-2 gap-x-4 lg:flex flex-col gap-y-2">
               <li>Aaron</li>
               <li>Ali</li>
               <li>Ben</li>
               <li>Chris</li>
+              <li>Ian</li>
               <li>Jingxiang</li>
               <li>Pawel</li>
               <li>Rui</li>
+              <li>Scott</li>
               <li>Wesley</li>
             </ul>
           </aside>
