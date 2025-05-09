@@ -1,6 +1,5 @@
 import Discord from "@/assets/icons/icon_discord.svg";
-import { Button, ExpressiveButton } from "@/components/ui/Button/Button";
-import { photoPathAltText, photoPaths } from "@/components/util/photoPaths";
+import { Button } from "@/components/ui/Button/Button";
 import Image from "next/image";
 
 export const LandingCommunity = () => {

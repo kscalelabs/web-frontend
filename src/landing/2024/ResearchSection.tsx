@@ -1,4 +1,4 @@
-import { ColorVariant, FillMode, IconMode, Size } from "@/components/util/constants";
+import { ColorVariant } from "@/components/util/constants";
 import { useWindowSize } from "@/components/util/functions";
 import clsx from "clsx";
 import { motion, useMotionValue } from "motion/react";
@@ -54,7 +54,7 @@ interface ResearchItem {
   variant: ColorVariant;
 }
 
-const ResearchCard = ({ title, description, link, index, variant }: ResearchItem) => {
+const ResearchCard = ({ title, description, index, variant }: ResearchItem) => {
   const bg = (variant: ColorVariant): string => {
     switch (variant) {
       case ColorVariant.METHYL:

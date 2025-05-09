@@ -1,4 +1,5 @@
 import { photoPathAltText, photoPaths } from "@/components/util/photoPaths";
+import Image from "next/image";
 
 // const EmailSignupSection = () => (
 //   <form
@@ -46,10 +47,12 @@ const HeaderSection = () => {
   return (
     <header className="col-span-full min-h-[90svh] flex flex-col items-start justify-end text-foreground bg-background relative overflow-hidden -mx-[5vw] px-[5vw]">
       <div className="absolute inset-0">
-        <img
+        <Image
           src={photoPaths.LANDING_IMAGE_3}
-          className="w-full h-full object-cover"
-          aria-label={photoPathAltText.LANDING_IMAGE_3_ALT}
+          alt={photoPathAltText.LANDING_IMAGE_3_ALT}
+          layout="fill"
+          objectFit="cover"
+          priority
         />
       </div>
       <div className="flex items-end justify-between w-full mb-12">

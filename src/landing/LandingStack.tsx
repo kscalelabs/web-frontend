@@ -1,10 +1,11 @@
 import Link from "next/link";
 import clsx from "clsx";
-import { motion, useInView } from "motion/react";
+import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import Arrow from "@/assets/icons/icon_arrowTR.svg";
 import Apps from "@/assets/content/application_apps.svg";
 import Image from "next/image";
+import { useInView } from "motion/react";
 
 type ArticleItem = {
   name: string;
@@ -40,7 +41,6 @@ export const LandingStack = () => {
     }
 
     // Set the topmost visible section as active
-    console.log("visibleSections", visibleSections.current);
     const topMost = Array.from(visibleSections.current)[0];
     if (topMost) {
       setActiveId(topMost);
@@ -87,7 +87,6 @@ export const LandingStack = () => {
           width: 2560,
           height: 1440,
           video: true,
-          // thumbnailSrc: "/photos//ksim.png",
           description:
             "High-performance reinforcement learning framework optimized for training humanoid robot locomotion, manipulation, and real world deployment. For tasks like walking, dancing, and object picking.",
           condensed: false,
@@ -96,7 +95,7 @@ export const LandingStack = () => {
           name: "K-VLA",
           href: "https://github.com/kscalelabs/kvla",
           description:
-            "We’re training a generalist policy using large-scale robot data with a new network architecture to enable the most capable and dexterous robots, running locally. Capable of integrating with other VLAs such as Pi0.5 or Gr00t",
+            "We're training a generalist policy using large-scale robot data with a new network architecture to enable the most capable and dexterous robots, running locally. Capable of integrating with other VLAs such as Pi0.5 or Gr00t",
           condensed: false,
           thumbnailSrc: "/photos/stack/K-VLA.webp",
           thumbnailAlt: "K-VLA",
@@ -127,7 +126,7 @@ export const LandingStack = () => {
           href: "https://github.com/kscalelabs/kvla",
           code: "`pip install kos-sim`",
           description:
-            "​KOS-Sim is a digital twin and model evaluator for the K-Scale Operating System (KOS), using the same gRPC interface as the real robot. Easily test and refine your models in simulation.",
+            "KOS-Sim is a digital twin and model evaluator for the K-Scale Operating System (KOS), using the same gRPC interface as the real robot. Easily test and refine your models in simulation.",
           condensed: false,
           thumbnailSrc: "/photos/stack/KOSsim.gif",
           thumbnailAlt: "K-OS SIM",
@@ -184,7 +183,6 @@ export const LandingStack = () => {
                   )}
                   onClick={() => {
                     reorderSet(i + 1);
-                    console.log(visibleSections.current);
                   }}
                 >
                   {e.layer}
@@ -223,28 +221,26 @@ const Article = ({
   id: string;
   heading: string;
   index: number;
-  onInViewChange: (id: number, inView: boolean) => void;
-  registerRef: (el: HTMLElement | null) => void;
+  /* eslint-disable-next-line no-unused-vars */
+  onInViewChange: (index: number, visible: boolean) => void;
+  /* eslint-disable-next-line no-unused-vars */
+  registerRef: (element: HTMLElement | null) => void;
   items: ArticleItem[];
 }) => {
   const ref = useRef(null);
-  const inView = useInView(ref, { amount: "some", margin: "-320px 0px -80px 0px" }); // 50% in view
+  const isVisible = useInView(ref, { amount: "some", margin: "-320px 0px -80px 0px" }); // 50% in view
 
   useEffect(() => {
-    onInViewChange(index, inView);
-  }, [inView]);
+    onInViewChange(index, isVisible);
+  }, [isVisible, index, onInViewChange]);
 
   useEffect(() => {
     registerRef(ref.current);
-  }, [ref.current]);
-
-  console.log(items);
+  }, [registerRef, ref]);
 
   return (
     <motion.article
       className="grid grid-cols-subgrid col-span-full 2xl:col-span-6 2xl:col-start-2 scroll-mt-44 2xl:scroll-mt-32 mb-16"
-      //   initial={{ opacity: 0 }}
-      //   animate={{ opacity: inView ? 1 : 0.5 }}
       id={id}
       ref={ref}
     >

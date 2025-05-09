@@ -1,13 +1,6 @@
 import { CTAButton, InlineCTA } from "@/components/buttons/CTAButtons";
 import { ExpressiveArrow } from "@/components/iconography/Iconography";
-import {
-  ColorVariant,
-  FillMode,
-  IconMode,
-  Size,
-  TeamCol1,
-  TeamCol2,
-} from "@/components/util/constants";
+import { ColorVariant, FillMode, Size, TeamCol1, TeamCol2 } from "@/components/util/constants";
 import { photoPathAltText, photoPaths } from "@/components/util/photoPaths";
 import Image from "next/image";
 
