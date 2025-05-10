@@ -1,5 +1,3 @@
-import { CopyButton } from "@/components/ui/Button/CopyButton";
-import Arrow from "@/assets/icons/icon_arrowTR.svg";
 import Image from "next/image";
 
 export default function Page() {
@@ -27,9 +25,9 @@ export default function Page() {
             </p>
             <p className="text-body-2 text-stone-200 mb-4">
               <i>
-                "A [robot] is required to enter an average American home and figure out how to make
-                coffee: find the coffee machine, find the coffee, add water, find a mug, and brew
-                the coffee by pushing the proper buttons."
+                &quot;A [robot] is required to enter an average American home and figure out how to
+                make coffee: find the coffee machine, find the coffee, add water, find a mug, and
+                brew the coffee by pushing the proper buttons.&quot;
               </i>
             </p>
             <p className="text-body-2 text-stone-200 mb-4">This has not yet been completed.</p>
@@ -58,7 +56,7 @@ export default function Page() {
             <p className="text-body-2 text-stone-200 mb-4 my-4">
               While easy and straightforward for humans, these tasks remain difficult for robots. If
               we can solve the coffee test, then we can make robots do almost anything around our
-              houses and businesses — the potential of usefulness is limitness.{" "}
+              houses and businesses — the potential of usefulness is limitless.{" "}
             </p>
           </hgroup>
 
@@ -102,12 +100,12 @@ export default function Page() {
             </ul>
             <p className="text-body-2 text-stone-200 mb-4">
               However, watching the ecosystem unfold, we feel pessimistic about a world of humanoid
-              robots controlled by big corporations. Even today, we're seeing humanoid robots with
-              software backdoors to autocratic governments, and massive investments from people
-              trying to build "I, Robot"-style conglomerates. Our goal at K-Scale is to build a
-              great, open-source, affordable humanoid robot that anyone can program and audit, and
-              that can eventually scale to billions of homes and businesses without worrying about
-              whether someone else is controlling it.
+              robots controlled by big corporations. Even today, we&apos;re seeing humanoid robots
+              with software backdoors to autocratic governments, and massive investments from people
+              trying to build &quot;I, Robot&quot;-style conglomerates. Our goal at K-Scale is to
+              build a great, open-source, affordable humanoid robot that anyone can program and
+              audit, and that can eventually scale to billions of homes and businesses without
+              worrying about whether someone else is controlling it.
             </p>
             <p className="text-body-2 text-stone-200 mb-4">
               We set out to solve general purpose robotics by building affordable,
@@ -137,11 +135,11 @@ export default function Page() {
               the simulation.
             </p>
             <p className="text-body-2 text-stone-200 mb-4">
-              We've made it to be modular, simple, and fast so anyone who knows a little bit about
-              ML and Python can design and deploy their policy in an hour — you can specify your
-              reward function manually (for example, the Euclidean distance between the hand and
-              some target position), or by using some reference motions as priors and training with
-              AMP or similar methods.
+              We&apos;ve made it to be modular, simple, and fast so anyone who knows a little bit
+              about ML and Python can design and deploy their policy in an hour — you can specify
+              your reward function manually (for example, the Euclidean distance between the hand
+              and some target position), or by using some reference motions as priors and training
+              with AMP or similar methods.
             </p>
             <p className="text-body-2 text-stone-200 mb-4">To get started:</p>
             <ol className="list-decimal list-inside text-body-2 text-stone-200 mb-4 pl-4 flex flex-col gap-2">
@@ -176,14 +174,14 @@ export default function Page() {
                 rel="noopener noreferrer"
                 className="underline"
               >
-                https://kscale.dev/leaderboard
+                &quot;https://kscale.dev/leaderboard&quot;
               </a>
               )
             </p>
             <p className="text-body-2 text-stone-200 mb-4">
               After training a model and verifying it with the deployment script, you can send it to
-              us and we will run it on one of our physical robots so you can see it in action. We're
-              building a leaderboard from the submissions:{" "}
+              us and we will run it on one of our physical robots so you can see it in action.
+              We&apos;re building a leaderboard from the submissions:{" "}
               <a
                 href="https://url.kscale.dev/leaderboard"
                 target="_blank"

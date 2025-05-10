@@ -1,8 +1,7 @@
-import { ComponentProps, ElementType, useEffect, useState } from "react";
+import { ComponentProps } from "react";
 import { cva, VariantProps } from "class-variance-authority";
 import { copyString } from "@/components/util/functions";
 import Copy from "@/assets/icons/icon_copy.svg";
-import clsx from "clsx";
 
 interface Props
   extends ComponentProps<"button">,
@@ -46,7 +45,7 @@ const iconStyles = cva(
   }
 );
 
-export const CopyCode = ({ string, size, font, ...props }: Props) => {
+export const CopyCode = ({ string, size, font }: Props) => {
   return (
     <button
       className={buttonStyles({ font, size })}
