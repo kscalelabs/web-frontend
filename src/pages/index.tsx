@@ -68,8 +68,8 @@ export default function Home() {
         <LandingDemos />
         <LandingStack />
         <LandingKSim />
-        <LandingAchievements />
         <LandingCommunity />
+        <LandingAchievements />
         <section className="section">
           <hgroup className="col-span-default col-start-default mb-6">
             <h2 className="text-body-2 font-medium text-stone-400 mb-1">About us</h2>
