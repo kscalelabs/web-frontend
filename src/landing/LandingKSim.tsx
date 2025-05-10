@@ -1,12 +1,12 @@
 import TableTrue from "@/assets/icons/table_true.svg";
 import TableFalse from "@/assets/icons/table_false.svg";
-// import Play from "@/assets/icons/icon_play.svg";
+import Arrow from "@/assets/icons/icon_arrowR.svg";
 import { Button } from "@/components/ui/Button/Button";
 import Visual1 from "@/assets/content/visual_ksim_1.svg";
 import Visual2 from "@/assets/content/visual_ksim_2.svg";
 import Visual3 from "@/assets/content/visual_ksim_3.svg";
 import Visual4 from "@/assets/content/visual_ksim_4.svg";
-// import { MediaPlaceholder } from "@/components/ui/Media/MediaPlaceholder";
+import Image from "next/image";
 
 export const LandingKSim = () => {
   const tableItems = [
@@ -78,18 +78,31 @@ export const LandingKSim = () => {
             simulation and subsequently deploying on physical robots
           </p>
         </hgroup>
-        {/* <div className="col-span-full lg:col-span-2 lg:col-start-1 2xl:col-start-2 2xl:col-span-2 lg:mb-6 grid gap-x-4 md:gap-x-4 grid-cols-subgrid items-center">
-          <MediaPlaceholder className="lg:col-span-full" />
+        <a
+          className="group col-span-full lg:col-span-2 2xl:col-span-2 lg:mb-6 grid gap-x-4 md:gap-x-4 grid-cols-subgrid items-center"
+          href="https://www.youtube.com/watch?v=nMkS6VSh-yw"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="lg:col-span-full aspect-video rounded-md @xs:rounded-lg @sm:rounded-xl @lg:rounded-2xl">
+            <Image
+              src="/photos/stack/ksim-ali.png"
+              alt="Ali using K-Sim"
+              className="rounded-lg"
+              width={1280}
+              height={720}
+            />
+          </div>
           <hgroup className="max-lg:my-4 lg:mt-4 sm:col-span-3 lg:col-span-full">
-            <h3 className="text-body-2 font-bold">See how our ML lead Ali uses K-Sim</h3>
-            <div className="flex w-full items-center gap-2">
-              <p className="inline-flex w-fit items-center gap-1 ">
-                <Play className="size-6 -ml-0.5" /> Play video
-              </p>
-              <span className="text-body-3 text-stone-400"> (2:30)</span>
+            <h3 className="inline-flex text-body-2 font-bold">
+              See how our ML lead Ali uses K-Sim{" "}
+            </h3>
+            <div className="flex w-full items-center gap-2 opacity-50">
+              <p className="inline-flex w-fit items-center gap-1 ">Go to video</p>
+              <Arrow className="group-hover:translate-x-[12.5%] transition-transform size-6 text-stone-400" />
             </div>
           </hgroup>
-        </div> */}
+        </a>
       </section>
       <section className="section">
         <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-start-2">
