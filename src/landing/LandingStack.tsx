@@ -248,7 +248,7 @@ const Article = ({
 
   return (
     <motion.article
-      className="grid grid-cols-subgrid col-span-full 2xl:col-span-6 2xl:col-start-2 scroll-mt-44 2xl:scroll-mt-32 mb-16"
+      className="grid grid-cols-subgrid col-span-full 2xl:col-span-6 2xl:col-start-2 scroll-mt-44 2xl:scroll-mt-32 mb-16 sm:mb-24 2xl:mb-32"
       id={id}
       ref={ref}
     >
