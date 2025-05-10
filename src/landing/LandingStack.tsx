@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import Arrow from "@/assets/icons/icon_arrowTR.svg";
 import Apps from "@/assets/content/application_apps.svg";
+import { KOSThumbnail } from "@/assets/content/stack/StackThumbnail";
 import Image from "next/image";
 import { useInView } from "motion/react";
 import { CopyCode } from "@/components/ui/Code/CopyCode";
@@ -124,10 +125,7 @@ export const LandingStack = () => {
             "Ships with an easy to use Python SDK to easily develop robot applications.",
           ],
           condensed: false,
-          thumbnailSrc: "/photos/stack/KOS.webp",
-          thumbnailAlt: "K-OS",
-          width: 992,
-          height: 512,
+          thumbnail: <KOSThumbnail />,
         },
         {
           name: "K-OS SIM",
