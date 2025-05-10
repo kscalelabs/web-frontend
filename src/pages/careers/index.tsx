@@ -5,19 +5,19 @@ import Image from "next/image";
 export default function Page() {
   const jobs = [
     {
-      title: "Head of Human Resources",
-      description: "$70K - $160K · 1+ Years of Experience",
+      title: "Frontend Developer (Contractor)",
+      description: <>$100K · 1+ years of experience</>,
       link: "https://www.ycombinator.com/companies/k-scale-labs/jobs/iZiLfNw-head-of-human-resources",
     },
     {
       title: "Robotics Engineer (Software)",
-      description: "$100K - $250K · Any (New Grads OK)",
+      description: <>$100K &ndash; $250K · Any (New Grads OK)</>,
 
       link: "https://www.ycombinator.com/companies/k-scale-labs/jobs/DK5GZzD-robotics-engineer-software",
     },
     {
       title: "Robotics Engineer (Electrical)",
-      description: "$100K - $250K · Any (New Grads OK)",
+      description: <>$100K &ndash; $250K · Any (New Grads OK)</>,
       link: "https://www.ycombinator.com/companies/k-scale-labs/jobs/8CEmad4-robotics-engineer-electrical",
     },
   ];

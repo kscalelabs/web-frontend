@@ -12,7 +12,7 @@ interface Props
 }
 
 const buttonStyles = cva(
-  "group inline-flex mx-0.5 px-1.5 bg-stone-900 rounded-md border border-stone-800 text-stone-300 hover:text-stone-100 active:text-orange-500 transition-colors duration-300 cursor-pointer",
+  "group inline-flex mx-0.5 px-1.5 bg-stone-900 rounded-md border border-stone-800 text-stone-300 hover:text-stone-100 active:text-orange-500 transition-colors duration-100 active:duration-50 cursor-pointer",
   {
     variants: {
       font: {
@@ -32,7 +32,7 @@ const buttonStyles = cva(
 );
 
 const iconStyles = cva(
-  "ml-1.5 my-auto fill-stone-300 group-hover:fill-stone-100 group-active:fill-orange-500 transition-colors duration-300",
+  "ml-1.5 my-auto fill-stone-300 group-hover:fill-stone-100 group-active:fill-orange-500 transition-colors duration-100",
   {
     variants: {
       size: {
