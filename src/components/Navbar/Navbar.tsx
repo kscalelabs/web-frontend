@@ -110,7 +110,7 @@ export const Navbar = () => {
   const mobileLinks = [
     {
       name: "K-Bot",
-      href: "https://shop.kscale.dev/",
+      href: "https://shop.kscale.dev/products/kbot",
     },
     {
       name: "Z-Bot",
@@ -132,7 +132,7 @@ export const Navbar = () => {
       items: [
         {
           name: "K-Bot",
-          href: "https://shop.kscale.dev/",
+          href: "https://shop.kscale.dev/products/kbot",
         },
         {
           name: "Z-Bot",
@@ -163,7 +163,7 @@ export const Navbar = () => {
     <div className="lg:h-0">
       <motion.header
         className={clsx(
-          "fixed top-0 inset-x-0 z-50 px-layout py-4 flex justify-between max-lg:items-center max-lg:border-b lg:h-24 2xl:h-[6.25rem] transitions-all duration-300 ease-out",
+          "fixed top-0 inset-x-0 z-50 px-layout py-4 flex justify-between max-lg:items-center max-lg:border-b lg:h-24 transitions-all duration-300 ease-out",
           mobileTopOpen || mobileOpen
             ? "max-2xl:bg-background max-2xl:border-b-stone-800"
             : "max-2xl:bg-transparent max-2xl:border-b-transparent"
@@ -194,6 +194,7 @@ export const Navbar = () => {
             animate={{
               height: desktopOpen ? "12rem" : "auto",
             }}
+            transition={{ duration: 0.35 }}
           />
           {desktopLinks.map((group) => (
             <hgroup className="relative mt-3.5 w-32" key={`nav-group-${group.name}`}>
@@ -209,6 +210,7 @@ export const Navbar = () => {
                 className="mt-2 flex flex-col gap-2 absolute"
                 initial={false}
                 animate={{ opacity: desktopOpen ? 1 : 0, display: desktopOpen ? "flex" : "none" }}
+                transition={{ duration: 0.35 }}
               >
                 {group.items.map((item) => (
                   <li key={`nav-item-${group.name}-${item.name}`}>
@@ -234,7 +236,9 @@ export const Navbar = () => {
               </motion.ul>
             </hgroup>
           ))}
-          <Button href="/benchmarks">View benchmarks</Button>
+          <Button href="/benchmarks" fullHeight>
+            View benchmarks
+          </Button>
         </nav>
       </motion.header>
       <AnimatePresence>

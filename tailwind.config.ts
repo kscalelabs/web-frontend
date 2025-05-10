@@ -52,7 +52,7 @@ const config: Config = {
           },
         ],
         "heading-1-xl": [
-          "2.5rem",
+          "2.25rem",
           {
             lineHeight: "1.05",
             letterSpacing: "-0.02em",

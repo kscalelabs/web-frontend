@@ -5,19 +5,19 @@ import Image from "next/image";
 export default function Page() {
   const jobs = [
     {
-      title: "Head of Human Resources",
-      description: "$70K - $160K · 1+ Years of Experience",
+      title: "Frontend Developer (Contractor)",
+      description: <>$100K · 1+ years of experience</>,
       link: "https://www.ycombinator.com/companies/k-scale-labs/jobs/iZiLfNw-head-of-human-resources",
     },
     {
       title: "Robotics Engineer (Software)",
-      description: "$100K - $250K · Any (New Grads OK)",
+      description: <>$100K &ndash; $250K · Any (New Grads OK)</>,
 
       link: "https://www.ycombinator.com/companies/k-scale-labs/jobs/DK5GZzD-robotics-engineer-software",
     },
     {
       title: "Robotics Engineer (Electrical)",
-      description: "$100K - $250K · Any (New Grads OK)",
+      description: <>$100K &ndash; $250K · Any (New Grads OK)</>,
       link: "https://www.ycombinator.com/companies/k-scale-labs/jobs/8CEmad4-robotics-engineer-electrical",
     },
   ];
@@ -43,9 +43,9 @@ export default function Page() {
               Our mission is to build general purpose robotics and open-source it to everyone.
             </p>
             <p className="text-body-2 text-stone-200 mb-4">
-              Over the past six months, we&apos;ve built a humanoid robot stack from
-              state-of-the-art machine learning models trained on our infrastructure, building the
-              operating system, designing the hardware, and manufactured it:
+              Over the past six months, we&apos;ve built the humanoid-robot stack: we trained
+              state-of-the-art machine-learning models on our training infrastructure, developed the
+              operating system, and designed/ manufactured the hardware.
             </p>
           </hgroup>
         </div>
@@ -134,7 +134,7 @@ export default function Page() {
           ))}
         </ul>
         <aside className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 mb-16">
-          <p className="mb-4"> Don&apos;t see an role that matches you?</p>
+          <p className="mb-4"> Don&apos;t see a role that matches you?</p>
           <CopyButton />
         </aside>
       </section>

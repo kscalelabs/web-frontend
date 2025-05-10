@@ -1,10 +1,13 @@
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 
 export const LandingDemos = () => {
   const [activeItem, setActiveItem] = useState(0);
 
-  const items = ["Locomotion", "Manipulation"];
+  const items = [
+    { name: "Locomotion", src: "/videos/demo_locomotion.mp4" },
+    { name: "Manipulation", src: "/videos/demo_manipulation.mp4" },
+  ];
 
   return (
     <section className="section pt-0">
@@ -14,7 +17,7 @@ export const LandingDemos = () => {
       </hgroup>
 
       <div className="relative col-span-full 2xl:col-span-6 2xl:col-start-2">
-        <menu className="sm:absolute sm:w-fit sm:top-4 sm:left-4 w-full p-1 flex gap-2 rounded-full mb-4 bg-stone-800/80 backdrop-blur-md border border-stone-700">
+        <menu className="z-10 sm:absolute sm:w-fit sm:top-4 sm:left-4 w-full p-1 flex gap-2 rounded-full mb-4 bg-stone-800/80 backdrop-blur-md border border-stone-700">
           {items.map((item, index) => (
             <li key={`demo-item--${index}`} className="flex-1">
               <motion.button
@@ -27,15 +30,36 @@ export const LandingDemos = () => {
                     layoutId="test"
                   />
                 )}
-                <span className="relative z-10">{item}</span>
+                <span className="relative z-10">{item.name}</span>
               </motion.button>
             </li>
           ))}
         </menu>
         <div>
           {
-            <article className="aspect-[3/4] sm:aspect-video bg-gradient-to-br from-rust via-background to-methyl rounded-2xl p-6 flex flex-col justify-end">
-              <p>An impressive statistic about the current state of locomotion.</p>
+            <article className="relative aspect-[3/4] sm:aspect-video rounded-2xl p-6 flex flex-col justify-end overflow-hidden">
+              <AnimatePresence>
+                {items.map(
+                  (item, i) =>
+                    i == activeItem && (
+                      <motion.video
+                        width="1920"
+                        height="1080"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="absolute inset-0 size-full object-cover brightness-50 rounded-2xl"
+                        src={items[activeItem].src}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        key={`demo-video--${item.name.toLowerCase()}`}
+                      />
+                    )
+                )}
+              </AnimatePresence>
+              {/* <p className="z-10">An impressive statistic about the current state of locomotion.</p> */}
             </article>
           }
         </div>

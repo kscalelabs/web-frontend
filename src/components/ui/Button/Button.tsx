@@ -25,6 +25,10 @@ const buttonStyles = cva(
         true: "w-full",
         false: "w-fit",
       },
+      fullHeight: {
+        true: "h-full",
+        false: null,
+      },
       adaptive: {
         true: "w-full sm:w-fit",
         false: null,
@@ -37,6 +41,7 @@ const buttonStyles = cva(
     defaultVariants: {
       intent: "primary",
       fullWidth: false,
+      fullHeight: false,
       adaptive: false,
     },
   }
@@ -49,11 +54,12 @@ export const Button = ({
   intent,
   adaptive,
   fullWidth,
+  fullHeight,
   disabled = false,
   icon: Icon,
   ...props
 }: Props) => {
-  const classes = buttonStyles({ intent, fullWidth, adaptive, disabled });
+  const classes = buttonStyles({ intent, fullWidth, fullHeight, adaptive, disabled });
 
   const renderContent = () => (
     <>

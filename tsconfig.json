@@ -18,6 +18,7 @@
     }
   },
   "include": [
+    "video.d.ts",
     "svgr.d.ts",
     "next-env.d.ts",
     "**/*.ts",
