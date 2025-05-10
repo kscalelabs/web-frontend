@@ -4,12 +4,14 @@ import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import Arrow from "@/assets/icons/icon_arrowTR.svg";
 import Apps from "@/assets/content/application_apps.svg";
+import { KOSThumbnail } from "@/assets/content/stack/StackThumbnail";
 import Image from "next/image";
 import { useInView } from "motion/react";
+import { CopyCode } from "@/components/ui/Code/CopyCode";
 
 type ArticleItem = {
   name: string;
-  description?: string;
+  description?: string[];
   href?: string;
   thumbnail?: any;
   condensed: boolean;
@@ -60,15 +62,17 @@ export const LandingStack = () => {
       items: [
         {
           name: "Robot Apps Store",
-          description:
-            "All-in-one hub to install community policies, apps, and tools, as well as customize and train your very own robot–like teleop.",
+          description: [
+            "All-in-one hub to install community policies, apps, and tools, as well as customize and train your robot and use teleoperation.",
+          ],
           thumbnail: <Apps className="w-full h-auto mb-4" />,
           condensed: true,
         },
         {
-          name: "K-Lang",
-          description:
-            "Skip writing ROS nodes with our domain-specific language for interfacing with neural interpretation.",
+          name: "K-LANG",
+          description: [
+            "Control your robot with neural interpretation domain-specific language (DSL).",
+          ],
           condensed: true,
         },
       ],
@@ -81,26 +85,29 @@ export const LandingStack = () => {
         {
           name: "K-SIM",
           href: "https://github.com/kscalelabs/ksim",
-          code: "`pip install k-sim`",
-          thumbnailSrc: "/photos/stack/K-Sim.mp4",
+          code: "pip install k-sim",
+          thumbnailSrc: "/photos/stack/k-sim.gif",
           thumbnailAlt: "K-SIM",
           width: 2560,
           height: 1440,
-          video: true,
-          description:
-            "High-performance reinforcement learning framework optimized for training humanoid robot locomotion, manipulation, and real world deployment. For tasks like walking, dancing, and object picking.",
+          description: [
+            "High-performance reinforcement learning framework optimized for training humanoid robot locomotion, manipulation, and real world deployment.",
+            "High versatility for tasks such as walking, dancing, household organization and even cooking.",
+          ],
           condensed: false,
         },
         {
           name: "K-VLA",
           href: "https://github.com/kscalelabs/kvla",
-          description:
-            "We're training a generalist policy using large-scale robot data with a new network architecture to enable the most capable and dexterous robots, running locally. Capable of integrating with other VLAs such as Pi0.5 or Gr00t",
+          description: [
+            "A generalist policy using large-scale robot data with novel network architecture to enable the most capable and dexterous robots.",
+            "Locally run and capable of integrating with other VLAs such as Pi0.5 AND Gr00t.",
+          ],
           condensed: false,
-          thumbnailSrc: "/photos/stack/K-VLA.webp",
-          thumbnailAlt: "K-VLA",
-          width: 991,
-          height: 512,
+          // thumbnailSrc: "/photos/stack/K-VLA.webp",
+          // thumbnailAlt: "K-VLA",
+          // width: 991,
+          // height: 512,
         },
       ],
     },
@@ -112,21 +119,22 @@ export const LandingStack = () => {
         {
           name: "K-OS",
           href: "https://github.com/kscalelabs/ksim",
-          code: "`pip install pykos`",
-          description:
-            "Rust based fast and reliable robot operating system combining hardware, software, and firmware, with easy to use Python SDK. Easily develop robot application with Python.",
+          code: "pip install pykos",
+          description: [
+            "Rust-based, fast, and reliable robot operating system combining hard, software, and firmware.",
+            "Ships with an easy to use Python SDK to easily develop robot applications.",
+          ],
           condensed: false,
-          thumbnailSrc: "/photos/stack/KOS.webp",
-          thumbnailAlt: "K-OS",
-          width: 992,
-          height: 512,
+          thumbnail: <KOSThumbnail />,
         },
         {
           name: "K-OS SIM",
           href: "https://github.com/kscalelabs/kvla",
-          code: "`pip install kos-sim`",
-          description:
-            "KOS-Sim is a digital twin and model evaluator for the K-Scale Operating System (KOS), using the same gRPC interface as the real robot. Easily test and refine your models in simulation.",
+          code: "pip install kos-sim",
+          description: [
+            "A digital twin / model evaluator for the K-Scale Operating System (K-OS) using the same gRPC interface as our real robot",
+            "Effortlessly test and refine your models in simulation.",
+          ],
           condensed: false,
           thumbnailSrc: "/photos/stack/KOSsim.gif",
           thumbnailAlt: "K-OS SIM",
@@ -245,8 +253,8 @@ const Article = ({
       ref={ref}
     >
       <hgroup className="col-span-default">
-        <h2 className="text-body-2 font-medium text-stone-400 mb-1">{name} layer</h2>
-        <p className="text-heading-1 mb-4">{heading}</p>
+        <h2 className="text-body-2 font-medium text-stone-400 mb-2">{name} layer</h2>
+        <p className="text-heading-1 mb-6">{heading}</p>
       </hgroup>
       {items.map((item, i) => (
         <div
@@ -267,7 +275,7 @@ const Article = ({
                 muted
                 loop
                 playsInline
-                className="object-cover aspect-video mb-4"
+                className="object-cover aspect-video mb-6 w-full"
               >
                 <source src={item.thumbnailSrc} type="video/mp4" />
               </video>
@@ -277,7 +285,7 @@ const Article = ({
                 alt={item.thumbnailAlt ?? ""}
                 width={item.width}
                 height={item.height}
-                className="object-cover aspect-video mb-4"
+                className="object-cover aspect-video mb-6 w-full"
                 loading={"eager"}
                 priority={true}
                 sizes={"100dvw"}
@@ -292,7 +300,7 @@ const Article = ({
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex"
+                className="group inline-flex flex-wrap"
               >
                 {item.name}
                 <Arrow className="size-8 group-hover:translate-x-[12.5%] group-hover:-translate-y-[12.5%] group-focus:translate-x-[12.5%] group-focus:-translate-y-[12.5%] transition-transform duration-300" />
@@ -301,12 +309,21 @@ const Article = ({
               item.name
             )}
             {item.code && (
-              <code className="inline-flex mx-2 lg:mx-4 px-1.5 bg-stone-900 rounded-md border border-stone-800 text-stone-400 text-body-3">
-                {item.code}
-              </code>
+              // <code className="mb-2 inline-flex lg:mx-4 px-1.5 bg-stone-900 rounded-md border border-stone-800 text-stone-400 text-body-3">
+              //   {item.code}
+              // </code>
+              <CopyCode string={item.code} />
             )}
           </h3>
-          {item.description && <p>{item.description}</p>}
+          {item.description &&
+            item.description.map((desc, i) => (
+              <p
+                key={`article-descriptor-${id}--${i}`}
+                className="mb-2 text-stone-400 first-of-type:text-foreground"
+              >
+                {desc}
+              </p>
+            ))}
         </div>
       ))}
     </motion.article>
@@ -317,11 +334,11 @@ const Placeholder = ({ condensed }: { condensed: boolean }) => {
   return (
     <div
       className={clsx(
-        "bg-stone-900 mb-4 flex items-center justify-center",
+        "bg-stone-900 mb-4 flex items-center justify-center select-none cursor-default",
         condensed ? "aspect-[5/1]" : "aspect-video"
       )}
     >
-      <span className="text-stone-500 text-body-3 font-bold border border-stone-500 rounded-full px-3 py-1">
+      <span className="text-stone-500 text-body-3 font-bold border border-stone-500 rounded-full px-3 py-1 cursor-default">
         Coming soon
       </span>
     </div>
