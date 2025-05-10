@@ -1,11 +1,9 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/Button/Button";
 import { useLenis } from "lenis/dist/lenis-react";
-import Copy from "@/assets/icons/icon_copy.svg";
 import Link from "next/link";
 import { LandingDemos } from "@/landing/LandingDemos";
 import { LandingAchievements } from "@/landing/LandingAchievements";
-import { copyEmail } from "@/components/ui/Button/CopyButton";
 import { LandingCommunity } from "@/landing/LandingCommunity";
 import { LandingKSim } from "@/landing/LandingKSim";
 import { LandingProducts } from "@/landing/LandingProducts";
@@ -13,6 +11,7 @@ import { LandingStack } from "@/landing/LandingStack";
 import { LandingMission } from "@/landing/LandingMission";
 import { LandingDiagram } from "@/landing/LandingDiagram";
 import Sponsors from "@/landing/Sponsors";
+import { CopyCode } from "@/components/ui/Code/CopyCode";
 
 export default function Home() {
   const lenis = useLenis();
@@ -78,20 +77,15 @@ export default function Home() {
               We&apos;re hackers, engineers, and researchers that believe in a world where robots
               are made for everyone.
             </p>
-            <p className="mb-6">
+            <p className="text-body-1 mb-6">
               Shoot us an email at{" "}
-              <span
-                className="inline-flex mx-0.5 px-1.5 bg-stone-900 rounded-md border border-stone-800 text-stone-400 hover:text-stone-300 active:text-stone-400 transition-colors duration-300 cursor-pointer"
-                onClick={() => copyEmail()}
-              >
-                inquiries@kscale.dev
-              </span>{" "}
-              for any business inquiries or if you want to connect with us!
+              <CopyCode string="inquiries@kscale.dev" size="large" font="regular" /> for any
+              business inquiries or if you want to connect with us!
             </p>
             <div className="flex flex-wrap gap-4 items-center">
-              <Button onClick={() => copyEmail()} icon={Copy}>
+              {/* <Button onClick={() => copyEmail()} icon={Copy}>
                 Copy email address
-              </Button>
+              </Button> */}
               <Link
                 className="w-fit text-body-2 transition-colors duration-300 text-orange-700 hover:text-orange-800 focus:text-orange-800 active:text-orange-900"
                 href="/careers"
@@ -101,15 +95,17 @@ export default function Home() {
             </div>
           </hgroup>
           <aside className="col-span-full md:col-span-2 lg:col-span-1 lg:-col-end-1 2xl:-col-end-2">
-            <h3 className="text-body-3 font-medium text-stone-400 mb-1">Our team (8)</h3>
+            <h3 className="text-body-3 font-medium text-stone-400 mb-1">Our team (10)</h3>
             <ul className="grid grid-cols-2 gap-x-4 lg:flex flex-col gap-y-2">
               <li>Aaron</li>
               <li>Ali</li>
               <li>Ben</li>
               <li>Chris</li>
+              <li>Ian</li>
               <li>Jingxiang</li>
               <li>Pawel</li>
               <li>Rui</li>
+              <li>Scott</li>
               <li>Wesley</li>
             </ul>
           </aside>

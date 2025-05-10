@@ -7,7 +7,7 @@ export const LandingCommunity = () => {
     <section className="section">
       <hgroup className="col-span-default col-start-default mb-6">
         <h2 className="text-body-2 font-medium text-stone-400 mb-1">Community</h2>
-        <p className="text-heading-1 mb-2">Take ownership of how we build</p>
+        <p className="text-heading-1 mb-2">Collaborate, learn, and innovate with us</p>
         <p className="mb-4">
           Get rapid-fire development support through our Discord—home to 2000+ active members who
           have collaborated on 6 humanoid robots and counting.

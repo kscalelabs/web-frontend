@@ -1,8 +1,12 @@
 import TableTrue from "@/assets/icons/table_true.svg";
 import TableFalse from "@/assets/icons/table_false.svg";
-// import Play from "@/assets/icons/icon_play.svg";
+import Arrow from "@/assets/icons/icon_arrowR.svg";
 import { Button } from "@/components/ui/Button/Button";
-// import { MediaPlaceholder } from "@/components/ui/Media/MediaPlaceholder";
+import Visual1 from "@/assets/content/visual_ksim_1.svg";
+import Visual2 from "@/assets/content/visual_ksim_2.svg";
+import Visual3 from "@/assets/content/visual_ksim_3.svg";
+import Visual4 from "@/assets/content/visual_ksim_4.svg";
+import Image from "next/image";
 
 export const LandingKSim = () => {
   const tableItems = [
@@ -66,61 +70,78 @@ export const LandingKSim = () => {
 
   return (
     <>
-      <section className="section">
+      <section className="section pb-0">
         <hgroup className="col-span-default col-start-default mb-6">
-          <h2 className="text-heading-1 mb-2">K-Sim</h2>
+          <h2 className="text-heading-1 mb-2">K-SIM</h2>
           <p className="text-body-1">
-            K-Sim is a lightweight, modular framework for developing reinforcement-learning policies
-            in simulation and deploying them on physical robots.
+            A lightweight, modular framework for developing reinforcement learning policies in
+            simulation and subsequently deploying on physical robots
           </p>
         </hgroup>
-        {/* <div className="col-span-full lg:col-span-2 lg:col-start-1 2xl:col-start-2 2xl:col-span-2 lg:mb-6 grid gap-x-4 md:gap-x-4 grid-cols-subgrid items-center">
-          <MediaPlaceholder className="lg:col-span-full" />
+        <a
+          className="group col-span-full lg:col-span-2 2xl:col-span-2 lg:mb-6 grid gap-x-4 md:gap-x-4 grid-cols-subgrid items-center"
+          href="https://www.youtube.com/watch?v=nMkS6VSh-yw"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="lg:col-span-full aspect-video rounded-md @xs:rounded-lg @sm:rounded-xl @lg:rounded-2xl">
+            <Image
+              src="/photos/stack/ksim-ali.png"
+              alt="Ali using K-Sim"
+              className="rounded-lg"
+              width={1280}
+              height={720}
+            />
+          </div>
           <hgroup className="max-lg:my-4 lg:mt-4 sm:col-span-3 lg:col-span-full">
-            <h3 className="text-body-2 font-bold">See how our ML lead, Ali uses K-Sim</h3>
-            <div className="flex w-full items-center gap-2">
-              <p className="inline-flex w-fit items-center gap-1 ">
-                <Play className="size-6 -ml-0.5" /> Play video
-              </p>
-              <span className="text-body-3 text-stone-400"> (2:30)</span>
+            <h3 className="inline-flex text-body-2 font-bold">
+              See how our ML lead Ali uses K-Sim{" "}
+            </h3>
+            <div className="flex w-full items-center gap-2 opacity-50">
+              <p className="inline-flex w-fit items-center gap-1 ">Go to video</p>
+              <Arrow className="group-hover:translate-x-[12.5%] transition-transform size-6 text-stone-400" />
             </div>
           </hgroup>
-        </div> */}
+        </a>
       </section>
       <section className="section">
         <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-start-2">
-          <h3 className="text-body-2 font-bold mb-1">Made for speed</h3>
+          <Visual1 className="size-[4.5rem] mb-4" />
+          <h3 className="text-body-2 font-bold mb-2">Made for speed</h3>
           <p>
             Built on JAX and MuJoCo-XLA, K-Sim can run thousands of parallel environments on a
             single GPU—over 50,000 samples per second on an RTX 4090.
           </p>
         </div>
         <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3">
-          <h3 className="text-body-2 font-bold mb-1">Single-file workflows.</h3>
+          <Visual2 className="size-[4.5rem] mb-4" />
+          <h3 className="text-body-2 font-bold mb-2">Single-file workflows</h3>
           <p>
-            A complete experiment—model, task, and config—lives in one python file, so you can
-            easily root cause performance regressions.
+            A complete experimental package&mdash;model, task, and config&mdash;lives in a python
+            file, so you can quickly pinpoint root cause of performance regressions
           </p>
         </div>
         <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-start-2">
-          <h3 className="text-body-2 font-bold mb-1">Sim-to-real focus</h3>
+          <Visual3 className="size-[4.5rem] mb-4" />
+          <h3 className="text-body-2 font-bold mb-2">Sim-to-real focus</h3>
           <p>
-            Domain-randomisation utilities, real-time vizualization, accurate motor models, and CLI
+            Domain-randomization utilities, real-time visualization, accurate motor models, and CLI
             deploy helpers let you seamlessly deploy a trained policy on a real robot.
           </p>
         </div>
         <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3">
-          <h3 className="text-body-2 font-bold mb-1">Extensible by design</h3>
+          <Visual4 className="size-[4.5rem] mb-4" />
+          <h3 className="text-body-2 font-bold mb-2">Extensible by design</h3>
           <p>
-            Swap in your own environments, rewards, algorithms, or choose from several built in
-            tasks ready to go.
+            Customize your own environment, rewards and algorithms or choose from several built-in
+            tasks ready to go
           </p>
         </div>
         <table className="relative col-span-full 2xl:col-span-6 2xl:col-start-2 mt-12">
           <thead className="max-lg:sticky top-20 ">
             <tr className="grid grid-cols-3 md:grid-cols-6 items-start py-4 bg-background border-b border-b-stone-800">
               <th scope="col" className="text-body-3 font-bold md:col-start-2">
-                K-Sim
+                K-SIM
               </th>
               <th scope="col" className="text-body-3 font-bold">
                 MuJoCo Playground
@@ -188,10 +209,10 @@ export const LandingKSim = () => {
           </tbody>
         </table>
       </section>
-      <section className="section bg-stone-900">
+      <section className="section mb-8">
         <hgroup className="col-span-full lg:col-span-4 lg:col-start-2 2xl:col-start-3 flex flex-col items-center">
           <h2 className="text-heading-2 text-center mb-2">
-            K-Sim lets you iterate quickly and trust the code that you deploy on your hardware.{" "}
+            K-SIM lets you iterate quickly and trust the code that you deploy on your hardware.{" "}
           </h2>
           <p className="text-body-2 text-center mb-4">
             Check out the source on{" "}
