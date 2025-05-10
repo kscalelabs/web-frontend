@@ -131,7 +131,7 @@ export const LandingProducts = () => {
                 {/* <FiberRobot /> */}
                 <Image
                   src={"/photos/thumbnail_zbot.png"}
-                  alt={"K-Bot"}
+                  alt={"Z-Bot"}
                   width={1080}
                   height={1620}
                   className="object-cover mb-4 absolute inset-0 size-full object-top"
@@ -152,20 +152,20 @@ export const LandingProducts = () => {
               </article>
             </li>
             <li className="min-w-[80vw] md:min-w-[40vw] lg:min-w-0 lg:col-span-2 lg:w-full">
-              <article className="relative bg-stone-950 border border-stone-800 rounded-2xl h-full flex flex-col items-center">
+              <article className="relative bg-stone-950 border border-stone-800 rounded-2xl flex flex-col justify-end items-center overflow-hidden aspect-[4/5]">
                 {/* <div className="aspect-square sm:aspect-video mb-4 size-full" /> */}
-                {/* <RobotWrapper /> */}
+                {/* <FiberRobot /> */}
                 <Image
                   src={"/photos/thumbnail_mbot.png"}
                   alt={"M-Bot"}
                   width={1080}
                   height={1620}
-                  className="object-cover mb-4 absolute inset-0 size-full object-top brightness-50"
+                  className="object-cover mb-4 absolute inset-0 size-full object-top opacity-10"
                   loading={"eager"}
                   priority={true}
                   sizes={"100dvw"}
                 />
-                <hgroup className="mt-auto flex flex-col items-center bg-gradient-to-t from-stone-950 from-60% to-transparent p-4">
+                <hgroup className="mt-auto flex flex-col items-center z-10 w-full bg-gradient-to-t from-stone-950 from-60% to-transparent p-4">
                   <h4 className="text-heading-2 flex items-center gap-2 mb-1">M-Bot </h4>
                   <h5 className="text-body-2 mb-4">QDD actuators, plastic (2.5&apos;)</h5>
                   <span className="text-stone-500 text-body-3 font-bold border border-stone-500 rounded-full px-3 py-1">
