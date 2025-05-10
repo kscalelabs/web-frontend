@@ -334,7 +334,7 @@ const Placeholder = ({ condensed }: { condensed: boolean }) => {
   return (
     <div
       className={clsx(
-        "bg-stone-900 mb-4 flex items-center justify-center select-none cursor-default",
+        "bg-gradient-to-br from-background via-stone-900 to-background mb-4 flex items-center justify-center select-none cursor-default",
         condensed ? "aspect-[5/1]" : "aspect-video"
       )}
     >
