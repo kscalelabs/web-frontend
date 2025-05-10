@@ -100,7 +100,7 @@ export const LandingStack = () => {
           name: "K-VLA",
           href: "https://github.com/kscalelabs/kvla",
           description: [
-            "A generalist policy using large-scale robot data with novel network architecture to enable the most capable and dexterous robots.",
+            "A generalist policy using large-scale robot data with novel network architecture to enable the most capable and dexterous robot",
             "Locally run and capable of integrating with other VLAs such as Pi0.5 AND Gr00t.",
           ],
           condensed: false,
@@ -133,7 +133,7 @@ export const LandingStack = () => {
           code: "pip install kos-sim",
           description: [
             "A digital twin / model evaluator for the K-Scale Operating System (K-OS) using the same gRPC interface as our real robot",
-            "Effortlessly test and refine your models in simulation.",
+            "Effortlessly test and refine your models in simulation",
           ],
           condensed: false,
           thumbnailSrc: "/photos/stack/KOSsim.gif",
@@ -146,7 +146,7 @@ export const LandingStack = () => {
     {
       layer: "Hardware",
       id: "hardware",
-      heading: "Deploy policies, VLA models, and run applications on robot hardware",
+      heading: "Deploy policies, VLA models and applications on robot hardware in real-time",
       items: [
         {
           name: "K-Bot",

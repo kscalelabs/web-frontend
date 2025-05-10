@@ -5,6 +5,7 @@ import Visual1 from "@/assets/content/visual_ksim_1.svg";
 import Visual2 from "@/assets/content/visual_ksim_2.svg";
 import Visual3 from "@/assets/content/visual_ksim_3.svg";
 import Visual4 from "@/assets/content/visual_ksim_4.svg";
+import Arrow from "@/assets/icons/icon_arrowTR.svg";
 
 export const LandingKSim = () => {
   const tableItems = [
@@ -70,7 +71,17 @@ export const LandingKSim = () => {
     <>
       <section className="section pb-0">
         <hgroup className="col-span-default col-start-default mb-6">
-          <h2 className="text-heading-1 mb-2">K-SIM</h2>
+          <h2 className="text-heading-1 mb-2 flex items-center">
+            <a
+              href="https://github.com/kscalelabs/ksim"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center"
+            >
+              K-SIM
+              <Arrow className="size-8 group-hover:translate-x-[12.5%] group-hover:-translate-y-[12.5%] group-focus:translate-x-[12.5%] group-focus:-translate-y-[12.5%] transition-transform duration-300 ml-2" />
+            </a>
+          </h2>
           <p className="text-body-1">
             A lightweight, modular framework for developing reinforcement learning policies in
             simulation and subsequently deploying on physical robots
@@ -81,7 +92,7 @@ export const LandingKSim = () => {
             <iframe
               className="w-full h-full"
               src="https://www.youtube.com/embed/nMkS6VSh-yw?autoplay=0&rel=0"
-              title="See how our ML lead Ali uses K-Sim"
+              title="See how our ML engineer Ali uses K-Sim"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
@@ -106,8 +117,8 @@ export const LandingKSim = () => {
           <Visual2 className="size-[4.5rem] mb-4" />
           <h3 className="text-body-2 font-bold mb-2">Single-file workflows</h3>
           <p>
-            A complete experimental package&mdash;model, task, and config&mdash;lives in a python
-            file, so you can quickly pinpoint root cause of performance regressions
+            A complete experimental package - model, task, and config - lives in a python file, so
+            you can quickly pinpoint root cause of training issues.
           </p>
         </div>
         <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-start-2">

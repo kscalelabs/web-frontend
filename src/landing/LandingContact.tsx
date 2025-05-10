@@ -7,13 +7,13 @@ export function LandingContact() {
       <hgroup className="col-span-default col-start-default mb-6">
         <h2 className="text-body-2 font-medium text-stone-400 mb-1">About us</h2>
         <p className="text-heading-1 mb-2">
-          We&apos;re hackers, engineers, and researchers that believe in a world where robots
-          are made for everyone.
+          We&apos;re hackers, engineers, and researchers that believe in a world where robots are
+          made for everyone.
         </p>
         <p className="text-body-1 mb-6">
           Shoot us an email at{" "}
-          <CopyCode string="inquiries@kscale.dev" size="large" font="regular" /> for any
-          business inquiries or if you want to connect with us!
+          <CopyCode string="inquiries@kscale.dev" size="large" font="regular" /> for any business
+          inquiries or if you want to connect with us!
         </p>
         <div className="flex flex-wrap gap-4 items-center">
           {/* <Button onClick={() => copyEmail()} icon={Copy}>
@@ -44,4 +44,4 @@ export function LandingContact() {
       </aside>
     </section>
   );
-} 
+}

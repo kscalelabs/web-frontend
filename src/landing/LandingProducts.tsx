@@ -62,7 +62,7 @@ export const LandingProducts = () => {
       <hgroup className="col-span-default col-start-default mb-6">
         <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2>
         <p className="text-heading-1">
-        General-Purpose Humanoid robots for developers, hobbyists, and researchers        
+          General-Purpose Humanoid robots for developers, hobbyists, and researchers
         </p>
       </hgroup>
       <div className="mb-6 flex gap-2 md:place-self-end max-md:col-start-1 lg:-col-end-1 2xl:-col-end-2 lg:hidden">
