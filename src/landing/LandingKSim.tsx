@@ -100,7 +100,7 @@ export const LandingKSim = () => {
             ></iframe>
           </div>
           <h3 className="mt-4 text-body-2 font-bold text-center px-4">
-            See how our ML lead Ali uses K-Sim
+            See how our ML engineer Ali uses K-Sim
           </h3>
         </div>
       </section>
@@ -118,7 +118,7 @@ export const LandingKSim = () => {
           <h3 className="text-body-2 font-bold mb-2">Single-file workflows</h3>
           <p>
             A complete experimental package - model, task, and config - lives in a python file, so
-            you can quickly pinpoint root cause of training issues.
+            you can quickly pinpoint the root cause of training issues.
           </p>
         </div>
         <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-start-2">
@@ -133,8 +133,8 @@ export const LandingKSim = () => {
           <Visual4 className="size-[4.5rem] mb-4" />
           <h3 className="text-body-2 font-bold mb-2">Extensible by design</h3>
           <p>
-            Customize your own environment, rewards and algorithms or choose from several built-in
-            tasks ready to go
+            Customize your own environment, rewards, and algorithms or choose from several built-in
+            tasks ready to go.
           </p>
         </div>
         <table className="relative col-span-full 2xl:col-span-6 2xl:col-start-2 mt-12">

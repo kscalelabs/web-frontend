@@ -71,7 +71,7 @@ export const LandingStack = () => {
         {
           name: "K-LANG",
           description: [
-            "Control your robot with neural interpretation domain-specific language (DSL).",
+            "Control your robot with a neural interpretation domain-specific language (DSL).",
           ],
           condensed: true,
         },
@@ -91,8 +91,8 @@ export const LandingStack = () => {
           width: 2560,
           height: 1440,
           description: [
-            "High-performance reinforcement learning framework optimized for training humanoid robot locomotion, manipulation, and real world deployment.",
-            "High versatility for tasks such as walking, dancing, household organization and even cooking.",
+            "High-performance reinforcement learning framework optimized for training humanoid robot locomotion, manipulation, and real-world deployment.",
+            "High versatility for tasks such as walking, dancing, household organization, and even cooking.",
           ],
           condensed: false,
         },
@@ -101,7 +101,7 @@ export const LandingStack = () => {
           href: "https://github.com/kscalelabs/kvla",
           description: [
             "A generalist policy using large-scale robot data with novel network architecture to enable the most capable and dexterous robot",
-            "Locally run and capable of integrating with other VLAs such as Pi0.5 AND Gr00t.",
+            "Locally run and capable of integrating with other VLAs such as Pi0.5 and Gr00t.",
           ],
           condensed: false,
           // thumbnailSrc: "/photos/stack/K-VLA.webp",
@@ -114,15 +114,15 @@ export const LandingStack = () => {
     {
       layer: "OS",
       id: "os",
-      heading: "Rust based OS to run policies on the real robot, or evaluate in simulation",
+      heading: "Rust-based OS to run policies on the real robot, or evaluate in simulation",
       items: [
         {
           name: "K-OS",
           href: "https://github.com/kscalelabs/ksim",
           code: "pip install pykos",
           description: [
-            "Rust-based, fast, and reliable robot operating system combining hard, software, and firmware.",
-            "Ships with an easy to use Python SDK to easily develop robot applications.",
+            "Rust-based, fast, and reliable robot operating system combining hardware, software, and firmware.",
+            "Ships with an easy-to-use Python SDK to easily develop robot applications.",
           ],
           condensed: false,
           thumbnail: <KOSThumbnail />,
