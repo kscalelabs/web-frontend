@@ -32,7 +32,7 @@ export const CopyButton = ({ className }: { className?: string }) => {
         onClick={() => handleCopyEmail()}
       >
         <span className="absolute h-12 top-1/2 -translate-y-1/2 w-full [@media(pointer:fine)]:hidden" />
-        {isCopied ? "Copied to clipboard" : "Copy email"}
+        {isCopied ? <span className="text-green-500">✔</span> : "Copy email"}
       </button>
     </div>
   );

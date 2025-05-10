@@ -17,16 +17,6 @@ const SPRING_OPTIONS = {
 
 const imgs = [
   {
-    name: "Z-Bot V3",
-    src: "/photos/achievements/ZBotV3.webp",
-    alt: "Photo of Z-Bot V3",
-    dateTime: "2025-04",
-    time: "Apr. 2025",
-    desc: "Improved capabilities and a 6-DOF design. With over 20k developers and hobbyists on the waitlist, we plan to launch Z-Bot on Kickstarter this May.",
-    width: 600,
-    height: 800,
-  },
-  {
     name: "K-Bot V2",
     src: "/photos/achievements/KBotV2.webp",
     alt: "Photo of K-Bot V2",

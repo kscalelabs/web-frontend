@@ -1,7 +1,7 @@
 import Link from "next/link";
 import clsx from "clsx";
 import { motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Arrow from "@/assets/icons/icon_arrowTR.svg";
 import Apps from "@/assets/content/application_apps.svg";
 import { KOSThumbnail } from "@/assets/content/stack/StackThumbnail";
@@ -71,7 +71,7 @@ export const LandingStack = () => {
         {
           name: "K-LANG",
           description: [
-            "Control your robot with neural interpretation domain-specific language (DSL).",
+            "Control your robot with a neural interpretation domain-specific language (DSL).",
           ],
           condensed: true,
         },
@@ -91,8 +91,8 @@ export const LandingStack = () => {
           width: 2560,
           height: 1440,
           description: [
-            "High-performance reinforcement learning framework optimized for training humanoid robot locomotion, manipulation, and real world deployment.",
-            "High versatility for tasks such as walking, dancing, household organization and even cooking.",
+            "High-performance reinforcement learning framework optimized for training humanoid robot locomotion, manipulation, and real-world deployment.",
+            "High versatility for tasks such as walking, dancing, household organization, and even cooking.",
           ],
           condensed: false,
         },
@@ -100,8 +100,8 @@ export const LandingStack = () => {
           name: "K-VLA",
           href: "https://github.com/kscalelabs/kvla",
           description: [
-            "A generalist policy using large-scale robot data with novel network architecture to enable the most capable and dexterous robots.",
-            "Locally run and capable of integrating with other VLAs such as Pi0.5 AND Gr00t.",
+            "A generalist policy using large-scale robot data with novel network architecture to enable the most capable and dexterous robot",
+            "Locally run and capable of integrating with other VLAs such as Pi0.5 and Gr00t.",
           ],
           condensed: false,
           // thumbnailSrc: "/photos/stack/K-VLA.webp",
@@ -114,15 +114,15 @@ export const LandingStack = () => {
     {
       layer: "OS",
       id: "os",
-      heading: "Rust based OS to run policies on the real robot, or evaluate in simulation",
+      heading: "Rust-based OS to run policies on the real robot, or evaluate in simulation",
       items: [
         {
           name: "K-OS",
           href: "https://github.com/kscalelabs/ksim",
           code: "pip install pykos",
           description: [
-            "Rust-based, fast, and reliable robot operating system combining hard, software, and firmware.",
-            "Ships with an easy to use Python SDK to easily develop robot applications.",
+            "Rust-based, fast, and reliable robot operating system combining hardware, software, and firmware.",
+            "Ships with an easy-to-use Python SDK to easily develop robot applications.",
           ],
           condensed: false,
           thumbnail: <KOSThumbnail />,
@@ -133,7 +133,7 @@ export const LandingStack = () => {
           code: "pip install kos-sim",
           description: [
             "A digital twin / model evaluator for the K-Scale Operating System (K-OS) using the same gRPC interface as our real robot",
-            "Effortlessly test and refine your models in simulation.",
+            "Effortlessly test and refine your models in simulation",
           ],
           condensed: false,
           thumbnailSrc: "/photos/stack/KOSsim.gif",
@@ -146,7 +146,7 @@ export const LandingStack = () => {
     {
       layer: "Hardware",
       id: "hardware",
-      heading: "Deploy policies, VLA models, and run applications on robot hardware",
+      heading: "Deploy policies, VLA models and applications on robot hardware in real-time",
       items: [
         {
           name: "K-Bot",
@@ -200,16 +200,20 @@ export const LandingStack = () => {
           </menu>
         </aside>
         {articles.map((article, i) => (
-          <Article
-            key={`landing-stack--${i}`}
-            name={article.layer}
-            id={article.id}
-            heading={article.heading}
-            index={i + 1}
-            onInViewChange={handleInViewChange}
-            registerRef={(el) => (sectionRefs.current[i] = el)}
-            items={article.items}
-          />
+          <React.Fragment key={`landing-stack-fragment--${i}`}>
+            <Article
+              name={article.layer}
+              id={article.id}
+              heading={article.heading}
+              index={i + 1}
+              onInViewChange={handleInViewChange}
+              registerRef={(el) => (sectionRefs.current[i] = el)}
+              items={article.items}
+            />
+            {i < articles.length - 1 && (
+              <div className="col-span-full 2xl:col-span-6 2xl:col-start-2 border-b border-stone-700 mb-8" />
+            )}
+          </React.Fragment>
         ))}
       </section>
     </>
