@@ -68,9 +68,9 @@ export const LandingStack = () => {
           condensed: true,
         },
         {
-          name: "K-Lang",
+          name: "K-LANG",
           description: [
-            "Skip writing ROS nodes with our domain-specific language for interfacing with neural interpretation.",
+            "Control your robot with neural interpretation domain-specific language (DSL).",
           ],
           condensed: true,
         },
