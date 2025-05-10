@@ -43,9 +43,9 @@ export default function Page() {
               Our mission is to build general purpose robotics and open-source it to everyone.
             </p>
             <p className="text-body-2 text-stone-200 mb-4">
-              Over the past six months, we&apos;ve built a humanoid robot stack from
-              state-of-the-art machine learning models trained on our infrastructure, building the
-              operating system, designing the hardware, and manufactured it:
+              Over the past six months, we&apos;ve built the humanoid-robot stack: we trained
+              state-of-the-art machine-learning models on our training infrastructure, developed the
+              operating system, and designed/ manufactured the hardware.
             </p>
           </hgroup>
         </div>

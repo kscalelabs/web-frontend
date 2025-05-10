@@ -85,11 +85,10 @@ export const LandingStack = () => {
           name: "K-SIM",
           href: "https://github.com/kscalelabs/ksim",
           code: "pip install k-sim",
-          thumbnailSrc: "/photos/stack/K-Sim.mp4",
+          thumbnailSrc: "/photos/stack/k-sim.gif",
           thumbnailAlt: "K-SIM",
           width: 2560,
           height: 1440,
-          video: true,
           description: [
             "High-performance reinforcement learning framework optimized for training humanoid robot locomotion, manipulation, and real world deployment.",
             "High versatility for tasks such as walking, dancing, household organization and even cooking.",
