@@ -15,7 +15,7 @@ export function LandingHero() {
         <source src="/videos/landing_video_0506.mp4" type="video/mp4" />
       </video>
       <hgroup className="col-span-4 lg:col-span-3 2xl:col-span-5 z-10">
-        <h1 className="mb-4">Open-source humanoid robots, build for developers</h1>
+        <h1 className="mb-4">Open-source humanoid robots, built for developers</h1>
         <p className="mb-4">
           Accelerating the world&apos;s transition to general-purpose robots by building the
           most integrated stack for humanoid robots.
