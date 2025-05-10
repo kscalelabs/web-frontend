@@ -1,7 +1,7 @@
 import Link from "next/link";
 import clsx from "clsx";
 import { motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Arrow from "@/assets/icons/icon_arrowTR.svg";
 import Apps from "@/assets/content/application_apps.svg";
 import { KOSThumbnail } from "@/assets/content/stack/StackThumbnail";
@@ -200,16 +200,20 @@ export const LandingStack = () => {
           </menu>
         </aside>
         {articles.map((article, i) => (
-          <Article
-            key={`landing-stack--${i}`}
-            name={article.layer}
-            id={article.id}
-            heading={article.heading}
-            index={i + 1}
-            onInViewChange={handleInViewChange}
-            registerRef={(el) => (sectionRefs.current[i] = el)}
-            items={article.items}
-          />
+          <React.Fragment key={`landing-stack-fragment--${i}`}>
+            <Article
+              name={article.layer}
+              id={article.id}
+              heading={article.heading}
+              index={i + 1}
+              onInViewChange={handleInViewChange}
+              registerRef={(el) => (sectionRefs.current[i] = el)}
+              items={article.items}
+            />
+            {i < articles.length - 1 && (
+              <div className="col-span-full 2xl:col-span-6 2xl:col-start-2 border-b border-stone-700 mb-8" />
+            )}
+          </React.Fragment>
         ))}
       </section>
     </>
@@ -248,7 +252,7 @@ const Article = ({
 
   return (
     <motion.article
-      className="grid grid-cols-subgrid col-span-full 2xl:col-span-6 2xl:col-start-2 scroll-mt-44 2xl:scroll-mt-32 mb-16"
+      className="grid grid-cols-subgrid col-span-full 2xl:col-span-6 2xl:col-start-2 scroll-mt-44 2xl:scroll-mt-32 mb-8"
       id={id}
       ref={ref}
     >
