@@ -252,7 +252,7 @@ const Article = ({
 
   return (
     <motion.article
-      className="grid grid-cols-subgrid col-span-full 2xl:col-span-6 2xl:col-start-2 scroll-mt-44 2xl:scroll-mt-32 mb-8"
+      className="grid grid-cols-subgrid col-span-full 2xl:col-span-6 2xl:col-start-2 scroll-mt-44 2xl:scroll-mt-32 mb-16 sm:mb-24 2xl:mb-32"
       id={id}
       ref={ref}
     >
@@ -338,7 +338,7 @@ const Placeholder = ({ condensed }: { condensed: boolean }) => {
   return (
     <div
       className={clsx(
-        "bg-stone-900 mb-4 flex items-center justify-center select-none cursor-default",
+        "bg-gradient-to-br from-background via-stone-900 to-background mb-4 flex items-center justify-center select-none cursor-default",
         condensed ? "aspect-[5/1]" : "aspect-video"
       )}
     >
