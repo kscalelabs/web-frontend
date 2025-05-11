@@ -104,7 +104,7 @@ export const LandingProducts = () => {
                 {/* <div className="aspect-square sm:aspect-video mb-4 size-full" /> */}
                 {/* <FiberRobot /> */}
                 <Image
-                  src={"/photos/thumbnail_kbot.png"}
+                  src={"/photos/landing/thumbnail/thumbnail_kbot.png"}
                   alt={"K-Bot"}
                   width={1080}
                   height={1620}
@@ -138,7 +138,7 @@ export const LandingProducts = () => {
                 {/* <div className="aspect-square sm:aspect-video mb-4 size-full" /> */}
                 {/* <FiberRobot /> */}
                 <Image
-                  src={"/photos/thumbnail_zbot.png"}
+                  src={"/photos/landing/thumbnail/thumbnail_zbot.png"}
                   alt={"Z-Bot"}
                   width={1080}
                   height={1620}
@@ -173,7 +173,7 @@ export const LandingProducts = () => {
                 {/* <div className="aspect-square sm:aspect-video mb-4 size-full" /> */}
                 {/* <RobotWrapper /> */}
                 <Image
-                  src={"/photos/thumbnail_mbot.png"}
+                  src={"/photos/landing/thumbnail/thumbnail_mbot.png"}
                   alt={"M-Bot"}
                   width={1080}
                   height={1620}
