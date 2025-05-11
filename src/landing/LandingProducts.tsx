@@ -119,9 +119,17 @@ export const LandingProducts = () => {
                   <p className="text-body-3 text-stone-400 mb-4">
                     Starting at <s>$16,999</s> $8,999 USD
                   </p>
-                  <Button href="https://shop.kscale.dev/products/kbot" external fullWidth>
-                    Pre-order now
-                  </Button>
+                  <div className="flex items-center gap-4 w-full">
+                    <Button href="https://shop.kscale.dev/products/kbot" external fullWidth>
+                      Pre-Order Now
+                    </Button>
+                    <a
+                      href="https://kscale.dev/kbot"
+                      className="text-orange-500 hover:text-orange-400 whitespace-nowrap text-body-2 font-medium flex items-center gap-1"
+                    >
+                      Learn more <ArrowR className="size-4 fill-current" />
+                    </a>
+                  </div>
                 </hgroup>
               </article>
             </li>
@@ -131,7 +139,7 @@ export const LandingProducts = () => {
                 {/* <FiberRobot /> */}
                 <Image
                   src={"/photos/thumbnail_zbot.png"}
-                  alt={"K-Bot"}
+                  alt={"Z-Bot"}
                   width={1080}
                   height={1620}
                   className="object-cover mb-4 absolute inset-0 size-full object-top"
@@ -145,9 +153,18 @@ export const LandingProducts = () => {
                   <p className="text-body-3 text-stone-400 mb-4">
                     Starting at <s>$1,999</s> $999 USD
                   </p>
-                  <Button href="https://zeroth.bot" external fullWidth>
-                    Pre-order now
-                  </Button>
+                  <div className="flex items-center gap-4 w-full">
+                    <Button href="https://zeroth.bot" external fullWidth>
+                      Pre-Order Now
+                    </Button>
+                    <a
+                      href="https://zerothbot.com"
+                      className="text-purple-500 hover:text-purple-400 whitespace-nowrap text-body-2 font-medium flex items-center gap-1"
+                    >
+                      Learn more <ArrowR className="size-4 fill-current" />
+                      
+                    </a>
+                  </div> 
                 </hgroup>
               </article>
             </li>
