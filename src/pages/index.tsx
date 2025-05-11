@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useLenis } from "lenis/dist/lenis-react";
-import Link from "next/link";
 import { LandingDemos } from "@/landing/LandingDemos";
 import { LandingAchievements } from "@/landing/LandingAchievements";
 import { LandingCommunity } from "@/landing/LandingCommunity";

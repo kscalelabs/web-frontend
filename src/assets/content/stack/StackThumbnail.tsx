@@ -12,7 +12,12 @@ export const KOSThumbnail = () => {
         <Python className="size-12 lg:size-[4.5rem]" />
         <Rust className="size-12 lg:size-[4.5rem]" />
       </div>
-      <Image src={"/photos/landing/stack/k-os-background.png"} alt="K-OS" width={1600} height={900} />
+      <Image
+        src={"/photos/landing/stack/k-os-background.png"}
+        alt="K-OS"
+        width={1600}
+        height={900}
+      />
     </div>
   );
 };

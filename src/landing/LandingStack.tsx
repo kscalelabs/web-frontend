@@ -58,7 +58,8 @@ export const LandingStack = () => {
     {
       layer: "Application",
       id: "application",
-      heading: "Create, deploy, and share robot apps, tools, and policies—built by you and the community.",
+      heading:
+        "Create, deploy, and share robot apps, tools, and policies—built by you and the community.",
       items: [
         {
           name: "Robot Apps Store",

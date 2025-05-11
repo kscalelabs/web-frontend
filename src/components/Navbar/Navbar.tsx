@@ -1,6 +1,5 @@
 import { useWindowSize } from "@/components/util/functions";
 import clsx from "clsx";
-import { useLenis } from "lenis/dist/lenis-react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useEffect, useState } from "react";
 import Logo from "@/assets/logo.svg";
@@ -17,10 +16,6 @@ import { IconButton } from "../ui/IconButton/IconButton";
 export const Navbar = () => {
   const pathname = usePathname();
   const { scrollY } = useScroll();
-  const lenis = useLenis((lenis) => {
-    // console.log("lenis fire");
-    // if (lenis.isScrolling === false) setDesktopScrollDetect(true); // Removed to prevent scroll affecting desktopOpen
-  });
   const [desktopHover, setDesktopHover] = useState(false);
   const [desktopScrollDetect, setDesktopScrollDetect] = useState(false); // Changed to false
   const [desktopOpen, setDesktopOpen] = useState(false); // Changed to false
@@ -66,25 +61,13 @@ export const Navbar = () => {
 
   useEffect(() => {
     setMobileOpen(false);
-    lenis?.start();
-  }, [width, lenis]);
+  }, [width]);
 
   useEffect(() => {
-    if (lenis) {
-      if (mobileOpen) {
-        lenis.stop();
-      } else {
-        lenis.start();
-      }
-    }
-  }, [mobileOpen, lenis]);
-
-  useEffect(() => {
-    // console.log("pathname", pathname);
     const resetNavbar = () => {
-      // setDesktopOpen(pathname === "/"); // Removed: desktopOpen now hover-only
+      setDesktopOpen(pathname === "/");
       setMobileOpen(false);
-      setDesktopScrollDetect(false); // Ensure scroll detection for desktopOpen remains off
+      setDesktopScrollDetect(true);
     };
     resetNavbar();
   }, [pathname]);

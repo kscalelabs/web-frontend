@@ -162,9 +162,8 @@ export const LandingProducts = () => {
                       className="text-orange-500 hover:text-orange-400 whitespace-nowrap text-body-2 font-medium flex items-center gap-1"
                     >
                       Learn more <ArrowR className="size-4 fill-current" />
-                      
                     </a>
-                  </div> 
+                  </div>
                 </hgroup>
               </article>
             </li>
