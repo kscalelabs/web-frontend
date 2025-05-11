@@ -62,7 +62,7 @@ export const LandingProducts = () => {
       <hgroup className="col-span-default col-start-default mb-6">
         <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2>
         <p className="text-heading-1">
-          Humanoid general-purpose robots for all your research and development needs
+          Humanoid robots for all your research and development needs
         </p>
       </hgroup>
       <div className="mb-6 flex gap-2 md:place-self-end max-md:col-start-1 lg:-col-end-1 2xl:-col-end-2 lg:hidden">
@@ -167,7 +167,10 @@ export const LandingProducts = () => {
                 />
                 <hgroup className="mt-auto flex flex-col items-center z-10 w-full bg-gradient-to-t from-stone-950 from-60% to-transparent p-4">
                   <h4 className="text-heading-2 flex items-center gap-2 mb-1">M-Bot </h4>
-                  <h5 className="text-body-2 mb-4">QDD actuators, plastic (2.5&apos;)</h5>
+                  <h5 className="text-body-2">QDD actuators, plastic (2.5&apos;)</h5>
+                  <p className="text-body-3 text-stone-400 mb-4">
+                    Starting at <s>$3,999</s> $2,999 USD
+                  </p>
                   <span className="text-stone-500 text-body-3 font-bold border border-stone-500 rounded-full px-3 py-1">
                     Coming soon
                   </span>
