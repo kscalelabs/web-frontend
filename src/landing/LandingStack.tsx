@@ -58,12 +58,12 @@ export const LandingStack = () => {
     {
       layer: "Application",
       id: "application",
-      heading: "Build and use robot policies, apps, and tools made by you and the community",
+      heading: "Create, deploy, and share robot apps, tools, and policies—built by you and the community.",
       items: [
         {
           name: "Robot Apps Store",
           description: [
-            "All-in-one hub to install community policies, apps, and tools, as well as customize and train your robot and use teleoperation.",
+            "A single hub to install apps, customize behaviours, train new skills, and teleoperate your robot.",
           ],
           thumbnail: <Apps className="w-full h-auto mb-4" />,
           condensed: true,
@@ -80,7 +80,7 @@ export const LandingStack = () => {
     {
       layer: "ML",
       id: "ml",
-      heading: "Open-source library for GPU-accelerated robot learning and sim-to-real transfer",
+      heading: "GPU-accelerated, open-source robot learning with zero-shot transfer sim2real.",
       items: [
         {
           name: "K-SIM",
