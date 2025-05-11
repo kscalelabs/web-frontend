@@ -115,7 +115,7 @@ export const LandingProducts = () => {
                 />
                 <hgroup className="mt-auto flex flex-col items-center z-10 w-full bg-gradient-to-t from-stone-950 from-60% to-transparent p-4">
                   <h4 className="text-heading-2 mb-1">K-Bot</h4>
-                  <h5 className="text-body-2">Full-sized (4&apos;) humanoid</h5>
+                  <h5 className="text-body-2">General-purpose humanoid robot</h5>
                   <p className="text-body-3 text-stone-400 mb-4">
                     Starting at <s>$16,999</s> $8,999 USD
                   </p>
@@ -141,7 +141,7 @@ export const LandingProducts = () => {
                 />
                 <hgroup className="mt-auto flex flex-col items-center z-10 w-full bg-gradient-to-t from-stone-950 from-60% to-transparent p-4">
                   <h4 className="text-heading-2 mb-1">Z-Bot</h4>
-                  <h5 className="text-body-2">Small but mighty (1.5&apos;)</h5>
+                  <h5 className="text-body-2">Mini end-to-end humanoid robot</h5>
                   <p className="text-body-3 text-stone-400 mb-4">
                     Starting at <s>$1,999</s> $999 USD
                   </p>
@@ -160,14 +160,14 @@ export const LandingProducts = () => {
                   alt={"M-Bot"}
                   width={1080}
                   height={1620}
-                  className="object-cover mb-4 absolute inset-0 size-full object-top brightness-50"
+                  className="object-cover mb-4 absolute inset-0 size-full object-top brightness-50 opacity-50"
                   loading={"eager"}
                   priority={true}
                   sizes={"100dvw"}
                 />
                 <hgroup className="mt-auto flex flex-col items-center bg-gradient-to-t from-stone-950 from-60% to-transparent p-4">
                   <h4 className="text-heading-2 flex items-center gap-2 mb-1">M-Bot </h4>
-                  <h5 className="text-body-2 mb-4">QDD actuators, plastic (2.5&apos;)</h5>
+                  <h5 className="text-body-2 mb-4">Compact humanoid for developers</h5>
                   <span className="text-stone-500 text-body-3 font-bold border border-stone-500 rounded-full px-3 py-1">
                     Coming soon
                   </span>
