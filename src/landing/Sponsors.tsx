@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
-import AIGrant from "../../public/sponsors/AIGrant";
-import FellowsFund from "../../public/sponsors/FellowsFund";
-import GFT from "../../public/sponsors/GFT";
-import Lombard from "../../public/sponsors/Lombard";
-import NinjaCapital from "../../public/sponsors/NinjaCapital";
-import Pioneer from "../../public/sponsors/Pioneer";
-import YCommunity from "../../public/sponsors/YCommunity";
+import AIGrant from "../../public/photos/landing/sponsors/AIGrant";
+import FellowsFund from "../../public/photos/landing/sponsors/FellowsFund";
+import GFT from "../../public/photos/landing/sponsors/GFT";
+import Lombard from "../../public/photos/landing/sponsors/Lombard";
+import NinjaCapital from "../../public/photos/landing/sponsors/NinjaCapital";
+import Pioneer from "../../public/photos/landing/sponsors/Pioneer";
+import YCommunity from "../../public/photos/landing/sponsors/YCommunity";
 
 const svgSizeStyling = "w-60 h-auto";
 const SvgChildren = [
