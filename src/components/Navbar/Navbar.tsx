@@ -19,11 +19,11 @@ export const Navbar = () => {
   const { scrollY } = useScroll();
   const lenis = useLenis((lenis) => {
     // console.log("lenis fire");
-    if (lenis.isScrolling === false) setDesktopScrollDetect(true);
+    // if (lenis.isScrolling === false) setDesktopScrollDetect(true); // Removed to prevent scroll affecting desktopOpen
   });
   const [desktopHover, setDesktopHover] = useState(false);
-  const [desktopScrollDetect, setDesktopScrollDetect] = useState(true);
-  const [desktopOpen, setDesktopOpen] = useState(true);
+  const [desktopScrollDetect, setDesktopScrollDetect] = useState(false); // Changed to false
+  const [desktopOpen, setDesktopOpen] = useState(false); // Changed to false
   const [desktopPreviousScroll, setPrevScroll] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileTopOpen, setMobileTopOpen] = useState(false);
@@ -82,9 +82,9 @@ export const Navbar = () => {
   useEffect(() => {
     // console.log("pathname", pathname);
     const resetNavbar = () => {
-      setDesktopOpen(pathname === "/");
+      // setDesktopOpen(pathname === "/"); // Removed: desktopOpen now hover-only
       setMobileOpen(false);
-      setDesktopScrollDetect(true);
+      setDesktopScrollDetect(false); // Ensure scroll detection for desktopOpen remains off
     };
     resetNavbar();
   }, [pathname]);
