@@ -18,7 +18,7 @@ const SPRING_OPTIONS = {
 const imgs = [
   {
     name: "K-Bot V2",
-    src: "/photos/achievements/KBotV2.webp",
+    src: "/photos/landing/achievements/KBotV2.webp",
     alt: "Photo of K-Bot V2",
     dateTime: "2025-02",
     time: "Feb. 2025",
@@ -28,7 +28,7 @@ const imgs = [
   },
   {
     name: "Z-Bot V2",
-    src: "/photos/achievements/ZBotV2.webp",
+    src: "/photos/landing/achievements/ZBotV2.webp",
     alt: "Photo of Z-Bot V2",
     dateTime: "2025-01",
     time: "Jan. 2025",
@@ -38,7 +38,7 @@ const imgs = [
   },
   {
     name: "K-Bot V1",
-    src: "/photos/achievements/KBotV1.webp",
+    src: "/photos/landing/achievements/KBotV1.webp",
     alt: "Photo of K Bot V1",
     dateTime: "2024-11",
     time: "Nov. 2024",
@@ -48,7 +48,7 @@ const imgs = [
   },
   {
     name: "Z-Bot V1",
-    src: "/photos/achievements/ZBotV1.webp",
+    src: "/photos/landing/achievements/ZBotV1.webp",
     alt: "Photo of Z-Bot V1",
     dateTime: "2024-11",
     time: "Nov. 2024",
@@ -58,7 +58,7 @@ const imgs = [
   },
   {
     name: "Stompy Mini",
-    src: "/photos/achievements/Stompymini.webp",
+    src: "/photos/landing/achievements/Stompymini.webp",
     alt: "Photo of Stompy Mini",
     dateTime: "2024-08",
     time: "Aug. 2024",
@@ -68,7 +68,7 @@ const imgs = [
   },
   {
     name: "Stompy",
-    src: "/photos/achievements/Stompy.webp",
+    src: "/photos/landing/achievements/Stompy.webp",
     alt: "Photo of Stompy",
     dateTime: "2024-04",
     time: "Apr. 2024",

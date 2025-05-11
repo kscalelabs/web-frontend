@@ -58,12 +58,13 @@ export const LandingStack = () => {
     {
       layer: "Application",
       id: "application",
-      heading: "Build and use robot policies, apps, and tools made by you and the community",
+      heading:
+        "Create, deploy, and share robot apps, tools, and policies—built by you and the community.",
       items: [
         {
           name: "Robot Apps Store",
           description: [
-            "All-in-one hub to install community policies, apps, and tools, as well as customize and train your robot and use teleoperation.",
+            "A single hub to install apps, customize behaviours, train new skills, and teleoperate your robot.",
           ],
           thumbnail: <Apps className="w-full h-auto mb-4" />,
           condensed: true,
@@ -86,7 +87,7 @@ export const LandingStack = () => {
           name: "K-SIM",
           href: "https://github.com/kscalelabs/ksim",
           code: "pip install k-sim",
-          thumbnailSrc: "/photos/stack/k-sim.gif",
+          thumbnailSrc: "/photos/landing/stack/k-sim.gif",
           thumbnailAlt: "K-SIM",
           width: 2560,
           height: 1440,
@@ -136,7 +137,7 @@ export const LandingStack = () => {
             "Effortlessly test and refine your models in simulation",
           ],
           condensed: false,
-          thumbnailSrc: "/photos/stack/KOSsim.gif",
+          thumbnailSrc: "/photos/landing/stack/KOSsim.gif",
           thumbnailAlt: "K-OS SIM",
           width: 640,
           height: 480,
@@ -152,7 +153,7 @@ export const LandingStack = () => {
           name: "K-Bot",
           href: "https://shop.kscale.dev/products/kbot",
           condensed: false,
-          thumbnailSrc: "/photos/stack/kbot.webp",
+          thumbnailSrc: "/photos/landing/stack/kbot.webp",
           thumbnailAlt: "K-Bot",
           width: 643,
           height: 385,
@@ -161,7 +162,7 @@ export const LandingStack = () => {
           name: "Z-Bot",
           href: "https://zerothbot.com",
           condensed: false,
-          thumbnailSrc: "/photos/stack/zbot.webp",
+          thumbnailSrc: "/photos/landing/stack/zbot.webp",
           thumbnailAlt: "Z-Bot",
           width: 642,
           height: 385,

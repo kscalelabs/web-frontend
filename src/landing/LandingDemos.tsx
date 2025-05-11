@@ -5,8 +5,8 @@ export const LandingDemos = () => {
   const [activeItem, setActiveItem] = useState(0);
 
   const items = [
-    { name: "Locomotion", src: "/videos/demo_locomotion.mp4" },
-    { name: "Manipulation", src: "/videos/demo_manipulation.mp4" },
+    { name: "Locomotion", src: "/videos/landing/demo_locomotion.mp4" },
+    { name: "Manipulation", src: "/videos/landing/demo_manipulation.mp4" },
   ];
 
   return (
