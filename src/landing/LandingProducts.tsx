@@ -159,7 +159,7 @@ export const LandingProducts = () => {
                     </Button>
                     <a
                       href="https://zerothbot.com"
-                      className="text-purple-500 hover:text-purple-400 whitespace-nowrap text-body-2 font-medium flex items-center gap-1"
+                      className="text-orange-500 hover:text-orange-400 whitespace-nowrap text-body-2 font-medium flex items-center gap-1"
                     >
                       Learn more <ArrowR className="size-4 fill-current" />
                       
