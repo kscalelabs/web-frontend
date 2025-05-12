@@ -65,15 +65,17 @@ const Sponsors = () => {
   return (
     <section className="section">
       {/* Adding a heading for visibility */}
-      <hgroup className="col-span-default col-start-default mb-6">
-        <h2 className="text-body-2 font-medium text-stone-400 mb-1">Our supporters</h2>
-        <p className="text-heading-1 mb-4">Backed by world-class investors</p>
-      </hgroup>
+      <div className="section-container">
+        <hgroup className="col-span-default col-start-default mb-6">
+          <h2 className="text-body-2 font-medium text-stone-400 mb-1">Our supporters</h2>
+          <p className="text-heading-1 mb-4">Backed by world-class investors</p>
+        </hgroup>
+      </div>
 
       <style dangerouslySetInnerHTML={{ __html: sponsorStyles }} />
 
       <div className="w-full col-span-full flex flex-col gap-3 items-center pt-8 pb-16">
-        <Marquee className="min-h-20 h-20" speed={40}>
+        <Marquee className="min-h-20 h-20 overflow-hidden" speed={40}>
           {SvgChildren.map((sponsor, index) => {
             return (
               <Link
