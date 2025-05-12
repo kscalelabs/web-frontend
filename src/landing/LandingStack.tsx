@@ -7,7 +7,6 @@ import Apps from "@/assets/content/application_apps.svg";
 import { KOSThumbnail, KVLAThumbnail } from "@/assets/content/stack/StackThumbnail";
 import Image from "next/image";
 import { useInView } from "motion/react";
-import { CopyCode } from "@/components/ui/Code/CopyCode";
 
 type ArticleItem = {
   name: string;
@@ -314,12 +313,6 @@ const Article = ({
               </a>
             ) : (
               item.name
-            )}
-            {item.code && (
-              // <code className="mb-2 inline-flex lg:mx-4 px-1.5 bg-stone-900 rounded-md border border-stone-800 text-stone-400 text-body-3">
-              //   {item.code}
-              // </code>
-              <CopyCode string={item.code} />
             )}
           </h3>
           {item.description &&
