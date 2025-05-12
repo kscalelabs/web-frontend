@@ -33,7 +33,7 @@ export default function Footer() {
         </Link>
         <section className="sm:col-start-3 max-sm:col-span-2 lg:col-start-4 2xl:col-start-4 4xl:col-start-6">
           <h2 className="text-body-3 font-bold text-stone-500 mb-2">Product</h2>
-          <div className="flex flex-col gap-6 lg:gap-4">
+          <div className="flex flex-col gap-6 lg:gap-4 2xl:gap-2">
             <a
               href="https://shop.kscale.dev/products/kbot"
               target="_blank"
@@ -65,7 +65,7 @@ export default function Footer() {
         </section>
         <section className="sm:col-start-3 max-sm:col-span-2 lg:col-start-auto">
           <h2 className="text-body-3 font-bold text-stone-500 mb-2">Community</h2>
-          <div className="flex flex-col gap-6 lg:gap-4">
+          <div className="flex flex-col gap-6 lg:gap-4 2xl:gap-2">
             <a
               href="https://docs.kscale.dev/docs/getting-started"
               target="_blank"
@@ -93,7 +93,7 @@ export default function Footer() {
         </section>
         <section className="sm:col-start-3 max-sm:col-span-2 lg:col-start-auto">
           <h2 className="text-body-3 font-bold text-stone-500 mb-2">Legal</h2>
-          <div className="flex flex-col gap-6 lg:gap-4">
+          <div className="flex flex-col gap-6 lg:gap-4 2xl:gap-2">
             <Link
               href="/tos"
               className="text-body-2 lg:text-body-3 font-medium lg:font-bold relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"

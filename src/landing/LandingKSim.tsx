@@ -108,7 +108,7 @@ export const LandingKSim = () => {
       </section>
       <section className="section">
         <div className="section-container">
-          <div className="mb-6 col-span-full sm:col-span-2 4xl:col-span-3 2xl:col-start-2 4xl:col-start-2">
+          <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-span-2 4xl:col-span-3 2xl:col-start-2 4xl:col-start-2">
             <Visual1 className="size-[4.5rem] mb-4" />
             <h3 className="text-body-2 font-bold mb-2">Made for speed</h3>
             <p>
@@ -116,7 +116,7 @@ export const LandingKSim = () => {
               single GPU—over 50,000 samples per second on an RTX 4090.
             </p>
           </div>
-          <div className="mb-6 col-span-full sm:col-span-2 4xl:col-span-3">
+          <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-span-2 4xl:col-span-3">
             <Visual2 className="size-[4.5rem] mb-4" />
             <h3 className="text-body-2 font-bold mb-2">Single-file workflows</h3>
             <p>
@@ -124,7 +124,7 @@ export const LandingKSim = () => {
               you can quickly pinpoint the root cause of training issues.
             </p>
           </div>
-          <div className="mb-6 col-span-full sm:col-span-2 4xl:col-span-3 2xl:col-start-2 4xl:col-start-2">
+          <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-span-2 4xl:col-span-3 2xl:col-start-2 4xl:col-start-2">
             <Visual3 className="size-[4.5rem] mb-4" />
             <h3 className="text-body-2 font-bold mb-2">Sim-to-real focus</h3>
             <p>
@@ -132,7 +132,7 @@ export const LandingKSim = () => {
               CLI deploy helpers let you seamlessly deploy a trained policy on a real robot.
             </p>
           </div>
-          <div className="mb-6 col-span-full sm:col-span-2 4xl:col-span-3">
+          <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-span-2 4xl:col-span-3">
             <Visual4 className="size-[4.5rem] mb-4" />
             <h3 className="text-body-2 font-bold mb-2">Extensible by design</h3>
             <p>
