@@ -136,7 +136,7 @@ export const Navbar = () => {
     <div className="lg:h-0">
       <motion.header
         className={clsx(
-          "fixed top-0 inset-x-0 mx-auto z-50 max-w-[2160px] px-layout py-4 flex justify-between max-lg:items-center max-lg:border-b lg:h-24 transitions-all duration-300 ease-out",
+          "fixed top-0 inset-x-0 mx-auto z-50 max-w-[2160px] px-layout py-4 flex justify-between max-lg:items-center max-lg:border-b lg:h-22 transitions-all duration-300 ease-out",
           mobileTopOpen || mobileOpen
             ? "max-2xl:bg-background max-2xl:border-b-stone-800"
             : "max-2xl:bg-transparent max-2xl:border-b-transparent"
@@ -148,9 +148,11 @@ export const Navbar = () => {
           <Wordmark className="max-sm:hidden w-auto h-10" />
         </Link>
         <nav className="flex gap-2 items-center lg:hidden">
-          <Button href="/benchmarks">View benchmarks</Button>
+          <Button href="/benchmarks" intent="secondary">
+            View benchmarks
+          </Button>
           <motion.button
-            className="bg-orange-600/50 size-12 rounded-lg"
+            className="bg-stone-400 size-12 rounded-lg"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             <Hamburger open={mobileOpen} />
@@ -170,7 +172,7 @@ export const Navbar = () => {
             transition={{ duration: 0.35 }}
           />
           {desktopLinks.map((group) => (
-            <hgroup className="relative mt-3.5 w-32" key={`nav-group-${group.name}`}>
+            <hgroup className="relative mt-2.5 w-32" key={`nav-group-${group.name}`}>
               <h2
                 className={clsx(
                   "text-body-3 transition-colors duration-300",
@@ -209,7 +211,7 @@ export const Navbar = () => {
               </motion.ul>
             </hgroup>
           ))}
-          <Button href="/benchmarks" fullHeight>
+          <Button href="/benchmarks" size="sm" intent="secondary">
             View benchmarks
           </Button>
         </nav>
@@ -283,7 +285,7 @@ const Hamburger = ({ open }: { open: boolean }) => {
               cx: open ? 24 : x,
               cy: open ? 24 : y,
             }}
-            fill="orange"
+            className="fill-stone-700"
             key={`nav-hamburger-circle-${index_x}-${index_y}`}
             transition={{
               duration: 0.3,
@@ -301,7 +303,7 @@ const Hamburger = ({ open }: { open: boolean }) => {
             animate={{
               d: open ? `M ${x} ${y} L 24 24` : `M ${x} ${y} L ${x} ${y}`,
             }}
-            stroke="orange"
+            className="stroke-stone-700"
             strokeWidth={2}
             key={`nav-hamburger-path-${index_x}-${index_y}`}
           />

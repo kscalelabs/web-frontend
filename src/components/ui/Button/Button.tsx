@@ -19,11 +19,13 @@ const buttonStyles = cva(
       intent: {
         primary:
           "text-foreground bg-orange-700 hover:bg-orange-800 focus:bg-orange-800 active:bg-orange-900",
-        secondary: "bg-gray-200 hover:bg-gray-300 focus:bg-gray-300 active:bg-gray-400",
+        secondary:
+          "bg-stone-300 hover:bg-stone-400 focus:bg-stone-300 active:bg-stone-500 text-stone-700",
       },
       size: {
+        sm: "h-10 text-body-3",
         md: "h-12 text-body-2",
-        lg: "h-14 text-body-2",
+        lg: "h-16 text-body-1",
       },
       fullWidth: {
         true: "w-full",
