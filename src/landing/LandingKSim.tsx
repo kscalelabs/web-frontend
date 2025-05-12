@@ -1,12 +1,11 @@
 import TableTrue from "@/assets/icons/table_true.svg";
 import TableFalse from "@/assets/icons/table_false.svg";
-import Arrow from "@/assets/icons/icon_arrowR.svg";
 import { Button } from "@/components/ui/Button/Button";
 import Visual1 from "@/assets/content/visual_ksim_1.svg";
 import Visual2 from "@/assets/content/visual_ksim_2.svg";
 import Visual3 from "@/assets/content/visual_ksim_3.svg";
 import Visual4 from "@/assets/content/visual_ksim_4.svg";
-import Image from "next/image";
+import Arrow from "@/assets/icons/icon_arrowTR.svg";
 
 export const LandingKSim = () => {
   const tableItems = [
@@ -72,37 +71,38 @@ export const LandingKSim = () => {
     <>
       <section className="section pb-0">
         <hgroup className="col-span-default col-start-default mb-6">
-          <h2 className="text-heading-1 mb-2">K-SIM</h2>
+          <h2 className="text-heading-1 mb-2 flex items-center">
+            <a
+              href="https://github.com/kscalelabs/ksim"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center"
+            >
+              K-SIM
+              <Arrow className="size-8 group-hover:translate-x-[12.5%] group-hover:-translate-y-[12.5%] group-focus:translate-x-[12.5%] group-focus:-translate-y-[12.5%] transition-transform duration-300 ml-2" />
+            </a>
+          </h2>
           <p className="text-body-1">
             A lightweight, modular framework for developing reinforcement learning policies in
             simulation and subsequently deploying on physical robots
           </p>
         </hgroup>
-        <a
-          className="group col-span-full lg:col-span-2 2xl:col-span-2 lg:mb-6 grid gap-x-4 md:gap-x-4 grid-cols-subgrid items-center"
-          href="https://www.youtube.com/watch?v=nMkS6VSh-yw"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="lg:col-span-full aspect-video rounded-md @xs:rounded-lg @sm:rounded-xl @lg:rounded-2xl">
-            <Image
-              src="/photos/stack/ksim-ali.png"
-              alt="Ali using K-Sim"
-              className="rounded-lg"
-              width={1280}
-              height={720}
-            />
+        <div className="col-span-full mb-6 flex flex-col items-center">
+          <div className="w-full lg:w-3/4 2xl:w-2/3 aspect-video rounded-md @xs:rounded-lg @sm:rounded-xl @lg:rounded-2xl overflow-hidden shadow-lg">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/nMkS6VSh-yw?autoplay=0&rel=0"
+              title="See how our ML engineer Ali uses K-Sim"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
           </div>
-          <hgroup className="max-lg:my-4 lg:mt-4 sm:col-span-3 lg:col-span-full">
-            <h3 className="inline-flex text-body-2 font-bold">
-              See how our ML lead Ali uses K-Sim{" "}
-            </h3>
-            <div className="flex w-full items-center gap-2 opacity-50">
-              <p className="inline-flex w-fit items-center gap-1 ">Go to video</p>
-              <Arrow className="group-hover:translate-x-[12.5%] transition-transform size-6 text-stone-400" />
-            </div>
-          </hgroup>
-        </a>
+          <h3 className="mt-4 text-body-2 font-bold text-center px-4">
+            See how our ML engineer Ali uses K-Sim
+          </h3>
+        </div>
       </section>
       <section className="section">
         <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-start-2">
@@ -117,8 +117,8 @@ export const LandingKSim = () => {
           <Visual2 className="size-[4.5rem] mb-4" />
           <h3 className="text-body-2 font-bold mb-2">Single-file workflows</h3>
           <p>
-            A complete experimental package&mdash;model, task, and config&mdash;lives in a python
-            file, so you can quickly pinpoint root cause of performance regressions
+            A complete experimental package - model, task, and config - lives in a python file, so
+            you can quickly pinpoint the root cause of training issues.
           </p>
         </div>
         <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-start-2">
@@ -133,8 +133,8 @@ export const LandingKSim = () => {
           <Visual4 className="size-[4.5rem] mb-4" />
           <h3 className="text-body-2 font-bold mb-2">Extensible by design</h3>
           <p>
-            Customize your own environment, rewards and algorithms or choose from several built-in
-            tasks ready to go
+            Customize your own environment, rewards, and algorithms or choose from several built-in
+            tasks ready to go.
           </p>
         </div>
         <table className="relative col-span-full 2xl:col-span-6 2xl:col-start-2 mt-12">

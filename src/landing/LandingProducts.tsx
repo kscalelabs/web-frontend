@@ -62,7 +62,7 @@ export const LandingProducts = () => {
       <hgroup className="col-span-default col-start-default mb-6">
         <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2>
         <p className="text-heading-1">
-          Humanoid robots for all your research and development needs
+          General-purpose Humanoid robots for developers, hobbyists, and researchers
         </p>
       </hgroup>
       <div className="mb-6 flex gap-2 md:place-self-end max-md:col-start-1 lg:-col-end-1 2xl:-col-end-2 lg:hidden">
@@ -104,7 +104,7 @@ export const LandingProducts = () => {
                 {/* <div className="aspect-square sm:aspect-video mb-4 size-full" /> */}
                 {/* <FiberRobot /> */}
                 <Image
-                  src={"/photos/thumbnail_kbot.png"}
+                  src={"/photos/landing/thumbnail/thumbnail_kbot.png"}
                   alt={"K-Bot"}
                   width={1080}
                   height={1620}
@@ -115,13 +115,21 @@ export const LandingProducts = () => {
                 />
                 <hgroup className="mt-auto flex flex-col items-center z-10 w-full bg-gradient-to-t from-stone-950 from-60% to-transparent p-4">
                   <h4 className="text-heading-2 mb-1">K-Bot</h4>
-                  <h5 className="text-body-2">Full sized (4&apos;) humanoid</h5>
+                  <h5 className="text-body-2">General-purpose humanoid robot</h5>
                   <p className="text-body-3 text-stone-400 mb-4">
                     Starting at <s>$16,999</s> $8,999 USD
                   </p>
-                  <Button href="https://shop.kscale.dev/products/kbot" external fullWidth>
-                    Pre-order now
-                  </Button>
+                  <div className="flex items-center gap-4 w-full">
+                    <Button href="https://shop.kscale.dev/products/kbot" external fullWidth>
+                      Pre-Order Now
+                    </Button>
+                    <a
+                      href="https://kscale.dev/kbot"
+                      className="text-orange-500 hover:text-orange-400 whitespace-nowrap text-body-2 font-medium flex items-center gap-1"
+                    >
+                      Learn more <ArrowR className="size-4 fill-current" />
+                    </a>
+                  </div>
                 </hgroup>
               </article>
             </li>
@@ -130,7 +138,7 @@ export const LandingProducts = () => {
                 {/* <div className="aspect-square sm:aspect-video mb-4 size-full" /> */}
                 {/* <FiberRobot /> */}
                 <Image
-                  src={"/photos/thumbnail_zbot.png"}
+                  src={"/photos/landing/thumbnail/thumbnail_zbot.png"}
                   alt={"Z-Bot"}
                   width={1080}
                   height={1620}
@@ -141,13 +149,21 @@ export const LandingProducts = () => {
                 />
                 <hgroup className="mt-auto flex flex-col items-center z-10 w-full bg-gradient-to-t from-stone-950 from-60% to-transparent p-4">
                   <h4 className="text-heading-2 mb-1">Z-Bot</h4>
-                  <h5 className="text-body-2">Small but mighty (1.5&apos;)</h5>
+                  <h5 className="text-body-2">Mini end-to-end humanoid robot</h5>
                   <p className="text-body-3 text-stone-400 mb-4">
                     Starting at <s>$1,999</s> $999 USD
                   </p>
-                  <Button href="https://zeroth.bot" external fullWidth>
-                    Pre-order now
-                  </Button>
+                  <div className="flex items-center gap-4 w-full">
+                    <Button href="https://zeroth.bot" external fullWidth>
+                      Pre-Order Now
+                    </Button>
+                    <a
+                      href="https://zerothbot.com"
+                      className="text-orange-500 hover:text-orange-400 whitespace-nowrap text-body-2 font-medium flex items-center gap-1"
+                    >
+                      Learn more <ArrowR className="size-4 fill-current" />
+                    </a>
+                  </div>
                 </hgroup>
               </article>
             </li>
@@ -156,18 +172,18 @@ export const LandingProducts = () => {
                 {/* <div className="aspect-square sm:aspect-video mb-4 size-full" /> */}
                 {/* <FiberRobot /> */}
                 <Image
-                  src={"/photos/thumbnail_mbot.png"}
+                  src={"/photos/landing/thumbnail/thumbnail_mbot.png"}
                   alt={"M-Bot"}
                   width={1080}
                   height={1620}
-                  className="object-cover mb-4 absolute inset-0 size-full object-top opacity-10"
+                  className="object-cover mb-4 absolute inset-0 size-full object-top brightness-50 opacity-50"
                   loading={"eager"}
                   priority={true}
                   sizes={"100dvw"}
                 />
                 <hgroup className="mt-auto flex flex-col items-center z-10 w-full bg-gradient-to-t from-stone-950 from-60% to-transparent p-4">
                   <h4 className="text-heading-2 flex items-center gap-2 mb-1">M-Bot </h4>
-                  <h5 className="text-body-2">QDD actuators, plastic (2.5&apos;)</h5>
+                  <h5 className="text-body-2">Compact humanoid for developers</h5>
                   <p className="text-body-3 text-stone-400 mb-4">
                     Starting at <s>$3,999</s> $2,999 USD
                   </p>

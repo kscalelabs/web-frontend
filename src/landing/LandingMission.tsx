@@ -12,7 +12,7 @@ export function LandingMission() {
 
       <div className="col-span-default col-start-default mb-6">
         <p className="text-body-1">
-          Our mission is to solve general purpose robotics&mdash;and open-source it to everyone.
+          Our mission is to solve general-purpose robotics and open-source it to everyone.
         </p>
       </div>
     </section>
