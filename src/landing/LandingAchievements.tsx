@@ -119,7 +119,7 @@ export const LandingAchievements = () => {
 
   return (
     <section className="section">
-      <div className="container">
+      <div className="section-container">
         <hgroup className="col-span-default col-start-default mb-6">
           <h2 className="text-body-2 font-medium text-stone-400 mb-1">Our achievements</h2>
           <p className="text-heading-1">

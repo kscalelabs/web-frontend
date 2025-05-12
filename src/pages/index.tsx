@@ -48,7 +48,7 @@ export default function Home() {
         <LandingCommunity />
         <LandingAchievements />
         <LandingContact />
-        <Sponsors />
+        {/* <Sponsors /> */}
       </main>
     </div>
   );

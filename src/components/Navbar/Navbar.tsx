@@ -146,7 +146,7 @@ export const Navbar = () => {
     <div className="lg:h-0">
       <motion.header
         className={clsx(
-          "fixed top-0 inset-x-0 z-50 px-layout py-4 flex justify-between max-lg:items-center max-lg:border-b lg:h-24 transitions-all duration-300 ease-out",
+          "fixed top-0 inset-x-0 mx-auto z-50 max-w-[2160px] px-layout py-4 flex justify-between max-lg:items-center max-lg:border-b lg:h-24 transitions-all duration-300 ease-out",
           mobileTopOpen || mobileOpen
             ? "max-2xl:bg-background max-2xl:border-b-stone-800"
             : "max-2xl:bg-transparent max-2xl:border-b-transparent"

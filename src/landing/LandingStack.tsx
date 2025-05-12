@@ -177,7 +177,7 @@ export const LandingStack = () => {
   return (
     <>
       <section className="section">
-        <div className="container">
+        <div className="section-container">
           <aside className="max-2xl:col-span-full sticky top-20 2xl:top-32 max-2xl:py-4 bg-background max-2xl:border-b border-b-stone-800 mb-4 h-fit z-10">
             <h2 className="text-body-2 font-medium text-stone-400 2xl:mb-4">Our stack</h2>
             <menu className="flex 2xl:flex-col gap-6 2xl:gap-4">
@@ -213,7 +213,7 @@ export const LandingStack = () => {
                 items={article.items}
               />
               {i < articles.length - 1 && (
-                <div className="col-span-full 2xl:col-span-4 2xl:col-start-2 border-b border-stone-700 mb-8" />
+                <div className="col-span-full 2xl:col-span-4 4xl:col-span-6 2xl:col-start-2 4xl:col-start-2 border-b border-stone-700 mb-8" />
               )}
             </React.Fragment>
           ))}
@@ -255,11 +255,11 @@ const Article = ({
 
   return (
     <motion.article
-      className="grid grid-cols-6 gap-x-6 col-span-full 2xl:col-span-4 2xl:col-start-2 4xl:col-span-4 4xl:col-start-2 scroll-mt-44 2xl:scroll-mt-32 mb-16 sm:mb-24 2xl:mb-32"
+      className="grid grid-cols-6 gap-x-6 col-span-full 2xl:col-span-4 2xl:col-start-2 4xl:col-span-6 4xl:col-start-2 scroll-mt-44 2xl:scroll-mt-32 mb-16 sm:mb-24 2xl:mb-32"
       id={id}
       ref={ref}
     >
-      <hgroup className="col-span-full">
+      <hgroup className="col-span-full 4xl:col-span-4">
         <h2 className="text-body-2 font-medium text-stone-400 mb-2">{name} layer</h2>
         <p className="text-heading-1 mb-6">{heading}</p>
       </hgroup>

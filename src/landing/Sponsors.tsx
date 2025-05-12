@@ -64,14 +64,14 @@ const sponsorStyles = `
 const Sponsors = () => {
   return (
     <section className="section">
-      <div className="container">
+      <div className="section-container">
         {/* Adding a heading for visibility */}
         <hgroup className="col-span-default col-start-default mb-6">
           <h2 className="text-body-2 font-medium text-stone-400 mb-1">Our supporters</h2>
           <p className="text-heading-1 mb-4">Backed by world-class investors</p>
         </hgroup>
         <style dangerouslySetInnerHTML={{ __html: sponsorStyles }} />
-        <div className="w-screen col-span-full flex flex-col gap-3 items-center pt-8 pb-16">
+        <div className="w-screen col-span-full flex flex-col gap-3 items-center pt-8 pb-16 overflow-hidden">
           <Marquee className="min-h-20" speed={40}>
             {SvgChildren.map((sponsor, index) => {
               return (

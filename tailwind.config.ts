@@ -139,21 +139,21 @@ const config: Config = {
           "1.1875rem",
           {
             lineHeight: "1.3",
-            letterSpacing: "0",
+            letterSpacing: "-0.02em",
           },
         ],
         "body-2-lg": [
           "1.125rem",
           {
             lineHeight: "1.3",
-            letterSpacing: "0",
+            letterSpacing: "-0.02em",
           },
         ],
         "body-2-md": [
           "1.125rem",
           {
             lineHeight: "1.3",
-            letterSpacing: "0",
+            letterSpacing: "-0.01em",
           },
         ],
         "body-2-sm": [

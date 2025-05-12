@@ -13,13 +13,17 @@ interface Props extends ButtonOrLinkProps, VariantProps<typeof buttonStyles> {
 }
 
 const buttonStyles = cva(
-  "relative overflow-hidden transition-all duration-300 text-body-2 px-3 py-3 rounded-lg flex justify-center items-center gap-2",
+  "relative overflow-hidden transition-all duration-300 px-3 py-3 rounded-lg flex justify-center items-center gap-2",
   {
     variants: {
       intent: {
         primary:
           "text-foreground bg-orange-700 hover:bg-orange-800 focus:bg-orange-800 active:bg-orange-900",
         secondary: "bg-gray-200 hover:bg-gray-300 focus:bg-gray-300 active:bg-gray-400",
+      },
+      size: {
+        md: "h-12 text-body-2",
+        lg: "h-14 text-body-2",
       },
       fullWidth: {
         true: "w-full",
@@ -40,6 +44,7 @@ const buttonStyles = cva(
     },
     defaultVariants: {
       intent: "primary",
+      size: "md",
       fullWidth: false,
       fullHeight: false,
       adaptive: false,
@@ -52,6 +57,7 @@ export const Button = ({
   external,
   iconPosition = "end",
   intent,
+  size,
   adaptive,
   fullWidth,
   fullHeight,
@@ -59,7 +65,7 @@ export const Button = ({
   icon: Icon,
   ...props
 }: Props) => {
-  const classes = buttonStyles({ intent, fullWidth, fullHeight, adaptive, disabled });
+  const classes = buttonStyles({ intent, fullWidth, fullHeight, adaptive, disabled, size });
 
   const renderContent = () => (
     <>

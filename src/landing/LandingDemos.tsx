@@ -11,7 +11,7 @@ export const LandingDemos = () => {
 
   return (
     <section className="section pt-0">
-      <div className="container">
+      <div className="section-container">
         <hgroup className="col-span-default col-start-default mb-4 sm:mb-6">
           <h2 className="text-body-2 font-medium text-stone-400 mb-1">Demos</h2>
           <p className="text-heading-1">Experience our humanoid robots in action</p>

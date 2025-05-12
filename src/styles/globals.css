@@ -116,8 +116,8 @@ body {
   .section {
     @apply py-16;
   }
-  .container {
-    @apply px-layout flex flex-col grid-r max-w-[2160px] mx-auto;
+  .section-container {
+    @apply px-layout flex flex-col grid-r w-full max-w-[2160px] mx-auto;
   }
 }
 

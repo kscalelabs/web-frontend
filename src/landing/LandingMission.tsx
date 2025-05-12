@@ -1,7 +1,7 @@
 export function LandingMission() {
   return (
     <section className="section">
-      <div className="container">
+      <div className="section-container">
         <div className="col-span-default col-start-default mb-8">
           <h2 className="text-heading-1 mb-4">The most integrated robotics stack in the world</h2>
           <p className="text-body-1">

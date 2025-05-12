@@ -24,7 +24,7 @@ export const Grid = () => {
       exit={{ opacity: 0 }}
       className="fixed inset-0 z-[1000] pointer-events-none size-full "
     >
-      <div className="container">
+      <div className="section-container">
         <div className="bg-orange-500 opacity-10 h-full min-h-svh" />
         <div className="bg-orange-500 opacity-10  h-full min-h-svh" />
         <div className="max-sm:hidden bg-orange-500 opacity-10  h-full min-h-svh" />

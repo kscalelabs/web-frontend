@@ -70,7 +70,7 @@ export const LandingKSim = () => {
   return (
     <>
       <section className="section pb-0">
-        <div className="container">
+        <div className="section-container">
           <hgroup className="col-span-default col-start-default mb-6">
             <h2 className="text-heading-1 mb-2 flex items-center">
               <a
@@ -107,8 +107,8 @@ export const LandingKSim = () => {
         </div>
       </section>
       <section className="section">
-        <div className="container">
-          <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-start-2">
+        <div className="section-container">
+          <div className="mb-6 col-span-full sm:col-span-2 4xl:col-span-3 2xl:col-start-2 4xl:col-start-2">
             <Visual1 className="size-[4.5rem] mb-4" />
             <h3 className="text-body-2 font-bold mb-2">Made for speed</h3>
             <p>
@@ -116,7 +116,7 @@ export const LandingKSim = () => {
               single GPU—over 50,000 samples per second on an RTX 4090.
             </p>
           </div>
-          <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3">
+          <div className="mb-6 col-span-full sm:col-span-2 4xl:col-span-3">
             <Visual2 className="size-[4.5rem] mb-4" />
             <h3 className="text-body-2 font-bold mb-2">Single-file workflows</h3>
             <p>
@@ -124,7 +124,7 @@ export const LandingKSim = () => {
               you can quickly pinpoint the root cause of training issues.
             </p>
           </div>
-          <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-start-2">
+          <div className="mb-6 col-span-full sm:col-span-2 4xl:col-span-3 2xl:col-start-2 4xl:col-start-2">
             <Visual3 className="size-[4.5rem] mb-4" />
             <h3 className="text-body-2 font-bold mb-2">Sim-to-real focus</h3>
             <p>
@@ -132,7 +132,7 @@ export const LandingKSim = () => {
               CLI deploy helpers let you seamlessly deploy a trained policy on a real robot.
             </p>
           </div>
-          <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3">
+          <div className="mb-6 col-span-full sm:col-span-2 4xl:col-span-3">
             <Visual4 className="size-[4.5rem] mb-4" />
             <h3 className="text-body-2 font-bold mb-2">Extensible by design</h3>
             <p>
@@ -140,7 +140,7 @@ export const LandingKSim = () => {
               built-in tasks ready to go.
             </p>
           </div>
-          <table className="relative col-span-full 2xl:col-span-6 2xl:col-start-2 mt-12">
+          <table className="relative col-span-full 2xl:col-span-4 2xl:col-start-2 4xl:col-span-6 4xl:col-start-2 mt-12">
             <thead className="max-lg:sticky top-20 ">
               <tr className="grid grid-cols-3 md:grid-cols-6 items-start py-4 bg-background border-b border-b-stone-800">
                 <th scope="col" className="text-body-3 font-bold md:col-start-2">
@@ -214,8 +214,8 @@ export const LandingKSim = () => {
         </div>
       </section>
       <section className="section mb-8">
-        <div className="container">
-          <hgroup className="col-span-full lg:col-span-4 lg:col-start-2 2xl:col-start-3 flex flex-col items-center">
+        <div className="section-container">
+          <hgroup className="col-span-full lg:col-span-4 lg:col-start-2 4xl:col-start-3 flex flex-col items-center">
             <h2 className="text-heading-2 text-center mb-2">
               K-SIM lets you iterate quickly and trust the code that you deploy on your hardware.{" "}
             </h2>
