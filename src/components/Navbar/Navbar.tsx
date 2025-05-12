@@ -12,37 +12,20 @@ import { Button } from "../ui/Button/Button";
 import { CopyButton } from "../ui/Button/CopyButton";
 import { usePathname } from "next/navigation";
 import { IconButton } from "../ui/IconButton/IconButton";
+import { useLenis } from "lenis/dist/lenis-react";
 
 export const Navbar = () => {
   const pathname = usePathname();
   const { scrollY } = useScroll();
   const [desktopHover, setDesktopHover] = useState(false);
-  const [desktopScrollDetect, setDesktopScrollDetect] = useState(false); // Changed to false
+  // const [desktopScrollDetect, setDesktopScrollDetect] = useState(false); // Changed to false
   const [desktopOpen, setDesktopOpen] = useState(false); // Changed to false
-  const [desktopPreviousScroll, setPrevScroll] = useState(0);
+  // const [desktopPreviousScroll, setPrevScroll] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileTopOpen, setMobileTopOpen] = useState(false);
-
-  function update(previous: number): void {
-    if (width < 1024 || desktopHover) return;
-    if (previous > 0) {
-      setDesktopOpen(false);
-    } else if (previous < 0) {
-      setDesktopOpen(true);
-    }
-  }
+  const lenis = useLenis();
 
   useMotionValueEvent(scrollY, "change", () => {
-    // console.log("scrollY fire");
-    if (desktopScrollDetect) {
-      // console.log("desktopPreviousScroll", desktopPreviousScroll);
-      update(desktopPreviousScroll);
-      const y = scrollY.getPrevious();
-      // console.log("y", y);
-      if (y !== undefined) {
-        setPrevScroll(Math.sign(scrollY.get() - y));
-      }
-    }
     setMobileTopOpen(scrollY.get() > 50);
   });
 
@@ -51,23 +34,30 @@ export const Navbar = () => {
   useEffect(() => {
     // console.log("fire");
     if (width >= 1024) {
-      if (desktopHover === false) {
-        setDesktopScrollDetect(false);
-        setPrevScroll(0);
-      }
       setDesktopOpen(desktopHover);
     }
   }, [desktopHover, width]);
 
   useEffect(() => {
     setMobileOpen(false);
-  }, [width]);
+    lenis?.start();
+  }, [width, lenis]);
+
+  useEffect(() => {
+    if (lenis) {
+      if (mobileOpen) {
+        lenis.stop();
+      } else {
+        lenis.start();
+      }
+    }
+  }, [mobileOpen, lenis]);
 
   useEffect(() => {
     const resetNavbar = () => {
       setDesktopOpen(pathname === "/");
       setMobileOpen(false);
-      setDesktopScrollDetect(true);
+      // setDesktopScrollDetect(true);
     };
     resetNavbar();
   }, [pathname]);

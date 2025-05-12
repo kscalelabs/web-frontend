@@ -173,7 +173,7 @@ export const LandingProducts = () => {
                             className="text-orange-500 hover:text-orange-400 whitespace-nowrap text-body-2 font-medium flex items-center gap-1"
                             target={item.links[1].href.startsWith("https://") ? "_blank" : "_self"}
                           >
-                            {item.links[1].text} <ArrowR className="size-4 fill-current" />
+                            {item.links[1].text}
                           </a>
                         </div>
                       ) : (
