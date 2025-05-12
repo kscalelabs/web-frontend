@@ -12,37 +12,20 @@ import { Button } from "../ui/Button/Button";
 import { CopyButton } from "../ui/Button/CopyButton";
 import { usePathname } from "next/navigation";
 import { IconButton } from "../ui/IconButton/IconButton";
+import { useLenis } from "lenis/dist/lenis-react";
 
 export const Navbar = () => {
   const pathname = usePathname();
   const { scrollY } = useScroll();
   const [desktopHover, setDesktopHover] = useState(false);
-  const [desktopScrollDetect, setDesktopScrollDetect] = useState(false); // Changed to false
+  // const [desktopScrollDetect, setDesktopScrollDetect] = useState(false); // Changed to false
   const [desktopOpen, setDesktopOpen] = useState(false); // Changed to false
-  const [desktopPreviousScroll, setPrevScroll] = useState(0);
+  // const [desktopPreviousScroll, setPrevScroll] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileTopOpen, setMobileTopOpen] = useState(false);
-
-  function update(previous: number): void {
-    if (width < 1024 || desktopHover) return;
-    if (previous > 0) {
-      setDesktopOpen(false);
-    } else if (previous < 0) {
-      setDesktopOpen(true);
-    }
-  }
+  const lenis = useLenis();
 
   useMotionValueEvent(scrollY, "change", () => {
-    // console.log("scrollY fire");
-    if (desktopScrollDetect) {
-      // console.log("desktopPreviousScroll", desktopPreviousScroll);
-      update(desktopPreviousScroll);
-      const y = scrollY.getPrevious();
-      // console.log("y", y);
-      if (y !== undefined) {
-        setPrevScroll(Math.sign(scrollY.get() - y));
-      }
-    }
     setMobileTopOpen(scrollY.get() > 50);
   });
 
@@ -51,23 +34,30 @@ export const Navbar = () => {
   useEffect(() => {
     // console.log("fire");
     if (width >= 1024) {
-      if (desktopHover === false) {
-        setDesktopScrollDetect(false);
-        setPrevScroll(0);
-      }
       setDesktopOpen(desktopHover);
     }
   }, [desktopHover, width]);
 
   useEffect(() => {
     setMobileOpen(false);
-  }, [width]);
+    lenis?.start();
+  }, [width, lenis]);
+
+  useEffect(() => {
+    if (lenis) {
+      if (mobileOpen) {
+        lenis.stop();
+      } else {
+        lenis.start();
+      }
+    }
+  }, [mobileOpen, lenis]);
 
   useEffect(() => {
     const resetNavbar = () => {
       setDesktopOpen(pathname === "/");
       setMobileOpen(false);
-      setDesktopScrollDetect(true);
+      // setDesktopScrollDetect(true);
     };
     resetNavbar();
   }, [pathname]);
@@ -146,7 +136,7 @@ export const Navbar = () => {
     <div className="lg:h-0">
       <motion.header
         className={clsx(
-          "fixed top-0 inset-x-0 z-50 px-layout py-4 flex justify-between max-lg:items-center max-lg:border-b lg:h-24 transitions-all duration-300 ease-out",
+          "fixed top-0 inset-x-0 mx-auto z-50 max-w-[2160px] px-layout py-4 flex justify-between max-lg:items-center max-lg:border-b lg:h-22 transitions-all duration-300 ease-out 2xl:bg-gradient-to-b from-background to-transparent",
           mobileTopOpen || mobileOpen
             ? "max-2xl:bg-background max-2xl:border-b-stone-800"
             : "max-2xl:bg-transparent max-2xl:border-b-transparent"
@@ -158,9 +148,11 @@ export const Navbar = () => {
           <Wordmark className="max-sm:hidden w-auto h-10" />
         </Link>
         <nav className="flex gap-2 items-center lg:hidden">
-          <Button href="/benchmarks">View benchmarks</Button>
+          <Button href="/benchmarks" intent="secondary">
+            View benchmarks
+          </Button>
           <motion.button
-            className="bg-orange-600/50 size-12 rounded-lg"
+            className="bg-stone-400 size-12 rounded-lg"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             <Hamburger open={mobileOpen} />
@@ -180,7 +172,7 @@ export const Navbar = () => {
             transition={{ duration: 0.35 }}
           />
           {desktopLinks.map((group) => (
-            <hgroup className="relative mt-3.5 w-32" key={`nav-group-${group.name}`}>
+            <hgroup className="relative mt-2.5 w-32" key={`nav-group-${group.name}`}>
               <h2
                 className={clsx(
                   "text-body-3 transition-colors duration-300",
@@ -219,7 +211,7 @@ export const Navbar = () => {
               </motion.ul>
             </hgroup>
           ))}
-          <Button href="/benchmarks" fullHeight>
+          <Button href="/benchmarks" size="sm" intent="secondary">
             View benchmarks
           </Button>
         </nav>
@@ -256,7 +248,7 @@ export const Navbar = () => {
                   </li>
                 ))}
               </ul>
-              <ul className="flex flex-col gap-6 mt-auto">
+              <ul className="flex flex-col gap-4 mt-auto">
                 <li className="text-body-2">
                   <CopyButton />
                 </li>
@@ -293,7 +285,7 @@ const Hamburger = ({ open }: { open: boolean }) => {
               cx: open ? 24 : x,
               cy: open ? 24 : y,
             }}
-            fill="orange"
+            className="fill-stone-800"
             key={`nav-hamburger-circle-${index_x}-${index_y}`}
             transition={{
               duration: 0.3,
@@ -311,7 +303,7 @@ const Hamburger = ({ open }: { open: boolean }) => {
             animate={{
               d: open ? `M ${x} ${y} L 24 24` : `M ${x} ${y} L ${x} ${y}`,
             }}
-            stroke="orange"
+            className="stroke-stone-800"
             strokeWidth={2}
             key={`nav-hamburger-path-${index_x}-${index_y}`}
           />

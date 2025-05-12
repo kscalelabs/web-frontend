@@ -107,7 +107,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:image" content="/meta/twitter-image.png" />
       </Head>
       <Grid />
-      <ReactLenis root options={{ duration: 0.3 }}>
+      <ReactLenis root options={{ smoothWheel: false }}>
         <Navbar />
         <Component {...pageProps} />
         <Footer />

@@ -27,14 +27,14 @@ const config: Config = {
           "4rem",
           {
             lineHeight: "0.95",
-            letterSpacing: "-0.02em",
+            letterSpacing: "-0.03em",
           },
         ],
         "heading-d-lg": [
-          "4rem",
+          "3.75rem",
           {
             lineHeight: "0.95",
-            letterSpacing: "-0.02em",
+            letterSpacing: "-0.03em",
           },
         ],
         "heading-d-md": [
@@ -52,21 +52,21 @@ const config: Config = {
           },
         ],
         "heading-1-xl": [
-          "2.25rem",
+          "2.5rem",
           {
             lineHeight: "1.05",
-            letterSpacing: "-0.02em",
+            letterSpacing: "-0.01em",
           },
         ],
         "heading-1-lg": [
-          "2rem",
+          "2.25rem",
           {
-            lineHeight: "1.1",
-            letterSpacing: "-0.02em",
+            lineHeight: "1.05",
+            letterSpacing: "-0.01em",
           },
         ],
         "heading-1-md": [
-          "1.8125rem",
+          "2rem",
           {
             lineHeight: "1.1",
             letterSpacing: "-0.02em",
@@ -111,14 +111,14 @@ const config: Config = {
           "1.625rem",
           {
             lineHeight: "1.2",
-            letterSpacing: "0",
+            letterSpacing: "-0.02em",
           },
         ],
         "body-1-lg": [
-          "1.5rem",
+          "1.4375rem",
           {
             lineHeight: "1.2",
-            letterSpacing: "0",
+            letterSpacing: "-0.02em",
           },
         ],
         "body-1-md": [
@@ -139,21 +139,21 @@ const config: Config = {
           "1.1875rem",
           {
             lineHeight: "1.3",
-            letterSpacing: "0",
+            letterSpacing: "-0.02em",
           },
         ],
         "body-2-lg": [
           "1.125rem",
           {
             lineHeight: "1.3",
-            letterSpacing: "0",
+            letterSpacing: "-0.02em",
           },
         ],
         "body-2-md": [
           "1.125rem",
           {
             lineHeight: "1.3",
-            letterSpacing: "0",
+            letterSpacing: "-0.01em",
           },
         ],
         "body-2-sm": [

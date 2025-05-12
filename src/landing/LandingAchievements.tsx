@@ -119,57 +119,63 @@ export const LandingAchievements = () => {
 
   return (
     <section className="section">
-      <hgroup className="col-span-default col-start-default mb-6">
-        <h2 className="text-body-2 font-medium text-stone-400 mb-1">Our achievements</h2>
-        <p className="text-heading-1">
-          We&apos;ve completed 7 generations of robots in less than a year
-        </p>
-      </hgroup>
-      <div className="mb-6 flex gap-2 md:place-self-end max-md:col-start-1 lg:-col-end-1 2xl:-col-end-2">
-        <Button onClick={() => decrement()} icon={ArrowL} disabled={index == 0} />
-        <Button onClick={() => increment()} icon={ArrowR} disabled={index == cardDimensions.max} />
-      </div>
-      <div className="-mx-5 px-5 lg:-mx-10 lg:px-10 col-span-full overflow-hidden">
-        <motion.div
-          className="grid-r"
-          drag="x"
-          // dragConstraints={dragRef}
-          dragConstraints={{ left: 0, right: 0 }}
-          // dragElastic={0.1}
-          style={{
-            x: dragX,
-          }}
-          animate={{
-            translateX: `calc(-${index * cardDimensions.width}vw - ${index * cardDimensions.gap}rem)`,
-            // translateX: `-${index * 40}rem`,
-          }}
-          onDragEnd={onDragEnd}
-          transition={SPRING_OPTIONS}
-        >
-          <div className="flex gap-4 md:gap-6 2xl:col-start-2">
-            {imgs.map((item, index) => (
-              <article
-                className="min-w-[80vw] sm:min-w-[40vw] 2xl:min-w-[20vw] flex flex-col gap-4"
-                key={`achievement--${index}`}
-              >
-                <hgroup>
-                  <h3 className="text-body-3 font-bold inline-flex gap-4">
-                    <time dateTime={item.dateTime}>{item.time}</time>
-                    <span>{item.name}</span>
-                  </h3>
-                  <p>{item.desc}</p>
-                </hgroup>
-                <Image
-                  src={item.src}
-                  className="md:-order-1 max-md:mt-auto aspect-[3/4] rounded-2xl pointer-events-none object-cover object-top"
-                  width={item.width}
-                  height={item.height}
-                  alt={item.alt}
-                />
-              </article>
-            ))}
-          </div>
-        </motion.div>
+      <div className="section-container">
+        <hgroup className="col-span-default col-start-default mb-6">
+          <h2 className="text-body-2 font-medium text-stone-400 mb-1">Our achievements</h2>
+          <p className="text-heading-1">
+            We&apos;ve completed 7 generations of robots in less than a year
+          </p>
+        </hgroup>
+        <div className="mb-6 flex gap-2 md:place-self-end max-md:col-start-1 lg:-col-end-1 2xl:-col-end-2">
+          <Button onClick={() => decrement()} icon={ArrowL} disabled={index == 0} />
+          <Button
+            onClick={() => increment()}
+            icon={ArrowR}
+            disabled={index == cardDimensions.max}
+          />
+        </div>
+        <div className="-mx-5 px-5 lg:-mx-10 lg:px-10 col-span-full overflow-hidden">
+          <motion.div
+            className="grid-r"
+            drag="x"
+            // dragConstraints={dragRef}
+            dragConstraints={{ left: 0, right: 0 }}
+            // dragElastic={0.1}
+            style={{
+              x: dragX,
+            }}
+            animate={{
+              translateX: `calc(-${index * cardDimensions.width}vw - ${index * cardDimensions.gap}rem)`,
+              // translateX: `-${index * 40}rem`,
+            }}
+            onDragEnd={onDragEnd}
+            transition={SPRING_OPTIONS}
+          >
+            <div className="flex gap-4 md:4 2xl:col-start-2">
+              {imgs.map((item, index) => (
+                <article
+                  className="min-w-[80vw] sm:min-w-[40vw] 2xl:min-w-[20vw] flex flex-col gap-4"
+                  key={`achievement--${index}`}
+                >
+                  <hgroup>
+                    <h3 className="text-body-3 font-bold inline-flex gap-4">
+                      <time dateTime={item.dateTime}>{item.time}</time>
+                      <span>{item.name}</span>
+                    </h3>
+                    <p>{item.desc}</p>
+                  </hgroup>
+                  <Image
+                    src={item.src}
+                    className="md:-order-1 max-md:mt-auto aspect-[3/4] rounded-2xl pointer-events-none object-cover object-top"
+                    width={item.width}
+                    height={item.height}
+                    alt={item.alt}
+                  />
+                </article>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

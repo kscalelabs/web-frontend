@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 import Arrow from "@/assets/icons/icon_arrowTR.svg";
 import Apps from "@/assets/content/application_apps.svg";
-import { KOSThumbnail } from "@/assets/content/stack/StackThumbnail";
+import { KOSThumbnail, KVLAThumbnail } from "@/assets/content/stack/StackThumbnail";
 import Image from "next/image";
 import { useInView } from "motion/react";
 import { CopyCode } from "@/components/ui/Code/CopyCode";
@@ -66,7 +66,7 @@ export const LandingStack = () => {
           description: [
             "A single hub to install apps, customize behaviours, train new skills, and teleoperate your robot.",
           ],
-          thumbnail: <Apps className="w-full h-auto mb-4" />,
+          thumbnail: <Apps className="w-full h-auto" />,
           condensed: true,
         },
         {
@@ -105,6 +105,7 @@ export const LandingStack = () => {
             "Locally run and capable of integrating with other VLAs such as Pi0.5 and Gr00t.",
           ],
           condensed: false,
+          thumbnail: <KVLAThumbnail />,
           // thumbnailSrc: "/photos/stack/K-VLA.webp",
           // thumbnailAlt: "K-VLA",
           // width: 991,
@@ -177,45 +178,44 @@ export const LandingStack = () => {
   return (
     <>
       <section className="section">
-        <aside className="max-2xl:col-span-full sticky top-20 2xl:top-32 max-2xl:py-4 bg-background max-2xl:border-b border-b-stone-800 mb-4 h-fit z-10">
-          <h2 className="text-body-2 font-medium text-stone-400 2xl:mb-4">Our stack</h2>
-          <menu className="flex 2xl:flex-col gap-6 2xl:gap-4">
-            {articles.map((e, i) => (
-              <li key={`landing-stack-link--${i}`}>
-                <Link
-                  href={`#${e.id}`}
-                  className={clsx(
-                    "transition-colors duration-300 text-body-2 font-bold",
-                    activeId == i + 1
-                      ? "text-orange-600"
-                      : "text-foreground hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400"
-                  )}
-                  onClick={() => {
-                    reorderSet(i + 1);
-                  }}
-                >
-                  {e.layer}
-                </Link>
-              </li>
-            ))}
-          </menu>
-        </aside>
-        {articles.map((article, i) => (
-          <React.Fragment key={`landing-stack-fragment--${i}`}>
-            <Article
-              name={article.layer}
-              id={article.id}
-              heading={article.heading}
-              index={i + 1}
-              onInViewChange={handleInViewChange}
-              registerRef={(el) => (sectionRefs.current[i] = el)}
-              items={article.items}
-            />
-            {i < articles.length - 1 && (
-              <div className="col-span-full 2xl:col-span-6 2xl:col-start-2 border-b border-stone-700 mb-8" />
-            )}
-          </React.Fragment>
-        ))}
+        <div className="section-container">
+          <aside className="max-2xl:col-span-full sticky top-20 2xl:top-32 max-2xl:py-4 bg-background max-2xl:border-b border-b-stone-800 mb-4 h-fit z-10">
+            <h2 className="text-body-2 font-medium text-stone-400 2xl:mb-4">Our stack</h2>
+            <menu className="flex 2xl:flex-col gap-4 2xl:gap-4">
+              {articles.map((e, i) => (
+                <li key={`landing-stack-link--${i}`}>
+                  <Link
+                    href={`#${e.id}`}
+                    className={clsx(
+                      "transition-colors duration-300 text-body-2 font-bold",
+                      activeId == i + 1
+                        ? "text-orange-600"
+                        : "text-foreground hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400"
+                    )}
+                    onClick={() => {
+                      reorderSet(i + 1);
+                    }}
+                  >
+                    {e.layer}
+                  </Link>
+                </li>
+              ))}
+            </menu>
+          </aside>
+          {articles.map((article, i) => (
+            <React.Fragment key={`landing-stack-fragment--${i}`}>
+              <Article
+                name={article.layer}
+                id={article.id}
+                heading={article.heading}
+                index={i + 1}
+                onInViewChange={handleInViewChange}
+                registerRef={(el) => (sectionRefs.current[i] = el)}
+                items={article.items}
+              />
+            </React.Fragment>
+          ))}
+        </div>
       </section>
     </>
   );
@@ -253,11 +253,11 @@ const Article = ({
 
   return (
     <motion.article
-      className="grid grid-cols-subgrid col-span-full 2xl:col-span-6 2xl:col-start-2 scroll-mt-44 2xl:scroll-mt-32 mb-16 sm:mb-24 2xl:mb-32"
+      className="grid grid-cols-6 gap-x-4 col-span-full 2xl:col-span-4 2xl:col-start-2 4xl:col-span-6 4xl:col-start-2 scroll-mt-44 2xl:scroll-mt-32 mb-16 sm:mb-24 2xl:mb-32"
       id={id}
       ref={ref}
     >
-      <hgroup className="col-span-default">
+      <hgroup className="col-span-full 4xl:col-span-4">
         <h2 className="text-body-2 font-medium text-stone-400 mb-2">{name} layer</h2>
         <p className="text-heading-1 mb-6">{heading}</p>
       </hgroup>
@@ -265,40 +265,42 @@ const Article = ({
         <div
           key={`landing-stack-item-${id}--${i}`}
           className={clsx(
-            "col-span-full md:col-span-2 first-of-type:lg:col-start-1 mb-6",
+            "col-span-full md:col-span-3 first-of-type:lg:col-start-1 mb-6",
             id == "hardware" ? "lg:col-span-2" : "lg:col-span-3"
           )}
         >
-          {item.thumbnail ? (
-            item.thumbnail
-          ) : item.thumbnailSrc ? (
-            item.video ? (
-              <video
-                width="1920"
-                height="1080"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="object-cover aspect-video mb-6 w-full"
-              >
-                <source src={item.thumbnailSrc} type="video/mp4" />
-              </video>
+          <div className="rounded-xl overflow-hidden mb-6">
+            {item.thumbnail ? (
+              item.thumbnail
+            ) : item.thumbnailSrc ? (
+              item.video ? (
+                <video
+                  width="1920"
+                  height="1080"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="object-cover aspect-video w-full"
+                >
+                  <source src={item.thumbnailSrc} type="video/mp4" />
+                </video>
+              ) : (
+                <Image
+                  src={item.thumbnailSrc}
+                  alt={item.thumbnailAlt ?? ""}
+                  width={item.width}
+                  height={item.height}
+                  className="object-cover aspect-video w-full"
+                  loading={"eager"}
+                  priority={true}
+                  sizes={"100dvw"}
+                />
+              )
             ) : (
-              <Image
-                src={item.thumbnailSrc}
-                alt={item.thumbnailAlt ?? ""}
-                width={item.width}
-                height={item.height}
-                className="object-cover aspect-video mb-6 w-full"
-                loading={"eager"}
-                priority={true}
-                sizes={"100dvw"}
-              />
-            )
-          ) : (
-            <Placeholder condensed={item.condensed} />
-          )}
+              <Placeholder condensed={item.condensed} />
+            )}
+          </div>
           <h3 className={clsx("mb-2", item.condensed ? "text-body-2 font-bold" : "text-heading-2")}>
             {item.href ? (
               <a
@@ -339,7 +341,7 @@ const Placeholder = ({ condensed }: { condensed: boolean }) => {
   return (
     <div
       className={clsx(
-        "bg-gradient-to-br from-background via-stone-900 to-background mb-4 flex items-center justify-center select-none cursor-default",
+        "bg-gradient-to-br from-background via-stone-900 to-background flex items-center justify-center select-none cursor-default",
         condensed ? "aspect-[5/1]" : "aspect-video"
       )}
     >
