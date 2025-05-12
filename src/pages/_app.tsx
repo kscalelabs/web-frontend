@@ -6,7 +6,7 @@ import "katex/dist/katex.min.css";
 import localFont from "next/font/local";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import { Grid } from "@/components/grid/Grid";
+// import { Grid } from "@/components/grid/Grid";
 
 const apparat = localFont({
   src: [
@@ -106,7 +106,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta name="twitter:image" content="/meta/twitter-image.png" />
       </Head>
-      <Grid />
+      {/* <Grid /> */}
       <ReactLenis root options={{ smoothWheel: false }}>
         <Navbar />
         <Component {...pageProps} />
