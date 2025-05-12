@@ -52,21 +52,21 @@ const config: Config = {
           },
         ],
         "heading-1-xl": [
-          "2.25rem",
+          "2.5rem",
           {
             lineHeight: "1.05",
-            letterSpacing: "-0.02em",
+            letterSpacing: "-0.01em",
           },
         ],
         "heading-1-lg": [
-          "2rem",
+          "2.25rem",
           {
-            lineHeight: "1.1",
-            letterSpacing: "-0.02em",
+            lineHeight: "1.05",
+            letterSpacing: "-0.01em",
           },
         ],
         "heading-1-md": [
-          "1.8125rem",
+          "2rem",
           {
             lineHeight: "1.1",
             letterSpacing: "-0.02em",

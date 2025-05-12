@@ -177,45 +177,47 @@ export const LandingStack = () => {
   return (
     <>
       <section className="section">
-        <aside className="max-2xl:col-span-full sticky top-20 2xl:top-32 max-2xl:py-4 bg-background max-2xl:border-b border-b-stone-800 mb-4 h-fit z-10">
-          <h2 className="text-body-2 font-medium text-stone-400 2xl:mb-4">Our stack</h2>
-          <menu className="flex 2xl:flex-col gap-6 2xl:gap-4">
-            {articles.map((e, i) => (
-              <li key={`landing-stack-link--${i}`}>
-                <Link
-                  href={`#${e.id}`}
-                  className={clsx(
-                    "transition-colors duration-300 text-body-2 font-bold",
-                    activeId == i + 1
-                      ? "text-orange-600"
-                      : "text-foreground hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400"
-                  )}
-                  onClick={() => {
-                    reorderSet(i + 1);
-                  }}
-                >
-                  {e.layer}
-                </Link>
-              </li>
-            ))}
-          </menu>
-        </aside>
-        {articles.map((article, i) => (
-          <React.Fragment key={`landing-stack-fragment--${i}`}>
-            <Article
-              name={article.layer}
-              id={article.id}
-              heading={article.heading}
-              index={i + 1}
-              onInViewChange={handleInViewChange}
-              registerRef={(el) => (sectionRefs.current[i] = el)}
-              items={article.items}
-            />
-            {i < articles.length - 1 && (
-              <div className="col-span-full 2xl:col-span-6 2xl:col-start-2 border-b border-stone-700 mb-8" />
-            )}
-          </React.Fragment>
-        ))}
+        <div className="container">
+          <aside className="max-2xl:col-span-full sticky top-20 2xl:top-32 max-2xl:py-4 bg-background max-2xl:border-b border-b-stone-800 mb-4 h-fit z-10">
+            <h2 className="text-body-2 font-medium text-stone-400 2xl:mb-4">Our stack</h2>
+            <menu className="flex 2xl:flex-col gap-6 2xl:gap-4">
+              {articles.map((e, i) => (
+                <li key={`landing-stack-link--${i}`}>
+                  <Link
+                    href={`#${e.id}`}
+                    className={clsx(
+                      "transition-colors duration-300 text-body-2 font-bold",
+                      activeId == i + 1
+                        ? "text-orange-600"
+                        : "text-foreground hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400"
+                    )}
+                    onClick={() => {
+                      reorderSet(i + 1);
+                    }}
+                  >
+                    {e.layer}
+                  </Link>
+                </li>
+              ))}
+            </menu>
+          </aside>
+          {articles.map((article, i) => (
+            <React.Fragment key={`landing-stack-fragment--${i}`}>
+              <Article
+                name={article.layer}
+                id={article.id}
+                heading={article.heading}
+                index={i + 1}
+                onInViewChange={handleInViewChange}
+                registerRef={(el) => (sectionRefs.current[i] = el)}
+                items={article.items}
+              />
+              {i < articles.length - 1 && (
+                <div className="col-span-full 2xl:col-span-4 2xl:col-start-2 border-b border-stone-700 mb-8" />
+              )}
+            </React.Fragment>
+          ))}
+        </div>
       </section>
     </>
   );
@@ -253,11 +255,11 @@ const Article = ({
 
   return (
     <motion.article
-      className="grid grid-cols-subgrid col-span-full 2xl:col-span-6 2xl:col-start-2 scroll-mt-44 2xl:scroll-mt-32 mb-16 sm:mb-24 2xl:mb-32"
+      className="grid grid-cols-6 gap-x-6 col-span-full 2xl:col-span-4 2xl:col-start-2 4xl:col-span-4 4xl:col-start-2 scroll-mt-44 2xl:scroll-mt-32 mb-16 sm:mb-24 2xl:mb-32"
       id={id}
       ref={ref}
     >
-      <hgroup className="col-span-default">
+      <hgroup className="col-span-full">
         <h2 className="text-body-2 font-medium text-stone-400 mb-2">{name} layer</h2>
         <p className="text-heading-1 mb-6">{heading}</p>
       </hgroup>
@@ -265,7 +267,7 @@ const Article = ({
         <div
           key={`landing-stack-item-${id}--${i}`}
           className={clsx(
-            "col-span-full md:col-span-2 first-of-type:lg:col-start-1 mb-6",
+            "col-span-full md:col-span-3 first-of-type:lg:col-start-1 mb-6",
             id == "hardware" ? "lg:col-span-2" : "lg:col-span-3"
           )}
         >
