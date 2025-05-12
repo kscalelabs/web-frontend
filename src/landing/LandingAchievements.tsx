@@ -151,7 +151,7 @@ export const LandingAchievements = () => {
             onDragEnd={onDragEnd}
             transition={SPRING_OPTIONS}
           >
-            <div className="flex gap-4 md:gap-6 2xl:col-start-2">
+            <div className="flex gap-4 md:4 2xl:col-start-2">
               {imgs.map((item, index) => (
                 <article
                   className="min-w-[80vw] sm:min-w-[40vw] 2xl:min-w-[20vw] flex flex-col gap-4"

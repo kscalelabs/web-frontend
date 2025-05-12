@@ -248,7 +248,7 @@ export const Navbar = () => {
                   </li>
                 ))}
               </ul>
-              <ul className="flex flex-col gap-6 mt-auto">
+              <ul className="flex flex-col gap-4 mt-auto">
                 <li className="text-body-2">
                   <CopyButton />
                 </li>

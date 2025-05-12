@@ -124,7 +124,7 @@ export const LandingProducts = () => {
             onDragEnd={onDragEnd}
             transition={SPRING_OPTIONS}
           >
-            <ul className="flex lg:col-span-6 2xl:col-span-4 4xl:col-span-6 gap-4 md:gap-6 2xl:col-start-2 4xl:col-start-2">
+            <ul className="flex lg:col-span-6 2xl:col-span-4 4xl:col-span-6 gap-4 2xl:col-start-2 4xl:col-start-2">
               {/* {imgs.map((item) => (
                 <article className="min-w-[80vw] md:min-w-[40vw] 2xl:min-w-[30vw] flex flex-col md:flex-col-reverse gap-2">
                   <hgroup>
