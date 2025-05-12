@@ -66,7 +66,7 @@ export const LandingStack = () => {
           description: [
             "A single hub to install apps, customize behaviours, train new skills, and teleoperate your robot.",
           ],
-          thumbnail: <Apps className="w-full h-auto mb-4" />,
+          thumbnail: <Apps className="w-full h-auto" />,
           condensed: true,
         },
         {
