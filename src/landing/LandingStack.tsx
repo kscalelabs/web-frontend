@@ -253,11 +253,11 @@ const Article = ({
 
   return (
     <motion.article
-      className="grid grid-cols-6 gap-x-4 col-span-full 2xl:col-span-4 2xl:col-start-2 4xl:col-span-6 4xl:col-start-2 scroll-mt-44 2xl:scroll-mt-32 mb-16 sm:mb-24 2xl:mb-32"
+      className="grid grid-cols-12 gap-x-4 col-span-full 2xl:col-span-4 2xl:col-start-2 4xl:col-span-6 4xl:col-start-2 scroll-mt-44 2xl:scroll-mt-32 mb-16 sm:mb-24 2xl:mb-32"
       id={id}
       ref={ref}
     >
-      <hgroup className="col-span-full 4xl:col-span-4">
+      <hgroup className="col-span-full 2xl:col-span-9 4xl:col-span-8 5xl:col-span-6">
         <h2 className="text-body-2 font-medium text-stone-400 mb-2">{name} layer</h2>
         <p className="text-heading-1 mb-6">{heading}</p>
       </hgroup>
@@ -266,7 +266,7 @@ const Article = ({
           key={`landing-stack-item-${id}--${i}`}
           className={clsx(
             "col-span-full md:col-span-3 first-of-type:lg:col-start-1 mb-6",
-            id == "hardware" ? "lg:col-span-2" : "lg:col-span-3"
+            id == "hardware" ? "lg:col-span-4" : "lg:col-span-6"
           )}
         >
           <div className="rounded-xl overflow-hidden mb-6">
