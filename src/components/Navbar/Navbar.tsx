@@ -160,7 +160,7 @@ export const Navbar = () => {
             </motion.button>
           </nav>
           <nav
-            className="relative flex gap-2 md:gap-6 items-center md:items-start max-lg:hidden p-2 pl-4"
+            className="relative flex gap-2 md:gap-6 lg:gap-4 items-center md:items-start max-lg:hidden p-2 pl-4"
             onMouseOver={() => setDesktopHover(true)}
             onMouseLeave={() => setDesktopHover(false)}
           >
@@ -173,7 +173,7 @@ export const Navbar = () => {
               transition={{ duration: 0.35 }}
             />
             {desktopLinks.map((group) => (
-              <hgroup className="relative mt-2.5 w-32" key={`nav-group-${group.name}`}>
+              <hgroup className="relative mt-2.5 w-28" key={`nav-group-${group.name}`}>
                 <h2
                   className={clsx(
                     "text-body-3 transition-colors duration-300",
