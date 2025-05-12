@@ -136,7 +136,7 @@ export const Navbar = () => {
     <div className="lg:h-0">
       <motion.header
         className={clsx(
-          "fixed top-0 inset-x-0 mx-auto z-50 max-w-[2160px] px-layout py-4 flex justify-between max-lg:items-center max-lg:border-b lg:h-22 transitions-all duration-300 ease-out",
+          "fixed top-0 inset-x-0 mx-auto z-50 max-w-[2160px] px-layout py-4 flex justify-between max-lg:items-center max-lg:border-b lg:h-22 transitions-all duration-300 ease-out 2xl:bg-gradient-to-b from-background to-transparent",
           mobileTopOpen || mobileOpen
             ? "max-2xl:bg-background max-2xl:border-b-stone-800"
             : "max-2xl:bg-transparent max-2xl:border-b-transparent"
@@ -285,7 +285,7 @@ const Hamburger = ({ open }: { open: boolean }) => {
               cx: open ? 24 : x,
               cy: open ? 24 : y,
             }}
-            className="fill-stone-700"
+            className="fill-stone-800"
             key={`nav-hamburger-circle-${index_x}-${index_y}`}
             transition={{
               duration: 0.3,
@@ -303,7 +303,7 @@ const Hamburger = ({ open }: { open: boolean }) => {
             animate={{
               d: open ? `M ${x} ${y} L 24 24` : `M ${x} ${y} L ${x} ${y}`,
             }}
-            className="stroke-stone-700"
+            className="stroke-stone-800"
             strokeWidth={2}
             key={`nav-hamburger-path-${index_x}-${index_y}`}
           />

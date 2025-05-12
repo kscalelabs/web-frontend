@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/Button/Button";
+import { motion, useScroll } from "motion/react";
 
 export function LandingHero() {
   return (
@@ -15,7 +16,7 @@ export function LandingHero() {
         >
           <source src="/videos/landing/landing_video_0506.mp4" type="video/mp4" />
         </video>
-        <hgroup className="col-span-4 2xl:col-start-2 2xl:col-span-4 z-10">
+        <hgroup className="col-span-4 2xl:col-start-1 2xl:col-span-4 z-10">
           <h1 className="mb-4">Open-source humanoid robots, built for developers</h1>
           <p className="text-body-1 mb-4">
             We&apos;re building the most integrated stack—from hardware to machine learning—to power

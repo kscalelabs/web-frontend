@@ -20,7 +20,7 @@ const buttonStyles = cva(
         primary:
           "text-foreground bg-orange-700 hover:bg-orange-800 focus:bg-orange-800 active:bg-orange-900",
         secondary:
-          "bg-stone-300 hover:bg-stone-400 focus:bg-stone-300 active:bg-stone-500 text-stone-700",
+          "bg-stone-300 hover:bg-stone-400 focus:bg-stone-300 active:bg-stone-500 text-stone-800",
       },
       size: {
         sm: "h-10 text-body-3",
