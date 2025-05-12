@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 import Arrow from "@/assets/icons/icon_arrowTR.svg";
 import Apps from "@/assets/content/application_apps.svg";
-import { KOSThumbnail } from "@/assets/content/stack/StackThumbnail";
+import { KOSThumbnail, KVLAThumbnail } from "@/assets/content/stack/StackThumbnail";
 import Image from "next/image";
 import { useInView } from "motion/react";
 import { CopyCode } from "@/components/ui/Code/CopyCode";
@@ -105,6 +105,7 @@ export const LandingStack = () => {
             "Locally run and capable of integrating with other VLAs such as Pi0.5 and Gr00t.",
           ],
           condensed: false,
+          thumbnail: <KVLAThumbnail />,
           // thumbnailSrc: "/photos/stack/K-VLA.webp",
           // thumbnailAlt: "K-VLA",
           // width: 991,

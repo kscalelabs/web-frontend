@@ -19,3 +19,20 @@ export const KOSThumbnail = () => {
     </div>
   );
 };
+
+export const KVLAThumbnail = () => {
+  return (
+    <div className={clsx("relative bg-stone-900 flex items-center justify-center aspect-video")}>
+      <span className="absolute z-10 text-stone-500 text-body-3 font-bold border border-stone-500 rounded-full px-3 py-1 cursor-default">
+        Coming soon
+      </span>
+      <Image
+        src={"/photos/landing/stack/k-vla-background.png"}
+        alt="K-OS"
+        width={1600}
+        height={900}
+        // className="brightness-[0.8]"
+      />
+    </div>
+  );
+};
