@@ -6,6 +6,7 @@ import "katex/dist/katex.min.css";
 import localFont from "next/font/local";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 // import { Grid } from "@/components/grid/Grid";
 
 const apparat = localFont({
@@ -111,6 +112,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Navbar />
         <Component {...pageProps} />
         <Footer />
+        <GoogleAnalytics gaId="G-QG3C4SS5YY" />
       </ReactLenis>
     </div>
   );
