@@ -45,8 +45,8 @@ export default function Home() {
         <LandingDemos />
         <LandingStack />
         <LandingKSim />
-        <LandingCommunity />
         <LandingAchievements />
+        <LandingCommunity />
         <LandingContact />
         <Sponsors />
       </main>
