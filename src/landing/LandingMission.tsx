@@ -14,7 +14,7 @@ export function LandingMission() {
           Owning every layer—from metal to model—lets us move faster, integrate more deeply, and
           open-source each breakthrough for the whole world to build on.
         </p>
-        <figure className="bg-stone-900 w-full col-span-full sm:col-span-3 md:col-span-4 lg:col-span-3 2xl:col-span-5 4xl:col-span-6 sm:-col-end-1 md:-col-end-1 lg:-col-end-2 2xl:-col-end-3 4xl:-col-end-5 aspect-video rounded-lg" />
+        {/* <figure className="bg-stone-900 w-full col-span-full sm:col-span-3 md:col-span-4 lg:col-span-3 2xl:col-span-5 4xl:col-span-6 sm:-col-end-1 md:-col-end-1 lg:-col-end-2 2xl:-col-end-3 4xl:-col-end-5 aspect-video rounded-lg" /> */}
       </div>
     </section>
   );
