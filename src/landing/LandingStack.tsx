@@ -264,7 +264,7 @@ const Article = ({
         <div
           key={`landing-stack-item-${id}--${i}`}
           className={clsx(
-            "col-span-full md:col-span-3 first-of-type:lg:col-start-1 mb-6",
+            "col-span-full md:col-span-6 first-of-type:lg:col-start-1 mb-6",
             id == "hardware" ? "lg:col-span-4" : "lg:col-span-6"
           )}
         >

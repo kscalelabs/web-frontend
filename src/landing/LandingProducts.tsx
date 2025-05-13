@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import ArrowL from "@/assets/icons/icon_arrowL.svg";
 import ArrowR from "@/assets/icons/icon_arrowR.svg";
 import Image from "next/image";
+import clsx from "clsx";
 // import FiberRobot from "@/components/robot/FiberRobot";
 
 const DRAG_BUFFER = 50;
@@ -148,7 +149,10 @@ export const LandingProducts = () => {
                       alt={item.alt}
                       width={1080}
                       height={1440}
-                      className="object-cover mb-4 absolute inset-0 size-full object-top"
+                      className={clsx(
+                        "object-cover mb-4 absolute inset-0 size-full object-top",
+                        item.links == null && "opacity-10"
+                      )}
                       loading={"eager"}
                       priority={true}
                       sizes={"100dvw"}
