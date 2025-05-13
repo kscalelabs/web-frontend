@@ -114,7 +114,7 @@ body {
     @apply text-body-1 italic;
   }
   .section {
-    @apply py-24 md:py-28 2xl:py-32 4xl:py-40;
+    @apply py-24 md:py-32 2xl:py-40 4xl:py-48;
   }
   .section-container {
     @apply px-layout flex flex-col grid-r w-full max-w-[2160px] mx-auto;
