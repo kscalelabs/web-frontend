@@ -61,7 +61,7 @@ export const LandingKSim = () => {
       name: "Open-source",
       ksim: true,
       mujoco: true,
-      issac: false,
+      issac: true,
       brax: false,
       gazebo: false,
     },

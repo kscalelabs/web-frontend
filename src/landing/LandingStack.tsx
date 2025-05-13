@@ -98,7 +98,7 @@ export const LandingStack = () => {
         },
         {
           name: "K-VLA",
-          href: "https://github.com/kscalelabs/kvla",
+          // href: "https://github.com/kscalelabs/kvla",
           description: [
             "A generalist policy using large-scale robot data with novel network architecture to enable the most capable and dexterous robot",
             "Locally run and capable of integrating with other VLAs such as Pi0.5 and Gr00t.",
