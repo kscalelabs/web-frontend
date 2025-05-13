@@ -36,12 +36,10 @@ export default function Home() {
 
   return (
     <div>
-      <main className="">
         <LandingHero />
         <LandingProducts />
         <LandingMission />
         <LandingDiagram />
-        {/* <RobotSection /> */}
         <LandingDemos />
         <LandingStack />
         <LandingKSim />
@@ -49,7 +47,6 @@ export default function Home() {
         <LandingCommunity />
         <LandingContact />
         <Sponsors />
-      </main>
     </div>
   );
 }
