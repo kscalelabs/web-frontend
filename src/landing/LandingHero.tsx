@@ -12,7 +12,7 @@ export function LandingHero() {
           muted
           loop
           playsInline
-          className="absolute inset-0 size-full object-cover brightness-[0.25]"
+          className="absolute inset-0 size-full object-cover brightness-[0.4]"
         >
           <source src="/videos/landing/landing_video_0512.mp4" type="video/mp4" />
         </video>

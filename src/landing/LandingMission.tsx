@@ -4,8 +4,7 @@ export function LandingMission() {
       <div className="section-container">
         <hgroup className="col-span-full sm:col-span-4 md:col-span-4 md:col-start-2 lg:col-span-3 2xl:col-span-5 2xl:col-start-3 4xl:col-span-6 4xl:col-start-4">
           <h2 className="col-span-full sm:col-span-3 md:col-span-4 lg:col-span-3 lg:col-start-2 2xl:col-span-5 2xl:col-start-3 4xl:col-span-6 4xl:col-start-4 text-heading-1 mb-6">
-            We&apos;re building a robotics stack that lets you deploy general-purpose AI in the real
-            world
+            We&apos;re building a robotics stack that lets you deploy physical AI in the real world
           </h2>
           <p className="col-span-full sm:col-span-3 md:col-span-4 lg:col-span-3 2xl:col-span-5 2xl:col-start-3 4xl:col-span-6 4xl:col-start-4 text-body-1 mb-12">
             We design and manufacture the hardware, develop a custom operating system, and train
