@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { CopyCode } from "@/components/ui/Code/CopyCode";
 
+const members = ["Aaron", "Ali", "Ben", "Chris", "Ian", "Jingxiang", "Rui", "Scott", "Wesley"];
+
 export function LandingContact() {
   return (
     <section className="section">
@@ -29,18 +31,15 @@ export function LandingContact() {
           </div>
         </hgroup>
         <aside className="col-span-full md:col-span-2 lg:col-span-1 lg:-col-end-1 2xl:-col-end-2">
-          <h3 className="text-body-3 font-medium text-stone-400 mb-1">Our team (10)</h3>
+          <h3 className="text-body-3 font-medium text-stone-400 mb-1">
+            Our team ({members.length})
+          </h3>
           <ul className="grid grid-cols-2 gap-x-4 lg:flex flex-col gap-y-2">
-            <li>Aaron</li>
-            <li>Ali</li>
-            <li>Ben</li>
-            <li>Chris</li>
-            <li>Ian</li>
-            <li>Jingxiang</li>
-            <li>Pawel</li>
-            <li>Rui</li>
-            <li>Scott</li>
-            <li>Wesley</li>
+            {members.map((member) => (
+              <li key={member} className="text-body-2">
+                {member}
+              </li>
+            ))}
           </ul>
         </aside>
       </div>
