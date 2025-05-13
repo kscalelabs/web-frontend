@@ -126,13 +126,13 @@ body {
     @apply px-5 md:px-10;
   }
   .grid-r {
-    @apply gap-x-4 sm:grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 4xl:grid-cols-8 auto-rows-min;
+    @apply gap-x-4 md:gap-x-6 sm:grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 2xl:grid-cols-12 4xl:grid-cols-16 auto-rows-min;
   }
   .col-span-default {
-    @apply col-span-full md:col-span-3 lg:col-span-4 xl:col-span-3 2xl:col-span-3 3xl:col-span-3 4xl:col-span-3;
+    @apply col-span-full md:col-span-4 lg:col-span-4 xl:col-span-3 2xl:col-span-5 3xl:col-span-5 4xl:col-span-6;
   }
   .col-start-default {
-    @apply 2xl:col-start-2 3xl:col-start-2 4xl:col-start-2;
+    @apply 2xl:col-start-3 3xl:col-start-3 4xl:col-start-3;
   }
   .text-heading-d {
     @apply text-heading-d-sm sm:text-heading-d-md lg:text-heading-d-lg 4xl:text-heading-d-xl;

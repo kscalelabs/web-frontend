@@ -31,7 +31,7 @@ export default function Footer() {
         <Link href="/" className="col-span-2 w-fit self-start">
           <Wordmark className="w-auto h-10" />
         </Link>
-        <section className="sm:col-start-3 max-sm:col-span-2 lg:col-start-4 2xl:col-start-4 4xl:col-start-6">
+        <section className="col-span-2 lg:col-span-1 2xl:col-span-2 sm:-col-end-1 md:-col-end-1 lg:col-start-4 2xl:col-start-7 4xl:col-start-11">
           <h2 className="text-body-3 font-bold text-stone-500 mb-2">Product</h2>
           <div className="flex flex-col gap-6 lg:gap-4 2xl:gap-2">
             <a
@@ -63,7 +63,7 @@ export default function Footer() {
             </a>
           </div>
         </section>
-        <section className="sm:col-start-3 max-sm:col-span-2 lg:col-start-auto">
+        <section className="col-span-2 lg:col-span-1 2xl:col-span-2 sm:-col-end-1 md:-col-end-1 lg:col-end-auto">
           <h2 className="text-body-3 font-bold text-stone-500 mb-2">Community</h2>
           <div className="flex flex-col gap-6 lg:gap-4 2xl:gap-2">
             <a
@@ -93,7 +93,7 @@ export default function Footer() {
             </a>
           </div>
         </section>
-        <section className="sm:col-start-3 max-sm:col-span-2 lg:col-start-auto">
+        <section className="col-span-2 lg:col-span-1 2xl:col-span-2 sm:-col-end-1 md:-col-end-1 lg:col-end-auto">
           <h2 className="text-body-3 font-bold text-stone-500 mb-2">Legal</h2>
           <div className="flex flex-col gap-6 lg:gap-4 2xl:gap-2">
             <Link
@@ -112,7 +112,7 @@ export default function Footer() {
             </Link>
           </div>
         </section>
-        <section className="md:col-start-3 lg:col-start-auto sm:col-span-2 flex flex-col gap-8 lg:gap-4 lg:mt-16">
+        <section className="sm:-col-end-1 lg:col-end-auto sm:col-span-2 flex flex-col gap-6 lg:gap-4 mt-16">
           <CopyButton />
           <menu className="flex gap-6 items-center sm:col-start-3 sm:col-span-2">
             {socials.map((social, i) => (

@@ -13,13 +13,13 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        xs: "480px",
+        sm: "512px",
         w640: "640px",
         w1024: "1024px",
         w1440: "1440px",
         "2xl": "1440px",
         "3xl": "1536px",
-        "4xl": "1800px",
+        "4xl": "1920px",
         "5xl": "2560px",
       },
       fontSize: {
@@ -212,6 +212,9 @@ const config: Config = {
         display: ["var(--font-apparat)"],
         sans: ["var(--font-planar)"],
         mono: ["var(--font-cofo)"],
+      },
+      gridTemplateColumns: {
+        "16": "repeat(16, minmax(0, 1fr))",
       },
     },
   },

@@ -30,11 +30,11 @@ export function LandingContact() {
             </Link>
           </div>
         </hgroup>
-        <aside className="col-span-full md:col-span-2 lg:col-span-1 lg:-col-end-1 2xl:-col-end-2">
+        <aside className="col-span-full md:col-span-2 lg:col-span-1 lg:-col-end-1 2xl:-col-end-3 2xl:col-span-2 4xl:-col-end-5">
           <h3 className="text-body-3 font-medium text-stone-400 mb-1">
             Our team ({members.length})
           </h3>
-          <ul className="grid grid-cols-2 gap-x-4 lg:flex flex-col gap-y-2">
+          <ul className="grid grid-cols-2 gap-x-4 md:gap-x-6 lg:flex flex-col gap-y-2">
             {members.map((member) => (
               <li key={member} className="text-body-2">
                 {member}
