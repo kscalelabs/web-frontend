@@ -5,7 +5,6 @@ import { useEffect, useMemo, useState } from "react";
 import ArrowL from "@/assets/icons/icon_arrowL.svg";
 import ArrowR from "@/assets/icons/icon_arrowR.svg";
 import Image from "next/image";
-import clsx from "clsx";
 // import FiberRobot from "@/components/robot/FiberRobot";
 
 const DRAG_BUFFER = 50;
@@ -100,7 +99,7 @@ export const LandingProducts = () => {
             General-purpose humanoid robots for developers, hobbyists, and researchers
           </p>
         </hgroup>
-        <div className="mb-6 flex gap-2 md:place-self-end max-md:col-start-1 lg:-col-end-1 2xl:-col-end-2 lg:hidden">
+        <div className="mb-6 flex gap-2 md:place-self-end max-md:col-start-1 md:-col-end-1 2xl:-col-end-2 lg:hidden">
           <Button onClick={() => decrement()} icon={ArrowL} disabled={index == 0} />
           <Button
             onClick={() => increment()}
@@ -125,7 +124,7 @@ export const LandingProducts = () => {
             onDragEnd={onDragEnd}
             transition={SPRING_OPTIONS}
           >
-            <ul className="flex lg:col-span-6 2xl:col-span-4 4xl:col-span-6 gap-4 2xl:col-start-2 4xl:col-start-2">
+            <ul className="flex lg:col-span-full 2xl:col-span-8 4xl:col-span-12 gap-x-4 md:gap-x-6 2xl:col-start-3 4xl:col-start-3">
               {/* {imgs.map((item) => (
                 <article className="min-w-[80vw] md:min-w-[40vw] 2xl:min-w-[30vw] flex flex-col md:flex-col-reverse gap-2">
                   <hgroup>
@@ -149,10 +148,7 @@ export const LandingProducts = () => {
                       alt={item.alt}
                       width={1080}
                       height={1440}
-                      className={clsx(
-                        "object-cover mb-4 absolute inset-0 size-full object-top",
-                        item.links == null && "opacity-10"
-                      )}
+                      className="object-cover mb-4 absolute inset-0 size-full object-top"
                       loading={"eager"}
                       priority={true}
                       sizes={"100dvw"}

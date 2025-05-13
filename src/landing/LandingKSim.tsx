@@ -108,7 +108,7 @@ export const LandingKSim = () => {
       </section>
       <section className="section">
         <div className="section-container">
-          <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-span-2 4xl:col-span-3 2xl:col-start-2 4xl:col-start-2">
+          <div className="mb-6 col-span-full sm:col-span-2 md:col-span-3 xl:col-span-2 xl:col-start-2 2xl:col-span-3 2xl:col-start-4 4xl:col-span-3 4xl:col-start-3">
             <Visual1 className="size-[4.5rem] mb-4" />
             <h3 className="text-body-2 font-bold mb-2">Made for speed</h3>
             <p>
@@ -117,7 +117,7 @@ export const LandingKSim = () => {
               an RTX 4090.
             </p>
           </div>
-          <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-span-2 4xl:col-span-3">
+          <div className="mb-6 col-span-full sm:col-span-2 md:col-span-3 xl:col-span-2 2xl:col-span-3 4xl:col-span-3">
             <Visual2 className="size-[4.5rem] mb-4" />
             <h3 className="text-body-2 font-bold mb-2">Smooth troubleshooting</h3>
             <p>
@@ -126,7 +126,7 @@ export const LandingKSim = () => {
               to TensorBoard.
             </p>
           </div>
-          <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-span-2 4xl:col-span-3 2xl:col-start-2 4xl:col-start-2">
+          <div className="mb-6 col-span-full sm:col-span-2 md:col-span-3 xl:col-span-2 xl:col-start-2 2xl:col-span-3 4xl:col-span-3 2xl:col-start-4">
             <Visual3 className="size-[4.5rem] mb-4" />
             <h3 className="text-body-2 font-bold mb-2">Optimized for sim-to-real</h3>
             <p>
@@ -135,7 +135,7 @@ export const LandingKSim = () => {
               training and deployment.
             </p>
           </div>
-          <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-span-2 4xl:col-span-3">
+          <div className="mb-6 col-span-full sm:col-span-2 md:col-span-3 xl:col-span-2 2xl:col-span-3 4xl:col-span-3">
             <Visual4 className="size-[4.5rem] mb-4" />
             <h3 className="text-body-2 font-bold mb-2">Extensible by design</h3>
             <p>
@@ -143,7 +143,7 @@ export const LandingKSim = () => {
               All of the code is fully open source so you can build on top of it with confidence.
             </p>
           </div>
-          <table className="relative col-span-full 2xl:col-span-4 2xl:col-start-2 4xl:col-span-6 4xl:col-start-2 mt-12">
+          <table className="relative col-span-full 2xl:col-span-8 2xl:col-start-3 4xl:col-span-12 4xl:col-start-3 mt-12">
             <thead className="max-lg:sticky top-20 ">
               <tr className="grid grid-cols-3 md:grid-cols-6 items-start py-4 bg-background border-b border-b-stone-800">
                 <th scope="col" className="text-body-3 font-bold md:col-start-2">
@@ -218,7 +218,7 @@ export const LandingKSim = () => {
       </section>
       <section className="section mb-8 pt-0">
         <div className="section-container">
-          <hgroup className="col-span-default col-start-default flex flex-col ">
+          <hgroup className="col-span-default lg:col-start-2 2xl:col-start-3 flex flex-col ">
             <h2 className="text-heading-2 mb-2">
               K-SIM lets you iterate quickly and trust the code that you deploy on your hardware.{" "}
             </h2>

@@ -112,7 +112,7 @@ export default function Footer() {
             </Link>
           </div>
         </section>
-        <section className="md:col-start-3 lg:col-start-auto sm:col-span-2 flex flex-col gap-8 lg:gap-4 lg:mt-16">
+        <section className="sm:-col-end-1 lg:col-end-auto sm:col-span-2 flex flex-col gap-6 lg:gap-4 mt-16">
           <CopyButton />
           <menu className="flex gap-6 items-center sm:col-start-3 sm:col-span-2">
             {socials.map((social, i) => (

@@ -84,9 +84,16 @@ export const LandingAchievements = () => {
 
   const cardDimensions = useMemo(() => {
     return {
-      width: width < 768 ? 80 : width < 1440 ? 40 : 20,
+      width: width < 768 ? 80 : width < 1024 ? 40 : width < 1440 ? 30 : 20,
       gap: width < 768 ? 1 : 1.5,
-      max: width < 768 ? imgs.length - 1 : width < 1440 ? imgs.length - 2 : imgs.length - 3,
+      max:
+        width < 768
+          ? imgs.length - 1
+          : width < 1024
+            ? imgs.length - 2
+            : width < 1440
+              ? imgs.length - 3
+              : imgs.length - 4,
     };
   }, [width]);
 
@@ -126,7 +133,7 @@ export const LandingAchievements = () => {
             We&apos;ve completed 7 generations of robots in less than a year
           </p>
         </hgroup>
-        <div className="mb-6 flex gap-2 md:place-self-end max-md:col-start-1 lg:-col-end-1 2xl:-col-end-2">
+        <div className="mb-6 flex gap-2 md:place-self-end max-md:col-start-1 md:-col-end-1 2xl:-col-end-2">
           <Button onClick={() => decrement()} icon={ArrowL} disabled={index == 0} />
           <Button
             onClick={() => increment()}
@@ -154,7 +161,7 @@ export const LandingAchievements = () => {
             <div className="flex gap-x-4 md:gap-x-6 md:4 2xl:col-start-2">
               {imgs.map((item, index) => (
                 <article
-                  className="min-w-[80vw] sm:min-w-[40vw] 2xl:min-w-[20vw] flex flex-col gap-4"
+                  className="min-w-[80vw] sm:min-w-[40vw] lg:min-w-[30vw] 2xl:min-w-[20vw] flex flex-col gap-4"
                   key={`achievement--${index}`}
                 >
                   <hgroup>

@@ -178,7 +178,7 @@ export const LandingStack = () => {
     <>
       <section className="section">
         <div className="section-container">
-          <aside className="max-2xl:col-span-full sticky top-20 2xl:top-32 max-2xl:py-4 bg-background max-2xl:border-b border-b-stone-800 mb-4 h-fit z-10">
+          <aside className="col-span-full 2xl:col-span-2 sticky top-20 2xl:top-32 max-2xl:py-4 bg-background max-2xl:border-b border-b-stone-800 mb-4 h-fit z-10">
             <h2 className="text-body-2 font-medium text-stone-400 2xl:mb-4">Our stack</h2>
             <menu className="flex 2xl:flex-col gap-4 2xl:gap-4">
               {articles.map((e, i) => (
@@ -252,7 +252,7 @@ const Article = ({
 
   return (
     <motion.article
-      className="grid grid-cols-12 gap-x-4 md:gap-x-6 col-span-full 2xl:col-span-4 2xl:col-start-2 4xl:col-span-6 4xl:col-start-2 scroll-mt-44 2xl:scroll-mt-32 mb-16 sm:mb-24 2xl:mb-32"
+      className="grid grid-cols-12 gap-x-4 md:gap-x-6 col-span-full 2xl:col-span-8 2xl:col-start-3 4xl:col-span-12 4xl:col-start-3 scroll-mt-44 2xl:scroll-mt-32 mb-16 sm:mb-24 2xl:mb-32"
       id={id}
       ref={ref}
     >
