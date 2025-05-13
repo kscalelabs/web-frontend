@@ -149,7 +149,7 @@ export const Navbar = () => {
             <Wordmark className="max-sm:hidden w-auto h-10" />
           </Link>
           <nav className="flex gap-2 items-center lg:hidden">
-            <Button href="/benchmarks" intent="secondary">
+            <Button href="https://leaderboard.kscale.dev" intent="secondary" external>
               View benchmarks
             </Button>
             <motion.button
@@ -212,7 +212,7 @@ export const Navbar = () => {
                 </motion.ul>
               </hgroup>
             ))}
-            <Button href="/benchmarks" size="sm" intent="secondary">
+            <Button href="https://leaderboard.kscale.dev" size="sm" intent="secondary" external>
               View benchmarks
             </Button>
           </nav>
