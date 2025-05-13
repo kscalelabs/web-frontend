@@ -93,7 +93,7 @@ export const LandingAchievements = () => {
             ? imgs.length - 2
             : width < 1440
               ? imgs.length - 3
-              : imgs.length - 4,
+              : imgs.length - 3,
     };
   }, [width]);
 
@@ -141,7 +141,8 @@ export const LandingAchievements = () => {
             disabled={index == cardDimensions.max}
           />
         </div>
-        <div className="-mx-5 px-5 lg:-mx-10 lg:px-10 col-span-full overflow-hidden">
+        <div className="-mx-5 px-5 lg:-mx-10 lg:px-10 col-span-full overflow-hidden relative">
+          {/* <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background z-10 pointer-events-none" /> */}
           <motion.div
             className="grid-r"
             drag="x"
@@ -152,34 +153,36 @@ export const LandingAchievements = () => {
               x: dragX,
             }}
             animate={{
-              translateX: `calc(-${index * cardDimensions.width}vw - ${index * cardDimensions.gap}rem)`,
+              translateX: `calc(-${index} * min(${cardDimensions.width}vw, 600px) - ${index * cardDimensions.gap}rem)`,
               // translateX: `-${index * 40}rem`,
             }}
             onDragEnd={onDragEnd}
             transition={SPRING_OPTIONS}
           >
-            <div className="flex gap-x-4 md:gap-x-6 md:4 2xl:col-start-2">
-              {imgs.map((item, index) => (
-                <article
-                  className="min-w-[80vw] sm:min-w-[40vw] lg:min-w-[30vw] 2xl:min-w-[20vw] flex flex-col gap-4"
-                  key={`achievement--${index}`}
-                >
-                  <hgroup>
-                    <h3 className="text-body-3 font-bold inline-flex gap-4">
-                      <time dateTime={item.dateTime}>{item.time}</time>
-                      <span>{item.name}</span>
-                    </h3>
-                    <p>{item.desc}</p>
-                  </hgroup>
-                  <Image
-                    src={item.src}
-                    className="md:-order-1 max-md:mt-auto aspect-[3/4] rounded-2xl pointer-events-none object-cover object-top"
-                    width={item.width}
-                    height={item.height}
-                    alt={item.alt}
-                  />
-                </article>
-              ))}
+            <div className="relative flex 2xl:col-start-3">
+              <div className="flex gap-x-4 md:gap-x-6 ">
+                {imgs.map((item, index) => (
+                  <article
+                    className="flex-grow w-[80vw] sm:w-[40vw] lg:w-[30vw] 2xl:w-[20vw] max-w-[600px] flex flex-col gap-4"
+                    key={`achievement--${index}`}
+                  >
+                    <hgroup>
+                      <h3 className="text-body-3 font-bold inline-flex gap-4">
+                        <time dateTime={item.dateTime}>{item.time}</time>
+                        <span>{item.name}</span>
+                      </h3>
+                      <p>{item.desc}</p>
+                    </hgroup>
+                    <Image
+                      src={item.src}
+                      className="md:-order-1 max-md:mt-auto aspect-[3/4] rounded-2xl pointer-events-none object-cover object-top"
+                      width={item.width}
+                      height={item.height}
+                      alt={item.alt}
+                    />
+                  </article>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
