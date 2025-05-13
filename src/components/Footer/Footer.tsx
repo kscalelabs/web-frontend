@@ -82,13 +82,15 @@ export default function Footer() {
               <span className="absolute h-12 top-1/2 -translate-y-1/2 w-full  [@media(pointer:fine)]:hidden" />
               Careers
             </Link>
-            <Link
-              href="/benchmarks"
+            <a
+              href="https://leaderboard.kscale.dev"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-body-2 lg:text-body-3 font-medium lg:font-bold relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
             >
               <span className="absolute h-12 top-1/2 -translate-y-1/2 w-full  [@media(pointer:fine)]:hidden" />
               Benchmarks
-            </Link>
+            </a>
           </div>
         </section>
         <section className="sm:col-start-3 max-sm:col-span-2 lg:col-start-auto">

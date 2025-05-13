@@ -61,7 +61,7 @@ export const LandingKSim = () => {
       name: "Open-source",
       ksim: true,
       mujoco: true,
-      issac: false,
+      issac: true,
       brax: false,
       gazebo: false,
     },
@@ -244,7 +244,9 @@ export const LandingKSim = () => {
                 docs
               </a>
             </p>
-            <Button href="/benchmarks">See humanoid benchmarks</Button>
+            <Button href="https://leaderboard.kscale.dev" external>
+              See humanoid benchmarks
+            </Button>
           </hgroup>
         </div>
       </section>

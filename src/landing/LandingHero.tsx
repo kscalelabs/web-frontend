@@ -22,7 +22,7 @@ export function LandingHero() {
             We&apos;re building the most integrated open-source stack&mdash;from hardware to machine
             learning&mdash;powering the next era of general-purpose robotics.
           </p>
-          <Button adaptive={true} href="/benchmarks" size="lg">
+          <Button adaptive={true} href="https://leaderboard.kscale.dev" external size="lg">
             View humanoid benchmarks
           </Button>
         </hgroup>
