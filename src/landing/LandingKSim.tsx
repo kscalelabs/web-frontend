@@ -218,11 +218,11 @@ export const LandingKSim = () => {
       </section>
       <section className="section mb-8">
         <div className="section-container">
-          <hgroup className="col-span-full lg:col-span-4 lg:col-start-2 4xl:col-start-3 flex flex-col items-center">
-            <h2 className="text-heading-2 text-center mb-2">
+          <hgroup className="col-span-default col-start-default flex flex-col ">
+            <h2 className="text-heading-2 mb-2">
               K-SIM lets you iterate quickly and trust the code that you deploy on your hardware.{" "}
             </h2>
-            <p className="text-body-2 text-center mb-4">
+            <p className="text-body-2 mb-4">
               Check out the source on{" "}
               <a
                 href="https://github.com/kscalelabs/ksim"
@@ -244,7 +244,7 @@ export const LandingKSim = () => {
                 docs
               </a>
             </p>
-            <Button href="/benchmarks">See community benchmarks</Button>
+            <Button href="/benchmarks">See humanoid benchmarks</Button>
           </hgroup>
         </div>
       </section>

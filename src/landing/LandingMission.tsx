@@ -8,8 +8,8 @@ export function LandingMission() {
             world
           </h2>
           <p className="text-body-1 mb-6">
-            We design and manufacture the hardware, write our own real-time operating system, and
-            train machine-learning models on bespoke infrastructure.
+            We design and manufacture the hardware, develop a custom operating system, and train
+            machine learning models on our own modular framework.
           </p>
           <p className="text-body-1">
             Owning every layer—from metal to model—lets us move faster, integrate more deeply, and
