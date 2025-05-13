@@ -216,7 +216,7 @@ export const LandingKSim = () => {
           </table>
         </div>
       </section>
-      <section className="section mb-8">
+      <section className="section mb-8 pt-0">
         <div className="section-container">
           <hgroup className="col-span-default col-start-default flex flex-col ">
             <h2 className="text-heading-2 mb-2">
