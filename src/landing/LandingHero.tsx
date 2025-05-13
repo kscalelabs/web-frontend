@@ -20,7 +20,7 @@ export function LandingHero() {
           <h1 className="mb-4">Open-source humanoid robots, built for developers</h1>
           <p className="text-body-1 mb-4">
             We&apos;re building the most integrated open-source stack&mdash;from hardware to machine
-            learning&mdash;to power the next generation of general-purpose robotics.
+            learning&mdash;powering the next era of general-purpose robotics.
           </p>
           <Button adaptive={true} href="/benchmarks" size="lg">
             View humanoid benchmarks
