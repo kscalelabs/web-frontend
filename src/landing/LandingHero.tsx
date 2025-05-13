@@ -19,8 +19,8 @@ export function LandingHero() {
         <hgroup className="col-span-4 2xl:col-start-1 2xl:col-span-4 z-10">
           <h1 className="mb-4">Open-source humanoid robots, built for developers</h1>
           <p className="text-body-1 mb-4">
-            We&apos;re building the most integrated stack—from hardware to machine learning—to power
-            the next generation of general-purpose robotics.
+            We&apos;re building the most integrated open-source stack&mdash;from hardware to machine
+            learning&mdash;powering the next era of general-purpose robotics.
           </p>
           <Button adaptive={true} href="/benchmarks" size="lg">
             View humanoid benchmarks
