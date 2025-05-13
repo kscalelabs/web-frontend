@@ -252,7 +252,7 @@ const Article = ({
 
   return (
     <motion.article
-      className="grid grid-cols-12 gap-x-4 col-span-full 2xl:col-span-4 2xl:col-start-2 4xl:col-span-6 4xl:col-start-2 scroll-mt-44 2xl:scroll-mt-32 mb-16 sm:mb-24 2xl:mb-32"
+      className="grid grid-cols-12 gap-x-4 md:gap-x-6 col-span-full 2xl:col-span-4 2xl:col-start-2 4xl:col-span-6 4xl:col-start-2 scroll-mt-44 2xl:scroll-mt-32 mb-16 sm:mb-24 2xl:mb-32"
       id={id}
       ref={ref}
     >

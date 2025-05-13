@@ -13,7 +13,7 @@ interface Props extends ButtonOrLinkProps, VariantProps<typeof buttonStyles> {
 }
 
 const buttonStyles = cva(
-  "font-medium relative overflow-hidden transition-all duration-300 px-3 py-3 rounded-lg flex justify-center items-center gap-2",
+  "font-medium text-center relative overflow-hidden transition-all duration-300 px-3 py-3 rounded-lg flex justify-center items-center gap-2",
   {
     variants: {
       intent: {

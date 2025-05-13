@@ -34,7 +34,7 @@ export function LandingContact() {
           <h3 className="text-body-3 font-medium text-stone-400 mb-1">
             Our team ({members.length})
           </h3>
-          <ul className="grid grid-cols-2 gap-x-4 lg:flex flex-col gap-y-2">
+          <ul className="grid grid-cols-2 gap-x-4 md:gap-x-6 lg:flex flex-col gap-y-2">
             {members.map((member) => (
               <li key={member} className="text-body-2">
                 {member}
