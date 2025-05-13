@@ -112,35 +112,32 @@ export const LandingKSim = () => {
             <Visual1 className="size-[4.5rem] mb-4" />
             <h3 className="text-body-2 font-bold mb-2">Made for speed</h3>
             <p>
-              Train policies in under an hour. Leveraging GPU accelerated libraries like JAX and
-              Mujoco XLA, K-Sim can process over 100,000 samples per second (including training) on
-              an RTX 4090.
+              Built on JAX and MuJoCo-XLA, K-Sim can run thousands of parallel environments on a
+              single GPU—over 50,000 samples per second on an RTX 4090.
             </p>
           </div>
           <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-span-2 4xl:col-span-3">
             <Visual2 className="size-[4.5rem] mb-4" />
-            <h3 className="text-body-2 font-bold mb-2">Smooth troubleshooting</h3>
+            <h3 className="text-body-2 font-bold mb-2">Single-file workflows</h3>
             <p>
-              Quickly pinpoint the root cause of training regressions or improvements. All of the
-              code defining experiment lives neatly in a single file which is automatically logged
-              to TensorBoard.
+              A complete experimental package - model, task, and config - lives in a python file, so
+              you can quickly pinpoint the root cause of training issues.
             </p>
           </div>
           <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-span-2 4xl:col-span-3 2xl:col-start-2 4xl:col-start-2">
             <Visual3 className="size-[4.5rem] mb-4" />
-            <h3 className="text-body-2 font-bold mb-2">Optimized for sim-to-real</h3>
+            <h3 className="text-body-2 font-bold mb-2">Sim-to-real focus</h3>
             <p>
-              A trained policy is immediately ready to be exported and deployed on a real robot,
-              saving countless hours otherwise spent on maintaining two sets of infrastructure for
-              training and deployment.
+              Domain-randomization utilities, real-time visualization, accurate motor models, and
+              CLI deploy helpers let you seamlessly deploy a trained policy on a real robot.
             </p>
           </div>
           <div className="mb-6 col-span-full sm:col-span-2 lg:col-span-3 2xl:col-span-2 4xl:col-span-3">
             <Visual4 className="size-[4.5rem] mb-4" />
             <h3 className="text-body-2 font-bold mb-2">Extensible by design</h3>
             <p>
-              K-Sim can be easily modified to fit your use-case, instead of the other way around.
-              All of the code is fully open source so you can build on top of it with confidence.
+              Customize your own environment, rewards, and algorithms or choose from several
+              built-in tasks ready to go.
             </p>
           </div>
           <table className="relative col-span-full 2xl:col-span-4 2xl:col-start-2 4xl:col-span-6 4xl:col-start-2 mt-12">
