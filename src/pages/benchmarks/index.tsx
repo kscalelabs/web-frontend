@@ -5,6 +5,8 @@ import { Hero } from "@/components/Layout/Hero";
 import { CodeBlock } from "@/components/ui/Code/CopyCode";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
+import Arrow from "@/assets/icons/icon_arrowTR.svg";
 
 interface Props {
   html: string[];
@@ -12,13 +14,6 @@ interface Props {
 }
 
 export default function Page({ html, raw }: Props) {
-  const steps = [
-    <>Create a new Github repository using our template.</>,
-    <>Open the directory with the benchmark clone in your terminal.</>,
-    <>Install all dependencies</>,
-    <>Optionally install CUDA support.</>,
-    <>Start training your model</>,
-  ];
   return (
     <main>
       <Head>
@@ -51,41 +46,58 @@ export default function Page({ html, raw }: Props) {
         />
         <meta name="twitter:image" content="/meta/twitter-image.png" />
       </Head>
-      <Hero heading={"Steer the future of robotics"} eyebrow={"GPR-AGI benchmarks"}>
-        Join the open-source effort in benchmarking humanoid robotics locomotion and manipulation.
-        K-Scale Labs makes it easier to rapidly test robotics policies using sim-to-real transfer.
+      <Hero heading={"The humanoid robotics challenge"} eyebrow={"GPR-AGI benchmarks"}>
+        Train an RL policy tonight; watch it run on a real humanoid tomorrow.
       </Hero>
-      <section className="section">
+      <section className="section--short">
         <div className="section-container">
-          <hgroup className="col-span-default col-start-default mb-6">
+          <hgroup className="section-prose2 mb-6">
             {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
-            <h2 className="text-heading-1 mb-6">
-              To date, there is no consensus metric for end-to-end humanoid autonomy and
-              general-purpose control.
+            <h2 className="text-heading-2 mb-6">
+              This leaderboard is a challenge for people who want to try programming and training
+              humanoid robots in simulation and watching it run on a real humanoid tomorrow.
             </h2>
+            <p className="text-body-1 mb-12">
+              All submissions that pass sim2sim evaluation will get a spot on the leaderboard, and
+              we will be grateful for your assistance in helping us move towards our mission.
+            </p>
             <p className="text-body-1">
-              Without benchmarks, it becomes increasingly difficult to transparently audit each
-              advancement in robotics systems.
+              Our office is based in Palo Alto, and we would love to invite all of you to visit and
+              see the robots yourself and RL deployment submissions live. You can schedule a visit
+              here:
             </p>
           </hgroup>
         </div>
       </section>
-      <section className="section">
+      <section className="section--short">
         <div className="section-container">
-          <h2 className="text-heading-1 col-span-default col-start-default mb-6">
-            With K-SIM to train and deploy policies with sim-to-real
-          </h2>
-          <hgroup className="col-span-default col-start-default mb-6">
+          <div className="section-prose2 mb-6">
+            <h2 className="text-heading-2 mb-3">
+              We&apos;ve got prizes{" "}
+              <span className="text-body-2 text-stone-500">(hint: free robots)</span>
+            </h2>
+            <p className="text-body-1 mb-6">
+              For the first 100 people that submits to the <Link href="#challenge">challenge</Link>{" "}
+              with a policy, we&apos;ll ship you a cool PCB ruler and t-shirt designed by us as a
+              gift.
+            </p>
+            <p className="text-body-1">
+              For the <Link href="#challenge">top contender</Link> for each category every month,
+              we&apos;ll ship you a K-Bot and Z-Bot for 3 months for you to develop on for free.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="section--short">
+        <div className="section-container">
+          <div className="section-prose2">
             {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
-            <h3 className="text-heading-2 mb-4">Quick start</h3>
-            <ol className="list-decimal list-inside">
-              {steps.map((step, index) => (
-                <li>
-                  {step}
-                  <CodeBlock html={html[index]} raw={raw[index]} />
-                </li>
-              ))}
-            </ol>
+            <h2 className="text-heading-2 mb-3">Quick start in under 5 mins</h2>
+            <p className="text-body-1 mb-6">
+              Develop in your own environment using the code below or set up in Google Colab in one
+              click.
+            </p>
+            <CodeBlock html={html[0]} raw={raw[0]} />
             <p className="text-body-3">
               Got stuck along the way? Ask any questions in our{" "}
               <a
@@ -98,36 +110,82 @@ export default function Page({ html, raw }: Props) {
               </a>
               .
             </p>
-          </hgroup>
+          </div>
         </div>
       </section>
-      <section className="section">
+      <section className="section--short">
         <div className="section-container">
-          <h2 className="text-heading-1 col-span-default col-start-default mb-6">Challenges</h2>
-          <p className="text-body-1 col-span-default col-start-default mb-12">
-            We’re planning to announce bi-weekly challenges in the future. Every week, we will
-            deploy top policies on the real robot, which we&apos;ll livestream.
-          </p>
-          <hgroup className="col-span-default col-start-default mb-12">
-            {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
-            <h3 className="text-heading-2 mb-4">Basic walk</h3>
-            <p>Description will eventually go here.</p>
-          </hgroup>
-          <hgroup className="col-span-default col-start-default mb-12">
-            {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
-            <h3 className="text-heading-2 mb-4">Uneven terrain</h3>
-            <p>Description will eventually go here.</p>
-          </hgroup>
-          <hgroup className="col-span-default col-start-default mb-12">
-            {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
-            <h3 className="text-heading-2 mb-4">Push recovery</h3>
-            <p>Description will eventually go here.</p>
-          </hgroup>
-          <hgroup className="col-span-default col-start-default mb-12">
-            {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
-            <h3 className="text-heading-2 mb-4">Human motion imitation</h3>
-            <p>Description will eventually go here.</p>
-          </hgroup>
+          <div className="section-prose2">
+            <h2 className="text-heading-1 col-span-default col-start-default mb-6">
+              Start zero-transfer sim-to-real training with K-Sim
+            </h2>
+            <p className="text-body-1 mb-12">
+              K-SIM is an open-source library for GPU-accelerated robot learning and sim-to-real
+              transfer, made for movements from simple walking to complex…
+            </p>
+            <div className="mb-6 w-full aspect-video rounded-md @xs:rounded-lg @sm:rounded-xl @lg:rounded-2xl overflow-hidden shadow-lg">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/nMkS6VSh-yw?autoplay=0&rel=0"
+                title="See how our ML engineer Ali uses K-Sim"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <div className="flex gap-4 md:gap-6">
+              <a
+                href="https://github.com/kscalelabs/ksim"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex flex-wrap text-body-2"
+              >
+                Github
+                <Arrow className="size-6 group-hover:translate-x-[12.5%] group-hover:-translate-y-[12.5%] group-focus:translate-x-[12.5%] group-focus:-translate-y-[12.5%] transition-transform duration-300" />
+              </a>
+              <a
+                href="https://docs.kscale.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex flex-wrap text-body-2"
+              >
+                Docs
+                <Arrow className="size-6 group-hover:translate-x-[12.5%] group-hover:-translate-y-[12.5%] group-focus:translate-x-[12.5%] group-focus:-translate-y-[12.5%] transition-transform duration-300" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="section--short">
+        <div className="section-container">
+          <div className="section-prose2">
+            <h2 className="text-heading-1 col-span-default col-start-default mb-6">Challenges</h2>
+            <p className="text-body-1 col-span-default col-start-default mb-12">
+              We&apos;re planning to announce bi-weekly challenges in the future. Every week, we
+              will deploy top policies on the real robot, which we&apos;ll livestream.
+            </p>
+            <hgroup className="col-span-default col-start-default mb-12">
+              {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
+              <h3 className="text-heading-2 mb-4">Basic walk</h3>
+              <p>Description will eventually go here.</p>
+            </hgroup>
+            <hgroup className="col-span-default col-start-default mb-12">
+              {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
+              <h3 className="text-heading-2 mb-4">Uneven terrain</h3>
+              <p>Description will eventually go here.</p>
+            </hgroup>
+            <hgroup className="col-span-default col-start-default mb-12">
+              {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
+              <h3 className="text-heading-2 mb-4">Push recovery</h3>
+              <p>Description will eventually go here.</p>
+            </hgroup>
+            <hgroup className="col-span-default col-start-default mb-12">
+              {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
+              <h3 className="text-heading-2 mb-4">Human motion imitation</h3>
+              <p>Description will eventually go here.</p>
+            </hgroup>
+          </div>
         </div>
       </section>
     </main>
@@ -136,11 +194,18 @@ export default function Page({ html, raw }: Props) {
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const steps = [
-    "git clone https://github.com/kscalelabs/kscale-humanoid-benchmark.git",
-    "cd kscale-humanoid-benchmark",
-    "pip install -r requirements.txt",
-    "pip install 'jax[cuda12]'",
-    "python -m train",
+    `# 1. Clone template 
+git clone --depth 1 https://github.com/kscalelabs/ksim-gym.git  # git‑lfs required 
+cd kscale-humanoid-benchmark  
+
+# 2. Install 
+python -m venv .venv && source .venv/bin/activate 
+pip install -r requirements.txt                 # Python ≥3.11 
+pip install 'jax[cuda12]' --no-cache-dir        # optional, GPU  
+
+# 3. Train baseline PPO for walking 
+python -m train
+`,
   ];
 
   const stepsAsHTML = await Promise.all(

@@ -116,8 +116,20 @@ body {
   .section {
     @apply py-24 md:py-28 2xl:py-32 4xl:py-40;
   }
+  .section--short {
+    @apply py-16 md:py-20 2xl:py-24 4xl:py-32;
+  }
   .section-container {
     @apply px-layout flex flex-col grid-r w-full max-w-[2160px] mx-auto;
+  }
+}
+
+@layer components {
+  .section-prose {
+    @apply col-span-4 md:col-start-2 2xl:col-span-8 2xl:col-start-3 4xl:col-span-8 4xl:col-start-5;
+  }
+  .section-prose2 {
+    @apply col-span-4 md:col-start-2 2xl:col-span-6 2xl:col-start-4 4xl:col-span-6 4xl:col-start-6;
   }
 }
 

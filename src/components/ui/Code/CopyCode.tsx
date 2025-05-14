@@ -4,6 +4,7 @@ import { copyString } from "@/components/util/functions";
 import Copy from "@/assets/icons/icon_copy.svg";
 import { CopyCheck } from "../Icon/CopyCheck";
 import { BundledLanguage, codeToHtml } from "shiki";
+import clsx from "clsx";
 
 interface CopyStringProps
   extends ComponentProps<"button">,
@@ -13,7 +14,7 @@ interface CopyStringProps
 }
 
 interface Props
-  extends ComponentProps<"button">,
+  extends ComponentProps<"div">,
     VariantProps<typeof buttonStyles>,
     VariantProps<typeof iconStyles> {
   html: string;
@@ -68,7 +69,7 @@ export const CopyString = ({ string, size, font }: CopyStringProps) => {
   );
 };
 
-export const CodeBlock = ({ html, raw }: Props) => {
+export const CodeBlock = ({ html, raw, ...props }: Props) => {
   const [clicked, setClicked] = useState(false);
   const handleClick = () => {
     copyString(raw);
@@ -79,8 +80,8 @@ export const CodeBlock = ({ html, raw }: Props) => {
   };
 
   return (
-    <div className="flex w-full">
-      <div className="p-4 overflow-auto bg-stone-800 my-4 rounded-lg border border-stone-700 text-body-3 w-full">
+    <div className={clsx("flex w-full", props.className)}>
+      <div className="p-4 overflow-auto bg-stone-800 mb-4 rounded-lg border border-stone-700 text-body-3 w-full">
         <ShikiCodeBlock html={html} />
       </div>
       <div className="ml-auto p-4">

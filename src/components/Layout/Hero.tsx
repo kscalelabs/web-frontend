@@ -9,7 +9,7 @@ export const Hero = ({
   children?: React.ReactNode;
 }) => {
   return (
-    <section className="py-16 relative min-h-[20rem] h-[87.5svh] max-h-[1280px] overflow-hidden">
+    <section className="py-16 relative min-h-[20rem] h-[75svh] max-h-[1280px] overflow-hidden">
       <div className="section-container h-full justify-end sm:content-end">
         <Image
           src="/photos/thumbnails/thumbnail_sub.png"
@@ -18,9 +18,9 @@ export const Hero = ({
           className="absolute inset-0 size-full object-cover"
           alt=""
         />
-        <hgroup className="col-span-4 md:col-span-5 xl:col-span-4 2xl:col-span-7 z-10">
+        <hgroup className="col-span-4 md:col-span-4 md:col-start-2 2xl:col-span-6 2xl:col-start-3 4xl:col-start-4 z-10">
           <h1 className="text-body-2 font-medium font-sans text-stone-400 mb-1">{eyebrow}</h1>
-          <h2 className="text-heading-d2 mb-4">{heading}</h2>
+          <h2 className="text-heading-d1 mb-6">{heading}</h2>
           <p className="text-body-1 mb-4">{children}</p>
         </hgroup>
       </div>
