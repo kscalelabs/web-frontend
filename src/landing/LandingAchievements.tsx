@@ -1,12 +1,14 @@
 import { Button } from "@/components/ui/Button/Button";
 import { useWindowSize } from "@/components/util/functions";
 import { motion, useMotionValue } from "motion/react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useRef } from "react";
 import ArrowL from "@/assets/icons/icon_arrowL.svg";
 import ArrowR from "@/assets/icons/icon_arrowR.svg";
 import Image from "next/image";
 
 const DRAG_BUFFER = 50;
+const SCROLL_THRESHOLD = 25;
+const SCROLL_DEBOUNCE = 300;
 
 const SPRING_OPTIONS = {
   type: "spring",
@@ -32,7 +34,7 @@ const imgs = [
     alt: "Photo of Z-Bot V2",
     dateTime: "2025-01",
     time: "Jan. 2025",
-    desc: "Mass-manufacturable, robust tabletop humanoid robot. Used in Stanford’s reinforcement learning class (CS 234) to teach about PPO.",
+    desc: "Mass-manufacturable, robust tabletop humanoid robot. Used in Stanford's reinforcement learning class (CS 234) to teach about PPO.",
     width: 600,
     height: 800,
   },
@@ -81,6 +83,8 @@ const imgs = [
 export const LandingAchievements = () => {
   const [index, setIndex] = useState(0);
   const width = useWindowSize().width;
+  const containerRef = useRef<HTMLDivElement>(null);
+  const lastScrollTime = useRef<number>(0);
 
   const cardDimensions = useMemo(() => {
     return {
@@ -120,6 +124,29 @@ export const LandingAchievements = () => {
     }
   };
 
+  const handleWheel = (e: React.WheelEvent) => {
+    const now = Date.now();
+    const isHorizontalScroll = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+    const isSignificantHorizontal = Math.abs(e.deltaX) > SCROLL_THRESHOLD;
+    const hasDebounceElapsed = now - lastScrollTime.current > SCROLL_DEBOUNCE;
+
+    if (isHorizontalScroll && isSignificantHorizontal && hasDebounceElapsed) {
+      e.preventDefault();
+      lastScrollTime.current = now;
+      
+      if (e.deltaX > 0) {
+        if (index < cardDimensions.max) {
+          setIndex((pv) => pv + 1);
+        }
+      } 
+      else if (e.deltaX < 0) {
+        if (index > 0) {
+          setIndex((pv) => pv - 1);
+        }
+      }
+    }
+  };
+
   useEffect(() => {
     setIndex(0);
   }, [width]);
@@ -141,7 +168,11 @@ export const LandingAchievements = () => {
             disabled={index == cardDimensions.max}
           />
         </div>
-        <div className="-mx-5 px-5 lg:-mx-10 lg:px-10 col-span-full overflow-hidden relative">
+        <div 
+          className="-mx-5 px-5 lg:-mx-10 lg:px-10 col-span-full overflow-hidden relative"
+          ref={containerRef}
+          onWheel={handleWheel}
+        >
           {/* <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background z-10 pointer-events-none" /> */}
           <motion.div
             className="grid-r"
@@ -153,14 +184,14 @@ export const LandingAchievements = () => {
               x: dragX,
             }}
             animate={{
-              translateX: `calc(-${index} * min(${cardDimensions.width}vw, 600px) - ${index * cardDimensions.gap}rem)`,
+              translateX: index === 0 ? 0 : `calc(-${index} * min(${cardDimensions.width}vw, 600px) - ${index * cardDimensions.gap}rem)`,
               // translateX: `-${index * 40}rem`,
             }}
             onDragEnd={onDragEnd}
             transition={SPRING_OPTIONS}
           >
             <div className="relative flex 2xl:col-start-3">
-              <div className="flex gap-x-4 md:gap-x-6 ">
+              <div className="flex gap-x-4 md:gap-x-6">
                 {imgs.map((item, index) => (
                   <article
                     className="flex-grow w-[80vw] sm:w-[40vw] lg:w-[30vw] 2xl:w-[20vw] max-w-[600px] flex flex-col gap-4"
