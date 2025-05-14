@@ -12,7 +12,7 @@ export const CopyCheck = ({ open }: { open: boolean }) => {
           d="M7 23L18 34L39 13"
           fill="none"
           stroke="white"
-          stroke-width="4"
+          strokeWidth="4"
           initial={{ pathLength: 0 }}
           animate={{ pathLength: open ? 1 : 0 }}
           transition={transition}
@@ -36,7 +36,8 @@ export const CopyCheck = ({ open }: { open: boolean }) => {
         <motion.rect
           rx={8}
           stroke="white"
-          stroke-width="4"
+          strokeWidth="4"
+          className="fill-stone-800"
           initial={{
             x: 6,
             y: 14,
@@ -56,7 +57,8 @@ export const CopyCheck = ({ open }: { open: boolean }) => {
         <motion.rect
           rx={8}
           stroke="white"
-          stroke-width="4"
+          strokeWidth="4"
+          className="fill-stone-800"
           initial={{
             x: 14,
             y: 6,

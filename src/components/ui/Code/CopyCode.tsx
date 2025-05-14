@@ -80,16 +80,21 @@ export const CodeBlock = ({ html, raw, ...props }: Props) => {
   };
 
   return (
-    <div className={clsx("flex w-full", props.className)}>
-      <div className="p-4 overflow-auto bg-stone-800 mb-4 rounded-lg border border-stone-700 text-body-3 w-full">
-        <ShikiCodeBlock html={html} />
-      </div>
-      <div className="ml-auto p-4">
+    <div
+      className={clsx(
+        "flex w-full rounded-lg bg-stone-800 border border-stone-700 divide-x divide-stone-700 overflow-hidden mb-4",
+        props.className
+      )}
+    >
+      <ShikiCodeBlock html={html} />
+      {/* </div> */}
+      <div className="ml-auto p-2">
         <button
-          className="flex justify-center items-center size-9 bg-gray-800 hover:bg-gray-700 rounded-lg"
+          className="flex justify-center items-center size-9 hover:bg-stone-700 transition-colors duration-200 rounded-lg"
           onClick={() => handleClick()}
           type="button"
         >
+          <span className="absolute size-12 top-1/2 -translate-y-1/2 [@media(pointer:fine)]:hidden" />
           <CopyCheck open={clicked} />
         </button>
       </div>
@@ -103,5 +108,10 @@ interface CodeBlockProps {
 }
 
 function ShikiCodeBlock({ html }: CodeBlockProps) {
-  return <div dangerouslySetInnerHTML={{ __html: html }} />;
+  return (
+    <div
+      dangerouslySetInnerHTML={{ __html: html }}
+      className="overflow-auto px-4 py-2 scrollbar-thin scrollbar-track-stone-700 scrollbar-thumb-stone-500"
+    />
+  );
 }
