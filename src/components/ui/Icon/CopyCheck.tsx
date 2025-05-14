@@ -7,7 +7,7 @@ export const CopyCheck = ({ open }: { open: boolean }) => {
   const [finished, setFinished] = useState(false);
   return (
     <>
-      <svg viewBox="0 0 48 48" className="relative">
+      <svg viewBox="0 0 48 48" className="size-6">
         <motion.path
           d="M7 23L18 34L39 13"
           fill="none"

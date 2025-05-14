@@ -2,21 +2,24 @@
 import type { GetStaticProps } from "next";
 import type { BundledLanguage } from "shiki";
 import { codeToHtml } from "shiki";
-import { CodeBlock } from "@/components/CodeBlock";
+import { CodeBlock } from "@/components/ui/Code/CopyCode";
 
 interface Props {
-  helloHtml: string;
-  addHtml: string;
+  html: string;
+  raw: string;
 }
 
-export default function Page({ helloHtml, addHtml }: Props) {
+export default function Page({ html, raw }: Props) {
   return (
-    <main className="space-y-8">
-      <h2>Hello Example</h2>
-      <CodeBlock html={helloHtml} />
-
-      <h2>Add Function</h2>
-      <CodeBlock html={addHtml} />
+    <main>
+      <section className="section">
+        <div className="section-container">
+          <hgroup>
+            <h2>Hello Example</h2>
+            <CodeBlock html={html} raw={raw} />
+          </hgroup>
+        </div>
+      </section>
     </main>
   );
 }
@@ -32,17 +35,8 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
   return {
     props: {
-      helloHtml,
-      addHtml,
+      html: helloHtml,
+      raw: helloCode,
     },
   };
 };
-
-// components/CodeBlock.tsx
-interface CodeBlockProps {
-  html: string;
-}
-
-export function CodeBlock({ html }: CodeBlockProps) {
-  return <div dangerouslySetInnerHTML={{ __html: html }} />;
-}

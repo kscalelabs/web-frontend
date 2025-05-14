@@ -5,12 +5,19 @@ import Copy from "@/assets/icons/icon_copy.svg";
 import { CopyCheck } from "../Icon/CopyCheck";
 import { BundledLanguage, codeToHtml } from "shiki";
 
-interface Props
+interface CopyStringProps
   extends ComponentProps<"button">,
     VariantProps<typeof buttonStyles>,
     VariantProps<typeof iconStyles> {
   string: string;
-  code: string;
+}
+
+interface Props
+  extends ComponentProps<"button">,
+    VariantProps<typeof buttonStyles>,
+    VariantProps<typeof iconStyles> {
+  html: string;
+  raw: string;
 }
 
 const buttonStyles = cva(
@@ -48,10 +55,23 @@ const iconStyles = cva(
   }
 );
 
-export const CopyCode = ({ string, code }: Props) => {
+export const CopyString = ({ string, size, font }: CopyStringProps) => {
+  return (
+    <button
+      className={buttonStyles({ font, size })}
+      onClick={() => copyString(string)}
+      type="button"
+    >
+      {string}
+      <Copy className={iconStyles({ size })} />
+    </button>
+  );
+};
+
+export const CodeBlock = ({ html, raw }: Props) => {
   const [clicked, setClicked] = useState(false);
   const handleClick = () => {
-    copyString(string);
+    copyString(raw);
     setClicked(true);
     setTimeout(() => {
       setClicked(false);
@@ -59,26 +79,28 @@ export const CopyCode = ({ string, code }: Props) => {
   };
 
   return (
-    <div className="flex">
-      {/* <CodeBlock lang="ts">{['console.log("Hello")', 'console.log("World")'].join("\n")}</CodeBlock> */}
-      <button className="size-8" onClick={() => handleClick()} type="button">
-        {/* <Copy className={iconStyles({ size })} /> */}
-        <CopyCheck open={clicked} />
-      </button>
+    <div className="flex w-full">
+      <div className="overflow-auto">
+        <ShikiCodeBlock html={html} />
+      </div>
+      <div className="ml-auto">
+        <button
+          className="flex justify-center items-center size-9 bg-gray-800 hover:bg-gray-700 rounded-lg"
+          onClick={() => handleClick()}
+          type="button"
+        >
+          <CopyCheck open={clicked} />
+        </button>
+      </div>
     </div>
   );
 };
 
+// components/CodeBlock.tsx
 interface CodeBlockProps {
-  children: string;
-  lang: BundledLanguage;
+  html: string;
 }
 
-async function CodeBlock(props: CodeBlockProps) {
-  const out = await codeToHtml(props.children, {
-    lang: props.lang,
-    theme: "github-dark",
-  });
-
-  return <div dangerouslySetInnerHTML={{ __html: out }} />;
+function ShikiCodeBlock({ html }: CodeBlockProps) {
+  return <div dangerouslySetInnerHTML={{ __html: html }} />;
 }

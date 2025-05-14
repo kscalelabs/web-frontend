@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CopyCode } from "@/components/ui/Code/CopyCode";
+import { CopyString } from "@/components/ui/Code/CopyCode";
 
 const members = ["Aaron", "Ali", "Ben", "Chris", "Ian", "Jingxiang", "Rui", "Scott", "Wesley"];
 
@@ -15,8 +15,8 @@ export function LandingContact() {
           </p>
           <p className="text-body-1 mb-6">
             Shoot us an email at{" "}
-            <CopyCode string="inquiries@kscale.dev" size="large" font="regular" /> for any business
-            inquiries or if you want to connect with us!
+            <CopyString string="inquiries@kscale.dev" size="large" font="regular" /> for any
+            business inquiries or if you want to connect with us!
           </p>
           <div className="flex flex-wrap gap-4 items-center">
             {/* <Button onClick={() => copyEmail()} icon={Copy}>
