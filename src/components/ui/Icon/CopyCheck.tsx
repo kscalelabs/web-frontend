@@ -26,7 +26,7 @@ export const CopyCheck = ({ open }: { open: boolean }) => {
               animate={{
                 x: open ? [7, 18, 39, 39] : 7,
                 y: open ? [23, 34, 13, 13] : 23,
-                scale: [1, 1, 1, 1],
+                scale: [1, 0],
               }}
               onAnimationComplete={() => setFinished(true)}
               transition={transition}

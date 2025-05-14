@@ -80,10 +80,10 @@ export const CodeBlock = ({ html, raw }: Props) => {
 
   return (
     <div className="flex w-full">
-      <div className="overflow-auto">
+      <div className="p-4 overflow-auto bg-stone-800 my-4 rounded-lg border border-stone-700 text-body-3 w-full">
         <ShikiCodeBlock html={html} />
       </div>
-      <div className="ml-auto">
+      <div className="ml-auto p-4">
         <button
           className="flex justify-center items-center size-9 bg-gray-800 hover:bg-gray-700 rounded-lg"
           onClick={() => handleClick()}

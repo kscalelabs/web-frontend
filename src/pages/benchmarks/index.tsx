@@ -1,11 +1,26 @@
+import type { GetStaticProps } from "next";
+import type { BundledLanguage } from "shiki";
+import { codeToHtml } from "shiki";
 import { Hero } from "@/components/Layout/Hero";
-import { CopyCode } from "@/components/ui/Code/CopyCode";
+import { CodeBlock } from "@/components/ui/Code/CopyCode";
 import Head from "next/head";
 import Image from "next/image";
 
-export default function Page() {
+interface Props {
+  html: string[];
+  raw: string[];
+}
+
+export default function Page({ html, raw }: Props) {
+  const steps = [
+    <>Create a new Github repository using our template.</>,
+    <>Open the directory with the benchmark clone in your terminal.</>,
+    <>Install all dependencies</>,
+    <>Optionally install CUDA support.</>,
+    <>Start training your model</>,
+  ];
   return (
-    <>
+    <main>
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -64,17 +79,83 @@ export default function Page() {
             {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
             <h3 className="text-heading-2 mb-4">Quick start</h3>
             <ol className="list-decimal list-inside">
-              <li>
-                Create a new Github repository using our template.
-                <CopyCode
-                  string={"git clone https://github.com/kscalelabs/kscale-humanoid-benchmark.git"}
-                  code={"git clone https://github.com/kscalelabs/kscale-humanoid-benchmark.git"}
-                ></CopyCode>
-              </li>
+              {steps.map((step, index) => (
+                <li>
+                  {step}
+                  <CodeBlock html={html[index]} raw={raw[index]} />
+                </li>
+              ))}
             </ol>
+            <p className="text-body-3">
+              Got stuck along the way? Ask any questions in our{" "}
+              <a
+                href="https://discord.com/invite/pVwubQT9Sg"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="underline text-orange-500 hover:text-orange-400 whitespace-nowrap font-medium transition-colors duration-300"
+              >
+                Discord
+              </a>
+              .
+            </p>
           </hgroup>
         </div>
       </section>
-    </>
+      <section className="section">
+        <div className="section-container">
+          <h2 className="text-heading-1 col-span-default col-start-default mb-6">Challenges</h2>
+          <p className="text-body-1 col-span-default col-start-default mb-12">
+            We’re planning to announce bi-weekly challenges in the future. Every week, we will
+            deploy top policies on the real robot, which we&apos;ll livestream.
+          </p>
+          <hgroup className="col-span-default col-start-default mb-12">
+            {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
+            <h3 className="text-heading-2 mb-4">Basic walk</h3>
+            <p>Description will eventually go here.</p>
+          </hgroup>
+          <hgroup className="col-span-default col-start-default mb-12">
+            {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
+            <h3 className="text-heading-2 mb-4">Uneven terrain</h3>
+            <p>Description will eventually go here.</p>
+          </hgroup>
+          <hgroup className="col-span-default col-start-default mb-12">
+            {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
+            <h3 className="text-heading-2 mb-4">Push recovery</h3>
+            <p>Description will eventually go here.</p>
+          </hgroup>
+          <hgroup className="col-span-default col-start-default mb-12">
+            {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
+            <h3 className="text-heading-2 mb-4">Human motion imitation</h3>
+            <p>Description will eventually go here.</p>
+          </hgroup>
+        </div>
+      </section>
+    </main>
   );
 }
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const steps = [
+    "git clone https://github.com/kscalelabs/kscale-humanoid-benchmark.git",
+    "cd kscale-humanoid-benchmark",
+    "pip install -r requirements.txt",
+    "pip install 'jax[cuda12]'",
+    "python -m train",
+  ];
+
+  const stepsAsHTML = await Promise.all(
+    steps.map((step) =>
+      codeToHtml(step, {
+        lang: "bash" as BundledLanguage,
+        theme: "github-dark-default",
+      })
+    )
+  );
+
+  return {
+    props: {
+      html: stepsAsHTML,
+      raw: steps,
+    },
+  };
+};
