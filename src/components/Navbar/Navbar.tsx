@@ -136,7 +136,7 @@ export const Navbar = () => {
     <div className="lg:h-0">
       <motion.header
         className={clsx(
-          "fixed top-0 inset-x-0 z-50 max-lg:border-b lg:h-22 transitions-all duration-300 ease-out 2xl:bg-gradient-to-b from-background from-50% to-transparent",
+          "fixed top-0 inset-x-0 z-50 max-lg:border-b lg:h-22 2xl:h-40 transitions-all duration-300 ease-out 2xl:bg-gradient-to-b from-background from-5% to-transparent",
           mobileTopOpen || mobileOpen
             ? "max-2xl:bg-background max-2xl:border-b-stone-800"
             : "max-2xl:bg-transparent max-2xl:border-b-transparent"
