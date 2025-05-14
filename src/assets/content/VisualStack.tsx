@@ -21,7 +21,7 @@ export const VisualStack = () => {
               scale: i === 5 ? 0 : i === 0 || i === 4 ? 0.5 : 1,
             }}
             animate={{
-              y: (i === 0 ? -2.5 : -2) * SEPARATION + (i + -1) * SEPARATION,
+              y: -2 * SEPARATION + (i + -1) * SEPARATION,
               scale: i === 0 ? 0 : i === 1 || i === 5 ? 0.5 : 1,
             }}
             key={i}
