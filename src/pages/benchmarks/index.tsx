@@ -1,6 +1,6 @@
 import type { GetStaticProps } from "next";
 import type { BundledLanguage } from "shiki";
-import { codeToHtml } from "shiki";
+import { codeToHtml } from "@/components/util/shiki";
 import { Hero } from "@/components/Layout/Hero";
 import { CodeBlock } from "@/components/ui/Code/CopyCode";
 import Head from "next/head";
@@ -208,14 +208,7 @@ python -m train
 `,
   ];
 
-  const stepsAsHTML = await Promise.all(
-    steps.map((step) =>
-      codeToHtml(step, {
-        lang: "bash" as BundledLanguage,
-        theme: "github-dark-default",
-      })
-    )
-  );
+  const stepsAsHTML = await Promise.all(steps.map((step) => codeToHtml(step)));
 
   return {
     props: {

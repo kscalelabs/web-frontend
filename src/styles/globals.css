@@ -71,6 +71,18 @@
     --rust: #de4208ff;
     --molten: #f18a03ff;
     --sol: #eae9bcff;
+
+    --shiki-foreground: var(--foreground);
+    --shiki-background: transparent;
+    --shiki-token-constant: var(--foreground);
+    --shiki-token-string: var(--foreground);
+    --shiki-token-comment: #b58112;
+    --shiki-token-keyword: var(--foreground);
+    --shiki-token-parameter: var(--foreground);
+    --shiki-token-function: #fef65f;
+    --shiki-token-string-expression: var(--foreground);
+    --shiki-token-punctuation: var(--foreground);
+    --shiki-token-link: var(--foreground);
   }
   * {
     font-feature-settings:
