@@ -73,6 +73,7 @@
     "playwright": "^1.52.0",
     "postcss": "^8",
     "prettier": "3.4.2",
+    "shiki": "^3.4.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5",
     "urdf-loader": "^0.12.5",

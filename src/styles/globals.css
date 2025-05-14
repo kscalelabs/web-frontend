@@ -97,7 +97,7 @@ body {
 
 @layer base {
   h1 {
-    @apply text-heading-d font-display;
+    @apply text-heading-d1;
   }
   h2 {
     @apply text-heading-1;
@@ -134,8 +134,11 @@ body {
   .col-start-default {
     @apply 2xl:col-start-3 3xl:col-start-3 4xl:col-start-3;
   }
-  .text-heading-d {
-    @apply text-heading-d-sm sm:text-heading-d-md lg:text-heading-d-lg 4xl:text-heading-d-xl;
+  .text-heading-d1 {
+    @apply text-heading-d1-sm sm:text-heading-d1-md lg:text-heading-d1-lg 4xl:text-heading-d1-xl font-bold font-display;
+  }
+  .text-heading-d2 {
+    @apply text-heading-d2-sm sm:text-heading-d2-md lg:text-heading-d2-lg 4xl:text-heading-d2-xl font-medium font-display;
   }
   .text-heading-1 {
     @apply text-heading-1-sm sm:text-heading-1-md lg:text-heading-1-lg 4xl:text-heading-1-xl font-medium;

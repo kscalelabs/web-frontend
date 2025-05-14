@@ -7,10 +7,15 @@ import localFont from "next/font/local";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
-// import { Grid } from "@/components/grid/Grid";
+import { Grid } from "@/components/Grid/Grid";
 
 const apparat = localFont({
   src: [
+    {
+      path: "../styles/fonts/KMR-Apparat-Medium.woff",
+      weight: "500",
+      style: "normal",
+    },
     {
       path: "../styles/fonts/KMR-Apparat-Bold.woff",
       weight: "700",
@@ -81,10 +86,10 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>K-Scale Labs</title>
+        <title>K-Scale Labs: Open-source humanoid robots, built for developers</title>
         <meta
           name="description"
-          content="Developing the world's most accessible platform for embodied intelligence. We're hackers, engineers, and researchers that believe in a world where robots are made for everyone."
+          content="K-Scale Labs is building the most integrated open-source stack—from hardware to machine learning—powering the next era of general-purpose robotics."
         />
         <meta
           name="keywords"
@@ -93,7 +98,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:title" content="K-Scale Labs" />
         <meta
           property="og:description"
-          content="Developing the world's most accessible platform for embodied intelligence. We're hackers, engineers, and researchers that believe in a world where robots are made for everyone."
+          content="K-Scale Labs is building the most integrated open-source stack—from hardware to machine learning—powering the next era of general-purpose robotics"
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://kscalelabs.com" />
@@ -107,7 +112,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta name="twitter:image" content="/meta/twitter-image.png" />
       </Head>
-      {/* <Grid /> */}
+      <Grid />
       <ReactLenis root options={{ smoothWheel: false }}>
         <Navbar />
         <Component {...pageProps} />

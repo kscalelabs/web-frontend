@@ -1,13 +1,16 @@
-import { ComponentProps } from "react";
+import React, { ComponentProps, useState } from "react";
 import { cva, VariantProps } from "class-variance-authority";
 import { copyString } from "@/components/util/functions";
 import Copy from "@/assets/icons/icon_copy.svg";
+import { CopyCheck } from "../Icon/CopyCheck";
+import { BundledLanguage, codeToHtml } from "shiki";
 
 interface Props
   extends ComponentProps<"button">,
     VariantProps<typeof buttonStyles>,
     VariantProps<typeof iconStyles> {
   string: string;
+  code: string;
 }
 
 const buttonStyles = cva(
@@ -35,7 +38,7 @@ const iconStyles = cva(
   {
     variants: {
       size: {
-        regular: "size-4",
+        regular: "size-6",
         large: "size-5",
       },
     },
@@ -45,15 +48,37 @@ const iconStyles = cva(
   }
 );
 
-export const CopyCode = ({ string, size, font }: Props) => {
+export const CopyCode = ({ string, code }: Props) => {
+  const [clicked, setClicked] = useState(false);
+  const handleClick = () => {
+    copyString(string);
+    setClicked(true);
+    setTimeout(() => {
+      setClicked(false);
+    }, 2000);
+  };
+
   return (
-    <button
-      className={buttonStyles({ font, size })}
-      onClick={() => copyString(string)}
-      type="button"
-    >
-      {string}
-      <Copy className={iconStyles({ size })} />
-    </button>
+    <div className="flex">
+      {/* <CodeBlock lang="ts">{['console.log("Hello")', 'console.log("World")'].join("\n")}</CodeBlock> */}
+      <button className="size-8" onClick={() => handleClick()} type="button">
+        {/* <Copy className={iconStyles({ size })} /> */}
+        <CopyCheck open={clicked} />
+      </button>
+    </div>
   );
 };
+
+interface CodeBlockProps {
+  children: string;
+  lang: BundledLanguage;
+}
+
+async function CodeBlock(props: CodeBlockProps) {
+  const out = await codeToHtml(props.children, {
+    lang: props.lang,
+    theme: "github-dark",
+  });
+
+  return <div dangerouslySetInnerHTML={{ __html: out }} />;
+}
