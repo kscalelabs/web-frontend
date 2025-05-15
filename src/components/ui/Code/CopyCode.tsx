@@ -22,7 +22,7 @@ interface Props
 }
 
 const buttonStyles = cva(
-  "group inline-flex items-center gap-1 px-1.5 bg-stone-900 rounded-md border border-stone-700 text-stone-300 hover:text-stone-100 active:text-orange-500 transition-colors duration-100 active:duration-50 cursor-pointer",
+  "group inline-flex items-center gap-1 px-1.5 bg-stone-900 rounded-md border border-stone-700 text-stone-300 hover:text-stone-100 active:text-stone-400 transition-colors duration-100 active:duration-50 cursor-pointer",
   {
     variants: {
       font: {
@@ -42,12 +42,12 @@ const buttonStyles = cva(
 );
 
 const iconStyles = cva(
-  "ml-1.5 my-auto fill-stone-300 group-hover:fill-stone-100 group-active:fill-orange-500 transition-colors duration-100",
+  "my-auto fill-stone-300 group-hover:fill-stone-100 group-active:fill-orange-500 transition-colors duration-100",
   {
     variants: {
       size: {
-        regular: "size-6",
-        large: "size-5",
+        regular: "size-5",
+        large: "size-6",
       },
     },
     defaultVariants: {
@@ -68,7 +68,7 @@ export const CopyString = ({ string, size, font }: CopyStringProps) => {
   return (
     <button className={buttonStyles({ font, size })} onClick={() => handleClick()} type="button">
       {string}
-      <div className="w-auto h-full">
+      <div className={iconStyles({ size })}>
         <CopyCheck open={clicked} />
       </div>
     </button>

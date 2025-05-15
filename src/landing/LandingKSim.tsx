@@ -244,9 +244,7 @@ export const LandingKSim = () => {
                 docs
               </a>
             </p>
-            <Button href="https://leaderboard.kscale.dev" external>
-              See humanoid benchmarks
-            </Button>
+            <Button href="/benchmarks">See humanoid benchmarks</Button>
           </hgroup>
         </div>
       </section>

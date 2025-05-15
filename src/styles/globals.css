@@ -158,6 +158,9 @@ body {
   .col-start-default {
     @apply 2xl:col-start-3 3xl:col-start-3 4xl:col-start-3;
   }
+  .col-end-default {
+    @apply 2xl:-col-end-3 3xl:-col-end-3 4xl:-col-end-3;
+  }
   .text-heading-d1 {
     @apply text-heading-d1-sm sm:text-heading-d1-md lg:text-heading-d1-lg 4xl:text-heading-d1-xl font-bold font-display;
   }

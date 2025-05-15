@@ -14,7 +14,8 @@ export function LandingContact() {
             made for everyone.
           </p>
           <p className="text-body-1 mb-6">
-            Shoot us an email at <CopyString string="inquiries@kscale.dev" font="regular" /> for any
+            Shoot us an email at{" "}
+            <CopyString string="inquiries@kscale.dev" font="regular" size="large" /> for any
             business inquiries or if you want to connect with us!
           </p>
           <div className="flex flex-wrap gap-4 items-center">
