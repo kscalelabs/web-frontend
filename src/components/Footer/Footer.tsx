@@ -1,126 +1,212 @@
-import Discord from "@/assets/icons/icon_discord.svg";
-import Github from "@/assets/icons/icon_github.svg";
-import X from "@/assets/icons/icon_x.svg";
-import Wordmark from "@/assets/wordmark.svg";
+import SocialMediaItem from "@/components/footer/SocialMediaItem";
+import { Discord, Github, Twitter } from "@/components/footer/socialMediaSvgs";
+import FooterLogotype from "@/components/logos/footerLogotype";
+import { circOut } from "motion";
+import { AnimatePresence, cubicBezier, motion } from "motion/react";
 import Link from "next/link";
-import { CopyButton } from "../ui/Button/CopyButton";
-import { IconButton } from "../ui/IconButton/IconButton";
+import { JSX, useEffect, useState } from "react";
+
+const socialMediaSvgs: JSX.Element[] = [
+  <Discord key={"discord"} />,
+  <Twitter key={"twitter"} />,
+  <Github key={"github"} />,
+];
+
+const socialMediaLinks: { linkURL: string; name: string }[] = [
+  { linkURL: "https://discord.gg/kscale", name: "Discord" },
+  { linkURL: "https://x.com/kscalelabs", name: "Twitter" },
+  { linkURL: "https://github.com/kscalelabs", name: "Github" },
+];
+
+export interface FooterSectionListProps {
+  title: string;
+  items: { title: string; url: string; isInternal?: boolean }[];
+  extraStyling: string;
+}
+
+const FooterSectionList = ({ extraStyling, items, title }: FooterSectionListProps) => {
+  return (
+    <section
+      className={
+        "flex flex-col items-start gap-4 text-filament font-planar font-normal " + extraStyling
+      }
+    >
+      <h3 className={"text-caption uppercase opacity-[77%]"}>{title}</h3>
+      <ul className={"flex flex-col items-start gap-4 md:gap-6"}>
+        {items.map((item, index) => (
+          <li key={index} className={"list-none"}>
+            <Link href={item.url} target={"_blank"} className="hover:underline">
+              <motion.span
+                initial={{ opacity: 1 }}
+                whileHover={{ opacity: 0.77 }}
+                transition={{ duration: 0.3, ease: circOut }}
+              >
+                {item.title}
+              </motion.span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+};
 
 export default function Footer() {
-  const socials = [
-    {
-      name: "Discord",
-      icon: Discord,
-      href: "https://discord.com/invite/pVwubQT9Sg",
-    },
-    {
-      name: "X",
-      icon: X,
-      href: "https://x.com/kscalelabs",
-    },
-    {
-      name: "Github",
-      icon: Github,
-      href: "https://github.com/kscalelabs",
-    },
-  ];
+  const handleCopyEmail = async () => {
+    const email = "inquiries@kscale.dev";
+
+    // Check if the clipboard API is available
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      try {
+        await navigator.clipboard.writeText(email);
+      } catch {
+        // Fallback to legacy approach
+        legacyCopy(email);
+      }
+    } else {
+      // Use legacy approach for browsers that don't support clipboard API
+      legacyCopy(email);
+    }
+    setIsCopied(true);
+  };
+
+  // Legacy approach using temporary input element
+  const legacyCopy = (text: string) => {
+    const tempInput = document.createElement("input");
+    tempInput.value = text;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    try {
+      document.execCommand("copy");
+    } catch {}
+    document.body.removeChild(tempInput);
+  };
+
+  const [isCopied, setIsCopied] = useState(false);
+
+  useEffect(() => {
+    if (isCopied) {
+      setTimeout(() => {
+        setIsCopied(false);
+      }, 2500);
+    }
+  }, [isCopied]);
 
   return (
-    <footer className={"py-8 bg-background border-t border-stone-800"}>
-      <div className="section-container gap-y-8">
-        <Link href="/" className="col-span-2 w-fit self-start">
-          <Wordmark className="w-auto h-10" />
-        </Link>
-        <section className="col-span-2 lg:col-span-1 2xl:col-span-2 sm:-col-end-1 md:-col-end-1 lg:col-start-4 2xl:col-start-7 4xl:col-start-11">
-          <h2 className="text-body-3 font-bold text-stone-500 mb-2">Product</h2>
-          <div className="flex flex-col gap-6 lg:gap-4 2xl:gap-2">
-            <a
-              href="https://shop.kscale.dev/products/kbot"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-body-2 lg:text-body-3 font-medium lg:font-bold relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
+    <footer className={"z-50 bg-rust text-filament py-8 gap-y-8 grid-m"}>
+      <ul
+        className={
+          "col-span-full sm:col-span-2 md:col-span-3 5xl:col-span-2 flex flex-row gap-4 mb-8"
+        }
+      >
+        {socialMediaLinks.map((link, index) => (
+          <li className={"list-none"} key={index}>
+            <SocialMediaItem
+              linkURL={link.linkURL}
+              iconSvg={socialMediaSvgs[index]}
+              name={link.name}
+            />
+          </li>
+        ))}
+      </ul>
+
+      <section
+        className={
+          "flex flex-col items-start gap-4 text-filament font-planar font-normal col-span-full sm:col-span-3 sm:col-start-4 md:col-span-2 md:col-start-4 2xl:col-start-7"
+        }
+      >
+        <h3 className={"text-caption uppercase opacity-[77%]"}>Get in touch</h3>
+        <hgroup>
+          <motion.div
+            className="cursor-pointer"
+            onClick={() => handleCopyEmail()}
+            initial="initial"
+            animate="animate"
+            whileHover="hover"
+            whileTap="tap"
+          >
+            <p className="opacity-70 text-sm">inquiries@kscale.dev</p>
+            <motion.button
+              className="mt-2 bg-filament text-rust text-code--caption px-1.5 py-[0.15rem] rounded-sm w-20 h-4 flex flex-colitems-center justify-center overflow-hidden"
+              variants={{
+                initial: {
+                  scale: 1,
+                },
+                hover: {
+                  scale: 1.1,
+                },
+                tap: {
+                  scale: [1.1, 0.9, 1.1],
+                  transition: { duration: 0.15 },
+                },
+                animate: {
+                  background: isCopied ? ["var(--sol)", "var(--filament)"] : "var(--filament)",
+                  transition: {
+                    background: { duration: 0.5, ease: cubicBezier(0.64, 0, 0.78, 0) },
+                  },
+                },
+              }}
+              aria-label="Copy email"
             >
-              <span className="absolute h-12 top-1/2 -translate-y-1/2 w-full  [@media(pointer:fine)]:hidden" />
-              K-Bot
-            </a>
-            <a
-              href="https://shop.kscale.dev/products/zbot"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-body-2 lg:text-body-3 font-medium lg:font-bold relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
-            >
-              <span className="absolute h-12 top-1/2 -translate-y-1/2 w-full  [@media(pointer:fine)]:hidden" />
-              Z-Bot
-            </a>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSemVaJ6HfieS9xDKv7SqWYArHyHLV-kraraiT_VEmPL_6lkPw/viewform"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-body-2 lg:text-body-3 font-medium lg:font-bold relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
-            >
-              <span className="absolute h-12 top-1/2 -translate-y-1/2 w-full  [@media(pointer:fine)]:hidden" />
-              Send feedback
-            </a>
-          </div>
-        </section>
-        <section className="col-span-2 lg:col-span-1 2xl:col-span-2 sm:-col-end-1 md:-col-end-1 lg:col-end-auto">
-          <h2 className="text-body-3 font-bold text-stone-500 mb-2">Community</h2>
-          <div className="flex flex-col gap-6 lg:gap-4 2xl:gap-2">
-            <a
-              href="https://docs.kscale.dev/docs/getting-started"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-body-2 lg:text-body-3 font-medium lg:font-bold relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
-            >
-              <span className="absolute h-12 top-1/2 -translate-y-1/2 w-full  [@media(pointer:fine)]:hidden" />
-              Docs
-            </a>
-            <Link
-              href="/join"
-              className="text-body-2 lg:text-body-3 font-medium lg:font-bold relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
-            >
-              <span className="absolute h-12 top-1/2 -translate-y-1/2 w-full  [@media(pointer:fine)]:hidden" />
-              Join us
-            </Link>
-            <Link
-              href="/benchmarks"
-              className="text-body-2 lg:text-body-3 font-medium lg:font-bold relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
-            >
-              <span className="absolute h-12 top-1/2 -translate-y-1/2 w-full  [@media(pointer:fine)]:hidden" />
-              Benchmarks
-            </Link>
-          </div>
-        </section>
-        <section className="col-span-2 lg:col-span-1 2xl:col-span-2 sm:-col-end-1 md:-col-end-1 lg:col-end-auto">
-          <h2 className="text-body-3 font-bold text-stone-500 mb-2">Legal</h2>
-          <div className="flex flex-col gap-6 lg:gap-4 2xl:gap-2">
-            <Link
-              href="/tos"
-              className="text-body-2 lg:text-body-3 font-medium lg:font-bold relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
-            >
-              <span className="absolute h-12 top-1/2 -translate-y-1/2 w-full  [@media(pointer:fine)]:hidden" />
-              Terms of service
-            </Link>
-            <Link
-              href="/privacy"
-              className="text-body-2 lg:text-body-3 font-medium lg:font-bold relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
-            >
-              <span className="absolute h-12 top-1/2 -translate-y-1/2 w-full  [@media(pointer:fine)]:hidden" />
-              Privacy policy
-            </Link>
-          </div>
-        </section>
-        <section className="sm:-col-end-1 lg:col-end-auto sm:col-span-2 flex flex-col gap-6 lg:gap-4 mt-16">
-          <CopyButton />
-          <menu className="flex gap-6 items-center sm:col-start-3 sm:col-span-2">
-            {socials.map((social, i) => (
-              <li key={`footer-social-${social.name}`}>
-                <IconButton key={i} icon={social.icon} href={social.href} />
-              </li>
-            ))}
-          </menu>
-        </section>
-      </div>
+              <AnimatePresence mode="popLayout">
+                {isCopied ? (
+                  <motion.span
+                    className="block select-none"
+                    variants={{
+                      initial: { opacity: 0, y: "100%" },
+                      animate: { opacity: 1, y: 0 },
+                      exit: { opacity: 0, y: "-100%" },
+                    }}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    key="copy-button--success"
+                  >
+                    Copied!
+                  </motion.span>
+                ) : (
+                  <motion.span
+                    className="block select-none"
+                    variants={{
+                      initial: { opacity: 0, y: "100%" },
+                      animate: { opacity: 1, y: 0 },
+                      exit: { opacity: 0, y: "-100%" },
+                    }}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    key="copy-button--default"
+                  >
+                    Copy email
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </motion.button>
+          </motion.div>
+        </hgroup>
+      </section>
+      <FooterSectionList
+        title={"Product"}
+        items={[
+          // { title: "K-Bot", url: "https://shop.kscale.dev/collections/all" },
+          // { title: "Z-Bot", url: "https://zerothbot.com" },
+          {
+            title: "Send feedback",
+            url: "https://docs.google.com/forms/d/e/1FAIpQLSemVaJ6HfieS9xDKv7SqWYArHyHLV-kraraiT_VEmPL_6lkPw/viewform",
+          },
+        ]}
+        extraStyling={"col-span-2 sm:col-span-3 sm:col-start-4 md:col-span-2"}
+      />
+      <FooterSectionList
+        title={"Legal"}
+        items={[
+          { title: "Terms of service", url: "/tos", isInternal: true },
+          { title: "Privacy policy", url: "/privacy", isInternal: true },
+        ]}
+        extraStyling={"col-span-2 sm:col-span-3 sm:col-start-4 md:col-span-2"}
+      />
+
+      <FooterLogotype />
     </footer>
   );
 }
