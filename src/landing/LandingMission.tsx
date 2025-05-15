@@ -9,8 +9,7 @@ export function LandingMission() {
             We&apos;re building a robotics stack that lets you deploy physical AI in the real world
           </h2>
           <p className="col-span-full sm:col-span-3 md:col-span-4 lg:col-span-3 2xl:col-span-5 2xl:col-start-3 4xl:col-span-6 4xl:col-start-4 text-body-1 mb-12">
-            We design and manufacture the hardware, develop custom operating systems, and train
-            machine learning models on our own modular framework.
+            Our software, hardware, and machine learning stack is seemlessly integrated, allowing you to focus on building applications instead of installing packages.
           </p>
         </hgroup>
         <figure className="w-full col-span-full sm:col-span-4 md:col-span-4 lg:col-span-3 2xl:col-span-3 4xl:col-span-4 sm:-col-end-1 md:-col-end-2 2xl:-col-end-3 4xl:-col-end-4 aspect-video rounded-lg mb-64">
