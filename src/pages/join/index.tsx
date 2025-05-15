@@ -240,8 +240,8 @@ export default function Page() {
               <li>
                 <h3 className="text-body-2 font-bold mb-2">Do you do internships?</h3>
                 <p>
-                  Our team sometimes accepts interns involved in our community or through our our
-                  hosted hackathons. If you&apos;re interested, reach out to us on our{" "}
+                  Our team sometimes accepts interns involved in our community or through our hosted
+                  hackathons. If you&apos;re interested, reach out to us on our{" "}
                   <a
                     href="https://discord.com/invite/pVwubQT9Sg"
                     target="_blank"
@@ -260,13 +260,15 @@ export default function Page() {
               <li>
                 <h3 className="text-body-2 font-bold mb-2">What bounty should I submit for?</h3>
                 <p>
-                  Choosing what you find most interesting and fulfilling typically end in better
+                  Choosing what you find most interesting and fulfilling typically leads to better
                   results.
                 </p>
               </li>
               <li>
                 <h3 className="text-body-2 font-bold mb-2">What about non-technical roles?</h3>
-                <p>We currently only hire people with strong technical background. </p>
+                <p>
+                  At this time, we are only hiring candidates with a strong technical background.
+                </p>
               </li>
             </ul>
           </div>

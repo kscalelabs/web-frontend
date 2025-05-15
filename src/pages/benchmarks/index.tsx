@@ -89,7 +89,7 @@ export default function Page({ html, raw }: Props) {
             <p className="mb-2 text-body-2">
               Want to try K-Sim in your browser? Set up in{" "}
               <a
-                href="https://colab.research.google.com/github/kscalelabs/kscale-humanoid-benchmark/blob/master/train.ipynb"
+                href="https://colab.research.google.com/github/kscalelabs/ksim-gym/blob/master/train.ipynb"
                 className="group inline-flex items-center gap-1 font-medium underline relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
                 rel="noreferrer noopener"
                 target="_blank"
@@ -121,12 +121,14 @@ export default function Page({ html, raw }: Props) {
           <div className="section-prose2 mb-6">
             {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
             <h2 className="text-heading-2 mb-6">
-              This leaderboard is a challenge for people who want to try programming and training
-              humanoid robots in simulation and watching it run on a real humanoid tomorrow.
+              This leaderboard is part of a challenge for anyone interested in programming and
+              training humanoid robots in simulation then seeing their creations come to life on a
+              real humanoid robot the next day.
             </h2>
             <p className="text-body-2 mb-6">
-              All submissions that pass sim2sim evaluation will get a spot on the leaderboard, and
-              we will be grateful for your assistance in helping us move towards our mission.
+              All submissions that pass our sim-to-sim evaluation will earn a spot on the
+              leaderboard. We deeply appreciate your contributions in helping us advance our
+              mission.
             </p>
             <p className="text-body-2 mb-6">
               Our competition will feature exciting prizes&mdash;ranging from fun company-branded
@@ -281,7 +283,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const steps = [
     `# 1. Clone template 
 git clone --depth 1 https://github.com/kscalelabs/ksim-gym.git  # git‑lfs required 
-cd kscale-humanoid-benchmark  
+cd ksim-gym  
 
 # 2. Install 
 python -m venv .venv && source .venv/bin/activate 
