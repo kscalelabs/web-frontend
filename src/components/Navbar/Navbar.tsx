@@ -88,7 +88,7 @@ export const Navbar = () => {
     },
     {
       name: "Z-Bot",
-      href: "https://www.zerothbot.com/",
+      href: "https://shop.kscale.dev/products/zbot",
     },
     {
       name: "Docs",
@@ -110,7 +110,7 @@ export const Navbar = () => {
         },
         {
           name: "Z-Bot",
-          href: "https://www.zerothbot.com/",
+          href: "https://shop.kscale.dev/products/kbot",
         },
       ],
     },

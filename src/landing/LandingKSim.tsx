@@ -244,7 +244,7 @@ export const LandingKSim = () => {
                 docs
               </a>
             </p>
-            <Button href="/benchmarks">See humanoid benchmarks</Button>
+            <Button href="/benchmarks">Start training robots</Button>
           </hgroup>
         </div>
       </section>
