@@ -22,7 +22,7 @@ interface Props
 }
 
 const buttonStyles = cva(
-  "group inline-flex items-center gap-1 px-1.5 bg-stone-900 rounded-md border border-stone-700 text-stone-300 hover:text-stone-100 active:text-stone-400 transition-colors duration-100 active:duration-50 cursor-pointer",
+  "w-fit group inline-flex items-center gap-1 px-1.5 bg-stone-900 rounded-md border border-stone-700 text-stone-300 hover:text-stone-100 active:text-stone-400 transition-colors duration-100 active:duration-50 cursor-pointer",
   {
     variants: {
       font: {
