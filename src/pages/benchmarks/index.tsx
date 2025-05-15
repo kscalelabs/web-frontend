@@ -10,6 +10,7 @@ import Arrow from "@/assets/icons/icon_arrowTR.svg";
 import { Button } from "@/components/ui/Button/Button";
 import Discord from "@/assets/icons/icon_discord.svg";
 import Github from "@/assets/icons/icon_github.svg";
+import Colab from "@/assets/icons/icon_colab.svg";
 
 interface Props {
   html: string[];
@@ -50,8 +51,8 @@ export default function Page({ html, raw }: Props) {
         <meta name="twitter:image" content="/meta/twitter-image.png" />
       </Head>
       <ArticleHero
-        heading={"The humanoid robotics challenge"}
-        eyebrow={"GPR-AGI benchmarks"}
+        heading={"The humanoid RL challenge"}
+        // eyebrow={"GPR-AGI benchmarks"}
         href="https://github.com/kscalelabs/ksim-gym"
         src="/videos/landing/ksim_video_0514.mp4"
         external
@@ -64,23 +65,23 @@ export default function Page({ html, raw }: Props) {
         <div className="section-container">
           <div className="section-prose2">
             <h2 className="text-heading-1 col-span-default col-start-default mb-6">
-              Start zero-shot transfer sim-to-real training with K-Sim
+              Start RL training and zero-shot sim-to-real transfer now with K-Sim
             </h2>
             <p className="text-body-1 mb-12">
-              K-SIM is an open-source library for GPU-accelerated robot learning and sim-to-real
-              transfer, made for movements from simple walking to complex human imitation.
+              K-Sim is an open-source library for GPU-accelerated robot learning and sim-to-real
+              transfer, made for RL whole-body control from simple walking to complex human
+              imitation.
             </p>
-          </div>
-        </div>
-      </section>
-      <section className="section--short">
-        <div className="section-container">
-          <div className="section-prose2">
-            {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
             <h2 className="text-heading-2 mb-3">Quick start in under 5 mins</h2>
             <p className="text-body-1 mb-6">
-              Develop in your own environment using the code below or set up in Google Colab in one
-              click.
+              Develop in your own environment using the code below or set up in{" "}
+              <a
+                href="https://colab.research.google.com/github/kscalelabs/kscale-humanoid-benchmark/blob/master/train.ipynb"
+                className="inline-flex items-center gap-1 font-medium underline relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
+              >
+                Google Colab <Colab className="size-8" />
+              </a>{" "}
+              with one click.
             </p>
             <CodeBlock html={html[0]} raw={raw[0]} />
             <p className="text-body-3">
@@ -98,6 +99,7 @@ export default function Page({ html, raw }: Props) {
           </div>
         </div>
       </section>
+
       <section className="section--short">
         <div className="section-container">
           <div className="section-prose2 mb-6">
@@ -110,14 +112,23 @@ export default function Page({ html, raw }: Props) {
               All submissions that pass sim2sim evaluation will get a spot on the leaderboard, and
               we will be grateful for your assistance in helping us move towards our mission.
             </p>
-            <p className="text-body-2">
-              Our office is based in Palo Alto, and we would love to invite all of you to visit and
-              see the robots yourself and RL deployment submissions live. You can schedule a visit
-              here:
+            <p className="text-body-2 mb-6">
+              Our competition will feature exciting prizes&mdash;ranging from fun company-branded
+              merch to free access to the full-size K-Bot robot! Stay tuned for more details.
             </p>
           </div>
         </div>
       </section>
+      {/* <section className="section--short">
+        <div className="section-container">
+          <div className="section-prose2 mb-6">
+            <p className="text-body-1 mb-6">
+              Our competition will feature exciting prizes—ranging from fun company-branded merch to
+              free access to the full-size K-Bot robot! Stay tuned for more details.
+            </p>
+          </div>
+        </div>
+      </section> */}
 
       <section className="section--short">
         <div className="section-container">
@@ -127,28 +138,68 @@ export default function Page({ html, raw }: Props) {
               We&apos;re planning to announce bi-weekly challenges in the future. Every week, we
               will deploy top policies on the real robot, which we&apos;ll livestream.
             </p>
-            <hgroup className="col-span-default col-start-default mb-12">
-              {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
-              <h3 className="text-body-1 mb-1">Basic walk</h3>
-              <p>
-                Reach +1 / step if COM forward velocity &gt; 0.5 ms<sup>-1</sup>
-              </p>
-            </hgroup>
-            <hgroup className="col-span-default col-start-default mb-12">
-              {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
-              <h3 className="text-body-1 mb-1">Uneven terrain</h3>
-              <p>Survive walking through 100m of Perlin hills</p>
-            </hgroup>
-            <hgroup className="col-span-default col-start-default mb-12">
-              {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
-              <h3 className="text-body-1 mb-1">Push recovery</h3>
-              <p>Keep torso upright after 5 random shoves of at least 50 Newtons</p>
-            </hgroup>
-            <hgroup className="col-span-default col-start-default mb-12">
-              {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
-              <h3 className="text-body-1 mb-1">Human motion imitation</h3>
-              <p>Track a 30-sec motion capture clip</p>
-            </hgroup>
+            <div className="gap-4 md:gap-6 lg:grid lg:grid-cols-2">
+              <hgroup className="flex flex-col mb-12">
+                {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
+                <h3 className="text-body-1 mb-1">Basic walk</h3>
+                <p className="mb-4">
+                  Reach +1 / step if COM forward velocity &gt; 0.5 ms<sup>-1</sup>
+                </p>
+                <figure className="mt-auto aspect-video overflow-hidden rounded-lg">
+                  <Image
+                    width="640"
+                    height="360"
+                    src="/photos/challenges/walk.gif"
+                    alt="Example simulation of basic walk"
+                    className="size-full object-cover"
+                  />
+                </figure>
+              </hgroup>
+              <hgroup className="flex flex-col mb-12">
+                {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
+                <h3 className="text-body-1 mb-1">Uneven terrain</h3>
+                <p className="mb-4">Survive walking through 100m of Perlin hills</p>
+                <figure className="mt-auto aspect-video overflow-hidden rounded-lg">
+                  <Image
+                    width="640"
+                    height="360"
+                    src="/photos/challenges/terrain.gif"
+                    alt="Example simulation of locomotion on uneven terrain"
+                    className="size-full object-cover"
+                  />
+                </figure>
+              </hgroup>
+              <hgroup className="flex flex-col mb-12">
+                {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
+                <h3 className="text-body-1 mb-1">Push recovery</h3>
+                <p className="mb-4">
+                  Keep torso upright after 5 random shoves of at least 50 Newtons
+                </p>
+                <figure className="mt-auto aspect-video overflow-hidden rounded-lg">
+                  <Image
+                    width="640"
+                    height="360"
+                    src="/photos/challenges/push.gif"
+                    alt="Example simulation of push recovery"
+                    className="size-full object-cover"
+                  />
+                </figure>
+              </hgroup>
+              <hgroup className="flex flex-col mb-12">
+                {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
+                <h3 className="text-body-1 mb-1">Human motion imitation</h3>
+                <p className="mb-4">Track a 30-sec motion capture clip</p>
+                <figure className="mt-auto aspect-video overflow-hidden rounded-lg">
+                  <Image
+                    width="640"
+                    height="360"
+                    src="/photos/challenges/imitation.gif"
+                    alt="Example simulation of human motion captured walking"
+                    className="size-full object-cover"
+                  />
+                </figure>
+              </hgroup>
+            </div>
 
             <div className="flex flex-col items-center gap-4">
               <p className="text-center text-stone-500">
@@ -193,18 +244,6 @@ export default function Page({ html, raw }: Props) {
                 </a>
               </li>
             </ol>
-            <p className="mb-4">
-              One of us will run your policy on the real robot and add the results to the
-              leaderboard.
-            </p>
-            <p className="mb-4">
-              We try to run new policies every night, so you shouldn&apos;t have to wait too long to
-              see your policy on the leaderboard.
-            </p>
-            <p>
-              We will post your sim2sim and sim2real deployment video on X/Twitter, and on top of
-              passing basic, evaluation, your rank is determined by the number of likes on Twitter.
-            </p>
           </div>
         </div>
       </section>
