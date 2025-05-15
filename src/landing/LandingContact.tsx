@@ -24,7 +24,7 @@ export function LandingContact() {
             </Button> */}
             <Link
               className="w-fit text-body-2 transition-colors duration-300 text-orange-700 hover:text-orange-800 focus:text-orange-800 active:text-orange-900"
-              href="/careers"
+              href="/joinus"
             >
               See open roles (3)
             </Link>

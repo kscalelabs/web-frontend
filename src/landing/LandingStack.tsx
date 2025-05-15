@@ -161,7 +161,7 @@ export const LandingStack = () => {
         },
         {
           name: "Z-Bot",
-          href: "https://zerothbot.com",
+          href: "https://shop.kscale.dev/products/zbot",
           condensed: false,
           thumbnailSrc: "/photos/landing/stack/zbot.webp",
           thumbnailAlt: "Z-Bot",

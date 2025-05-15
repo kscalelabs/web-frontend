@@ -24,7 +24,7 @@ const imgs = [
     src: "/photos/landing/thumbnail/thumbnail_kbot.png",
     alt: "Photo of K-Bot",
     price: "$8,999 USD",
-    oldPrice: "$16,999 USD",
+    oldPrice: "$15,999 USD",
     links: [
       { text: "Pre-order now", href: "https://shop.kscale.dev/products/kbot" },
       { text: "Learn more", href: "/kbot" },
@@ -38,13 +38,13 @@ const imgs = [
     price: "$999 USD",
     oldPrice: "$1,999 USD",
     links: [
-      { text: "Pre-order now", href: "https://www.zerothbot.com/" },
+      { text: "Pre-order now", href: "https://shop.kscale.dev/products/zbot" },
       { text: "Learn more", href: "https://www.zerothbot.com/" },
     ],
   },
   {
     name: "M-Bot",
-    desc: "Compact humanoid for developers",
+    desc: "Compact humanoid for the home",
     src: "/photos/landing/thumbnail/thumbnail_mbot.png",
     alt: "Photo of M-Bot",
     price: "$2,999 USD",
@@ -172,13 +172,13 @@ export const LandingProducts = () => {
                           >
                             {item.links[0].text}
                           </Button>
-                          <a
+                          {/* <a
                             href={item.links[1].href}
                             className="text-orange-500 hover:text-orange-400 whitespace-nowrap text-body-2 font-medium flex items-center gap-1"
                             target={item.links[1].href.startsWith("https://") ? "_blank" : "_self"}
                           >
                             {item.links[1].text}
-                          </a>
+                          </a> */}
                         </div>
                       ) : (
                         <span className="text-stone-500 text-body-3 font-bold border border-stone-500 rounded-full px-3 py-1">

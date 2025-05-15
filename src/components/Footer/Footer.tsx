@@ -44,7 +44,7 @@ export default function Footer() {
               K-Bot
             </a>
             <a
-              href="https://www.zerothbot.com/"
+              href="https://shop.kscale.dev/products/zbot"
               target="_blank"
               rel="noopener noreferrer"
               className="text-body-2 lg:text-body-3 font-medium lg:font-bold relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
@@ -76,11 +76,11 @@ export default function Footer() {
               Docs
             </a>
             <Link
-              href="/careers"
+              href="/joinus"
               className="text-body-2 lg:text-body-3 font-medium lg:font-bold relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
             >
               <span className="absolute h-12 top-1/2 -translate-y-1/2 w-full  [@media(pointer:fine)]:hidden" />
-              Careers
+              Join us
             </Link>
             <Link
               href="/benchmarks"

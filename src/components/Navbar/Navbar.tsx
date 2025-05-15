@@ -88,15 +88,15 @@ export const Navbar = () => {
     },
     {
       name: "Z-Bot",
-      href: "https://www.zerothbot.com/",
+      href: "https://shop.kscale.dev/products/zbot",
     },
     {
       name: "Docs",
       href: "https://docs.kscale.dev",
     },
     {
-      name: "Careers",
-      href: "/careers",
+      name: "Join Us",
+      href: "/joinus",
     },
   ];
 
@@ -122,8 +122,8 @@ export const Navbar = () => {
           href: "https://docs.kscale.dev",
         },
         {
-          name: "Careers",
-          href: "/careers",
+          name: "Join us",
+          href: "/joinus",
         },
         {
           name: "Discord",
@@ -137,10 +137,10 @@ export const Navbar = () => {
     <div className="lg:h-0">
       <motion.header
         className={clsx(
-          "fixed top-0 inset-x-0 z-50 max-lg:border-b lg:h-22 2xl:h-40 transitions-all duration-300 ease-out 2xl:bg-gradient-to-b from-background from-5% to-transparent",
+          "fixed top-0 inset-x-0 z-50 border-b lg:h-20 2xl:h-24 transitions-all duration-300 ease-out from-background from-5% to-transparent",
           mobileTopOpen || mobileOpen
-            ? "max-2xl:bg-background max-2xl:border-b-stone-800"
-            : "max-2xl:bg-transparent max-2xl:border-b-transparent"
+            ? "bg-background border-b-stone-800"
+            : "bg-transparent border-b-transparent"
         )}
       >
         <div className="max-w-[2160px] mx-auto px-layout py-4 flex justify-between max-lg:items-center">
@@ -151,7 +151,7 @@ export const Navbar = () => {
           </Link>
           <nav className="flex gap-2 items-center lg:hidden">
             <Button href="/benchmarks" intent="secondary">
-              View benchmarks
+              Get started
             </Button>
             <motion.button
               className="bg-stone-400 size-12 rounded-lg"
@@ -214,7 +214,7 @@ export const Navbar = () => {
               </hgroup>
             ))}
             <Button href="/benchmarks" size="sm" intent="secondary">
-              View benchmarks
+              Get started
             </Button>
           </nav>
         </div>
