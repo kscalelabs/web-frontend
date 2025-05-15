@@ -24,7 +24,7 @@ const imgs = [
     src: "/photos/landing/thumbnail/thumbnail_kbot.png",
     alt: "Photo of K-Bot",
     price: "$8,999 USD",
-    oldPrice: "$16,999 USD",
+    oldPrice: "$15,999 USD",
     links: [
       { text: "Pre-order now", href: "https://shop.kscale.dev/products/kbot" },
       { text: "Learn more", href: "/kbot" },
@@ -38,13 +38,13 @@ const imgs = [
     price: "$999 USD",
     oldPrice: "$1,999 USD",
     links: [
-      { text: "Pre-order now", href: "https://www.zerothbot.com/" },
+      { text: "Pre-order now", href: "https://shop.kscale.dev/products/zbot" },
       { text: "Learn more", href: "https://www.zerothbot.com/" },
     ],
   },
   {
     name: "M-Bot",
-    desc: "Compact humanoid for developers",
+    desc: "Compact humanoid for the home",
     src: "/photos/landing/thumbnail/thumbnail_mbot.png",
     alt: "Photo of M-Bot",
     price: "$2,999 USD",
