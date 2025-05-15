@@ -23,7 +23,7 @@ export function LandingHero() {
             learning&mdash;powering the next era of general-purpose robotics.
           </p>
           <Button adaptive={true} href="/benchmarks" size="lg">
-            Get started now
+            Get started
           </Button>
         </hgroup>
       </div>
