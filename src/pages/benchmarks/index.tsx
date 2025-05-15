@@ -118,25 +118,7 @@ export default function Page({ html, raw }: Props) {
           </div>
         </div>
       </section>
-      <section className="section--short">
-        <div className="section-container">
-          <div className="section-prose2 mb-6">
-            <h2 className="text-heading-2 mb-3">
-              We&apos;ve got prizes{" "}
-              <span className="text-body-2 text-stone-500">(hint: free robots)</span>
-            </h2>
-            <p className="text-body-2 mb-6">
-              For the first 100 people that submits to the <Link href="#challenge">challenge</Link>{" "}
-              with a policy, we&apos;ll ship you a cool PCB ruler and t-shirt designed by us as a
-              gift.
-            </p>
-            <p className="text-body-2">
-              For the <Link href="#challenge">top contender</Link> for each category every month,
-              we&apos;ll ship you a K-Bot and Z-Bot for 3 months for you to develop on for free.
-            </p>
-          </div>
-        </div>
-      </section>
+
       <section className="section--short">
         <div className="section-container">
           <div className="section-prose2">
@@ -226,91 +208,7 @@ export default function Page({ html, raw }: Props) {
           </div>
         </div>
       </section>
-      <section className="section--short">
-        <div className="section-container">
-          <div className="section-prose2">
-            <h2 className="text-heading-1 col-span-default col-start-default mb-6">
-              Frequently asked questions
-            </h2>
-            <ul className="mb-12">
-              <li className="mb-6">
-                <h3 className="text-body-2 font-bold mb-2">What license should I use?</h3>
-                <p>
-                  MIT, as all of our{" "}
-                  <a
-                    href="https://github.com/kscalelabs"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="underline text-orange-500 hover:text-orange-400 whitespace-nowrap font-medium transition-colors duration-300"
-                  >
-                    stack
-                  </a>
-                </p>
-              </li>
-              <li className="mb-6">
-                <h3 className="text-body-2 font-bold mb-2">Can I use use my own algorithm?</h3>
-                <p>
-                  Yes, you can! Check out our{" "}
-                  <a
-                    href="https://docs.kscale.dev/docs/task#/"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="underline text-orange-500 hover:text-orange-400 whitespace-nowrap font-medium transition-colors duration-300"
-                  >
-                    docs
-                  </a>{" "}
-                  for more details.
-                </p>
-              </li>
-              <li className="mb-6">
-                <h3 className="text-body-2 font-bold mb-2">Are you hiring?</h3>
-                <p>
-                  Yes, we are. We currently have{" "}
-                  <Link
-                    href="/careers"
-                    className="underline text-orange-500 hover:text-orange-400 whitespace-nowrap font-medium transition-colors duration-300"
-                  >
-                    3 open roles
-                  </Link>{" "}
-                  for engineering.
-                </p>
-              </li>
-              <li className="mb-6">
-                <h3 className="text-body-2 font-bold mb-2">Where should I submit issues?</h3>
-                <p>
-                  Please submit GitHub issue at the source of the repos for{" "}
-                  <a
-                    href="https://github.com/kscalelabs/ksim"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="underline text-orange-500 hover:text-orange-400 whitespace-nowrap font-medium transition-colors duration-300"
-                  >
-                    K-SIM
-                  </a>{" "}
-                  ,{" "}
-                  <a
-                    href="https://github.com/kscalelabs/ksim-gym"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="underline text-orange-500 hover:text-orange-400 whitespace-nowrap font-medium transition-colors duration-300"
-                  >
-                    K-SIM Gym
-                  </a>{" "}
-                  , and{" "}
-                  <a
-                    href="https://github.com/kscalelabs/kinfer"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="underline text-orange-500 hover:text-orange-400 whitespace-nowrap font-medium transition-colors duration-300"
-                  >
-                    K-Infer
-                  </a>{" "}
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+
       <section className="section pt-8">
         <div className="section-container">
           <hgroup className="col-span-full lg:col-span-4 lg:col-start-2 2xl:col-span-4 4xl:col-span-6 2xl:col-start-5 4xl:col-start-6 flex flex-col items-center text-center">
