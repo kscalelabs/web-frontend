@@ -34,7 +34,7 @@ export default function Page() {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>Careers at K-Scale Labs</title>
+        <title>Join us at K-Scale Labs</title>
         <meta
           name="description"
           content="K-Scale Labs is building the most integrated open-source stack—from hardware to machine learning—powering the next era of general-purpose robotics."

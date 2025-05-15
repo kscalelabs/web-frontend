@@ -95,8 +95,8 @@ export const Navbar = () => {
       href: "https://docs.kscale.dev",
     },
     {
-      name: "Careers",
-      href: "/careers",
+      name: "Join Us",
+      href: "/joinus",
     },
   ];
 
@@ -122,8 +122,8 @@ export const Navbar = () => {
           href: "https://docs.kscale.dev",
         },
         {
-          name: "Careers",
-          href: "/careers",
+          name: "Join us",
+          href: "/joinus",
         },
         {
           name: "Discord",
