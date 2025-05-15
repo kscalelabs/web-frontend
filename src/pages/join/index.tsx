@@ -60,7 +60,7 @@ export default function Page() {
         />
         <meta name="twitter:image" content="/meta/twitter-image.png" />
       </Head>
-      <Hero heading={"Adventurers wanted"} eyebrow={"Join us"}>
+      <Hero heading={"Adventurers wanted"} eyebrow={"Join us"} src="/photos/thumbnails/join.webp">
         We&apos;re looking for ML researchers, robotics engineers, and software developers, looking
         to pioneer the next generation of physical embodied intelligence.
       </Hero>

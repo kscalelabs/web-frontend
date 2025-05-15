@@ -14,7 +14,7 @@ export function LandingHero() {
           playsInline
           className="absolute inset-0 size-full object-cover brightness-[0.4]"
         >
-          <source src="/videos/landing/landing_video_0512.mp4" type="video/mp4" />
+          <source src="/videos/landing/landing_video_0514.mp4" type="video/mp4" />
         </video>
         <hgroup className="col-span-4 md:col-span-5 xl:col-span-4 2xl:col-span-7 z-10">
           <h1 className="mb-4">Open-source humanoid robots, built for developers</h1>
