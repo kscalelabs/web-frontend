@@ -1,4 +1,3 @@
-import ArrowD from "@/assets/icons/icon_arrowD.svg";
 import { Hero } from "@/components/Layout/Hero";
 import Head from "next/head";
 
@@ -37,7 +36,8 @@ export default function ResearchIndex() {
       </Head>
       <Hero eyebrow="Our mission" heading="Why open-source robots matter">
         K-Scale Labs is building general-purpose embodied intelligence. We believe that the only way
-        to achieve this is by making our robots open-source and accessible to everyone. Here's why.
+        to achieve this is by making our robots open-source and accessible to everyone. Here&apos;s
+        why.
       </Hero>
       <section className="section">
         <div className="section-container">
