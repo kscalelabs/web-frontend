@@ -25,7 +25,7 @@ export default function Page() {
     {
       title: "ML Engineer (RL/VLA)",
       description: <>$100K &ndash; $250K · Any (New Grads OK)</>,
-      link: "https://www.ycombinator.com/companies/k-scale-labs/jobs/DK5GZzD-software-engineer-humanoid-robots",
+      link: "https://www.ycombinator.com/companies/k-scale-labs/jobs/2RlZIaA-ml-engineer-rl-vla",
     },
   ];
   return (
