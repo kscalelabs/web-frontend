@@ -1,6 +1,7 @@
 import { copyString } from "@/components/util/functions";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
+import { CopyCheck } from "../Icon/CopyCheck";
 // import { Button } from "./Button";
 
 export const CopyButton = ({ className }: { className?: string }) => {
@@ -28,11 +29,14 @@ export const CopyButton = ({ className }: { className?: string }) => {
         inquiries@kscale.dev
       </span>
       <button
-        className="text-body-2 font-medium relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
+        className="inline-flex gap-1 text-body-2 font-medium relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
         onClick={() => handleCopyEmail()}
       >
         <span className="absolute h-12 top-1/2 -translate-y-1/2 w-full [@media(pointer:fine)]:hidden" />
-        {isCopied ? <span className="text-green-500">✔</span> : "Copy email"}
+        Copy email{" "}
+        <div className="size-5">
+          <CopyCheck open={isCopied} />
+        </div>
       </button>
     </div>
   );
