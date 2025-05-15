@@ -82,22 +82,19 @@ export default function Page() {
             We&apos;re driven by our belief that general-purpose robots are possible, and we must
             open-source it to everyone.
           </p>
-          <div className="col-span-full 2xl:col-start-3 2xl:col-span-8 4xl:col-start-4 4xl:col-span-10 sm:grid grid-cols-subgrid mb-24">
-            <p className="col-span-4 md:col-span-3 lg:col-span-2 2xl:col-span-3 4xl:col-span-4 text-body-1 mb-6">
-              In the last six months, we&apos;ve trained state-of-the-art machine-learning models on
-              our training infrastructure, developed the operating system, designed and manufactured
-              2 humanoid robots.
-            </p>
-            <figure className="w-full col-span-full sm:col-span-4 md:col-span-3 lg:col-span-4 2xl:col-span-5 4xl:col-span-6 aspect-video rounded-lg bg-stone-900">
-              <VisualStack />
-            </figure>
-          </div>
-          <div className="col-span-full 2xl:col-start-3 2xl:col-span-8 4xl:col-start-4 4xl:col-span-10 sm:grid grid-cols-subgrid">
-            <p className="lg:order-1 col-span-4 md:col-span-3 lg:col-span-2 2xl:col-span-3 4xl:col-span-4 text-body-1 mb-6">
-              In the next six months, we will be pushing the boundary on whole-body and manipulation
-              models and manufacturing our hardware at scale.
-            </p>
-            <figure className="w-full col-span-full sm:col-span-4 md:col-span-3 lg:col-span-4 2xl:col-span-5 4xl:col-span-6 aspect-video rounded-lg bg-stone-900">
+          <div className="col-span-full 2xl:col-start-3 2xl:col-span-8 4xl:col-start-3 4xl:col-span-12 sm:grid grid-cols-subgrid mb-24">
+            <div className="col-span-4 md:col-span-3 lg:col-span-2 2xl:col-span-3 4xl:col-span-5">
+              <p className="text-body-1 mb-6">
+                In the last six months, we&apos;ve trained state-of-the-art machine-learning models
+                on our training infrastructure, developed the operating system, designed and
+                manufactured 2 humanoid robots.
+              </p>
+              <p className="text-body-1 mb-6">
+                In the next six months, we will be pushing the boundary on whole-body and
+                manipulation models and manufacturing our hardware at scale.
+              </p>
+            </div>
+            <figure className="w-full col-span-full sm:col-span-4 md:col-span-3 lg:col-span-4 2xl:col-span-5 4xl:col-span-7 aspect-video rounded-lg ">
               <VisualStack />
             </figure>
           </div>
@@ -135,18 +132,19 @@ export default function Page() {
               </a>
             </li>
             <li>
-              <a
+              {/* <a
                 href="https://bounties.kscale.dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group"
               >
-                <div className="flex w-fit">
-                  <h3 className="text-body-1 mb-1">Hackathons</h3>
-                  <Arrow className="size-9 group-hover:translate-x-1/4 group-hover:-translate-y-1/4 group-focus:translate-x-1/4 group-focus:-translate-y-1/4 transition-transform duration-300" />
-                </div>
-                <p>Join our hackathon for ML, software, and hardware challenges.</p>
-              </a>
+              <div className="flex w-fit">
+              <h3 className="text-body-1 mb-1">Hackathons</h3>
+              <Arrow className="size-9 group-hover:translate-x-1/4 group-hover:-translate-y-1/4 group-focus:translate-x-1/4 group-focus:-translate-y-1/4 transition-transform duration-300" />
+              </div> */}
+              <h3 className="text-body-1 mb-1">Hackathons</h3>
+              <p>Join our hackathon for ML, software, and hardware challenges.</p>
+              {/* </a> */}
             </li>
             <li>
               <h3 className="text-body-1 mb-1">Personal/team projects</h3>
@@ -155,7 +153,7 @@ export default function Page() {
           </ul>
         </div>
       </section>
-      <section className="section--short">
+      <section className="section">
         <div className="section-container">
           <div className="col-span-default col-start-default mb-6">
             {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">About us</h2> */}
