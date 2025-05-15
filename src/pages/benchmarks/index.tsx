@@ -89,7 +89,7 @@ export default function Page({ html, raw }: Props) {
             <p className="mb-2 text-body-2">
               Want to try K-Sim in your browser? Set up in{" "}
               <a
-                href="https://colab.research.google.com/github/kscalelabs/kscale-humanoid-benchmark/blob/master/train.ipynb"
+                href="https://colab.research.google.com/github/kscalelabs/ksim-gym/blob/master/train.ipynb"
                 className="group inline-flex items-center gap-1 font-medium underline relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
                 rel="noreferrer noopener"
                 target="_blank"
@@ -281,7 +281,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const steps = [
     `# 1. Clone template 
 git clone --depth 1 https://github.com/kscalelabs/ksim-gym.git  # git‑lfs required 
-cd kscale-humanoid-benchmark  
+cd ksim-gym  
 
 # 2. Install 
 python -m venv .venv && source .venv/bin/activate 
