@@ -119,11 +119,11 @@ export default function Page({ html, raw }: Props) {
         <div className="section-container">
           <div className="section-prose2">
             <h2 className="text-heading-1 col-span-default col-start-default mb-6">
-              Start zero-transfer sim-to-real training with K-Sim
+              Start zero-shot transfer sim-to-real training with K-Sim
             </h2>
             <p className="text-body-1 mb-12">
               K-SIM is an open-source library for GPU-accelerated robot learning and sim-to-real
-              transfer, made for movements from simple walking to complex…
+              transfer, made for movements from simple walking to complex human imitation.
             </p>
             <div className="mb-6 w-full aspect-video rounded-md @xs:rounded-lg @sm:rounded-xl @lg:rounded-2xl overflow-hidden shadow-lg">
               <iframe
