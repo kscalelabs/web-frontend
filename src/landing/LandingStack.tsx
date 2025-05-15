@@ -120,7 +120,7 @@ export const LandingStack = () => {
       items: [
         {
           name: "K-OS",
-          href: "https://github.com/kscalelabs/ksim",
+          href: "https://github.com/kscalelabs/kos",
           code: "pip install pykos",
           description: [
             "Rust-based, fast, and reliable robot operating system combining hardware, software, and firmware.",
@@ -130,8 +130,9 @@ export const LandingStack = () => {
           thumbnail: <KOSThumbnail />,
         },
         {
-          name: "K-OS Sim",
-          href: "https://github.com/kscalelabs/kvla",
+          name: "K-OS SIM",
+          href: "https://github.com/kscalelabs/kos-sim",
+
           code: "pip install kos-sim",
           description: [
             "A digital twin / model evaluator for the K-Scale Operating System (K-OS) using the same gRPC interface as our real robot",

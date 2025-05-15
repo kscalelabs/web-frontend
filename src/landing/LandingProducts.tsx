@@ -49,7 +49,12 @@ const imgs = [
     alt: "Photo of M-Bot",
     price: "$2,999 USD",
     oldPrice: "$3,999 USD",
-    links: [{ text: "Sign up for updates", href: "https://shop.kscale.dev/products/mbot" }],
+    links: [
+      {
+        text: "Sign up for updates",
+        href: "https://shop.kscale.dev/products/m-bot-founders-edition-with-developer-kit",
+      },
+    ],
   },
 ];
 
