@@ -1,68 +1,68 @@
-import TableTrue from "@/assets/icons/table_true.svg";
-import TableFalse from "@/assets/icons/table_false.svg";
-import { Button } from "@/components/ui/Button/Button";
 import Visual1 from "@/assets/content/visual_ksim_1.svg";
 import Visual2 from "@/assets/content/visual_ksim_2.svg";
 import Visual3 from "@/assets/content/visual_ksim_3.svg";
 import Visual4 from "@/assets/content/visual_ksim_4.svg";
 import Arrow from "@/assets/icons/icon_arrowTR.svg";
+import TableFalse from "@/assets/icons/table_false.svg";
+import TableTrue from "@/assets/icons/table_true.svg";
+import { Button } from "@/components/ui/Button/Button";
 
 export const LandingKSim = () => {
   const tableItems = [
     {
       name: "Differentiable physics",
       ksim: true,
-      mujoco: true,
       issac: false,
       brax: true,
       gazebo: false,
     },
     {
-      name: "GPU acceleration",
+      name: "GPU-accelerated",
       ksim: true,
-      mujoco: true,
       issac: true,
+      brax: true,
+      gazebo: false,
+    },
+    {
+      name: "TPU-accelerated",
+      ksim: true,
+      issac: false,
+      brax: true,
+      gazebo: false,
+    },
+    {
+      name: "Cross-platform",
+      ksim: true,
+      issac: false,
       brax: true,
       gazebo: false,
     },
     {
       name: "Single-file training scripts",
       ksim: true,
-      mujoco: true,
       issac: false,
       brax: false,
       gazebo: false,
     },
     {
-      name: "Real robot deployment scripts",
+      name: "Officially supported hardware",
       ksim: true,
-      mujoco: false,
       issac: false,
       brax: false,
       gazebo: false,
     },
     {
-      name: "AMP implementation",
+      name: "Motion capture priors",
       ksim: true,
-      mujoco: false,
       issac: false,
       brax: false,
       gazebo: false,
     },
     {
-      name: "Stateful (RNNs, SSMs)",
+      name: "Stateful (RNNs, Transformers)",
       ksim: true,
-      mujoco: false,
       issac: true,
-      brax: false,
-      gazebo: false,
-    },
-    {
-      name: "Open-source",
-      ksim: true,
-      mujoco: true,
-      issac: true,
-      brax: false,
+      brax: true,
       gazebo: false,
     },
   ];
@@ -93,7 +93,7 @@ export const LandingKSim = () => {
               <iframe
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/nMkS6VSh-yw?autoplay=0&rel=0"
-                title="See how our ML engineer Ali uses K-Sim"
+                title="See how our ML engineer Ali uses K-SIM"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
@@ -101,7 +101,7 @@ export const LandingKSim = () => {
               ></iframe>
             </div>
             <h3 className="mt-4 text-body-2 font-bold text-center px-4">
-              See how our ML engineer Ali uses K-Sim
+              See how our ML engineer Ali uses K-SIM
             </h3>
           </div>
         </div>
@@ -113,7 +113,7 @@ export const LandingKSim = () => {
             <h3 className="text-body-2 font-bold mb-2">Made for speed</h3>
             <p>
               Train policies in under an hour. Leveraging GPU accelerated libraries like JAX and
-              Mujoco XLA, K-Sim can process over 100,000 samples per second (including training) on
+              Mujoco XLA, K-SIM can process over 100,000 samples per second (including training) on
               an RTX 4090.
             </p>
           </div>
@@ -139,34 +139,31 @@ export const LandingKSim = () => {
             <Visual4 className="size-[4.5rem] mb-4" />
             <h3 className="text-body-2 font-bold mb-2">Extensible by design</h3>
             <p>
-              K-Sim can be easily modified to fit your use-case, instead of the other way around.
+              K-SIM can be easily modified to fit your use-case, instead of the other way around.
               All of the code is fully open source so you can build on top of it with confidence.
             </p>
           </div>
           <table className="relative col-span-full 2xl:col-span-8 2xl:col-start-3 4xl:col-span-12 4xl:col-start-3 mt-12">
             <thead className="max-lg:sticky top-20 ">
-              <tr className="grid grid-cols-3 md:grid-cols-6 items-start py-4 bg-background border-b border-b-stone-800">
+              <tr className="grid grid-cols-3 md:grid-cols-5 items-start py-4 bg-background border-b border-b-stone-800">
                 <th scope="col" className="text-body-3 font-bold md:col-start-2">
                   K-SIM
                 </th>
                 <th scope="col" className="text-body-3 font-bold">
-                  MuJoCo Playground
-                </th>
-                <th scope="col" className="text-body-3 font-bold">
-                  Issac Lab
+                  Issac
                 </th>
                 <th scope="col" className="max-md:hidden text-body-3 font-bold">
                   Brax
                 </th>
                 <th scope="col" className="max-md:hidden text-body-3 font-bold">
-                  Gazebo Sim
+                  Gazebo
                 </th>
               </tr>
             </thead>
             <tbody className="flex flex-col">
               {tableItems.map((item, index) => (
                 <tr
-                  className="grid grid-cols-3 md:grid-cols-6 col-span-full items-center"
+                  className="grid grid-cols-3 md:grid-cols-5 col-span-full items-center"
                   key={`ksim-table-row--${index}`}
                 >
                   <th
@@ -177,13 +174,6 @@ export const LandingKSim = () => {
                   </th>
                   <td>
                     {item.ksim ? (
-                      <TableTrue className="size-8 mx-auto" />
-                    ) : (
-                      <TableFalse className="size-8 mx-auto" />
-                    )}
-                  </td>
-                  <td>
-                    {item.mujoco ? (
                       <TableTrue className="size-8 mx-auto" />
                     ) : (
                       <TableFalse className="size-8 mx-auto" />
