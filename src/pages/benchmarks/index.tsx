@@ -191,7 +191,18 @@ export default function Page({ html, raw }: Props) {
               <li className="mb-6">
                 Upload your submission to our{" "}
                 <a
-                  href="https://google.com"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdRHCm7QAMqfaonC7SiA3R-yahoz4A18J-ZqWv7WxKiuiwIWA/viewform?pli=1"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="underline text-orange-500 hover:text-orange-400 whitespace-nowrap font-medium transition-colors duration-300"
+                >
+                  Google Form
+                </a>
+              </li>
+              <li className="mb-6">
+                Post the link in #benchmark-submission on{" "}
+                <a
+                  href="https://discord.com/invite/pVwubQT9Sg"
                   target="_blank"
                   rel="noreferrer noopener"
                   className="underline text-orange-500 hover:text-orange-400 whitespace-nowrap font-medium transition-colors duration-300"
@@ -199,7 +210,6 @@ export default function Page({ html, raw }: Props) {
                   Discord
                 </a>
               </li>
-              <li className="mb-6">Post the link in #benchmark-submission on Discord</li>
             </ol>
             <p className="mb-4">
               One of us will run your policy on the real robot and add the results to the
