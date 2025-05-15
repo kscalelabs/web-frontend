@@ -80,7 +80,8 @@ export const LandingStack = () => {
     {
       layer: "ML",
       id: "ml",
-      heading: "Open-source library for GPU-accelerated robot learning and sim-to-real transfer",
+      heading:
+        "Open-source library for GPU-accelerated robot learning and zero-shot sim-to-real transfer",
       items: [
         {
           name: "K-SIM",

@@ -71,6 +71,18 @@
     --rust: #de4208ff;
     --molten: #f18a03ff;
     --sol: #eae9bcff;
+
+    --shiki-foreground: var(--foreground);
+    --shiki-background: transparent;
+    --shiki-token-constant: var(--foreground);
+    --shiki-token-string: var(--foreground);
+    --shiki-token-comment: #b58112;
+    --shiki-token-keyword: var(--foreground);
+    --shiki-token-parameter: var(--foreground);
+    --shiki-token-function: #fef65f;
+    --shiki-token-string-expression: var(--foreground);
+    --shiki-token-punctuation: var(--foreground);
+    --shiki-token-link: var(--foreground);
   }
   * {
     font-feature-settings:
@@ -97,7 +109,7 @@ body {
 
 @layer base {
   h1 {
-    @apply text-heading-d font-display;
+    @apply text-heading-d1;
   }
   h2 {
     @apply text-heading-1;
@@ -116,8 +128,20 @@ body {
   .section {
     @apply py-24 md:py-28 2xl:py-32 4xl:py-40;
   }
+  .section--short {
+    @apply py-8 lg:py-16;
+  }
   .section-container {
     @apply px-layout flex flex-col grid-r w-full max-w-[2160px] mx-auto;
+  }
+}
+
+@layer components {
+  .section-prose {
+    @apply col-span-4 md:col-start-2 2xl:col-span-8 2xl:col-start-3 4xl:col-span-8 4xl:col-start-5;
+  }
+  .section-prose2 {
+    @apply col-span-4 md:col-start-2 2xl:col-span-6 2xl:col-start-4 4xl:col-span-6 4xl:col-start-6;
   }
 }
 
@@ -134,8 +158,14 @@ body {
   .col-start-default {
     @apply 2xl:col-start-3 3xl:col-start-3 4xl:col-start-3;
   }
-  .text-heading-d {
-    @apply text-heading-d-sm sm:text-heading-d-md lg:text-heading-d-lg 4xl:text-heading-d-xl;
+  .col-end-default {
+    @apply 2xl:-col-end-3 3xl:-col-end-3 4xl:-col-end-3;
+  }
+  .text-heading-d1 {
+    @apply text-heading-d1-sm sm:text-heading-d1-md lg:text-heading-d1-lg 4xl:text-heading-d1-xl font-bold font-display;
+  }
+  .text-heading-d2 {
+    @apply text-heading-d2-sm sm:text-heading-d2-md lg:text-heading-d2-lg 4xl:text-heading-d2-xl font-medium font-display;
   }
   .text-heading-1 {
     @apply text-heading-1-sm sm:text-heading-1-md lg:text-heading-1-lg 4xl:text-heading-1-xl font-medium;

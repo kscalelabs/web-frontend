@@ -23,28 +23,56 @@ const config: Config = {
         "5xl": "2560px",
       },
       fontSize: {
-        "heading-d-xl": [
+        "heading-d1-xl": [
           "4rem",
           {
             lineHeight: "0.95",
             letterSpacing: "-0.03em",
           },
         ],
-        "heading-d-lg": [
+        "heading-d1-lg": [
           "3.75rem",
           {
             lineHeight: "0.95",
             letterSpacing: "-0.03em",
           },
         ],
-        "heading-d-md": [
+        "heading-d1-md": [
           "3.5rem",
           {
             lineHeight: "0.95",
             letterSpacing: "-0.02em",
           },
         ],
-        "heading-d-sm": [
+        "heading-d1-sm": [
+          "2.625rem",
+          {
+            lineHeight: "0.95",
+            letterSpacing: "-0.02em",
+          },
+        ],
+        "heading-d2-xl": [
+          "3.75rem",
+          {
+            lineHeight: "0.95",
+            letterSpacing: "-0.02em",
+          },
+        ],
+        "heading-d2-lg": [
+          "3.5rem",
+          {
+            lineHeight: "0.95",
+            letterSpacing: "-0.02em",
+          },
+        ],
+        "heading-d2-md": [
+          "3.25rem",
+          {
+            lineHeight: "0.95",
+            letterSpacing: "-0.02em",
+          },
+        ],
+        "heading-d2-sm": [
           "2.625rem",
           {
             lineHeight: "0.95",

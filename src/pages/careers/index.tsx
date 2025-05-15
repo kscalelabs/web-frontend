@@ -1,6 +1,13 @@
 import { CopyButton } from "@/components/ui/Button/CopyButton";
 import Arrow from "@/assets/icons/icon_arrowTR.svg";
 import Image from "next/image";
+import Head from "next/head";
+import { Hero } from "@/components/Layout/Hero";
+import Link from "next/link";
+import { VisualStack } from "@/assets/content/VisualStack";
+import { Button } from "@/components/ui/Button/Button";
+import Discord from "@/assets/icons/icon_discord.svg";
+import { CopyString } from "@/components/ui/Code/CopyCode";
 
 export default function Page() {
   const jobs = [
@@ -22,172 +29,262 @@ export default function Page() {
     },
   ];
   return (
-    <>
-      <section className="relative w-full h-[50vh]">
-        <Image
-          src="/photos/team_garage.jpg"
-          alt="K-Scale team in a garage"
-          fill
-          style={{ objectFit: "cover" }}
-          quality={100}
-          priority
+    <main>
+      <Head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>Careers at K-Scale Labs</title>
+        <meta
+          name="description"
+          content="K-Scale Labs is building the most integrated open-source stack—from hardware to machine learning—powering the next era of general-purpose robotics."
         />
-      </section>
-
-      <section className="px-layout flex flex-col grid-r py-16">
-        <div className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 mb-16">
-          <hgroup>
-            <h1 className="text-body-3 text-stone-400 mb-2">Careers</h1>
-            <h2 className="mb-4">Come build the future of robotics</h2>
-            <p className="text-body-2 text-stone-200 mb-4">
-              Our mission is to build general purpose robotics and open-source it to everyone.
-            </p>
-            <p className="text-body-2 text-stone-200 mb-4">
-              Over the past six months, we&apos;ve built the humanoid-robot stack: we trained
-              state-of-the-art machine-learning models on our training infrastructure, developed the
-              operating system, and designed/ manufactured the hardware.
+        <meta
+          name="keywords"
+          content="K-Scale Labs, Robot, Robots, Humanoid Robots, robotics, humanoid robotics, humanoids, Droids, droid, Androids, android, AI, Embodied intelligence, Embodied AI, Artificial intelligence, embodied artificial intelligence, AI robots, AI robotics, open source, open-source, open source robot, open-source robotics, open source AI, open-source AI, open source artificial intelligence, open-source artificial intelligence, open source humanoid, open-source humanoid, k scale, kscale, kscale labs, k scale labs, k-scale, kscale ai, k-scale ai, k-scale labs ai"
+        />
+        <meta property="og:title" content="K-Scale Labs" />
+        <meta
+          property="og:description"
+          content="K-Scale Labs is building the most integrated open-source stack—from hardware to machine learning—powering the next era of general-purpose robotics"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://kscalelabs.com" />
+        <meta property="og:site_name" content="K-Scale Labs" />
+        <meta name="og:image" content="/meta/opengraph-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="K-Scale Labs" />
+        <meta
+          name="twitter:description"
+          content="Developing the world's most accessible platform for embodied intelligence. We're hackers, engineers, and researchers that believe in a world where robots are made for everyone."
+        />
+        <meta name="twitter:image" content="/meta/twitter-image.png" />
+      </Head>
+      <Hero heading={"Adventurers wanted"} eyebrow={"Join us"}>
+        We&apos;re looking for ML researchers, robotics engineers, and software developers, looking
+        to pioneer the next generation of physical embodied intelligence.
+      </Hero>
+      <section className="section">
+        <div className="section-container">
+          <hgroup className="col-span-default col-start-default mb-6">
+            <h2 className="text-body-2 font-medium text-stone-400 mb-1">About us</h2>
+            <h3 className="text-heading-1 mb-6">
+              We&apos;re a small team of engineers and researchers from Tesla AI, Meta FAIR, Xiaomi,
+              and MILA.
+            </h3>
+            <p className="text-body-1 mb-24">
+              We work 18 hours a day, 7 days a week. Most of us live, eat, and work at our facility.
+              Hard problems, failures, and long hours don&apos;t deter us. While others talk, we
+              ship.
             </p>
           </hgroup>
-        </div>
-
-        <div className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 mb-16">
-          <hgroup>
-            <h2 className="text-heading-2 mb-4">Our Team</h2>
-            <p className="text-body-2 text-stone-200 mb-4">K-Scale is 10 people across 3 teams:</p>
-            <ul className="flex flex-col gap-4">
-              <li>
-                The <span className="font-bold underline">ML Team</span> bulding machine learning
-                infrasturcture state of the art VLA and RL models.
-              </li>
-              <li>
-                The <span className="font-bold underline">Product Team</span> designs and
-                manufactures the product, including the hardware and software.
-              </li>
-              <li>
-                The <span className="font-bold underline">Operations and Marketing Team</span>{" "}
-                maintains company infrastucture, press, partnership, and logistics.
-              </li>
-            </ul>
-          </hgroup>
-        </div>
-
-        <div className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 mb-16">
-          <hgroup>
-            <h2 className="text-heading-2 mb-4">Who we&apos;re looking for</h2>
-            <p className="text-body-2 text-stone-200 mb-4">
-              We don&apos;t care about degrees or backgrounds. We&apos;re building a world-class
-              team in shipping cutting-edge engineering, research, and product. Show us your GitHub,
-              open-source work, standout projects, or competition wins.
-            </p>
-
-            <p className="text-body-2 text-stone-200 mb-4">
-              Prove your skills with either of these:
-            </p>
-            <ol className="flex flex-col gap-4 list-decimal pl-5">
-              <li>
-                <a
-                  className="underline"
-                  href="https://bounties.kscale.dev/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Bounties
-                </a>
-                : contribute to our open-source projects and get paid.
-              </li>
-              <li>
-                <a
-                  className="underline"
-                  href="https://github.com/k-scale-labs/k-scale-robotics/issues"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Hackathons
-                </a>
-                : join our hackathon for ML, software, and hardware challenges.
-              </li>
-            </ol>
-          </hgroup>
+          <p className="col-span-full sm:col-span-4 md:col-start-2 2xl:col-span-6 2xl:col-start-4 4xl:col-span-8 4xl:col-start-5 text-heading-1 text-center mb-32">
+            We&apos;re driven by our belief that general-purpose robots are possible, and we must
+            open-source it to everyone.
+          </p>
+          <div className="col-span-full 2xl:col-start-3 2xl:col-span-8 4xl:col-start-3 4xl:col-span-12 sm:grid grid-cols-subgrid mb-24">
+            <div className="col-span-4 md:col-span-3 lg:col-span-2 2xl:col-span-3 4xl:col-span-5">
+              <p className="text-body-1 mb-6">
+                In the last six months, we&apos;ve trained state-of-the-art machine-learning models
+                on our training infrastructure, developed the operating system, designed and
+                manufactured 2 humanoid robots.
+              </p>
+              <p className="text-body-1 mb-6">
+                In the next six months, we will be pushing the boundary on whole-body and
+                manipulation models and manufacturing our hardware at scale.
+              </p>
+            </div>
+            <figure className="w-full col-span-full sm:col-span-4 md:col-span-3 lg:col-span-4 2xl:col-span-5 4xl:col-span-7 aspect-video rounded-lg ">
+              <VisualStack />
+            </figure>
+          </div>
         </div>
       </section>
-
-      <section className="px-layout grid-responsive py-8">
-        <h2 className="text-heading-2 col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 mb-2">
-          We&apos;re actively hiring:
-        </h2>
-        <ul className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 flex flex-col gap-8 mb-16">
-          {jobs.map((item, i) => (
-            <li key={`job-listing-${i}`} className="flex flex-col gap-4">
+      <section className="section--short">
+        <div className="section-container">
+          <hgroup className="col-span-full md:col-span-5 lg:col-span-3 2xl:col-span-4 2xl:col-start-3 mb-32">
+            <h2 className="text-heading-1 mb-2">Who we&apos;re looking for</h2>
+            <p className="text-body-1 mb-2">
+              Our goal is to build a world-class team in cutting-edge engineering, research, and
+              product.
+            </p>
+            <p>
+              Show us your GitHub, your projects, and your competition wins. We love people
+              who&apos;re already involved with our open-source communities.
+            </p>
+          </hgroup>
+          <h2 className="text-heading-2 col-span-full md:col-span-5 lg:col-span-3 2xl:col-span-4 2xl:col-start-3 mb-6">
+            Prove your skills through one of these paths:
+          </h2>
+          <ul className="grid grid-cols-3 col-span-full 2xl:col-span-8 2xl:col-start-3 4xl:col-span-12 4xl:col-start-3 gap-x-4 md:gap-x-6 ">
+            <li>
               <a
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex gap-4 w-fit group"
-              >
-                <div>
-                  <h3 className="font-bold text-body-2 mb-1">{item.title}</h3>
-                  <p className="text-body-3 text-stone-400">{item.description}</p>
-                </div>
-                <Arrow className="size-8 group-hover:translate-x-1/4 group-hover:-translate-y-1/4 group-focus:translate-x-1/4 group-focus:-translate-y-1/4 transition-transform duration-300" />
-              </a>
-            </li>
-          ))}
-        </ul>
-        <aside className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 mb-16">
-          <p className="mb-4"> Don&apos;t see a role that matches you?</p>
-          <CopyButton />
-        </aside>
-      </section>
-
-      <section className="px-layout grid-responsive py-8">
-        <h2 className="text-heading-2 col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 mb-2">
-          Applying
-        </h2>
-        <ol className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 flex flex-col gap-8 mb-16 list-decimal pl-5">
-          <li>
-            <h3 className="font-bold text-body-2 mb-1">Challenge</h3>
-            <p className="text-body-2 text-stone-200">
-              Choose any of the challenges from the{" "}
-              <a
-                className="underline"
-                href="https://leaderboard.kscale.dev"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                leaderboard
-              </a>{" "}
-              or{" "}
-              <a
-                className="underline"
                 href="https://bounties.kscale.dev"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="group"
               >
-                bounties
+                <div className="flex w-fit">
+                  <h3 className="text-body-1 mb-1">Bounties</h3>
+                  <Arrow className="size-9 group-hover:translate-x-1/4 group-hover:-translate-y-1/4 group-focus:translate-x-1/4 group-focus:-translate-y-1/4 transition-transform duration-300" />
+                </div>
+                <p>Get paid by contributing to any of our active open-source projects</p>
               </a>
-              , solve it, then reach out to us on Discord.
-            </p>
-          </li>
-          <li>
-            <h3 className="font-bold text-body-2 mb-1">Video screen</h3>
-            <p className="text-body-2 text-stone-200">
-              Typically, we do two video calls. A quick intro and screen, then an in-depth technical
-              interview with a division head.
-            </p>
-          </li>
-          <li>
-            <h3 className="font-bold text-body-2 mb-1">Paid Residency</h3>
-            <p className="text-body-2 text-stone-200">
-              We&apos;ll fly you out to meet the team and work on a real problem for a few days. In
-              most cases, the project will be scoped such that you&apos;ll ship it to real users by
-              the end.
-            </p>
-          </li>
-        </ol>
-        <p className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 text-body-2 text-stone-200">
-          If all goes well, we&apos;ll make you a full-time job offer.
-        </p>
+            </li>
+            <li>
+              {/* <a
+                href="https://bounties.kscale.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group"
+              >
+              <div className="flex w-fit">
+              <h3 className="text-body-1 mb-1">Hackathons</h3>
+              <Arrow className="size-9 group-hover:translate-x-1/4 group-hover:-translate-y-1/4 group-focus:translate-x-1/4 group-focus:-translate-y-1/4 transition-transform duration-300" />
+              </div> */}
+              <h3 className="text-body-1 mb-1">Hackathons</h3>
+              <p>Join our hackathon for ML, software, and hardware challenges.</p>
+              {/* </a> */}
+            </li>
+            <li>
+              <h3 className="text-body-1 mb-1">Personal/team projects</h3>
+              <p>Show us the hardest projects you have done.</p>
+            </li>
+          </ul>
+        </div>
       </section>
-    </>
+      <section className="section">
+        <div className="section-container">
+          <div className="col-span-default col-start-default mb-6">
+            {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">About us</h2> */}
+            <h2 className="text-heading-1 mb-2">Open roles (3)</h2>
+            <p className="mb-6">All roles are on-site in Palo Alto, CA, USA.</p>
+            <ul className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 flex flex-col gap-12 mb-16">
+              {jobs.map((item, i) => (
+                <li key={`job-listing-${i}`} className="flex flex-col gap-2">
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex gap-4 w-fit group"
+                  >
+                    <div>
+                      <h3 className="text-body-1 mb-1">{item.title}</h3>
+                      <p className="text-body-3 text-stone-400">{item.description}</p>
+                    </div>
+                    <Arrow className="size-9 group-hover:translate-x-1/4 group-hover:-translate-y-1/4 group-focus:translate-x-1/4 group-focus:-translate-y-1/4 transition-transform duration-300" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <aside className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 mb-16">
+              <p className="mb-4">
+                {" "}
+                Don&apos;t see a role that matches you? Shoot us an email at{" "}
+                <CopyString string="inquiries@kscale.dev" font="regular" />
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+      <section className="section--short">
+        <div className="section-container">
+          <div className="col-span-default col-end-default mb-6">
+            <h2 className="text-body-2 font-medium text-stone-400 mb-1">Our hiring process</h2>
+            <h3 className="text-heading-1 mb-6">Show your skills in three steps</h3>
+            <ol className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 flex flex-col gap-12 mb-16 list-inside list-decimal">
+              <li>
+                <h4 className="text-body-1 mb-2">Choose a challenge</h4>
+                <p className="mb-4">
+                  Choose any of the challenges from our leaderboard or bounties, solve it, then
+                  reach out to us on our{" "}
+                  <a
+                    href="https://discord.com/invite/pVwubQT9Sg"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="underline text-orange-500 hover:text-orange-400 whitespace-nowrap font-medium transition-colors duration-300"
+                  >
+                    Discord
+                  </a>
+                  .
+                </p>
+                <p>Alternatively, you can pitch us an project that you think will be impactful.</p>
+              </li>
+              <li>
+                <h4 className="text-body-1 mb-2">Video screening</h4>
+                <p>
+                  We will have two videos calls: an initial video call, and an in-depth technical
+                  presentation of the challenge you completed and another project you have done
+                  before.
+                </p>
+              </li>
+              <li>
+                <h4 className="text-body-1 mb-2">Paid residency</h4>
+                <p className="mb-4">
+                  We&apos;ll fly you out to Palo Alto where you will meet the team and work on a
+                  (paid) technical project for 2 weeks that will be integrated into part of our
+                  stack.
+                </p>
+                <p className="mb-4">Room and board provided.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+      <section className="section--short">
+        <div className="section-container">
+          <div className="col-span-default col-start-default mb-6">
+            {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">About us</h2> */}
+            <h2 className="text-heading-1 mb-6">FAQ</h2>
+            <ul className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 flex flex-col gap-12 mb-16">
+              <li>
+                <h3 className="text-body-2 font-bold mb-2">Do you do internships?</h3>
+                <p>
+                  Our team sometimes accepts interns involved in our community or through our our
+                  hosted hackathons. If you&apos;re interested, reach out to us on our{" "}
+                  <a
+                    href="https://discord.com/invite/pVwubQT9Sg"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="underline text-orange-500 hover:text-orange-400 whitespace-nowrap font-medium transition-colors duration-300"
+                  >
+                    Discord
+                  </a>{" "}
+                  with a completed bounty or leadership submission, or a tough engineering project.
+                </p>
+              </li>
+              <li>
+                <h3 className="text-body-2 font-bold mb-2">Can I work remotely?</h3>
+                <p>All positions are on-site in Palo Alto, CA, USA.</p>
+              </li>
+              <li>
+                <h3 className="text-body-2 font-bold mb-2">What bounty should I submit for?</h3>
+                <p>
+                  Choosing what you find most interesting and fulfilling typically end in better
+                  results.
+                </p>
+              </li>
+              <li>
+                <h3 className="text-body-2 font-bold mb-2">What about non-technical roles?</h3>
+                <p>We currently only hire people with strong technical background. </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section className="section pt-8">
+        <div className="section-container">
+          <hgroup className="col-span-full lg:col-span-4 lg:col-start-2 2xl:col-span-4 4xl:col-span-6 2xl:col-start-5 4xl:col-start-6 flex flex-col items-center text-center">
+            <h2 className="text-heading-2 mb-6">
+              Have any questions? Send them our way into our community Discord!
+            </h2>
+
+            <Button href="https://discord.com/invite/pVwubQT9Sg" external icon={Discord}>
+              Join our Discord
+            </Button>
+          </hgroup>
+        </div>
+      </section>
+    </main>
   );
 }
