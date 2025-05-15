@@ -314,6 +314,12 @@ main .sponsors {
   line-height: 1 !important;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+  scrollbar-width: none;
+  
+}
+
 .mdx-content h3 {
   font-size: 1.25rem;
   font-weight: normal;

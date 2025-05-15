@@ -1,21 +1,9 @@
 import { Button } from "@/components/ui/Button/Button";
 import { useWindowSize } from "@/components/util/functions";
-import { motion, useMotionValue } from "motion/react";
-import { useEffect, useMemo, useState, useRef } from "react";
+import { useEffect, useMemo, useState, useRef, useCallback } from "react";
 import ArrowL from "@/assets/icons/icon_arrowL.svg";
 import ArrowR from "@/assets/icons/icon_arrowR.svg";
 import Image from "next/image";
-
-const DRAG_BUFFER = 50;
-const SCROLL_THRESHOLD = 25;
-const SCROLL_DEBOUNCE = 300;
-
-const SPRING_OPTIONS = {
-  type: "spring",
-  mass: 1.5,
-  stiffness: 80,
-  damping: 20,
-};
 
 const imgs = [
   {
@@ -81,75 +69,65 @@ const imgs = [
 ];
 
 export const LandingAchievements = () => {
-  const [index, setIndex] = useState(0);
   const width = useWindowSize().width;
   const containerRef = useRef<HTMLDivElement>(null);
-  const lastScrollTime = useRef<number>(0);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
   const cardDimensions = useMemo(() => {
     return {
       width: width < 768 ? 80 : width < 1024 ? 40 : width < 1440 ? 30 : 20,
       gap: width < 768 ? 1 : 1.5,
-      max:
+      visibleItems:
         width < 768
-          ? imgs.length - 1
+          ? 1
           : width < 1024
-            ? imgs.length - 2
+            ? 2
             : width < 1440
-              ? imgs.length - 3
-              : imgs.length - 3,
+              ? 3
+              : 3,
     };
   }, [width]);
 
-  const dragX = useMotionValue(0);
-
-  const decrement = () => {
-    if (index > 0) {
-      setIndex((pv) => pv - 1);
-    }
-  };
-  const increment = () => {
-    if (index < cardDimensions.max) {
-      setIndex((pv) => pv + 1);
-    }
-  };
-
-  const onDragEnd = () => {
-    const x = dragX.get();
-
-    if (x <= -DRAG_BUFFER && index < cardDimensions.max) {
-      setIndex((pv) => pv + 1);
-    } else if (x >= DRAG_BUFFER && index > 0) {
-      setIndex((pv) => pv - 1);
-    }
-  };
-
-  const handleWheel = (e: React.WheelEvent) => {
-    const now = Date.now();
-    const isHorizontalScroll = Math.abs(e.deltaX) > Math.abs(e.deltaY);
-    const isSignificantHorizontal = Math.abs(e.deltaX) > SCROLL_THRESHOLD;
-    const hasDebounceElapsed = now - lastScrollTime.current > SCROLL_DEBOUNCE;
-
-    if (isHorizontalScroll && isSignificantHorizontal && hasDebounceElapsed) {
-      e.preventDefault();
-      lastScrollTime.current = now;
+  const updateScrollButtonStates = useCallback(() => {
+    if (containerRef.current) {
+      const container = containerRef.current;
+      const scrollLeft = container.scrollLeft;
+      const maxScrollLeft = container.scrollWidth - container.clientWidth;
       
-      if (e.deltaX > 0) {
-        if (index < cardDimensions.max) {
-          setIndex((pv) => pv + 1);
-        }
-      } 
-      else if (e.deltaX < 0) {
-        if (index > 0) {
-          setIndex((pv) => pv - 1);
-        }
-      }
+      setCanScrollLeft(scrollLeft > 10);
+      setCanScrollRight(scrollLeft < maxScrollLeft - 10);
     }
-  };
+  }, []);
+
+  const scrollLeft = useCallback(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollBy({
+        left: -(cardDimensions.width + cardDimensions.gap * 16),
+        behavior: 'smooth'
+      });
+    }
+  }, [cardDimensions.width, cardDimensions.gap]);
+  
+  const scrollRight = useCallback(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollBy({
+        left: cardDimensions.width + cardDimensions.gap * 16,
+        behavior: 'smooth'
+      });
+    }
+  }, [cardDimensions.width, cardDimensions.gap]);
 
   useEffect(() => {
-    setIndex(0);
-  }, [width]);
+    const container = containerRef.current;
+    if (container) {
+      updateScrollButtonStates();
+      container.addEventListener('scroll', updateScrollButtonStates);
+      return () => {
+        container.removeEventListener('scroll', updateScrollButtonStates);
+      };
+    }
+  }, [updateScrollButtonStates]);
 
   return (
     <section className="section">
@@ -157,45 +135,29 @@ export const LandingAchievements = () => {
         <hgroup className="col-span-default col-start-default mb-6">
           <h2 className="text-body-2 font-medium text-stone-400 mb-1">Our achievements</h2>
           <p className="text-heading-1">
-            We&apos;ve completed 7 generations of robots in less than a year
+            We&apos;ve completed 6 generations of robots in less than a year
           </p>
         </hgroup>
         <div className="mb-6 flex gap-2 md:place-self-end max-md:col-start-1 md:-col-end-1 2xl:-col-end-2">
-          <Button onClick={() => decrement()} icon={ArrowL} disabled={index == 0} />
-          <Button
-            onClick={() => increment()}
-            icon={ArrowR}
-            disabled={index == cardDimensions.max}
-          />
+          <Button onClick={scrollLeft} icon={ArrowL} disabled={!canScrollLeft} />
+          <Button onClick={scrollRight} icon={ArrowR} disabled={!canScrollRight} />
         </div>
-        <div 
-          className="-mx-5 px-5 lg:-mx-10 lg:px-10 col-span-full overflow-hidden relative"
+        <div
+          className="-mx-5 px-5 lg:-mx-10 lg:px-10 col-span-full overflow-x-auto no-scrollbar snap-x snap-mandatory"
           ref={containerRef}
-          onWheel={handleWheel}
+          style={{
+            scrollSnapType: "x mandatory",
+            scrollBehavior: "smooth",
+          }}
         >
-          {/* <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background z-10 pointer-events-none" /> */}
-          <motion.div
-            className="grid-r"
-            drag="x"
-            // dragConstraints={dragRef}
-            dragConstraints={{ left: 0, right: 0 }}
-            // dragElastic={0.1}
-            style={{
-              x: dragX,
-            }}
-            animate={{
-              translateX: index === 0 ? 0 : `calc(-${index} * min(${cardDimensions.width}vw, 600px) - ${index * cardDimensions.gap}rem)`,
-              // translateX: `-${index * 40}rem`,
-            }}
-            onDragEnd={onDragEnd}
-            transition={SPRING_OPTIONS}
-          >
+          <div className="grid-r">
             <div className="relative flex 2xl:col-start-3">
-              <div className="flex gap-x-4 md:gap-x-6">
-                {imgs.map((item, index) => (
+              <div className="flex gap-x-4 md:gap-x-6 pr-5 md:pr-10">
+                {imgs.map((item, idx) => (
                   <article
-                    className="flex-grow w-[80vw] sm:w-[40vw] lg:w-[30vw] 2xl:w-[20vw] max-w-[600px] flex flex-col gap-4"
-                    key={`achievement--${index}`}
+                    key={idx}
+                    className="flex-grow w-[80vw] sm:w-[40vw] lg:w-[30vw] 2xl:w-[20vw] max-w-[600px] flex flex-col gap-4 select-none"
+                    style={{ scrollSnapAlign: "center" }}
                   >
                     <hgroup>
                       <h3 className="text-body-3 font-bold inline-flex gap-4">
@@ -215,7 +177,7 @@ export const LandingAchievements = () => {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
