@@ -79,7 +79,7 @@ export const LandingKSim = () => {
                 rel="noopener noreferrer"
                 className="group inline-flex items-center"
               >
-                K-SIM
+                K-Sim
                 <Arrow className="size-8 group-hover:translate-x-[12.5%] group-hover:-translate-y-[12.5%] group-focus:translate-x-[12.5%] group-focus:-translate-y-[12.5%] transition-transform duration-300 ml-2" />
               </a>
             </h2>
@@ -93,7 +93,7 @@ export const LandingKSim = () => {
               <iframe
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/nMkS6VSh-yw?autoplay=0&rel=0"
-                title="See how our ML engineer Ali uses K-SIM"
+                title="See how our ML engineer Ali uses K-Sim"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
@@ -101,7 +101,7 @@ export const LandingKSim = () => {
               ></iframe>
             </div>
             <h3 className="mt-4 text-body-2 font-bold text-center px-4">
-              See how our ML engineer Ali uses K-SIM
+              See how our ML engineer Ali uses K-Sim
             </h3>
           </div>
         </div>
@@ -113,7 +113,7 @@ export const LandingKSim = () => {
             <h3 className="text-body-2 font-bold mb-2">Made for speed</h3>
             <p>
               Train policies in under an hour. Leveraging GPU accelerated libraries like JAX and
-              Mujoco XLA, K-SIM can process over 100,000 samples per second (including training) on
+              Mujoco XLA, K-Sim can process over 100,000 samples per second (including training) on
               an RTX 4090.
             </p>
           </div>
@@ -139,7 +139,7 @@ export const LandingKSim = () => {
             <Visual4 className="size-[4.5rem] mb-4" />
             <h3 className="text-body-2 font-bold mb-2">Extensible by design</h3>
             <p>
-              K-SIM can be easily modified to fit your use-case, instead of the other way around.
+              K-Sim can be easily modified to fit your use-case, instead of the other way around.
               All of the code is fully open source so you can build on top of it with confidence.
             </p>
           </div>
@@ -147,7 +147,7 @@ export const LandingKSim = () => {
             <thead className="max-lg:sticky top-20 ">
               <tr className="grid grid-cols-4 md:grid-cols-5 items-start py-4 bg-background border-b border-b-stone-800">
                 <th scope="col" className="text-body-3 font-bold md:col-start-2">
-                  K-SIM
+                  K-Sim
                 </th>
                 <th scope="col" className="text-body-3 font-bold">
                   Issac
@@ -210,7 +210,7 @@ export const LandingKSim = () => {
         <div className="section-container">
           <hgroup className="col-span-default lg:col-start-2 2xl:col-start-3 flex flex-col ">
             <h2 className="text-heading-2 mb-2">
-              K-SIM lets you iterate quickly and trust the code that you deploy on your hardware.{" "}
+              K-Sim lets you iterate quickly and trust the code that you deploy on your hardware.{" "}
             </h2>
             <p className="text-body-2 mb-4">
               Check out the source on{" "}

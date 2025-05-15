@@ -69,7 +69,7 @@ export const LandingStack = () => {
           condensed: true,
         },
         {
-          name: "K-LANG",
+          name: "K-Lang",
           description: [
             "Control your robot with a neural interpretation domain-specific language (DSL).",
           ],
@@ -84,11 +84,11 @@ export const LandingStack = () => {
         "Open-source library for GPU-accelerated robot learning and zero-shot sim-to-real transfer",
       items: [
         {
-          name: "K-SIM",
+          name: "K-Sim",
           href: "https://github.com/kscalelabs/ksim",
           code: "pip install k-sim",
           thumbnailSrc: "/photos/landing/stack/k-sim.gif",
-          thumbnailAlt: "K-SIM",
+          thumbnailAlt: "K-Sim",
           width: 2560,
           height: 1440,
           description: [
@@ -132,6 +132,7 @@ export const LandingStack = () => {
         {
           name: "K-OS SIM",
           href: "https://github.com/kscalelabs/kos-sim",
+
           code: "pip install kos-sim",
           description: [
             "A digital twin / model evaluator for the K-Scale Operating System (K-OS) using the same gRPC interface as our real robot",
