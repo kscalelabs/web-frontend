@@ -241,7 +241,7 @@ export default function Page() {
                 <h3 className="text-body-2 font-bold mb-2">Do you do internships?</h3>
                 <p>
                   Our team sometimes accepts interns involved in our community or through our our
-                  hosted hackathons. If you're interested, reach out to us on our{" "}
+                  hosted hackathons. If you&apos;re interested, reach out to us on our{" "}
                   <a
                     href="https://discord.com/invite/pVwubQT9Sg"
                     target="_blank"
