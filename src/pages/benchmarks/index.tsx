@@ -76,8 +76,10 @@ export default function Page({ html, raw }: Props) {
             <p className="text-body-1 mb-6">
               Create your own repository using our{" "}
               <a
-                href="https://colab.research.google.com/github/kscalelabs/kscale-humanoid-benchmark/blob/master/train.ipynb"
+                href="https://github.com/kscalelabs/ksim-gym"
                 className="group inline-flex items-center gap-1 font-medium underline relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
+                rel="noreferrer noopener"
+                target="_blank"
               >
                 Github{" "}
                 <Github className="size-8 transition-transform duration-200 group-hover:scale-110" />
@@ -89,6 +91,8 @@ export default function Page({ html, raw }: Props) {
               <a
                 href="https://colab.research.google.com/github/kscalelabs/kscale-humanoid-benchmark/blob/master/train.ipynb"
                 className="group inline-flex items-center gap-1 font-medium underline relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
+                rel="noreferrer noopener"
+                target="_blank"
               >
                 Google Colab{" "}
                 <Colab className="size-8 transition-transform duration-200 group-hover:scale-110" />
