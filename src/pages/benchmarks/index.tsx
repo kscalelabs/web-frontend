@@ -51,7 +51,7 @@ export default function Page({ html, raw }: Props) {
       </Hero>
       <section className="section--short">
         <div className="section-container">
-          <hgroup className="section-prose2 mb-6">
+          <div className="section-prose2 mb-6">
             {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
             <h2 className="text-heading-2 mb-6">
               This leaderboard is a challenge for people who want to try programming and training
@@ -66,7 +66,7 @@ export default function Page({ html, raw }: Props) {
               see the robots yourself and RL deployment submissions live. You can schedule a visit
               here:
             </p>
-          </hgroup>
+          </div>
         </div>
       </section>
       <section className="section--short">
