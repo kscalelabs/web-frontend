@@ -145,17 +145,17 @@ export const LandingKSim = () => {
           </div>
           <table className="relative col-span-full 2xl:col-span-8 2xl:col-start-3 4xl:col-span-12 4xl:col-start-3 mt-12">
             <thead className="max-lg:sticky top-20 ">
-              <tr className="grid grid-cols-3 md:grid-cols-5 items-start py-4 bg-background border-b border-b-stone-800">
+              <tr className="grid grid-cols-4 md:grid-cols-5 items-start py-4 bg-background border-b border-b-stone-800">
                 <th scope="col" className="text-body-3 font-bold md:col-start-2">
                   K-SIM
                 </th>
                 <th scope="col" className="text-body-3 font-bold">
                   Issac
                 </th>
-                <th scope="col" className="max-md:hidden text-body-3 font-bold">
+                <th scope="col" className="text-body-3 font-bold">
                   Brax
                 </th>
-                <th scope="col" className="max-md:hidden text-body-3 font-bold">
+                <th scope="col" className="text-body-3 font-bold">
                   Gazebo
                 </th>
               </tr>
@@ -163,7 +163,7 @@ export const LandingKSim = () => {
             <tbody className="flex flex-col">
               {tableItems.map((item, index) => (
                 <tr
-                  className="grid grid-cols-3 md:grid-cols-5 col-span-full items-center"
+                  className="grid grid-cols-4 md:grid-cols-5 col-span-full items-center"
                   key={`ksim-table-row--${index}`}
                 >
                   <th
@@ -186,14 +186,14 @@ export const LandingKSim = () => {
                       <TableFalse className="size-8 mx-auto" />
                     )}
                   </td>
-                  <td className="max-md:hidden">
+                  <td>
                     {item.brax ? (
                       <TableTrue className="size-8 mx-auto" />
                     ) : (
                       <TableFalse className="size-8 mx-auto" />
                     )}
                   </td>
-                  <td className="max-md:hidden">
+                  <td>
                     {item.gazebo ? (
                       <TableTrue className="size-8 mx-auto" />
                     ) : (

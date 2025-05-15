@@ -88,7 +88,7 @@ export const CodeBlock = ({ html, raw, ...props }: Props) => {
   return (
     <div
       className={clsx(
-        "flex w-full rounded-lg bg-stone-800 border border-stone-700 divide-x divide-stone-700 overflow-hidden mb-4",
+        "flex w-full rounded-lg bg-stone-800 border border-stone-700 divide-x divide-stone-700 overflow-hidden mb-6",
         props.className
       )}
     >

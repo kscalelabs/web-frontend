@@ -130,7 +130,7 @@ export const LandingAchievements = () => {
         <hgroup className="col-span-default col-start-default mb-6">
           <h2 className="text-body-2 font-medium text-stone-400 mb-1">Our achievements</h2>
           <p className="text-heading-1">
-            We&apos;ve completed 7 generations of robots in less than a year
+            We&apos;ve completed 6 generations of robots in less than a year
           </p>
         </hgroup>
         <div className="mb-6 flex gap-2 md:place-self-end max-md:col-start-1 md:-col-end-1 2xl:-col-end-2">
