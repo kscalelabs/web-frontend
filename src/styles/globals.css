@@ -1,5 +1,4 @@
 @import url("//cdn-images.mailchimp.com/embedcode/classic-061523.css");
-
 #mc_embed_signup {
   background: transparent !important;
   clear: left;
@@ -72,6 +71,23 @@
     --rust: #de4208ff;
     --molten: #f18a03ff;
     --sol: #eae9bcff;
+
+    --shiki-foreground: var(--foreground);
+    --shiki-background: transparent;
+    --shiki-token-constant: var(--foreground);
+    --shiki-token-string: var(--foreground);
+    --shiki-token-comment: #b58112;
+    --shiki-token-keyword: var(--foreground);
+    --shiki-token-parameter: var(--foreground);
+    --shiki-token-function: #fef65f;
+    --shiki-token-string-expression: var(--foreground);
+    --shiki-token-punctuation: var(--foreground);
+    --shiki-token-link: var(--foreground);
+  }
+  * {
+    font-feature-settings:
+      "ss02" on,
+      "ss03" on;
   }
 }
 
@@ -91,153 +107,81 @@ body {
   scrollbar-gutter: stable both-edges;
 }
 
-main {
-  display: grid;
-  @apply font-planar;
-  @apply font-normal;
-  font-style: normal;
-  font-size: 17px;
-  line-height: 20px;
-  letter-spacing: -0.01em;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 5vw;
-  padding: 0 5vw;
-}
-
-h1 {
-  @apply font-apparat;
-  @apply font-medium;
-  font-style: normal;
-  font-size: 62px;
-  line-height: 60px;
-  letter-spacing: -0.02em;
-}
-
-h2 {
-  @apply font-apparat;
-  @apply font-medium;
-  font-style: normal;
-  font-size: 38.5px;
-  line-height: 40px;
-  letter-spacing: -0.015em;
-}
-
-h3 {
-  @apply font-planar;
-  @apply font-normal;
-  font-style: normal;
-  font-size: 25px;
-  line-height: 25px;
-  letter-spacing: -0.01em;
-}
-
-caption,
-figcaption {
-  @apply font-planar;
-  @apply font-normal;
-  font-style: normal;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0.02em;
-}
-
-caption .code,
-caption .pre,
-figcaption .code,
-figcaption .pre {
-  @apply font-mono;
-  @apply font-normal;
-  font-style: normal;
-  font-size: 13px;
-  line-height: 14px;
-  letter-spacing: 0.03em;
-}
-
-code,
-pre {
-  @apply font-mono;
-  @apply font-normal;
-  font-style: normal;
-  font-size: 14px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-}
-
-@media (min-width: 640px) {
-  main {
-    grid-template-columns: repeat(6, 1fr);
-    gap: 2.5vw;
-  }
-}
-
-@media (min-width: 768px) {
-  main {
-    grid-template-columns: repeat(9, 1fr);
-    gap: 2.5vw;
-  }
-}
-
-@media (min-width: 1440px) {
-  main {
-    grid-template-columns: repeat(12, 1fr);
-    gap: 1.25vw;
-    font-size: 24px;
-    line-height: 28px;
-    letter-spacing: -0.01em;
-  }
-
+@layer base {
   h1 {
-    font-size: 96px;
-    line-height: 84px;
-    letter-spacing: -0.02em;
+    @apply text-heading-d1;
   }
-
   h2 {
-    font-size: 57.5px;
-    line-height: 56px;
-    letter-spacing: -0.015em;
+    @apply text-heading-1;
   }
-
   h3 {
-    font-size: 39.5px;
-    line-height: 42px;
-    letter-spacing: -0.01em;
+    @apply text-heading-2;
   }
-
-  caption,
-  figcaption {
-    font-size: 17px;
-    line-height: 28px;
-    letter-spacing: 0.02em;
+  p,
+  ul,
+  ol {
+    @apply text-body-2;
   }
-
-  caption .code,
-  caption .pre,
-  figcaption .code,
-  figcaption .pre {
-    font-size: 18px;
-    line-height: 18px;
-    letter-spacing: 0.02em;
+  blockquote {
+    @apply text-body-1 italic;
   }
-
-  code,
-  pre {
-    font-size: 18px;
-    line-height: 18px;
-    letter-spacing: 0.02em;
+  .section {
+    @apply py-24 md:py-28 2xl:py-32 4xl:py-40;
+  }
+  .section--short {
+    @apply py-8 lg:py-16;
+  }
+  .section-container {
+    @apply px-layout flex flex-col grid-r w-full max-w-[2160px] mx-auto;
   }
 }
 
-.grid-a {
-  @apply px-[5vw] grid grid-cols-4 sm:grid-cols-6 md:grid-cols-9 2xl:grid-cols-12 gap-x-[5vw] sm:gap-x-[2.15vw] 2xl:gap-x-[1vw];
+@layer components {
+  .section-prose {
+    @apply col-span-4 md:col-start-2 2xl:col-span-8 2xl:col-start-3 4xl:col-span-8 4xl:col-start-5;
+  }
+  .section-prose2 {
+    @apply col-span-4 md:col-start-2 2xl:col-span-6 2xl:col-start-4 4xl:col-span-6 4xl:col-start-6;
+  }
 }
 
-.grid-m {
-  @apply grid-a auto-rows-min;
-}
-
-html {
-  @apply text-[125%] 2xl:text-[130%] 4xl:text-[135%];
+@layer utilities {
+  .px-layout {
+    @apply px-5 md:px-10;
+  }
+  .grid-r {
+    @apply gap-x-4 md:gap-x-6 sm:grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 2xl:grid-cols-12 4xl:grid-cols-16 auto-rows-min;
+  }
+  .col-span-default {
+    @apply col-span-full md:col-span-4 lg:col-span-4 xl:col-span-3 2xl:col-span-5 3xl:col-span-5 4xl:col-span-6;
+  }
+  .col-start-default {
+    @apply 2xl:col-start-3 3xl:col-start-3 4xl:col-start-3;
+  }
+  .col-end-default {
+    @apply 2xl:-col-end-3 3xl:-col-end-3 4xl:-col-end-3;
+  }
+  .text-heading-d1 {
+    @apply text-heading-d1-sm sm:text-heading-d1-md lg:text-heading-d1-lg 4xl:text-heading-d1-xl font-bold font-display;
+  }
+  .text-heading-d2 {
+    @apply text-heading-d2-sm sm:text-heading-d2-md lg:text-heading-d2-lg 4xl:text-heading-d2-xl font-medium font-display;
+  }
+  .text-heading-1 {
+    @apply text-heading-1-sm sm:text-heading-1-md lg:text-heading-1-lg 4xl:text-heading-1-xl font-medium;
+  }
+  .text-heading-2 {
+    @apply text-heading-2-sm sm:text-heading-2-md lg:text-heading-2-lg 4xl:text-heading-2-xl font-medium;
+  }
+  .text-body-1 {
+    @apply text-body-1-sm sm:text-body-1-md lg:text-body-1-lg 4xl:text-body-1-xl;
+  }
+  .text-body-2 {
+    @apply text-body-2-sm sm:text-body-2-md lg:text-body-2-lg 4xl:text-body-2-xl;
+  }
+  .text-body-3 {
+    @apply text-body-3-sm sm:text-body-3-md lg:text-body-3-lg 4xl:text-body-3-xl;
+  }
 }
 
 html.lenis,
@@ -245,42 +189,22 @@ html.lenis body {
   height: auto;
 }
 
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
 }
 
-.lenis.lenis-stopped {
-  overflow: clip;
-}
-
 .lenis.lenis-smooth iframe {
   pointer-events: none;
 }
-html::-webkit-scrollbar {
-  display: none;
-}
 
-body::-webkit-scrollbar {
-  overflow: inherit;
-  scrollbar-gutter: stable;
-}
-
-body.scroll-bar::-webkit-scrollbar-thumb,
-body::-webkit-scrollbar-thumb:hover {
-  background: var(--plasma);
-  border-radius: 1rem;
-}
-
-body::-webkit-scrollbar-track {
-  border-radius: 4px;
-}
-
-body::-webkit-scrollbar-button {
-  display: none;
+.lenis.lenis-autoToggle {
+  transition-property: overflow;
+  transition-duration: 1ms;
+  transition-behavior: allow-discrete;
 }
 
 .rfm-child {

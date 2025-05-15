@@ -1,5 +1,6 @@
 "use client";
 
+import { Canvas } from "@react-three/fiber";
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
@@ -233,7 +234,11 @@ const RobotRenderer: React.FC = () => {
     };
   }, []);
 
-  return <div ref={mountRef} className="w-full h-full overflow-hidden" />;
+  return (
+    <div className="w-full h-full overflow-hidden">
+      <Canvas />
+    </div>
+  );
 };
 
 export default RobotRenderer;

@@ -1,16 +1,16 @@
-import Footer from "@/components/footer/footer";
-import NavBar from "@/components/navbar/navbar";
-import CatchphraseSection from "@/landing/CatchphraseSection";
-import CommunitySection from "@/landing/CommunitySection";
-import GallerySection from "@/landing/GallerySection";
-import HeaderSection from "@/landing/HeaderSection";
-import ResearchSection from "@/landing/ResearchSection";
-import RobotSection from "@/landing/RobotSection";
-import SpecSection from "@/landing/SpecSection";
-import Sponsors from "@/landing/Sponsors";
-import WhatCanItDoSection from "@/landing/WhatCanItDoSection";
-import { useLenis } from "lenis/dist/lenis-react";
 import { useEffect } from "react";
+import { useLenis } from "lenis/dist/lenis-react";
+import { LandingDemos } from "@/landing/LandingDemos";
+import { LandingAchievements } from "@/landing/LandingAchievements";
+import { LandingCommunity } from "@/landing/LandingCommunity";
+import { LandingKSim } from "@/landing/LandingKSim";
+import { LandingProducts } from "@/landing/LandingProducts";
+import { LandingStack } from "@/landing/LandingStack";
+import { LandingMission } from "@/landing/LandingMission";
+import { LandingDiagram } from "@/landing/LandingDiagram";
+import Sponsors from "@/landing/Sponsors";
+import { LandingContact } from "@/landing/LandingContact";
+import { LandingHero } from "@/landing/LandingHero";
 
 export default function Home() {
   const lenis = useLenis();
@@ -35,20 +35,21 @@ export default function Home() {
   }, [lenis]);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <NavBar />
-      <main className="gap-y-4 relative">
-        <HeaderSection />
-        <CatchphraseSection />
-        {/* <ResearchSection /> */}
-        {/* <SpecSection /> */}
-        {/* <WhatCanItDoSection /> */}
+    <div>
+      <main>
+        <LandingHero />
+        <LandingProducts />
+        <LandingMission />
+        <LandingDiagram />
         {/* <RobotSection /> */}
-        {/* <GallerySection /> */}
-        <CommunitySection />
+        <LandingDemos />
+        <LandingStack />
+        <LandingKSim />
+        <LandingAchievements />
+        <LandingCommunity />
+        <LandingContact />
+        <Sponsors />
       </main>
-      <Sponsors />
-      <Footer />
     </div>
   );
 }
