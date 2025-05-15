@@ -129,7 +129,7 @@ body {
     @apply py-24 md:py-28 2xl:py-32 4xl:py-40;
   }
   .section--short {
-    @apply py-16 md:py-20 2xl:py-24 4xl:py-32;
+    @apply py-8 lg:py-16;
   }
   .section-container {
     @apply px-layout flex flex-col grid-r w-full max-w-[2160px] mx-auto;

@@ -167,23 +167,25 @@ export default function Page({ html, raw }: Props) {
             </p>
             <hgroup className="col-span-default col-start-default mb-12">
               {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
-              <h3 className="text-heading-2 mb-4">Basic walk</h3>
-              <p>Description will eventually go here.</p>
+              <h3 className="text-heading-2 mb-2">Basic walk</h3>
+              <p>
+                Reach +1 / step if COM forward velocity &gt; 0.5 ms<sup>-1</sup>
+              </p>
             </hgroup>
             <hgroup className="col-span-default col-start-default mb-12">
               {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
-              <h3 className="text-heading-2 mb-4">Uneven terrain</h3>
-              <p>Description will eventually go here.</p>
+              <h3 className="text-heading-2 mb-2">Uneven terrain</h3>
+              <p>Survive walking through 100m of Perlin hills</p>
             </hgroup>
             <hgroup className="col-span-default col-start-default mb-12">
               {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
-              <h3 className="text-heading-2 mb-4">Push recovery</h3>
-              <p>Description will eventually go here.</p>
+              <h3 className="text-heading-2 mb-2">Push recovery</h3>
+              <p>Keep torso upright after 5 random shoves of at least 50 Newtons</p>
             </hgroup>
             <hgroup className="col-span-default col-start-default mb-12">
               {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
-              <h3 className="text-heading-2 mb-4">Human motion imitation</h3>
-              <p>Description will eventually go here.</p>
+              <h3 className="text-heading-2 mb-2">Human motion imitation</h3>
+              <p>Track a 30-sec motion capture clip</p>
             </hgroup>
           </div>
         </div>

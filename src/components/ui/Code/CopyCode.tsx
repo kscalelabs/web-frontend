@@ -22,7 +22,7 @@ interface Props
 }
 
 const buttonStyles = cva(
-  "group inline-flex px-1.5 bg-stone-900 rounded-md border border-stone-700 text-stone-300 hover:text-stone-100 active:text-orange-500 transition-colors duration-100 active:duration-50 cursor-pointer",
+  "group inline-flex items-center gap-1 px-1.5 bg-stone-900 rounded-md border border-stone-700 text-stone-300 hover:text-stone-100 active:text-orange-500 transition-colors duration-100 active:duration-50 cursor-pointer",
   {
     variants: {
       font: {
@@ -57,14 +57,20 @@ const iconStyles = cva(
 );
 
 export const CopyString = ({ string, size, font }: CopyStringProps) => {
+  const [clicked, setClicked] = useState(false);
+  const handleClick = () => {
+    copyString(string);
+    setClicked(true);
+    setTimeout(() => {
+      setClicked(false);
+    }, 2000);
+  };
   return (
-    <button
-      className={buttonStyles({ font, size })}
-      onClick={() => copyString(string)}
-      type="button"
-    >
+    <button className={buttonStyles({ font, size })} onClick={() => handleClick()} type="button">
       {string}
-      <Copy className={iconStyles({ size })} />
+      <div className="w-auto h-full">
+        <CopyCheck open={clicked} />
+      </div>
     </button>
   );
 };
@@ -95,7 +101,9 @@ export const CodeBlock = ({ html, raw, ...props }: Props) => {
           type="button"
         >
           <span className="absolute size-12 top-1/2 -translate-y-1/2 [@media(pointer:fine)]:hidden" />
-          <CopyCheck open={clicked} />
+          <div className="size-6">
+            <CopyCheck open={clicked} />
+          </div>
         </button>
       </div>
     </div>
