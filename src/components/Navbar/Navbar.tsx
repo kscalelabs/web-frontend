@@ -151,7 +151,7 @@ export const Navbar = () => {
           </Link>
           <nav className="flex gap-2 items-center lg:hidden">
             <Button href="/benchmarks" intent="secondary">
-              View benchmarks
+              Get started
             </Button>
             <motion.button
               className="bg-stone-400 size-12 rounded-lg"
@@ -214,7 +214,7 @@ export const Navbar = () => {
               </hgroup>
             ))}
             <Button href="/benchmarks" size="sm" intent="secondary">
-              View benchmarks
+              Get started
             </Button>
           </nav>
         </div>
