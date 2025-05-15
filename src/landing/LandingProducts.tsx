@@ -172,13 +172,13 @@ export const LandingProducts = () => {
                           >
                             {item.links[0].text}
                           </Button>
-                          <a
+                          {/* <a
                             href={item.links[1].href}
                             className="text-orange-500 hover:text-orange-400 whitespace-nowrap text-body-2 font-medium flex items-center gap-1"
                             target={item.links[1].href.startsWith("https://") ? "_blank" : "_self"}
                           >
                             {item.links[1].text}
-                          </a>
+                          </a> */}
                         </div>
                       ) : (
                         <span className="text-stone-500 text-body-3 font-bold border border-stone-500 rounded-full px-3 py-1">
