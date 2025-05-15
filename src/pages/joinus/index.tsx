@@ -13,7 +13,7 @@ export default function Page() {
   const jobs = [
     {
       title: "Firmware Engineer (Rust/Nix)",
-      description: <>$100K · 1+ years of experience</>,
+      description: <>$100K · 3+ years of experience</>,
       link: "https://www.ycombinator.com/companies/k-scale-labs/jobs/DK5GZzD-software-engineer-humanoid-robots",
     },
     {
@@ -158,7 +158,10 @@ export default function Page() {
           <div className="col-span-default col-start-default mb-6">
             {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">About us</h2> */}
             <h2 className="text-heading-1 mb-2">Open roles (3)</h2>
-            <p className="mb-6">All roles are on-site in Palo Alto, CA, USA. People currently enrolled in college are encouraged to drop out.</p>
+            <p className="mb-6">
+              All roles are on-site in Palo Alto, CA, USA. People currently enrolled in college are
+              encouraged to drop out.
+            </p>
             <ul className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 flex flex-col gap-12 mb-16">
               {jobs.map((item, i) => (
                 <li key={`job-listing-${i}`} className="flex flex-col gap-2">
