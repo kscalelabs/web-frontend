@@ -61,30 +61,42 @@ export default function Page({ html, raw }: Props) {
       >
         Train an RL policy tonight; watch it run on a real humanoid tomorrow.
       </ArticleHero>
-      <section className="section--short">
+      <section className="section">
         <div className="section-container">
           <div className="section-prose2">
             <h2 className="text-heading-1 col-span-default col-start-default mb-6">
               Start RL training and zero-shot sim-to-real transfer now with K-Sim
             </h2>
-            <p className="text-body-1 mb-12">
+            <p className="text-body-1 mb-36">
               K-Sim is an open-source library for GPU-accelerated robot learning and sim-to-real
               transfer, made for RL whole-body control from simple walking to complex human
               imitation.
             </p>
-            <h2 className="text-heading-2 mb-3">Quick start in under 5 mins</h2>
+            <h2 className="text-heading-2 mb-1">Get started in &lt;5 minutes</h2>
             <p className="text-body-1 mb-6">
-              Develop in your own environment using the code below or set up in{" "}
+              Create your own repository using our{" "}
               <a
                 href="https://colab.research.google.com/github/kscalelabs/kscale-humanoid-benchmark/blob/master/train.ipynb"
-                className="inline-flex items-center gap-1 font-medium underline relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
+                className="group inline-flex items-center gap-1 font-medium underline relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
               >
-                Google Colab <Colab className="size-8" />
+                Github{" "}
+                <Github className="size-8 transition-transform duration-200 group-hover:scale-110" />
               </a>{" "}
-              with one click.
+              template and follow the instructions in our readme.
             </p>
-            <CodeBlock html={html[0]} raw={raw[0]} />
-            <p className="text-body-3">
+            <p className="mb-2 text-body-2">
+              Want to try K-Sim in your browser? Set up in{" "}
+              <a
+                href="https://colab.research.google.com/github/kscalelabs/kscale-humanoid-benchmark/blob/master/train.ipynb"
+                className="group inline-flex items-center gap-1 font-medium underline relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
+              >
+                Google Colab{" "}
+                <Colab className="size-8 transition-transform duration-200 group-hover:scale-110" />
+              </a>
+              .
+            </p>
+            {/* <CodeBlock html={html[0]} raw={raw[0]} /> */}
+            <p className="text-body-3 text-stone-500">
               Got stuck along the way? Ask any questions in our{" "}
               <a
                 href="https://discord.com/invite/pVwubQT9Sg"
@@ -119,17 +131,6 @@ export default function Page({ html, raw }: Props) {
           </div>
         </div>
       </section>
-      {/* <section className="section--short">
-        <div className="section-container">
-          <div className="section-prose2 mb-6">
-            <p className="text-body-1 mb-6">
-              Our competition will feature exciting prizes—ranging from fun company-branded merch to
-              free access to the full-size K-Bot robot! Stay tuned for more details.
-            </p>
-          </div>
-        </div>
-      </section> */}
-
       <section className="section--short">
         <div className="section-container">
           <div className="section-prose2">
@@ -141,9 +142,9 @@ export default function Page({ html, raw }: Props) {
             <div className="gap-4 md:gap-6 lg:grid lg:grid-cols-2">
               <hgroup className="flex flex-col mb-12">
                 {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
-                <h3 className="text-body-1 mb-1">Basic walk</h3>
+                <h3 className="text-body-1 mb-1">Basic Walk</h3>
                 <p className="mb-4">
-                  Reach +1 / step if COM forward velocity &gt; 0.5 ms<sup>-1</sup>
+                  Train an omnidirectional walking policy with velocity &gt; 1m/s
                 </p>
                 <figure className="mt-auto aspect-video overflow-hidden rounded-lg">
                   <Image
@@ -157,8 +158,8 @@ export default function Page({ html, raw }: Props) {
               </hgroup>
               <hgroup className="flex flex-col mb-12">
                 {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
-                <h3 className="text-body-1 mb-1">Uneven terrain</h3>
-                <p className="mb-4">Survive walking through 100m of Perlin hills</p>
+                <h3 className="text-body-1 mb-1">Uneven Terrain</h3>
+                <p className="mb-4">Survive walking across 100m Perlin hills and stairs</p>
                 <figure className="mt-auto aspect-video overflow-hidden rounded-lg">
                   <Image
                     width="640"
@@ -171,9 +172,9 @@ export default function Page({ html, raw }: Props) {
               </hgroup>
               <hgroup className="flex flex-col mb-12">
                 {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
-                <h3 className="text-body-1 mb-1">Push recovery</h3>
+                <h3 className="text-body-1 mb-1">Push Recovery</h3>
                 <p className="mb-4">
-                  Keep torso upright after 5 random shoves of at least 50 Newtons
+                  Keep torso upright after random shoves of at least 50 Newtons
                 </p>
                 <figure className="mt-auto aspect-video overflow-hidden rounded-lg">
                   <Image
@@ -187,8 +188,10 @@ export default function Page({ html, raw }: Props) {
               </hgroup>
               <hgroup className="flex flex-col mb-12">
                 {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
-                <h3 className="text-body-1 mb-1">Human motion imitation</h3>
-                <p className="mb-4">Track a 30-sec motion capture clip</p>
+                <h3 className="text-body-1 mb-1">Human Motion Imitation</h3>
+                <p className="mb-4">
+                  Track a 30-sec motion capture clip of human dancing and walking
+                </p>
                 <figure className="mt-auto aspect-video overflow-hidden rounded-lg">
                   <Image
                     width="640"
@@ -205,7 +208,12 @@ export default function Page({ html, raw }: Props) {
               <p className="text-center text-stone-500">
                 Leaderboard coming soon. Star our repo for updates.
               </p>
-              <Button href="https://github.com/kscalelabs/ksim-gym" external icon={Github}>
+              <Button
+                href="https://github.com/kscalelabs/ksim-gym"
+                external
+                icon={Github}
+                size="lg"
+              >
                 Go to Github
               </Button>
             </div>
