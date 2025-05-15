@@ -66,7 +66,7 @@ export default function Page() {
       </Hero>
       <section className="section">
         <div className="section-container">
-          <hgroup className="col-span-default col-start-default mb-6">
+          <div className="section-prose2 mb-6">
             <h2 className="text-body-2 font-medium text-stone-400 mb-1">About us</h2>
             <h3 className="text-heading-1 mb-6">
               We&apos;re a small team of engineers and researchers from Tesla AI, Meta FAIR, Xiaomi,
@@ -77,12 +77,12 @@ export default function Page() {
               Hard problems, failures, and long hours don&apos;t deter us. While others talk, we
               ship.
             </p>
-          </hgroup>
+          </div>
           <p className="col-span-full sm:col-span-4 md:col-start-2 2xl:col-span-6 2xl:col-start-4 4xl:col-span-8 4xl:col-start-5 text-heading-1 text-center mb-32">
             We&apos;re driven by our belief that general-purpose robots are possible, and we must
             open-source it to everyone.
           </p>
-          <div className="col-span-full 2xl:col-start-3 2xl:col-span-8 4xl:col-start-3 4xl:col-span-12 sm:grid grid-cols-subgrid mb-24">
+          <div className="section-prose2 mb-24">
             <div className="col-span-4 md:col-span-3 lg:col-span-2 2xl:col-span-3 4xl:col-span-5">
               <p className="text-body-1 mb-6">
                 In the last six months, we&apos;ve trained state-of-the-art machine-learning models
@@ -94,15 +94,12 @@ export default function Page() {
                 manipulation models and manufacturing our hardware at scale.
               </p>
             </div>
-            <figure className="w-full col-span-full sm:col-span-4 md:col-span-3 lg:col-span-4 2xl:col-span-5 4xl:col-span-7 aspect-video rounded-lg ">
-              <VisualStack />
-            </figure>
           </div>
         </div>
       </section>
       <section className="section--short">
         <div className="section-container">
-          <hgroup className="col-span-full md:col-span-5 lg:col-span-3 2xl:col-span-4 2xl:col-start-3 mb-32">
+          <div className="section-prose2 mb-32">
             <h2 className="text-heading-1 mb-2">Who we&apos;re looking for</h2>
             <p className="text-body-1 mb-2">
               Our goal is to build a world-class team in cutting-edge engineering, research, and
@@ -112,26 +109,26 @@ export default function Page() {
               Show us your GitHub, your projects, and your competition wins. We love people
               who&apos;re already involved with our open-source communities.
             </p>
-          </hgroup>
-          <h2 className="text-heading-2 col-span-full md:col-span-5 lg:col-span-3 2xl:col-span-4 2xl:col-start-3 mb-6">
+          </div>
+          <h2 className="text-heading-2 section-prose2 md:text-center mb-6">
             Prove your skills through one of these paths:
           </h2>
-          <ul className="grid grid-cols-3 col-span-full 2xl:col-span-8 2xl:col-start-3 4xl:col-span-12 4xl:col-start-3 gap-x-4 md:gap-x-6 ">
-            <li>
+          <ul className="md:grid grid-cols-3 col-span-full 2xl:col-span-8 2xl:col-start-3 4xl:col-span-12 4xl:col-start-3 gap-x-4 md:gap-x-6 ">
+            <li className="mb-12">
               <a
                 href="https://bounties.kscale.dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group"
               >
-                <div className="flex w-fit">
-                  <h3 className="text-body-1 mb-1">Bounties</h3>
-                  <Arrow className="size-9 group-hover:translate-x-1/4 group-hover:-translate-y-1/4 group-focus:translate-x-1/4 group-focus:-translate-y-1/4 transition-transform duration-300" />
+                <div className="flex w-fit mb-1">
+                  <h3 className="text-body-1">Bounties</h3>
+                  <Arrow className="size-7 2xl:size-9 group-hover:translate-x-1/4 group-hover:-translate-y-1/4 group-focus:translate-x-1/4 group-focus:-translate-y-1/4 transition-transform duration-300" />
                 </div>
                 <p>Get paid by contributing to any of our active open-source projects</p>
               </a>
             </li>
-            <li>
+            <li className="mb-12">
               {/* <a
                 href="https://bounties.kscale.dev"
                 target="_blank"
@@ -146,7 +143,7 @@ export default function Page() {
               <p>Join our hackathon for ML, software, and hardware challenges.</p>
               {/* </a> */}
             </li>
-            <li>
+            <li className="mb-12">
               <h3 className="text-body-1 mb-1">Personal/team projects</h3>
               <p>Show us the hardest projects you have done.</p>
             </li>
@@ -155,7 +152,7 @@ export default function Page() {
       </section>
       <section className="section">
         <div className="section-container">
-          <div className="col-span-default col-start-default mb-6">
+          <div className="section-prose2 mb-6">
             {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">About us</h2> */}
             <h2 className="text-heading-1 mb-2">Open roles (3)</h2>
             <p className="mb-6">
@@ -192,7 +189,7 @@ export default function Page() {
       </section>
       <section className="section--short">
         <div className="section-container">
-          <div className="col-span-default col-end-default mb-6">
+          <div className="section-prose2 mb-6">
             <h2 className="text-body-2 font-medium text-stone-400 mb-1">Our hiring process</h2>
             <h3 className="text-heading-1 mb-6">Apply and join us</h3>
             <ol className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 flex flex-col gap-12 mb-16 list-inside list-decimal">
@@ -236,7 +233,7 @@ export default function Page() {
       </section>
       <section className="section--short">
         <div className="section-container">
-          <div className="col-span-default col-start-default mb-6">
+          <div className="section-prose2 mb-6">
             {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">About us</h2> */}
             <h2 className="text-heading-1 mb-6">FAQ</h2>
             <ul className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 flex flex-col gap-12 mb-16">

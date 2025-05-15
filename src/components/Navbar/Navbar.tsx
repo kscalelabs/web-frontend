@@ -96,7 +96,7 @@ export const Navbar = () => {
     },
     {
       name: "Join Us",
-      href: "/joinus",
+      href: "/join",
     },
   ];
 
@@ -123,7 +123,7 @@ export const Navbar = () => {
         },
         {
           name: "Join us",
-          href: "/joinus",
+          href: "/join",
         },
         {
           name: "Discord",

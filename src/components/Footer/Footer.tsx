@@ -76,7 +76,7 @@ export default function Footer() {
               Docs
             </a>
             <Link
-              href="/joinus"
+              href="/join"
               className="text-body-2 lg:text-body-3 font-medium lg:font-bold relative w-fit hover:text-stone-400 focus:text-stone-400 peer-hover:text-stone-400 transition-colors duration-300"
             >
               <span className="absolute h-12 top-1/2 -translate-y-1/2 w-full  [@media(pointer:fine)]:hidden" />
