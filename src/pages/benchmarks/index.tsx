@@ -121,12 +121,14 @@ export default function Page({ html, raw }: Props) {
           <div className="section-prose2 mb-6">
             {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
             <h2 className="text-heading-2 mb-6">
-              This leaderboard is a challenge for people who want to try programming and training
-              humanoid robots in simulation and watching it run on a real humanoid tomorrow.
+              This leaderboard is part of a challenge for anyone interested in programming and
+              training humanoid robots in simulation then seeing their creations come to life on a
+              real humanoid robot the next day.
             </h2>
             <p className="text-body-2 mb-6">
-              All submissions that pass sim2sim evaluation will get a spot on the leaderboard, and
-              we will be grateful for your assistance in helping us move towards our mission.
+              All submissions that pass our sim-to-sim evaluation will earn a spot on the
+              leaderboard. We deeply appreciate your contributions in helping us advance our
+              mission.
             </p>
             <p className="text-body-2 mb-6">
               Our competition will feature exciting prizes&mdash;ranging from fun company-branded
