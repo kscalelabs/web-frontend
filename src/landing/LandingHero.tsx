@@ -19,11 +19,10 @@ export function LandingHero() {
         <hgroup className="col-span-4 md:col-span-5 xl:col-span-4 2xl:col-span-7 z-10">
           <h1 className="mb-4">Open-source humanoid robots, built for developers</h1>
           <p className="text-body-1 mb-6">
-            We&apos;re building the most integrated open-source stack&mdash;from hardware to machine
-            learning&mdash;powering the next era of general-purpose robotics.
+            We&apos;re accelerating the timeline to a world with billions of robots, and making sure they&apos;re accessible, auditable, and beneficial to humanity.
           </p>
           <Button adaptive={true} href="/benchmarks" size="lg">
-            Get started
+            Get started now
           </Button>
         </hgroup>
       </div>
