@@ -12,20 +12,20 @@ import { CopyString } from "@/components/ui/Code/CopyCode";
 export default function Page() {
   const jobs = [
     {
-      title: "Frontend Developer (Contractor)",
+      title: "Firmware Engineer (Rust/Nix)",
       description: <>$100K · 1+ years of experience</>,
-      link: "https://www.ycombinator.com/companies/k-scale-labs/jobs/iZiLfNw-head-of-human-resources",
+      link: "https://www.ycombinator.com/companies/k-scale-labs/jobs/DK5GZzD-software-engineer-humanoid-robots",
     },
     {
-      title: "Robotics Engineer (Software)",
+      title: "Electrical Engineer",
       description: <>$100K &ndash; $250K · Any (New Grads OK)</>,
 
-      link: "https://www.ycombinator.com/companies/k-scale-labs/jobs/DK5GZzD-robotics-engineer-software",
+      link: "https://www.ycombinator.com/companies/k-scale-labs/jobs/8CEmad4-electrical-engineer-humanoid-robots",
     },
     {
-      title: "Robotics Engineer (Electrical)",
+      title: "ML Engineer (ML/VLA)",
       description: <>$100K &ndash; $250K · Any (New Grads OK)</>,
-      link: "https://www.ycombinator.com/companies/k-scale-labs/jobs/8CEmad4-robotics-engineer-electrical",
+      link: "https://www.ycombinator.com/companies/k-scale-labs/jobs/DK5GZzD-software-engineer-humanoid-robots",
     },
   ];
   return (
@@ -158,7 +158,7 @@ export default function Page() {
           <div className="col-span-default col-start-default mb-6">
             {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">About us</h2> */}
             <h2 className="text-heading-1 mb-2">Open roles (3)</h2>
-            <p className="mb-6">All roles are on-site in Palo Alto, CA, USA.</p>
+            <p className="mb-6">All roles are on-site in Palo Alto, CA, USA. People currently enrolled in college are encouraged to drop out.</p>
             <ul className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 flex flex-col gap-12 mb-16">
               {jobs.map((item, i) => (
                 <li key={`job-listing-${i}`} className="flex flex-col gap-2">
@@ -191,7 +191,7 @@ export default function Page() {
         <div className="section-container">
           <div className="col-span-default col-end-default mb-6">
             <h2 className="text-body-2 font-medium text-stone-400 mb-1">Our hiring process</h2>
-            <h3 className="text-heading-1 mb-6">Show your skills in three steps</h3>
+            <h3 className="text-heading-1 mb-6">Apply and join us</h3>
             <ol className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 flex flex-col gap-12 mb-16 list-inside list-decimal">
               <li>
                 <h4 className="text-body-1 mb-2">Choose a challenge</h4>
