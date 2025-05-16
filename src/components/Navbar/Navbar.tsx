@@ -137,7 +137,7 @@ export const Navbar = () => {
     <div className="lg:h-0">
       <motion.header
         className={clsx(
-          "fixed top-0 inset-x-0 z-50 border-b lg:h-20 2xl:h-24 transitions-all duration-300 ease-out from-background from-5% to-transparent",
+          "fixed top-0 inset-x-0 z-50 border-b lg:h-22 2xl:h-22 transitions-all duration-300 ease-out from-background from-5% to-transparent",
           mobileTopOpen || mobileOpen
             ? "bg-background border-b-stone-800"
             : "bg-transparent border-b-transparent"
@@ -171,7 +171,7 @@ export const Navbar = () => {
               animate={{
                 height: desktopOpen ? "12rem" : "auto",
               }}
-              transition={{ duration: 0.35 }}
+              transition={{ duration: 0.3, ease: [0.25, 0, 0.1, 1] }}
             />
             {desktopLinks.map((group) => (
               <hgroup className="relative mt-2.5 w-28" key={`nav-group-${group.name}`}>

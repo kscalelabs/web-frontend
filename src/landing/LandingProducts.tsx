@@ -166,7 +166,7 @@ export const LandingProducts = () => {
                     <hgroup className="mt-auto flex flex-col items-center z-10 w-full bg-gradient-to-t from-stone-950 from-75% to-transparent py-4">
                       <h4 className="text-heading-2">{item.name}</h4>
                       <h5 className="text-body-2 mb-0.5">{item.desc}</h5>
-                      <p className="text-body-3 font-medium mb-2">
+                      <p className="text-body-3 font-medium mb-3">
                         From {item.price}{" "}
                         <s className="font-normal text-stone-400">{item.oldPrice}</s>
                       </p>
