@@ -254,19 +254,19 @@ const Article = ({
 
   return (
     <motion.article
-      className="grid grid-cols-12 gap-x-4 md:gap-x-6 col-span-full 2xl:col-span-8 2xl:col-start-3 4xl:col-span-12 4xl:col-start-3 scroll-mt-44 2xl:scroll-mt-32 mb-16 sm:mb-24 2xl:mb-32"
+      className="grid grid-cols-12 gap-x-4 md:gap-x-6 col-span-full 2xl:col-span-8 2xl:col-start-3 4xl:col-span-12 4xl:col-start-3 scroll-mt-44 2xl:scroll-mt-32 mb-12"
       id={id}
       ref={ref}
     >
       <hgroup className="col-span-full 2xl:col-span-9 4xl:col-span-8 5xl:col-span-6">
-        <h2 className="text-body-2 font-medium text-stone-400 mb-2">{name} layer</h2>
+        <h2 className="text-body-2 font-medium text-stone-400 mb-1">{name} layer</h2>
         <p className="text-heading-1 mb-6">{heading}</p>
       </hgroup>
       {items.map((item, i) => (
         <div
           key={`landing-stack-item-${id}--${i}`}
           className={clsx(
-            "col-span-full md:col-span-6 first-of-type:lg:col-start-1 mb-6",
+            "col-span-full md:col-span-6 first-of-type:lg:col-start-1 mb-12",
             id == "hardware" ? "lg:col-span-4" : "lg:col-span-6"
           )}
         >
@@ -311,7 +311,7 @@ const Article = ({
                 className="group inline-flex flex-wrap"
               >
                 {item.name}
-                <Arrow className="size-8 group-hover:translate-x-[12.5%] group-hover:-translate-y-[12.5%] group-focus:translate-x-[12.5%] group-focus:-translate-y-[12.5%] transition-transform duration-300" />
+                <Arrow className="size-6 group-hover:translate-x-[12.5%] group-hover:-translate-y-[12.5%] group-focus:translate-x-[12.5%] group-focus:-translate-y-[12.5%] transition-transform duration-300" />
               </a>
             ) : (
               item.name
@@ -321,7 +321,7 @@ const Article = ({
             item.description.map((desc, i) => (
               <p
                 key={`article-descriptor-${id}--${i}`}
-                className="mb-2 text-stone-400 first-of-type:text-foreground"
+                className=" text-stone-400 first-of-type:text-foreground mb-2"
               >
                 {desc}
               </p>

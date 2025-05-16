@@ -8,13 +8,13 @@ export const LandingCommunity = () => {
       <div className="section-container">
         <hgroup className="col-span-default col-start-default mb-6">
           <h2 className="text-body-2 font-medium text-stone-400 mb-1">Community</h2>
-          <p className="text-heading-1 mb-2">Collaborate, learn, and innovate with us</p>
-          <p className="mb-4">
+          <p className="text-heading-1 mb-1.5">Collaborate, learn, and innovate with us</p>
+          <p className="mb-6">
             Get rapid-fire development support through our Discord—home to 2000+ active members who
             have collaborated on 6 humanoid robots and counting.
           </p>
-          <div className="flex flex-wrap gap-4 items-center">
-            <Button href="https://discord.gg/pVwubQT9Sg" external icon={Discord}>
+          <div className="flex max-sm:flex-col flex-wrap gap-4 items-center">
+            <Button href="https://discord.gg/pVwubQT9Sg" external icon={Discord} adaptive>
               Join our Discord
             </Button>
             <a
