@@ -56,7 +56,7 @@ export const Navbar = () => {
 
   useEffect(() => {
     const resetNavbar = () => {
-      setDesktopOpen(pathname === "/");
+      // setDesktopOpen(pathname === "/");
       setMobileOpen(false);
       // setDesktopScrollDetect(true);
     };
