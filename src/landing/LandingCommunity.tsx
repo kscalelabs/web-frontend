@@ -18,7 +18,7 @@ export const LandingCommunity = () => {
               Join our Discord
             </Button>
             <a
-              className="w-fit text-body-2 transition-colors duration-300 text-orange-700 hover:text-orange-800 focus:text-orange-800 active:text-orange-900"
+              className="w-fit font-medium text-body-2 transition-colors duration-300 text-orange-500 hover:text-orange-400 focus:text-orange-400 active:text-orange-900"
               href="https://docs.google.com/forms/d/e/1FAIpQLSemVaJ6HfieS9xDKv7SqWYArHyHLV-kraraiT_VEmPL_6lkPw/viewform"
               target="_blank"
               rel="noopener noreferrer"
