@@ -46,8 +46,8 @@ export const Hero = ({
         )}
         <hgroup className="col-span-4 md:col-span-4 md:col-start-2 2xl:col-span-6 2xl:col-start-3 4xl:col-start-3 z-10">
           <h1 className="text-body-2 font-medium font-sans text-stone-400 mb-1">{eyebrow}</h1>
-          <h2 className="text-heading-d1 mb-2">{heading}</h2>
-          <p className="text-body-1 mb-4">{children}</p>
+          <h2 className="text-heading-d1 mb-3">{heading}</h2>
+          <p className="text-body-1 mb-6">{children}</p>
           {href && (
             <Button href={href} external={external} icon={icon}>
               {buttonText}
@@ -79,7 +79,7 @@ export const ArticleHero = ({
   icon?: React.ElementType;
 }) => {
   return (
-    <section className="section pb-0 relative min-h-[20rem] overflow-hidden">
+    <section className="pt-48 pb-0 relative min-h-[20rem] overflow-hidden">
       <div className="section-container h-full justify-end sm:content-end">
         <div className="mb-12 md:grid grid-cols-subgrid col-span-full md:col-span-4 md:col-start-2 2xl:col-span-8 4xl:col-span-8 2xl:col-start-3 4xl:col-start-5">
           <h2 className="text-heading-d1 col-span-full xl:col-span-3 2xl:col-span-6 mb-4">

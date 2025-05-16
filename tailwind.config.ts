@@ -27,14 +27,14 @@ const config: Config = {
           "4rem",
           {
             lineHeight: "0.95",
-            letterSpacing: "-0.03em",
+            letterSpacing: "-0.02em",
           },
         ],
         "heading-d1-lg": [
           "3.75rem",
           {
             lineHeight: "0.95",
-            letterSpacing: "-0.03em",
+            letterSpacing: "-0.02em",
           },
         ],
         "heading-d1-md": [
@@ -45,35 +45,7 @@ const config: Config = {
           },
         ],
         "heading-d1-sm": [
-          "2.625rem",
-          {
-            lineHeight: "0.95",
-            letterSpacing: "-0.02em",
-          },
-        ],
-        "heading-d2-xl": [
-          "3.75rem",
-          {
-            lineHeight: "0.95",
-            letterSpacing: "-0.02em",
-          },
-        ],
-        "heading-d2-lg": [
-          "3.5rem",
-          {
-            lineHeight: "0.95",
-            letterSpacing: "-0.02em",
-          },
-        ],
-        "heading-d2-md": [
-          "3.25rem",
-          {
-            lineHeight: "0.95",
-            letterSpacing: "-0.02em",
-          },
-        ],
-        "heading-d2-sm": [
-          "2.625rem",
+          "2.5rem",
           {
             lineHeight: "0.95",
             letterSpacing: "-0.02em",
@@ -101,37 +73,37 @@ const config: Config = {
           },
         ],
         "heading-1-sm": [
-          "1.8125rem",
+          "1.6875rem",
           {
             lineHeight: "1.1",
-            letterSpacing: "-0.02em",
+            letterSpacing: "-0.015em",
           },
         ],
         "heading-2-xl": [
           "1.875rem",
           {
-            lineHeight: "1.15",
+            lineHeight: "1.1",
             letterSpacing: "-0.01em",
           },
         ],
         "heading-2-lg": [
           "1.75rem",
           {
-            lineHeight: "1.15",
+            lineHeight: "1.1",
             letterSpacing: "-0.01em",
           },
         ],
         "heading-2-md": [
           "1.5625rem",
           {
-            lineHeight: "1.15",
+            lineHeight: "1.1",
             letterSpacing: "-0.01em",
           },
         ],
         "heading-2-sm": [
           "1.5625rem",
           {
-            lineHeight: "1.15",
+            lineHeight: "1.1",
             letterSpacing: "-0.01em",
           },
         ],
@@ -157,10 +129,10 @@ const config: Config = {
           },
         ],
         "body-1-sm": [
-          "1.3125rem",
+          "1.25rem",
           {
-            lineHeight: "1.25",
-            letterSpacing: "0",
+            lineHeight: "1.2",
+            letterSpacing: "-0.02em",
           },
         ],
         "body-2-xl": [

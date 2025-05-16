@@ -167,11 +167,12 @@ export const LandingAchievements = () => {
                     key={`achievement--${index}`}
                   >
                     <hgroup>
-                      <h3 className="text-body-3 font-bold inline-flex gap-4">
+                      <h3 className="text-body-3 font-bold inline-flex gap-2 mb-1">
                         <time dateTime={item.dateTime}>{item.time}</time>
+                        &bull;
                         <span>{item.name}</span>
                       </h3>
-                      <p>{item.desc}</p>
+                      <p className="text-body-3 text-stone-400">{item.desc}</p>
                     </hgroup>
                     <Image
                       src={item.src}
