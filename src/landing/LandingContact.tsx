@@ -9,8 +9,8 @@ export function LandingContact() {
       <div className="section-container">
         <hgroup className="col-span-default col-start-default mb-6">
           <h2 className="text-body-2 font-medium text-stone-400 mb-1">About us</h2>
-          <p className="text-heading-1 mb-2">
-            We&apos;re hackers, engineers, and researchers that believe in a world where robots are
+          <p className="text-heading-1 mb-3">
+            We&apos;re engineers, hackers, and researchers that believe in a world where robots are
             made for everyone.
           </p>
           <p className="text-body-1 mb-6">
@@ -23,7 +23,7 @@ export function LandingContact() {
               Copy email address
             </Button> */}
             <Link
-              className="w-fit text-body-2 transition-colors duration-300 text-orange-700 hover:text-orange-800 focus:text-orange-800 active:text-orange-900"
+              className="w-fit font-medium text-body-2 transition-colors duration-300 text-orange-500 hover:text-orange-400 focus:text-orange-400 active:text-orange-900"
               href="/join"
             >
               See open roles (3)

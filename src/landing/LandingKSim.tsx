@@ -72,15 +72,15 @@ export const LandingKSim = () => {
       <section className="section pb-0">
         <div className="section-container">
           <hgroup className="col-span-default col-start-default mb-6">
-            <h2 className="text-heading-1 mb-2 flex items-center">
+            <h2 className="text-heading-1 mb-1.5 flex items-center">
               <a
                 href="https://github.com/kscalelabs/ksim"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center"
+                className="group inline-flex items-center gap-1"
               >
                 K-Sim
-                <Arrow className="size-8 group-hover:translate-x-[12.5%] group-hover:-translate-y-[12.5%] group-focus:translate-x-[12.5%] group-focus:-translate-y-[12.5%] transition-transform duration-300 ml-2" />
+                <Arrow className="size-6 group-hover:translate-x-[12.5%] group-hover:-translate-y-[12.5%] group-focus:translate-x-[12.5%] group-focus:-translate-y-[12.5%] transition-transform duration-300" />
               </a>
             </h2>
             <p className="text-body-1">
@@ -108,8 +108,8 @@ export const LandingKSim = () => {
       </section>
       <section className="section">
         <div className="section-container">
-          <div className="mb-6 col-span-full sm:col-span-2 md:col-span-3 xl:col-span-2 xl:col-start-2 2xl:col-span-3 2xl:col-start-4 4xl:col-span-3 4xl:col-start-3">
-            <Visual1 className="size-[4.5rem] mb-4" />
+          <div className="mb-12 col-span-full sm:col-span-2 md:col-span-3 xl:col-span-2 xl:col-start-2 2xl:col-span-4 2xl:col-start-3 4xl:col-span-3 4xl:col-start-3">
+            <Visual1 className="size-[4.5rem] mb-6" />
             <h3 className="text-body-2 font-bold mb-2">Made for speed</h3>
             <p>
               Train policies in under an hour. Leveraging GPU accelerated libraries like JAX and
@@ -117,8 +117,8 @@ export const LandingKSim = () => {
               an RTX 4090.
             </p>
           </div>
-          <div className="mb-6 col-span-full sm:col-span-2 md:col-span-3 xl:col-span-2 2xl:col-span-3 4xl:col-span-3">
-            <Visual2 className="size-[4.5rem] mb-4" />
+          <div className="mb-12 col-span-full sm:col-span-2 md:col-span-3 xl:col-span-2 2xl:col-span-4 4xl:col-span-3">
+            <Visual2 className="size-[4.5rem] mb-6" />
             <h3 className="text-body-2 font-bold mb-2">Smooth troubleshooting</h3>
             <p>
               Quickly pinpoint the root cause of training regressions or improvements. All of the
@@ -126,8 +126,8 @@ export const LandingKSim = () => {
               to TensorBoard.
             </p>
           </div>
-          <div className="mb-6 col-span-full sm:col-span-2 md:col-span-3 xl:col-span-2 xl:col-start-2 2xl:col-span-3 4xl:col-span-3 2xl:col-start-4">
-            <Visual3 className="size-[4.5rem] mb-4" />
+          <div className="mb-12 col-span-full sm:col-span-2 md:col-span-3 xl:col-span-2 xl:col-start-2 2xl:col-span-4 4xl:col-span-3 2xl:col-start-3">
+            <Visual3 className="size-[4.5rem] mb-6" />
             <h3 className="text-body-2 font-bold mb-2">Optimized for sim-to-real</h3>
             <p>
               A trained policy is immediately ready to be exported and deployed on a real robot,
@@ -135,8 +135,8 @@ export const LandingKSim = () => {
               training and deployment.
             </p>
           </div>
-          <div className="mb-6 col-span-full sm:col-span-2 md:col-span-3 xl:col-span-2 2xl:col-span-3 4xl:col-span-3">
-            <Visual4 className="size-[4.5rem] mb-4" />
+          <div className="mb-12 col-span-full sm:col-span-2 md:col-span-3 xl:col-span-2 2xl:col-span-4 4xl:col-span-3">
+            <Visual4 className="size-[4.5rem] mb-6" />
             <h3 className="text-body-2 font-bold mb-2">Extensible by design</h3>
             <p>
               K-Sim can be easily modified to fit your use-case, instead of the other way around.
@@ -206,13 +206,13 @@ export const LandingKSim = () => {
           </table>
         </div>
       </section>
-      <section className="section mb-8 pt-0">
+      <section className="section">
         <div className="section-container">
           <hgroup className="col-span-default lg:col-start-2 2xl:col-start-3 flex flex-col ">
             <h2 className="text-heading-2 mb-2">
               K-Sim lets you iterate quickly and trust the code that you deploy on your hardware.{" "}
             </h2>
-            <p className="text-body-2 mb-4">
+            <p className="text-body-2 mb-6">
               Check out the source on{" "}
               <a
                 href="https://github.com/kscalelabs/ksim"
@@ -234,7 +234,9 @@ export const LandingKSim = () => {
                 docs
               </a>
             </p>
-            <Button href="/benchmarks">Start training robots</Button>
+            <Button href="/benchmarks" adaptive>
+              Start training robots
+            </Button>
           </hgroup>
         </div>
       </section>

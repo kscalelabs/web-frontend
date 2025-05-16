@@ -41,7 +41,7 @@ export default function ResearchIndex() {
       </Hero>
       <section className="section">
         <div className="section-container">
-          <div className="section-prose2">
+          <div className="section-prose">
             <p className="text-body-1 mb-6">
               Our mission at K-Scale Labs is to accelerate the timeline to a world with billions of
               general-purpose robots, by making them open-source and universally accessible. We

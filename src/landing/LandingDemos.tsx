@@ -5,19 +5,19 @@ export const LandingDemos = () => {
   const [activeItem, setActiveItem] = useState(0);
 
   const items = [
-    { name: "Locomotion", src: "/videos/landing/demo_locomotion.mp4" },
     { name: "Manipulation", src: "/videos/landing/demo_manipulation.mp4" },
+    { name: "Locomotion", src: "/videos/landing/demo_locomotion.mp4" },
   ];
 
   return (
     <section className="section pt-0">
       <div className="section-container">
-        <hgroup className="col-span-default col-start-default mb-4 sm:mb-6">
+        <hgroup className="col-span-default col-start-default mb-6">
           <h2 className="text-body-2 font-medium text-stone-400 mb-1">Demos</h2>
           <p className="text-heading-1">Experience our humanoid robots in action</p>
         </hgroup>
         <div className="relative col-span-full 2xl:col-span-8 2xl:col-start-3 4xl:col-span-12 4xl:col-start-3">
-          <menu className="z-10 sm:absolute sm:w-fit sm:top-4 sm:left-4 w-full p-1 flex gap-2 rounded-full mb-4 bg-stone-800/80 backdrop-blur-md border border-stone-700">
+          <menu className="z-10 sm:absolute sm:w-fit sm:top-4 sm:left-4 w-full p-1 flex gap-2 rounded-full mb-6 bg-stone-800/80 backdrop-blur-md border border-stone-700">
             {items.map((item, index) => (
               <li key={`demo-item--${index}`} className="flex-1">
                 <motion.button

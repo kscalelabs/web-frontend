@@ -131,7 +131,7 @@ export const LandingProducts = () => {
             onDragEnd={onDragEnd}
             transition={SPRING_OPTIONS}
           >
-            <ul className="flex lg:col-span-full 2xl:col-span-8 4xl:col-span-12 gap-x-4 md:gap-x-6 2xl:col-start-3 4xl:col-start-3">
+            <ul className="flex lg:col-span-full 2xl:col-span-8 4xl:col-span-12 gap-x-4 2xl:col-start-3 4xl:col-start-3">
               {/* {imgs.map((item) => (
                 <article className="min-w-[80vw] md:min-w-[40vw] 2xl:min-w-[30vw] flex flex-col md:flex-col-reverse gap-2">
                   <hgroup>
@@ -163,10 +163,10 @@ export const LandingProducts = () => {
                       priority={true}
                       sizes={"100dvw"}
                     />
-                    <hgroup className="mt-auto flex flex-col items-center z-10 w-full bg-gradient-to-t from-stone-950 from-75% to-transparent py-2">
-                      <h4 className="text-heading-2 mb-1">{item.name}</h4>
-                      <h5 className="text-body-2">{item.desc}</h5>
-                      <p className="text-body-3 font-medium mb-4">
+                    <hgroup className="mt-auto flex flex-col items-center z-10 w-full bg-gradient-to-t from-stone-950 from-75% to-transparent py-4">
+                      <h4 className="text-heading-2">{item.name}</h4>
+                      <h5 className="text-body-2 mb-0.5">{item.desc}</h5>
+                      <p className="text-body-3 font-medium mb-2">
                         From {item.price}{" "}
                         <s className="font-normal text-stone-400">{item.oldPrice}</s>
                       </p>
