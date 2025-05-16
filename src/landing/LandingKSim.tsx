@@ -108,7 +108,7 @@ export const LandingKSim = () => {
       </section>
       <section className="section">
         <div className="section-container">
-          <div className="mb-6 col-span-full sm:col-span-2 md:col-span-3 xl:col-span-2 xl:col-start-2 2xl:col-span-3 2xl:col-start-4 4xl:col-span-3 4xl:col-start-3">
+          <div className="mb-12 col-span-full sm:col-span-2 md:col-span-3 xl:col-span-2 xl:col-start-2 2xl:col-span-4 2xl:col-start-3 4xl:col-span-3 4xl:col-start-3">
             <Visual1 className="size-[4.5rem] mb-6" />
             <h3 className="text-body-2 font-bold mb-2">Made for speed</h3>
             <p>
@@ -117,7 +117,7 @@ export const LandingKSim = () => {
               an RTX 4090.
             </p>
           </div>
-          <div className="mb-6 col-span-full sm:col-span-2 md:col-span-3 xl:col-span-2 2xl:col-span-3 4xl:col-span-3">
+          <div className="mb-12 col-span-full sm:col-span-2 md:col-span-3 xl:col-span-2 2xl:col-span-4 4xl:col-span-3">
             <Visual2 className="size-[4.5rem] mb-6" />
             <h3 className="text-body-2 font-bold mb-2">Smooth troubleshooting</h3>
             <p>
@@ -126,7 +126,7 @@ export const LandingKSim = () => {
               to TensorBoard.
             </p>
           </div>
-          <div className="mb-6 col-span-full sm:col-span-2 md:col-span-3 xl:col-span-2 xl:col-start-2 2xl:col-span-3 4xl:col-span-3 2xl:col-start-4">
+          <div className="mb-12 col-span-full sm:col-span-2 md:col-span-3 xl:col-span-2 xl:col-start-2 2xl:col-span-4 4xl:col-span-3 2xl:col-start-3">
             <Visual3 className="size-[4.5rem] mb-6" />
             <h3 className="text-body-2 font-bold mb-2">Optimized for sim-to-real</h3>
             <p>
@@ -135,7 +135,7 @@ export const LandingKSim = () => {
               training and deployment.
             </p>
           </div>
-          <div className="mb-6 col-span-full sm:col-span-2 md:col-span-3 xl:col-span-2 2xl:col-span-3 4xl:col-span-3">
+          <div className="mb-12 col-span-full sm:col-span-2 md:col-span-3 xl:col-span-2 2xl:col-span-4 4xl:col-span-3">
             <Visual4 className="size-[4.5rem] mb-6" />
             <h3 className="text-body-2 font-bold mb-2">Extensible by design</h3>
             <p>

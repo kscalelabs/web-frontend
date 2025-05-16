@@ -27,14 +27,14 @@ const config: Config = {
           "4rem",
           {
             lineHeight: "0.95",
-            letterSpacing: "-0.03em",
+            letterSpacing: "-0.02em",
           },
         ],
         "heading-d1-lg": [
           "3.75rem",
           {
             lineHeight: "0.95",
-            letterSpacing: "-0.03em",
+            letterSpacing: "-0.02em",
           },
         ],
         "heading-d1-md": [
@@ -48,7 +48,7 @@ const config: Config = {
           "2.5rem",
           {
             lineHeight: "0.95",
-            letterSpacing: "-0.04em",
+            letterSpacing: "-0.02em",
           },
         ],
         "heading-1-xl": [

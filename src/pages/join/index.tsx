@@ -66,30 +66,29 @@ export default function Page() {
       </Hero>
       <section className="section">
         <div className="section-container">
-          <div className="section-prose2 mb-6">
-            <h2 className="text-body-2 font-medium text-stone-400 mb-1">About us</h2>
-            <h3 className="text-heading-1 mb-6">
+          <div className="section-prose">
+            <h2 className="text-heading-1 mb-4">
               We&apos;re a small team of engineers and researchers from Tesla AI, Meta FAIR, Xiaomi,
               and MILA.
-            </h3>
+            </h2>
             <p className="text-body-1 mb-24">
               We work 18 hours a day, 7 days a week. Most of us live, eat, and work at our facility.
               Hard problems, failures, and long hours don&apos;t deter us. While others talk, we
               ship.
             </p>
           </div>
-          <p className="col-span-full sm:col-span-4 md:col-start-2 2xl:col-span-6 2xl:col-start-4 4xl:col-span-8 4xl:col-start-5 text-heading-1 text-center mb-32">
+          <p className="col-span-full sm:col-span-4 md:col-start-2 2xl:col-span-6 2xl:col-start-4 4xl:col-span-8 4xl:col-start-5 text-heading-1 text-center mb-24">
             We&apos;re driven by our belief that general-purpose robots are possible, and we must
             open-source it to everyone.
           </p>
-          <div className="section-prose2 mb-24">
+          <div className="section-prose">
             <div className="col-span-4 md:col-span-3 lg:col-span-2 2xl:col-span-3 4xl:col-span-5">
-              <p className="text-body-1 mb-6">
+              <p className="text-body-2 mb-4">
                 In the last six months, we&apos;ve trained state-of-the-art machine-learning models
                 on our training infrastructure, developed the operating system, designed and
                 manufactured 2 humanoid robots.
               </p>
-              <p className="text-body-1 mb-6">
+              <p className="text-body-2">
                 In the next six months, we will be pushing the boundary on whole-body and
                 manipulation models and manufacturing our hardware at scale.
               </p>
@@ -97,11 +96,11 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="section--short">
+      <section className="section">
         <div className="section-container">
-          <div className="section-prose2 mb-32">
-            <h2 className="text-heading-1 mb-2">Who we&apos;re looking for</h2>
-            <p className="text-body-1 mb-2">
+          <div className="section-prose mb-24">
+            <h2 className="text-heading-1 mb-1.5">Who we&apos;re looking for</h2>
+            <p className="text-body-1 mb-4">
               Our goal is to build a world-class team in cutting-edge engineering, research, and
               product.
             </p>
@@ -110,7 +109,7 @@ export default function Page() {
               who&apos;re already involved with our open-source communities.
             </p>
           </div>
-          <h2 className="text-heading-2 section-prose2 md:text-center mb-6">
+          <h2 className="text-heading-2 section-prose md:text-center mb-8">
             Prove your skills through one of these paths:
           </h2>
           <ul className="md:grid grid-cols-3 col-span-full 2xl:col-span-8 2xl:col-start-3 4xl:col-span-12 4xl:col-start-3 gap-x-4 md:gap-x-6 ">
@@ -121,9 +120,9 @@ export default function Page() {
                 rel="noopener noreferrer"
                 className="group"
               >
-                <div className="flex w-fit mb-1">
-                  <h3 className="text-body-1">Bounties</h3>
-                  <Arrow className="size-7 2xl:size-9 group-hover:translate-x-1/4 group-hover:-translate-y-1/4 group-focus:translate-x-1/4 group-focus:-translate-y-1/4 transition-transform duration-300" />
+                <div className="flex w-fit mb-2">
+                  <h3 className="text-body-2 font-bold">Bounties</h3>
+                  <Arrow className="size-6 group-hover:translate-x-1/4 group-hover:-translate-y-1/4 group-focus:translate-x-1/4 group-focus:-translate-y-1/4 transition-transform duration-300" />
                 </div>
                 <p>Get paid by contributing to any of our active open-source projects</p>
               </a>
@@ -139,12 +138,12 @@ export default function Page() {
               <h3 className="text-body-1 mb-1">Hackathons</h3>
               <Arrow className="size-9 group-hover:translate-x-1/4 group-hover:-translate-y-1/4 group-focus:translate-x-1/4 group-focus:-translate-y-1/4 transition-transform duration-300" />
               </div> */}
-              <h3 className="text-body-1 mb-1">Hackathons</h3>
+              <h3 className="text-body-2 font-bold mb-2">Hackathons</h3>
               <p>Join our hackathon for ML, software, and hardware challenges.</p>
               {/* </a> */}
             </li>
             <li className="mb-12">
-              <h3 className="text-body-1 mb-1">Personal/team projects</h3>
+              <h3 className="text-body-2 font-bold mb-2">Personal/team projects</h3>
               <p>Show us the hardest projects you have done.</p>
             </li>
           </ul>
@@ -152,34 +151,33 @@ export default function Page() {
       </section>
       <section className="section">
         <div className="section-container">
-          <div className="section-prose2 mb-6">
+          <div className="section-prose">
             {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">About us</h2> */}
-            <h2 className="text-heading-1 mb-2">Open roles (3)</h2>
+            <h2 className="text-heading-1 mb-1.5">Open roles (3)</h2>
             <p className="mb-6">
               All roles are on-site in Palo Alto, CA, USA. People currently enrolled in college are
               encouraged to drop out.
             </p>
-            <ul className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 flex flex-col gap-12 mb-16">
+            <ul className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 flex flex-col gap-12 mb-8">
               {jobs.map((item, i) => (
                 <li key={`job-listing-${i}`} className="flex flex-col gap-2">
                   <a
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex gap-4 w-fit group"
+                    className="flex gap-1 w-fit group"
                   >
                     <div>
                       <h3 className="text-body-1 mb-1">{item.title}</h3>
                       <p className="text-body-3 text-stone-400">{item.description}</p>
                     </div>
-                    <Arrow className="size-9 group-hover:translate-x-1/4 group-hover:-translate-y-1/4 group-focus:translate-x-1/4 group-focus:-translate-y-1/4 transition-transform duration-300" />
+                    <Arrow className="size-6 group-hover:translate-x-1/4 group-hover:-translate-y-1/4 group-focus:translate-x-1/4 group-focus:-translate-y-1/4 transition-transform duration-300" />
                   </a>
                 </li>
               ))}
             </ul>
-            <aside className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 mb-16">
-              <p className="mb-4">
-                {" "}
+            <aside className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1">
+              <p>
                 Don&apos;t see a role that matches you? Shoot us an email at{" "}
                 <CopyString string="inquiries@kscale.dev" font="regular" />
               </p>
@@ -187,15 +185,15 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="section--short">
+      <section className="section">
         <div className="section-container">
-          <div className="section-prose2 mb-6">
+          <div className="section-prose mb-6">
             <h2 className="text-body-2 font-medium text-stone-400 mb-1">Our hiring process</h2>
             <h3 className="text-heading-1 mb-6">Apply and join us</h3>
-            <ol className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 flex flex-col gap-12 mb-16 list-inside list-decimal">
-              <li>
-                <h4 className="text-body-1 mb-2">Choose a challenge</h4>
-                <p className="mb-4">
+            <ol className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 flex flex-col gap-12 list-outside">
+              <li className="relative before:content-['1.'] before:absolute before:left-0 before:font-bold pl-8">
+                <h4 className="text-body-2 font-bold mb-2">Choose a challenge</h4>
+                <p className="font-normal mb-2">
                   Choose any of the challenges from our leaderboard or bounties, solve it, then
                   reach out to us on our{" "}
                   <a
@@ -208,35 +206,37 @@ export default function Page() {
                   </a>
                   .
                 </p>
-                <p>Alternatively, you can pitch us an project that you think will be impactful.</p>
+                <p className="font-normal">
+                  Alternatively, you can pitch us an project that you think will be impactful.
+                </p>
               </li>
-              <li>
-                <h4 className="text-body-1 mb-2">Video screening</h4>
-                <p>
+              <li className="relative before:content-['2.'] before:absolute before:left-0 before:font-bold pl-8">
+                <h4 className="text-body-2 font-bold mb-2">Video screening</h4>
+                <p className="font-normal">
                   We will have two videos calls: an initial video call, and an in-depth technical
                   presentation of the challenge you completed and another project you have done
                   before.
                 </p>
               </li>
-              <li>
-                <h4 className="text-body-1 mb-2">Paid residency</h4>
-                <p className="mb-4">
+              <li className="relative before:content-['3.'] before:absolute before:left-0 before:font-bold pl-8">
+                <h4 className="text-body-2 font-bold mb-2">Paid residency</h4>
+                <p className="font-normal mb-2">
                   We&apos;ll fly you out to Palo Alto where you will meet the team and work on a
                   (paid) technical project for 2 weeks that will be integrated into part of our
                   stack.
                 </p>
-                <p className="mb-4">Room and board provided.</p>
+                <p className="font-normal">Room and board provided.</p>
               </li>
             </ol>
           </div>
         </div>
       </section>
-      <section className="section--short">
+      <section className="section">
         <div className="section-container">
-          <div className="section-prose2 mb-6">
+          <div className="section-prose">
             {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">About us</h2> */}
-            <h2 className="text-heading-1 mb-6">FAQ</h2>
-            <ul className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 flex flex-col gap-12 mb-16">
+            <h2 className="text-heading-1 mb-4">FAQ</h2>
+            <ul className="col-span-full lg:col-span-4 2xl:col-span-3 2xl:col-start-1 flex flex-col gap-12">
               <li>
                 <h3 className="text-body-2 font-bold mb-2">Do you do internships?</h3>
                 <p>
@@ -276,7 +276,7 @@ export default function Page() {
       </section>
       <section className="section pt-8">
         <div className="section-container">
-          <hgroup className="col-span-full lg:col-span-4 lg:col-start-2 2xl:col-span-4 4xl:col-span-6 2xl:col-start-5 4xl:col-start-6 flex flex-col items-center text-center">
+          <hgroup className="col-span-full lg:col-span-4 lg:col-start-2 2xl:col-span-6 2xl:col-start-4 4xl:col-start-6 flex flex-col items-center text-center">
             <h2 className="text-heading-2 mb-6">
               Have any questions? Send them our way into our community Discord!
             </h2>

@@ -130,7 +130,7 @@ export const LandingStack = () => {
           thumbnail: <KOSThumbnail />,
         },
         {
-          name: "K-OS SIM",
+          name: "K-OS Sim",
           href: "https://github.com/kscalelabs/kos-sim",
 
           code: "pip install kos-sim",
@@ -140,7 +140,7 @@ export const LandingStack = () => {
           ],
           condensed: false,
           thumbnailSrc: "/photos/landing/stack/KOSsim.gif",
-          thumbnailAlt: "K-OS SIM",
+          thumbnailAlt: "K-OS Sim",
           width: 640,
           height: 480,
         },
@@ -321,7 +321,7 @@ const Article = ({
             item.description.map((desc, i) => (
               <p
                 key={`article-descriptor-${id}--${i}`}
-                className=" text-stone-400 first-of-type:text-foreground mb-2"
+                className=" text-stone-400 first-of-type:text-foreground mb-2 last-of-type:mb-0 "
               >
                 {desc}
               </p>

@@ -126,7 +126,7 @@ body {
     @apply text-body-1 italic;
   }
   .section {
-    @apply pt-8 pb-16;
+    @apply pt-8 lg:pt-12 4xl:pt-1 pb-16 lg:pb-24 4xl:pb-32;
   }
   .section--short {
     @apply pt-8 pb-16;
@@ -138,9 +138,6 @@ body {
 
 @layer components {
   .section-prose {
-    @apply col-span-4 md:col-start-2 2xl:col-span-8 2xl:col-start-3 4xl:col-span-8 4xl:col-start-5;
-  }
-  .section-prose2 {
     @apply col-span-4 md:col-start-2 2xl:col-span-6 2xl:col-start-4 4xl:col-span-6 4xl:col-start-6;
   }
 }
