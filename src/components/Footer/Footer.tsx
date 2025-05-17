@@ -11,7 +11,7 @@ export default function Footer() {
     {
       name: "Discord",
       icon: Discord,
-      href: "https://discord.com/invite/pVwubQT9Sg",
+      href: "https://url.kscale.dev/discord",
     },
     {
       name: "X",

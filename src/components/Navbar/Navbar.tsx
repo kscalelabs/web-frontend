@@ -67,7 +67,7 @@ export const Navbar = () => {
     {
       name: "Discord",
       icon: Discord,
-      href: "https://discord.com/invite/pVwubQT9Sg",
+      href: "https://url.kscale.dev/discord",
     },
     {
       name: "X",
@@ -127,7 +127,7 @@ export const Navbar = () => {
         },
         {
           name: "Discord",
-          href: "https://discord.com/invite/pVwubQT9Sg",
+          href: "https://url.kscale.dev/discord",
         },
       ],
     },

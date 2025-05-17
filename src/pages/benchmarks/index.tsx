@@ -122,7 +122,7 @@ export default function Page({ html, raw }: Props) {
             <p className="text-body-3 text-stone-500">
               Got stuck along the way? Ask any questions in our{" "}
               <a
-                href="https://discord.com/invite/pVwubQT9Sg"
+                href="https://url.kscale.dev/discord"
                 target="_blank"
                 rel="noreferrer noopener"
                 className="underline text-orange-500 hover:text-orange-400 whitespace-nowrap font-medium transition-colors duration-300"
@@ -286,7 +286,7 @@ export default function Page({ html, raw }: Props) {
                 <h3 className="text-body-2 font-bold mb-2">
                   Post the link in #benchmark-submission on{" "}
                   <a
-                    href="https://discord.com/invite/pVwubQT9Sg"
+                    href="https://url.kscale.dev/discord"
                     target="_blank"
                     rel="noreferrer noopener"
                     className="underline text-orange-500 hover:text-orange-400 whitespace-nowrap transition-colors duration-300"
@@ -308,7 +308,7 @@ export default function Page({ html, raw }: Props) {
                 Have any questions? Send them our way into our community Discord.
               </h2>
 
-              <Button href="https://discord.com/invite/pVwubQT9Sg" external icon={Discord}>
+              <Button href="https://url.kscale.dev/discord" external icon={Discord}>
                 Join our Discord
               </Button>
             </hgroup>
