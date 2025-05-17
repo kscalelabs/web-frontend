@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev & tsc --watch --preserveWatchOutput",
+    "dev": "next dev & tsc --watch --preserveWatchOutput & npx next-video sync -w",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -32,7 +32,6 @@
     "motion": "^11.14.1",
     "next": "^15.3.1",
     "next-mdx-remote": "^5.0.0",
-    "next-video": "^2.2.0",
     "postprocessing": "^6.37.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

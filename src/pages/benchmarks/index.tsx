@@ -138,12 +138,12 @@ export default function Page({ html, raw }: Props) {
       <section className="section--short">
         <div className="section-container">
           <div className="section-prose mb-6">
-            {/* <h2 className="text-body-2 font-medium text-stone-400 mb-1">Products</h2> */}
-            <h2 className="text-body-1 mb-6">
+            <h2 className="text-heading-1 font-medium mb-1.5">Join the challenge</h2>
+            <p className="text-body-1 mb-6">
               We&apos;re building a leaderboard for anyone interested in rapidly moving from
               programming and training humanoid robots in simulation to seeing their ideas on real
               machines, the next day.
-            </h2>
+            </p>
             <p className="text-body-2 mb-2">
               All submissions that pass our sim-to-sim evaluation will earn a spot on the
               leaderboard. We deeply appreciate your contributions in helping us advance{" "}

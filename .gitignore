@@ -51,3 +51,10 @@ yarn.lock
 pnpm-lock.yaml
 
 *storybook.log
+
+# next-video
+videos/*
+!videos/*.json
+!videos/*.js
+!videos/*.ts
+public/_next-video

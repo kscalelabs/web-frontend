@@ -20,7 +20,7 @@ const SPRING_OPTIONS = {
 const imgs = [
   {
     name: "K-Bot",
-    desc: "General-purpose humanoid robot",
+    desc: "General-purpose (4') humanoid",
     src: "/photos/landing/thumbnail/thumbnail_kbot.png",
     alt: "Photo of K-Bot",
     price: "$8,999 USD",
@@ -32,7 +32,7 @@ const imgs = [
   },
   {
     name: "Z-Bot",
-    desc: "Mini end-to-end humanoid robot",
+    desc: "Mini end-to-end (1.5') humanoid",
     src: "/photos/landing/thumbnail/thumbnail_zbot.png",
     alt: "Photo of Z-Bot",
     price: "$999 USD",
@@ -44,7 +44,7 @@ const imgs = [
   },
   {
     name: "M-Bot",
-    desc: "Compact humanoid for the home",
+    desc: "Compact humanoid (2.5') for home",
     src: "/photos/landing/thumbnail/thumbnail_mbot.png",
     alt: "Photo of M-Bot",
     price: "$2,999 USD",
