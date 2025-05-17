@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button/Button";
 
 export function LandingHero() {
   return (
-    <section className="py-8 relative min-h-[20rem] h-[87.5svh] max-h-[1280px] overflow-hidden">
+    <section className="py-16 relative min-h-[20rem] h-[90svh] lg:h-[95svh] max-h-[1280px] overflow-hidden">
       <div className="section-container h-full justify-end sm:content-end">
         <video
           width="1920"
@@ -26,7 +26,7 @@ export function LandingHero() {
             they&apos;re accessible, auditable, and beneficial to humanity.
           </p>
           <Button adaptive={true} href="/benchmarks" size="lg">
-            Get started now
+            Join the RL training challenge
           </Button>
         </hgroup>
         {/* </BackgroundVideo> */}
