@@ -1,4 +1,6 @@
 import { VisualStack } from "@/assets/content/VisualStack";
+import TheInformation from "@/assets/logos/logo_theinformation.svg";
+import Stanford from "@/assets/logos/logo_stanford.svg";
 
 export function LandingMission() {
   return (
