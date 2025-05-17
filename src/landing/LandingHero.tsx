@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/Button/Button";
-import BackgroundVideo from "next-video";
-import Video from "next-video";
-import HeroVideo from "@/videos/landing/landing_video_0514.mp4";
+// import BackgroundVideo from "next-video";
+// import Video from "next-video";
+// import HeroVideo from "@/videos/landing/landing_video_0514.mp4";
 
 export function LandingHero() {
   return (
