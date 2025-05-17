@@ -12,7 +12,7 @@ import { Button } from "../ui/Button/Button";
 import { CopyButton } from "../ui/Button/CopyButton";
 import { usePathname } from "next/navigation";
 import { IconButton } from "../ui/IconButton/IconButton";
-import { useLenis } from "lenis/react";
+import { useLenis } from "lenis/dist/lenis-react";
 import { Hamburger } from "../ui/Icon/Hamburger";
 
 export const Navbar = () => {
@@ -143,7 +143,7 @@ export const Navbar = () => {
             : "bg-transparent border-b-transparent"
         )}
       >
-        <div className="max-w-[2160px] mx-auto px-layout py-4 flex justify-between max-lg:items-center">
+        <div className="max-w-[2160px] mx-auto px-layout py-4 flex lg:grid grid-cols-[192px_1fr_192px] lg:gap-x-6 justify-between items-center">
           {/* {navBasedOnWidth(width >= 768)} */}
           <Link href="/" className="my-auto">
             <Logo className="w-auto h-10 sm:hidden" />
@@ -161,62 +161,41 @@ export const Navbar = () => {
             </motion.button>
           </nav>
           <nav
-            className="relative flex gap-2 md:gap-6 lg:gap-4 items-center md:items-start max-lg:hidden p-2 pl-4"
+            className="relative flex gap-4 md:gap-6 lg:justify-center items-center md:items-start max-lg:hidden p-2 pl-4"
             onMouseOver={() => setDesktopHover(true)}
             onMouseLeave={() => setDesktopHover(false)}
           >
-            <motion.div
-              className="max-lg:hidden -z-10 absolute inset-0 bg-stone-800/80 backdrop-blur-md border border-stone-700 rounded-2xl"
-              initial={false}
-              animate={{
-                height: desktopOpen ? "12rem" : "auto",
-              }}
-              transition={{ duration: 0.3, ease: [0.25, 0, 0.1, 1] }}
-            />
             {desktopLinks.map((group) => (
-              <hgroup className="relative mt-2.5 w-28" key={`nav-group-${group.name}`}>
-                <h2
-                  className={clsx(
-                    "text-body-3 transition-colors duration-300",
-                    desktopOpen ? "text-stone-400" : "text-foreground"
-                  )}
-                >
-                  {group.name}
-                </h2>
-                <motion.ul
-                  className="mt-2 flex flex-col gap-2 absolute"
-                  initial={false}
-                  animate={{ opacity: desktopOpen ? 1 : 0, display: desktopOpen ? "flex" : "none" }}
-                  transition={{ duration: 0.35 }}
-                >
-                  {group.items.map((item) => (
-                    <li key={`nav-item-${group.name}-${item.name}`}>
-                      {item.href.startsWith("http") ? (
-                        <a
-                          href={item.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
-                        >
-                          {item.name}
-                        </a>
-                      ) : (
-                        <Link
-                          href={item.href}
-                          className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
-                        >
-                          {item.name}
-                        </Link>
-                      )}
-                    </li>
-                  ))}
-                </motion.ul>
-              </hgroup>
+              <ul className="mt-2 flex gap-4 md:gap-6">
+                {group.items.map((item) => (
+                  <li key={`nav-item-${group.name}-${item.name}`}>
+                    {item.href.startsWith("http") ? (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
+                      >
+                        {item.name}
+                      </a>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className="hover:text-neutral-400 focus:text-stone-400 transition-colors duration-300 font-medium"
+                      >
+                        {item.name}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
             ))}
+          </nav>
+          <div className="max-lg:hidden flex justify-end">
             <Button href="/benchmarks" size="sm" intent="secondary">
               Get started
             </Button>
-          </nav>
+          </div>
         </div>
       </motion.header>
       <AnimatePresence>
