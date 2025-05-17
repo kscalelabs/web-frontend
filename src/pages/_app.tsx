@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { ReactLenis } from "lenis/dist/lenis-react";
+import { ReactLenis } from "lenis/react";
 import "katex/dist/katex.min.css";
 import localFont from "next/font/local";
 import Navbar from "@/components/Navbar/Navbar";

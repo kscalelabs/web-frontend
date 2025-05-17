@@ -12,7 +12,7 @@ import { Button } from "../ui/Button/Button";
 import { CopyButton } from "../ui/Button/CopyButton";
 import { usePathname } from "next/navigation";
 import { IconButton } from "../ui/IconButton/IconButton";
-import { useLenis } from "lenis/dist/lenis-react";
+import { useLenis } from "lenis/react";
 import { Hamburger } from "../ui/Icon/Hamburger";
 
 export const Navbar = () => {

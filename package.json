@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev & tsc --watch --preserveWatchOutput",
+    "dev": "next dev & tsc --watch --preserveWatchOutput & npx next-video sync -w",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
