@@ -151,7 +151,7 @@ export const Navbar = () => {
           </Link>
           <nav className="flex gap-2 items-center lg:hidden">
             <Button href="/benchmarks" intent="secondary">
-              Get started
+              Join RL challenge
             </Button>
             <motion.button
               className="bg-stone-400 size-12 rounded-lg"
@@ -193,7 +193,7 @@ export const Navbar = () => {
           </nav>
           <div className="max-lg:hidden flex justify-end">
             <Button href="/benchmarks" size="sm" intent="secondary">
-              Get started
+              Join RL challenge
             </Button>
           </div>
         </div>
