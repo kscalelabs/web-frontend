@@ -149,7 +149,7 @@ export const LandingProducts = () => {
                   className="min-w-[80vw] md:min-w-[40vw] lg:min-w-0 lg:col-span-2 lg:w-full"
                   key={`product--${index}`}
                 >
-                  <article className="relative bg-stone-950 border border-stone-700 rounded-2xl flex flex-col justify-end items-center overflow-hidden aspect-[3/4] text-center">
+                  <article className="relative bg-stone-950 rounded-2xl flex flex-col justify-end items-center overflow-hidden aspect-[4/5] text-center">
                     <Image
                       src={item.src}
                       alt={item.alt}
@@ -179,12 +179,12 @@ export const LandingProducts = () => {
                             {item.links[0].text}
                           </Button>
                           {/* <a
-                            href={item.links[1].href}
-                            className="text-orange-500 hover:text-orange-400 whitespace-nowrap text-body-2 font-medium flex items-center gap-1"
-                            target={item.links[1].href.startsWith("https://") ? "_blank" : "_self"}
-                          >
-                            {item.links[1].text}
-                          </a> */}
+                              href={item.links[1].href}
+                              className="text-orange-500 hover:text-orange-400 whitespace-nowrap text-body-2 font-medium flex items-center gap-1"
+                              target={item.links[1].href.startsWith("https://") ? "_blank" : "_self"}
+                            >
+                              {item.links[1].text}
+                            </a> */}
                         </div>
                       ) : (
                         <span className="text-stone-500 text-body-3 font-bold border border-stone-500 rounded-full px-3 py-1">
