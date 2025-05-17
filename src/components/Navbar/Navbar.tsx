@@ -166,7 +166,7 @@ export const Navbar = () => {
             onMouseLeave={() => setDesktopHover(false)}
           >
             {desktopLinks.map((group) => (
-              <ul className="mt-2 flex gap-4 md:gap-6">
+              <ul className="mt-2 flex gap-4 md:gap-6" key={`nav-group-${group.name}`}>
                 {group.items.map((item) => (
                   <li key={`nav-item-${group.name}-${item.name}`}>
                     {item.href.startsWith("http") ? (
