@@ -197,7 +197,7 @@ export default function Page() {
                   Choose any of the challenges from our leaderboard or bounties, solve it, then
                   reach out to us on our{" "}
                   <a
-                    href="https://discord.com/invite/pVwubQT9Sg"
+                    href="https://url.kscale.dev/discord"
                     target="_blank"
                     rel="noreferrer noopener"
                     className="underline text-orange-500 hover:text-orange-400 whitespace-nowrap font-medium transition-colors duration-300"
@@ -243,7 +243,7 @@ export default function Page() {
                   Our team sometimes accepts interns involved in our community or through our hosted
                   hackathons. If you&apos;re interested, reach out to us on our{" "}
                   <a
-                    href="https://discord.com/invite/pVwubQT9Sg"
+                    href="https://url.kscale.dev/discord"
                     target="_blank"
                     rel="noreferrer noopener"
                     className="underline text-orange-500 hover:text-orange-400 whitespace-nowrap font-medium transition-colors duration-300"
@@ -281,7 +281,7 @@ export default function Page() {
               Have any questions? Send them our way into our community Discord!
             </h2>
 
-            <Button href="https://discord.com/invite/pVwubQT9Sg" external icon={Discord}>
+            <Button href="https://url.kscale.dev/discord" external icon={Discord}>
               Join our Discord
             </Button>
           </hgroup>
