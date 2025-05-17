@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/Button/Button";
-import { motion, useScroll } from "motion/react";
+// import BackgroundVideo from "next-video";
+// import Video from "next-video";
+// import HeroVideo from "@/videos/landing/landing_video_0514.mp4";
 
 export function LandingHero() {
   return (
@@ -12,10 +14,11 @@ export function LandingHero() {
           muted
           loop
           playsInline
-          className="absolute inset-x-0 -inset-y-2 size-full object-cover brightness-[0.4]"
+          className="absolute inset-x-0 -inset-y-2 size-full object-cover object-top brightness-[0.4]"
         >
           <source src="/videos/landing/landing_video_0514.mp4" type="video/mp4" />
         </video>
+
         <hgroup className="col-span-4 md:col-span-5 xl:col-span-4 2xl:col-span-7 z-10">
           <h1 className="mb-3">Open-source humanoid robots, built for developers</h1>
           <p className="text-body-1 mb-6">
@@ -26,6 +29,7 @@ export function LandingHero() {
             Get started now
           </Button>
         </hgroup>
+        {/* </BackgroundVideo> */}
       </div>
     </section>
   );

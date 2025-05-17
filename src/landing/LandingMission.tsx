@@ -1,6 +1,4 @@
 import { VisualStack } from "@/assets/content/VisualStack";
-import TheInformation from "@/assets/logos/logo_theinformation.svg";
-import Stanford from "@/assets/logos/logo_stanford.svg";
 
 export function LandingMission() {
   return (
@@ -14,21 +12,6 @@ export function LandingMission() {
             Our software, hardware, and machine learning stack is seemlessly integrated, allowing
             you to focus on building applications instead of installing packages.
           </p>
-          <div>
-            <p className="text-body-3 mb-2 text-stone-400">
-              Acclaimed by leading institutions in the tech scene
-            </p>
-            <div className="flex gap-4 md:gap-6 items-center flex-wrap">
-              <a
-                href="https://www.theinformation.com/articles/open-source-robotics-startup-caught-openais-eye"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <TheInformation className="h-10" />
-              </a>
-              <Stanford className="h-6" />
-            </div>
-          </div>
         </div>
         <figure className="w-full col-span-full sm:col-span-4 md:col-span-4 lg:col-span-3 2xl:col-span-3 4xl:col-span-4 sm:-col-end-1 md:-col-end-2 2xl:-col-end-3 4xl:-col-end-4 aspect-video rounded-lg mb-24">
           <VisualStack />

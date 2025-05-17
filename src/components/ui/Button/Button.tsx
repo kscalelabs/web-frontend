@@ -13,7 +13,7 @@ interface Props extends ButtonOrLinkProps, VariantProps<typeof buttonStyles> {
 }
 
 const buttonStyles = cva(
-  "font-medium text-center relative overflow-hidden transition-all duration-300 px-3 py-3 rounded-lg flex justify-center items-center gap-2",
+  "font-medium text-center relative overflow-hidden transition-all duration-300 px-3 py-3 rounded-xl flex justify-center items-center gap-2",
   {
     variants: {
       intent: {
@@ -25,9 +25,9 @@ const buttonStyles = cva(
           "text-foreground border border-stone-400 hover:border-stone-300 hover:text-stone-300 focus:border-stone-300 focus:text-stone-300 active:border-stone-500 active:text-stone-500",
       },
       size: {
-        sm: "h-10 text-body-3",
-        md: "h-12 text-body-2",
-        lg: "h-16 text-body-1",
+        sm: "h-9 text-body-3",
+        md: "h-11 text-body-2",
+        lg: "h-14 text-body-1",
       },
       fullWidth: {
         true: "w-full",

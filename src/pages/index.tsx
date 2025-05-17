@@ -11,6 +11,7 @@ import { LandingDiagram } from "@/landing/LandingDiagram";
 import Sponsors from "@/landing/Sponsors";
 import { LandingContact } from "@/landing/LandingContact";
 import { LandingHero } from "@/landing/LandingHero";
+import { LandingSocialProof } from "@/landing/LandingSocialProof";
 
 export default function Home() {
   const lenis = useLenis();
@@ -46,6 +47,7 @@ export default function Home() {
         <LandingStack />
         <LandingKSim />
         <LandingAchievements />
+        <LandingSocialProof />
         <LandingCommunity />
         <LandingContact />
         <Sponsors />
